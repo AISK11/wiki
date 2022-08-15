@@ -1,3 +1,4 @@
+- - -
 # Installation
 - - -
 
@@ -37,10 +38,11 @@ root@artix# dinitctl start nginx
 - Cleanup.
 
 ```console
-root@artix# rm -rf ~/wiki/
 root@artix# rm -f /usr/share/webapps/dokuwiki/
+root@artix# rm -rf ~/wiki/
 ```
 
+- - -
 # DokuWiki Backup
 - - -
 
