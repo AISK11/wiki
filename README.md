@@ -1,5 +1,5 @@
 - - -
-# Installation
+# Install
 - - -
 
 ## Artix GNU/Linux (dinit)
@@ -33,21 +33,27 @@ root@artix# dinitctl start php-fpm
 root@artix# dinitctl start nginx
 ```
 
-- If this is fresh DokuWiki installation, configure Dokuwiki at [http://localhost/install.php](http://localhost/install.php)
+- If this is fresh DokuWiki installation, configure DokuWiki at [http://localhost/install.php](http://localhost/install.php)
 
 - Cleanup.
 
 ```console
-root@artix# rm -f /usr/share/webapps/dokuwiki/
+root@artix# rm -f /usr/share/webapps/dokuwiki/install.php
 root@artix# rm -rf ~/wiki/
 ```
 
 - - -
-# DokuWiki Backup
+# Backup and Restore
 - - -
 
 - Backup personal DokuWiki files.
 
 ```console
-rsync -av --delete /usr/share/webapps/dokuwiki/conf /usr/share/webapps/dokuwiki/data <BACKUP-DIR/>
+root@artix# rsync -av --delete /usr/share/webapps/dokuwiki/conf /usr/share/webapps/dokuwiki/data <BACKUP-DIR/>
+```
+
+- Load personal DokuWiki files.
+
+```console
+root@artix# rsync -av --delete <BACKUP-DIR/> /usr/share/webapps/dokuwiki/
 ```
