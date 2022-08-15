@@ -32,17 +32,12 @@ root@artix# dinitctl start php-fpm
 root@artix# dinitctl start nginx
 ```
 
+- If this is fresh DokuWiki installation, configure Dokuwiki at [http://localhost/install.php](http://localhost/install.php)
+
 - Cleanup.
 
 ```console
 root@artix# rm -rf ~/wiki/
-```
-
-- If this is fresh DokuWiki install, configure Dokuwiki at [http://localhost/install.php](http://localhost/install.php)
-
-- Remove install.php script.
-
-```console
 root@artix# rm -f /usr/share/webapps/dokuwiki/
 ```
 
