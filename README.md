@@ -20,8 +20,9 @@ root@artix# git clone https://github.com/aisk11/wiki ~/wiki/
 
 ```console
 root@artix# rsync -av ~/wiki/server/nginx/ /etc/nginx/
-root@artix# rsync -av --delete ~/wiki/web/conf/ /etc/webapps/dokuwiki/
-root@artix# rsync -av --delete ~/wiki/web/data/ /var/lib/dokuwiki/data/
+# root@artix# rsync -av --delete ~/wiki/web/conf/ /etc/webapps/dokuwiki/
+# root@artix# rsync -av --delete ~/wiki/web/data/ /var/lib/dokuwiki/data/
+# 
 root@artix# chown -R http:http /usr/share/webapps/dokuwiki /var/lib/dokuwiki /etc/webapps/dokuwiki
 ```
 
@@ -50,13 +51,15 @@ root@artix# rm -rf ~/wiki/
 - Backup personal DokuWiki files.
 
 ```console
-root@artix# rsync -av --delete /etc/webapps/dokuwiki <BACKUP-DIR>/conf/
-root@artix# rsync -av --delete /var/lib/dokuwiki/data <BACKUP-DIR>/data/
+# root@artix# rsync -av --delete /etc/webapps/dokuwiki/ <BACKUP-DIR>/conf/
+# root@artix# rsync -av --delete /var/lib/dokuwiki/ <BACKUP-DIR>/data/
+# root@artix# rsync -av --delete /usr/share/webapps/dokuwiki/ <BACKUP-DIR>/app/
 ```
 
 - Load personal DokuWiki files.
 
 ```console
-root@artix# rsync -av --delete <BACKUP-DIR>/conf/ /etc/webapps/dokuwiki/
-root@artix# rsync -av --delete <BACKUP-DIR>/data/ /var/lib/dokuwiki/data/
+# root@artix# rsync -av --delete <BACKUP-DIR>/conf/ /etc/webapps/dokuwiki/
+# root@artix# rsync -av --delete <BACKUP-DIR>/data/ /var/lib/dokuwiki/data/
+# root@artix# rsync -av --delete <BACKUP-DIR>/app/ /usr/share/webapps/dokuwiki/
 ```
