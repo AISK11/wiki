@@ -10,15 +10,6 @@
 root@artix# pacman -Syu --needed nginx-dinit php-fpm-dinit
 ```
 
-- Start and enable web server.
-
-```console
-root@artix# dinitctl start php-fpm
-root@artix# dinitctl start nginx
-root@artix# dinitctl enable php-fpm
-root@artix# dinitctl enable nginx
-```
-
 - Download DokuWiki at [https://download.dokuwiki.org/](https://download.dokuwiki.org/).
 
 - Set up DokuWiki files.
@@ -42,6 +33,15 @@ root@artix# chown -R http:http /usr/share/webapps/
 root@artix# rm -f /usr/share/webapps/dokuwiki/install.php
 root@artix# rm -f <DOKUWIKI.tgz>
 root@artix# rm -rf ~/wiki/
+```
+
+- Start and enable web server.
+
+```console
+root@artix# dinitctl start php-fpm
+root@artix# dinitctl start nginx
+root@artix# dinitctl enable php-fpm
+root@artix# dinitctl enable nginx
 ```
 
 - - -
