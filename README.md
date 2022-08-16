@@ -23,7 +23,7 @@ root@artix# tar -xvzf <DOKUWIKI.tgz> -C /usr/share/webapps/
 ```console
 root@artix# git clone https://github.com/aisk11/wiki ~/wiki/
 root@artix# rsync -av ~/wiki/server/nginx/ /etc/nginx/
-root@artix# rsync -av --delete ~/wiki/web/ /usr/share/webapps/
+root@artix# rsync -av --delete ~/wiki/web/ /usr/share/webapps/dokuwiki/
 root@artix# chown -R http:http /usr/share/webapps/
 ```
 
