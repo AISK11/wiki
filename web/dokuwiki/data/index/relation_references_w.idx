@@ -10,3 +10,5 @@ admin_localhost
 users:aisk
 users:admin
 users:admins:admin
+tools:git
+artix
