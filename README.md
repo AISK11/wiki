@@ -13,22 +13,19 @@ root@artix# pacman -Syu --needed nginx-dinit php-fpm-dinit
 - Start and enable web server.
 
 ```console
-root@artix# dinitctl enable php-fpm
-root@artix# dinitctl enable nginx
 root@artix# dinitctl start php-fpm
 root@artix# dinitctl start nginx
+root@artix# dinitctl enable php-fpm
+root@artix# dinitctl enable nginx
 ```
 
+- Download DokuWiki at [https://download.dokuwiki.org/](https://download.dokuwiki.org/).
+
 - Set up DokuWiki files.
-
-* Download DokuWiki at [https://download.dokuwiki.org/](https://download.dokuwiki.org/).
-
-* Set up DokuWiki files.
 
 ```console
 root@artix# tar -xvzf <DOKUWIKI.tgz>
 root@artix# mv <DOKUWIKI>/ /usr/share/webapps/
-root@artix# chown -R http:http /usr/share/webapps/
 ```
 
 - Set up (this) wiki repository.
@@ -36,10 +33,8 @@ root@artix# chown -R http:http /usr/share/webapps/
 ```console
 root@artix# git clone https://github.com/aisk11/wiki ~/wiki/
 root@artix# rsync -av ~/wiki/server/nginx/ /etc/nginx/
-# root@artix# rsync -av --delete ~/wiki/web/conf/ /etc/webapps/dokuwiki/
-# root@artix# rsync -av --delete ~/wiki/web/data/ /var/lib/dokuwiki/data/
-# 
-#root@artix# chown -R http:http /usr/share/webapps/dokuwiki /var/lib/dokuwiki /etc/webapps/dokuwiki
+# root@artix# rsync -av --delete ? ?
+root@artix# chown -R http:http /usr/share/webapps/
 ```
 
 - If this is fresh DokuWiki installation, configure DokuWiki at [http://localhost/install.php](http://localhost/install.php).
