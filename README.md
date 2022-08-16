@@ -48,7 +48,7 @@ root@artix# dinitctl enable nginx
 # Backup and Restore
 - - -
 
-- Backup personal DokuWiki files.
+- Backup personal DokuWiki files **(note that there is no '/' after ***dokuwiki*** dir)**.
 
 ```console
 root@artix# rsync -av --delete /usr/share/webapps/dokuwiki <BACKUP-DIR>/
