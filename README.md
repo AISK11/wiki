@@ -24,8 +24,7 @@ root@artix# dinitctl enable nginx
 - Set up DokuWiki files.
 
 ```console
-root@artix# tar -xvzf <DOKUWIKI.tgz>
-root@artix# mv <DOKUWIKI>/ /usr/share/webapps/
+root@artix# tar -xvzf <DOKUWIKI.tgz> -C /usr/share/webapps/
 ```
 
 - Set up (this) wiki repository.
@@ -33,11 +32,9 @@ root@artix# mv <DOKUWIKI>/ /usr/share/webapps/
 ```console
 root@artix# git clone https://github.com/aisk11/wiki ~/wiki/
 root@artix# rsync -av ~/wiki/server/nginx/ /etc/nginx/
-# root@artix# rsync -av --delete ? ?
+root@artix# rsync -av --delete ~/wiki/web/ /usr/share/webapps/
 root@artix# chown -R http:http /usr/share/webapps/
 ```
-
-- If this is fresh DokuWiki installation, configure DokuWiki at [http://localhost/install.php](http://localhost/install.php).
 
 - Cleanup.
 
@@ -54,15 +51,12 @@ root@artix# rm -rf ~/wiki/
 - Backup personal DokuWiki files.
 
 ```console
-# root@artix# rsync -av --delete /etc/webapps/dokuwiki/ <BACKUP-DIR>/conf/
-# root@artix# rsync -av --delete /var/lib/dokuwiki/ <BACKUP-DIR>/data/
-# root@artix# rsync -av --delete /usr/share/webapps/dokuwiki/ <BACKUP-DIR>/app/
+root@artix# rsync -av --delete /usr/share/webapps/dokuwiki <BACKUP-DIR>/
 ```
 
-- Load personal DokuWiki files.
+- Restore personal DokuWiki files.
 
 ```console
-# root@artix# rsync -av --delete <BACKUP-DIR>/conf/ /etc/webapps/dokuwiki/
-# root@artix# rsync -av --delete <BACKUP-DIR>/data/ /var/lib/dokuwiki/data/
-# root@artix# rsync -av --delete <BACKUP-DIR>/app/ /usr/share/webapps/dokuwiki/
+root@artix# rsync -av --delete <BACKUP-DIR>/ /usr/share/webapps/
+root@artix# chown -R http:http /usr/share/webapps/dokuwiki/
 ```
