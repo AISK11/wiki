@@ -14,5 +14,5 @@
 
 ===== Security =====
 
-  * CVE Details - https://www.cvedetails.com/vulnerability-list.php?vendor_id=97
-  * OpenCVE - https://www.opencve.io/cve?vendor=openbsd&product=openbsd
+  * CVEs (CVE Details) - https://www.cvedetails.com/vulnerability-list.php?vendor_id=97
+  * CVEs (OpenCVE) - https://www.opencve.io/cve?vendor=openbsd&product=openbsd

@@ -12,17 +12,13 @@
 1660674311	127.0.0.1	E	sidebar	admin			0
 1660674352	127.0.0.1	E	sidebar	admin			33
 1660674389	127.0.0.1	C	users:admins:admin	admin	created		5
-1659268818	127.0.0.1	C	playground:playground		created - external edit		25
 1660674404	127.0.0.1	D	playground:playground	admin	removed		-25
 1660674448	127.0.0.1	D	users:admins:admin	admin	removed		-5
 1660674458	127.0.0.1	D	users:aisk	admin	removed		-19
 1660674511	127.0.0.1	D	start	admin	removed		-120
-1659268817	127.0.0.1	C	wiki:dokuwiki		created - external edit		2729
 1660676277	127.0.0.1	D	wiki:dokuwiki	admin	removed		-2729
 1660676308	127.0.0.1	E	sidebar	admin			-85
-1659268817	127.0.0.1	C	wiki:syntax		created - external edit		22666
 1660676318	127.0.0.1	D	wiki:syntax	admin	removed		-22666
-1659268817	127.0.0.1	C	wiki:welcome		created - external edit		1705
 1660676327	127.0.0.1	D	wiki:welcome	admin	removed		-1705
 1660676353	127.0.0.1	C	main	admin	created		4
 1660676439	127.0.0.1	C	wiki_main	admin	created		5
@@ -33,6 +29,7 @@
 1660680091	127.0.0.1	C	sidebar	aisk	created		7
 1660681675	127.0.0.1	E	main	aisk			0
 1660682170	127.0.0.1	E	sidebar		external edit		0
+1660682170	127.0.0.1	E	main		external edit		0
 1660687334	127.0.0.1	E	sidebar	admin			15
 1660687413	127.0.0.1	E	sidebar	admin			17
 1660687446	127.0.0.1	E	sidebar	admin			5
@@ -43,7 +40,6 @@
 1660687543	127.0.0.1	E	sidebar	admin			-3
 1660687638	127.0.0.1	E	sidebar	admin			0
 1660688311	127.0.0.1	E	sidebar	admin			74
-1660682170	127.0.0.1	E	main		external edit		0
 1660688679	127.0.0.1	E	main	admin			15
 1660688882	127.0.0.1	E	main	admin			27
 1660688975	127.0.0.1	E	main	admin			-13
@@ -147,3 +143,40 @@
 1660758992	127.0.0.1	E	os:openbsd:resources	admin			28
 1660759152	127.0.0.1	E	os:openbsd:resources	admin			69
 1660759160	127.0.0.1	e	os:openbsd:resources	admin			-1
+1660763288	127.0.0.1	E	os:openbsd:sidebar	admin			5
+1660765965	127.0.0.1	E	os:openbsd:download	admin			178
+1660766075	127.0.0.1	E	os:openbsd:download	admin			34
+1660766421	127.0.0.1	E	os:openbsd:download	admin			4
+1660767112	127.0.0.1	E	os:openbsd:download	admin			-6
+1660768448	127.0.0.1	E	os:openbsd:download	admin			24
+1660768692	127.0.0.1	E	os:openbsd:download	admin			-7
+1660768969	127.0.0.1	E	os:openbsd:download	admin			-1
+1660770287	127.0.0.1	E	os:openbsd:download	admin			249
+1660770420	127.0.0.1	E	os:openbsd:download	admin			20
+1660770619	127.0.0.1	E	os:openbsd:download	admin			47
+1660770637	127.0.0.1	E	os:openbsd:download	admin			-8
+1660770778	127.0.0.1	E	os:openbsd:download	admin			21
+1660770840	127.0.0.1	E	os:openbsd:download	admin			-8
+1660770882	127.0.0.1	E	os:openbsd:download	admin			-7
+1660771529	127.0.0.1	E	os:openbsd:download	admin			54
+1660771650	127.0.0.1	E	os:openbsd:download	admin			10
+1660771676	127.0.0.1	E	os:openbsd:download	admin			-25
+1660771718	127.0.0.1	E	os:openbsd:download	admin			-12
+1660771736	127.0.0.1	E	os:openbsd:download	admin			4
+1660771764	127.0.0.1	E	os:openbsd:download	admin			3
+1660771835	127.0.0.1	E	os:openbsd:download	admin			44
+1660772037	127.0.0.1	E	os:openbsd:download	admin			20
+1660772123	127.0.0.1	E	os:openbsd:download	admin			-20
+1660772475	127.0.0.1	E	os:openbsd:download	admin			0
+1660772598	127.0.0.1	E	os:openbsd:download	admin			12
+1660772630	127.0.0.1	E	os:openbsd:download	admin			4
+1660772833	127.0.0.1	E	os:openbsd:download	admin			-3
+1660772947	127.0.0.1	e	os:openbsd:download	admin			12
+1660774047	127.0.0.1	E	os:openbsd:download	admin			-1
+1660774736	127.0.0.1	E	os:openbsd:download	admin			127
+1660774887	127.0.0.1	E	os:openbsd:download	admin			0
+1660774953	127.0.0.1	E	os:openbsd:download	admin			2
+1660775473	127.0.0.1	E	os:openbsd:download	admin			36
+1660775520	127.0.0.1	E	os:openbsd:download	admin			-79
+1660775786	127.0.0.1	E	os:openbsd:resources	admin	[Security] 		36
+1660775834	127.0.0.1	E	os:openbsd:resources	admin	[Security] 		-22

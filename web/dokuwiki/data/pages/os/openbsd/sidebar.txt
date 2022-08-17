@@ -5,7 +5,7 @@
   * [[os:openbsd:index|Index]]
   * [[os:openbsd:resources|Resources]]
 
-**Install**
+**Installation**
   * [[os:openbsd:download|Download]]
 
 ----

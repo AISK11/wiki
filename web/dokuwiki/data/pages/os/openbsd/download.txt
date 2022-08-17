@@ -1,1 +1,33 @@
 ====== Download ======
+
+1. Find the available FTP mirror:
+
+  * https://www.openbsd.org/ftp.html#ftp
+
+2. Connect passively and anonymously to the selected FTP mirror host:
+
+<cli>
+$ ftp -p 'anonymous@<HOST>' 21
+> anonymous@domain.com 
+</cli>
+
+3. Download files((https://www.openbsd.org/faq//faq4.html#FilesNeeded)) into the correct directory and close the connection:
+
+<cli>
+ftp> !
+$ mkdir -p ~/openbsd/
+$ exit
+ftp> lcd ~/openbsd/
+ftp> cd /pub/OpenBSD/<VERSION>/
+ftp> get openbsd-<VERSION>-base.pub
+ftp> cd /pub/OpenBSD/<VERSION>/<ARCHITECTURE>/
+ftp> get SHA256.sig
+ftp> get install<VERSION>.iso
+ftp> quit
+</cli>
+
+4. Verify downloaded files:
+
+<cli>
+$ signify -C -p ~/openbsd/openbsd-<VERSION>-base.pub -x ~/openbsd/SHA256.sig install<VERSION>.iso
+</cli>

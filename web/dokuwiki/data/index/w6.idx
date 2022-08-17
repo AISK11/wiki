@@ -154,3 +154,7 @@ vendor
 action
 mirror
 cvsweb
+domain
+spline
+sha256
+verify
