@@ -1,0 +1,18 @@
+====== Resources ======
+
+===== General =====
+
+  * Official website - https://www.openbsd.org
+  * Handbook - https://www.openbsdhandbook.com
+  * Fandom - https://openbsd.fandom.com/wiki/Special:AllPages
+
+===== Development =====
+
+  * News and changelogs - http://undeadly.org
+  * Source code (GitHub mirror) - https://github.com/openbsd
+  * Source code (CVSWeb mirror) - https://cvsweb.openbsd.org
+
+===== Security =====
+
+  * CVE Details - https://www.cvedetails.com/vulnerability-list.php?vendor_id=97
+  * OpenCVE - https://www.opencve.io/cve?vendor=openbsd&product=openbsd

@@ -1,0 +1,12 @@
+====== OpenBSD ======
+----
+
+**About**
+  * [[os:openbsd:index|Index]]
+  * [[os:openbsd:resources|Resources]]
+
+**Install**
+  * [[os:openbsd:download|Download]]
+
+----
+

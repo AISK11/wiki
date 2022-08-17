@@ -6,5 +6,4 @@
  * NOTE: Plugins will not be added to this file unless there is a need to override a default setting. Plugins are
  *       enabled by default.
  */
-$plugins['dw2pdf'] = 0;
-$plugins['folded'] = 0;
+$plugins['comment'] = 0;

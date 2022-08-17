@@ -48,3 +48,102 @@
 1660688882	127.0.0.1	E	main	admin			27
 1660688975	127.0.0.1	E	main	admin			-13
 1660689212	127.0.0.1	E	sidebar	admin			-111
+1660720507	127.0.0.1	E	sidebar	admin			77
+1660720532	127.0.0.1	E	sidebar	admin			18
+1660720565	127.0.0.1	E	sidebar	admin			-40
+1660721156	127.0.0.1	E	sidebar	admin			41
+1660721174	127.0.0.1	E	sidebar	admin			-22
+1660721357	127.0.0.1	E	sidebar	admin			29
+1660721927	127.0.0.1	E	sidebar	admin			90
+1660722810	127.0.0.1	E	sidebar	admin			35
+1660722884	127.0.0.1	E	sidebar	admin			48
+1660722920	127.0.0.1	E	sidebar	admin			6
+1660723066	127.0.0.1	E	sidebar	admin			64
+1660731819	127.0.0.1	E	sidebar	admin			-89
+1660731841	127.0.0.1	C	os:openbsd:main	admin	created		22
+1660731871	127.0.0.1	E	os:openbsd:main	admin			14
+1660731887	127.0.0.1	C	os:openbsd:sidebar	admin	created		15
+1660731964	127.0.0.1	E	os:openbsd:sidebar	admin			254
+1660732110	127.0.0.1	E	os:openbsd:sidebar	admin			-209
+1660732117	127.0.0.1	E	os:openbsd:sidebar	admin			2
+1660733416	127.0.0.1	E	sidebar	admin			4
+1660733445	127.0.0.1	D	os:openbsd:main	admin	removed		-36
+1660733458	127.0.0.1	C	os:openbsd:download	admin	created		37
+1660733481	127.0.0.1	E	os:openbsd:sidebar	admin			21
+1660733748	127.0.0.1	E	os:openbsd:download	admin			-14
+1660733788	127.0.0.1	E	os:openbsd:sidebar	admin			26
+1660733812	127.0.0.1	E	os:openbsd:sidebar	admin	[OpenBSD] 		-3
+1660733856	127.0.0.1	E	sidebar	admin			-4
+1660733897	127.0.0.1	D	main	admin	removed		-33
+1660733905	127.0.0.1	C	index	admin	created		34
+1660733929	127.0.0.1	E	os:openbsd:sidebar	admin			2
+1660733944	127.0.0.1	C	os:openbsd:index	admin	created		22
+1660733988	127.0.0.1	E	sidebar	admin			1
+1660734042	127.0.0.1	E	os:openbsd:index	admin			23
+1660734257	127.0.0.1	E	os:openbsd:index	admin			48
+1660734547	127.0.0.1	E	os:openbsd:index	admin			38
+1660734668	127.0.0.1	E	os:openbsd:index	admin			-37
+1660734723	127.0.0.1	E	os:openbsd:index	admin			48
+1660734772	127.0.0.1	E	sidebar	admin			-134
+1660734882	127.0.0.1	E	os:openbsd:index	admin			6
+1660735150	127.0.0.1	E	os:openbsd:index	admin			54
+1660735223	127.0.0.1	E	os:openbsd:index	admin			-1
+1660746575	127.0.0.1	E	os:openbsd:index	admin			66
+1660747149	127.0.0.1	E	os:openbsd:index	admin			162
+1660747187	127.0.0.1	E	os:openbsd:index	admin			0
+1660749310	127.0.0.1	E	sidebar	admin			1
+1660749321	127.0.0.1	E	sidebar	admin			-1
+1660749334	127.0.0.1	E	sidebar	admin			-50
+1660749346	127.0.0.1	E	index	admin			-15
+1660749518	127.0.0.1	E	os:openbsd:index	admin			1
+1660749703	127.0.0.1	E	os:openbsd:index	admin			0
+1660749820	127.0.0.1	E	os:openbsd:index	admin			3
+1660749980	127.0.0.1	C	os:openbsd:resources	admin	created		412
+1660750006	127.0.0.1	E	os:openbsd:sidebar	admin			37
+1660750018	127.0.0.1	E	os:openbsd:index	admin			-408
+1660750080	127.0.0.1	E	os:openbsd:sidebar	admin			22
+1660750114	127.0.0.1	E	sidebar	admin			2
+1660750133	127.0.0.1	D	os:openbsd:index	admin	removed		-25
+1660750158	127.0.0.1	E	os:openbsd:sidebar	admin			2
+1660750181	127.0.0.1	E	os:openbsd:sidebar	admin			7
+1660750190	127.0.0.1	E	os:openbsd:sidebar	admin			-6
+1660750383	127.0.0.1	E	index	admin			67
+1660750391	127.0.0.1	D	index	admin	removed		-86
+1660750428	127.0.0.1	C	index	admin	created		86
+1660750433	127.0.0.1	D	sidebar	admin	removed		-86
+1660750476	127.0.0.1	C	os:openbsd:index	admin	created		170
+1660750486	127.0.0.1	D	os:openbsd:sidebar	admin	removed		-170
+1660750502	127.0.0.1	E	index	admin			-2
+1660750511	127.0.0.1	E	os:openbsd:index	admin			-2
+1660750560	127.0.0.1	E	index	admin			-10
+1660750589	127.0.0.1	E	os:openbsd:index	admin			-2
+1660750639	127.0.0.1	E	os:openbsd:resources	admin			30
+1660750661	127.0.0.1	E	os:openbsd:resources	admin			-3
+1660750722	127.0.0.1	E	os:openbsd:resources	admin			-24
+1660757319	127.0.0.1	C	sidebar	admin	created		74
+1660757331	127.0.0.1	E	index	admin			-49
+1660757385	127.0.0.1	E	sidebar	admin			22
+1660757414	127.0.0.1	E	sidebar	admin			6
+1660757422	127.0.0.1	E	sidebar	admin			2
+1660757440	127.0.0.1	E	sidebar	admin			-17
+1660757550	127.0.0.1	E	os:openbsd:index	admin			-139
+1660757578	127.0.0.1	E	sidebar	admin			75
+1660757601	127.0.0.1	R	sidebar	admin	old revision restored (2022-08-17 17:30)	1660757440	-75
+1660757644	127.0.0.1	C	os:openbsd:sidebar	admin	created		87
+1660757757	127.0.0.1	E	os:openbsd:sidebar	admin			78
+1660757961	127.0.0.1	E	os:openbsd:resources	admin			-6
+1660757969	127.0.0.1	E	os:openbsd:index	admin			-5
+1660757979	127.0.0.1	E	index	admin			-7
+1660758178	127.0.0.1	E	sidebar	admin			0
+1660758193	127.0.0.1	E	os:openbsd:sidebar	admin			0
+1660758219	127.0.0.1	E	sidebar	admin			0
+1660758237	127.0.0.1	E	os:openbsd:sidebar	admin			0
+1660758274	127.0.0.1	E	os:openbsd:sidebar	admin			2
+1660758618	127.0.0.1	E	os:openbsd:resources	admin			85
+1660758659	127.0.0.1	E	os:openbsd:resources	admin			-13
+1660758671	127.0.0.1	E	os:openbsd:resources	admin			-3
+1660758704	127.0.0.1	E	os:openbsd:resources	admin			-3
+1660758733	127.0.0.1	E	os:openbsd:sidebar	admin			-2
+1660758992	127.0.0.1	E	os:openbsd:resources	admin			28
+1660759152	127.0.0.1	E	os:openbsd:resources	admin			69
+1660759160	127.0.0.1	e	os:openbsd:resources	admin			-1

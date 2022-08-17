@@ -7,3 +7,4 @@
  *       enabled by default.
  */
 $plugins['dw2pdf'] = 0;
+$plugins['folded'] = 0;

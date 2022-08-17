@@ -9,3 +9,9 @@ users:admins:admin
 main
 wiki_main
 wiki:sidebar
+os:openbsd:main
+os:openbsd:sidebar
+os:openbsd:download
+index
+os:openbsd:index
+os:openbsd:resources

@@ -12,3 +12,15 @@ users:admin
 users:admins:admin
 tools:git
 artix
+tools:dev:git
+tools:sys:rsync
+os:bsd:openbsd
+os:openbsd
+os:windows
+os:debian
+os:artix
+os:openbsd:main
+os:openbsd:download
+os:openbsd:index
+os:openbsd:resources
+os:openbsd:sidebar

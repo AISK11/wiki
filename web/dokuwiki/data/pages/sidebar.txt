@@ -1,3 +1,8 @@
+====== Wiki ======
 ----
 
+**Operating Systems**
+  * [[os:openbsd:index|OpenBSD]]
+
 ----
+
