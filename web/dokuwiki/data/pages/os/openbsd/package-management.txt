@@ -1,0 +1,26 @@
+====== Package Management ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Configure Mirrors =====
+
+1. List of all available mirrors:
+
+  * https://www.openbsd.org/ftp.html
+
+2. Empty package related environment variables:
+
+<cli>
+$ TRUSTED_PKG_PATH=''
+$ PKG_PATH=''
+</cli>
+
+3. Set up mirror configuration file:
+
+<file php /etc/installurl>
+# adsda
+https://
+ls -la
+</file>

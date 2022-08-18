@@ -1,0 +1,40 @@
+
+<h1 class="sectionedit1" id="package_management">Package Management</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Management&quot;,&quot;hid&quot;:&quot;package_management&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-128&quot;} -->
+<h2 class="sectionedit4" id="configure_mirrors">Configure Mirrors</h2>
+<div class="level2">
+
+<p>
+1. List of all available mirrors:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.openbsd.org/ftp.html" class="urlextern" title="https://www.openbsd.org/ftp.html">https://www.openbsd.org/ftp.html</a></div>
+</li>
+</ul>
+
+<p>
+2. Empty package related environment variables:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">TRUSTED_PKG_PATH=&#039;&#039;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">PKG_PATH=&#039;&#039;</span></pre>
+
+<p>
+3. Set up mirror configuration file:
+</p>
+<dl class="file">
+<dt><a href="http://localhost/_export/code/os/openbsd/package-management?codeblock=0" title="Download Snippet" class="mediafile mf_">/etc/installurl</a></dt>
+<dd><pre class="code file php"><span class="co2"># adsda
+</span>https<span class="sy0">:</span><span class="co1">//</span>
+ls <span class="sy0">-</span>la</pre>
+</dd></dl>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configure Mirrors&quot;,&quot;hid&quot;:&quot;configure_mirrors&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;129-&quot;} -->

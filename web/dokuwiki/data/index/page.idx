@@ -16,3 +16,5 @@ index
 os:openbsd:index
 os:openbsd:resources
 os:openbsd:pre-installation
+os:openbsd:package-management
+templates

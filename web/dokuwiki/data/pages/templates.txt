@@ -1,0 +1,13 @@
+====== Templates ======
+
+- Work in progress page:
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+<code>
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+</code>

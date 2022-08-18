@@ -3,7 +3,7 @@
 <div class="level1">
 
 <p>
-1. Find the available <abbr title="File Transfer Protocol">FTP</abbr> mirror:
+1. List of all available <abbr title="File Transfer Protocol">FTP</abbr> mirrors:
 </p>
 <ul>
 <li class="level1"><div class="li"> <a href="https://www.openbsd.org/ftp.html#ftp" class="urlextern" title="https://www.openbsd.org/ftp.html#ftp">https://www.openbsd.org/ftp.html#ftp</a></div>
@@ -14,11 +14,12 @@
 2. Connect passively and anonymously to the selected <abbr title="File Transfer Protocol">FTP</abbr> mirror host:
 </p>
 
-<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">ftp -p &#039;anonymous@&lt;HOST&gt;&#039; 21</span>
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">ftp -p &lt;HOST&gt; 21</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">anonymous</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">anonymous@domain.com </span></pre>
 
 <p>
-3. Download files<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> into the correct directory and close the connection:
+3. Download files into the correct directory and close the connection:
 </p>
 
 <pre class='cli  '><span class="cli_prompt">ftp&gt; </span><span class="cli_command">!</span>
@@ -27,7 +28,7 @@
 <span class="cli_prompt">ftp&gt; </span><span class="cli_command">lcd ~/openbsd/</span>
 <span class="cli_prompt">ftp&gt; </span><span class="cli_command">cd /pub/OpenBSD/&lt;VERSION&gt;/</span>
 <span class="cli_prompt">ftp&gt; </span><span class="cli_command">get openbsd-&lt;VERSION&gt;-base.pub</span>
-<span class="cli_prompt">ftp&gt; </span><span class="cli_command">cd /pub/OpenBSD/&lt;VERSION&gt;/&lt;ARCHITECTURE&gt;/</span>
+<span class="cli_prompt">ftp&gt; </span><span class="cli_command">cd &lt;ARCHITECTURE&gt;/</span>
 <span class="cli_prompt">ftp&gt; </span><span class="cli_command">get SHA256.sig</span>
 <span class="cli_prompt">ftp&gt; </span><span class="cli_command">get install&lt;VERSION&gt;.iso</span>
 <span class="cli_prompt">ftp&gt; </span><span class="cli_command">quit</span></pre>
@@ -36,10 +37,7 @@
 4. Verify downloaded files:
 </p>
 
-<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">signify -C -p ~/openbsd/openbsd-&lt;VERSION&gt;-base.pub -x ~/openbsd/SHA256.sig install&lt;VERSION&gt;.iso</span></pre>
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">cd ~/openbsd/</span>
+<span class="cli_prompt">$ </span><span class="cli_command">signify -C -p *\.pub -x *\.sig *\.iso</span></pre>
 
-</div>
-<div class="footnotes">
-<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
-<div class="content"><a href="https://www.openbsd.org/faq//faq4.html#FilesNeeded" class="urlextern" title="https://www.openbsd.org/faq//faq4.html#FilesNeeded">https://www.openbsd.org/faq//faq4.html#FilesNeeded</a></div></div>
 </div>

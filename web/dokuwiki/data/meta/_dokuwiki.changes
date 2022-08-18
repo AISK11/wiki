@@ -197,3 +197,25 @@
 1660826626	127.0.0.1	E	os:openbsd:pre-installation	admin			-1
 1660827174	127.0.0.1	E	os:openbsd:pre-installation	admin			175
 1660827352	127.0.0.1	E	os:openbsd:pre-installation	admin			23
+1660829511	127.0.0.1	E	os:openbsd:download	admin			0
+1660831464	127.0.0.1	E	os:openbsd:sidebar	admin			86
+1660831493	127.0.0.1	C	os:openbsd:package-management	admin	created		34
+1660831519	127.0.0.1	E	os:openbsd:package-management	admin			94
+1660831594	127.0.0.1	C	templates	admin	created		160
+1660831606	127.0.0.1	E	templates	admin			-2
+1660831619	127.0.0.1	E	templates	admin			94
+1660831769	127.0.0.1	E	os:openbsd:download	admin			-3
+1660831803	127.0.0.1	E	os:openbsd:download	admin			54
+1660832116	127.0.0.1	E	os:openbsd:download	admin			-23
+1660832188	127.0.0.1	E	os:openbsd:download	admin			2
+1660832713	127.0.0.1	E	os:openbsd:download	admin			-42
+1660832764	127.0.0.1	E	os:openbsd:download	admin			-105
+1660832782	127.0.0.1	E	os:openbsd:download	admin			6
+1660832803	127.0.0.1	E	os:openbsd:download	admin			-6
+1660833353	127.0.0.1	E	os:openbsd:package-management	admin			94
+1660833367	127.0.0.1	E	os:openbsd:package-management	admin			0
+1660833393	127.0.0.1	E	os:openbsd:package-management	admin			8
+1660833418	127.0.0.1	E	os:openbsd:download	admin			4
+1660833683	127.0.0.1	E	os:openbsd:download	admin			-2
+1660834868	127.0.0.1	E	os:openbsd:package-management	admin			199
+1660835045	127.0.0.1	E	os:openbsd:package-management	admin	[Configure Mirrors] 		-1
