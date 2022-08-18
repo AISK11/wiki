@@ -219,3 +219,75 @@
 1660833683	127.0.0.1	E	os:openbsd:download	admin			-2
 1660834868	127.0.0.1	E	os:openbsd:package-management	admin			199
 1660835045	127.0.0.1	E	os:openbsd:package-management	admin	[Configure Mirrors] 		-1
+1660839330	127.0.0.1	E	sidebar	admin			84
+1660839565	127.0.0.1	E	sidebar	admin			54
+1660839588	127.0.0.1	C	web_server	admin	created		118
+1660839709	127.0.0.1	E	os:openbsd:sidebar	admin			0
+1660839719	127.0.0.1	D	os:openbsd:package-management	admin	removed		-428
+1660839724	127.0.0.1	C	os:openbsd:package_management	admin	created		428
+1660839751	127.0.0.1	E	sidebar	admin			5
+1660839756	127.0.0.1	E	sidebar	admin			1
+1660839807	127.0.0.1	D	web_server	admin	removed		-118
+1660839826	127.0.0.1	E	sidebar	admin			-61
+1660852527	127.0.0.1	E	sidebar	admin			73
+1660852609	127.0.0.1	C	open_source_software:dokuwiki	admin	created		46
+1660852745	127.0.0.1	E	open_source_software:dokuwiki	admin			22
+1660852870	127.0.0.1	D	open_source_software:dokuwiki	admin	removed		-68
+1660852883	127.0.0.1	E	sidebar	admin			-73
+1660853014	127.0.0.1	E	sidebar	admin			14
+1660853034	127.0.0.1	E	sidebar	admin			14
+1660853056	127.0.0.1	E	sidebar	admin			18
+1660853435	127.0.0.1	E	os:openbsd:package_management	admin			69
+1660853526	127.0.0.1	E	os:openbsd:package_management	admin			-10
+1660853681	127.0.0.1	E	os:openbsd:package_management	admin			24
+1660853692	127.0.0.1	E	os:openbsd:package_management	admin			-2
+1660853840	127.0.0.1	E	os:openbsd:package_management	admin			-99
+1660853931	127.0.0.1	E	os:openbsd:package_management	admin			2
+1660854504	127.0.0.1	E	os:openbsd:package_management	admin			0
+1660854591	127.0.0.1	E	os:openbsd:pre-installation	admin			56
+1660855537	127.0.0.1	E	os:openbsd:pre-installation	admin			97
+1660855624	127.0.0.1	E	os:openbsd:pre-installation	admin			1
+1660855710	127.0.0.1	E	os:openbsd:pre-installation	admin			42
+1660855895	127.0.0.1	E	os:openbsd:pre-installation	admin			30
+1660855943	127.0.0.1	E	os:openbsd:pre-installation	admin			4
+1660856016	127.0.0.1	E	os:openbsd:download	admin			-12
+1660856036	127.0.0.1	R	os:openbsd:download	admin	old revision restored (2022-08-18 14:41)	1660833683	12
+1660856114	127.0.0.1	E	os:openbsd:pre-installation	admin			-8
+1660856144	127.0.0.1	E	os:openbsd:pre-installation	admin			-13
+1660856288	127.0.0.1	E	os:openbsd:pre-installation	admin			24
+1660856321	127.0.0.1	E	os:openbsd:pre-installation	admin			11
+1660856451	127.0.0.1	E	os:openbsd:pre-installation	admin			70
+1660856477	127.0.0.1	e	os:openbsd:pre-installation	admin			15
+1660856530	127.0.0.1	E	os:openbsd:pre-installation	admin			7
+1660856582	127.0.0.1	E	os:openbsd:pre-installation	admin			81
+1660856831	127.0.0.1	E	os:openbsd:resources	admin			-8
+1660856880	127.0.0.1	E	os:openbsd:resources	admin			17
+1660857168	127.0.0.1	E	os:openbsd:resources	admin			108
+1660857373	127.0.0.1	E	os:openbsd:resources	admin			26
+1660857382	127.0.0.1	E	os:openbsd:resources	admin			1
+1660857459	127.0.0.1	E	os:openbsd:resources	admin			5
+1660857492	127.0.0.1	E	os:openbsd:resources	admin			-1
+1660857500	127.0.0.1	E	os:openbsd:resources	admin			2
+1660857528	127.0.0.1	E	os:openbsd:resources	admin			3
+1660857710	127.0.0.1	E	os:openbsd:resources	admin			86
+1660857718	127.0.0.1	E	os:openbsd:resources	admin			-1
+1660857908	127.0.0.1	E	os:openbsd:pre-installation	admin			-4
+1660857963	127.0.0.1	E	os:openbsd:pre-installation	admin			18
+1660858420	127.0.0.1	E	os:openbsd:pre-installation	admin			2
+1660858522	127.0.0.1	E	os:openbsd:pre-installation	admin			-2
+1660858658	127.0.0.1	E	os:openbsd:download	admin			-4
+1660858845	127.0.0.1	E	os:openbsd:pre-installation	admin			0
+1660859425	127.0.0.1	E	os:openbsd:pre-installation	admin			-6
+1660859592	127.0.0.1	E	sidebar	admin			-18
+1660859700	127.0.0.1	E	sidebar	admin			29
+1660859731	127.0.0.1	E	sidebar	admin			6
+1660859798	127.0.0.1	C	os:artix:index	admin	created		26
+1660859877	127.0.0.1	C	os:artix:sidebar	admin	created		225
+1660863742	127.0.0.1	E	os:openbsd:resources	admin			-729
+1660863773	127.0.0.1	R	os:openbsd:resources	admin	old revision restored (2022-08-18 21:21)	1660857718	729
+1660863781	127.0.0.1	C	os:artix:resources	admin	created		94
+1660863856	127.0.0.1	E	os:artix:resources	admin			41
+1660864020	127.0.0.1	E	os:artix:resources	admin			1
+1660865103	127.0.0.1	E	os:artix:sidebar	admin			43
+1660865190	127.0.0.1	C	os:artix:hardware_info	admin	created		28
+1660865692	127.0.0.1	E	sidebar	admin			0

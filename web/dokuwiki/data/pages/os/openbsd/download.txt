@@ -4,7 +4,7 @@
 
   * https://www.openbsd.org/ftp.html#ftp
 
-2. Connect passively and anonymously to the selected FTP mirror host:
+2. Connect passively and anonymously to selected FTP mirror host:
 
 <cli>
 $ ftp -p <HOST> 21

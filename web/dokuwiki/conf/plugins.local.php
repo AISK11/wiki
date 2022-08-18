@@ -6,4 +6,4 @@
  * NOTE: Plugins will not be added to this file unless there is a need to override a default setting. Plugins are
  *       enabled by default.
  */
-$plugins['comment'] = 0;
+$plugins['move'] = 0;

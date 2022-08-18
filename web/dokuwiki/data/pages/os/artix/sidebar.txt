@@ -1,0 +1,13 @@
+====== Artix Linux ======
+----
+
+**About**
+  * [[os:artix:index|Index]]
+  * [[os:artix:resources|Resources]]
+
+**Installation Guide**
+  * [[os:artix:hardware_info|Hardware Info]]
+  * [[os:artix:download|Download]]
+  * [[os:artix:pre-installation|Pre-Installation]]
+
+----

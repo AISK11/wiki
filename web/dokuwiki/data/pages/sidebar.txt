@@ -1,8 +1,19 @@
 ====== Wiki ======
+
 ----
 
+**Wiki**
+  * [[index|Index]]
+  * [[sidebar|Sidebar]]
+  * [[templates|Templates]]
+
+**Software**
+
 **Operating Systems**
+  * [[os:artix:index|Artix Linux]]
   * [[os:openbsd:index|OpenBSD]]
+
+**Hardware**
 
 ----
 

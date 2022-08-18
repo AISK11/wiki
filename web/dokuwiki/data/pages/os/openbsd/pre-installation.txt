@@ -1,5 +1,7 @@
 ====== Pre-Installation ======
 
+===== Flash USB =====
+
 <WRAP center round important 60%>
 This section is incomplete and needs further work!
 </WRAP>
@@ -24,3 +26,11 @@ cfdisk> Q
 <cli>
 # dd if=~/openbsd/install<VERSION>.iso of=<DEVICE> bs=1M
 </cli>
+
+===== USB Boot =====
+
+1. Reboot the system and during the POST phase press //BIOS key//((List of //POST keys// according to vendor: http://www.disk-image.com/faq-bootmenu.htm.)) to boot into UEFI.
+
+2. Disable //Secure Boot// and reboot.
+
+3. On the next POST phase, press //Boot Menu key//((List of //POST keys// according to vendor: http://www.disk-image.com/faq-bootmenu.htm.)) and select USB entry.

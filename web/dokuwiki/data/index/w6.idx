@@ -161,3 +161,8 @@ verify
 device
 cfdisk
 wipefs
+during
+reboot
+select
+search
+cvekey

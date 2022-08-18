@@ -5,3 +5,4 @@
 1660833393	127.0.0.1	E	os:openbsd:package-management	admin			8
 1660834868	127.0.0.1	E	os:openbsd:package-management	admin			199
 1660835045	127.0.0.1	E	os:openbsd:package-management	admin	[Configure Mirrors] 		-1
+1660839719	127.0.0.1	D	os:openbsd:package-management	admin	removed		-428

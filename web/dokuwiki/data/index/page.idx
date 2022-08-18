@@ -18,3 +18,10 @@ os:openbsd:resources
 os:openbsd:pre-installation
 os:openbsd:package-management
 templates
+web_server
+os:openbsd:package_management
+open_source_software:dokuwiki
+os:artix:index
+os:artix:sidebar
+os:artix:resources
+os:artix:hardware_info

@@ -10,7 +10,7 @@
   * [[os:openbsd:pre-installation|Pre-Installation]]
 
 **System Management**
-  * [[os:openbsd:package-management|Package Management]]
+  * [[os:openbsd:package_management|Package Management]]
 
 ----
 

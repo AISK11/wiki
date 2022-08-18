@@ -45,3 +45,6 @@
 1660832803	127.0.0.1	E	os:openbsd:download	admin			-6
 1660833418	127.0.0.1	E	os:openbsd:download	admin			4
 1660833683	127.0.0.1	E	os:openbsd:download	admin			-2
+1660856016	127.0.0.1	E	os:openbsd:download	admin			-12
+1660856036	127.0.0.1	R	os:openbsd:download	admin	old revision restored (2022-08-18 14:41)	1660833683	12
+1660858658	127.0.0.1	E	os:openbsd:download	admin			-4

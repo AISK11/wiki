@@ -1,0 +1,6 @@
+====== Resources ======
+
+===== General =====
+
+  * [[https://artixlinux.org|Official website]]
+  * [[https://armtixlinux.org|Arm64 port]]

@@ -2,17 +2,18 @@
 
 ===== General =====
 
-  * Official website - https://www.openbsd.org
-  * Handbook - https://www.openbsdhandbook.com
-  * Fandom - https://openbsd.fandom.com/wiki/Special:AllPages
+  * [[https://www.openbsd.org|Official website]]
+  * [[https://www.openbsdhandbook.com|Handbook]]
+  * [[https://openbsd.fandom.com/wiki/Special:AllPages|Fandom]]
 
 ===== Development =====
 
-  * News and changelogs - http://undeadly.org
-  * Source code (GitHub mirror) - https://github.com/openbsd
-  * Source code (CVSWeb mirror) - https://cvsweb.openbsd.org
+  * [[http://undeadly.org|News and changelogs]]
+  * [[https://github.com/openbsd|Source code (GitHub mirror)]]
+  * [[https://cvsweb.openbsd.org|Source code (CVSWeb mirror)]]
 
 ===== Security =====
-
-  * CVEs (CVE Details) - https://www.cvedetails.com/vulnerability-list.php?vendor_id=97
-  * CVEs (OpenCVE) - https://www.opencve.io/cve?vendor=openbsd&product=openbsd
+  * [[https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=OpenBSD|CVE database (Mitre)]]
+  * [[https://nvd.nist.gov/vuln/search/results?form_type=Basic&results_type=overview&query=OpenBSD|CVE database (NIST)]]
+  * [[https://www.cvedetails.com/vulnerability-list.php?vendor_id=97|CVE database (CVE Details)]]
+  * [[https://www.opencve.io/cve?vendor=openbsd&product=openbsd|CVE database (OpenCVE)]]
