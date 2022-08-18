@@ -1,0 +1,32 @@
+
+<h1 class="sectionedit1" id="pre-installation">Pre-Installation</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+<p>
+1. Make sure the USB filesystem is <strong>not</strong> mounted!!!
+</p>
+
+<p>
+2. Prepare the USB:
+</p>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;DEVICE&gt;</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">gpt</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">n</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command"> (Enter)</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">W</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">yes</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">Q</span>
+<span class="cli_prompt"># </span><span class="cli_command">wipefs -a </span></pre>
+
+<p>
+3. Flash disk image on the USB:
+</p>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=~/openbsd/install&lt;VERSION&gt;.iso of=&lt;DEVICE&gt; bs=1M</span></pre>
+
+</div>

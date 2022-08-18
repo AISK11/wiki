@@ -158,3 +158,6 @@ domain
 spline
 sha256
 verify
+device
+cfdisk
+wipefs

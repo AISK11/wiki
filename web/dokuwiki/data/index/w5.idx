@@ -156,3 +156,6 @@ rsync
 front
 mkdir
 close
+mount
+round
+enter

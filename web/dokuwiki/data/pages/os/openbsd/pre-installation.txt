@@ -1,0 +1,26 @@
+====== Pre-Installation ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+1. Make sure the USB filesystem is **not** mounted!!!
+
+2. Prepare the USB:
+
+<cli>
+# cfdisk -z <DEVICE>
+cfdisk> gpt
+cfdisk> n
+cfdisk>  (Enter)
+cfdisk> W
+cfdisk> yes
+cfdisk> Q
+# wipefs -a 
+</cli>
+
+3. Flash disk image on the USB:
+
+<cli>
+# dd if=~/openbsd/install<VERSION>.iso of=<DEVICE> bs=1M
+</cli>

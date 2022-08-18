@@ -15,3 +15,4 @@ os:openbsd:download
 index
 os:openbsd:index
 os:openbsd:resources
+os:openbsd:pre-installation

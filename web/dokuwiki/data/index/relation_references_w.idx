@@ -24,3 +24,4 @@ os:openbsd:download
 os:openbsd:index
 os:openbsd:resources
 os:openbsd:sidebar
+os:openbsd:pre-installation

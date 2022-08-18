@@ -117,3 +117,5 @@ lcd
 pub
 iso
 sig
+usb
+gpt
