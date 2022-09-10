@@ -90,10 +90,14 @@ $ nvim <FILE>
 $ git commit -m '<MESSAGE>'
 </cli>
 
-==== Collaboration ====
+==== Remote ====
 
-  * Push commits to git platform: <cli>
+  * Push commits to git platform:
+    * Normal push: <cli>
 $ git push
+</cli>
+    * Forcefully overwrite with local project: <cli>
+$ git push -f --set-upstream <REPOSITORY> main
 </cli>
   * Obtain commits from platform: <cli>
 $ git pull
