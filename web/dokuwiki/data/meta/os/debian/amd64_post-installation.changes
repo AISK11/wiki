@@ -1,0 +1,11 @@
+1662502137	127.0.0.1	C	os:debian:amd64_post-installation	admin	created		2902
+1662502186	127.0.0.1	E	os:debian:amd64_post-installation	admin			-13
+1662502240	127.0.0.1	E	os:debian:amd64_post-installation	admin	[Packages] 		-71
+1662502251	127.0.0.1	E	os:debian:amd64_post-installation	admin			1
+1662502267	127.0.0.1	E	os:debian:amd64_post-installation	admin			-94
+1662502314	127.0.0.1	E	os:debian:amd64_post-installation	admin			-13
+1662755640	127.0.0.1	E	os:debian:amd64_post-installation	admin			-138
+1662755725	127.0.0.1	E	os:debian:amd64_post-installation	admin			153
+1662756018	127.0.0.1	E	os:debian:amd64_post-installation	admin			0
+1662756037	127.0.0.1	E	os:debian:amd64_post-installation	admin	[Partitions & Filesystems] 		0
+1662756501	127.0.0.1	E	os:debian:amd64_post-installation	admin	[Partitions & Filesystems] 		4

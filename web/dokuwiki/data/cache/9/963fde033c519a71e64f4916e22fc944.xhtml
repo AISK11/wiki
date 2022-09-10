@@ -1,0 +1,55 @@
+
+<h1 class="sectionedit1" id="mac_address">MAC Address</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;MAC Address&quot;,&quot;hid&quot;:&quot;mac_address&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-27&quot;} -->
+<h2 class="sectionedit2" id="find">Find</h2>
+<div class="level2">
+<ol>
+<li class="level1 node"><div class="li"> Find MAC address:</div>
+<ul>
+<li class="level2"><div class="li"> via macchanger: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">macchanger -l | grep -i &#039;&lt;XX:XX:XX&gt;&#039;</span></pre><p></div>
+</li>
+<li class="level2 node"><div class="li"> via web:</div>
+<ul>
+<li class="level3"><div class="li"> <a href="https://macvendors.com" class="urlextern" title="https://macvendors.com">https://macvendors.com</a></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Find&quot;,&quot;hid&quot;:&quot;find&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;28-188&quot;} -->
+<h2 class="sectionedit3" id="set">Set</h2>
+<div class="level2">
+<ol>
+<li class="level1 node"><div class="li"> Set MAC address:</div>
+<ul>
+<li class="level2"><div class="li"> to any random vendor: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; down</span>
+<span class="cli_prompt"># </span><span class="cli_command">macchanger -A &lt;INTERFACE&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; up</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> to custom MAC address: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; down</span>
+<span class="cli_prompt"># </span><span class="cli_command">macchanger -m &lt;XX:XX:XX:XX:XX:XX&gt; &lt;INTERFACE&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; up</span></pre><p></div>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Set&quot;,&quot;hid&quot;:&quot;set&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;189-494&quot;} -->
+<h2 class="sectionedit4" id="reset">Reset</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Reset to permanent MAC address: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; down</span>
+<span class="cli_prompt"># </span><span class="cli_command">macchanger -p &lt;INTERFACE&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; up</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Reset&quot;,&quot;hid&quot;:&quot;reset&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;495-&quot;} -->

@@ -1,0 +1,5 @@
+## &lt;FILE-SYSTEM&gt; &lt;MOUNT-DIR&gt; &lt;TYPE&gt; &lt;OPTIONS&gt; &lt;DUMP&gt; &lt;PASS&gt;
+LABEL=ESP           /boot/efi vfat defaults,noatime,umask=0077 0 1
+LABEL=BOOT          /boot     ext2 defaults,noatime,umask=0077 0 2
+LABEL=LUKS-LVM-ROOT /         ext4 defaults,noatime 0 1
+LABEL=LUKS-LVM-SWAP none      swap sw               0 0

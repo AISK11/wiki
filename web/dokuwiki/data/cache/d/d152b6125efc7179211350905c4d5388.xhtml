@@ -1,0 +1,144 @@
+
+<h1 class="sectionedit1" id="post-installation">Post-Installation</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Post-Installation&quot;,&quot;hid&quot;:&quot;post-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-33&quot;} -->
+<h2 class="sectionedit2" id="package_manager">Package Manager</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> See <a href="http://localhost/os/debian/package_manager#apt_configuration" class="wikilink1" title="os:debian:package_manager" data-wiki-id="os:debian:package_manager">Apt Configuration</a>.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Manager&quot;,&quot;hid&quot;:&quot;package_manager&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;34-138&quot;} -->
+<h2 class="sectionedit3" id="packages">Packages</h2>
+<div class="level2">
+<ol>
+<li class="level1 node"><div class="li"> Install firmware (if required):</div>
+<ul>
+<li class="level2 node"><div class="li">  Install CPU microcode<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</div>
+<ul>
+<li class="level3"><div class="li"> Intel: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install intel-microcode</span></pre><p></div>
+</li>
+<li class="level3"><div class="li"> AMD: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install amd64-microcode</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level2 node"><div class="li"> Install wireless drivers:</div>
+<ul>
+<li class="level3"><div class="li"> Intel WiFi (iwlwifi)<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install firmware-iwlwifi</span></pre><p></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Install disk and filesystem tools: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install parted dosfstools</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install text editing: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install neovim git</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install package related tools: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install vrms</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install basic file and process management tools: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install file tree ncdu psmisc htop neofetch inxi</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install privilege tools: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install doas</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install shells: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install zsh zsh-autosuggestions zsh-syntax-highlighting</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install manuals: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install man-db manpages tldr</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install <a href="http://localhost/os/debian/network" class="wikilink1" title="os:debian:network" data-wiki-id="os:debian:network">required network tools</a>.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Packages&quot;,&quot;hid&quot;:&quot;packages&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;139-1174&quot;} -->
+<h2 class="sectionedit4" id="partitions_filesystems">Partitions &amp; Filesystems</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Name disk partitions: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 1 ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 2 BOOT</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 3 LUKS</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Name filesystems: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">fatlabel &lt;/dev/sdX1&gt; ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">e2label &lt;/dev/sdX2&gt; BOOT</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label LUKS &lt;/dev/sdX3&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label /dev/mapper/&lt;sdX3_crypt&gt; LUKS-ROOT</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create swap partition: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">truncate -s 0 /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">chattr +C /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">fallocate -l 4G /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">chmod 0600 /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkswap /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">swapon /swap</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Improve fstab: <dl class="file">
+<dt><a href="http://localhost/_export/code/os/debian/amd64_post-installation?codeblock=0" title="Download Snippet" class="mediafile mf_">/etc/fstab</a></dt>
+<dd><pre class="code file text">## &lt;FILE-SYSTEM&gt; &lt;MOUNT-DIR&gt; &lt;TYPE&gt; &lt;OPTIONS&gt; &lt;DUMP&gt; &lt;PASS&gt;
+LABEL=ESP           /boot/efi vfat  defaults,noatime,umask=0077 0 1
+LABEL=BOOT          /boot     ext4  rw,noatime                  0 2
+LABEL=LUKS-ROOT     /         btrfs defaults,noatime            0 0
+/swap               none      swap  defaults                    0 0</pre>
+</dd></dl>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Partitions &amp; Filesystems&quot;,&quot;hid&quot;:&quot;partitions_filesystems&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1175-2085&quot;} -->
+<h2 class="sectionedit5" id="kernel_modules">Kernel Modules</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Disable beeping (pcspkr): <dl class="file">
+<dt><a href="http://localhost/_export/code/os/debian/amd64_post-installation?codeblock=1" title="Download Snippet" class="mediafile mf_conf">/etc/modprobe.d/blacklist.conf</a></dt>
+<dd><pre class="code file text">blacklist pcspkr</pre>
+</dd></dl>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;2086-2212&quot;} -->
+<h2 class="sectionedit6" id="system_settings">System Settings</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> See <a href="http://localhost/it_areas/cybersecurity/anonymity/system" class="wikilink1" title="it_areas:cybersecurity:anonymity:system" data-wiki-id="it_areas:cybersecurity:anonymity:system">System Anonymity</a>.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Settings&quot;,&quot;hid&quot;:&quot;system_settings&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:6,&quot;range&quot;:&quot;2213-2312&quot;} -->
+<h2 class="sectionedit7" id="opendoas">Opendoas</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Configure opendoas rules: <dl class="file">
+<dt><a href="http://localhost/_export/code/os/debian/amd64_post-installation?codeblock=2" title="Download Snippet" class="mediafile mf_conf">/etc/doas.conf</a></dt>
+<dd><pre class="code file text">permit nopass :doas</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Change permissions for opendoas configuration file: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chmod 0600 /etc/doas.conf</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create administrative group: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">groupadd doas</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Add user to administrative groups: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">usermod -aG doas &lt;USER&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Opendoas&quot;,&quot;hid&quot;:&quot;opendoas&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:7,&quot;range&quot;:&quot;2313-2657&quot;} -->
+<h2 class="sectionedit8" id="finalizing">Finalizing</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Reboot to apply changes: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reboot</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finalizing&quot;,&quot;hid&quot;:&quot;finalizing&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:8,&quot;range&quot;:&quot;2658-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Debian microcode: <a href="https://wiki.debian.org/Microcode" class="urlextern" title="https://wiki.debian.org/Microcode">https://wiki.debian.org/Microcode</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Debian iwlwifi: <a href="https://wiki.debian.org/iwlwifi" class="urlextern" title="https://wiki.debian.org/iwlwifi">https://wiki.debian.org/iwlwifi</a>.</div></div>
+</div>

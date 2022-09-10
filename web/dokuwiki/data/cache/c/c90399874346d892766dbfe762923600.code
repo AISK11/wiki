@@ -1,0 +1,21 @@
+## Official Debian current stable release repositories.
+Package: *
+Pin: release n=&lt;RELEASE&gt;
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release n=&lt;RELEASE&gt;-security
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release n=&lt;RELEASE&gt;-updates
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release n=&lt;RELEASE&gt;-backports
+Pin-Priority: 1001
+&nbsp;
+## Official Kali repositories.
+Package: *
+Pin: release n=kali-rolling
+Pin-Priority: 1

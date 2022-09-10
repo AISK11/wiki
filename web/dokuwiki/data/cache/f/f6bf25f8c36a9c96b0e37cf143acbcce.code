@@ -1,0 +1,6 @@
+ACTIVE_CONSOLES=&quot;/dev/tty[1-6]&quot;
+CHARMAP=&quot;UTF-8&quot;
+CODESET=&quot;Lat15&quot;
+FONTFACE=&quot;Fixed&quot;
+FONTSIZE=&quot;8x16&quot;
+VIDEOMODE=

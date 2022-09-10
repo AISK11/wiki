@@ -1,0 +1,60 @@
+1662406611	127.0.0.1	C	os:debian:amd64:post-installation	admin	created		36
+1662406710	127.0.0.1	E	os:debian:amd64:post-installation	admin			126
+1662406717	127.0.0.1	E	os:debian:amd64:post-installation	admin			1
+1662408680	127.0.0.1	E	os:debian:amd64:post-installation	admin			30
+1662487853	127.0.0.1	E	os:debian:amd64:post-installation	admin			253
+1662488332	127.0.0.1	E	os:debian:amd64:post-installation	admin			268
+1662488346	127.0.0.1	E	os:debian:amd64:post-installation	admin			1
+1662488413	127.0.0.1	E	os:debian:amd64:post-installation	admin			45
+1662489201	127.0.0.1	E	os:debian:amd64:post-installation	admin			674
+1662489256	127.0.0.1	E	os:debian:amd64:post-installation	admin			-212
+1662489533	127.0.0.1	E	os:debian:amd64:post-installation	admin			84
+1662489591	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Configure Partitions And Filesystems] 		-3
+1662489802	127.0.0.1	E	os:debian:amd64:post-installation	admin			-10
+1662490017	127.0.0.1	E	os:debian:amd64:post-installation	admin			-1
+1662490105	127.0.0.1	E	os:debian:amd64:post-installation	admin			-80
+1662490213	127.0.0.1	E	os:debian:amd64:post-installation	admin			-2
+1662490270	127.0.0.1	E	os:debian:amd64:post-installation	admin			18
+1662490328	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
+1662490494	127.0.0.1	E	os:debian:amd64:post-installation	admin			-88
+1662490559	127.0.0.1	E	os:debian:amd64:post-installation	admin			22
+1662490998	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
+1662491089	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
+1662491415	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
+1662491480	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
+1662491738	127.0.0.1	E	os:debian:amd64:post-installation	admin			-2
+1662492105	127.0.0.1	E	os:debian:amd64:post-installation	admin			161
+1662492419	127.0.0.1	E	os:debian:amd64:post-installation	admin			77
+1662492944	127.0.0.1	E	os:debian:amd64:post-installation	admin			107
+1662493109	127.0.0.1	E	os:debian:amd64:post-installation	admin			125
+1662493247	127.0.0.1	E	os:debian:amd64:post-installation	admin			84
+1662493339	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
+1662493387	127.0.0.1	E	os:debian:amd64:post-installation	admin			1
+1662493562	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Console] 		-158
+1662493719	127.0.0.1	E	os:debian:amd64:post-installation	admin			-1
+1662493897	127.0.0.1	E	os:debian:amd64:post-installation	admin			32
+1662494166	127.0.0.1	E	os:debian:amd64:post-installation	admin			1760
+1662494374	127.0.0.1	E	os:debian:amd64:post-installation	admin			-1638
+1662494394	127.0.0.1	E	os:debian:amd64:post-installation	admin			2
+1662494409	127.0.0.1	E	os:debian:amd64:post-installation	admin			1
+1662495914	127.0.0.1	E	os:debian:amd64:post-installation	admin			46
+1662495924	127.0.0.1	E	os:debian:amd64:post-installation	admin			7
+1662496003	127.0.0.1	E	os:debian:amd64:post-installation	admin			25
+1662496460	127.0.0.1	E	os:debian:amd64:post-installation	admin			428
+1662496567	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Packages] 		-4
+1662496751	127.0.0.1	E	os:debian:amd64:post-installation	admin			-68
+1662496774	127.0.0.1	E	os:debian:amd64:post-installation	admin			-28
+1662496885	127.0.0.1	E	os:debian:amd64:post-installation	admin			-170
+1662497600	127.0.0.1	E	os:debian:amd64:post-installation	admin			80
+1662497615	127.0.0.1	R	os:debian:amd64:post-installation	admin	old revision restored (2022-09-06 20:41)	1662496885	-80
+1662497741	127.0.0.1	E	os:debian:amd64:post-installation	admin			4
+1662497755	127.0.0.1	E	os:debian:amd64:post-installation	admin			-1
+1662498012	127.0.0.1	E	os:debian:amd64:post-installation	admin			194
+1662498395	127.0.0.1	E	os:debian:amd64:post-installation	admin			189
+1662498427	127.0.0.1	E	os:debian:amd64:post-installation	admin			16
+1662498722	127.0.0.1	E	os:debian:amd64:post-installation	admin			170
+1662499221	127.0.0.1	E	os:debian:amd64:post-installation	admin			172
+1662499238	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Packages] 		-42
+1662499646	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Packages] 		110
+1662500058	127.0.0.1	E	os:debian:amd64:post-installation	admin			141
+1662502138	127.0.0.1	D	os:debian:amd64:post-installation	admin	removed		-2902

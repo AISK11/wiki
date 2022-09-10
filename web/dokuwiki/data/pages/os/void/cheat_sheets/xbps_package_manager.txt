@@ -1,0 +1,67 @@
+====== XBPS Package Manager ======
+
+===== Package Repositories =====
+
+  * List installed repositories: <cli>
+$ xbps-query -L
+</cli>
+  * Install additional repositories and update system: <cli>
+# xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree [void-repo-debug]
+# xbps-install -Su xbps && xbps-install -Su
+</cli>
+
+===== Install, Update And Remove =====
+
+  * Whole system update: <cli>
+# xbps-install -Su xbps && xbps-install -Su && rm -rf /var/cache/xbps/*
+</cli>
+  * Install package: <cli>
+# xbps-install <PACKAGE>
+</cli>
+  * Remove package with unused dependencies and orphaned dependencies: <cli>
+# xbps-remove -Ro <PACAKGE>
+</cli>
+
+===== Package Holding =====
+
+  * Hold/unhold package: <cli>
+# xbps-pkgdb -m <hold|unhold> <PACKAGE>
+</cli>
+
+===== Query =====
+
+==== Installed Packages ====
+
+  * List all installed packages: <cli>
+$ xbps-query -l
+</cli>
+  * List manually (non-dependency) installed packages: <cli>
+$ xbps-query -m
+</cli>
+  * List orphaned installed packages: <cli>
+$ xbps-query -O
+</cli>
+  * List on hold packages: <cli>
+$ xbps-query -H
+</cli>
+  * Find matching [remote] packages: <cli>
+$ xbps-query [-R] -s <WILDCARD_STRING>
+</cli>
+
+==== Package Details ====
+
+  * Show detailed info about given [remote] package: <cli>
+$ xbps-query [-R] -S <PACKAGE>
+</cli>
+  * Show package(s) that own(s) given [remote] file: <cli>
+$ xbps-query [-R] -o <WILDCARD_STRING>
+</cli>
+  * Show files owned by given [remote] package: <cli>
+$ xbps-query [-R] -f <PACKAGE>
+</cli>
+  * Show dependencies for given [remote] package: <cli>
+$ xbps-query [-R] -x <PACKAGE>
+</cli>
+  * Show [remote] packages that depends on given package: <cli>
+$ xbps-query [-R] -X <PACKAGE>
+</cli>

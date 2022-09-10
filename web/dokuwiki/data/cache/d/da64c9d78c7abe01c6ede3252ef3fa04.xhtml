@@ -1,0 +1,385 @@
+
+<h1 class="sectionedit1" id="installation_server">Installation (server)</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation (server)&quot;,&quot;hid&quot;:&quot;installation_server&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-131&quot;} -->
+<h2 class="sectionedit4" id="prepare_environment">Prepare Environment</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Gain system access: </p><pre class='cli  '><span class="cli_prompt">&gt; </span><span class="cli_command">root</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">voidlinux</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Change shell to bash: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">bash</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Set keymap and font (temporarily): </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">loadkeys us</span>
+<span class="cli_prompt"># </span><span class="cli_command">setfont eurlatgr</span>
+<span class="cli_prompt"># </span><span class="cli_command">unicode_start</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Disable system beeping: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">modprobe -r pcspkr</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Verify UEFI boot and mount efivars as read-only to protect UEFI NVRAM: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ls -ld /sys/firmware/efi/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount -t efivarfs -o ro efivarfs /sys/firmware/efi/efivars/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Make sure, there is internet connectivity.</div>
+</li>
+<li class="level1"><div class="li"> Update live environment system and install additional packages: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps &amp;&amp; xbps-install -Su</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install parted</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Prepare Environment&quot;,&quot;hid&quot;:&quot;prepare_environment&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;132-801&quot;} -->
+<h2 class="sectionedit5" id="disk_preparation">Disk Preparation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create EFI and empty partition. </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;/dev/sdX&gt;</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">gpt</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">n</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">2GiB</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">t</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">EFI System</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">n</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command"> (Enter)</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">W</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">yes</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">q</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 1 ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 2 ROOT</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create EFI filesystem: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX1&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkfs.vfat -F 32 &lt;/dev/sdX1&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">fatlabel &lt;/dev/sdX1&gt; ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">fatlabel -i &lt;/dev/sdX1&gt; 00000001</span>
+<span class="cli_prompt"># </span><span class="cli_command">fsck.vfat &lt;/dev/sdX1&gt; ; echo $?</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create root filesystem: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkfs.btrfs &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label &lt;/dev/sdX2&gt; ROOT</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfstune -U 00000000-0000-0000-0000-000000000002 &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">y</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs check &lt;/dev/sdX2&gt; ; echo $?</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;802-1522&quot;} -->
+<h2 class="sectionedit6" id="base_system_installation">Base System Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create mount points and mount filesystems: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sdX2&gt; /mnt/void/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/boot/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sdX1&gt; /mnt/void/boot/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Copy xbps signing keys: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/var/db/xbps/keys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-query -f xbps | grep &#039;/var/db/xbps/keys/&#039; | xargs -I {} cp {} /mnt/void/var/db/xbps/keys/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Instal minimal base system packages: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -S -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1523-2059&quot;} -->
+<h2 class="sectionedit7" id="chroot">Chroot</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Mount filesystems: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount --rbind /dev/ /mnt/void/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /sys/ /mnt/void/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /proc/ /mnt/void/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /run/ /mnt/void/run/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/run/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Copy <abbr title="Domain Name System">DNS</abbr> configuration: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Chroot into the new installation: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/void/ /bin/sh</span>
+<span class="cli_prompt"># </span><span class="cli_command">. ./etc/profile</span>
+<span class="cli_prompt"># </span><span class="cli_command">export PS1=&#039;(chroot) # &#039;</span></pre><p></div>
+</li>
+</ol>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;2060-2623&quot;} -->
+<h2 class="sectionedit8" id="clone_git_settings">Clone Git Settings</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Clone git settings: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">git clone https://github.com/AISK11/void ~/void/</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Clone Git Settings&quot;,&quot;hid&quot;:&quot;clone_git_settings&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;2624-2752&quot;} -->
+<h2 class="sectionedit9" id="bootloader">Bootloader</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install rEFInd: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install refind</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Prepare boot partition: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">mkdir -p /boot/EFI/BOOT/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Set rEFInd files: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">cp /usr/share/refind/refind_x64.efi /boot/EFI/BOOT/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">cp /boot/EFI/BOOT/refind_x64.efi /boot/EFI/BOOT/BOOTX64.EFI</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">cp -r /usr/share/refind/icons/ /usr/share/refind/fonts/ /boot/EFI/BOOT/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">mkdir -p /boot/EFI/BOOT/themes/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Add rEFInd to UEFI NVRAM: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,rw /sys/firmware/efi/efivars</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">efibootmgr -c -d &lt;/dev/sdX&gt; -p 1 -l &#039;/EFI/BOOT/refind_x64.efi&#039; -L &#039;rEFInd&#039;</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,ro /sys/firmware/efi/efivars</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;2753-3456&quot;} -->
+<h2 class="sectionedit10" id="full_system_installation">Full System Installation</h2>
+<div class="level2">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:11,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:12,&quot;range&quot;:&quot;0-&quot;} -->
+<p>
+1. Install additional void repositories and synchronize them:
+</p>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su</span></pre>
+
+<p>
+2. Install partitioning and filesystem tools:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install parted dosfstools e2fsprogs btrfs-progs</span></pre>
+
+<p>
+3. Install configuration related packages:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install kbd tzdata kmod git</span></pre>
+
+<p>
+4. Install text editor:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install neovim</span></pre>
+
+<p>
+5. Install basic commands:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install ncurses less </span></pre>
+
+<p>
+6. Install file related software:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install file tree ncdu</span></pre>
+
+<p>
+7. Install process related software:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install psmisc htop neofetch inxi fcron</span></pre>
+
+<p>
+8. Install shells:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install bash zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions</span></pre>
+
+<p>
+9. Install privilege escalation software:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install opendoas</span></pre>
+
+<p>
+10. Install manual pages:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install man-db man-pages</span></pre>
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:13,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_todo plugin_wrap" style="width: 60%;">
+<p>
+Find out which packages are gonna be used to boot and establish internet connection.
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:14,&quot;range&quot;:&quot;0-&quot;} -->
+<p>
+11. Install boot software:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install refind ?dracut-uefi? linux-lts linux-firmware</span></pre>
+
+<p>
+12. Install network packages:
+</p>
+
+<pre class='cli  '></pre>
+
+<p>
+iputils dhcpcd ethtool (wpa_supplicant) nftables ntpclient iproute2
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;3457-4985&quot;} -->
+<h2 class="sectionedit15" id="configure_booting">Configure Booting</h2>
+<div class="level2">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:16,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:17,&quot;range&quot;:&quot;0-&quot;} -->
+<p>
+1. Prepare boot partition:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">mkdir -p /boot/EFI/BOOT/</span></pre>
+
+<p>
+2. Set rEFInd files:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">cp /usr/share/refind/refind_x64.efi /boot/EFI/BOOT/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">cp /boot/EFI/BOOT/refind_x64.efi /boot/EFI/BOOT/BOOTX64.EFI</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">cp /usr/share/refind/icons/ /usr/share/refind/fonts/ /boot/EFI/BOOT/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">mkdir -p /boot/EFI/BOOT/themes/</span></pre>
+
+<p>
+3. Add rEFInd to UEFI NVRAM:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,rw /sys/firmware/efi/efivars</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">efibootmgr -c -d &lt;/dev/sdX&gt; -p 1 -l &#039;/EFI/BOOT/refind_x64.efi&#039; -L &#039;rEFInd&#039;</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,ro /sys/firmware/efi/efivars</span></pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configure Booting&quot;,&quot;hid&quot;:&quot;configure_booting&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:15,&quot;range&quot;:&quot;4986-5725&quot;} -->
+<h2 class="sectionedit18" id="swap_file">Swap File</h2>
+<div class="level2">
+
+<p>
+1. Allocate space on COW filesystem (such as btrfs):
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">truncate -s 0 /swap</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">chattr +C /swap</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">fallocate -l 4G /swap</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">chmod 0600 /swap</span></pre>
+
+<p>
+2. Set file as swap area:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">mkswap /swap</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">swapon /swap</span></pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:18,&quot;range&quot;:&quot;5726-6024&quot;} -->
+<h2 class="sectionedit19" id="system_configuration">System Configuration</h2>
+<div class="level2">
+
+<p>
+1. Clone git settings:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">git clone https://github.com/AISK11/void ~/void/</span></pre>
+
+<p>
+2. Set up XBPS files:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/xbps/ignore.conf /etc/xbps.d/</span></pre>
+
+<p>
+3. Set up partition and filesystem files:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/base-files/crypttab /etc/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/base-files/fstab /etc/</span></pre>
+
+<p>
+4. Set up machine name files:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/runit-void/hostname /etc/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/base-files/hosts /etc/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/base-files/issue /etc/</span></pre>
+
+<p>
+5. Set up locales and console keymap + font:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/glibc-locales/libc-locales /etc/default/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/runit-void/locale.conf /etc/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/runit-void/rc.conf /etc/</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-reconfigure -f glibc-locales</span></pre>
+
+<p>
+6. Set up timezone:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">cp -P ~/void/amd64/server/configfiles/tzdata/localtime /etc/</span></pre>
+
+<p>
+7. Set up blacklisted modules:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/kmod/blacklist.conf /etc/modprobe.d/</span></pre>
+
+<p>
+8. Set up user privilege files:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">cp ~/void/amd64/server/configfiles/opendoas/doas.conf /etc/</span></pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:19,&quot;range&quot;:&quot;6025-7415&quot;} -->
+<h2 class="sectionedit20" id="users_permissions">Users &amp; Permissions</h2>
+<div class="level2">
+
+<p>
+1. Make root accessible:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">passwd root</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-ROOT-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-ROOT-PASSWORD (VERIFY)&gt;</span></pre>
+
+<p>
+2. Create privileged group:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">groupadd doas</span></pre>
+
+<p>
+3. Create privileged user:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">useradd -m -k /dev/null &lt;USER&gt;</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">usermod -aG doas &lt;USER&gt;</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">passwd &lt;USER&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-USER-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-USER-PASSWORD (VERIFY)&gt;</span></pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Users &amp; Permissions&quot;,&quot;hid&quot;:&quot;users_permissions&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:20,&quot;range&quot;:&quot;7416-7829&quot;} -->
+<h2 class="sectionedit21" id="finishing">Finishing</h2>
+<div class="level2">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:22,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:23,&quot;range&quot;:&quot;0-&quot;} -->
+<p>
+(chroot) # xbps-reconfigure -fa
+(chroot) # exit
+# shutdown -r now
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:21,&quot;range&quot;:&quot;7830-&quot;} -->

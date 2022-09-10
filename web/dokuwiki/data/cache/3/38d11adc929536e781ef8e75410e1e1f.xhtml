@@ -1,0 +1,79 @@
+
+<h1 class="sectionedit1" id="xbps_package_manager">XBPS Package Manager</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS Package Manager&quot;,&quot;hid&quot;:&quot;xbps_package_manager&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-36&quot;} -->
+<h2 class="sectionedit2" id="package_repositories">Package Repositories</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> List installed repositories: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -L</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install additional repositories and update system: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree [void-repo-debug]</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps &amp;&amp; xbps-install -Su</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Repositories&quot;,&quot;hid&quot;:&quot;package_repositories&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;37-342&quot;} -->
+<h2 class="sectionedit3" id="install_update_and_remove">Install, Update And Remove</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Whole system update: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps &amp;&amp; xbps-install -Su &amp;&amp; rm -rf /var/cache/xbps/*</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install package: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Remove package with unused dependencies and orphaned dependencies: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-remove -Ro &lt;PACAKGE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Install, Update And Remove&quot;,&quot;hid&quot;:&quot;install_update_and_remove&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;343-664&quot;} -->
+<h2 class="sectionedit4" id="package_holding">Package Holding</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Hold/unhold package: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-pkgdb -m &lt;hold|unhold&gt; &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Holding&quot;,&quot;hid&quot;:&quot;package_holding&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;665-772&quot;} -->
+<h2 class="sectionedit5" id="query">Query</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Query&quot;,&quot;hid&quot;:&quot;query&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;773-791&quot;} -->
+<h3 class="sectionedit6" id="installed_packages">Installed Packages</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> List all installed packages: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -l</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List manually (non-dependency) installed packages: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -m</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List orphaned installed packages: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -O</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List on hold packages: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -H</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Find matching [remote] packages: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -s &lt;WILDCARD_STRING&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installed Packages&quot;,&quot;hid&quot;:&quot;installed_packages&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;792-1180&quot;} -->
+<h3 class="sectionedit7" id="package_details">Package Details</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Show detailed info about given [remote] package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -S &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Show package(s) that own(s) given [remote] file: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -o &lt;WILDCARD_STRING&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Show files owned by given [remote] package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -f &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Show dependencies for given [remote] package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -x &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Show [remote] packages that depends on given package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -X &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Details&quot;,&quot;hid&quot;:&quot;package_details&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1181-&quot;} -->

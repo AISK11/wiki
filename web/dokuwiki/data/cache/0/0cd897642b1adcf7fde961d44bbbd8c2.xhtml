@@ -1,0 +1,179 @@
+
+<h1 class="sectionedit1" id="installation_pc">Installation (PC)</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation (PC)&quot;,&quot;hid&quot;:&quot;installation_pc&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-127&quot;} -->
+<h2 class="sectionedit4" id="prepare_environment">Prepare Environment</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Gain system access: </p><pre class='cli  '><span class="cli_prompt">&gt; </span><span class="cli_command">root</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">voidlinux</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Change shell to bash: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">bash</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Set keymap and font (temporarily): </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">loadkeys us</span>
+<span class="cli_prompt"># </span><span class="cli_command">setfont eurlatgr</span>
+<span class="cli_prompt"># </span><span class="cli_command">unicode_start</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Disable system beeping: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">modprobe -r pcspkr</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Verify UEFI boot and mount efivars as read-only to protect UEFI NVRAM: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ls -ld /sys/firmware/efi/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount -t efivarfs -o ro efivarfs /sys/firmware/efi/efivars/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Make sure, there is internet connectivity.</div>
+</li>
+<li class="level1"><div class="li"> Update live environment system and install additional packages: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps &amp;&amp; xbps-install -Su</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install parted</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Prepare Environment&quot;,&quot;hid&quot;:&quot;prepare_environment&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;128-797&quot;} -->
+<h2 class="sectionedit5" id="disk_preparation">Disk Preparation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create EFI and empty partition. </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;/dev/sdX&gt;</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">gpt</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">n</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">2GiB</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">t</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">EFI System</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">n</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command"> (Enter)</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">W</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">yes</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">q</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 1 ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 2 LUKS</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create EFI filesystem: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX1&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkfs.vfat -F 32 &lt;/dev/sdX1&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">fatlabel &lt;/dev/sdX1&gt; ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">fatlabel -i &lt;/dev/sdX1&gt; 00000001</span>
+<span class="cli_prompt"># </span><span class="cli_command">fsck.vfat &lt;/dev/sdX1&gt; ; echo $?</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Encrypt empty partition with LUKS: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksFormat -y --type luks2 &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW_LUKS_PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW_LUKS_PASSWORD (VERIFY)&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label LUKS &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup open --type luks2 &lt;/dev/sdX2&gt; luks-root</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;LUKS_PASSWORD&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create root filesystem on encrypted partition: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a /dev/mapper/luks-root</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkfs.btrfs /dev/mapper/luks-root</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label /dev/mapper/luks-root LUKS-ROOT</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-root</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">y</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs check /dev/mapper/luks-root ; echo $?</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;798-1982&quot;} -->
+<h2 class="sectionedit6" id="base_system_installation">Base System Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create mount points and mount filesystems: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount /dev/mapper/luks-root /mnt/void/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/boot/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sdX1&gt; /mnt/void/boot/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Copy xbps signing keys: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/var/db/xbps/keys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-query -f xbps | grep &#039;/var/db/xbps/keys/&#039; | xargs -I {} cp {} /mnt/void/var/db/xbps/keys/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Instal minimal base system packages: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -S -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1983-2529&quot;} -->
+<h2 class="sectionedit7" id="chroot">Chroot</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Mount filesystems: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount --rbind /dev/ /mnt/void/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /sys/ /mnt/void/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /proc/ /mnt/void/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /run/ /mnt/void/run/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/run/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Copy <abbr title="Domain Name System">DNS</abbr> configuration: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Chroot into the new installation: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/void/ /bin/sh</span>
+<span class="cli_prompt"># </span><span class="cli_command">. ./etc/profile</span>
+<span class="cli_prompt"># </span><span class="cli_command">export PS1=&#039;(chroot) # &#039;</span></pre><p></div>
+</li>
+</ol>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;2530-3093&quot;} -->
+<h2 class="sectionedit8" id="full_system_installation">Full System Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install additional void repositories and synchronize them: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install partitioning and filesystem tools: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install parted dosfstools cryptsetup e2fsprogs btrfs-progs</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install configuration related packages: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install kbd tzdata kmod git</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install text editor: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install neovim</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install basic commands: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install ncurses less </span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install file related software: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install file tree ncdu</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install process related software: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install psmisc htop neofetch inxi fcron</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install shells: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install bash zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install privilege escalation software: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install opendoas</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install manual pages: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install man-db man-pages</span></pre><p></div>
+</li>
+</ol>
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:9,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_todo plugin_wrap" style="width: 60%;">
+<p>
+Find out which packages are gonna be used to boot and establish internet connection.
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:10,&quot;range&quot;:&quot;0-&quot;} -->
+<p>
+11. Install boot software:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install refind linux linux-lts linux-firmware [intel-ucode] [linux-firmware-amd]</span></pre>
+
+<p>
+12. Install network packages:
+</p>
+
+<pre class='cli  '></pre>
+
+<p>
+iputils dhcpcd ethtool (wpa_supplicant) nftables ntpclient iproute2
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;3094-4556&quot;} -->
+<h2 class="sectionedit11" id="system_configuration">System Configuration</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;4557-4590&quot;} -->
+<h2 class="sectionedit12" id="bootloader">Bootloader</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;4591-&quot;} -->

@@ -1,0 +1,29 @@
+====== Hashing ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Hash Identifying =====
+
+  - Identify hash: <cli>
+$ haiti '<HASH>'
+</cli>
+
+===== Hashing =====
+
+  - Create hash:
+$ echo -n '<WORD>' | <md5sum|sha1sum|sha224sum|sha256sum| | cut -d ' ' -f 1
+</cli>
+
+===== Cracking =====
+
+==== Hashcat ====
+
+  - List available OpenCL((Debian OpenCL packages: https://packages.debian.org/buster/opencl-icd.)) devices for cracking: <cli>
+$ hashcat -I
+</cli>
+  - Crack passwords:
+    * Dictionary cracking: <cli>
+$ hashcat -a 0 -D <DEVICE-NUMBER> -m <HASH-ID-NUMBER> '<HASH>' <DICTIONARY> -o <OUTPUT-FILE>
+</cli>

@@ -1,0 +1,3 @@
+<cli>
+$ rsync --delete -vrapz <SRC>/ <DST>/
+</cli>

@@ -1,0 +1,7 @@
+====== DNS ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+https://dns.sb/guide/doh/linux/#_3-keep-dns-proxy-running-in-background

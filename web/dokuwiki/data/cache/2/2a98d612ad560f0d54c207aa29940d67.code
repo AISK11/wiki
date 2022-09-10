@@ -1,0 +1,4 @@
+#!/usr/bin/nft -f
+&nbsp;
+## Remove all previous firewall settings.         
+flush ruleset  

@@ -1,0 +1,38 @@
+#!/usr/bin/env nft -f
+&nbsp;
+## Remove all previous firewall settings.
+flush ruleset;
+&nbsp;
+## Services on local machine.
+define tcp_services = {22};
+define udp_services = {68,546};
+&nbsp;
+table inet fw {
+  chain input {
+    type filter hook input priority 0;
+    policy drop;
+&nbsp;
+    ## Accept all loopback traffic.
+    ip saddr 127.0.0.0/8 accept;
+    ip6 saddr ::1 accept;
+&nbsp;
+    ## Accept ICMP traffic except for requests.
+    icmp type != {8,13,15,17,30,42} accept;
+    icmpv6 type != {128,144} accept;
+&nbsp;
+    ## Accept responses from server.
+    ct state established,related accept;
+&nbsp;
+    ## Accept client requests only for specified TCP and UDP services.
+    tcp dport $tcp_services accept;
+    udp dport $udp_services accept;
+  }
+  chain output {
+    type filter hook output priority 0;
+    policy accept;
+&nbsp;
+    ## Send only ICMP requests.
+    icmp type != {8,13,15,17,30,42} drop;
+    icmpv6 type != {128,144} drop;
+  }
+}

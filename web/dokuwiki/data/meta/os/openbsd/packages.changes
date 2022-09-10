@@ -1,0 +1,5 @@
+1661010462	127.0.0.1	C	os:openbsd:packages	admin	created		23
+1661012036	127.0.0.1	E	os:openbsd:packages	admin			246
+1661012702	127.0.0.1	E	os:openbsd:packages	admin			140
+1661013132	127.0.0.1	E	os:openbsd:packages	admin			37
+1661013158	127.0.0.1	D	os:openbsd:packages	admin	removed		-446

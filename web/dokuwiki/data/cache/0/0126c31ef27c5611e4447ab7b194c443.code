@@ -1,0 +1,19 @@
+Package: *
+Pin: release a=&lt;RELEASE&gt;
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release a=&lt;RELEASE&gt;-security
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release a=&lt;RELEASE&gt;-updates
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release a=&lt;RELEASE&gt;-backports
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release a=kali-rolling
+Pin-Priority: 1

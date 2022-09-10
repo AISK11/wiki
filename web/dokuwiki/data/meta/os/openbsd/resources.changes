@@ -1,0 +1,28 @@
+1660749980	127.0.0.1	C	os:openbsd:resources	admin	created		412
+1660750639	127.0.0.1	E	os:openbsd:resources	admin			30
+1660750661	127.0.0.1	E	os:openbsd:resources	admin			-3
+1660750722	127.0.0.1	E	os:openbsd:resources	admin			-24
+1660757961	127.0.0.1	E	os:openbsd:resources	admin			-6
+1660758618	127.0.0.1	E	os:openbsd:resources	admin			85
+1660758659	127.0.0.1	E	os:openbsd:resources	admin			-13
+1660758671	127.0.0.1	E	os:openbsd:resources	admin			-3
+1660758704	127.0.0.1	E	os:openbsd:resources	admin			-3
+1660758992	127.0.0.1	E	os:openbsd:resources	admin			28
+1660759152	127.0.0.1	E	os:openbsd:resources	admin			69
+1660759160	127.0.0.1	e	os:openbsd:resources	admin			-1
+1660775786	127.0.0.1	E	os:openbsd:resources	admin	[Security] 		36
+1660775834	127.0.0.1	E	os:openbsd:resources	admin	[Security] 		-22
+1660856831	127.0.0.1	E	os:openbsd:resources	admin			-8
+1660856880	127.0.0.1	E	os:openbsd:resources	admin			17
+1660857168	127.0.0.1	E	os:openbsd:resources	admin			108
+1660857373	127.0.0.1	E	os:openbsd:resources	admin			26
+1660857382	127.0.0.1	E	os:openbsd:resources	admin			1
+1660857459	127.0.0.1	E	os:openbsd:resources	admin			5
+1660857492	127.0.0.1	E	os:openbsd:resources	admin			-1
+1660857500	127.0.0.1	E	os:openbsd:resources	admin			2
+1660857528	127.0.0.1	E	os:openbsd:resources	admin			3
+1660857710	127.0.0.1	E	os:openbsd:resources	admin			86
+1660857718	127.0.0.1	E	os:openbsd:resources	admin			-1
+1660863742	127.0.0.1	E	os:openbsd:resources	admin			-729
+1660863773	127.0.0.1	R	os:openbsd:resources	admin	old revision restored (2022-08-18 21:21)	1660857718	729
+1661325688	127.0.0.1	D	os:openbsd:resources	admin	removed		-823

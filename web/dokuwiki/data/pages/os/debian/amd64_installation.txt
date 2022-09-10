@@ -1,0 +1,77 @@
+====== Installation ======
+
+===== Environment & Users =====
+
+  - Language: **English**
+  - Country, territory or area: **United States**
+  - Keymap to use: **American English**
+  - Hostname: **<HOSTNAME>**
+  - Domain name: **(blank)**
+  - Root password: **<NEW-ROOT-PASSWORD>**
+  - Full name for the new user: **(blank)**
+  - Username for your account: **<USER>**
+  - Choose a password for the new user: **<NEW-USER-PASSWORD>**
+  - Select your time zone: **Eastern**
+  - Partitioning method: **Manual**
+
+===== Disk Partitioning =====
+
+  - **<sdX>**
+    - Create new empty partition table on this device? **Yes**
+  - **<sdX>** => **FREE SPACE**
+    - How to use this free space: **Create a new partition**
+    - New partition size: **500MB**
+    - Location for the new partition: **Beginning**
+      - Name: **ESP**
+      - Use as: **EFI System Partition**
+      - Bootable flag: **on**
+      - **Done setting up the partition**
+  - **<sdX>** => **FREE SPACE**
+    - How to use this free space: **Create a new partition**
+    - New partition size: **500MB**
+    - Location for the new partition: **Beginning**
+      - Name: **BOOT**
+      - Use as: **Ext4 journaling file system**
+      - Mount point: **/boot**
+      - Mount options: **noatime**
+      - Label: **BOOT**
+      - Reserved blocks: **5%**
+      - Typical usage: **standard**
+      - Bootable flag: **off**
+      - **Done setting up the partition**
+  - **<sdX>** => **FREE SPACE**
+    - How to use this free space: **Create a new partition**
+    - New partition size: **max**
+      - Name: **LUKS**
+      - Use as: **physical volume for encryption**
+      - Encryption method: **Device-mapper (dm-crypt)**
+      - Encryption: **aes**
+      - Key size: **256**
+      - IV algorithm: **xts-plain64**
+      - Encryption key: **Passphrase**
+      - Erase data: **yes**
+      - Bootable flag: **off**
+      - **Done setting up the partition**
+  - **Configure encrypted volumes**
+    - Write the changes to disk and configure encrypted volumes? **Yes**
+    - Encryption configuration actions: **Finish**
+    - Really erase the data on partition #3 (<sdX>)? **Yes** 
+    - Encryption passphrase: **<NEW-LUKS-PASSWORD>**
+  - **Encrypted volume** => **#1**
+    - Use as: **btrfs journaling file system**
+    - Mount point: **/**
+    - Mount options: **noatime**
+    - LABEL: **LUKS-ROOT**
+    - **Done setting up the partition**
+  - **Finish partitioning and write changes to disk**
+    - Do you want to return to the partitioning menu? **No**
+    - Write the changes to disks? **Yes**
+
+===== Packages =====
+
+  - Scan extra installation media? **No**
+  - Debian archive mirror country: **United States**
+  - Debian archive mirror: **deb.debian.org**
+  - HTTP proxy information (blank for none): **(blank)**
+  - Participate in the package usage survey? **No**
+  - Choose software to install: **(empty all checkboxes)**

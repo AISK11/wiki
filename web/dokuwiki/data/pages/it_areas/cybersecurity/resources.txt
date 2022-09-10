@@ -1,0 +1,9 @@
+====== Resources ======
+
+===== Anonymity =====
+
+  * Whonix Wiki: https://www.whonix.org/wiki/Documentation.
+
+===== Crypto =====
+
+  * Cyber chef: https://cyberchef.org.

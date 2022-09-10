@@ -1,0 +1,12 @@
+====== Wiki ======
+
+----
+
+**Operating Systems**
+  * [[os:debian:index|Debian Linux]]
+
+**IT Areas**
+  * [[it_areas:cybersecurity:index|Cybersecurity]]
+  * [[it_areas:development:index|Development]]
+
+----

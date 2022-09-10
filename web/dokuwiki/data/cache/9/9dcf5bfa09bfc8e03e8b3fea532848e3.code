@@ -1,0 +1,24 @@
+## &lt;FILE-SYSTEM&gt; &lt;MOUNT-DIR&gt; &lt;TYPE&gt; &lt;OPTIONS&gt; &lt;DUMP&gt; &lt;PASS&gt;
+&nbsp;
+## EFI system partition (ESP).
+UUID=&lt;UUID&gt; /boot/efi vfat defaults,noatime,umask=0077 0 1
+&nbsp;
+## Boot partition.
+UUID=&lt;UUID&gt; /boot     ext2 defaults,noatime,umask=0077 0 2
+&nbsp;
+## LUKS root filesystem.
+&lt;/dev/mapper/debian--vg-root&gt;   /    ext4 defaults,noatime 0 1
+&nbsp;
+## LUKS swap.
+&lt;/dev/mapper/debian--vg-swap_1&gt; none swap sw               0 0
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+## Root partition.
+UUID=00000000-0000-0000-0000-000000000002 / btrfs defaults,noatime 0 0
+#LABEL=LUKS-ROOT                          / btrfs defaults,noatime 0 0
+&nbsp;
+## Swap file.
+/swap none swap defaults 0 0

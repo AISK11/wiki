@@ -1,0 +1,25 @@
+#!/usr/bin/env nft -f
+&nbsp;
+## Remove all previous firewall settings.
+flush ruleset
+&nbsp;
+table inet inet_fw {
+  chain input {
+    ## Initialization.
+    type filter hook input priority 0;
+&nbsp;
+    ## Default policy.
+    policy drop;
+&nbsp;
+    ## Accept loopback traffic.
+    ip saddr 127.0.0.0/8 accept;
+    ip6 saddr ::1 accept;
+&nbsp;
+    ## Accept only ICMP replies.
+    icmp type != {8, 13, 15, 17} accept;
+&nbsp;
+    ip protocol tcp accept;
+    ip protocol udp accept;
+&nbsp;
+  }
+}

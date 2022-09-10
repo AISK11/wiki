@@ -1,0 +1,102 @@
+====== Post-Installation ======
+
+===== Package Manager =====
+
+  - See [[os:debian:package_manager#Apt Configuration|Apt Configuration]].
+
+===== Packages =====
+
+  - Install firmware (if required):
+    *  Install CPU microcode((Debian microcode: https://wiki.debian.org/Microcode.)):
+      * Intel: <cli>
+# apt install intel-microcode
+</cli>
+      * AMD: <cli>
+# apt install amd64-microcode
+</cli>
+    * Install wireless drivers:
+      * Intel WiFi (iwlwifi)((Debian iwlwifi: https://wiki.debian.org/iwlwifi.)): <cli>
+# apt install firmware-iwlwifi
+</cli>
+  - Install disk and filesystem tools: <cli>
+# apt install parted dosfstools
+</cli>
+  - Install text editing: <cli>
+# apt install neovim git
+</cli>
+  - Install package related tools: <cli>
+# apt install vrms
+</cli>
+  - Install basic file and process management tools: <cli>
+# apt install file tree ncdu psmisc htop neofetch inxi
+</cli>
+  - Install privilege tools: <cli>
+# apt install doas
+</cli>
+  - Install shells: <cli>
+# apt install zsh zsh-autosuggestions zsh-syntax-highlighting
+</cli>
+  - Install manuals: <cli>
+# apt install man-db manpages tldr
+</cli>
+  - Install [[os:debian:network|required network tools]].
+
+===== Partitions & Filesystems =====
+
+  - Name disk partitions: <cli>
+# parted -s </dev/sdX> name 1 ESP
+# parted -s </dev/sdX> name 2 BOOT
+# parted -s </dev/sdX> name 3 LUKS
+</cli>
+  - Name filesystems: <cli>
+# fatlabel </dev/sdX1> ESP
+# e2label </dev/sdX2> BOOT
+# cryptsetup config --label LUKS </dev/sdX3>
+# btrfs filesystem label /dev/mapper/<sdX3_crypt> LUKS-ROOT
+</cli>
+  - Create swap partition: <cli>
+# truncate -s 0 /swap
+# chattr +C /swap
+# fallocate -l 4G /swap
+# chmod 0600 /swap
+# mkswap /swap
+# swapon /swap
+</cli>
+  - Improve fstab: <file text /etc/fstab>
+## <FILE-SYSTEM> <MOUNT-DIR> <TYPE> <OPTIONS> <DUMP> <PASS>
+LABEL=ESP           /boot/efi vfat  defaults,noatime,umask=0077 0 1
+LABEL=BOOT          /boot     ext4  rw,noatime                  0 2
+LABEL=LUKS-ROOT     /         btrfs defaults,noatime            0 0
+/swap               none      swap  defaults                    0 0
+</file>
+
+===== Kernel Modules =====
+
+  - Disable beeping (pcspkr): <file text /etc/modprobe.d/blacklist.conf>
+blacklist pcspkr
+</file>
+
+===== System Settings =====
+
+  - See [[it_areas/cybersecurity/anonymity/system|System Anonymity]].
+
+===== Opendoas =====
+
+  - Configure opendoas rules: <file text /etc/doas.conf>
+permit nopass :doas
+</file>
+  - Change permissions for opendoas configuration file: <cli>
+# chmod 0600 /etc/doas.conf
+</cli>
+  - Create administrative group: <cli>
+# groupadd doas
+</cli>
+  - Add user to administrative groups: <cli>
+# usermod -aG doas <USER>
+</cli>
+
+===== Finalizing =====
+
+  - Reboot to apply changes: <cli>
+# reboot
+</cli>

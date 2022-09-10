@@ -1,0 +1,131 @@
+1661120002	127.0.0.1	C	os:void:amd64:installation_server	admin	created		3133
+1661120010	127.0.0.1	E	os:void:amd64:installation_server	admin			94
+1661120449	127.0.0.1	E	os:void:amd64:installation_server	admin			9
+1661120508	127.0.0.1	E	os:void:amd64:installation_server	admin	[Disk Preparation] 		-6
+1661120633	127.0.0.1	E	os:void:amd64:installation_server	admin	[Disk Preparation] 		-449
+1661120646	127.0.0.1	E	os:void:amd64:installation_server	admin			-1
+1661120721	127.0.0.1	E	os:void:amd64:installation_server	admin			-94
+1661120857	127.0.0.1	E	os:void:amd64:installation_server	admin			-18
+1661121025	127.0.0.1	E	os:void:amd64:installation_server	admin			0
+1661121102	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		-10
+1661121167	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		0
+1661121739	127.0.0.1	E	os:void:amd64:installation_server	admin			6
+1661122008	127.0.0.1	E	os:void:amd64:installation_server	admin			4
+1661122240	127.0.0.1	E	os:void:amd64:installation_server	admin	[Chroot] 		-2
+1661122420	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		3
+1661122438	127.0.0.1	E	os:void:amd64:installation_server	admin	[Chroot] 		2
+1661122643	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		8
+1661123150	127.0.0.1	E	os:void:amd64:installation_server	admin			94
+1661124295	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		-3
+1661124334	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		94
+1661161468	127.0.0.1	E	os:void:amd64:installation_server	admin	[Chroot] 		-2
+1661206233	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		0
+1661208433	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		18
+1661208452	127.0.0.1	E	os:void:amd64:installation_server	admin			2
+1661210246	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		-25
+1661210354	127.0.0.1	E	os:void:amd64:installation_server	admin			-12
+1661210408	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		-192
+1661210445	127.0.0.1	E	os:void:amd64:installation_server	admin	[Disk Preparation] 		-10
+1661210748	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		1
+1661210998	127.0.0.1	E	os:void:amd64:installation_server	admin			308
+1661245626	127.0.0.1	E	os:void:amd64:installation_server	admin			168
+1661248345	127.0.0.1	E	os:void:amd64:installation_server	admin			13
+1661291495	127.0.0.1	E	os:void:amd64:installation_server	admin			87
+1661292904	127.0.0.1	E	os:void:amd64:installation_server	admin			132
+1661293083	127.0.0.1	E	os:void:amd64:installation_server	admin			6
+1661293171	127.0.0.1	E	os:void:amd64:installation_server	admin			17
+1661293196	127.0.0.1	E	os:void:amd64:installation_server	admin			-14
+1661293215	127.0.0.1	E	os:void:amd64:installation_server	admin			10
+1661294679	127.0.0.1	E	os:void:amd64:installation_server	admin			373
+1661294839	127.0.0.1	E	os:void:amd64:installation_server	admin			7
+1661294887	127.0.0.1	E	os:void:amd64:installation_server	admin			72
+1661295616	127.0.0.1	E	os:void:amd64:installation_server	admin			72
+1661295667	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		9
+1661295723	127.0.0.1	E	os:void:amd64:installation_server	admin			7
+1661322804	127.0.0.1	E	os:void:amd64:installation_server	admin			5
+1661446924	127.0.0.1	E	os:void:amd64:installation_server	admin	[Prepare Environment] 		1
+1661447518	127.0.0.1	E	os:void:amd64:installation_server	admin	[Chroot] 		94
+1661447536	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		94
+1661447543	127.0.0.1	E	os:void:amd64:installation_server	admin	[Swap File] 		94
+1661449655	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		8
+1661454483	127.0.0.1	E	os:void:amd64:installation_server	admin			60
+1661528433	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		24
+1661528678	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		293
+1661528814	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		24
+1661529178	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		3
+1661529250	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		-649
+1661529259	127.0.0.1	E	os:void:amd64:installation_server	admin			179
+1661529968	127.0.0.1	E	os:void:amd64:installation_server	admin	[Chroot] 		134
+1661530100	127.0.0.1	E	os:void:amd64:installation_server	admin	[Chroot] 		298
+1661530275	127.0.0.1	E	os:void:amd64:installation_server	admin			114
+1661530336	127.0.0.1	E	os:void:amd64:installation_server	admin	[Chroot] 		-7
+1661530382	127.0.0.1	E	os:void:amd64:installation_server	admin	[Chroot] 		-392
+1661530394	127.0.0.1	E	os:void:amd64:installation_server	admin			-95
+1661532311	127.0.0.1	E	os:void:amd64:installation_server	admin	[Swap File] 		102
+1661600846	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		76
+1661625259	127.0.0.1	E	os:void:amd64:installation_server	admin			0
+1661625754	127.0.0.1	E	os:void:amd64:installation_server	admin			-71
+1661625795	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		14
+1661625830	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		-18
+1661625887	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		-5
+1661626194	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		78
+1661626299	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		52
+1661626326	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		1
+1661626459	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		5
+1661626514	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Installation] 		5
+1661626585	127.0.0.1	E	os:void:amd64:installation_server	admin	[Full System Installation] 		6
+1661627183	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		-8
+1661627305	127.0.0.1	E	os:void:amd64:installation_server	admin	[Full System Installation] 		117
+1661628943	127.0.0.1	E	os:void:amd64:installation_server	admin	[Full System Installation] 		136
+1661629068	127.0.0.1	E	os:void:amd64:installation_server	admin			19
+1661629398	127.0.0.1	E	os:void:amd64:installation_server	admin	[Swap File] 		-102
+1661629477	127.0.0.1	E	os:void:amd64:installation_server	admin			-59
+1661629482	127.0.0.1	E	os:void:amd64:installation_server	admin			-1
+1661629624	127.0.0.1	E	os:void:amd64:installation_server	admin	[System configuration] 		60
+1661629632	127.0.0.1	E	os:void:amd64:installation_server	admin			94
+1661630371	127.0.0.1	E	os:void:amd64:installation_server	admin	[System configuration] 		30
+1661633176	127.0.0.1	E	os:void:amd64:installation_server	admin	[System configuration] 		8
+1661633503	127.0.0.1	E	os:void:amd64:installation_server	admin			184
+1661633623	127.0.0.1	E	os:void:amd64:installation_server	admin	[System configuration] 		260
+1661633753	127.0.0.1	E	os:void:amd64:installation_server	admin	[System configuration] 		15
+1661636735	127.0.0.1	E	os:void:amd64:installation_server	admin	[System configuration] 		441
+1661637229	127.0.0.1	E	os:void:amd64:installation_server	admin	[System configuration] 		113
+1661637357	127.0.0.1	E	os:void:amd64:installation_server	admin	[System configuration] 		128
+1661637423	127.0.0.1	E	os:void:amd64:installation_server	admin			40
+1661637452	127.0.0.1	E	os:void:amd64:installation_server	admin	[Users] 		95
+1661637929	127.0.0.1	E	os:void:amd64:installation_server	admin			118
+1661638072	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Configuration] 		0
+1661638293	127.0.0.1	E	os:void:amd64:installation_server	admin			359
+1661638352	127.0.0.1	E	os:void:amd64:installation_server	admin	[Users] 		14
+1661638475	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Configuration] 		0
+1661638610	127.0.0.1	E	os:void:amd64:installation_server	admin	[System Configuration] 		-94
+1661638616	127.0.0.1	E	os:void:amd64:installation_server	admin	[Users & Permissions] 		-94
+1661639068	127.0.0.1	E	os:void:amd64:installation_server	admin			242
+1661639374	127.0.0.1	E	os:void:amd64:installation_server	admin	[Finishing] 		67
+1661788785	127.0.0.1	E	os:void:amd64:installation_server	admin	[Configure Booting] 		371
+1661788836	127.0.0.1	E	os:void:amd64:installation_server	admin			0
+1661789139	127.0.0.1	E	os:void:amd64:installation_server	admin	[Full System Installation] 		21
+1661789495	127.0.0.1	E	os:void:amd64:installation_server	admin			188
+1661789506	127.0.0.1	E	os:void:amd64:installation_server	admin			57
+1661789564	127.0.0.1	E	os:void:amd64:installation_server	admin			-2
+1661789630	127.0.0.1	E	os:void:amd64:installation_server	admin	[Configure Booting] 		3
+1661789688	127.0.0.1	E	os:void:amd64:installation_server	admin	[Configure Booting] 		1
+1661789781	127.0.0.1	E	os:void:amd64:installation_server	admin	[Configure Booting] 		-3
+1661789965	127.0.0.1	E	os:void:amd64:installation_server	admin	[Full System Installation] 		0
+1661960809	127.0.0.1	E	os:void:amd64:installation_server	admin			-6
+1661960830	127.0.0.1	E	os:void:amd64:installation_server	admin			-119
+1661960893	127.0.0.1	E	os:void:amd64:installation_server	admin			47
+1661964043	127.0.0.1	E	os:void:amd64:installation_server	admin	[Disk Preparation] 		-2
+1661964235	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		-2
+1661964416	127.0.0.1	E	os:void:amd64:installation_server	admin	[Chroot] 		-2
+1661965134	127.0.0.1	E	os:void:amd64:installation_server	admin			32
+1661965352	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		8
+1661965407	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		26
+1661966839	127.0.0.1	E	os:void:amd64:installation_server	admin	[Bootloader] 		55
+1661967001	127.0.0.1	E	os:void:amd64:installation_server	admin	[Base System Installation] 		-34
+1661973558	127.0.0.1	E	os:void:amd64:installation_server	admin	[Bootloader] 		616
+1661973601	127.0.0.1	E	os:void:amd64:installation_server	admin	[Bootloader] 		4
+1661973694	127.0.0.1	E	os:void:amd64:installation_server	admin	[Bootloader] 		3
+1661973751	127.0.0.1	E	os:void:amd64:installation_server	admin	[Bootloader] 		32
+1661973788	127.0.0.1	E	os:void:amd64:installation_server	admin	[Clone Git Settings] 		77
+1661973826	127.0.0.1	E	os:void:amd64:installation_server	admin	[Clone Git Settings] 		20

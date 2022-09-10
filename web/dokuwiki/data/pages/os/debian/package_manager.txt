@@ -1,0 +1,107 @@
+====== Package Manager ======
+
+===== Apt Configuration =====
+
+  - Configure apt repositories((Debian repositories: https://wiki.debian.org/SourcesList.))((Kali repositories: https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories.)): <file text /etc/apt/sources.list>
+## Official Debian current stable release repositories.
+deb http://deb.debian.org/debian <RELEASE> main contrib non-free
+deb-src http://deb.debian.org/debian <RELEASE> main contrib non-free
+
+deb http://deb.debian.org/debian-security <RELEASE>-security main contrib non-free
+deb-src http://deb.debian.org/debian-security <RELEASE>-security main contrib non-free
+
+deb http://deb.debian.org/debian <RELEASE>-updates main contrib non-free
+deb-src http://deb.debian.org/debian <RELEASE>-updates main contrib non-free
+
+deb http://deb.debian.org/debian <RELEASE>-backports main contrib non-free
+deb-src http://deb.debian.org/debian <RELEASE>-backports main contrib non-free
+
+## Official Kali repositories.
+deb http://http.kali.org/kali kali-rolling main contrib non-free
+deb-src http://http.kali.org/kali kali-rolling main contrib non-free
+</file>
+  - Configure apt package priorities((Apt package priorities: https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html#sect.apt.priorities.)): <file text /etc/apt/preferences>
+## Official Debian current stable release repositories.
+Package: *
+Pin: release n=<RELEASE>
+Pin-Priority: 1001
+
+Package: *
+Pin: release n=<RELEASE>-security
+Pin-Priority: 1001
+
+Package: *
+Pin: release n=<RELEASE>-updates
+Pin-Priority: 1001
+
+Package: *
+Pin: release n=<RELEASE>-backports
+Pin-Priority: 1001
+
+## Official Kali repositories.
+Package: *
+Pin: release n=kali-rolling
+Pin-Priority: 1
+</file>
+  - Verify package priorities: <cli>
+$ apt policy
+</cli>
+  - Add 3rd party repository keys:
+    - Install required tools: <cli>
+# apt install curl
+</cli>
+    - Add Kali repository: <cli>
+$ curl -O 'https://archive.kali.org/archive-key.asc'
+# mv archive-key.asc /etc/apt/trusted.gpg.d/kali-archive-key.asc
+</cli>
+  - Update system: <cli>
+# apt update && apt full-upgrade && apt autoremove && apt clean
+</cli>
+
+===== Package Management =====
+
+==== Update ====
+
+  * Normal system update: <cli>
+# apt update && apt full-upgrade && apt autoremove && apt clean
+</cli>
+  * New release upgrade: <cli>
+# sed -i 's/<RELEASE>/<NEW-RELEASE>/g' /etc/apt/sources.list
+# sed -i 's/<RELEASE>/<NEW-RELEASE>/g' /etc/apt/preferences
+# apt update && apt full-upgrade && apt autoremove && apt clean
+</cli>
+
+==== Install ====
+
+  * Install remote package: <cli>
+# apt install <PKG>
+</cli>
+  * Install local package file: <cli>
+# dpkg -i <PKG>.deb
+</cli>
+
+==== Remove ====
+
+  * Remove package (with config files) and dependencies: <cli>
+# apt purge <PKG> && apt autoremove
+</cli>
+
+==== Query ====
+
+  * Search for package: <cli>
+$ apt search <REGEX>
+</cli>
+  * List all [installed] packages: <cli>
+$ apt list [--installed]
+</cli>
+  * Show info about package: <cli>
+$ apt show <PKG>
+$ apt depends <PKG>
+$ apt rdepends <PKG>
+</cli>
+  * List files of package: <cli>
+$ dpkg -L <PKG>
+</cli>
+  * List package that owns a file: <cli>
+$ dpkg -S <FILE>
+</cli>

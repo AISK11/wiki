@@ -1,0 +1,10 @@
+====== Service Scanning ======
+
+===== Port Scan =====
+
+  * Active TCP SYN all port scan: <cli>
+# nmap -T4 -Pn -sS [-g <SRC-PORT>] -p 0- -sV -O -R -vv <TARGET> [-oA <OUTPUT>]
+</cli>
+  *Active UDP all port scan: <cli>
+# nmap -T4 -Pn -sU [-g <SRC-PORT>] -p 0- -sV -O -R -vv <TARGET> [-oA <OUTPUT>]
+</cli>

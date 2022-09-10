@@ -1,0 +1,137 @@
+
+<h1 class="sectionedit1" id="package_manager">Package Manager</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Manager&quot;,&quot;hid&quot;:&quot;package_manager&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-31&quot;} -->
+<h2 class="sectionedit2" id="apt_configuration">Apt Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Configure apt repositories<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>: <dl class="file">
+<dt><a href="http://localhost/_export/code/os/debian/cheat_sheets/package_manager?codeblock=0" title="Download Snippet" class="mediafile mf_list">/etc/apt/sources.list</a></dt>
+<dd><pre class="code file text">## Official Debian current stable release repositories.
+deb http://deb.debian.org/debian &lt;RELEASE&gt; main contrib non-free
+deb-src http://deb.debian.org/debian &lt;RELEASE&gt; main contrib non-free
+&nbsp;
+deb http://deb.debian.org/debian-security &lt;RELEASE&gt;-security main contrib non-free
+deb-src http://deb.debian.org/debian-security &lt;RELEASE&gt;-security main contrib non-free
+&nbsp;
+deb http://deb.debian.org/debian &lt;RELEASE&gt;-updates main contrib non-free
+deb-src http://deb.debian.org/debian &lt;RELEASE&gt;-updates main contrib non-free
+&nbsp;
+deb http://deb.debian.org/debian &lt;RELEASE&gt;-backports main contrib non-free
+deb-src http://deb.debian.org/debian &lt;RELEASE&gt;-backports main contrib non-free
+&nbsp;
+## Official Kali repositories.
+deb http://http.kali.org/kali kali-rolling main contrib non-free
+deb-src http://http.kali.org/kali kali-rolling main contrib non-free</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Configure apt package priorities<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup>: <dl class="file">
+<dt><a href="http://localhost/_export/code/os/debian/cheat_sheets/package_manager?codeblock=1" title="Download Snippet" class="mediafile mf_">/etc/apt/preferences</a></dt>
+<dd><pre class="code file text">## Official Debian current stable release repositories.
+Package: *
+Pin: release n=&lt;RELEASE&gt;
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release n=&lt;RELEASE&gt;-security
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release n=&lt;RELEASE&gt;-updates
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release n=&lt;RELEASE&gt;-backports
+Pin-Priority: 1001
+&nbsp;
+## Official Kali repositories.
+Package: *
+Pin: release n=kali-rolling
+Pin-Priority: 1</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Verify package priorities: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">apt policy</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li"> Add 3rd party repository keys:</div>
+<ol>
+<li class="level2"><div class="li"> Install required tools: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install curl</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Add Kali repository: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -O &#039;https://archive.kali.org/archive-key.asc&#039;</span>
+<span class="cli_prompt"># </span><span class="cli_command">mv archive-key.asc /etc/apt/trusted.gpg.d/kali-archive-rolling.asc</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Update system: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt update &amp;&amp; apt full-upgrade &amp;&amp; apt autoremove &amp;&amp; apt clean</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Apt Configuration&quot;,&quot;hid&quot;:&quot;apt_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;32-2133&quot;} -->
+<h2 class="sectionedit3" id="package_management">Package Management</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Management&quot;,&quot;hid&quot;:&quot;package_management&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:3,&quot;range&quot;:&quot;2134-2165&quot;} -->
+<h3 class="sectionedit4" id="update">Update</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> System update: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt update &amp;&amp; apt full-upgrade &amp;&amp; apt autoremove &amp;&amp; apt clean</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> New release update: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sed -i &#039;s/&lt;RELEASE&gt;/&lt;NEW-RELEASE&gt;/g&#039; /etc/apt/sources.list</span>
+<span class="cli_prompt"># </span><span class="cli_command">sed -i &#039;s/&lt;RELEASE&gt;/&lt;NEW-RELEASE&gt;/g&#039; /etc/apt/preferences</span>
+<span class="cli_prompt"># </span><span class="cli_command">apt update &amp;&amp; apt full-upgrade &amp;&amp; apt autoremove &amp;&amp; apt clean</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Update&quot;,&quot;hid&quot;:&quot;update&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:4,&quot;range&quot;:&quot;2166-2502&quot;} -->
+<h3 class="sectionedit5" id="install">Install</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Install remote package: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install &lt;PKG&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install local package file: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dpkg -i &lt;PKG&gt;.deb</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Install&quot;,&quot;hid&quot;:&quot;install&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:5,&quot;range&quot;:&quot;2503-2648&quot;} -->
+<h3 class="sectionedit6" id="remove">Remove</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Remove package (with config files) and dependencies: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt purge &lt;PKG&gt; &amp;&amp; apt autoremove</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Remove&quot;,&quot;hid&quot;:&quot;remove&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:6,&quot;range&quot;:&quot;2649-2773&quot;} -->
+<h3 class="sectionedit7" id="query">Query</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Search for package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">apt search &lt;REGEX&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List all [installed] packages: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">apt list [--installed]</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Show info about package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">apt show &lt;PKG&gt;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">apt depends &lt;PKG&gt;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">apt rdepends &lt;PKG&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List files of package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">dpkg -L &lt;PKG&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List package that owns a file: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">dpkg -S &lt;FILE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Query&quot;,&quot;hid&quot;:&quot;query&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:7,&quot;range&quot;:&quot;2774-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Debian repositories: <a href="https://wiki.debian.org/SourcesList" class="urlextern" title="https://wiki.debian.org/SourcesList">https://wiki.debian.org/SourcesList</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Kali repositories: <a href="https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories" class="urlextern" title="https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories">https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<div class="content">Apt package priorities: <a href="https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html#sect.apt.priorities" class="urlextern" title="https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html#sect.apt.priorities">https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html#sect.apt.priorities</a>.</div></div>
+</div>

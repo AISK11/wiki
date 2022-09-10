@@ -1,0 +1,16 @@
+## &lt;FILE-SYSTEM&gt; &lt;MOUNT-DIR&gt; &lt;TYPE&gt; &lt;OPTIONS&gt; &lt;DUMP&gt; &lt;PASS&gt;
+&nbsp;
+## UEFI variables.
+efivarfs /sys/firmware/efi/efivarfs efivarfs ro,relatime 0 0
+&nbsp;
+## EFI system partition (ESP).
+UUID=&lt;UUID&gt; /boot/efi vfat defaults,noatime,umask=0077 0 1
+&nbsp;
+## Boot partition.
+UUID=&lt;UUID&gt; /boot     ext2 defaults,noatime,umask=0077 0 2
+&nbsp;
+## LUKS LVM rootfs.
+&lt;/dev/mapper/debian--vg-root&gt;   /    ext4 defaults,noatime 0 1
+&nbsp;
+## LUKS LVM swap.
+&lt;/dev/mapper/debian--vg-swap_1&gt; none swap sw               0 0

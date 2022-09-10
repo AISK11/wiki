@@ -1,0 +1,26 @@
+====== Pre-Installation ======
+
+===== Download =====
+
+  - Download debian ISO:
+    * [[https://cdimage.debian.org/cdimage/release/current/amd64/iso-cd|Debian netinstall ISO]] => debian-<VERSION>-amd64-netinst.iso
+    * [[https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/amd64/iso-cd|Debian netinstall ISO with 3rd party firmware]] => firmware-<VERSION>-amd64-netinst.iso
+
+===== Verify Download =====
+
+<WRAP center round todo 60%>
+To do.
+</WRAP>
+
+===== Flash USB =====
+
+  - Make sure the USB filesystem is **not** mounted!
+  - Flash USB with disk image: <cli>
+# dd if=<DEBIAN>.iso of=</dev/sdX> bs=4M ; sync
+</cli>
+
+===== USB Boot =====
+
+  - Reboot the system and during the POST phase press //BIOS key//((List of //POST keys// according to vendor: http://www.disk-image.com/faq-bootmenu.htm.)) to boot into UEFI.
+  - Make sure that Secure Boot is disabled and reboot.
+  - On next POST phase, press //Boot Menu key//((List of //POST keys// according to vendor: http://www.disk-image.com/faq-bootmenu.htm.)) and select //(UEFI) USB// entry.

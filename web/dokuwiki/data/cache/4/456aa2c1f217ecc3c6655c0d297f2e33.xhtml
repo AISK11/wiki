@@ -1,0 +1,159 @@
+
+<h1 class="sectionedit1" id="git">Git</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Git&quot;,&quot;hid&quot;:&quot;git&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-19&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Print git version or install it: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">git --version || apt install git</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;20-131&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Configuration is located in <code>~/.gitconfig</code>.
+</p>
+<ol>
+<li class="level1"><div class="li"> Set user: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git config --global user.name &lt;USER&gt;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">git config --global user.email &lt;USER@ADDRESS.DOMAIN&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Set name of default branch (default: branch): </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git config --global init.defaultBranch main</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Allow credentials to be stored in <code>.git-credentials</code>: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git config --global credential.helper store</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;132-555&quot;} -->
+<h2 class="sectionedit4" id="usage">Usage</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;556-574&quot;} -->
+<h3 class="sectionedit5" id="start">Start</h3>
+<div class="level3">
+<ol>
+<li class="level1 node"><div class="li"> Start a new project:</div>
+<ul>
+<li class="level2"><div class="li"> From existing repository: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git clone &lt;REPOSITORY&gt; [DIRECTORY]</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> From new repository: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git init [-b main]</span></pre><p></div>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Start&quot;,&quot;hid&quot;:&quot;start&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;575-760&quot;} -->
+<h3 class="sectionedit6" id="commit_change">Commit Change</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Add all project files to the index and commit them: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git add -A</span>
+<span class="cli_prompt">$ </span><span class="cli_command">git commit -m &#039;&lt;MESSAGE&gt;&#039;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Commit Change&quot;,&quot;hid&quot;:&quot;commit_change&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;761-896&quot;} -->
+<h3 class="sectionedit7" id="change_status">Change Status</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Show current project changes compared to HEAD: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git status</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Show commit history: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git log --all [--stat]</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Show what changed in (default: last) commit: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git show [COMMIT]</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Change Status&quot;,&quot;hid&quot;:&quot;change_status&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;897-1144&quot;} -->
+<h3 class="sectionedit8" id="restore_change">Restore Change</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Restore project to state of last commit (HEAD) by removing untracked and modified files: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git reset --hard &amp;&amp; git clean -fxd</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Detach head to specific previous commit: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git reset --hard &amp;&amp; git clean -fxd &amp;&amp; git checkout &lt;COMMIT&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Restore Change&quot;,&quot;hid&quot;:&quot;restore_change&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;1145-1434&quot;} -->
+<h3 class="sectionedit9" id="branches">Branches</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Show current branch: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git branch</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create branch from specific commit (default: current commit): </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git branch &lt;NEW-BRANCH&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Change branch: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git checkout &lt;BRANCH&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Delete branch: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git branch -d &lt;BRANCH&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Branches&quot;,&quot;hid&quot;:&quot;branches&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;1435-1724&quot;} -->
+<h3 class="sectionedit10" id="merge_change">Merge Change</h3>
+<div class="level3">
+<ol>
+<li class="level1 node"><div class="li"> Merge changes from other branch to current branch: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git merge &lt;BRANCH&gt; -m &#039;&lt;MESSAGE&gt;&#039;</span></pre><p></div>
+<ul>
+<li class="level2 node"><div class="li"> If there is a conflict:</div>
+<ul>
+<li class="level3"><div class="li"> Abort merge: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git merge --abort</span></pre><p></div>
+</li>
+<li class="level3"><div class="li"> Resolve merge: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">nvim &lt;FILE&gt;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">git commit -m &#039;&lt;MESSAGE&gt;&#039;</span></pre><p></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Merge Change&quot;,&quot;hid&quot;:&quot;merge_change&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;1725-2015&quot;} -->
+<h3 class="sectionedit11" id="collaboration">Collaboration</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Push commits to git platform: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git push</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Obtain commits from platform: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">git pull</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Collaboration&quot;,&quot;hid&quot;:&quot;collaboration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;2016-2157&quot;} -->
+<h2 class="sectionedit12" id="git_platforms_tokens">Git Platforms Tokens</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Git Platforms Tokens&quot;,&quot;hid&quot;:&quot;git_platforms_tokens&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;2158-2191&quot;} -->
+<h3 class="sectionedit13" id="github">Github</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Navigate to <a href="https://github.com/login" class="urlextern" title="https://github.com/login">Github</a></div>
+</li>
+<li class="level1"><div class="li"> (Profile picture) ⇒ <a href="https://github.com/settings/profile" class="urlextern" title="https://github.com/settings/profile">Settings</a> ⇒ <a href="https://github.com/settings/apps" class="urlextern" title="https://github.com/settings/apps">Developer settings</a> ⇒ <a href="https://github.com/settings/tokens" class="urlextern" title="https://github.com/settings/tokens">Personal access tokens</a> ⇒ Generate new token</div>
+</li>
+<li class="level1 node"><div class="li"> Configure new personal access token:</div>
+<ol>
+<li class="level2"><div class="li"> Note: <strong>access_&lt;YYYY&gt;-&lt;MM&gt;-&lt;DD&gt;_&lt;DAYS&gt;</strong></div>
+</li>
+<li class="level2"><div class="li"> Expiry: <strong>&lt;DAYS&gt;</strong></div>
+</li>
+<li class="level2"><div class="li"> Select scopes: <strong>repo</strong>, <strong>admin:enterprise</strong> and <strong>admin:gpg_key</strong></div>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Github&quot;,&quot;hid&quot;:&quot;github&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;2192-&quot;} -->

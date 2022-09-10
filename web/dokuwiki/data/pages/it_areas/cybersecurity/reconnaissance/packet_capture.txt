@@ -1,0 +1,23 @@
+====== Packet Capture ======
+
+===== Wireshark Cheatsheet =====
+
+  - Filter by IP address: <code>
+ip.addr==<IPv4-ADDRESS>[/CIDR]
+ip.src==<IPv4-ADDRESS>[/CIDR]
+ip.dst==<IPv4-ADDRESS>[/CIDR]
+ipv6.addr==<IPv6-ADDRESS>
+ipv6.src==<IPv6-ADDRESS>
+ipv6.dst==<IPv6-ADDRESS>
+</code>
+  - Filter by port: <code>
+tcp.port==<PORT>
+tcp.srcport==<PORT>
+tcp.dstport==<PORT>
+udp.port==<PORT>
+udp.srcport==<PORT>
+udp.dstport==<PORT>
+</code>
+  - Filter by string: <code>
+frame contains "<STRING>"
+</code>

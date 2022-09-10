@@ -1,0 +1,10 @@
+====== Resources ======
+
+===== General =====
+
+  * [[https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions|Comparison of Linux distributions]]
+  * [[https://voidlinux.org|Void Linux]]
+
+===== Development =====
+
+  * [[https://github.com/void-linux|Source code (GitHub mirror)]]

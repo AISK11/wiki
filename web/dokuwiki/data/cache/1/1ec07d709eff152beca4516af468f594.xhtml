@@ -1,0 +1,59 @@
+
+<h1 class="sectionedit1" id="pre-installation">Pre-Installation</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Pre-Installation&quot;,&quot;hid&quot;:&quot;pre-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-127&quot;} -->
+<h2 class="sectionedit4" id="flash_usb">Flash USB</h2>
+<div class="level2">
+
+<p>
+1. Make sure the USB filesystem is <strong>not</strong> mounted!!!
+</p>
+
+<p>
+2. Prepare the USB:
+</p>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;DEVICE&gt;</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">gpt</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">n</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command"> (Enter)</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">W</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">yes</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">Q</span>
+<span class="cli_prompt"># </span><span class="cli_command">wipefs -a </span></pre>
+
+<p>
+3. Flash disk image on the USB:
+</p>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=~/openbsd/install&lt;VERSION&gt;.iso of=&lt;DEVICE&gt; bs=1M</span></pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Flash USB&quot;,&quot;hid&quot;:&quot;flash_usb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;128-449&quot;} -->
+<h2 class="sectionedit5" id="usb_boot">USB Boot</h2>
+<div class="level2">
+
+<p>
+1. Reboot the system and during the POST phase press <em>BIOS key</em><sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> to boot into UEFI.
+</p>
+
+<p>
+2. Disable <em>Secure Boot</em> and reboot.
+</p>
+
+<p>
+3. On the next POST phase, press <em>Boot Menu key</em><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup> and select USB entry.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;USB Boot&quot;,&quot;hid&quot;:&quot;usb_boot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;450-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+, <sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">List of <em>POST keys</em> according to vendor: <a href="http://www.disk-image.com/faq-bootmenu.htm" class="urlextern" title="http://www.disk-image.com/faq-bootmenu.htm">http://www.disk-image.com/faq-bootmenu.htm</a>.</div></div>
+</div>

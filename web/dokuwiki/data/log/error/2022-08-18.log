@@ -1,0 +1,10 @@
+2022-08-18 16:12:57	/usr/share/webapps/dokuwiki/lib/plugins/toctweak/action/rendertoc.php(217)	TypeError: Cannot access offset of type string on string
+  #0 /usr/share/webapps/dokuwiki/inc/Extension/EventHandler.php(81): action_plugin_toctweak_rendertoc->handleContentDisplay()
+  #1 /usr/share/webapps/dokuwiki/inc/Extension/Event.php(74): dokuwiki\Extension\EventHandler->process_event()
+  #2 /usr/share/webapps/dokuwiki/inc/Extension/Event.php(132): dokuwiki\Extension\Event->advise_before()
+  #3 /usr/share/webapps/dokuwiki/inc/Extension/Event.php(199): dokuwiki\Extension\Event->trigger()
+  #4 /usr/share/webapps/dokuwiki/inc/template.php(87): dokuwiki\Extension\Event::createAndTrigger()
+  #5 /usr/share/webapps/dokuwiki/lib/tpl/dokuwiki/main.php(59): tpl_content()
+  #6 /usr/share/webapps/dokuwiki/inc/actions.php(27): include('...')
+  #7 /usr/share/webapps/dokuwiki/doku.php(126): act_dispatch()
+  #8 {main}

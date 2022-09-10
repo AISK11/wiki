@@ -1,0 +1,12 @@
+## Official Debian current stable release repositories.
+deb http://deb.debian.org/debian &lt;RELEASE&gt; main contrib non-free
+deb-src http://deb.debian.org/debian &lt;RELEASE&gt; main contrib non-free
+deb http://deb.debian.org/debian-security &lt;RELEASE&gt;-security main contrib non-free
+deb-src http://deb.debian.org/debian-security &lt;RELEASE&gt;-security main contrib non-free
+deb http://deb.debian.org/debian &lt;RELEASE&gt;-updates main contrib non-free
+deb-src http://deb.debian.org/debian &lt;RELEASE&gt;-updates main contrib non-free
+deb http://deb.debian.org/debian &lt;RELEASE&gt;-backports main contrib non-free
+deb-src http://deb.debian.org/debian &lt;RELEASE&gt;-backports main contrib non-free
+&nbsp;
+## Official Kali repositories.
+deb http://http.kali.org/kali kali-rolling main contrib non-free

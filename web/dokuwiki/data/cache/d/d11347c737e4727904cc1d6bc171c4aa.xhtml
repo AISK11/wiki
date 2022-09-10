@@ -1,0 +1,96 @@
+
+<h1 class="sectionedit1" id="xbps_package_manager">XBPS Package Manager</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS Package Manager&quot;,&quot;hid&quot;:&quot;xbps_package_manager&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-130&quot;} -->
+<h2 class="sectionedit4" id="repositories">Repositories</h2>
+<div class="level2">
+
+<p>
+- <strong>L</strong>ist installed repositories:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -L</span></pre>
+
+<p>
+- Install additional repositories:
+</p>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree [void-repo-debug]</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps &amp;&amp; xbps-install -u</span></pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Repositories&quot;,&quot;hid&quot;:&quot;repositories&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;131-412&quot;} -->
+<h2 class="sectionedit5" id="query">Query</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Query&quot;,&quot;hid&quot;:&quot;query&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;413-431&quot;} -->
+<h3 class="sectionedit6" id="installed">Installed</h3>
+<div class="level3">
+
+<p>
+- List all installed packages:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -l</span></pre>
+
+<p>
+- List manual (non-dependency) installed packages:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -m</span></pre>
+
+<p>
+- List orphaned installed packages:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -O</span></pre>
+
+<p>
+- List on hold (not updated automatically) installed packages:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -H</span></pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installed&quot;,&quot;hid&quot;:&quot;installed&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;432-758&quot;} -->
+<h2 class="sectionedit7" id="package">Package</h2>
+<div class="level2">
+
+<p>
+- Put package to hold/unhold mode:
+</p>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-pkgdb -m &lt;hold|unhold&gt; &lt;PACKAGE&gt;</span></pre>
+<hr />
+
+<p>
+- <strong>S</strong>how detailed info about package:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -S &lt;PACKAGE&gt;</span></pre>
+
+<p>
+- Show package(s) that <strong>o</strong>wn(s) specific file:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R ] -o &lt;WILDCARD_STRING&gt;</span></pre>
+
+<p>
+- Show <strong>f</strong>iles owned by package:
+</p>
+
+<pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -[-R] -f &lt;PACKAGE&gt;</span></pre>
+
+<p>
+- 
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package&quot;,&quot;hid&quot;:&quot;package&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;759-&quot;} -->

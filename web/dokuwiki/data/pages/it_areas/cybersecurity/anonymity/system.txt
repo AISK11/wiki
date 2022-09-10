@@ -1,0 +1,22 @@
+====== System ======
+
+===== MOTD =====
+
+  - Clear login messages: <cli>
+# echo '' > /etc/issue
+# echo '' > /etc/motd
+# reboot
+</cli>
+
+===== Timezone =====
+
+  - Set universal timezone((Timezone leaks: https://www.whonix.org/wiki/Data_Collection_Techniques#Fingerprinting_and_Anonymity.)): <cli>
+# ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+</cli>
+
+===== Hostname =====
+
+  - Set hostname((Hostname leaks: https://www.whonix.org/wiki/Hostnames.)): <cli>
+# echo HOSTNAME > /etc/hostname
+# reboot
+</cli>
