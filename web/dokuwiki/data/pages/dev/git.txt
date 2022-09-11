@@ -1,0 +1,117 @@
+====== Git ======
+
+===== Installation =====
+
+  - Print git version or install it: <cli>
+# git --version || apt install git
+</cli>
+
+===== Configuration =====
+
+Configuration is located in ''~/.gitconfig''.
+
+  - Set user: <cli>
+$ git config --global user.name <USER>
+$ git config --global user.email <USER@ADDRESS.DOMAIN>
+</cli>
+  - Set name of default branch (default: master): <cli>
+$ git config --global init.defaultBranch main
+</cli>
+  - Allow credentials to be stored in ''~/.git-credentials'': <cli>
+$ git config --global credential.helper store
+</cli>
+
+===== Usage =====
+
+==== Start ====
+
+  * From existing repository: <cli>
+$ git clone <REPOSITORY> [DIRECTORY]
+</cli>
+  * From new repository: <cli>
+$ git init [-b main]
+</cli>
+
+==== Commit Change ====
+
+  - Add all project files to the index and commit them: <cli>
+$ git add -A
+$ git commit -m '<MESSAGE>'
+</cli>
+
+==== Change Status ====
+
+  * Show current project changes compared to HEAD: <cli>
+$ git status
+</cli>
+  * Show commit history: <cli>
+$ git log [--all] [--stat]
+</cli>
+  * Show what changed in (default: last) commit: <cli>
+$ git show [COMMIT]
+</cli>
+
+==== Restore Change ====
+
+  * Restore project to state of last commit (HEAD) by removing untracked and modified files: <cli>
+$ git reset --hard && git clean -fxd
+</cli>
+  * Detach HEAD to specific previous commit: <cli>
+$ git reset --hard && git clean -fxd && git checkout <COMMIT>
+</cli>
+
+==== Branches ====
+
+  * Show current branch: <cli>
+$ git branch
+</cli>
+  * Create branch from specific commit (default: current commit): <cli>
+$ git branch <NEW-BRANCH>
+</cli>
+  * Change branch: <cli>
+$ git checkout <BRANCH>
+</cli>
+  * Delete branch: <cli>
+$ git branch -df <BRANCH>
+</cli>
+
+==== Merge Change ====
+
+  - Merge changes from other branch to current branch: <cli>
+$ git merge <BRANCH> -m '<MESSAGE>'
+</cli>
+    * If there is a conflict:
+      * Abort merge: <cli>
+$ git merge --abort
+</cli>
+      * Resolve merge: <cli>
+$ nvim <FILE>
+$ git commit -m '<MESSAGE>'
+</cli>
+
+==== Remote ====
+
+  * Push commits to git platform:
+    * Normal push: <cli>
+$ git push origin <BRANCH>
+</cli>
+    * Remove remote branch: <cli>
+$ git push origin -df <BRANCH>
+</cli>
+    * Forcefully overwrite with local project: <cli>
+$ git push -f --set-upstream <REPOSITORY> main
+</cli>
+  * Obtain commits from git platform: <cli>
+$ git pull
+</cli>
+
+===== Git Platforms Tokens =====
+
+==== GitHub ====
+
+  - Log into [[https://github.com/login|Github]].
+  - (Profile picture) => [[https://github.com/settings/profile|Settings]] => [[https://github.com/settings/apps|Developer settings]] => [[https://github.com/settings/tokens|Personal access tokens]] => Generate new token
+  - Configure new personal access token((GitHub Tokens: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token.)):
+    - Note: **access_<YYYY>-<MM>-<DD>_<DAYS>**
+    - Expiry: **<DAYS>**
+    - Select scopes: **repo**, **admin:enterprise** and **admin:gpg_key**

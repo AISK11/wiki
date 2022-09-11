@@ -28,7 +28,7 @@
 # apt install vrms
 </cli>
   - Install basic file and process management tools: <cli>
-# apt install file tree ncdu psmisc htop neofetch inxi
+# apt install file tree ncdu duf psmisc htop neofetch inxi
 </cli>
   - Install privilege tools: <cli>
 # apt install doas

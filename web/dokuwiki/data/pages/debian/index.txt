@@ -1,0 +1,16 @@
+====== Debian Linux ======
+
+===== Pros =====
+
+  * Processor architecture support (amd64, i386, arm64, armhf, armel...)((Debian supported processor architectures: https://wiki.debian.org/SupportedArchitectures.)).
+  * Userbase + amount of packages in repositories((Package management across different linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#Package_management_and_installation.)).
+  * Independent distribution.
+  * Stability.
+  * Binary based.
+
+===== Cons =====
+
+  * SystemD.
+  * Point release + package manager.
+  * Graphical installation.
+  * Messy official website.

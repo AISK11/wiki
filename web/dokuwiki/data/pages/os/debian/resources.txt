@@ -1,8 +1,0 @@
-====== Resources ======
-
-===== Debian =====
-
-  * [[https://www.debian.org|Main Page]]
-  * [[https://www.debian.org/doc/manuals/debian-handbook/index.en.html|Handbook]]
-  * [[https://wiki.debian.org|Wiki]]
-  * [[https://distrowatch.com/table.php?distribution=debian|DistroWatch]]

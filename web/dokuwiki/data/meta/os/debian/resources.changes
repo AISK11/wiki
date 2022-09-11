@@ -6,3 +6,6 @@
 1662418798	127.0.0.1	E	os:debian:resources	admin			44
 1662420180	127.0.0.1	E	os:debian:resources	admin			0
 1662420200	127.0.0.1	E	os:debian:resources	admin			-44
+1662849886	127.0.0.1	E	os:debian:resources	admin			64
+1662849893	127.0.0.1	E	os:debian:resources	admin			0
+1662857233	127.0.0.1	D	os:debian:resources	admin	removed		-342

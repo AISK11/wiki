@@ -1,7 +1,3 @@
-1662207013	127.0.0.1	E	os:void:index	admin			67
-1662207039	127.0.0.1	E	os:void:index	admin			-17
-1662207097	127.0.0.1	E	os:void:resources	admin			106
-1662208092	127.0.0.1	E	os:void:index	admin	[Cons] 		25
 1662244693	127.0.0.1	E	sidebar	admin			-37
 1662246230	127.0.0.1	E	os:void:index	admin	[Pros] 		6
 1662246523	127.0.0.1	E	sidebar	admin			16
@@ -348,3 +344,100 @@
 1662770565	127.0.0.1	E	it_areas:development:git	admin			65
 1662770642	127.0.0.1	E	it_areas:development:git	admin			-65
 1662770812	127.0.0.1	E	it_areas:development:git	admin			126
+1662771260	127.0.0.1	E	it_areas:development:git	admin	[Github] 		-3
+1662771568	127.0.0.1	E	todo	admin			-1
+1662771741	127.0.0.1	E	it_areas:development:git	admin			0
+1662772067	127.0.0.1	E	it_areas:development:git	admin			129
+1662772088	127.0.0.1	E	it_areas:development:git	admin			2
+1662772918	127.0.0.1	E	os:debian:amd64_post-installation	admin	[Packages] 		8
+1662773008	127.0.0.1	E	os:debian:amd64_post-installation	admin			-4
+1662835044	127.0.0.1	E	it_areas:development:git	admin	[Change Status] 		2
+1662835061	127.0.0.1	E	it_areas:development:git	admin	[Restore Change] 		0
+1662835095	127.0.0.1	E	it_areas:development:git	admin	[GitHub] 		1
+1662835559	127.0.0.1	E	os:debian:amd64_pre-installation	admin			215
+1662835605	127.0.0.1	E	os:debian:amd64_pre-installation	admin			2
+1662836315	127.0.0.1	E	os:debian:amd64_pre-installation	admin			340
+1662836863	127.0.0.1	E	os:debian:amd64_pre-installation	admin	[Verify Download] 		42
+1662836954	127.0.0.1	E	os:debian:amd64_pre-installation	admin			2
+1662836980	127.0.0.1	E	os:debian:amd64_pre-installation	admin			8
+1662837028	127.0.0.1	E	os:debian:amd64_pre-installation	admin	[Verify Download] 		-1
+1662837342	127.0.0.1	E	os:debian:sidebar	admin			41
+1662837393	127.0.0.1	E	os:debian:sidebar	admin			49
+1662837461	127.0.0.1	E	sidebar	admin			-12
+1662837496	127.0.0.1	D	it_areas:development:git	admin	removed		-2917
+1662837504	127.0.0.1	C	it:development:git	admin	created		2917
+1662837521	127.0.0.1	D	it_areas:development:index	admin	removed		-25
+1662837527	127.0.0.1	C	it:development:index	admin	created		25
+1662837539	127.0.0.1	D	it_areas:development:sidebar	admin	removed		-145
+1662837545	127.0.0.1	C	it:development:sidebar	admin	created		145
+1662837570	127.0.0.1	D	it:development:index	admin	removed		-25
+1662837577	127.0.0.1	C	it:dev:index	admin	created		25
+1662837594	127.0.0.1	E	sidebar	admin			-8
+1662837610	127.0.0.1	D	it:development:sidebar	admin	removed		-145
+1662837616	127.0.0.1	C	it:dev:sidebar	admin	created		145
+1662837623	127.0.0.1	D	it:development:git	admin	removed		-2917
+1662837628	127.0.0.1	C	it:dev:git	admin	created		2917
+1662837668	127.0.0.1	E	it:dev:sidebar	admin			-28
+1662837807	127.0.0.1	E	it:dev:git	admin	[Configuration] 		0
+1662837997	127.0.0.1	E	it:dev:git	admin	[Remote] 		4
+1662838194	127.0.0.1	E	it:dev:git	admin			16
+1662838255	127.0.0.1	E	it:dev:git	admin			0
+1662838265	127.0.0.1	E	it:dev:git	admin			1
+1662838278	127.0.0.1	E	it:dev:git	admin			0
+1662838493	127.0.0.1	E	it:dev:git	admin			71
+1662847233	127.0.0.1	D	it:dev:sidebar	admin	removed		-117
+1662847241	127.0.0.1	C	dev:sidebar	admin	created		117
+1662847259	127.0.0.1	D	it:dev:index	admin	removed		-25
+1662847265	127.0.0.1	C	dev:index	admin	created		25
+1662847279	127.0.0.1	D	it:dev:git	admin	removed		-3009
+1662847286	127.0.0.1	C	dev:git	admin	created		3009
+1662847302	127.0.0.1	E	sidebar	admin			-3
+1662847325	127.0.0.1	E	dev:sidebar	admin			-6
+1662847464	127.0.0.1	E	dev:git	admin			24
+1662847803	127.0.0.1	E	dev:git	admin			27
+1662847816	127.0.0.1	E	dev:git	admin			0
+1662848056	127.0.0.1	E	dev:git	admin			-26
+1662848130	127.0.0.1	E	dev:git	admin			56
+1662848137	127.0.0.1	E	dev:git	admin			-19
+1662848154	127.0.0.1	E	dev:git	admin			20
+1662848258	127.0.0.1	E	dev:git	admin			-58
+1662848272	127.0.0.1	E	dev:git	admin			-24
+1662849097	127.0.0.1	E	dev:git	admin	[Configuration] 		2
+1662849128	127.0.0.1	E	dev:git	admin	[Start] 		-2
+1662849146	127.0.0.1	E	dev:git	admin	[Start] 		-27
+1662849229	127.0.0.1	E	dev:git	admin	[Remote] 		1
+1662849886	127.0.0.1	E	os:debian:resources	admin			64
+1662849893	127.0.0.1	E	os:debian:resources	admin			0
+1662850004	127.0.0.1	E	sidebar	admin			-3
+1662850022	127.0.0.1	D	os:debian:index	admin	removed		-644
+1662850029	127.0.0.1	C	debian:index	admin	created		644
+1662850061	127.0.0.1	D	os:debian:sidebar	admin	removed		-556
+1662850080	127.0.0.1	C	debian:sidebar	admin	created		526
+1662850163	127.0.0.1	E	debian:index	admin			-32
+1662850222	127.0.0.1	D	it_areas:cybersecurity:index	admin	removed		-28
+1662850231	127.0.0.1	C	cybersecurity:index	admin	created		28
+1662850263	127.0.0.1	E	dev:sidebar	admin			5
+1662850339	127.0.0.1	D	it_areas:cybersecurity:sidebar	admin	removed		-813
+1662850369	127.0.0.1	C	cybersecurity:sidebar	admin	created		715
+1662850375	127.0.0.1	E	cybersecurity:sidebar	admin			2
+1662850393	127.0.0.1	E	sidebar	admin			-2
+1662850534	127.0.0.1	E	cybersecurity:sidebar	admin			75
+1662850549	127.0.0.1	E	cybersecurity:sidebar	admin			11
+1662850555	127.0.0.1	E	cybersecurity:sidebar	admin			1
+1662850580	127.0.0.1	D	it_areas:cybersecurity:anonymity:firewall	admin	removed		-1734
+1662850585	127.0.0.1	C	cybersecurity:anonymity:firewall	admin	created		1734
+1662850620	127.0.0.1	E	cybersecurity:anonymity:firewall	admin			24
+1662851002	127.0.0.1	E	cybersecurity:anonymity:firewall	admin			-137
+1662851139	127.0.0.1	E	cybersecurity:anonymity:firewall	admin			82
+1662853943	127.0.0.1	E	cybersecurity:anonymity:firewall	admin			135
+1662853957	127.0.0.1	R	cybersecurity:anonymity:firewall	admin	old revision restored (2022-09-10 23:05)	1662851139	-135
+1662853971	127.0.0.1	E	cybersecurity:anonymity:firewall	admin			250
+1662854022	127.0.0.1	E	cybersecurity:anonymity:firewall	admin	[Configuration] 		2
+1662855343	127.0.0.1	E	cybersecurity:anonymity:firewall	admin			8
+1662855409	127.0.0.1	E	cybersecurity:anonymity:firewall	admin			-5
+1662855689	127.0.0.1	E	cybersecurity:anonymity:firewall	admin			-31
+1662856235	127.0.0.1	D	cybersecurity:anonymity:firewall	admin	removed		-1927
+1662856238	127.0.0.1	E	cybersecurity:sidebar	admin			-10
+1662856242	127.0.0.1	C	cybersecurity:firewall	admin	created		1927
+1662857233	127.0.0.1	D	os:debian:resources	admin	removed		-342
+1662857272	127.0.0.1	C	debian:resources	admin	created		342

@@ -44,8 +44,8 @@ Installation (PC)
 Installation (server)
 XBPS Package Manager
 Runit
-Cybersecurity
-Cybersecurity
+
+
 
 
 
@@ -57,19 +57,19 @@ DHCP
 System
 
 DNS
-Firewall
+
 Resources
-Development
-Development
+
+
 
 Packet Capture
 
 
 
 
-Debian Linux
-Debian Linux
-Resources
+
+
+
 
 
 
@@ -82,5 +82,21 @@ Package Manager
 Network
 Encoding
 Hashing
-Git
 
+
+
+
+
+
+
+
+Development
+Development
+Git
+Debian Linux
+Debian Linux
+Cybersecurity
+Cybersecurity
+
+Firewall
+Resources
