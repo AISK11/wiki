@@ -100,3 +100,6 @@ cybersecurity:sidebar
 cybersecurity:anonymity:firewall
 cybersecurity:firewall
 debian:resources
+cybersecurity:system
+cybersecurity:resources
+cybersecurity:dhcp

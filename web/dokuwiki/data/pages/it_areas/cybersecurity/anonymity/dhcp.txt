@@ -1,9 +1,0 @@
-====== DHCP ======
-
-<WRAP center round important 60%>
-This section is incomplete and needs further work!
-</WRAP>
-
-  - Edit dhcpcd configuration: <file conf /etc/dhcpcd.conf>
-
-</file>

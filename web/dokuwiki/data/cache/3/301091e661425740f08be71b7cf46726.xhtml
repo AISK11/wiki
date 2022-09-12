@@ -1,0 +1,75 @@
+
+<h1 class="sectionedit1" id="dhcp">DHCP</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;DHCP&quot;,&quot;hid&quot;:&quot;dhcp&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-20&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Print DHCP version or install it: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dhcpcd --version || apt install dhcpcd5</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Uninstall pre-installed obsolete<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> ISC dhclient: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dhcpcd --version &amp;&amp; apt purge isc-dhcp-client isc-dhcp-common</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;21-315&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Set <a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options" class="urlextern" title="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options">DHCP options</a>: <dl class="file">
+<dt><a href="http://localhost/_export/code/cybersecurity/dhcp?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/dhcpcd.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
+## DEPENDENCIES: dhcpcd5
+## DESCRIPTION:  DHCP client settings.
+&nbsp;
+## Group to manage dhcpcd via control socket.
+controlgroup dhcpcd
+&nbsp;
+## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
+nohook resolv.conf
+&nbsp;
+## Use MAC address as client identifier for DHCP server.
+clientid
+&nbsp;
+## Set to blank to avoid sending vendorclassid option.
+## Default is &quot;dhcpcd-&lt;version&gt;:&lt;os&gt;:&lt;machine&gt;:&lt;platform&gt;&quot;.
+vendorclassid
+&nbsp;
+## Request following additional options from DHCP server.
+option interface_mtu
+&nbsp;
+## Don't check if obtained IPv4 address is taken by arp (increases speed) and
+## also disables IPv4LL (APIPA).
+noarp
+&nbsp;
+## Remove any pre-existing IPv4 addresses when adding new IPv4 address.
+noalias
+&nbsp;
+## Use MAC address when generating IPv6 SLAAC address for the interface.
+slaac hwaddr</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Do not start dhcpcd from init: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl stop dhcpcd &amp;&amp; systemctl disable dhcpcd</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;316-1444&quot;} -->
+<h2 class="sectionedit4" id="usage">Usage</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Lease IP address for specified interface: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dhcpcd &lt;INTERFACE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Release IP address for specified interface: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dhcpcd -k &lt;INTERFACE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;1445-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">ISC DHCP website: <a href="https://www.isc.org/dhcp" class="urlextern" title="https://www.isc.org/dhcp">https://www.isc.org/dhcp</a>.</div></div>
+</div>

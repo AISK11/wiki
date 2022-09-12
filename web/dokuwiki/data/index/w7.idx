@@ -267,3 +267,7 @@ startup
 forward
 servers
 clients
+dhcpcd5
+privacy
+sending
+noalias

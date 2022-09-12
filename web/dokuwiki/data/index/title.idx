@@ -53,12 +53,12 @@ Host Discovery
 
 Service Scanning
 MAC Address
-DHCP
-System
+
+
 
 DNS
 
-Resources
+
 
 
 
@@ -100,3 +100,6 @@ Cybersecurity
 
 Firewall
 Resources
+System
+Resources
+DHCP

@@ -8,7 +8,7 @@
 
 ===== Configuration =====
 
-  - Set [[https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes|nftables rules]]: <file txt /etc/nftables.conf>
+  - Set [[https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes|nftables rules]]: <file text /etc/nftables.conf>
 #!/usr/bin/env nft -f
 
 ## AUTHOR:       AISK11

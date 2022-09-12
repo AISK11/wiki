@@ -130,3 +130,9 @@ cybersecurity:crypto:hashing
 cybersecurity:index
 cybersecurity:resources
 cybersecurity:firewall
+cybersecurity:system
+cybersecurity:mac_address
+cybersecurity:dhcp
+cybersecurity:dns
+cybersecurity:vpn-tor-proxy
+cybersecurity:network_interfaces

@@ -270,3 +270,9 @@ expiry
 obtain
 import
 origin
+manage
+socket
+nohook
+ipv4ll
+hwaddr
+common
