@@ -9,17 +9,15 @@
 **Anonymity**
   * [[:cybersecurity:system|System]]
   * [[:cybersecurity:firewall|Firewall]]
+  * [[:cybersecurity:network_interfaces|Network Interfaces]]
+  * [[:cybersecurity:mac_address|MAC Address]]
   * [[:cybersecurity:dhcp|DHCP]]
+  * [[:cybersecurity:dns|DNS]]
+  * [[:cybersecurity:vpn-tor-proxy|VPN-Tor-Proxy]]
 
 ----
 
 WIP
-
-**Anonymity**
-  * [[:cybersecurity:mac_address|MAC Address]]
-  * [[:cybersecurity:network_interfaces|Network Interfaces]]
-  * [[:cybersecurity:dns|DNS]]
-  * [[:cybersecurity:vpn-tor-proxy|VPN-Tor-Proxy]]
 
 **Reconnaissance**
   * [[:cybersecurity:reconnaissance:packet_capture|Packet Capture]]

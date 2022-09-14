@@ -276,3 +276,5 @@ nohook
 ipv4ll
 hwaddr
 common
+hashes
+xrandr

@@ -1,112 +1,3 @@
-1662327005	127.0.0.1	E	sidebar	admin			-48
-1662327035	127.0.0.1	E	os:debian:resources	admin			21
-1662327054	127.0.0.1	E	os:debian:resources	admin			3
-1662334759	127.0.0.1	E	os:debian:amd64:pre-installation	admin			31
-1662335774	127.0.0.1	E	os:debian:amd64:pre-installation	admin			38
-1662336281	127.0.0.1	E	os:debian:amd64:pre-installation	admin			108
-1662336405	127.0.0.1	E	os:debian:amd64:pre-installation	admin			81
-1662336482	127.0.0.1	E	os:debian:amd64:pre-installation	admin			6
-1662336699	127.0.0.1	E	it_areas:development:sidebar	admin			-12
-1662336715	127.0.0.1	D	it_areas:development:project_management_tools:git	admin	removed		-309
-1662336720	127.0.0.1	C	it_areas:development:project_management:git	admin	created		309
-1662376593	127.0.0.1	E	it_areas:cybersecurity:sidebar	admin			12
-1662383680	127.0.0.1	E	os:debian:index	admin			7
-1662383707	127.0.0.1	E	os:debian:index	admin			0
-1662398893	127.0.0.1	E	os:debian:amd64:pre-installation	admin	[Hardware Requirements] 		1
-1662399020	127.0.0.1	E	os:debian:amd64:pre-installation	admin			277
-1662399207	127.0.0.1	E	os:debian:amd64:pre-installation	admin			78
-1662399228	127.0.0.1	E	os:debian:amd64:pre-installation	admin			0
-1662399250	127.0.0.1	E	os:debian:amd64:pre-installation	admin			-461
-1662399357	127.0.0.1	E	os:debian:amd64:pre-installation	admin			87
-1662399433	127.0.0.1	E	os:debian:amd64:pre-installation	admin			149
-1662399447	127.0.0.1	E	os:debian:amd64:pre-installation	admin	[Flash USB] 		-2
-1662399527	127.0.0.1	E	os:debian:amd64:pre-installation	admin			425
-1662399590	127.0.0.1	E	os:debian:amd64:pre-installation	admin			-94
-1662399599	127.0.0.1	E	os:debian:amd64:pre-installation	admin			-116
-1662399659	127.0.0.1	E	os:debian:sidebar	admin			-74
-1662399768	127.0.0.1	C	os:debian:amd64:installation	admin	created		120
-1662399947	127.0.0.1	E	os:debian:amd64:installation	admin			165
-1662400107	127.0.0.1	E	os:debian:amd64:installation	admin			42
-1662400210	127.0.0.1	E	os:debian:amd64:installation	admin			193
-1662400311	127.0.0.1	E	os:debian:amd64:installation	admin			88
-1662400969	127.0.0.1	E	os:debian:amd64:installation	admin			299
-1662401224	127.0.0.1	E	os:debian:amd64:installation	admin	[Disk Partitioning] 		340
-1662401261	127.0.0.1	E	os:debian:amd64:installation	admin	[Disk Partitioning] 		4
-1662401747	127.0.0.1	E	os:debian:amd64:installation	admin			233
-1662401808	127.0.0.1	E	os:debian:amd64:installation	admin			49
-1662402013	127.0.0.1	E	os:debian:amd64:installation	admin	[Disk Partitioning] 		187
-1662402207	127.0.0.1	E	os:debian:amd64:installation	admin	[Disk Partitioning] 		84
-1662402217	127.0.0.1	E	os:debian:amd64:installation	admin	[Disk Partitioning] 		2
-1662402416	127.0.0.1	E	os:debian:amd64:installation	admin			-986
-1662402487	127.0.0.1	E	os:debian:amd64:installation	admin			51
-1662402533	127.0.0.1	E	os:debian:amd64:installation	admin			121
-1662402614	127.0.0.1	E	os:debian:amd64:installation	admin			36
-1662402729	127.0.0.1	E	os:debian:amd64:installation	admin			45
-1662403013	127.0.0.1	E	os:debian:amd64:installation	admin			207
-1662403272	127.0.0.1	E	os:debian:amd64:installation	admin			120
-1662403614	127.0.0.1	E	os:debian:amd64:pre-installation	admin			4
-1662403677	127.0.0.1	E	os:debian:index	admin			28
-1662404284	127.0.0.1	E	os:debian:amd64:installation	admin			0
-1662406532	127.0.0.1	E	os:debian:amd64:installation	admin	[Packages] 		-18
-1662406574	127.0.0.1	E	os:debian:sidebar	admin			62
-1662406611	127.0.0.1	C	os:debian:amd64:post-installation	admin	created		36
-1662406629	127.0.0.1	E	os:debian:amd64:installation	admin			-94
-1662406710	127.0.0.1	E	os:debian:amd64:post-installation	admin			126
-1662406717	127.0.0.1	E	os:debian:amd64:post-installation	admin			1
-1662408680	127.0.0.1	E	os:debian:amd64:post-installation	admin			30
-1662409025	127.0.0.1	E	os:debian:sidebar	admin			62
-1662409034	127.0.0.1	E	os:debian:sidebar	admin			1
-1662409622	127.0.0.1	C	os:debian:cheat_sheets:package_manager	admin	created		123
-1662411236	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			114
-1662411683	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			17
-1662411702	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			5
-1662411802	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			141
-1662411858	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			39
-1662412135	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			0
-1662412351	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			94
-1662413236	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			2
-1662413793	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Query] 		63
-1662413864	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			-20
-1662413937	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Query] 		18
-1662413986	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			74
-1662414192	127.0.0.1	E	os:debian:index	admin			21
-1662414213	127.0.0.1	E	os:debian:index	admin			-3
-1662414306	127.0.0.1	E	os:debian:index	admin			11
-1662414320	127.0.0.1	E	os:debian:index	admin			3
-1662416665	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Install, Update And Remove] 		-4
-1662417330	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			139
-1662417346	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			8
-1662417943	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			614
-1662418542	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			148
-1662418576	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Configuration] 		86
-1662418606	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			69
-1662418706	127.0.0.1	E	os:debian:resources	admin			115
-1662418798	127.0.0.1	E	os:debian:resources	admin			44
-1662419739	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			200
-1662419938	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Configuration] 		305
-1662420180	127.0.0.1	E	os:debian:resources	admin			0
-1662420200	127.0.0.1	E	os:debian:resources	admin			-44
-1662420695	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			2
-1662421259	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			18
-1662421425	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Configuration] 		84
-1662422389	127.0.0.1	E	os:debian:amd64:pre-installation	admin			9
-1662422529	127.0.0.1	E	os:debian:index	admin			31
-1662424204	127.0.0.1	E	os:debian:index	admin			-13
-1662450873	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			63
-1662451107	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Configuration] 		-9
-1662451173	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Configuration] 		3
-1662451183	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			0
-1662451256	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Configuration] 		3
-1662451913	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Configuration] 		-6
-1662452400	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Configuration] 		6
-1662452412	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Install, Update And Remove] 		-8
-1662452649	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Configuration] 		9
-1662453866	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			84
-1662455265	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			65
-1662455298	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			0
-1662455334	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			-94
-1662462111	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:host_discovery	admin			2
-1662462138	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:host_discovery	admin			-6
 1662486993	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			312
 1662487003	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			4
 1662487853	127.0.0.1	E	os:debian:amd64:post-installation	admin			253
@@ -446,3 +337,16 @@
 1662945375	127.0.0.1	E	cybersecurity:sidebar	admin			28
 1662945420	127.0.0.1	E	cybersecurity:dhcp	admin			-94
 1662945541	127.0.0.1	E	cybersecurity:dhcp	admin			89
+1662946850	127.0.0.1	E	cybersecurity:sidebar	admin			-15
+1662946890	127.0.0.1	C	cybersecurity:network_interfaces	admin	created		126
+1662946935	127.0.0.1	C	cybersecurity:mac_address	admin	created		119
+1662946948	127.0.0.1	C	cybersecurity:dns	admin	created		111
+1662946966	127.0.0.1	C	cybersecurity:vpn-tor-proxy	admin	created		121
+1662969207	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			26
+1662969254	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin	[Hashing] 		-10
+1662979480	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			71
+1662979763	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			74
+1662979782	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			14
+1662983325	127.0.0.1	E	todo	admin			56
+1663111851	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			71
+1663112291	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			69

@@ -13,30 +13,36 @@ This section is incomplete and needs further work!
 <ol>
 <li class="level1"><div class="li"> Identify hash: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">haiti &#039;&lt;HASH&gt;&#039;</span></pre><p></div>
 </li>
-</ol>
-
-</div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hash Identifying&quot;,&quot;hid&quot;:&quot;hash_identifying&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;118-197&quot;} -->
-<h2 class="sectionedit5" id="hashing1">Hashing</h2>
-<div class="level2">
-<ol>
-<li class="level1"><div class="li"> Create hash:</div>
+<li class="level1"><div class="li"> Identifying with hashcat: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat --show &#039;&lt;HASH&gt;&#039;</span></pre><p></div>
 </li>
 </ol>
 
-<p>
-$ echo -n &#039;&lt;WORD&gt;&#039; | &lt;md5sum|sha1sum|sha224sum|sha256sum| | cut -d &#039; &#039; -f 1
-&lt;/cli&gt;
-</p>
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hash Identifying&quot;,&quot;hid&quot;:&quot;hash_identifying&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;118-266&quot;} -->
+<h2 class="sectionedit5" id="hashing1">Hashing</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create hash: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">echo -n &#039;&lt;WORD&gt;&#039; | &lt;md5sum|sha1sum|sha256sum|sha384sum|sha512sum&gt; | cut -d &#039; &#039; -f 1</span></pre><p></div>
+</li>
+</ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hashing&quot;,&quot;hid&quot;:&quot;hashing1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;198-319&quot;} -->
-<h2 class="sectionedit6" id="cracking">Cracking</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hashing&quot;,&quot;hid&quot;:&quot;hashing1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;267-404&quot;} -->
+<h2 class="sectionedit6" id="extracting_hash">Extracting Hash</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> From zip: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">zip2john &lt;ZIP&gt; &gt; &lt;HASH-FILE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Extracting Hash&quot;,&quot;hid&quot;:&quot;extracting_hash&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;405-492&quot;} -->
+<h2 class="sectionedit7" id="cracking">Cracking</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cracking&quot;,&quot;hid&quot;:&quot;cracking&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;320-341&quot;} -->
-<h3 class="sectionedit7" id="hashcat">Hashcat</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cracking&quot;,&quot;hid&quot;:&quot;cracking&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;493-514&quot;} -->
+<h3 class="sectionedit8" id="hashcat">Hashcat</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> List available OpenCL<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> devices for cracking: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat -I</span></pre><p></div>
@@ -47,10 +53,16 @@ $ echo -n &#039;&lt;WORD&gt;&#039; | &lt;md5sum|sha1sum|sha224sum|sha256sum| | c
 </li>
 </ul>
 </li>
+<li class="level1"><div class="li"> Cracked passwords file: <strong>~/.local/share/hashcat/hashcat.potfile</strong></div>
+</li>
 </ol>
 
+<p>
+<a href="https://hashcat.net/wiki/doku.php?id=example_hashes" class="urlextern" title="https://hashcat.net/wiki/doku.php?id=example_hashes">Hash examples</a>
+</p>
+
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hashcat&quot;,&quot;hid&quot;:&quot;hashcat&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;342-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hashcat&quot;,&quot;hid&quot;:&quot;hashcat&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;515-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Debian OpenCL packages: <a href="https://packages.debian.org/buster/opencl-icd" class="urlextern" title="https://packages.debian.org/buster/opencl-icd">https://packages.debian.org/buster/opencl-icd</a>.</div></div>
 </div>

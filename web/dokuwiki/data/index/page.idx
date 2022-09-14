@@ -103,3 +103,7 @@ debian:resources
 cybersecurity:system
 cybersecurity:resources
 cybersecurity:dhcp
+cybersecurity:network_interfaces
+cybersecurity:mac_address
+cybersecurity:dns
+cybersecurity:vpn-tor-proxy
