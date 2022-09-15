@@ -1,0 +1,37 @@
+====== Pre-Installation ======
+
+===== Download =====
+
+  - Download [[https://get.debian.org/images/release/current/arm64/iso-cd|Debian ISO for arm64]] architecture: <cli>
+$ curl -LO 'https://cdimage.debian.org/images/release/current/arm64/iso-cd/debian-11.5.0-arm64-netinst.iso'
+</cli>
+
+===== Verify Download =====
+
+  - Download ''SHA512SUMS'' checksum and ''SHA512SUMS.sign'' checksum PGP signature from same location as ISO. <cli>
+$ curl -LO 'https://cdimage.debian.org/images/release/current/arm64/iso-cd/SHA512SUMS.sign'
+$ curl -LO 'https://cdimage.debian.org/images/release/current/arm64/iso-cd/SHA512SUMS'
+</cli>
+  - Verify authenticity of checksum PGP signature: <cli>
+$ gpg --verify SHA512SUMS.sign SHA512SUMS
+</cli>
+    * If there was an error with missing public key, verify that the missing key in output is matching one of [[https://www.debian.org/CD/verify|Debian ISO verifying keys]], import it and try again: <cli>
+$ gpg --keyserver keyring.debian.org --recv <KEY>
+$ gpg --verify SHA512SUMS.sign SHA512SUMS
+</cli>
+  - Verify integrity of ISO file (ISO and checksum must be in the same directory): <cli>
+$ sha512sum --ignore-missing -c SHA512SUMS
+</cli>
+
+===== Flash USB =====
+
+  - Make sure the USB filesystem is **not** mounted!
+  - Flash USB with disk image: <cli>
+# dd if=<DEBIAN.iso> of=</dev/sdX> status=progress ; sync
+</cli>
+
+===== USB Boot =====
+
+  - Reboot the system and during the POST phase press //BIOS key//((List of //POST keys// according to vendor: https://www.disk-image.com/faq-bootmenu.htm.)) to boot into UEFI.
+  - Make sure that Secure Boot is disabled and reboot.
+  - On next POST phase, press //Boot Menu key//((List of //POST keys// according to vendor: https://www.disk-image.com/faq-bootmenu.htm.)) and select //(UEFI) USB// entry.

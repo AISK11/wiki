@@ -11,6 +11,9 @@
   * [[debian:amd64_installation|Installation]]
   * [[debian:amd64_post-installation|Post-Installation]]
 
+**Installation (arm64)**
+  * [[debian:arm64_pre-installation|Pre-Installation]]
+
 **Configuration**
   * [[debian:bootloader|Bootloader]]
   * [[debian:package_manager|Package Manager]]

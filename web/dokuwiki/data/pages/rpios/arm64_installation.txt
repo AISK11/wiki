@@ -1,0 +1,25 @@
+====== Installation ======
+
+===== Pi Installer =====
+
+  - Keyboard layout: **English (UK)**
+  - Please enter new username: **<USER>**
+  - Please set a password for <USER>: **<NEW-USER-PASSWORD>**
+  - Please confirm the password: **<NEW-USER-PASSWORD-VERIFY>**
+
+===== Login & Reboot =====
+
+  - Login to the system: <cli>
+> <USER>
+> <USER-PASSWORD>
+</cli>
+  - Set keymap (applied on next reboot): <file text /etc/default/keyboard>
+XKBMODEL="pc105"
+XKBLAYOUT="us"
+XKBVARIANT=""
+XKBOPTIONS=""
+BACKSPACE="guess"
+</file>
+  - Reboot: <cli>
+$ reboot
+</cli>

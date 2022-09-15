@@ -1,99 +1,3 @@
-1662486993	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			312
-1662487003	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			4
-1662487853	127.0.0.1	E	os:debian:amd64:post-installation	admin			253
-1662488332	127.0.0.1	E	os:debian:amd64:post-installation	admin			268
-1662488346	127.0.0.1	E	os:debian:amd64:post-installation	admin			1
-1662488413	127.0.0.1	E	os:debian:amd64:post-installation	admin			45
-1662489201	127.0.0.1	E	os:debian:amd64:post-installation	admin			674
-1662489256	127.0.0.1	E	os:debian:amd64:post-installation	admin			-212
-1662489533	127.0.0.1	E	os:debian:amd64:post-installation	admin			84
-1662489591	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Configure Partitions And Filesystems] 		-3
-1662489802	127.0.0.1	E	os:debian:amd64:post-installation	admin			-10
-1662490017	127.0.0.1	E	os:debian:amd64:post-installation	admin			-1
-1662490105	127.0.0.1	E	os:debian:amd64:post-installation	admin			-80
-1662490213	127.0.0.1	E	os:debian:amd64:post-installation	admin			-2
-1662490270	127.0.0.1	E	os:debian:amd64:post-installation	admin			18
-1662490328	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
-1662490494	127.0.0.1	E	os:debian:amd64:post-installation	admin			-88
-1662490559	127.0.0.1	E	os:debian:amd64:post-installation	admin			22
-1662490998	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
-1662491089	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
-1662491415	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
-1662491480	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
-1662491726	127.0.0.1	E	os:debian:amd64:installation	admin			-2
-1662491738	127.0.0.1	E	os:debian:amd64:post-installation	admin			-2
-1662492105	127.0.0.1	E	os:debian:amd64:post-installation	admin			161
-1662492419	127.0.0.1	E	os:debian:amd64:post-installation	admin			77
-1662492944	127.0.0.1	E	os:debian:amd64:post-installation	admin			107
-1662493109	127.0.0.1	E	os:debian:amd64:post-installation	admin			125
-1662493247	127.0.0.1	E	os:debian:amd64:post-installation	admin			84
-1662493262	127.0.0.1	E	it_areas:cybersecurity:anonymity:system	admin			24
-1662493339	127.0.0.1	E	os:debian:amd64:post-installation	admin			0
-1662493387	127.0.0.1	E	os:debian:amd64:post-installation	admin			1
-1662493562	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Console] 		-158
-1662493707	127.0.0.1	E	it_areas:cybersecurity:anonymity:system	admin			0
-1662493719	127.0.0.1	E	os:debian:amd64:post-installation	admin			-1
-1662493897	127.0.0.1	E	os:debian:amd64:post-installation	admin			32
-1662493999	127.0.0.1	E	it_areas:cybersecurity:anonymity:system	admin	[MOTD] 		2
-1662494166	127.0.0.1	E	os:debian:amd64:post-installation	admin			1760
-1662494254	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			96
-1662494374	127.0.0.1	E	os:debian:amd64:post-installation	admin			-1638
-1662494394	127.0.0.1	E	os:debian:amd64:post-installation	admin			2
-1662494409	127.0.0.1	E	os:debian:amd64:post-installation	admin			1
-1662494617	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			-6
-1662495172	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			155
-1662495262	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			12
-1662495378	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			-2
-1662495790	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Apt Configuration] 		25
-1662495854	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			24
-1662495914	127.0.0.1	E	os:debian:amd64:post-installation	admin			46
-1662495924	127.0.0.1	E	os:debian:amd64:post-installation	admin			7
-1662496003	127.0.0.1	E	os:debian:amd64:post-installation	admin			25
-1662496460	127.0.0.1	E	os:debian:amd64:post-installation	admin			428
-1662496567	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Packages] 		-4
-1662496751	127.0.0.1	E	os:debian:amd64:post-installation	admin			-68
-1662496774	127.0.0.1	E	os:debian:amd64:post-installation	admin			-28
-1662496885	127.0.0.1	E	os:debian:amd64:post-installation	admin			-170
-1662497009	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Apt Configuration] 		1
-1662497600	127.0.0.1	E	os:debian:amd64:post-installation	admin			80
-1662497615	127.0.0.1	R	os:debian:amd64:post-installation	admin	old revision restored (2022-09-06 20:41)	1662496885	-80
-1662497741	127.0.0.1	E	os:debian:amd64:post-installation	admin			4
-1662497755	127.0.0.1	E	os:debian:amd64:post-installation	admin			-1
-1662497806	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			68
-1662497821	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin	[Apt Configuration] 		4
-1662497885	127.0.0.1	E	os:debian:cheat_sheets:package_manager	admin			-6
-1662498012	127.0.0.1	E	os:debian:amd64:post-installation	admin			194
-1662498395	127.0.0.1	E	os:debian:amd64:post-installation	admin			189
-1662498427	127.0.0.1	E	os:debian:amd64:post-installation	admin			16
-1662498722	127.0.0.1	E	os:debian:amd64:post-installation	admin			170
-1662499221	127.0.0.1	E	os:debian:amd64:post-installation	admin			172
-1662499238	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Packages] 		-42
-1662499646	127.0.0.1	E	os:debian:amd64:post-installation	admin	[Packages] 		110
-1662500058	127.0.0.1	E	os:debian:amd64:post-installation	admin			141
-1662500079	127.0.0.1	D	it_areas:cybersecurity:tools	admin	removed		-283
-1662500089	127.0.0.1	E	it_areas:cybersecurity:sidebar	admin			-43
-1662500380	127.0.0.1	E	it_areas:cybersecurity:anonymity:firewall	admin			91
-1662500649	127.0.0.1	E	it_areas:cybersecurity:anonymity:firewall	admin			121
-1662500655	127.0.0.1	E	it_areas:cybersecurity:anonymity:firewall	admin			1
-1662500669	127.0.0.1	E	it_areas:cybersecurity:anonymity:firewall	admin			0
-1662500707	127.0.0.1	E	it_areas:cybersecurity:anonymity:firewall	admin			-24
-1662501995	127.0.0.1	E	os:debian:sidebar	admin			59
-1662502076	127.0.0.1	E	os:debian:sidebar	admin			-32
-1662502094	127.0.0.1	C	os:debian:amd64_pre-installation	admin	created		1078
-1662502096	127.0.0.1	D	os:debian:amd64:pre-installation	admin	removed		-1078
-1662502118	127.0.0.1	C	os:debian:amd64_installation	admin	created		1286
-1662502119	127.0.0.1	D	os:debian:amd64:installation	admin	removed		-1286
-1662502137	127.0.0.1	C	os:debian:amd64_post-installation	admin	created		2902
-1662502138	127.0.0.1	D	os:debian:amd64:post-installation	admin	removed		-2902
-1662502150	127.0.0.1	C	os:debian:package_manager	admin	created		3142
-1662502151	127.0.0.1	D	os:debian:cheat_sheets:package_manager	admin	removed		-3142
-1662502186	127.0.0.1	E	os:debian:amd64_post-installation	admin			-13
-1662502240	127.0.0.1	E	os:debian:amd64_post-installation	admin	[Packages] 		-71
-1662502251	127.0.0.1	E	os:debian:amd64_post-installation	admin			1
-1662502267	127.0.0.1	E	os:debian:amd64_post-installation	admin			-94
-1662502278	127.0.0.1	C	os:debian:network	admin	created		116
-1662502314	127.0.0.1	E	os:debian:amd64_post-installation	admin			-13
-1662562095	127.0.0.1	E	it_areas:development:project_management:git	admin			69
 1662619724	127.0.0.1	E	os:debian:amd64_pre-installation	admin			174
 1662620084	127.0.0.1	E	os:debian:amd64_pre-installation	admin			311
 1662620111	127.0.0.1	E	os:debian:amd64_pre-installation	admin			246
@@ -350,3 +254,72 @@
 1662983325	127.0.0.1	E	todo	admin			56
 1663111851	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			71
 1663112291	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			69
+1663239667	127.0.0.1	E	debian:index	admin			23
+1663240171	127.0.0.1	E	debian:index	admin			214
+1663240203	127.0.0.1	E	debian:resources	admin			94
+1663240839	127.0.0.1	D	os:debian:amd64_pre-installation	admin	removed		-1686
+1663240851	127.0.0.1	C	debian:amd64_pre-installation	admin	created		1696
+1663240875	127.0.0.1	E	debian:amd64_pre-installation	admin			11
+1663240901	127.0.0.1	E	debian:amd64_pre-installation	admin			-14
+1663241026	127.0.0.1	E	debian:amd64_pre-installation	admin			10
+1663241227	127.0.0.1	E	debian:amd64_pre-installation	admin			23
+1663241477	127.0.0.1	E	debian:sidebar	admin			82
+1663241911	127.0.0.1	C	debian:arm64_pre-installation	admin	created		1564
+1663242118	127.0.0.1	E	debian:arm64_pre-installation	admin			49
+1663242246	127.0.0.1	E	debian:arm64_pre-installation	admin			0
+1663242254	127.0.0.1	E	debian:amd64_pre-installation	admin			0
+1663246177	127.0.0.1	E	debian:arm64_pre-installation	admin			-94
+1663246301	127.0.0.1	D	os:debian:amd64_installation	admin	removed		-2870
+1663246306	127.0.0.1	C	debian:amd64_installation	admin	created		2870
+1663246690	127.0.0.1	D	os:debian:network	admin	removed		-116
+1663246924	127.0.0.1	D	os:debian:amd64_post-installation	admin	removed		-2735
+1663246930	127.0.0.1	C	debian:amd64_post-installation	admin	created		2735
+1663246958	127.0.0.1	E	debian:amd64_post-installation	admin			-3
+1663253933	127.0.0.1	E	debian:arm64_pre-installation	admin			60
+1663254027	127.0.0.1	E	debian:arm64_pre-installation	admin			188
+1663254197	127.0.0.1	E	debian:arm64_pre-installation	admin			0
+1663255148	127.0.0.1	E	debian:arm64_pre-installation	admin			6
+1663256259	127.0.0.1	E	sidebar	admin			36
+1663256331	127.0.0.1	E	sidebar	admin			6
+1663256370	127.0.0.1	E	debian:sidebar	admin			-1
+1663256380	127.0.0.1	C	rpios:sidebar	admin	created		198
+1663256558	127.0.0.1	C	rpios:index	admin	created		266
+1663256580	127.0.0.1	E	rpios:index	admin			26
+1663256793	127.0.0.1	C	rpios:arm64_pre-installation	admin	created		1848
+1663257215	127.0.0.1	E	rpios:arm64_pre-installation	admin			-136
+1663257265	127.0.0.1	E	rpios:arm64_pre-installation	admin			23
+1663257490	127.0.0.1	E	rpios:arm64_pre-installation	admin			-773
+1663257522	127.0.0.1	E	rpios:sidebar	admin			0
+1663257531	127.0.0.1	E	sidebar	admin			0
+1663257539	127.0.0.1	E	rpios:index	admin			0
+1663257630	127.0.0.1	E	rpios:index	admin			8
+1663257685	127.0.0.1	E	rpios:index	admin			19
+1663257850	127.0.0.1	E	rpios:arm64_pre-installation	admin			19
+1663257951	127.0.0.1	E	rpios:arm64_pre-installation	admin			1
+1663258047	127.0.0.1	E	rpios:arm64_pre-installation	admin			-427
+1663258107	127.0.0.1	E	rpios:sidebar	admin			46
+1663258356	127.0.0.1	C	rpios:arm64_installation	admin	created		325
+1663258852	127.0.0.1	E	rpios:sidebar	admin			56
+1663258922	127.0.0.1	C	rpios:resources	admin	created		99
+1663258948	127.0.0.1	C	rpios:arm64_post-installation	admin	created		125
+1663259612	127.0.0.1	E	rpios:arm64_post-installation	admin			32
+1663259657	127.0.0.1	E	rpios:arm64_installation	admin			34
+1663259876	127.0.0.1	E	rpios:arm64_post-installation	admin			171
+1663260373	127.0.0.1	E	rpios:arm64_post-installation	admin			51
+1663260382	127.0.0.1	E	rpios:arm64_post-installation	admin			-189
+1663260456	127.0.0.1	E	rpios:arm64_installation	admin			183
+1663260471	127.0.0.1	E	rpios:arm64_installation	admin			-19
+1663262586	127.0.0.1	E	rpios:arm64_post-installation	admin			119
+1663263427	127.0.0.1	E	rpios:arm64_post-installation	admin			124
+1663263854	127.0.0.1	E	rpios:arm64_post-installation	admin			10
+1663264802	127.0.0.1	E	rpios:arm64_installation	admin			29
+1663264817	127.0.0.1	E	rpios:arm64_installation	admin			-3
+1663267405	127.0.0.1	E	rpios:arm64_post-installation	admin			103
+1663267683	127.0.0.1	E	rpios:arm64_post-installation	admin			22
+1663268402	127.0.0.1	E	rpios:arm64_post-installation	admin			195
+1663269622	127.0.0.1	E	rpios:arm64_post-installation	admin			93
+1663269763	127.0.0.1	E	rpios:arm64_post-installation	admin			54
+1663269787	127.0.0.1	E	rpios:arm64_post-installation	admin			4
+1663269812	127.0.0.1	E	rpios:arm64_post-installation	admin			-58
+1663272110	127.0.0.1	E	rpios:arm64_post-installation	admin			-32
+1663272425	127.0.0.1	E	rpios:arm64_post-installation	admin			1

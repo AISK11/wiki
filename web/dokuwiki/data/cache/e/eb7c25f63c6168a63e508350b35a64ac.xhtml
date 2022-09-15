@@ -1,0 +1,181 @@
+
+<h1 class="sectionedit1" id="installation">Installation</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-28&quot;} -->
+<h2 class="sectionedit2" id="environment_users">Environment &amp; Users</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Language: <strong>English</strong></div>
+</li>
+<li class="level1"><div class="li"> Country, territory or area: <strong>United States</strong></div>
+</li>
+<li class="level1"><div class="li"> Keymap to use: <strong>American English</strong></div>
+</li>
+<li class="level1"><div class="li"> Hostname: <strong>&lt;HOSTNAME&gt;</strong></div>
+</li>
+<li class="level1"><div class="li"> Domain name: <strong>(blank)</strong></div>
+</li>
+<li class="level1"><div class="li"> Root password: <strong>&lt;NEW-ROOT-PASSWORD&gt;</strong></div>
+</li>
+<li class="level1"><div class="li"> Full name for the new user: <strong>(blank)</strong></div>
+</li>
+<li class="level1"><div class="li"> Username for your account: <strong>&lt;USER&gt;</strong></div>
+</li>
+<li class="level1"><div class="li"> Choose a password for the new user: <strong>&lt;NEW-USER-PASSWORD&gt;</strong></div>
+</li>
+<li class="level1"><div class="li"> Select your time zone: <strong>Eastern</strong></div>
+</li>
+<li class="level1"><div class="li"> Partitioning method: <strong>Manual</strong></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment &amp; Users&quot;,&quot;hid&quot;:&quot;environment_users&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-504&quot;} -->
+<h2 class="sectionedit3" id="disk_partitioning">Disk Partitioning</h2>
+<div class="level2">
+<ol>
+<li class="level1 node"><div class="li"> <strong>&lt;sdX&gt;</strong></div>
+<ol>
+<li class="level2"><div class="li"> Create new empty partition table on this device? <strong>Yes</strong></div>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> <strong>&lt;sdX&gt;</strong> ⇒ <strong>FREE SPACE</strong></div>
+<ol>
+<li class="level2"><div class="li"> How to use this free space: <strong>Create a new partition</strong></div>
+</li>
+<li class="level2"><div class="li"> New partition size: <strong>500MB</strong></div>
+</li>
+<li class="level2 node"><div class="li"> Location for the new partition: <strong>Beginning</strong></div>
+<ol>
+<li class="level3"><div class="li"> Name: <strong>ESP</strong></div>
+</li>
+<li class="level3"><div class="li"> Use as: <strong>EFI System Partition</strong></div>
+</li>
+<li class="level3"><div class="li"> Bootable flag: <strong>on</strong></div>
+</li>
+<li class="level3"><div class="li"> <strong>Done setting up the partition</strong></div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> <strong>&lt;sdX&gt;</strong> ⇒ <strong>FREE SPACE</strong></div>
+<ol>
+<li class="level2"><div class="li"> How to use this free space: <strong>Create a new partition</strong></div>
+</li>
+<li class="level2"><div class="li"> New partition size: <strong>500MB</strong></div>
+</li>
+<li class="level2 node"><div class="li"> Location for the new partition: <strong>Beginning</strong></div>
+<ol>
+<li class="level3"><div class="li"> Name: <strong>BOOT</strong></div>
+</li>
+<li class="level3"><div class="li"> Use as: <strong>Ext4 journaling file system</strong></div>
+</li>
+<li class="level3"><div class="li"> Mount point: <strong>/boot</strong></div>
+</li>
+<li class="level3"><div class="li"> Mount options: <strong>noatime</strong></div>
+</li>
+<li class="level3"><div class="li"> Label: <strong>BOOT</strong></div>
+</li>
+<li class="level3"><div class="li"> Reserved blocks: <strong>5%</strong></div>
+</li>
+<li class="level3"><div class="li"> Typical usage: <strong>standard</strong></div>
+</li>
+<li class="level3"><div class="li"> Bootable flag: <strong>off</strong></div>
+</li>
+<li class="level3"><div class="li"> <strong>Done setting up the partition</strong></div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> <strong>&lt;sdX&gt;</strong> ⇒ <strong>FREE SPACE</strong></div>
+<ol>
+<li class="level2"><div class="li"> How to use this free space: <strong>Create a new partition</strong></div>
+</li>
+<li class="level2 node"><div class="li"> New partition size: <strong>max</strong></div>
+<ol>
+<li class="level3"><div class="li"> Name: <strong>LUKS</strong></div>
+</li>
+<li class="level3"><div class="li"> Use as: <strong>physical volume for encryption</strong></div>
+</li>
+<li class="level3"><div class="li"> Encryption method: <strong>Device-mapper (dm-crypt)</strong></div>
+</li>
+<li class="level3"><div class="li"> Encryption: <strong>aes</strong></div>
+</li>
+<li class="level3"><div class="li"> Key size: <strong>256</strong></div>
+</li>
+<li class="level3"><div class="li"> IV algorithm: <strong>xts-plain64</strong></div>
+</li>
+<li class="level3"><div class="li"> Encryption key: <strong>Passphrase</strong></div>
+</li>
+<li class="level3"><div class="li"> Erase data: <strong>yes</strong></div>
+</li>
+<li class="level3"><div class="li"> Bootable flag: <strong>off</strong></div>
+</li>
+<li class="level3"><div class="li"> <strong>Done setting up the partition</strong></div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> <strong>Configure encrypted volumes</strong></div>
+<ol>
+<li class="level2"><div class="li"> Write the changes to disk and configure encrypted volumes? <strong>Yes</strong></div>
+</li>
+<li class="level2"><div class="li"> Encryption configuration actions: <strong>Finish</strong></div>
+</li>
+<li class="level2"><div class="li"> Really erase the data on partition #3 (&lt;sdX&gt;)? <strong>Yes</strong> </div>
+</li>
+<li class="level2"><div class="li"> Encryption passphrase: <strong>&lt;NEW-LUKS-PASSWORD&gt;</strong></div>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> <strong>Encrypted volume</strong> ⇒ <strong>#1</strong></div>
+<ol>
+<li class="level2"><div class="li"> Use as: <strong>btrfs journaling file system</strong></div>
+</li>
+<li class="level2"><div class="li"> Mount point: <strong>/</strong></div>
+</li>
+<li class="level2"><div class="li"> Mount options: <strong>noatime</strong></div>
+</li>
+<li class="level2"><div class="li"> LABEL: <strong>LUKS-ROOT</strong></div>
+</li>
+<li class="level2"><div class="li"> <strong>Done setting up the partition</strong></div>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> <strong>Finish partitioning and write changes to disk</strong></div>
+<ol>
+<li class="level2"><div class="li"> Do you want to return to the partitioning menu? <strong>No</strong></div>
+</li>
+<li class="level2"><div class="li"> Write the changes to disks? <strong>Yes</strong></div>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Partitioning&quot;,&quot;hid&quot;:&quot;disk_partitioning&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;505-2540&quot;} -->
+<h2 class="sectionedit4" id="packages">Packages</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Scan extra installation media? <strong>No</strong></div>
+</li>
+<li class="level1"><div class="li"> Debian archive mirror country: <strong>United States</strong></div>
+</li>
+<li class="level1"><div class="li"> Debian archive mirror: <strong>deb.debian.org</strong></div>
+</li>
+<li class="level1"><div class="li"> HTTP proxy information (blank for none): <strong>(blank)</strong></div>
+</li>
+<li class="level1"><div class="li"> Participate in the package usage survey? <strong>No</strong></div>
+</li>
+<li class="level1"><div class="li"> Choose software to install: <strong>(empty all checkboxes)</strong></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Packages&quot;,&quot;hid&quot;:&quot;packages&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2541-&quot;} -->

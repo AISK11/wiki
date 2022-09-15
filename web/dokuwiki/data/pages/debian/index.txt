@@ -3,10 +3,11 @@
 ===== Pros =====
 
   * Processor architecture support (amd64, i386, arm64, armhf, armel...)((Debian supported processor architectures: https://wiki.debian.org/SupportedArchitectures.)).
-  * Userbase + amount of packages in repositories((Package management across different linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#Package_management_and_installation.)).
+  * Amount of maintainers, userbase + amount of packages in repositories((Package management across different linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#Package_management_and_installation.)).
   * Independent distribution.
   * Stability.
   * Binary based.
+  * Respecting FSF but allowing non-FSF software if necessary((Debian kernel vs Linux-libre: https://unix.stackexchange.com/questions/288027/what-are-the-differences-between-debian-linux-kernel-and-linux-libre.)).
 
 ===== Cons =====
 

@@ -4,6 +4,7 @@
 
 **Operating Systems**
   * [[debian:index|Debian Linux]]
+  * [[rpios:index|Raspberry Pi OS Linux]]
 
 **IT Areas**
   * [[:cybersecurity:index|Cybersecurity]]

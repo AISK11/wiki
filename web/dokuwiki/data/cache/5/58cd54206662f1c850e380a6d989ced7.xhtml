@@ -1,0 +1,62 @@
+
+<h1 class="sectionedit1" id="post-installation">Post-Installation</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Post-Installation&quot;,&quot;hid&quot;:&quot;post-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-127&quot;} -->
+<h2 class="sectionedit4" id="debloating">Debloating</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Uninstall unwanted software: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt purge avahi-daemon</span>
+<span class="cli_prompt"># </span><span class="cli_command">apt purge bluez bluez-firmware</span>
+<span class="cli_prompt"># </span><span class="cli_command">apt purge modemmanager</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li"> Disable unwanted services: </div>
+<ol>
+<li class="level2"><div class="li"> Networking services: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl disable networking.service wpa_supplicant.service</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Reboot to apply changes: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">reboot</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Debloating&quot;,&quot;hid&quot;:&quot;debloating&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;128-466&quot;} -->
+<h2 class="sectionedit5" id="configure_network">Configure Network</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configure Network&quot;,&quot;hid&quot;:&quot;configure_network&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;467-497&quot;} -->
+<h3 class="sectionedit6" id="ethernet">Ethernet</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Ethernet&quot;,&quot;hid&quot;:&quot;ethernet&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;498-517&quot;} -->
+<h3 class="sectionedit7" id="wireless">Wireless</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Unblock Wi-Fi: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">rfkill unblock wlan</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Configure wpa_supplicant: <dl class="file">
+<dt><a href="http://localhost/_export/code/rpios/arm64_post-installation?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/wpa_supplicant/wpa_supplicant.conf</a></dt>
+<dd><pre class="code file text">&nbsp;</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Configure dhcp client: <dl class="file">
+<dt><a href="http://localhost/_export/code/rpios/arm64_post-installation?codeblock=1" title="Download Snippet" class="mediafile mf_conf">/etc/dhcpcd.conf</a></dt>
+<dd><pre class="code file text">&nbsp;</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Enable dhcp client service: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl enable dhcpcd.service</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Wireless&quot;,&quot;hid&quot;:&quot;wireless&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;518-&quot;} -->

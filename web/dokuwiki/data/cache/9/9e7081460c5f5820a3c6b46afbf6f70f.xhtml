@@ -1,0 +1,32 @@
+
+<h1 class="sectionedit1" id="pre-installation">Pre-Installation</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Pre-Installation&quot;,&quot;hid&quot;:&quot;pre-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-32&quot;} -->
+<h2 class="sectionedit2" id="download">Download</h2>
+<div class="level2">
+<ol>
+<li class="level1 node"><div class="li"> Download <a href="https://www.raspberrypi.com/software/operating-systems#raspberry-pi-os-64-bit" class="urlextern" title="https://www.raspberrypi.com/software/operating-systems#raspberry-pi-os-64-bit">Raspberry Pi OS iso for arm64</a> architecture:</div>
+<ul>
+<li class="level2"><div class="li"> Raspberry Pi <abbr title="Operating System">OS</abbr> (64-bit) ⇒ Raspberry Pi <abbr title="Operating System">OS</abbr> Lite</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Decompress disk image file: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xz -vd &lt;RASPBERRY-PI-OS.xz&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Download&quot;,&quot;hid&quot;:&quot;download&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;33-324&quot;} -->
+<h2 class="sectionedit3" id="flash_installation_media">Flash Installation Media</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Make sure the installation media filesystem is <strong>not</strong> mounted!</div>
+</li>
+<li class="level1"><div class="li"> Flash installation media with disk image: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=&lt;RASPBERRY-PI-OS.iso&gt; of=&lt;/dev/sdX&gt; status=progress ; sync</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Flash Installation Media&quot;,&quot;hid&quot;:&quot;flash_installation_media&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;325-&quot;} -->

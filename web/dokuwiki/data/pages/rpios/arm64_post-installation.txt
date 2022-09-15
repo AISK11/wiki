@@ -1,0 +1,39 @@
+====== Post-Installation ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Debloating =====
+
+  - Uninstall unwanted software: <cli>
+# apt purge avahi-daemon
+# apt purge bluez bluez-firmware
+# apt purge modemmanager
+</cli>
+  - Disable unwanted services: 
+    - Networking services: <cli>
+# systemctl disable networking.service wpa_supplicant.service
+</cli>
+  - Reboot to apply changes: <cli>
+$ reboot
+</cli>
+
+===== Configure Network =====
+
+==== Ethernet ====
+
+==== Wireless ====
+
+  - Unblock Wi-Fi: <cli>
+$ rfkill unblock wlan
+</cli>
+  - Configure wpa_supplicant: <file text /etc/wpa_supplicant/wpa_supplicant.conf>
+
+</file>
+  - Configure dhcp client: <file text /etc/dhcpcd.conf>
+
+</file>
+  - Enable dhcp client service: <cli>
+# systemctl enable dhcpcd.service
+</cli>

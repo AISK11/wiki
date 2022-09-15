@@ -107,3 +107,13 @@ cybersecurity:network_interfaces
 cybersecurity:mac_address
 cybersecurity:dns
 cybersecurity:vpn-tor-proxy
+debian:amd64_pre-installation
+debian:arm64_pre-installation
+debian:amd64_installation
+debian:amd64_post-installation
+rpios:sidebar
+rpios:index
+rpios:arm64_pre-installation
+rpios:arm64_installation
+rpios:resources
+rpios:arm64_post-installation

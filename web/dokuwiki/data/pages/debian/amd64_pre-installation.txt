@@ -2,9 +2,9 @@
 
 ===== Download =====
 
-  - Download debian ISO:
-    * [[https://cdimage.debian.org/cdimage/release/current/amd64/iso-cd|Debian netinstall ISO]] => debian-<VERSION>-amd64-netinst.iso
-    * [[https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/amd64/iso-cd|Debian netinstall ISO with 3rd party firmware]] => firmware-<VERSION>-amd64-netinst.iso
+  - Download Debian ISO for amd64 architecture:
+    * [[https://cdimage.debian.org/cdimage/release/current/amd64/iso-cd|Netinstall ISO]] => debian-<VERSION>-amd64-netinst.iso
+    * [[https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/amd64/iso-cd|Unofficial netinstall ISO with 3rd party firmware]] => firmware-<VERSION>-amd64-netinst.iso
 
 ===== Verify Download =====
 
@@ -12,7 +12,7 @@
   - Verify authenticity of checksum PGP signature: <cli>
 $ gpg --verify SHA512SUMS.sign SHA512SUMS
 </cli>
-    * If there was an error with missing public key, verify that the missing key is matching one of [[https://www.debian.org/CD/verify|Debian ISO verifying keys]], import it and try again: <cli>
+    * If there was an error with missing public key, verify that the missing key in output is matching one of [[https://www.debian.org/CD/verify|Debian ISO verifying keys]], import it and try again: <cli>
 $ gpg --keyserver keyring.debian.org --recv <KEY>
 $ gpg --verify SHA512SUMS.sign SHA512SUMS
 </cli>
@@ -24,7 +24,7 @@ $ sha512sum --ignore-missing -c SHA512SUMS
 
   - Make sure the USB filesystem is **not** mounted!
   - Flash USB with disk image: <cli>
-# dd if=<DEBIAN>.iso of=</dev/sdX> bs=4M ; sync
+# dd if=<DEBIAN.iso> of=</dev/sdX> status=progress ; sync
 </cli>
 
 ===== USB Boot =====

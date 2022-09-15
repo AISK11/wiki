@@ -11,3 +11,4 @@
 1662756501	127.0.0.1	E	os:debian:amd64_post-installation	admin	[Partitions & Filesystems] 		4
 1662772918	127.0.0.1	E	os:debian:amd64_post-installation	admin	[Packages] 		8
 1662773008	127.0.0.1	E	os:debian:amd64_post-installation	admin			-4
+1663246924	127.0.0.1	D	os:debian:amd64_post-installation	admin	removed		-2735

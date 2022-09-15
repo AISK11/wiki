@@ -1,0 +1,62 @@
+
+<h1 class="sectionedit1" id="pre-installation">Pre-Installation</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Pre-Installation&quot;,&quot;hid&quot;:&quot;pre-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-32&quot;} -->
+<h2 class="sectionedit2" id="download">Download</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Download <a href="https://get.debian.org/images/release/current/arm64/iso-cd" class="urlextern" title="https://get.debian.org/images/release/current/arm64/iso-cd">Debian ISO for arm64</a> architecture: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -LO &#039;https://cdimage.debian.org/images/release/current/arm64/iso-cd/debian-11.5.0-arm64-netinst.iso&#039;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Download&quot;,&quot;hid&quot;:&quot;download&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;33-287&quot;} -->
+<h2 class="sectionedit3" id="verify_download">Verify Download</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Download <code>SHA512SUMS</code> checksum and <code>SHA512SUMS.sign</code> checksum PGP signature from same location as ISO. </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -LO &#039;https://cdimage.debian.org/images/release/current/arm64/iso-cd/SHA512SUMS.sign&#039;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">curl -LO &#039;https://cdimage.debian.org/images/release/current/arm64/iso-cd/SHA512SUMS&#039;</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li"> Verify authenticity of checksum PGP signature: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">gpg --verify SHA512SUMS.sign SHA512SUMS</span></pre><p></div>
+<ul>
+<li class="level2"><div class="li"> If there was an error with missing public key, verify that the missing key in output is matching one of <a href="https://www.debian.org/CD/verify" class="urlextern" title="https://www.debian.org/CD/verify">Debian ISO verifying keys</a>, import it and try again: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">gpg --keyserver keyring.debian.org --recv &lt;KEY&gt;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">gpg --verify SHA512SUMS.sign SHA512SUMS</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Verify integrity of ISO file (ISO and checksum must be in the same directory): </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">sha512sum --ignore-missing -c SHA512SUMS</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Verify Download&quot;,&quot;hid&quot;:&quot;verify_download&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;288-1169&quot;} -->
+<h2 class="sectionedit4" id="flash_usb">Flash USB</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Make sure the USB filesystem is <strong>not</strong> mounted!</div>
+</li>
+<li class="level1"><div class="li"> Flash USB with disk image: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=&lt;DEBIAN.iso&gt; of=&lt;/dev/sdX&gt; status=progress ; sync</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Flash USB&quot;,&quot;hid&quot;:&quot;flash_usb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1170-1348&quot;} -->
+<h2 class="sectionedit5" id="usb_boot">USB Boot</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Reboot the system and during the POST phase press <em>BIOS key</em><sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> to boot into UEFI.</div>
+</li>
+<li class="level1"><div class="li"> Make sure that Secure Boot is disabled and reboot.</div>
+</li>
+<li class="level1"><div class="li"> On next POST phase, press <em>Boot Menu key</em><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup> and select <em>(UEFI) USB</em> entry.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;USB Boot&quot;,&quot;hid&quot;:&quot;usb_boot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;1349-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+, <sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">List of <em>POST keys</em> according to vendor: <a href="https://www.disk-image.com/faq-bootmenu.htm" class="urlextern" title="https://www.disk-image.com/faq-bootmenu.htm">https://www.disk-image.com/faq-bootmenu.htm</a>.</div></div>
+</div>

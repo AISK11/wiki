@@ -112,3 +112,7 @@ identifier
 generating
 interfaces
 extracting
+respecting
+sha256sums
+decompress
+debloating

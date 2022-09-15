@@ -1,0 +1,4 @@
+## Turn on interface on boot.
+auto wlan0
+&nbsp;
+## Configure IP address

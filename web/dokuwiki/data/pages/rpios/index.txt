@@ -1,0 +1,15 @@
+====== Raspberry Pi OS Linux ======
+
+===== Pros =====
+
+  * Focused and optimized for Raspberry Pi single-board computers.
+  * Stability.
+  * Binary based.
+  * Friendly website.
+
+===== Cons =====
+
+  * SystemD.
+  * Point release + package manager.
+  * Depends on Debian Linux.
+  * Mostly pre-installed (harder to modify).

@@ -1,0 +1,7 @@
+## Turn on interface on boot.
+auto wlan0
+&nbsp;
+## Use wpa_supplicant to connect to ESSID.
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+&nbsp;
+## Configure IP address

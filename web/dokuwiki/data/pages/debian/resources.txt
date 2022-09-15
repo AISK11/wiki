@@ -1,5 +1,9 @@
 ====== Resources ======
 
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
 ===== Debian =====
 
   * [[https://www.debian.org|Main Page]]

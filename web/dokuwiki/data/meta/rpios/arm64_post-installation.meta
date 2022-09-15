@@ -1,0 +1,19 @@
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1663258948;s:8:"modified";i:1663272425;}s:7:"creator";s:5:"admin";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1663272425;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:29:"rpios:arm64_post-installation";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:1;}s:11:"contributor";a:1:{s:5:"admin";s:5:"admin";}s:5:"title";s:17:"Post-Installation";s:11:"description";a:2:{s:15:"tableofcontents";a:5:{i:0;a:4:{s:3:"hid";s:17:"post-installation";s:5:"title";s:17:"Post-Installation";s:4:"type";s:2:"ul";s:5:"level";i:1;}i:1;a:4:{s:3:"hid";s:10:"debloating";s:5:"title";s:10:"Debloating";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:2;a:4:{s:3:"hid";s:17:"configure_network";s:5:"title";s:17:"Configure Network";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:3;a:4:{s:3:"hid";s:8:"ethernet";s:5:"title";s:8:"Ethernet";s:4:"type";s:2:"ul";s:5:"level";i:3;}i:4;a:4:{s:3:"hid";s:8:"wireless";s:5:"title";s:8:"Wireless";s:4:"type";s:2:"ul";s:5:"level";i:3;}}s:8:"abstract";s:249:"Post-Installation
+
+This section is incomplete and needs further work!
+
+Debloating
+
+	*  Uninstall unwanted software: 
+	*  Disable unwanted services: 
+		*  Networking services: 
+
+	*  Reboot to apply changes: 
+
+Configure Network
+
+Ethernet
+
+Wireless
+
+	*";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}s:8:"relation";a:1:{s:10:"firstimage";s:0:"";}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1663258948;s:8:"modified";i:1663272425;}s:7:"creator";s:5:"admin";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1663272425;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:29:"rpios:arm64_post-installation";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:1;}s:11:"contributor";a:1:{s:5:"admin";s:5:"admin";}}}

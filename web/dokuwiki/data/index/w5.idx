@@ -268,3 +268,10 @@ apipa
 noarp
 slaac
 lease
+libre
+rpios
+board
+avahi
+bluez
+wlan0
+essid
