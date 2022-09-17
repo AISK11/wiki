@@ -1,0 +1,62 @@
+
+<h1 class="sectionedit1" id="apt">Apt</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Apt&quot;,&quot;hid&quot;:&quot;apt&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-113&quot;} -->
+<h2 class="sectionedit4" id="update">Update</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Normal system update: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt update &amp;&amp; apt full-upgrade &amp;&amp; apt autoremove &amp;&amp; apt clean</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> New release upgrade: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sed -i &#039;s/&lt;RELEASE&gt;/&lt;NEW-RELEASE&gt;/g&#039; /etc/apt/sources.list</span>
+<span class="cli_prompt"># </span><span class="cli_command">sed -i &#039;s/&lt;RELEASE&gt;/&lt;NEW-RELEASE&gt;/g&#039; /etc/apt/preferences</span>
+<span class="cli_prompt"># </span><span class="cli_command">apt update &amp;&amp; apt full-upgrade &amp;&amp; apt autoremove &amp;&amp; apt clean</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Update&quot;,&quot;hid&quot;:&quot;update&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;114-460&quot;} -->
+<h2 class="sectionedit5" id="install">Install</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Install remote package: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install &lt;PKG&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install local package file: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dpkg -i &lt;PKG&gt;.deb</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Install&quot;,&quot;hid&quot;:&quot;install&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;461-608&quot;} -->
+<h2 class="sectionedit6" id="remove">Remove</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Remove package (with config files) and dependencies: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt purge &lt;PKG&gt; &amp;&amp; apt autoremove</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Remove&quot;,&quot;hid&quot;:&quot;remove&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;609-735&quot;} -->
+<h2 class="sectionedit7" id="query">Query</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Search for package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">apt search &lt;REGEX&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List all [installed] packages: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">apt list [--installed]</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Show info about package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">apt show &lt;PKG&gt;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">apt depends &lt;PKG&gt;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">apt rdepends &lt;PKG&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List files of package: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">dpkg -L &lt;PKG&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List package that owns a file: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">dpkg -S &lt;FILE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Query&quot;,&quot;hid&quot;:&quot;query&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;736-&quot;} -->

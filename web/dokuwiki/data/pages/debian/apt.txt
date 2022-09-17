@@ -1,0 +1,51 @@
+====== Apt ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Update =====
+
+  * Normal system update: <cli>
+# apt update && apt full-upgrade && apt autoremove && apt clean
+</cli>
+  * New release upgrade: <cli>
+# sed -i 's/<RELEASE>/<NEW-RELEASE>/g' /etc/apt/sources.list
+# sed -i 's/<RELEASE>/<NEW-RELEASE>/g' /etc/apt/preferences
+# apt update && apt full-upgrade && apt autoremove && apt clean
+</cli>
+
+===== Install =====
+
+  * Install remote package: <cli>
+# apt install <PKG>
+</cli>
+  * Install local package file: <cli>
+# dpkg -i <PKG>.deb
+</cli>
+
+===== Remove =====
+
+  * Remove package (with config files) and dependencies: <cli>
+# apt purge <PKG> && apt autoremove
+</cli>
+
+===== Query =====
+
+  * Search for package: <cli>
+$ apt search <REGEX>
+</cli>
+  * List all [installed] packages: <cli>
+$ apt list [--installed]
+</cli>
+  * Show info about package: <cli>
+$ apt show <PKG>
+$ apt depends <PKG>
+$ apt rdepends <PKG>
+</cli>
+  * List files of package: <cli>
+$ dpkg -L <PKG>
+</cli>
+  * List package that owns a file: <cli>
+$ dpkg -S <FILE>
+</cli>

@@ -9,7 +9,7 @@ a:70:{i:0;a:3:{i:0;s:14:"document_start";i:1;a:0:{}i:2;i:0;}i:1;a:3:{i:0;s:6:"he
 ## DESCRIPTION:  DHCP client settings.
 
 ## Group to manage dhcpcd via control socket.
-controlgroup dhcpcd
+controlgroup netdev
 
 ## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
 nohook resolv.conf

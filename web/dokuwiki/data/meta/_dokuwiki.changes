@@ -1,95 +1,3 @@
-1662619724	127.0.0.1	E	os:debian:amd64_pre-installation	admin			174
-1662620084	127.0.0.1	E	os:debian:amd64_pre-installation	admin			311
-1662620111	127.0.0.1	E	os:debian:amd64_pre-installation	admin			246
-1662620131	127.0.0.1	E	os:debian:amd64_pre-installation	admin			-1
-1662620222	127.0.0.1	E	os:debian:amd64_pre-installation	admin			8
-1662620431	127.0.0.1	E	os:debian:amd64_pre-installation	admin			219
-1662620574	127.0.0.1	E	os:debian:amd64_pre-installation	admin	[Verify Download] 		-27
-1662620616	127.0.0.1	E	os:debian:amd64_pre-installation	admin	[Verify Download] 		18
-1662621349	127.0.0.1	E	os:debian:amd64_pre-installation	admin			7
-1662621491	127.0.0.1	E	os:debian:amd64_pre-installation	admin	[Verify Download] 		95
-1662621588	127.0.0.1	E	it_areas:cybersecurity:resources	admin			59
-1662621592	127.0.0.1	E	it_areas:cybersecurity:resources	admin			1
-1662621638	127.0.0.1	E	it_areas:cybersecurity:sidebar	admin			49
-1662621718	127.0.0.1	E	it_areas:cybersecurity:sidebar	admin			8
-1662622091	127.0.0.1	C	it_areas:cybersecurity:crypto:encoding	admin	created		259
-1662622156	127.0.0.1	E	it_areas:cybersecurity:crypto:encoding	admin			0
-1662622214	127.0.0.1	E	it_areas:cybersecurity:crypto:encoding	admin			186
-1662622239	127.0.0.1	E	it_areas:cybersecurity:crypto:encoding	admin			-4
-1662622364	127.0.0.1	E	it_areas:cybersecurity:sidebar	admin			54
-1662622373	127.0.0.1	C	it_areas:cybersecurity:crypto:hashing	admin	created		22
-1662622394	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			31
-1662622427	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			94
-1662622825	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			48
-1662622961	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			44
-1662623335	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			83
-1662623468	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			74
-1662623657	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			13
-1662623745	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			65
-1662624017	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			-65
-1662624131	127.0.0.1	E	it_areas:cybersecurity:crypto:encoding	admin			47
-1662624149	127.0.0.1	E	it_areas:cybersecurity:crypto:encoding	admin			-47
-1662624598	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			-2
-1662625133	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			154
-1662627201	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			87
-1662627484	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			13
-1662749905	127.0.0.1	E	os:debian:amd64_pre-installation	admin			-1050
-1662749949	127.0.0.1	E	os:debian:amd64_installation	admin			4
-1662749979	127.0.0.1	E	os:debian:amd64_installation	admin			-4
-1662751527	127.0.0.1	E	os:debian:amd64_installation	admin			814
-1662751793	127.0.0.1	E	os:debian:amd64_installation	admin			483
-1662751911	127.0.0.1	E	os:debian:amd64_installation	admin			4
-1662752013	127.0.0.1	E	os:debian:amd64_installation	admin			0
-1662752063	127.0.0.1	E	os:debian:amd64_installation	admin			14
-1662752086	127.0.0.1	E	os:debian:amd64_installation	admin			2
-1662752163	127.0.0.1	E	os:debian:amd64_installation	admin			126
-1662752478	127.0.0.1	E	os:debian:amd64_installation	admin			293
-1662752653	127.0.0.1	E	os:debian:amd64_installation	admin			207
-1662752760	127.0.0.1	E	os:debian:amd64_installation	admin			61
-1662752786	127.0.0.1	E	os:debian:amd64_installation	admin			42
-1662752826	127.0.0.1	E	os:debian:amd64_installation	admin			-471
-1662753277	127.0.0.1	E	os:debian:amd64_installation	admin			15
-1662753291	127.0.0.1	E	os:debian:amd64_installation	admin			-6
-1662753999	127.0.0.1	E	os:debian:package_manager	admin	[Apt Configuration] 		-4
-1662754167	127.0.0.1	E	os:debian:package_manager	admin	[Update] 		8
-1662755640	127.0.0.1	E	os:debian:amd64_post-installation	admin			-138
-1662755725	127.0.0.1	E	os:debian:amd64_post-installation	admin			153
-1662756018	127.0.0.1	E	os:debian:amd64_post-installation	admin			0
-1662756037	127.0.0.1	E	os:debian:amd64_post-installation	admin	[Partitions & Filesystems] 		0
-1662756501	127.0.0.1	E	os:debian:amd64_post-installation	admin	[Partitions & Filesystems] 		4
-1662756851	127.0.0.1	E	it_areas:cybersecurity:anonymity:system	admin	[Hostname] 		-2
-1662756864	127.0.0.1	E	it_areas:cybersecurity:anonymity:system	admin	[Hostname] 		-2
-1662757179	127.0.0.1	D	it_areas:development:project_management:git	admin	removed		-378
-1662757191	127.0.0.1	E	it_areas:development:sidebar	admin			-19
-1662757317	127.0.0.1	C	it_areas:development:git	admin	created		490
-1662757849	127.0.0.1	E	it_areas:development:git	admin			363
-1662758747	127.0.0.1	E	it_areas:development:git	admin			47
-1662759219	127.0.0.1	E	it_areas:development:git	admin			55
-1662759296	127.0.0.1	E	it_areas:development:git	admin			-6
-1662759535	127.0.0.1	E	it_areas:development:git	admin	[Start] 		10
-1662760525	127.0.0.1	E	it_areas:development:git	admin			144
-1662760572	127.0.0.1	E	it_areas:development:git	admin			-15
-1662760938	127.0.0.1	E	it_areas:development:git	admin			-4
-1662760979	127.0.0.1	E	it_areas:development:git	admin			26
-1662761758	127.0.0.1	E	it_areas:development:git	admin	[Commit] 		0
-1662762037	127.0.0.1	E	it_areas:development:git	admin			96
-1662762099	127.0.0.1	E	it_areas:development:git	admin	[Restore] 		0
-1662762143	127.0.0.1	E	it_areas:development:git	admin	[Restore] 		7
-1662762717	127.0.0.1	E	it_areas:development:git	admin	[Restore] 		41
-1662763154	127.0.0.1	E	it_areas:development:git	admin			119
-1662763315	127.0.0.1	E	it_areas:development:git	admin	[Restore] 		-127
-1662763609	127.0.0.1	E	it_areas:development:git	admin			213
-1662763698	127.0.0.1	E	it_areas:development:git	admin	[Status] 		-3
-1662763707	127.0.0.1	E	it_areas:development:git	admin	[Status] 		5
-1662763740	127.0.0.1	E	it_areas:development:git	admin			18
-1662763761	127.0.0.1	E	it_areas:development:git	admin			4
-1662764067	127.0.0.1	E	it_areas:development:git	admin			15
-1662764165	127.0.0.1	E	it_areas:development:git	admin			171
-1662764311	127.0.0.1	E	it_areas:development:git	admin			119
-1662764650	127.0.0.1	E	it_areas:development:git	admin			104
-1662764684	127.0.0.1	E	it_areas:development:git	admin			-15
-1662764796	127.0.0.1	E	it_areas:development:git	admin			6
-1662764886	127.0.0.1	E	it_areas:development:git	admin			15
 1662765389	127.0.0.1	E	it_areas:development:git	admin			147
 1662765416	127.0.0.1	E	it_areas:development:git	admin	[Restore Changes] 		-1
 1662765967	127.0.0.1	E	it_areas:development:git	admin			41
@@ -323,3 +231,95 @@
 1663269812	127.0.0.1	E	rpios:arm64_post-installation	admin			-58
 1663272110	127.0.0.1	E	rpios:arm64_post-installation	admin			-32
 1663272425	127.0.0.1	E	rpios:arm64_post-installation	admin			1
+1663301347	127.0.0.1	E	cybersecurity:firewall	admin			20
+1663301696	127.0.0.1	E	cybersecurity:firewall	admin			-4
+1663338795	127.0.0.1	E	debian:index	admin			14
+1663338850	127.0.0.1	D	debian:arm64_pre-installation	admin	removed		-1773
+1663338861	127.0.0.1	E	debian:sidebar	admin			-81
+1663338884	127.0.0.1	E	debian:index	admin			1
+1663339236	127.0.0.1	C	debian:package_manager	admin	created		3146
+1663339285	127.0.0.1	E	debian:package_manager	admin	[Apt Configuration] 		1
+1663339690	127.0.0.1	D	os:debian:package_manager	admin	removed		-3146
+1663341086	127.0.0.1	E	debian:package_manager	admin			274
+1663341275	127.0.0.1	E	cybersecurity:dhcp	admin			-101
+1663341347	127.0.0.1	R	cybersecurity:dhcp	admin	old revision restored (2022-09-12 01:19)	1662945541	101
+1663341524	127.0.0.1	E	debian:amd64_post-installation	admin			2269
+1663341998	127.0.0.1	E	debian:sidebar	admin			-24
+1663342031	127.0.0.1	E	debian:sidebar	admin			0
+1663342065	127.0.0.1	E	debian:package_manager	admin			-1019
+1663342109	127.0.0.1	C	debian:apt	admin	created		1012
+1663342134	127.0.0.1	E	debian:package_manager	admin			-4
+1663342190	127.0.0.1	E	debian:package_manager	admin			23
+1663342496	127.0.0.1	E	debian:amd64_post-installation	admin			-2288
+1663342578	127.0.0.1	E	debian:amd64_post-installation	admin			59
+1663343046	127.0.0.1	E	debian:package_manager	admin	[Configuration] 		-17
+1663343656	127.0.0.1	E	debian:package_manager	admin			14
+1663343687	127.0.0.1	E	debian:package_manager	admin			0
+1663343707	127.0.0.1	E	debian:package_manager	admin	[Configuration] 		-4
+1663344616	127.0.0.1	E	debian:index	admin			7
+1663346712	127.0.0.1	C	debian:network	admin	created		452
+1663346785	127.0.0.1	E	debian:network	admin			97
+1663346833	127.0.0.1	E	debian:network	admin			0
+1663347182	127.0.0.1	E	debian:network	admin			347
+1663348380	127.0.0.1	E	debian:network	admin			133
+1663349163	127.0.0.1	E	debian:network	admin			1602
+1663350015	127.0.0.1	E	debian:network	admin			52
+1663350916	127.0.0.1	E	debian:network	admin			192
+1663351091	127.0.0.1	E	debian:network	admin			38
+1663360940	127.0.0.1	E	debian:sidebar	admin			-6
+1663360983	127.0.0.1	E	debian:network	admin			1
+1663361391	127.0.0.1	C	debian:booting	admin	created		156
+1663361851	127.0.0.1	E	debian:booting	admin			111
+1663362720	127.0.0.1	E	debian:booting	admin			544
+1663363074	127.0.0.1	E	debian:booting	admin			478
+1663363684	127.0.0.1	E	debian:booting	admin			200
+1663363718	127.0.0.1	E	debian:booting	admin			0
+1663364081	127.0.0.1	E	debian:booting	admin			313
+1663364253	127.0.0.1	E	debian:booting	admin			-190
+1663364260	127.0.0.1	E	debian:booting	admin			-313
+1663369912	127.0.0.1	E	debian:network	admin			77
+1663370138	127.0.0.1	E	debian:network	admin			12
+1663370363	127.0.0.1	E	debian:network	admin			-9
+1663370785	127.0.0.1	E	debian:network	admin			23
+1663371231	127.0.0.1	E	debian:network	admin			13
+1663371837	127.0.0.1	E	debian:amd64_post-installation	admin			94
+1663372065	127.0.0.1	E	debian:network	admin			216
+1663372106	127.0.0.1	E	debian:booting	admin			94
+1663372206	127.0.0.1	E	debian:apt	admin			93
+1663374408	127.0.0.1	E	debian:network	admin			66
+1663374465	127.0.0.1	E	debian:package_manager	admin			-74
+1663438216	127.0.0.1	E	sidebar	admin			41
+1663438362	127.0.0.1	C	arch:sidebar	admin	created		303
+1663439013	127.0.0.1	C	arch:index	admin	created		742
+1663439151	127.0.0.1	E	arch:index	admin			52
+1663439205	127.0.0.1	E	arch:index	admin			1
+1663439321	127.0.0.1	E	arch:index	admin			55
+1663439341	127.0.0.1	E	arch:index	admin			1
+1663439489	127.0.0.1	E	arch:index	admin			118
+1663439507	127.0.0.1	E	arch:index	admin			-2
+1663439676	127.0.0.1	E	arch:index	admin			-16
+1663439787	127.0.0.1	E	arch:index	admin			-279
+1663440100	127.0.0.1	E	sidebar	admin			4
+1663442582	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:host_discovery	admin			50
+1663442762	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:host_discovery	admin			81
+1663443323	127.0.0.1	C	arch:pre-installation	admin	created		146
+1663447155	127.0.0.1	E	arch:pre-installation	admin			86
+1663447271	127.0.0.1	E	arch:pre-installation	admin			67
+1663447364	127.0.0.1	E	arch:pre-installation	admin			9
+1663447534	127.0.0.1	E	arch:pre-installation	admin			-64
+1663447892	127.0.0.1	E	arch:pre-installation	admin			36
+1663448166	127.0.0.1	E	arch:pre-installation	admin			79
+1663448195	127.0.0.1	E	arch:pre-installation	admin			8
+1663448399	127.0.0.1	E	arch:pre-installation	admin			35
+1663448978	127.0.0.1	E	todo	admin			82
+1663449283	127.0.0.1	E	arch:pre-installation	admin			204
+1663449569	127.0.0.1	E	arch:pre-installation	admin			66
+1663449933	127.0.0.1	E	arch:pre-installation	admin			99
+1663450307	127.0.0.1	E	arch:pre-installation	admin			64
+1663451292	127.0.0.1	E	arch:pre-installation	admin			614
+1663451309	127.0.0.1	E	arch:pre-installation	admin			2
+1663451340	127.0.0.1	E	arch:pre-installation	admin			-2
+1663451394	127.0.0.1	E	arch:pre-installation	admin			-94
+1663451401	127.0.0.1	C	arch:installation	admin	created		120
+1663451445	127.0.0.1	E	arch:index	admin			22
+1663451461	127.0.0.1	E	arch:index	admin			-3

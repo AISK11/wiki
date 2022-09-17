@@ -1,8 +1,16 @@
 ====== Post-Installation ======
 
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
 ===== Package Manager =====
 
-  - See [[debian:package_manager#Apt Configuration|Apt Configuration]].
+  - See [[:debian:package_manager|Package Manager]].
+
+===== Network =====
+
+  - See [[:debian:network|Network]].
 
 ===== Packages =====
 

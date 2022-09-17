@@ -285,3 +285,11 @@ modify
 daemon
 rfkill
 readme
+netdev
+essids
+phase2
+dnssec
+pacman
+probes
+latest
+relase

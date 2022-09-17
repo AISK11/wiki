@@ -289,3 +289,11 @@ lite
 wlan
 turn
 auto
+rare
+ctrl
+ssid
+mgmt
+peap
+eth0
+each
+book

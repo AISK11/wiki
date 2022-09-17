@@ -78,7 +78,7 @@ Packet Capture
 
 
 
-Package Manager
+
 
 Encoding
 Hashing
@@ -108,7 +108,7 @@ MAC Address
 DNS
 VPN Tor Proxy
 Pre-Installation
-Pre-Installation
+
 Installation
 Post-Installation
 Raspberry Pi OS Linux
@@ -117,3 +117,11 @@ Pre-Installation
 Installation
 Resources
 Post-Installation
+Package Manager
+Apt
+Network
+Booting
+Arch Linux
+Arch Linux
+Pre-Installation
+Installation

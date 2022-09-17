@@ -1,0 +1,7 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/crypttab (0644 root:root)
+## DEPENDENCIES: -
+## DESCRIPTION:  Encrypted device table.
+&nbsp;
+## &lt;MAPPER-NAME&gt; &lt;DEVICE-UUID&gt; &lt;PASSWORD&gt; &lt;OPTIONS&gt;
+luks-root UUID=00000000-0000-0000-0000-000000000003 none luks,discard

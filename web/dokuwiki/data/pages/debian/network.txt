@@ -1,0 +1,135 @@
+====== Network ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Installation =====
+
+  - Install dependencies:
+    * Firmware:
+      * Intel Wi-Fi cards (iwlwifi): <cli>
+# apt install firmware-iwlwifi
+</cli>
+    * Ethernet: <cli>
+# apt install ethtool
+</cli>
+    * Wireless: <cli>
+# apt install rfkill wpasupplicant iw
+</cli>
+    * DHCP client: <cli>
+# apt install dhcpcd5
+# apt purge isc-dhcp-client isc-dhcp-common
+</cli>
+    * DNS proxy((DNSCrypt-proxy: https://github.com/DNSCrypt/dnscrypt-proxy.)): <cli>
+# apt install dnscrypt-proxy
+</cli>
+  - Uninstall unneeded software: 
+    * Bluetooth: <cli>
+# apt purge bluez
+</cli>
+    * IPv4LL: <cli>
+# apt purge avahi-autoipd
+</cli>
+
+===== Configuration =====
+
+  - Remove pre-defined interface control: <cli>
+# echo '' > /etc/network/interfaces
+</cli>
+  - Set networking services: <cli>
+# systemctl disable networking.service wpa_supplicant.service
+# systemctl enable dhcpcd.service
+</cli>
+  - Unblock Wi-Fi: <cli>
+# rfkill unblock wlan
+</cli>
+  - Configure Wi-Fi ESSIDs((Wpasupplicant manual page: https://www.freebsd.org/cgi/man.cgi?query=wpa_supplicant.conf&sektion=5&manpath=freebsd-release-ports.)): <file text /etc/wpa_supplicant/wpa_supplicant.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/wpa_supplicant/wpa_supplicant.conf (0600 root:root)
+## DEPENDENCIES: wpasupplicant
+## DESCRIPTION:  Wi-Fi ESSID configuration file.
+
+## Basic settings (required by wpa_cli).
+ctrl_interface=/run/wpa_supplicant GROUP=netdev
+ctrl_interface_group=netdev
+update_config=1
+
+## Template - UNPROTECTED.
+#network={
+#  ssid="<ESSID>"
+#  scan_ssid=1
+#  key_mgmt=NONE
+#  priority=0
+#}
+#
+## Template - WPA-PSK.
+#network={
+#  ssid="<ESSID>"
+#  scan_ssid=1
+#  key_mgmt=WPA-PSK
+#  psk="<PASSWORD>"
+#  priority=2
+#}
+#
+## Template - WPA-EAP EAP-PEAP.
+#network={
+#  ssid="<ESSID>"
+#  scan_ssid=1
+#  key_mgmt=WPA-EAP
+#  identity="<EMAIL@ADDRESS>"
+#  password="<PASSWORD>"
+#  phase2="auth=MSCHAPV2"
+#  priority=1
+#}
+</file>
+  - Configure DHCP client: <file text /etc/dhcpcd.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
+## DEPENDENCIES: dhcpcd5
+## DESCRIPTION:  DHCP client settings.
+
+## Comma separated list of blocked interface regex-es.
+#denyinterfaces eth0,wlan0
+
+## Static configuration template.
+#interface eth0
+#static ip_address=10.0.0.100/24
+#static routers=10.0.0.1
+
+## Group to manage dhcpcd via control socket.
+controlgroup netdev
+
+## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
+nohook resolv.conf
+
+## Use MAC address as client identifier for DHCP server.
+clientid
+
+## Set to blank to avoid sending vendorclassid option.
+## Default is "dhcpcd-<version>:<os>:<machine>:<platform>".
+vendorclassid
+
+## Request following additional options from DHCP server.
+option interface_mtu
+
+## Don't check if obtained IPv4 address is taken by arp (increases speed) and
+## also disables IPv4LL (APIPA).
+noarp
+
+## Remove any pre-existing IPv4 addresses when adding new IPv4 address.
+noalias
+
+## Use MAC address when generating IPv6 SLAAC address for the interface.
+slaac hwaddr
+
+## Anonymous profile (should be specified at the end).
+anonymous
+</file>
+  - Configure DNS: <file text ?>
+- cache
+- qname minimalization
+- DNSSEC
+- Anonymized DNScrypt
+- Secure SNI
+</file>

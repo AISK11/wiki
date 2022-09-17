@@ -1,19 +1,32 @@
 
 <h1 class="sectionedit1" id="post-installation">Post-Installation</h1>
 <div class="level1">
-
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Post-Installation&quot;,&quot;hid&quot;:&quot;post-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-33&quot;} -->
-<h2 class="sectionedit2" id="package_manager">Package Manager</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Post-Installation&quot;,&quot;hid&quot;:&quot;post-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-127&quot;} -->
+<h2 class="sectionedit4" id="package_manager">Package Manager</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> See <a href="http://localhost/debian/package_manager#apt_configuration" class="wikilink2" title="debian:package_manager" rel="nofollow" data-wiki-id="debian:package_manager">Apt Configuration</a>.</div>
+<li class="level1"><div class="li"> See <a href="http://localhost/debian/package_manager" class="wikilink1" title="debian:package_manager" data-wiki-id="debian:package_manager">Package Manager</a>.</div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Manager&quot;,&quot;hid&quot;:&quot;package_manager&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;34-135&quot;} -->
-<h2 class="sectionedit3" id="packages">Packages</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Manager&quot;,&quot;hid&quot;:&quot;package_manager&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;128-210&quot;} -->
+<h2 class="sectionedit5" id="network">Network</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> See <a href="http://localhost/debian/network" class="wikilink1" title="debian:network" data-wiki-id="debian:network">Network</a>.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Network&quot;,&quot;hid&quot;:&quot;network&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;211-269&quot;} -->
+<h2 class="sectionedit6" id="packages">Packages</h2>
 <div class="level2">
 <ol>
 <li class="level1 node"><div class="li"> Install firmware (if required):</div>
@@ -53,8 +66,8 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Packages&quot;,&quot;hid&quot;:&quot;packages&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;136-1175&quot;} -->
-<h2 class="sectionedit4" id="partitions_filesystems">Partitions &amp; Filesystems</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Packages&quot;,&quot;hid&quot;:&quot;packages&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;270-1309&quot;} -->
+<h2 class="sectionedit7" id="partitions_filesystems">Partitions &amp; Filesystems</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Name disk partitions: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 1 ESP</span>
@@ -86,8 +99,8 @@ LABEL=LUKS-ROOT     /         btrfs defaults,noatime            0 0
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Partitions &amp; Filesystems&quot;,&quot;hid&quot;:&quot;partitions_filesystems&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1176-2086&quot;} -->
-<h2 class="sectionedit5" id="kernel_modules">Kernel Modules</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Partitions &amp; Filesystems&quot;,&quot;hid&quot;:&quot;partitions_filesystems&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1310-2220&quot;} -->
+<h2 class="sectionedit8" id="kernel_modules">Kernel Modules</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Disable beeping (pcspkr): <dl class="file">
@@ -99,8 +112,8 @@ LABEL=LUKS-ROOT     /         btrfs defaults,noatime            0 0
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;2087-2213&quot;} -->
-<h2 class="sectionedit6" id="system_settings">System Settings</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:8,&quot;range&quot;:&quot;2221-2347&quot;} -->
+<h2 class="sectionedit9" id="system_settings">System Settings</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> See <a href="http://localhost/it_areas/cybersecurity/anonymity/system" class="wikilink2" title="it_areas:cybersecurity:anonymity:system" rel="nofollow" data-wiki-id="it_areas:cybersecurity:anonymity:system">System Anonymity</a>.</div>
@@ -108,8 +121,8 @@ LABEL=LUKS-ROOT     /         btrfs defaults,noatime            0 0
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Settings&quot;,&quot;hid&quot;:&quot;system_settings&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:6,&quot;range&quot;:&quot;2214-2313&quot;} -->
-<h2 class="sectionedit7" id="opendoas">Opendoas</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Settings&quot;,&quot;hid&quot;:&quot;system_settings&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:9,&quot;range&quot;:&quot;2348-2447&quot;} -->
+<h2 class="sectionedit10" id="opendoas">Opendoas</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Configure opendoas rules: <dl class="file">
@@ -127,8 +140,8 @@ LABEL=LUKS-ROOT     /         btrfs defaults,noatime            0 0
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Opendoas&quot;,&quot;hid&quot;:&quot;opendoas&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:7,&quot;range&quot;:&quot;2314-2658&quot;} -->
-<h2 class="sectionedit8" id="finalizing">Finalizing</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Opendoas&quot;,&quot;hid&quot;:&quot;opendoas&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:10,&quot;range&quot;:&quot;2448-2792&quot;} -->
+<h2 class="sectionedit11" id="finalizing">Finalizing</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Reboot to apply changes: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reboot</span></pre><p></div>
@@ -136,7 +149,7 @@ LABEL=LUKS-ROOT     /         btrfs defaults,noatime            0 0
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finalizing&quot;,&quot;hid&quot;:&quot;finalizing&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:8,&quot;range&quot;:&quot;2659-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finalizing&quot;,&quot;hid&quot;:&quot;finalizing&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:11,&quot;range&quot;:&quot;2793-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Debian microcode: <a href="https://wiki.debian.org/Microcode" class="urlextern" title="https://wiki.debian.org/Microcode">https://wiki.debian.org/Microcode</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 

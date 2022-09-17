@@ -1,0 +1,26 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/apt/preferences (0644 root:root)
+## DEPENDENCIES: apt
+## DESCRIPTION:  Debian package manager prioritites.
+&nbsp;
+## Official Debian current stable release repositories.
+Package: *
+Pin: release n=stable
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release n=stable-security
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release n=stable-updates
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release n=stable-backports
+Pin-Priority: 1001
+&nbsp;
+## Official Kali repositories.
+Package: *
+Pin: release n=kali-rolling
+Pin-Priority: 1

@@ -2,14 +2,14 @@
 
 ===== ARP & ICMP =====
 
-  * Active ARP only host discovery: <cli>
+  * Active ARP only host discovery (LA: <cli>
 # nmap -T4 -PR -sn -n <TARGET> [-oA <OUTPUT>]
 </cli>
   * Active ICMP only host discovery: <cli>
-# nmap -T4 --disable-arp-ping -PE -PP -PM -sn -n -vv <TARGET> [-oA <OUTPUT>]
+# nmap -T4 --disable-arp-ping -PE -PP -PM -sn -n <TARGET> [-oA <OUTPUT>]
 </cli>
   * Active ARP + ICMP host discovery: <cli>
-# nmap -T4 -PE -PP -PM -sn -n -vv <TARGET> [-oA <OUTPUT>]
+# nmap -T4 -PE -PP -PM -sn -n <TARGET> [-oA <OUTPUT>]
 </cli>
 
 ===== NetBIOS =====
@@ -17,3 +17,6 @@
   * Active NetBIOS name discovery: <cli>
 # nbtscan -r <TARGET> | tee -a <OUTPUT>
 </cli>
+
+https://nmap.org/book/host-discovery-techniques.html
+https://nmap.org/book/host-discovery-strategies.html#host-discovery-ideal-probes

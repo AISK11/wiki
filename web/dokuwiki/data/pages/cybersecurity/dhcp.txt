@@ -18,7 +18,7 @@
 ## DESCRIPTION:  DHCP client settings.
 
 ## Group to manage dhcpcd via control socket.
-controlgroup dhcpcd
+controlgroup netdev
 
 ## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
 nohook resolv.conf

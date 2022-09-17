@@ -3,7 +3,8 @@
 ----
 
 **Operating Systems**
-  * [[debian:index|Debian Linux]]
+  * [[arch:index|Arch Linux]]
+  * [[debian:index|Debian Linux (DISCONTINUED)]]
   * [[rpios:index|Raspberry Pi OS Linux]]
 
 **IT Areas**

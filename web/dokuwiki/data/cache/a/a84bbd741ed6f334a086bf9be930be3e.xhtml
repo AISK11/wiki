@@ -1,0 +1,65 @@
+
+<h1 class="sectionedit1" id="booting">Booting</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-117&quot;} -->
+<h2 class="sectionedit4" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1 node"><div class="li"> Install dependencies:</div>
+<ul>
+<li class="level2"><div class="li"> CPU microcode: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install &lt;amd64-microcode|intel-microcode&gt;</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Partition and filesystem software: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install parted dosfstools</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;118-336&quot;} -->
+<h2 class="sectionedit5" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Configure partition names: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 1 ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 2 BOOT</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 3 LUKS</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Name filesystems: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">fatlabel &lt;/dev/sdX1&gt; ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">e2label &lt;/dev/sdX2&gt; BOOT</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label LUKS &lt;/dev/sdX3&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label /dev/mapper/&lt;sdX3_crypt&gt; LUKS-ROOT</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">y</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create SWAP file: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">truncate -s 0 /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">chattr +C /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">fallocate -l 4G /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">chmod 0600 /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkswap /swap</span>
+<span class="cli_prompt"># </span><span class="cli_command">swapon /swap</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Configure fstab: <dl class="file">
+<dt><a href="http://localhost/_export/code/debian/booting?codeblock=0" title="Download Snippet" class="mediafile mf_">/etc/fstab</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11                        
+## LOCATION:     /etc/fstab (0644 root:root)
+## DEPENDENCIES: -
+## DESCRIPTION:  Filesytem table.
+&nbsp;
+## &lt;FILE-SYSTEM&gt; &lt;MOUNT-DIR&gt; &lt;TYPE&gt; &lt;OPTIONS&gt; &lt;DUMP&gt; &lt;PASS&gt;
+LABEL=ESP           /boot/efi vfat  defaults,noatime,umask=0077 0 1
+LABEL=BOOT          /boot     ext4  rw,noatime                  0 2
+LABEL=LUKS-ROOT     /         btrfs defaults,noatime            0 0
+/swap               none      swap  defaults                    0 0</pre>
+</dd></dl>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;337-&quot;} -->

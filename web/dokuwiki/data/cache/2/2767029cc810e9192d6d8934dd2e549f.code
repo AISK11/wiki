@@ -1,0 +1,21 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/apt/sources.list (0644 root:root)
+## DEPENDENCIES: apt
+## DESCRIPTION:  Debian package manager repositories.
+&nbsp;
+## Official Debian current stable release repositories.
+deb http://deb.debian.org/debian stable main contrib non-free
+deb-src http://deb.debian.org/debian stable main contrib non-free
+&nbsp;
+deb http://deb.debian.org/debian-security stable-security main contrib non-free
+deb-src http://deb.debian.org/debian-security stable-security main contrib non-free
+&nbsp;
+deb http://deb.debian.org/debian stable-updates main contrib non-free
+deb-src http://deb.debian.org/debian stable-updates main contrib non-free
+&nbsp;
+deb http://deb.debian.org/debian stable-backports main contrib non-free
+deb-src http://deb.debian.org/debian stable-backports main contrib non-free
+&nbsp;
+## Official Kali repositories.
+deb http://http.kali.org/kali kali-rolling main contrib non-free
+deb-src http://http.kali.org/kali kali-rolling main contrib non-free

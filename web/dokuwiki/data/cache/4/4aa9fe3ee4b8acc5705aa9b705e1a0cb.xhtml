@@ -1,0 +1,161 @@
+
+<h1 class="sectionedit1" id="network">Network</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Network&quot;,&quot;hid&quot;:&quot;network&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-117&quot;} -->
+<h2 class="sectionedit4" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1 node"><div class="li"> Install dependencies:</div>
+<ul>
+<li class="level2 node"><div class="li"> Firmware:</div>
+<ul>
+<li class="level3"><div class="li"> Intel Wi-Fi cards (iwlwifi): </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install firmware-iwlwifi</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> Ethernet: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install ethtool</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Wireless: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install rfkill wpasupplicant iw</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> DHCP client: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install dhcpcd5</span>
+<span class="cli_prompt"># </span><span class="cli_command">apt purge isc-dhcp-client isc-dhcp-common</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> <abbr title="Domain Name System">DNS</abbr> proxy<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install dnscrypt-proxy</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Uninstall unneeded software: </div>
+<ul>
+<li class="level2"><div class="li"> Bluetooth: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt purge bluez</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> IPv4LL: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt purge avahi-autoipd</span></pre><p></div>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;118-740&quot;} -->
+<h2 class="sectionedit5" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Remove pre-defined interface control: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">echo &#039;&#039; &gt; /etc/network/interfaces</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Set networking services: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl disable networking.service wpa_supplicant.service</span>
+<span class="cli_prompt"># </span><span class="cli_command">systemctl enable dhcpcd.service</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Unblock Wi-Fi: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">rfkill unblock wlan</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Configure Wi-Fi ESSIDs<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>: <dl class="file">
+<dt><a href="http://localhost/_export/code/debian/network?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/wpa_supplicant/wpa_supplicant.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/wpa_supplicant/wpa_supplicant.conf (0600 root:root)
+## DEPENDENCIES: wpasupplicant
+## DESCRIPTION:  Wi-Fi ESSID configuration file.
+&nbsp;
+## Basic settings (required by wpa_cli).
+ctrl_interface=/run/wpa_supplicant GROUP=netdev
+ctrl_interface_group=netdev
+update_config=1
+&nbsp;
+## Template - UNPROTECTED.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=NONE
+#  priority=0
+#}
+#
+## Template - WPA-PSK.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=WPA-PSK
+#  psk=&quot;&lt;PASSWORD&gt;&quot;
+#  priority=2
+#}
+#
+## Template - WPA-EAP EAP-PEAP.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=WPA-EAP
+#  identity=&quot;&lt;EMAIL@ADDRESS&gt;&quot;
+#  password=&quot;&lt;PASSWORD&gt;&quot;
+#  phase2=&quot;auth=MSCHAPV2&quot;
+#  priority=1
+#}</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Configure DHCP client: <dl class="file">
+<dt><a href="http://localhost/_export/code/debian/network?codeblock=1" title="Download Snippet" class="mediafile mf_conf">/etc/dhcpcd.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
+## DEPENDENCIES: dhcpcd5
+## DESCRIPTION:  DHCP client settings.
+&nbsp;
+## Comma separated list of blocked interface regex-es.
+#denyinterfaces eth0,wlan0
+&nbsp;
+## Static configuration template.
+#interface eth0
+#static ip_address=10.0.0.100/24
+#static routers=10.0.0.1
+&nbsp;
+## Group to manage dhcpcd via control socket.
+controlgroup netdev
+&nbsp;
+## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
+nohook resolv.conf
+&nbsp;
+## Use MAC address as client identifier for DHCP server.
+clientid
+&nbsp;
+## Set to blank to avoid sending vendorclassid option.
+## Default is &quot;dhcpcd-&lt;version&gt;:&lt;os&gt;:&lt;machine&gt;:&lt;platform&gt;&quot;.
+vendorclassid
+&nbsp;
+## Request following additional options from DHCP server.
+option interface_mtu
+&nbsp;
+## Don't check if obtained IPv4 address is taken by arp (increases speed) and
+## also disables IPv4LL (APIPA).
+noarp
+&nbsp;
+## Remove any pre-existing IPv4 addresses when adding new IPv4 address.
+noalias
+&nbsp;
+## Use MAC address when generating IPv6 SLAAC address for the interface.
+slaac hwaddr
+&nbsp;
+## Anonymous profile (should be specified at the end).
+anonymous</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Configure <abbr title="Domain Name System">DNS</abbr>: <dl class="file">
+<dt><a href="http://localhost/_export/code/debian/network?codeblock=2" title="Download Snippet" class="mediafile mf_">?</a></dt>
+<dd><pre class="code file text">- cache
+- qname minimalization
+- DNSSEC
+- Anonymized DNScrypt
+- Secure SNI</pre>
+</dd></dl>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;741-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">DNSCrypt-proxy: <a href="https://github.com/DNSCrypt/dnscrypt-proxy" class="urlextern" title="https://github.com/DNSCrypt/dnscrypt-proxy">https://github.com/DNSCrypt/dnscrypt-proxy</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Wpasupplicant manual page: <a href="https://www.freebsd.org/cgi/man.cgi?query=wpa_supplicant.conf&amp;sektion=5&amp;manpath=freebsd-release-ports" class="urlextern" title="https://www.freebsd.org/cgi/man.cgi?query=wpa_supplicant.conf&amp;sektion=5&amp;manpath=freebsd-release-ports">https://www.freebsd.org/cgi/man.cgi?query=wpa_supplicant.conf&amp;sektion=5&amp;manpath=freebsd-release-ports</a>.</div></div>
+</div>

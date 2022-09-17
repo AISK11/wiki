@@ -1,0 +1,30 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
+## DEPENDENCIES: dhcpcd5
+## DESCRIPTION:  DHCP client settings.
+&nbsp;
+## Group to manage dhcpcd via control socket.
+controlgroup netdev
+&nbsp;
+## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
+nohook resolv.conf
+&nbsp;
+## Use MAC address as client identifier for DHCP server.
+clientid
+&nbsp;
+## Set to blank to avoid sending vendorclassid option.
+## Default is &quot;dhcpcd-&lt;version&gt;:&lt;os&gt;:&lt;machine&gt;:&lt;platform&gt;&quot;.
+vendorclassid
+&nbsp;
+## Request following additional options from DHCP server.
+option interface_mtu
+&nbsp;
+## Don't check if obtained IPv4 address is taken by arp (increases speed) and
+## also disables IPv4LL (APIPA).
+noarp
+&nbsp;
+## Remove any pre-existing IPv4 addresses when adding new IPv4 address.
+noalias
+&nbsp;
+## Use MAC address when generating IPv6 SLAAC address for the interface.
+slaac hwaddr

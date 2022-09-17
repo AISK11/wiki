@@ -7,7 +7,7 @@
   * Independent distribution.
   * Stability.
   * Binary based.
-  * Respecting FSF but allowing non-FSF software if necessary((Debian kernel vs Linux-libre: https://unix.stackexchange.com/questions/288027/what-are-the-differences-between-debian-linux-kernel-and-linux-libre.)).
+  * Respecting FSF (free kernel) but allowing non-free software if necessary((Debian kernel vs Linux-libre kernel: https://unix.stackexchange.com/questions/288027/what-are-the-differences-between-debian-linux-kernel-and-linux-libre.)).
 
 ===== Cons =====
 

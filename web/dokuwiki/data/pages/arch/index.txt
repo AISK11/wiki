@@ -1,0 +1,19 @@
+====== Arch Linux ======
+
+===== Pros =====
+
+  * Rolling release((Versions of various linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#General)).
+  * Independent distribution.
+  * Large community + amount of packages in repositories + pentesting tools((BlackArch tools: https://www.blackarch.org/tools.html.)).
+  * Binary based.
+  * Pacman.
+  * CLI installation.
+  * Only 1 kernel name for each kernel type (no version strings afterwards).
+
+===== Cons =====
+
+  * SystemD.
+  * Processor architecture support (amd64).
+  * Unstable.
+  * AUR.
+  * Not respecting FSF - not differentiating between open-source and non-free software. Kernel contains binary blobs.

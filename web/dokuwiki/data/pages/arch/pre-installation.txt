@@ -1,0 +1,32 @@
+====== Pre-Installation ======
+
+===== Download =====
+
+  - Select preferred Arch Linux [[https://geo.mirror.pkgbuild.com|mirror]]((List of Arch Linux mirrors: https://archlinux.org/mirrors.)).
+  - Download Arch Linux ISO: <cli>
+$ curl -LO https://geo.mirror.pkgbuild.com/iso/latest/archlinux-x86_64.iso
+</cli>
+
+===== Verify Download =====
+
+  - Download ISO signature and checkum: <cli>
+$ curl -LO https://geo.mirror.pkgbuild.com/iso/latest/archlinux-x86_64.iso.sig
+$ curl -LO https://geo.mirror.pkgbuild.com/iso/latest/sha256sums.txt
+</cli>
+  - Verify ISO authenticity and integrity: <cli>
+$ gpg --keyserver-options auto-key-retrieve --verify archlinux-x86_64.iso.sig archlinux-x86_64.iso
+$ sha256sum --ignore-missing -c sha256sums.txt
+</cli>
+
+===== Flash USB =====
+
+  - Make sure the USB filesystem is **not** mounted!
+  - Flash USB with disk image: <cli>
+# dd if=archlinux-x86_64.iso of=</dev/sdX> status=progress ; sync
+</cli>
+
+===== USB Boot =====
+
+  - Reboot the system and during the POST phase press //BIOS key//((List of //POST keys// according to vendor: https://www.disk-image.com/faq-bootmenu.htm.)) to boot into UEFI.
+  - Make sure that Secure Boot is disabled and reboot.
+  - On next POST phase, press //Boot Menu key//((List of //POST keys// according to vendor: https://www.disk-image.com/faq-bootmenu.htm.)) and select //(UEFI) USB// entry.
