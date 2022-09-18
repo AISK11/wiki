@@ -220,3 +220,4 @@ dnscrypt
 unstable
 pkgbuild
 retrieve
+pacstrap

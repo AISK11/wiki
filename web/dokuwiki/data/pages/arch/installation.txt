@@ -3,3 +3,97 @@
 <WRAP center round important 60%>
 This section is incomplete and needs further work!
 </WRAP>
+
+===== Environment Preparation =====
+
+  - Set console keymap((Console keymaps: ''/usr/share/kbd/keymaps/i386/qwerty/*''.)) and font((Console fonts: ''/usr/share/kbd/consolefonts/*''.)): <cli>
+# loadkeys us
+# setfont eurlatgr
+# unicode_start
+</cli>
+  - Disable system beeping (pcspkr module): <cli>
+# modprobe -r pcspkr
+</cli>
+  - Verify UEFI boot and remount efivars as read-only to protect UEFI NVRAM((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)): <cli>
+# ls -ld /sys/firmware/efi/
+# mount -o remount,ro /sys/firmware/efi/efivars/
+</cli>
+  - Verify internet connectivity.
+
+===== Disk Partitioning =====
+
+  - Create partitions: <cli>
+# cfdisk -z </dev/sdX>
+cfdisk> gpt
+cfdisk> n
+cfdisk> 2GiB
+cfdisk> t
+cfdisk> EFI System
+cfdisk> n
+cfdisk>  (Enter)
+cfdisk> W
+cfdisk> yes
+cfdisk> q
+# parted -s </dev/sdX> name 1 ESP
+# parted -s </dev/sdX> name 2 LUKS
+</cli>
+  - Create filesystems: 
+    - EFI filesystem: <cli>
+# wipefs -a </dev/sdX1>
+# mkfs.vfat -F 32 </dev/sdX1>
+# fatlabel </dev/sdX1> ESP
+# fatlabel -i </dev/sdX1> 00000001
+# fsck.vfat </dev/sdX1> ; echo $?
+</cli>
+    - LUKS encrypted filesystem: <cli>
+# wipefs -a </dev/sdX2>
+# cryptsetup luksFormat -y --type luks2 </dev/sdX2>
+> YES
+> <NEW_LUKS_PASSWORD>
+> <NEW_LUKS_PASSWORD (VERIFY)>
+# cryptsetup config --label LUKS </dev/sdX2>
+# cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 </dev/sdX2>
+> YES
+# cryptsetup open --type luks2 </dev/sdX2> luks-root
+> <LUKS_PASSWORD>
+</cli>
+    - Root filesystem: <cli>
+# wipefs -a /dev/mapper/luks-root
+# mkfs.btrfs /dev/mapper/luks-root
+# btrfs filesystem label /dev/mapper/luks-root ROOT
+# btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-root
+> y
+# btrfs check /dev/mapper/luks-root ; echo $?
+</cli>
+
+===== Base System Installation =====
+
+  -  Create mount point and mount root filesystem: <cli>
+# mkdir -p /mnt/arch/
+# mount /dev/mapper/luks-root /mnt/arch/
+</cli>
+  - Install base packages and mount ESP: <cli>
+# pacstrap /mnt/arch/ base
+# mount </dev/sdX1> /mnt/arch/boot/
+</cli>
+
+===== Chroot =====
+
+  - Mount filesystems: <cli>
+# mount --rbind /dev/ /mnt/arch/dev/
+# mount --rbind /sys/ /mnt/arch/sys/
+# mount --rbind /proc/ /mnt/arch/proc/
+# mount --rbind /run/ /mnt/arch/run/
+# mount --make-rslave /mnt/arch/dev/
+# mount --make-rslave /mnt/arch/sys/
+# mount --make-rslave /mnt/arch/proc/
+# mount --make-rslave /mnt/arch/run/
+</cli>
+  - Copy DNS configuration: <cli>
+# cp /etc/resolv.conf /mnt/arch/etc/
+</cli>
+  - Chroot into new installation: <cli>
+# chroot /mnt/arch/ /bin/sh
+# . ./etc/profile
+# export PS1='(chroot) # '
+</cli>
