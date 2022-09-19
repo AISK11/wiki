@@ -221,3 +221,12 @@ unstable
 pkgbuild
 retrieve
 pacstrap
+vconsole
+monetary
+siglevel
+optional
+binaries
+compress
+recovery
+terminal
+mkconfig

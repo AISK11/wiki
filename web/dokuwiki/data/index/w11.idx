@@ -68,3 +68,8 @@ differences
 raspberrypi
 prioritites
 unprotected
+measurement
+consolefont
+compression
+savedefault
+cryptdevice

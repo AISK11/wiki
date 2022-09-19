@@ -6,7 +6,7 @@ This section is incomplete and needs further work!
 
 ===== Environment Preparation =====
 
-  - Set console keymap((Console keymaps: ''/usr/share/kbd/keymaps/i386/qwerty/*''.)) and font((Console fonts: ''/usr/share/kbd/consolefonts/*''.)): <cli>
+  - Set console keymap and font: <cli>
 # loadkeys us
 # setfont eurlatgr
 # unicode_start
@@ -73,7 +73,7 @@ cfdisk> q
 # mount /dev/mapper/luks-root /mnt/arch/
 </cli>
   - Install base packages and mount ESP: <cli>
-# pacstrap /mnt/arch/ base
+# pacstrap /mnt/arch/ base neovim git
 # mount </dev/sdX1> /mnt/arch/boot/
 </cli>
 
@@ -96,4 +96,294 @@ cfdisk> q
 # chroot /mnt/arch/ /bin/sh
 # . ./etc/profile
 # export PS1='(chroot) # '
+</cli>
+
+===== Swap File =====
+
+  - Allocate space on COW filesystem (such as btrfs): <cli>
+(chroot) # truncate -s 0 /swap
+(chroot) # chattr +C /swap
+(chroot) # fallocate -l 4G /swap
+(chroot) # chmod 0600 /swap
+</cli>
+  - Set file as swap area: <cli>
+(chroot) # mkswap /swap
+(chroot) # swapon /swap
+</cli>
+
+===== System Settings =====
+
+==== Filesystems ====
+
+  - Configure crypttab: <file text /etc/crypttab>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/crypttab (0644 root:root)
+## DEPENDENCIES: core/filesystem
+## DESCRIPTION:  Encrypted partition mapping table.
+
+## <MAPPER-NAME> <DEVICE> <PASSWORD-FILE> <OPTIONS>
+luks-root UUID=00000000-0000-0000-0000-000000000002 none luks
+</file>
+  - Configure fstab: <file text /etc/fstab>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/fstab (0644 root:root)
+## DEPENDENCIES: core/filesystem
+## DESCRIPTION:  Filesytem table.
+
+## <FILE-SYSTEM> <MOUNT-DIR> <TYPE> <OPTIONS> <DUMP> <PASS>
+efivarfs /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime 0 0
+LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
+LABEL=LUKS-ROOT     /     btrfs defaults,noatime            0 0
+/swap               none  swap  defaults                    0 0
+</file>
+
+==== Kernel Modules ====
+
+  - Set blacklisted kernel modules on startup: <file text /etc/modprobe.d/blacklist.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/modprobe.d/blacklist.conf (0644 root:root)
+## DEPENDENCIES: core/kbd
+## DESCRIPTION:  Blacklisted kernel modules (can be turned on manually).
+
+## Blacklist pcspkr module (beeping):
+blacklist pcspkr
+</file>
+
+==== Console ====
+
+  - Configure console keymap and font: <file text /etc/vconsole.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/vconsole.conf (0644 root:root)
+## DEPENDENCIES: core/kbd
+## DESCRIPTION:  Console keymap and font.
+
+## Console keymap.
+KEYMAP=us
+
+## Console font.
+FONT=eurlatgr
+</file>
+
+==== Locales ====
+
+  - Uncomment required locales: <file text /etc/locale.gen>
+...
+en_GB.UTF-8 UTF-8
+en_GB ISO-8859-1
+...
+en_US.UTF-8 UTF-8
+en_US ISO-8859-1
+...
+</file>
+  - Generate locales: <cli>
+(chroot) # locale-gen
+</cli>
+  - Set system locales: <file text /etc/locale.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/locale.conf (0644 root:root)
+## DEPENDENCIES: core/glibc
+## DESCRIPTION:  System locales.
+
+LANG="en_US.UTF-8"
+LANGUAGE="en_GB:C"
+LC_ADDRESS="en_US.UTF8"
+LC_COLLATE="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_IDENTIFICATION="en_US.UTF8"
+LC_MONETARY="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_MEASUREMENT="en_GB.UTF8"
+LC_NAME="en_US.UTF8"
+LC_NUMERIC="en_US.UTF-8"
+LC_PAPER="en_GB.UTF-8"
+LC_TELEPHONE="en_US.UTF8"
+LC_TIME="en_GB.UTF-8"
+#LC_ALL=""
+</file>
+
+==== Hostname ====
+
+  - Set hostname: <file text /etc/hostname>
+archlinux
+
+## AUTHOR:       AISK11
+## LOCATION:     /etc/hostname (0644 root:root)
+## DEPENDENCIES: -
+## DESCRIPTION:  Machine name. Only 1st line is used.
+</file>
+
+==== Time ====
+
+  - Set timezone: <cli>
+(chroot) # ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+</cli>
+  - Save current time to RTC: <cli>
+(chroot) # hwclock --systohc
+</cli>
+
+==== Login Messages ====
+
+  - Set login messages: <cli>
+(chroot) # echo '' > /etc/issue
+(chroot) # echo '' > /etc/motd
+</cli>
+
+==== Pacman ====
+
+  - Configure package manager: <file text /etc/pacman.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/pacman.conf (0644 root:root)
+## DEPENDENCIES: core/pacman
+## DESCRIPTION:  Pacman package manager configuration.
+
+[options]
+## Install packages only for given architecture (auto=$(uname -m)).
+Architecture = auto
+
+## Package signature keys.
+SigLevel = Required DatabaseOptional
+LocalFileSigLevel = Optional
+
+## Hook directory for package installation, update or removal.
+HookDir = /etc/pacman.d/hooks/
+
+## Ask for confirmation before removing of specified packages.
+HoldPkg = base
+
+## Do not install/upgrade following packages.
+IgnorePkg = nano emacs vi vim sudo dhclient
+
+## Approximately check adequate available disk space before installing.
+CheckSpace
+
+## Display name, version and size of packages.
+VerbosePkgLists
+
+## Enable color for pacman output on tty.
+Color
+
+## Easteregg.
+#ILoveCandy
+
+## Number of concurrent download streams.
+ParallelDownloads = 5
+
+## Stable repositories.
+[core]
+Include = /etc/pacman.d/mirrorlist
+
+[extra]
+Include = /etc/pacman.d/mirrorlist
+
+[community]
+Include = /etc/pacman.d/mirrorlist
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+</file>
+
+----
+
+===== Minimal System Installation =====
+
+  - Synchronize and update system: <cli>
+(chroot) # pacman -Syyu
+</cli>
+  - Partitioning and filesystem tools: <cli>
+(chroot) # pacman -S --needed parted dosfstools btrfs-progs
+</cli>
+  - Shells: <cli>
+(chroot) # pacman -S --needed dash zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
+</cli>
+  - System management tools: <cli>
+(chroot) # pacman -S --needed man-db man-pages tree ncdu htop neofetch fcron
+</cli>
+  - Privilege tools: <cli>
+(chroot) # pacman -S --needed opendoas
+</cli>
+  - Boot software: <cli>
+(chroot) # pacman -S --needed mkinitcpio linux linux-lts linux-firmware efibootmgr grub
+</cli>
+  - Network tools: <cli>
+(chroot) # pacman -S --needed 
+</cli>
+
+===== Booting =====
+
+==== Initramfs ====
+
+  - Configure initramfs: <file text /etc/mkinitcpio.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/mkinitcpio.conf (0644 root:root)
+## DEPENDENCIES: core/mkinitcpio
+## DESCRIPTION:  Initramfs configuration.
+
+## Additional kernel modules loaded before boot hooks.
+MODULES=()
+
+## Additional binaries included in the initramfs.
+BINARIES=(btrfs)
+
+## Additional files included in the initramfs.
+FILES=()
+
+## Hooks (scripts) to be executed in the initramfs. Order is important!
+HOOKS=(base udev keyboard autodetect modconf block keymap consolefont encrypt \
+  fsck filesystems)
+
+## Compression method (and options) to compress initramfs image (default: zstd).
+COMPRESSION='zstd'
+COMPRESSION_OPTIONS=()
+</file>
+  - Re-generate initramfs for kernels: <cli>
+(chroot) # mkinitcpio -P
+</cli>
+
+==== Bootloader ====
+
+  - Install GRUB2 to ESP: <cli>
+(chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
+(chroot) # mount -o remount,rw /sys/firmware/efi/efivars/
+(chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
+(chroot) # mount -o remount,ro /sys/firmware/efi/efivars/
+</cli>
+  - Configure GRUB2((GRUB2 config options: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html.)): <file text /etc/default/grub>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/default/grub (0644 root:root)
+## DEPENDENCIES: core/grub
+## DESCRIPTION:  Bootloader configuration.
+
+## Default menu entry.
+GRUB_DEFAULT='0'
+GRUB_SAVEDEFAULT='false'
+
+## Time to boot default entry unless key is pressed.
+GRUB_TIMEOUT='-1'
+GRUB_TIMEOUT_STYLE='menu'
+
+## Do not generate recovery mode entries.
+GRUB_DISABLE_RECOVERY='true'
+
+## Terminal input devices.
+GRUB_TERMINAL_INPUT='console'
+
+## Terminal output.
+GRUB_GFXMODE='auto'
+GRUB_GFXPAYLOAD_LINUX='text'
+
+## Enable encrypted disks.
+GRUB_ENABLE_CRYPTODISK='y'
+
+## Kernel parameters.
+GRUB_CMDLINE_LINUX=''
+GRUB_CMDLINE_LINUX_DEFAULT='quiet rw \
+  cryptdevice=UUID=00000000-0000-0000-0000-000000000002 \
+  root=UUID=00000000-0000-0000-0000-000000000003'
+
+## Bootloader colors (fg/bg).
+GRUB_COLOR_NORMAL='white/black'
+GRUB_COLOR_HIGHLIGHT='white/black'
+</file>
+  - Apply grub configuration changes: <cli>
+(chroot) # grub-mkconfig -o /boot/grub/grub.cfg
 </cli>

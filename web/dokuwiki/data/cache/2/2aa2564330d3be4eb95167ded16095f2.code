@@ -1,0 +1,6 @@
+archlinux
+&nbsp;
+## AUTHOR:       AISK11
+## LOCATION:     /etc/hostname (0644 root:root)
+## DEPENDENCIES: -
+## DESCRIPTION:  Machine name. Only 1st line is used.

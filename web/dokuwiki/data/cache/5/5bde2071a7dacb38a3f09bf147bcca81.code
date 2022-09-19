@@ -1,0 +1,10 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/vconsole.conf (0644 root:root)
+## DEPENDENCIES: core/kbd
+## DESCRIPTION:  Console keymap and font.
+&nbsp;
+## Console keymap.
+KEYMAP=us
+&nbsp;
+## Console font.
+FONT=eurlatgr
