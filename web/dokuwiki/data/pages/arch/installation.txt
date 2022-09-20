@@ -42,6 +42,7 @@ cfdisk> q
 # fsck.vfat </dev/sdX1> ; echo $?
 </cli>
     - LUKS encrypted filesystem: <cli>
+# dd if=/dev/urandom of=</dev/sdX2> status=progress ; sync
 # wipefs -a </dev/sdX2>
 # cryptsetup luksFormat -y --type luks2 </dev/sdX2>
 > YES

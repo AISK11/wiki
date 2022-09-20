@@ -308,3 +308,4 @@ entries
 gfxmode
 cmdline
 ifnames
+urandom
