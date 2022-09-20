@@ -7,22 +7,22 @@
 <h2 class="sectionedit2" id="installation">Installation</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Print firewall version or install it: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">nft -v || apt install nftables</span></pre><p></div>
+<li class="level1"><div class="li"> Print firewall version or install it:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">nft -v || pacman -S --needed nftables</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;25-139&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;25-145&quot;} -->
 <h2 class="sectionedit3" id="configuration">Configuration</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Set <a href="https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes" class="urlextern" title="https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes">nftables rules</a>: <dl class="file">
+<li class="level1"><div class="li"> Set <a href="https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes" class="urlextern" title="https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes">nftables rules</a>:<dl class="file">
 <dt><a href="http://localhost/_export/code/cybersecurity/firewall?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/nftables.conf</a></dt>
 <dd><pre class="code file text">#!/usr/bin/env nft -f
 &nbsp;
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/nftables.conf (0644 root:root)
-## DEPENDENCIES: nftables
+## DEPENDENCIES: extra/nftables
 ## DESCRIPTION:  Network firewall rules.
 &nbsp;
 ## Remove all previous firewall settings.
@@ -48,7 +48,7 @@ table inet fw {
     ## Accept responses from servers.
     ct state {established,related} accept;
 &nbsp;
-    ## Accept requests from clients for specified TCP and UDP services.
+    ## Accept requests from clients to specified TCP and UDP services.
     tcp dport $tcp_services accept;
     udp dport $udp_services accept;
   }
@@ -65,22 +65,23 @@ table inet fw {
     ip6 daddr {::1} accept;
 &nbsp;
     ## Do not disclose closed UDP service exceptions.
+    ## This permits only ICMP requests.
     icmp type != {8,13,15,17,30,42} drop;
     icmpv6 type != {128,144} drop;
 &nbsp;
-    ## Do not disclose closed TCP service exceptions (in rare cases may
-    ## cause issues - see GRKERNSEC_BLACKHOLE).
+    ## Do not disclose closed TCP service exceptions.
+    ## WARNING! In rare cases may cause issues - see GRKERNSEC_BLACKHOLE.
     tcp sport $tcp_services tcp flags {rst} drop;
   }
 }</pre>
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Start firewall immediately and on startup: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl start nftables &amp;&amp; systemctl enable nftables</span></pre><p></div>
+<li class="level1"><div class="li"> Start firewall immediately and from init:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl start nftables &amp;&amp; systemctl enable nftables</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Verify currently active firewall rules: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">nft list ruleset</span></pre><p></div>
+<li class="level1"><div class="li"> Verify currently active firewall rules:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">nft list ruleset</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;140-&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;146-&quot;} -->

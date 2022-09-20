@@ -1,0 +1,28 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
+## DEPENDENCIES: core/dhcpcd
+## DESCRIPTION:  DHCP client settings.
+&nbsp;
+## Comma separated list of blocked interface regex-es.
+denyinterfaces *
+&nbsp;
+## Static configuration template (interace cannot be denied).
+#interface eth0
+#static ip_address=10.0.0.100/24
+#static routers=10.0.0.1
+&nbsp;
+## Group to manage dhcpcd via control socket.
+controlgroup network
+&nbsp;
+## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
+nohook resolv.conf
+&nbsp;
+## Don't check if obtained IPv4 address is taken by arp (increases speed) and
+## also disables IPv4LL (APIPA).
+noarp
+&nbsp;
+## Remove any pre-existing IPv4 addresses when adding new IPv4 address.
+noalias
+&nbsp;
+## Anonymous profile.
+anonymous

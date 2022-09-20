@@ -131,3 +131,4 @@ mkinitcpio
 autodetect
 gfxpayload
 cryptodisk
+torbrowser

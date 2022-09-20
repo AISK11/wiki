@@ -2,16 +2,21 @@
 
 ===== Configuration =====
 
-  - Set universal timezone((Timezone leaks: https://www.whonix.org/wiki/Data_Collection_Techniques#Fingerprinting_and_Anonymity.)): <cli>
+==== Date & Time ====
+
+  - Set universal timezone((Timezone leaks: https://www.whonix.org/wiki/Data_Collection_Techniques#Fingerprinting_and_Anonymity.)):<cli>
 # ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 </cli>
-  - Set hostname((Hostname leaks: https://www.whonix.org/wiki/Hostnames#Privacy_Risks.)): <cli>
-# echo <HOSTNAME> > /etc/hostname
-</cli>
-  - Clear pre-login and post-login messages: <cli>
+
+==== Hostname ====
+
+  - Set hostname((Hostname leaks: https://www.whonix.org/wiki/Hostnames#Privacy_Risks.)):<cli>
+# echo '<HOSTNAME>' > /etc/hostname
+</cli>//Note: Reboot is required.//
+
+==== Login Messages ====
+
+  - Clear pre-login and post-login messages:<cli>
 # echo '' > /etc/issue
 # echo '' > /etc/motd
-</cli>
-  - Reboot to apply changes: <cli>
-# reboot
 </cli>

@@ -1,0 +1,19 @@
+====== Web Browser ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Installation =====
+
+  - Print Tor Browser help or install it:<cli>
+# torbrowser-launcher -h || pacman -S --needed torbrowser-launcher
+</cli>
+
+===== Usage =====
+
+  - Start Tor Browser:<cli>
+$ torbrowser-launcher [URL] & disown
+</cli>
+
+https://www.whonix.org/wiki/Tor_Browser

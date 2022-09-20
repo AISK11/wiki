@@ -2,18 +2,18 @@
 
 ===== Installation =====
 
-  - Print firewall version or install it: <cli>
-# nft -v || apt install nftables
+  - Print firewall version or install it:<cli>
+# nft -v || pacman -S --needed nftables
 </cli>
 
 ===== Configuration =====
 
-  - Set [[https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes|nftables rules]]: <file text /etc/nftables.conf>
+  - Set [[https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes|nftables rules]]:<file text /etc/nftables.conf>
 #!/usr/bin/env nft -f
 
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/nftables.conf (0644 root:root)
-## DEPENDENCIES: nftables
+## DEPENDENCIES: extra/nftables
 ## DESCRIPTION:  Network firewall rules.
 
 ## Remove all previous firewall settings.
@@ -39,7 +39,7 @@ table inet fw {
     ## Accept responses from servers.
     ct state {established,related} accept;
 
-    ## Accept requests from clients for specified TCP and UDP services.
+    ## Accept requests from clients to specified TCP and UDP services.
     tcp dport $tcp_services accept;
     udp dport $udp_services accept;
   }
@@ -56,18 +56,19 @@ table inet fw {
     ip6 daddr {::1} accept;
 
     ## Do not disclose closed UDP service exceptions.
+    ## This permits only ICMP requests.
     icmp type != {8,13,15,17,30,42} drop;
     icmpv6 type != {128,144} drop;
 
-    ## Do not disclose closed TCP service exceptions (in rare cases may
-    ## cause issues - see GRKERNSEC_BLACKHOLE).
+    ## Do not disclose closed TCP service exceptions.
+    ## WARNING! In rare cases may cause issues - see GRKERNSEC_BLACKHOLE.
     tcp sport $tcp_services tcp flags {rst} drop;
   }
 }
 </file>
-  - Start firewall immediately and on startup: <cli>
+  - Start firewall immediately and from init:<cli>
 # systemctl start nftables && systemctl enable nftables
 </cli>
-  - Verify currently active firewall rules: <cli>
+  - Verify currently active firewall rules:<cli>
 # nft list ruleset
 </cli>

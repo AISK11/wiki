@@ -230,3 +230,8 @@ compress
 recovery
 terminal
 mkconfig
+interace
+patterns
+resolver
+original
+launcher

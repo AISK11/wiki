@@ -1,0 +1,12 @@
+====== Resources ======
+
+===== Official =====
+
+  * [[https://archlinux.org|Arch Linux]]
+  * [[https://github.com/archlinux|Arch Linux GitHub]]
+  * [[https://www.blackarch.org|BlackArch Linux]]
+  * [[https://systemd.io|SystemD]]
+
+===== Personal =====
+
+  * [[https://github.com/aisk11/arch|Arch Linux GitHub (AISK11)]]

@@ -149,3 +149,4 @@ arch:resources
 arch:pre-installation
 arch:installation
 arch:post-installation
+cybersecurity:web_browser

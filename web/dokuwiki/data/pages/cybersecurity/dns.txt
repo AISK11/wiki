@@ -3,3 +3,14 @@
 <WRAP center round important 60%>
 This section is incomplete and needs further work!
 </WRAP>
+
+===== Installation =====
+
+  - Print DNS resolver version or install it: <cli>
+# unbound -V || pacman -S --needed unbound
+</cli>
+
+==== Configuration ====
+
+
+https://unix.stackexchange.com/questions/97391/dnscrypt-unbound-and-dnssec

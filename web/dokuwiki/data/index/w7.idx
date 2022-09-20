@@ -309,3 +309,6 @@ gfxmode
 cmdline
 ifnames
 urandom
+permits
+unbound
+locally

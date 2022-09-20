@@ -1,16 +1,20 @@
 ====== Installation ======
 
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
 ===== Environment Preparation =====
 
-  - Set console keymap and font: <cli>
+  - Set console keymap and font:<cli>
 # loadkeys us
 # setfont eurlatgr
 # unicode_start
 </cli>
-  - Disable system beeping (pcspkr module): <cli>
+  - Disable system beeping (pcspkr module):<cli>
 # modprobe -r pcspkr
 </cli>
-  - Verify UEFI boot and remount efivars as read-only to protect UEFI NVRAM((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)): <cli>
+  - Verify UEFI boot and remount efivars as read-only to protect UEFI NVRAM((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)):<cli>
 # ls -ld /sys/firmware/efi/
 # mount -o remount,ro /sys/firmware/efi/efivars/
 </cli>
@@ -18,7 +22,7 @@
 
 ===== Disk Partitioning =====
 
-  - Create partitions: <cli>
+  - Create partitions:<cli>
 # cfdisk -z </dev/sdX>
 cfdisk> gpt
 cfdisk> n
@@ -34,14 +38,14 @@ cfdisk> q
 # parted -s </dev/sdX> name 2 LUKS
 </cli>
   - Create filesystems: 
-    - EFI filesystem: <cli>
+    - EFI filesystem:<cli>
 # wipefs -a </dev/sdX1>
 # mkfs.vfat -F 32 </dev/sdX1>
 # fatlabel </dev/sdX1> ESP
 # fatlabel -i </dev/sdX1> 00000001
 # fsck.vfat </dev/sdX1> ; echo $?
 </cli>
-    - LUKS encrypted filesystem: <cli>
+    - LUKS encrypted filesystem:<cli>
 # dd if=/dev/urandom of=</dev/sdX2> status=progress ; sync
 # wipefs -a </dev/sdX2>
 # cryptsetup luksFormat -y --type luks2 </dev/sdX2>
@@ -54,7 +58,7 @@ cfdisk> q
 # cryptsetup open --type luks2 </dev/sdX2> luks-root
 > <LUKS_PASSWORD>
 </cli>
-    - Root filesystem: <cli>
+    - Root filesystem:<cli>
 # wipefs -a /dev/mapper/luks-root
 # mkfs.btrfs /dev/mapper/luks-root
 # btrfs filesystem label /dev/mapper/luks-root LUKS-ROOT
@@ -65,18 +69,18 @@ cfdisk> q
 
 ===== Base System Installation =====
 
-  -  Create mount point and mount root filesystem: <cli>
+  -  Create mount point and mount root filesystem:<cli>
 # mkdir -p /mnt/arch/
 # mount /dev/mapper/luks-root /mnt/arch/
 </cli>
-  - Install base packages and mount ESP: <cli>
+  - Install base packages and mount ESP:<cli>
 # pacstrap /mnt/arch/ base neovim git
 # mount </dev/sdX1> /mnt/arch/boot/
 </cli>
 
 ===== Chroot =====
 
-  - Mount filesystems: <cli>
+  - Mount filesystems:<cli>
 # mount --rbind /dev/ /mnt/arch/dev/
 # mount --rbind /sys/ /mnt/arch/sys/
 # mount --rbind /proc/ /mnt/arch/proc/
@@ -86,10 +90,10 @@ cfdisk> q
 # mount --make-rslave /mnt/arch/proc/
 # mount --make-rslave /mnt/arch/run/
 </cli>
-  - Copy DNS configuration: <cli>
+  - Copy DNS configuration:<cli>
 # cp /etc/resolv.conf /mnt/arch/etc/
 </cli>
-  - Chroot into new installation: <cli>
+  - Chroot into new installation:<cli>
 # chroot /mnt/arch/ /bin/sh
 # . ./etc/profile
 # export PS1='(chroot) # '
@@ -97,13 +101,13 @@ cfdisk> q
 
 ===== Swap File =====
 
-  - Allocate space on COW filesystem (such as btrfs): <cli>
+  - Allocate space on COW filesystem (such as btrfs):<cli>
 (chroot) # truncate -s 0 /swap
 (chroot) # chattr +C /swap
 (chroot) # fallocate -l 4G /swap
 (chroot) # chmod 0600 /swap
 </cli>
-  - Set file as swap area: <cli>
+  - Set file as swap area:<cli>
 (chroot) # mkswap /swap
 (chroot) # swapon /swap
 </cli>
@@ -146,7 +150,7 @@ en_US.UTF-8 UTF-8
 en_US ISO-8859-1
 ...
 </file>
-  - Generate locales: <cli>
+  - Generate locales:<cli>
 (chroot) # locale-gen
 </cli>
   - Set system locales: <file text /etc/locale.conf>
@@ -169,22 +173,22 @@ LC_TIME="en_GB.UTF-8"
 
 ==== Hostname ====
 
-  - Set hostname: <cli>
+  - Set hostname:<cli>
 (chroot) # echo '<HOSTNAME>' > /etc/hostname
 </cli>
 
 ==== Time ====
 
-  - Set timezone: <cli>
+  - Set timezone:<cli>
 (chroot) # ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 </cli>
-  - Save current time to RTC: <cli>
+  - Save current time to RTC:<cli>
 (chroot) # hwclock --systohc
 </cli>
 
 ==== Login Messages ====
 
-  - Set login messages: <cli>
+  - Set login messages:<cli>
 (chroot) # echo '' > /etc/issue
 (chroot) # echo '' > /etc/motd
 </cli>
@@ -220,20 +224,20 @@ Include = /etc/pacman.d/mirrorlist
 
 ===== Minimal System Installation =====
 
-  - Synchronize and update system: <cli>
+  - Synchronize and update system:<cli>
 (chroot) # pacman -Syyu
 </cli>
-  - Partitioning and filesystem tools: <cli>
+  - Partitioning and filesystem tools:<cli>
 (chroot) # pacman -S --needed parted dosfstools btrfs-progs
 </cli>
   - Boot software: 
-    - Kernel, initramfs and bootloader: <cli>
+    - Kernel, initramfs and bootloader:<cli>
 (chroot) # pacman -S --needed mkinitcpio linux [linux-lts] efibootmgr grub
 </cli>
-    - Additional firmware: <cli>
+    - Additional firmware:<cli>
 (chroot) # pacman -S --needed linux-firmware [amd-ucode|intel-ucode]
 </cli>
-  - Network tools: <cli>
+  - Network tools:<cli>
 (chroot) # pacman -S --needed ????????
 </cli>
 
@@ -250,13 +254,13 @@ HOOKS=(base udev keyboard autodetect modconf block keymap consolefont encrypt \
 COMPRESSION='zstd'
 COMPRESSION_OPTIONS=()
 </file>
-  - Re-generate initramfs for kernels: <cli>
+  - Re-generate initramfs for kernels:<cli>
 (chroot) # mkinitcpio -P
 </cli>
 
 ==== Bootloader ====
 
-  - Install GRUB2 to ESP: <cli>
+  - Install GRUB2 to ESP:<cli>
 (chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
 (chroot) # mount -o remount,rw /sys/firmware/efi/efivars/
 (chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
@@ -277,18 +281,18 @@ GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet
 GRUB_COLOR_NORMAL='white/black'
 GRUB_COLOR_HIGHLIGHT='white/black'
 </file>
-  - Apply GRUB2 configuration changes: <cli>
+  - Apply GRUB2 configuration changes:<cli>
 (chroot) # grub-mkconfig -o /boot/grub/grub.cfg
 </cli>
 
 ===== Finishing =====
 
-  - Set root password: <cli>
+  - Set root password:<cli>
 (chroot) # passwd root
 > <NEW-ROOT-PASSWORD>
 > <NEW-ROOT-PASSWORD (VERIFY)>
 </cli>
-  - Reboot system: <cli>
+  - Reboot system:<cli>
 (chroot) # exit
 # reboot
 </cli>

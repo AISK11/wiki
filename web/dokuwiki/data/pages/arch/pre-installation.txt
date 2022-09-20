@@ -2,20 +2,20 @@
 
 ===== Download =====
 
-  - Select preferred Arch Linux [[https://geo.mirror.pkgbuild.com|mirror]]((List of Arch Linux mirrors: https://archlinux.org/mirrors.)): <cli>
+  - Select preferred Arch Linux [[https://geo.mirror.pkgbuild.com|mirror]]((List of Arch Linux mirrors: https://archlinux.org/mirrors.)):<cli>
 $ MIRROR='https://geo.mirror.pkgbuild.com/iso/latest'
 </cli>
-  - Download Arch Linux ISO: <cli>
+  - Download Arch Linux ISO:<cli>
 $ curl -LO "${MIRROR}/archlinux-x86_64.iso"
 </cli>
 
 ===== Verify Download =====
 
-  - Download ISO signature and checkum: <cli>
+  - Download ISO signature and checkum:<cli>
 $ curl -LO "${MIRROR}/archlinux-x86_64.iso.sig"
 $ curl -LO "${MIRROR}/sha256sums.txt"
 </cli>
-  - Verify ISO authenticity and integrity: <cli>
+  - Verify ISO authenticity and integrity:<cli>
 $ gpg --keyserver-options auto-key-retrieve --verify archlinux-x86_64.iso.sig archlinux-x86_64.iso
 $ sha256sum --ignore-missing -c sha256sums.txt
 </cli>
@@ -23,7 +23,7 @@ $ sha256sum --ignore-missing -c sha256sums.txt
 ===== Flash USB =====
 
   - Make sure the USB filesystem is **not** mounted!
-  - Flash USB with disk image: <cli>
+  - Flash USB with disk image:<cli>
 # dd if=archlinux-x86_64.iso of=</dev/sdX> status=progress ; sync
 </cli>
 

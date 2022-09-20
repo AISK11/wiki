@@ -4,6 +4,11 @@
 This section is incomplete and needs further work!
 </WRAP>
 
+====== Configure Internet ======
+
+
+
+
   - Shells: <cli>
 (chroot) # pacman -S --needed dash zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 </cli>

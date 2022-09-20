@@ -1,5 +1,37 @@
 ====== MAC Address ======
 
-<WRAP center round important 60%>
-This section is incomplete and needs further work!
-</WRAP>
+===== Installation =====
+
+  - Print macchanger version or install it:<cli>
+# macchanger -V || pacman -S --needed macchanger
+</cli>
+
+===== Usage =====
+
+==== Find ====
+
+  - Find hardware vendor of MAC address:
+    * Locally:<cli>
+$ macchanger -l | grep -i '<XX:XX:XX>'
+</cli>
+    * Via web:
+      * [[https://macvendors.com|https://macvendors.com]].
+
+==== Set ====
+
+  - Set MAC address:
+    - Any random vendor:<cli>
+# ip l set <INTERFACE> down
+# macchanger -A <INTERFACE>
+# ip l set <INTERFACE> up
+</cli>
+    - Custom:<cli>
+# ip l set <INTERFACE> down
+# macchanger -m <XX:XX:XX:XX:XX:XX> <INTERFACE>
+# ip l set <INTERFACE> up
+</cli>
+    - Permanent (original):<cli>
+# ip l set <INTERFACE> down
+# macchanger -p <INTERFACE>
+# ip l set <INTERFACE> up
+</cli>

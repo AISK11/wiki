@@ -1,9 +1,3 @@
-1662969207	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			26
-1662969254	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin	[Hashing] 		-10
-1662979480	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			71
-1662979763	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			74
-1662979782	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			14
-1662983325	127.0.0.1	E	todo	admin			56
 1663111851	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			71
 1663112291	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			69
 1663239667	127.0.0.1	E	debian:index	admin			23
@@ -254,3 +248,53 @@
 1663634974	127.0.0.1	E	arch:installation	admin			-94
 1663635081	127.0.0.1	E	arch:installation	admin	[Bootloader] 		1
 1663636135	127.0.0.1	E	arch:installation	admin	[Disk Partitioning] 		59
+1663698072	127.0.0.1	E	cybersecurity:system	admin	[Configuration] 		2
+1663698151	127.0.0.1	E	cybersecurity:firewall	admin			7
+1663698166	127.0.0.1	E	arch:post-installation	admin			37
+1663698366	127.0.0.1	C	arch:resources	admin	created		230
+1663698377	127.0.0.1	E	arch:resources	admin			-8
+1663698386	127.0.0.1	E	arch:resources	admin			9
+1663698403	127.0.0.1	E	arch:resources	admin			0
+1663698420	127.0.0.1	E	arch:resources	admin			35
+1663698642	127.0.0.1	E	cybersecurity:system	admin			93
+1663698667	127.0.0.1	E	arch:pre-installation	admin			-5
+1663698683	127.0.0.1	E	arch:installation	admin			94
+1663698847	127.0.0.1	E	cybersecurity:system	admin			-17
+1663699470	127.0.0.1	E	cybersecurity:firewall	admin			47
+1663699559	127.0.0.1	E	cybersecurity:firewall	admin			-1
+1663699643	127.0.0.1	E	cybersecurity:firewall	admin			7
+1663699850	127.0.0.1	E	cybersecurity:dhcp	admin			-168
+1663699859	127.0.0.1	E	cybersecurity:dhcp	admin	[Installation] 		-1
+1663700262	127.0.0.1	E	cybersecurity:dhcp	admin	[Configuration] 		1
+1663700812	127.0.0.1	E	cybersecurity:dhcp	admin			-327
+1663700944	127.0.0.1	E	cybersecurity:firewall	admin			-1
+1663701389	127.0.0.1	E	cybersecurity:dhcp	admin			210
+1663701456	127.0.0.1	E	cybersecurity:dhcp	admin	[Configuration] 		1
+1663701483	127.0.0.1	E	cybersecurity:dhcp	admin	[Configuration] 		13
+1663701568	127.0.0.1	E	cybersecurity:dhcp	admin	[Configuration] 		0
+1663701581	127.0.0.1	E	cybersecurity:dhcp	admin	[Configuration] 		-7
+1663701643	127.0.0.1	E	cybersecurity:dhcp	admin			10
+1663701676	127.0.0.1	E	cybersecurity:firewall	admin			-4
+1663701693	127.0.0.1	E	cybersecurity:system	admin			-1
+1663702000	127.0.0.1	E	cybersecurity:dhcp	admin			4
+1663706365	127.0.0.1	E	cybersecurity:system	admin	[Login Messages] 		-29
+1663707686	127.0.0.1	E	cybersecurity:dns	admin			155
+1663707733	127.0.0.1	E	cybersecurity:sidebar	admin			47
+1663708076	127.0.0.1	E	cybersecurity:dhcp	admin			3
+1663708394	127.0.0.1	E	dev:git	admin			-23
+1663710148	127.0.0.1	D	it_areas:cybersecurity:anonymity:dns	admin	removed		-184
+1663710298	127.0.0.1	E	cybersecurity:mac_address	admin			151
+1663710511	127.0.0.1	E	cybersecurity:mac_address	admin			214
+1663710648	127.0.0.1	E	cybersecurity:mac_address	admin			262
+1663710746	127.0.0.1	E	cybersecurity:mac_address	admin			128
+1663710776	127.0.0.1	D	it_areas:cybersecurity:anonymity:mac_address	admin	removed		-643
+1663710801	127.0.0.1	E	cybersecurity:mac_address	admin			-94
+1663711079	127.0.0.1	C	cybersecurity:web_browser	admin	created		119
+1663712369	127.0.0.1	E	cybersecurity:dns	admin			76
+1663712634	127.0.0.1	E	arch:installation	admin			-29
+1663712966	127.0.0.1	E	cybersecurity:web_browser	admin			41
+1663713071	127.0.0.1	E	arch:resources	admin			50
+1663713395	127.0.0.1	E	cybersecurity:index	admin			280
+1663713411	127.0.0.1	E	cybersecurity:index	admin			8
+1663713499	127.0.0.1	E	cybersecurity:index	admin			31
+1663713981	127.0.0.1	E	cybersecurity:web_browser	admin			240

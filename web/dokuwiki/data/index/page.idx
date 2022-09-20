@@ -126,3 +126,5 @@ arch:index
 arch:pre-installation
 arch:installation
 arch:post-installation
+arch:resources
+cybersecurity:web_browser
