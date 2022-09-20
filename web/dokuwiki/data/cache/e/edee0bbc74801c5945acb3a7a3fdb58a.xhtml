@@ -1,14 +1,10 @@
 
 <h1 class="sectionedit1" id="installation">Installation</h1>
 <div class="level1">
-<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
-<p>
-This section is incomplete and needs further work!
-</p>
-</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-122&quot;} -->
-<h2 class="sectionedit4" id="environment_preparation">Environment Preparation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-28&quot;} -->
+<h2 class="sectionedit2" id="environment_preparation">Environment Preparation</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Set console keymap and font: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">loadkeys us</span>
@@ -25,8 +21,8 @@ This section is incomplete and needs further work!
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;123-614&quot;} -->
-<h2 class="sectionedit5" id="disk_partitioning">Disk Partitioning</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-520&quot;} -->
+<h2 class="sectionedit3" id="disk_partitioning">Disk Partitioning</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Create partitions: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;/dev/sdX&gt;</span>
@@ -64,7 +60,7 @@ This section is incomplete and needs further work!
 </li>
 <li class="level2"><div class="li"> Root filesystem: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a /dev/mapper/luks-root</span>
 <span class="cli_prompt"># </span><span class="cli_command">mkfs.btrfs /dev/mapper/luks-root</span>
-<span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label /dev/mapper/luks-root ROOT</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label /dev/mapper/luks-root LUKS-ROOT</span>
 <span class="cli_prompt"># </span><span class="cli_command">btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-root</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">y</span>
 <span class="cli_prompt"># </span><span class="cli_command">btrfs check /dev/mapper/luks-root ; echo $?</span></pre><p></div>
@@ -74,8 +70,8 @@ This section is incomplete and needs further work!
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Partitioning&quot;,&quot;hid&quot;:&quot;disk_partitioning&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;615-1769&quot;} -->
-<h2 class="sectionedit6" id="base_system_installation">Base System Installation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Partitioning&quot;,&quot;hid&quot;:&quot;disk_partitioning&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;521-1680&quot;} -->
+<h2 class="sectionedit4" id="base_system_installation">Base System Installation</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li">  Create mount point and mount root filesystem: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/arch/</span>
@@ -87,8 +83,8 @@ This section is incomplete and needs further work!
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1770-2063&quot;} -->
-<h2 class="sectionedit7" id="chroot">Chroot</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1681-1974&quot;} -->
+<h2 class="sectionedit5" id="chroot">Chroot</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Mount filesystems: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount --rbind /dev/ /mnt/arch/dev/</span>
@@ -109,8 +105,8 @@ This section is incomplete and needs further work!
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;2064-2617&quot;} -->
-<h2 class="sectionedit8" id="swap_file">Swap File</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;1975-2528&quot;} -->
+<h2 class="sectionedit6" id="swap_file">Swap File</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Allocate space on COW filesystem (such as btrfs): </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">truncate -s 0 /swap</span>
@@ -124,36 +120,24 @@ This section is incomplete and needs further work!
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;2618-2915&quot;} -->
-<h2 class="sectionedit9" id="system_settings">System Settings</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2529-2826&quot;} -->
+<h2 class="sectionedit7" id="system_settings">System Settings</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Settings&quot;,&quot;hid&quot;:&quot;system_settings&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;2916-2944&quot;} -->
-<h3 class="sectionedit10" id="filesystems">Filesystems</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Settings&quot;,&quot;hid&quot;:&quot;system_settings&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;2827-2855&quot;} -->
+<h3 class="sectionedit8" id="filesystems">Filesystems</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Configure crypttab: <dl class="file">
 <dt><a href="http://localhost/_export/code/arch/installation?codeblock=0" title="Download Snippet" class="mediafile mf_">/etc/crypttab</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     /etc/crypttab (0644 root:root)
-## DEPENDENCIES: core/filesystem
-## DESCRIPTION:  Encrypted partition mapping table.
-&nbsp;
-## &lt;MAPPER-NAME&gt; &lt;DEVICE&gt; &lt;PASSWORD-FILE&gt; &lt;OPTIONS&gt;
-luks-root UUID=00000000-0000-0000-0000-000000000002 none luks</pre>
+<dd><pre class="code file text">luks-root UUID=00000000-0000-0000-0000-000000000002 none luks</pre>
 </dd></dl>
 </div>
 </li>
 <li class="level1"><div class="li"> Configure fstab: <dl class="file">
 <dt><a href="http://localhost/_export/code/arch/installation?codeblock=1" title="Download Snippet" class="mediafile mf_">/etc/fstab</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     /etc/fstab (0644 root:root)
-## DEPENDENCIES: core/filesystem
-## DESCRIPTION:  Filesytem table.
-&nbsp;
-## &lt;FILE-SYSTEM&gt; &lt;MOUNT-DIR&gt; &lt;TYPE&gt; &lt;OPTIONS&gt; &lt;DUMP&gt; &lt;PASS&gt;
-efivarfs /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime 0 0
+<dd><pre class="code file text">efivarfs /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime 0 0
 LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
 LABEL=LUKS-ROOT     /     btrfs defaults,noatime            0 0
 /swap               none  swap  defaults                    0 0</pre>
@@ -163,40 +147,26 @@ LABEL=LUKS-ROOT     /     btrfs defaults,noatime            0 0
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;2945-3819&quot;} -->
-<h3 class="sectionedit11" id="kernel_modules">Kernel Modules</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;2856-3323&quot;} -->
+<h3 class="sectionedit9" id="kernel_modules">Kernel Modules</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set blacklisted kernel modules on startup: <dl class="file">
 <dt><a href="http://localhost/_export/code/arch/installation?codeblock=2" title="Download Snippet" class="mediafile mf_conf">/etc/modprobe.d/blacklist.conf</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     /etc/modprobe.d/blacklist.conf (0644 root:root)
-## DEPENDENCIES: core/kbd
-## DESCRIPTION:  Blacklisted kernel modules (can be turned on manually).
-&nbsp;
-## Blacklist pcspkr module (beeping):
-blacklist pcspkr</pre>
+<dd><pre class="code file text">blacklist pcspkr</pre>
 </dd></dl>
 </div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:11,&quot;range&quot;:&quot;3820-4188&quot;} -->
-<h3 class="sectionedit12" id="console">Console</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:9,&quot;range&quot;:&quot;3324-3465&quot;} -->
+<h3 class="sectionedit10" id="console">Console</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Configure console keymap and font: <dl class="file">
 <dt><a href="http://localhost/_export/code/arch/installation?codeblock=3" title="Download Snippet" class="mediafile mf_conf">/etc/vconsole.conf</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     /etc/vconsole.conf (0644 root:root)
-## DEPENDENCIES: core/kbd
-## DESCRIPTION:  Console keymap and font.
-&nbsp;
-## Console keymap.
-KEYMAP=us
-&nbsp;
-## Console font.
+<dd><pre class="code file text">KEYMAP=us
 FONT=eurlatgr</pre>
 </dd></dl>
 </div>
@@ -204,8 +174,8 @@ FONT=eurlatgr</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Console&quot;,&quot;hid&quot;:&quot;console&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:12,&quot;range&quot;:&quot;4189-4493&quot;} -->
-<h3 class="sectionedit13" id="locales">Locales</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Console&quot;,&quot;hid&quot;:&quot;console&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:10,&quot;range&quot;:&quot;3466-3587&quot;} -->
+<h3 class="sectionedit11" id="locales">Locales</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Uncomment required locales: <dl class="file">
@@ -224,12 +194,7 @@ en_US ISO-8859-1
 </li>
 <li class="level1"><div class="li"> Set system locales: <dl class="file">
 <dt><a href="http://localhost/_export/code/arch/installation?codeblock=5" title="Download Snippet" class="mediafile mf_conf">/etc/locale.conf</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     /etc/locale.conf (0644 root:root)
-## DEPENDENCIES: core/glibc
-## DESCRIPTION:  System locales.
-&nbsp;
-LANG=&quot;en_US.UTF-8&quot;
+<dd><pre class="code file text">LANG=&quot;en_US.UTF-8&quot;
 LANGUAGE=&quot;en_GB:C&quot;
 LC_ADDRESS=&quot;en_US.UTF8&quot;
 LC_COLLATE=&quot;en_US.UTF-8&quot;
@@ -250,26 +215,17 @@ LC_TIME=&quot;en_GB.UTF-8&quot;
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:13,&quot;range&quot;:&quot;4494-5267&quot;} -->
-<h3 class="sectionedit14" id="hostname">Hostname</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:11,&quot;range&quot;:&quot;3588-4224&quot;} -->
+<h3 class="sectionedit12" id="hostname">Hostname</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Set hostname: <dl class="file">
-<dt><a href="http://localhost/_export/code/arch/installation?codeblock=6" title="Download Snippet" class="mediafile mf_">/etc/hostname</a></dt>
-<dd><pre class="code file text">archlinux
-&nbsp;
-## AUTHOR:       AISK11
-## LOCATION:     /etc/hostname (0644 root:root)
-## DEPENDENCIES: -
-## DESCRIPTION:  Machine name. Only 1st line is used.</pre>
-</dd></dl>
-</div>
+<li class="level1"><div class="li"> Set hostname: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&lt;HOSTNAME&gt;&#039; &gt; /etc/hostname</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;5268-5496&quot;} -->
-<h3 class="sectionedit15" id="time">Time</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:12,&quot;range&quot;:&quot;4225-4321&quot;} -->
+<h3 class="sectionedit13" id="time">Time</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set timezone: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">ln -sf /usr/share/zoneinfo/UTC /etc/localtime</span></pre><p></div>
@@ -279,8 +235,8 @@ LC_TIME=&quot;en_GB.UTF-8&quot;
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Time&quot;,&quot;hid&quot;:&quot;time&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:15,&quot;range&quot;:&quot;5497-5673&quot;} -->
-<h3 class="sectionedit16" id="login_messages">Login Messages</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Time&quot;,&quot;hid&quot;:&quot;time&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;4322-4498&quot;} -->
+<h3 class="sectionedit14" id="login_messages">Login Messages</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set login messages: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&#039; &gt; /etc/issue</span>
@@ -289,50 +245,25 @@ LC_TIME=&quot;en_GB.UTF-8&quot;
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Login Messages&quot;,&quot;hid&quot;:&quot;login_messages&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:16,&quot;range&quot;:&quot;5674-5800&quot;} -->
-<h3 class="sectionedit17" id="pacman">Pacman</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Login Messages&quot;,&quot;hid&quot;:&quot;login_messages&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;4499-4625&quot;} -->
+<h3 class="sectionedit15" id="pacman">Pacman</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Configure package manager: <dl class="file">
-<dt><a href="http://localhost/_export/code/arch/installation?codeblock=7" title="Download Snippet" class="mediafile mf_conf">/etc/pacman.conf</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     /etc/pacman.conf (0644 root:root)
-## DEPENDENCIES: core/pacman
-## DESCRIPTION:  Pacman package manager configuration.
-&nbsp;
-[options]
-## Install packages only for given architecture (auto=$(uname -m)).
+<dt><a href="http://localhost/_export/code/arch/installation?codeblock=6" title="Download Snippet" class="mediafile mf_conf">/etc/pacman.conf</a></dt>
+<dd><pre class="code file text">[options]
 Architecture = auto
-&nbsp;
-## Package signature keys.
 SigLevel = Required DatabaseOptional
 LocalFileSigLevel = Optional
-&nbsp;
-## Hook directory for package installation, update or removal.
 HookDir = /etc/pacman.d/hooks/
-&nbsp;
-## Ask for confirmation before removing of specified packages.
 HoldPkg = base
-&nbsp;
-## Do not install/upgrade following packages.
 IgnorePkg = nano emacs vi vim sudo dhclient
-&nbsp;
-## Approximately check adequate available disk space before installing.
 CheckSpace
-&nbsp;
-## Display name, version and size of packages.
 VerbosePkgLists
-&nbsp;
-## Enable color for pacman output on tty.
 Color
-&nbsp;
-## Easteregg.
 #ILoveCandy
-&nbsp;
-## Number of concurrent download streams.
 ParallelDownloads = 5
 &nbsp;
-## Stable repositories.
 [core]
 Include = /etc/pacman.d/mirrorlist
 &nbsp;
@@ -348,60 +279,45 @@ Include = /etc/pacman.d/mirrorlist</pre>
 </div>
 </li>
 </ol>
-<hr />
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Pacman&quot;,&quot;hid&quot;:&quot;pacman&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:17,&quot;range&quot;:&quot;5801-7005&quot;} -->
-<h2 class="sectionedit18" id="minimal_system_installation">Minimal System Installation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Pacman&quot;,&quot;hid&quot;:&quot;pacman&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:15,&quot;range&quot;:&quot;4626-5147&quot;} -->
+<h2 class="sectionedit16" id="minimal_system_installation">Minimal System Installation</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Synchronize and update system: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -Syyu</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Partitioning and filesystem tools: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed parted dosfstools btrfs-progs</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Shells: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed dash zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting</span></pre><p></div>
+<li class="level1 node"><div class="li"> Boot software: </div>
+<ol>
+<li class="level2"><div class="li"> Kernel, initramfs and bootloader: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed mkinitcpio linux [linux-lts] efibootmgr grub</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> System management tools: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed man-db man-pages tree ncdu htop neofetch fcron</span></pre><p></div>
+<li class="level2"><div class="li"> Additional firmware: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed linux-firmware [amd-ucode|intel-ucode]</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Privilege tools: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed opendoas</span></pre><p></div>
+</ol>
 </li>
-<li class="level1"><div class="li"> Boot software: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed mkinitcpio linux linux-lts linux-firmware efibootmgr grub</span></pre><p></div>
-</li>
-<li class="level1"><div class="li"> Network tools: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed </span></pre><p></div>
+<li class="level1"><div class="li"> Network tools: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed ????????</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Minimal System Installation&quot;,&quot;hid&quot;:&quot;minimal_system_installation&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:18,&quot;range&quot;:&quot;7006-7730&quot;} -->
-<h2 class="sectionedit19" id="booting">Booting</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Minimal System Installation&quot;,&quot;hid&quot;:&quot;minimal_system_installation&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:16,&quot;range&quot;:&quot;5148-5701&quot;} -->
+<h2 class="sectionedit17" id="booting">Booting</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:19,&quot;range&quot;:&quot;7731-7751&quot;} -->
-<h3 class="sectionedit20" id="initramfs">Initramfs</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:17,&quot;range&quot;:&quot;5702-5722&quot;} -->
+<h3 class="sectionedit18" id="initramfs">Initramfs</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Configure initramfs: <dl class="file">
-<dt><a href="http://localhost/_export/code/arch/installation?codeblock=8" title="Download Snippet" class="mediafile mf_conf">/etc/mkinitcpio.conf</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     /etc/mkinitcpio.conf (0644 root:root)
-## DEPENDENCIES: core/mkinitcpio
-## DESCRIPTION:  Initramfs configuration.
-&nbsp;
-## Additional kernel modules loaded before boot hooks.
-MODULES=()
-&nbsp;
-## Additional binaries included in the initramfs.
+<dt><a href="http://localhost/_export/code/arch/installation?codeblock=7" title="Download Snippet" class="mediafile mf_conf">/etc/mkinitcpio.conf</a></dt>
+<dd><pre class="code file text">MODULES=()
 BINARIES=(btrfs)
-&nbsp;
-## Additional files included in the initramfs.
 FILES=()
-&nbsp;
-## Hooks (scripts) to be executed in the initramfs. Order is important!
 HOOKS=(base udev keyboard autodetect modconf block keymap consolefont encrypt \
-  fsck filesystems)
-&nbsp;
-## Compression method (and options) to compress initramfs image (default: zstd).
+  filesystems fsck)
 COMPRESSION='zstd'
 COMPRESSION_OPTIONS=()</pre>
 </dd></dl>
@@ -412,8 +328,8 @@ COMPRESSION_OPTIONS=()</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:20,&quot;range&quot;:&quot;7752-8559&quot;} -->
-<h3 class="sectionedit21" id="bootloader">Bootloader</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:18,&quot;range&quot;:&quot;5723-6066&quot;} -->
+<h3 class="sectionedit19" id="bootloader">Bootloader</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Install GRUB2 to ESP: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --removable</span>
@@ -422,51 +338,43 @@ COMPRESSION_OPTIONS=()</pre>
 <span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,ro /sys/firmware/efi/efivars/</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Configure GRUB2<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>: <dl class="file">
-<dt><a href="http://localhost/_export/code/arch/installation?codeblock=9" title="Download Snippet" class="mediafile mf_">/etc/default/grub</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     /etc/default/grub (0644 root:root)
-## DEPENDENCIES: core/grub
-## DESCRIPTION:  Bootloader configuration.
-&nbsp;
-## Default menu entry.
-GRUB_DEFAULT='0'
+<dt><a href="http://localhost/_export/code/arch/installation?codeblock=8" title="Download Snippet" class="mediafile mf_">/etc/default/grub</a></dt>
+<dd><pre class="code file text">GRUB_DEFAULT='0'
 GRUB_SAVEDEFAULT='false'
-&nbsp;
-## Time to boot default entry unless key is pressed.
 GRUB_TIMEOUT='-1'
 GRUB_TIMEOUT_STYLE='menu'
-&nbsp;
-## Do not generate recovery mode entries.
 GRUB_DISABLE_RECOVERY='true'
-&nbsp;
-## Terminal input devices.
 GRUB_TERMINAL_INPUT='console'
-&nbsp;
-## Terminal output.
 GRUB_GFXMODE='auto'
 GRUB_GFXPAYLOAD_LINUX='text'
-&nbsp;
-## Enable encrypted disks.
 GRUB_ENABLE_CRYPTODISK='y'
-&nbsp;
-## Kernel parameters.
 GRUB_CMDLINE_LINUX=''
-GRUB_CMDLINE_LINUX_DEFAULT='quiet rw \
-  cryptdevice=UUID=00000000-0000-0000-0000-000000000002 \
-  root=UUID=00000000-0000-0000-0000-000000000003'
-&nbsp;
-## Bootloader colors (fg/bg).
+GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
 GRUB_COLOR_NORMAL='white/black'
 GRUB_COLOR_HIGHLIGHT='white/black'</pre>
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Apply grub configuration changes: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-mkconfig -o /boot/grub/grub.cfg</span></pre><p></div>
+<li class="level1"><div class="li"> Apply GRUB2 configuration changes: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-mkconfig -o /boot/grub/grub.cfg</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:21,&quot;range&quot;:&quot;8560-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:19,&quot;range&quot;:&quot;6067-7070&quot;} -->
+<h2 class="sectionedit20" id="finishing">Finishing</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Set root password: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">passwd root</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-ROOT-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-ROOT-PASSWORD (VERIFY)&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Reboot system: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">exit</span>
+<span class="cli_prompt"># </span><span class="cli_command">reboot</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:20,&quot;range&quot;:&quot;7071-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Read-write efivarfs problem: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 

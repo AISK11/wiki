@@ -7,19 +7,19 @@
 <h2 class="sectionedit2" id="download">Download</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Select preferred Arch Linux <a href="https://geo.mirror.pkgbuild.com" class="urlextern" title="https://geo.mirror.pkgbuild.com">mirror</a><sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.</div>
+<li class="level1"><div class="li"> Select preferred Arch Linux <a href="https://geo.mirror.pkgbuild.com" class="urlextern" title="https://geo.mirror.pkgbuild.com">mirror</a><sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">MIRROR=&#039;https://geo.mirror.pkgbuild.com/iso/latest&#039;</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Download Arch Linux ISO: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -LO https://geo.mirror.pkgbuild.com/iso/latest/archlinux-x86_64.iso</span></pre><p></div>
+<li class="level1"><div class="li"> Download Arch Linux ISO: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -LO &quot;${MIRROR}/archlinux-x86_64.iso&quot;</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Download&quot;,&quot;hid&quot;:&quot;download&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;33-310&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Download&quot;,&quot;hid&quot;:&quot;download&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;33-346&quot;} -->
 <h2 class="sectionedit3" id="verify_download">Verify Download</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Download ISO signature and checkum: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -LO https://geo.mirror.pkgbuild.com/iso/latest/archlinux-x86_64.iso.sig</span>
-<span class="cli_prompt">$ </span><span class="cli_command">curl -LO https://geo.mirror.pkgbuild.com/iso/latest/sha256sums.txt</span></pre><p></div>
+<li class="level1"><div class="li"> Download ISO signature and checkum: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -LO &quot;${MIRROR}/archlinux-x86_64.iso.sig&quot;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">curl -LO &quot;${MIRROR}/sha256sums.txt&quot;</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Verify ISO authenticity and integrity: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">gpg --keyserver-options auto-key-retrieve --verify archlinux-x86_64.iso.sig archlinux-x86_64.iso</span>
 <span class="cli_prompt">$ </span><span class="cli_command">sha256sum --ignore-missing -c sha256sums.txt</span></pre><p></div>
@@ -27,7 +27,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Verify Download&quot;,&quot;hid&quot;:&quot;verify_download&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;311-743&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Verify Download&quot;,&quot;hid&quot;:&quot;verify_download&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;347-717&quot;} -->
 <h2 class="sectionedit4" id="flash_usb">Flash USB</h2>
 <div class="level2">
 <ol>
@@ -38,7 +38,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Flash USB&quot;,&quot;hid&quot;:&quot;flash_usb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;744-930&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Flash USB&quot;,&quot;hid&quot;:&quot;flash_usb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;718-904&quot;} -->
 <h2 class="sectionedit5" id="usb_boot">USB Boot</h2>
 <div class="level2">
 <ol>
@@ -51,7 +51,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;USB Boot&quot;,&quot;hid&quot;:&quot;usb_boot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;931-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;USB Boot&quot;,&quot;hid&quot;:&quot;usb_boot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;905-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">List of Arch Linux mirrors: <a href="https://archlinux.org/mirrors" class="urlextern" title="https://archlinux.org/mirrors">https://archlinux.org/mirrors</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 

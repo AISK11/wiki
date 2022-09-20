@@ -1,49 +1,3 @@
-1662855689	127.0.0.1	E	cybersecurity:anonymity:firewall	admin			-31
-1662856235	127.0.0.1	D	cybersecurity:anonymity:firewall	admin	removed		-1927
-1662856238	127.0.0.1	E	cybersecurity:sidebar	admin			-10
-1662856242	127.0.0.1	C	cybersecurity:firewall	admin	created		1927
-1662857233	127.0.0.1	D	os:debian:resources	admin	removed		-342
-1662857272	127.0.0.1	C	debian:resources	admin	created		342
-1662859813	127.0.0.1	D	it_areas:cybersecurity:anonymity:system	admin	removed		-501
-1662859847	127.0.0.1	E	cybersecurity:sidebar	admin			37
-1662859850	127.0.0.1	C	cybersecurity:system	admin	created		501
-1662859887	127.0.0.1	E	cybersecurity:system	admin	[Hostname] 		2
-1662859966	127.0.0.1	E	cybersecurity:system	admin			0
-1662860021	127.0.0.1	D	it_areas:cybersecurity:resources	admin	removed		-167
-1662860046	127.0.0.1	E	cybersecurity:sidebar	admin			43
-1662860050	127.0.0.1	C	cybersecurity:resources	admin	created		167
-1662860071	127.0.0.1	E	cybersecurity:sidebar	admin			-152
-1662860098	127.0.0.1	D	it_areas:cybersecurity:anonymity:dhcp	admin	removed		-182
-1662860678	127.0.0.1	E	cybersecurity:sidebar	admin			21
-1662917834	127.0.0.1	E	cybersecurity:resources	admin			94
-1662917918	127.0.0.1	E	cybersecurity:system	admin			-30
-1662917937	127.0.0.1	E	cybersecurity:system	admin			-7
-1662917982	127.0.0.1	E	cybersecurity:system	admin			59
-1662918038	127.0.0.1	E	cybersecurity:system	admin			-26
-1662918098	127.0.0.1	E	cybersecurity:system	admin			0
-1662923630	127.0.0.1	E	cybersecurity:sidebar	admin			33
-1662923725	127.0.0.1	C	cybersecurity:dhcp	admin	created		259
-1662924108	127.0.0.1	E	cybersecurity:system	admin			14
-1662925089	127.0.0.1	E	cybersecurity:firewall	admin			1
-1662929895	127.0.0.1	E	cybersecurity:system	admin	[Configuration] 		19
-1662931660	127.0.0.1	E	cybersecurity:dhcp	admin			92
-1662939819	127.0.0.1	E	cybersecurity:dhcp	admin			910
-1662940086	127.0.0.1	E	cybersecurity:dhcp	admin			0
-1662940626	127.0.0.1	E	cybersecurity:dhcp	admin			137
-1662940684	127.0.0.1	E	cybersecurity:dhcp	admin			18
-1662942578	127.0.0.1	E	cybersecurity:dhcp	admin	[Installation] 		0
-1662943602	127.0.0.1	E	cybersecurity:dhcp	admin			76
-1662943718	127.0.0.1	E	cybersecurity:dhcp	admin	[Installation] 		20
-1662944865	127.0.0.1	E	cybersecurity:dhcp	admin			24
-1662944924	127.0.0.1	E	cybersecurity:dhcp	admin			96
-1662945375	127.0.0.1	E	cybersecurity:sidebar	admin			28
-1662945420	127.0.0.1	E	cybersecurity:dhcp	admin			-94
-1662945541	127.0.0.1	E	cybersecurity:dhcp	admin			89
-1662946850	127.0.0.1	E	cybersecurity:sidebar	admin			-15
-1662946890	127.0.0.1	C	cybersecurity:network_interfaces	admin	created		126
-1662946935	127.0.0.1	C	cybersecurity:mac_address	admin	created		119
-1662946948	127.0.0.1	C	cybersecurity:dns	admin	created		111
-1662946966	127.0.0.1	C	cybersecurity:vpn-tor-proxy	admin	created		121
 1662969207	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			26
 1662969254	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin	[Hashing] 		-10
 1662979480	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			71
@@ -276,3 +230,26 @@
 1663546971	127.0.0.1	E	arch:installation	admin			2
 1663547096	127.0.0.1	E	arch:installation	admin	[Bootloader] 		0
 1663549420	127.0.0.1	E	arch:installation	admin			952
+1663571135	127.0.0.1	E	arch:pre-installation	admin			-26
+1663629491	127.0.0.1	E	arch:installation	admin	[Disk Partitioning] 		5
+1663630647	127.0.0.1	E	arch:installation	admin	[Bootloader] 		-65
+1663630666	127.0.0.1	E	arch:installation	admin	[Initramfs] 		0
+1663632038	127.0.0.1	E	arch:installation	admin	[Initramfs] 		17
+1663633219	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		-316
+1663633227	127.0.0.1	C	arch:post-installation	admin	created		315
+1663633277	127.0.0.1	E	arch:installation	admin	[Filesystems] 		-407
+1663633286	127.0.0.1	E	arch:installation	admin	[Kernel Modules] 		-227
+1663633298	127.0.0.1	E	arch:installation	admin	[Console] 		-183
+1663633314	127.0.0.1	E	arch:installation	admin	[Locales] 		-137
+1663633347	127.0.0.1	E	arch:installation	admin	[Hostname] 		-141
+1663633356	127.0.0.1	E	arch:installation	admin	[Hostname] 		9
+1663633404	127.0.0.1	E	arch:installation	admin	[Pacman] 		-677
+1663633421	127.0.0.1	E	arch:installation	admin	[Initramfs] 		-481
+1663633456	127.0.0.1	E	arch:installation	admin	[Bootloader] 		-398
+1663633610	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		137
+1663633673	127.0.0.1	E	arch:installation	admin			8
+1663633819	127.0.0.1	E	arch:installation	admin			187
+1663634949	127.0.0.1	E	arch:post-installation	admin			122
+1663634957	127.0.0.1	E	arch:post-installation	admin			5
+1663634974	127.0.0.1	E	arch:installation	admin			-94
+1663635081	127.0.0.1	E	arch:installation	admin	[Bootloader] 		1

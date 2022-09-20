@@ -1,0 +1,15 @@
+LANG=&quot;en_US.UTF-8&quot;
+LANGUAGE=&quot;en_GB:C&quot;
+LC_ADDRESS=&quot;en_US.UTF8&quot;
+LC_COLLATE=&quot;en_US.UTF-8&quot;
+LC_CTYPE=&quot;en_US.UTF-8&quot;
+LC_IDENTIFICATION=&quot;en_US.UTF8&quot;
+LC_MONETARY=&quot;en_US.UTF-8&quot;
+LC_MESSAGES=&quot;en_US.UTF-8&quot;
+LC_MEASUREMENT=&quot;en_GB.UTF8&quot;
+LC_NAME=&quot;en_US.UTF8&quot;
+LC_NUMERIC=&quot;en_US.UTF-8&quot;
+LC_PAPER=&quot;en_GB.UTF-8&quot;
+LC_TELEPHONE=&quot;en_US.UTF8&quot;
+LC_TIME=&quot;en_GB.UTF-8&quot;
+#LC_ALL=&quot;&quot;

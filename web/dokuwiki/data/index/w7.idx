@@ -307,3 +307,4 @@ timeout
 entries
 gfxmode
 cmdline
+ifnames

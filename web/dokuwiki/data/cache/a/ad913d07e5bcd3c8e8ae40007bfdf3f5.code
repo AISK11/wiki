@@ -1,0 +1,4 @@
+efivarfs /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime 0 0
+LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
+LABEL=LUKS-ROOT     /     btrfs defaults,noatime            0 0
+/swap               none  swap  defaults                    0 0

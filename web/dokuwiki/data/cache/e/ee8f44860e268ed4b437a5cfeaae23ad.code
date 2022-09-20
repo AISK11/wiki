@@ -1,0 +1,24 @@
+[options]
+Architecture = auto
+SigLevel = Required DatabaseOptional
+LocalFileSigLevel = Optional
+HookDir = /etc/pacman.d/hooks/
+HoldPkg = base
+IgnorePkg = nano emacs vi vim sudo dhclient
+CheckSpace
+VerbosePkgLists
+Color
+#ILoveCandy
+ParallelDownloads = 5
+&nbsp;
+[core]
+Include = /etc/pacman.d/mirrorlist
+&nbsp;
+[extra]
+Include = /etc/pacman.d/mirrorlist
+&nbsp;
+[community]
+Include = /etc/pacman.d/mirrorlist
+&nbsp;
+[multilib]
+Include = /etc/pacman.d/mirrorlist

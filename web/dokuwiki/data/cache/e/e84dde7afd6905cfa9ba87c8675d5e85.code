@@ -1,0 +1,21 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/mkinitcpio.conf (0644 root:root)
+## DEPENDENCIES: core/mkinitcpio core/btrfs-progs
+## DESCRIPTION:  Initramfs configuration.
+&nbsp;
+## Additional kernel modules loaded before boot hooks.
+MODULES=()
+&nbsp;
+## Additional binaries included in the initramfs.
+BINARIES=(btrfs)
+&nbsp;
+## Additional files included in the initramfs.
+FILES=()
+&nbsp;
+## Hooks (scripts) to be executed in the initramfs. Order is important!
+HOOKS=(base udev keyboard autodetect modconf block keymap consolefont encrypt \
+  filesystems fsck)
+&nbsp;
+## Compression method (and options) to compress initramfs image (default: zstd).
+COMPRESSION='zstd'
+COMPRESSION_OPTIONS=()

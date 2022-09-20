@@ -1,0 +1,7 @@
+MODULES=()
+BINARIES=(btrfs)
+FILES=()
+HOOKS=(base udev keyboard autodetect modconf block keymap consolefont encrypt \
+  filesystems fsck)
+COMPRESSION='zstd'
+COMPRESSION_OPTIONS=()
