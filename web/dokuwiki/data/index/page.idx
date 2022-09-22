@@ -128,3 +128,13 @@ arch:installation
 arch:post-installation
 arch:resources
 cybersecurity:web_browser
+arch:network
+cybersecurity:authentication
+arch:pacman
+arch:systemd
+arch:firewall
+cybersecurity:backup
+cybersecurity:disk_backup
+cybersecurity:data_recovery
+arch:gui_wayland
+arch:gui

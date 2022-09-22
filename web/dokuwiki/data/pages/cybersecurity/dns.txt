@@ -6,8 +6,8 @@ This section is incomplete and needs further work!
 
 ===== Installation =====
 
-  - Print DNS resolver version or install it: <cli>
-# unbound -V || pacman -S --needed unbound
+  - Install unbound if not already installed: <cli>
+# unbound -V || pacman -S --needed unbound expat
 </cli>
 
 ==== Configuration ====

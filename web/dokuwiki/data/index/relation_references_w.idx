@@ -150,3 +150,16 @@ arch:pre-installation
 arch:installation
 arch:post-installation
 cybersecurity:web_browser
+arch:network
+cybersecurity:opendoas
+cybersecurity:authentication
+arch:pacman
+arch:systemd
+arch:audio
+arch:firewall
+cybersecurity:backup
+cybersecurity:disk_backup
+cybersecurity:data_recovery
+cybersecurity:metadata
+arch:gui_wayland
+arch:gui

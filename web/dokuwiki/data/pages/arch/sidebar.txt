@@ -8,11 +8,17 @@
 
 **Installation (amd64)**
   * [[arch:pre-installation|Pre-Installation]]
-  * [[arch:installation|Installation]]
-  * [[arch:post-installation|Post-Installation]]
+  * [[arch:installation|Installation (WIP)]]
+  * [[arch:post-installation|Post-Installation (WIP)]]
 
 **Configuration**
+  * [[arch:network|Network (WIP)]]
+  * [[arch:firewall|Firewall]]
+  * [[arch:audio|Audio (WIP)]]
+  * [[arch:gui|GUI]]
 
 **Cheat Sheets**
+  * [[arch:pacman|Pacman]]
+  * [[arch:systemd|SystemD (WIP)]]
 
 ----

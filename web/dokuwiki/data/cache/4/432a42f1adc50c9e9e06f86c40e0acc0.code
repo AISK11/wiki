@@ -1,0 +1,7 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/doas.conf (0600 root:root)
+## DEPENDENCIES: community/wpa_supplicant
+## DESCRIPTION:  System authentication configuration.
+&nbsp;
+#permit :wheel
+permit nopass :wheel

@@ -84,3 +84,26 @@
 1663636135	127.0.0.1	E	arch:installation	admin	[Disk Partitioning] 		59
 1663698683	127.0.0.1	E	arch:installation	admin			94
 1663712634	127.0.0.1	E	arch:installation	admin			-29
+1663775818	127.0.0.1	E	arch:installation	admin			0
+1663776178	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		15
+1663776766	127.0.0.1	E	arch:installation	admin	[Initramfs] 		524
+1663776789	127.0.0.1	E	arch:installation	admin	[Bootloader] 		398
+1663781388	127.0.0.1	E	arch:installation	admin			329
+1663781413	127.0.0.1	E	arch:installation	admin	[Administrative User] 		-1
+1663781425	127.0.0.1	E	arch:installation	admin			1
+1663781493	127.0.0.1	E	arch:installation	admin	[Administrative User] 		0
+1663781585	127.0.0.1	E	arch:installation	admin	[Administrative User] 		-1
+1663781654	127.0.0.1	E	arch:installation	admin	[Administrative User] 		7
+1663781735	127.0.0.1	E	arch:installation	admin			-94
+1663781878	127.0.0.1	E	arch:installation	admin			-283
+1663787410	127.0.0.1	E	arch:installation	admin			-437
+1663802204	127.0.0.1	E	arch:installation	admin			162
+1663802329	127.0.0.1	E	arch:installation	admin	[Bootloader] 		58
+1663802343	127.0.0.1	E	arch:installation	admin	[Bootloader] 		0
+1663802905	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		-17
+1663802950	127.0.0.1	E	arch:installation	admin	[Bootloader] 		-113
+1663802960	127.0.0.1	E	arch:installation	admin	[Bootloader] 		1
+1663803816	127.0.0.1	E	arch:installation	admin	[Bootloader] 		37
+1663804779	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		8
+1663804811	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		2
+1663806585	127.0.0.1	E	arch:installation	admin			94

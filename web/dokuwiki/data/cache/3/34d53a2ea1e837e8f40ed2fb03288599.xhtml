@@ -1,0 +1,135 @@
+
+<h1 class="sectionedit1" id="pacman">Pacman</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Pacman&quot;,&quot;hid&quot;:&quot;pacman&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-22&quot;} -->
+<h2 class="sectionedit2" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Configure pacman:<dl class="file">
+<dt><a href="http://localhost/_export/code/arch/pacman?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/pacman.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/pacman.conf (0644 root:root)
+## DEPENDENCIES: core/pacman
+## DESCRIPTION:  Pacman package manager configuration.
+&nbsp;
+[options]
+## Install packages only for given architecture (auto=$(uname -m)).
+Architecture = auto
+&nbsp;
+## Package signature keys.
+SigLevel = Required DatabaseOptional
+LocalFileSigLevel = Optional
+&nbsp;
+## Hook directory for package installation, update or removal.
+HookDir = /etc/pacman.d/hooks/
+&nbsp;
+## Ask for confirmation before removing of specified packages.
+HoldPkg = base
+&nbsp;
+## Do not install/upgrade following packages.
+IgnorePkg = nano emacs vi vim sudo dhclient
+&nbsp;
+## Approximately check adequate available disk space before installing.
+CheckSpace
+&nbsp;
+## Display name, version and size of packages.
+VerbosePkgLists
+&nbsp;
+## Enable color for pacman output on tty.
+Color
+&nbsp;
+## Easteregg.
+#ILoveCandy
+&nbsp;
+## Number of concurrent download streams.
+ParallelDownloads = 5
+&nbsp;
+## Stable repositories.
+[core]
+Include = /etc/pacman.d/mirrorlist
+&nbsp;
+[extra]
+Include = /etc/pacman.d/mirrorlist
+&nbsp;
+[community]
+Include = /etc/pacman.d/mirrorlist
+&nbsp;
+[multilib]
+Include = /etc/pacman.d/mirrorlist</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Add BlackArch repository<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -Lo blackarch-install.sh https://blackarch.org/strap.sh</span>
+<span class="cli_prompt"># </span><span class="cli_command">sh ./blackarch-install.sh</span>
+<span class="cli_prompt"># </span><span class="cli_command">rm -f ./blackarch-install.sh</span>
+<span class="cli_prompt"># </span><span class="cli_command">pacman -Syu</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;23-1492&quot;} -->
+<h2 class="sectionedit3" id="usage">Usage</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:3,&quot;range&quot;:&quot;1493-1511&quot;} -->
+<h3 class="sectionedit4" id="install_update_remove">Install, Update &amp; Remove</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Update system and remove cache from <code>/var/db/pacman/</code>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">pacman -Syu &amp;&amp; pacman -Fy &amp;&amp; yes | pacman -Scc</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install package:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">pacman -S [--needed] &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Remove package:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">pacman -Rns &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Install, Update &amp; Remove&quot;,&quot;hid&quot;:&quot;install_update_remove&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;1512-1792&quot;} -->
+<h3 class="sectionedit5" id="search">Search</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Search for packages:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Ss[q] &lt;REGEX&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Package details:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Sii &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> List files that package contains:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Fl &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Search&quot;,&quot;hid&quot;:&quot;search&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;1793-2002&quot;} -->
+<h3 class="sectionedit6" id="query">Query</h3>
+<div class="level3">
+<ul>
+<li class="level1 node"><div class="li"> List installed packages:</div>
+<ul>
+<li class="level2"><div class="li"> All packages:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Q[q]</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Explicitly installed:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Qe[q]</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Dependencies:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Qd[q]</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> From unofficial sources (AUR):</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Qm[q]</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Installed files:</div>
+<ul>
+<li class="level2"><div class="li"> Owner of specific file:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Qo &lt;FILE&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> All files that package owns:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Ql &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Package info:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pacman -Qii &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Query&quot;,&quot;hid&quot;:&quot;query&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;2003-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Install BlackArch Linux repository: <a href="https://www.blackarch.org/downloads.html#install-repo" class="urlextern" title="https://www.blackarch.org/downloads.html#install-repo">https://www.blackarch.org/downloads.html#install-repo</a>.</div></div>
+</div>

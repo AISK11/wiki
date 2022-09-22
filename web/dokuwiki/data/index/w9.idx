@@ -168,3 +168,9 @@ ignorepkg
 easteregg
 initramfs
 removable
+hardening
+dependant
+starfield
+forensics
+unmounted
+getsize64

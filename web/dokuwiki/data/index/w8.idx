@@ -235,3 +235,7 @@ patterns
 resolver
 original
 launcher
+opendaos
+metadata
+blockdev
+numlockx

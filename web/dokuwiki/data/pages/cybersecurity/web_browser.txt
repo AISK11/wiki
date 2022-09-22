@@ -6,13 +6,13 @@ This section is incomplete and needs further work!
 
 ===== Installation =====
 
-  - Print Tor Browser help or install it:<cli>
+  - Install tor browser if not already installed:<cli>
 # torbrowser-launcher -h || pacman -S --needed torbrowser-launcher
 </cli>
 
 ===== Usage =====
 
-  - Start Tor Browser:<cli>
+  - Start tor browser:<cli>
 $ torbrowser-launcher [URL] & disown
 </cli>
 

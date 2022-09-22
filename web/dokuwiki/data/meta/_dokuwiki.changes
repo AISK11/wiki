@@ -1,5 +1,3 @@
-1663111851	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			71
-1663112291	127.0.0.1	E	it_areas:cybersecurity:crypto:hashing	admin			69
 1663239667	127.0.0.1	E	debian:index	admin			23
 1663240171	127.0.0.1	E	debian:index	admin			214
 1663240203	127.0.0.1	E	debian:resources	admin			94
@@ -298,3 +296,123 @@
 1663713411	127.0.0.1	E	cybersecurity:index	admin			8
 1663713499	127.0.0.1	E	cybersecurity:index	admin			31
 1663713981	127.0.0.1	E	cybersecurity:web_browser	admin			240
+1663717031	127.0.0.1	E	todo	admin			52
+1663717171	127.0.0.1	E	cybersecurity:dns	admin			6
+1663775818	127.0.0.1	E	arch:installation	admin			0
+1663776178	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		15
+1663776766	127.0.0.1	E	arch:installation	admin	[Initramfs] 		524
+1663776789	127.0.0.1	E	arch:installation	admin	[Bootloader] 		398
+1663778270	127.0.0.1	E	arch:post-installation	admin			1058
+1663778727	127.0.0.1	E	arch:post-installation	admin			104
+1663778854	127.0.0.1	E	arch:post-installation	admin			-10
+1663778919	127.0.0.1	E	arch:sidebar	admin			31
+1663778935	127.0.0.1	E	arch:post-installation	admin			-1170
+1663778953	127.0.0.1	C	arch:network	admin	created		1262
+1663779112	127.0.0.1	E	cybersecurity:sidebar	admin			56
+1663779177	127.0.0.1	E	cybersecurity:dhcp	admin	[Configuration] 		3
+1663779214	127.0.0.1	E	cybersecurity:sidebar	admin			12
+1663779775	127.0.0.1	C	cybersecurity:authentication	admin	created		613
+1663780050	127.0.0.1	E	cybersecurity:authentication	admin			190
+1663780071	127.0.0.1	E	cybersecurity:authentication	admin	[Usage] 		10
+1663780150	127.0.0.1	E	cybersecurity:authentication	admin	[Usage] 		6
+1663780192	127.0.0.1	E	cybersecurity:authentication	admin	[Configuration] 		25
+1663780306	127.0.0.1	E	cybersecurity:firewall	admin			5
+1663780320	127.0.0.1	E	cybersecurity:firewall	admin	[Configuration] 		0
+1663780330	127.0.0.1	E	cybersecurity:firewall	admin	[Configuration] 		0
+1663780365	127.0.0.1	E	cybersecurity:mac_address	admin			6
+1663780395	127.0.0.1	E	cybersecurity:dhcp	admin			10
+1663780439	127.0.0.1	E	cybersecurity:dhcp	admin	[Configuration] 		12
+1663780481	127.0.0.1	E	cybersecurity:dns	admin			0
+1663780504	127.0.0.1	E	cybersecurity:dns	admin			0
+1663780540	127.0.0.1	E	cybersecurity:web_browser	admin			8
+1663780574	127.0.0.1	E	cybersecurity:authentication	admin			0
+1663780724	127.0.0.1	E	cybersecurity:authentication	admin			-6
+1663780787	127.0.0.1	E	arch:post-installation	admin			-2
+1663780879	127.0.0.1	E	arch:sidebar	admin			57
+1663780885	127.0.0.1	E	arch:sidebar	admin			-3
+1663781285	127.0.0.1	E	arch:post-installation	admin			282
+1663781305	127.0.0.1	E	arch:post-installation	admin			-279
+1663781388	127.0.0.1	E	arch:installation	admin			329
+1663781413	127.0.0.1	E	arch:installation	admin	[Administrative User] 		-1
+1663781425	127.0.0.1	E	arch:installation	admin			1
+1663781493	127.0.0.1	E	arch:installation	admin	[Administrative User] 		0
+1663781585	127.0.0.1	E	arch:installation	admin	[Administrative User] 		-1
+1663781654	127.0.0.1	E	arch:installation	admin	[Administrative User] 		7
+1663781735	127.0.0.1	E	arch:installation	admin			-94
+1663781878	127.0.0.1	E	arch:installation	admin			-283
+1663781897	127.0.0.1	E	arch:post-installation	admin			285
+1663782301	127.0.0.1	C	arch:pacman	admin	created		1411
+1663782309	127.0.0.1	E	arch:pacman	admin			5
+1663782333	127.0.0.1	E	arch:pacman	admin			94
+1663784234	127.0.0.1	E	arch:pacman	admin			109
+1663784280	127.0.0.1	E	arch:pacman	admin			27
+1663784458	127.0.0.1	E	arch:pacman	admin			140
+1663784649	127.0.0.1	E	arch:pacman	admin			226
+1663784758	127.0.0.1	E	arch:pacman	admin			18
+1663784838	127.0.0.1	E	arch:pacman	admin			153
+1663784918	127.0.0.1	E	arch:pacman	admin			11
+1663785718	127.0.0.1	E	arch:pacman	admin			68
+1663785955	127.0.0.1	E	arch:pacman	admin			30
+1663786377	127.0.0.1	E	arch:pacman	admin			180
+1663786524	127.0.0.1	E	arch:pacman	admin	[Install, Update and Remove] 		-2
+1663786596	127.0.0.1	C	arch:systemd	admin	created		115
+1663787213	127.0.0.1	E	arch:sidebar	admin			25
+1663787410	127.0.0.1	E	arch:installation	admin			-437
+1663801313	127.0.0.1	E	arch:index	admin			49
+1663802204	127.0.0.1	E	arch:installation	admin			162
+1663802329	127.0.0.1	E	arch:installation	admin	[Bootloader] 		58
+1663802343	127.0.0.1	E	arch:installation	admin	[Bootloader] 		0
+1663802905	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		-17
+1663802950	127.0.0.1	E	arch:installation	admin	[Bootloader] 		-113
+1663802960	127.0.0.1	E	arch:installation	admin	[Bootloader] 		1
+1663803816	127.0.0.1	E	arch:installation	admin	[Bootloader] 		37
+1663804754	127.0.0.1	E	arch:network	admin			83
+1663804779	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		8
+1663804811	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		2
+1663804881	127.0.0.1	E	arch:network	admin			-2
+1663804971	127.0.0.1	E	arch:network	admin			1170
+1663805011	127.0.0.1	E	arch:network	admin			17
+1663805487	127.0.0.1	E	arch:network	admin			148
+1663805659	127.0.0.1	E	arch:sidebar	admin			31
+1663805664	127.0.0.1	C	arch:firewall	admin	created		2004
+1663805832	127.0.0.1	E	arch:network	admin			-18
+1663806041	127.0.0.1	E	arch:sidebar	admin			24
+1663806585	127.0.0.1	E	arch:installation	admin			94
+1663806597	127.0.0.1	E	arch:sidebar	admin			6
+1663806768	127.0.0.1	E	cybersecurity:index	admin			94
+1663806822	127.0.0.1	E	cybersecurity:sidebar	admin			52
+1663806838	127.0.0.1	C	cybersecurity:backup	admin	created		21
+1663807114	127.0.0.1	E	cybersecurity:backup	admin			209
+1663807224	127.0.0.1	E	cybersecurity:backup	admin			-1
+1663807229	127.0.0.1	D	cybersecurity:backup	admin	removed		-229
+1663807242	127.0.0.1	E	cybersecurity:sidebar	admin			10
+1663807248	127.0.0.1	C	cybersecurity:disk_backup	admin	created		229
+1663807645	127.0.0.1	E	cybersecurity:sidebar	admin			92
+1663808251	127.0.0.1	E	cybersecurity:disk_backup	admin			95
+1663808258	127.0.0.1	E	cybersecurity:disk_backup	admin			0
+1663808341	127.0.0.1	E	cybersecurity:disk_backup	admin			137
+1663808346	127.0.0.1	E	cybersecurity:disk_backup	admin			-86
+1663808373	127.0.0.1	E	cybersecurity:disk_backup	admin			1
+1663808387	127.0.0.1	E	cybersecurity:disk_backup	admin	[Usage] 		-3
+1663808689	127.0.0.1	E	cybersecurity:disk_backup	admin			75
+1663808729	127.0.0.1	E	cybersecurity:disk_backup	admin			11
+1663808860	127.0.0.1	E	cybersecurity:disk_backup	admin			-89
+1663808888	127.0.0.1	E	cybersecurity:disk_backup	admin			3
+1663809922	127.0.0.1	E	cybersecurity:disk_backup	admin			139
+1663810001	127.0.0.1	E	cybersecurity:disk_backup	admin			-139
+1663810054	127.0.0.1	C	cybersecurity:data_recovery	admin	created		186
+1663810417	127.0.0.1	E	cybersecurity:disk_backup	admin			117
+1663810448	127.0.0.1	E	cybersecurity:disk_backup	admin	[Usage] 		-3
+1663811654	127.0.0.1	E	cybersecurity:disk_backup	admin			-122
+1663812492	127.0.0.1	E	cybersecurity:data_recovery	admin			94
+1663812994	127.0.0.1	E	arch:sidebar	admin			43
+1663813035	127.0.0.1	C	arch:gui_wayland	admin	created		80
+1663813349	127.0.0.1	D	arch:gui_wayland	admin	removed		-80
+1663813362	127.0.0.1	E	arch:sidebar	admin			-16
+1663813393	127.0.0.1	C	arch:gui	admin	created		111
+1663815287	127.0.0.1	E	arch:gui	admin			333
+1663815437	127.0.0.1	E	arch:gui	admin			76
+1663816153	127.0.0.1	E	arch:gui	admin			196
+1663816396	127.0.0.1	E	arch:gui	admin			-28
+1663816747	127.0.0.1	E	arch:gui	admin			128
+1663816858	127.0.0.1	E	arch:sidebar	admin			-6

@@ -16,6 +16,14 @@
   * [[:cybersecurity:vpn-tor-proxy|VPN-Tor-Proxy]]
   * [[:cybersecurity:web_browser|Web Browser]]
 
+**Hardening**
+  * [[:cybersecurity:authentication|Authentication]]
+
+**Forensics**
+  * [[:cybersecurity:disk_backup|Disk Backup]]
+  * [[:cybersecurity:data_recovery|Data Recovery]]
+  * [[:cybersecurity:metadata|Metadata]]
+
 ----
 
 WIP

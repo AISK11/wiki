@@ -73,3 +73,6 @@ consolefont
 compression
 savedefault
 cryptdevice
+distributor
+destination
+accelerated

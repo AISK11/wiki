@@ -1,0 +1,37 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/wpa_supplicant/wpa_supplicant.conf (0600 root:root)
+## DEPENDENCIES: core/wpa_supplicant
+## DESCRIPTION:  Wi-Fi settings.
+&nbsp;
+## Basic settings (required by wpa_cli).
+ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=network
+update_config=1
+&nbsp;
+## Template - UNPROTECTED.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=NONE
+#  priority=0
+#}
+#
+## Template - WPA-PSK.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=WPA-PSK
+#  psk=&quot;&lt;PASSWORD&gt;&quot;
+#  priority=2
+#}
+#
+## Template - WPA-EAP EAP-PEAP.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=WPA-EAP
+#  identity=&quot;&lt;EMAIL@ADDRESS&gt;&quot;
+#  password=&quot;&lt;PASSWORD&gt;&quot;
+#  phase2=&quot;auth=MSCHAPV2&quot;
+#  priority=1
+#}

@@ -17,3 +17,4 @@
   * Unstable.
   * AUR.
   * Not respecting FSF - not differentiating between open-source and non-free software. Kernel contains binary blobs.
+  * Glibc only - no musl support. GNU dependant.

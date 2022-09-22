@@ -1,0 +1,17 @@
+====== GUI ======
+
+===== Installation =====
+
+  - Install GPU drivers((Xorg drivers: https://wiki.archlinux.org/title/Xorg#Driver_installation.))((OpenGL: https://wiki.archlinux.org/title/OpenGL#Installation.))((Vulkan: https://wiki.archlinux.org/title/Vulkan#Installation.))((GPGU (OpenCL: https://wiki.archlinux.org/title/GPGPU#List_of_GPGPU_accelerated_software.)):
+    * Intel:<cli>
+# pacman -S --needed xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-compute-runtime
+</cli>
+    * Nvidia:<cli>
+# pacman -S --needed nvidia nvidia-utils lib32-nvidia-utils opencl-nvidia [nvtop]
+</cli>
+  - Install Xorg:<cli>
+# pacman -S --needed xorg xorg-drivers xorg-xinit
+</cli>
+  - Install i3:<cli>
+# pacman -S --needed numlockx light i3-gaps i3lock polybar picom rofi rxvt-unicode scrot xclip feh 
+</cli>

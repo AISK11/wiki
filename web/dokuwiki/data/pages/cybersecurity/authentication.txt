@@ -1,0 +1,35 @@
+====== Authentication ======
+
+===== Installation =====
+
+  - Install opendoas if not already installed:<cli>
+# doas || pacman -S --needed opendaos
+</cli>
+
+===== Configuration =====
+
+  - Configure opendoas:<file /etc/doas.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/doas.conf (0600 root:root)
+## DEPENDENCIES: community/opendoas
+## DESCRIPTION:  System authentication configuration.
+
+## Administrative group.
+#permit :wheel
+permit nopass :wheel
+</file>
+  - Set config file permissions:<cli>
+# chmod 0600 /etc/doas.conf
+</cli>
+  - Replace sudo with doas:<cli>
+# ln -sf $(which doas) /usr/bin/sudo
+</cli>
+
+===== Usage =====
+
+  - Add admin user to administrative group:<cli>
+# usermod -aG wheel <USER>
+</cli>//Note: User re-login is required for group changes to take effect.//
+  - Execute command as root:<cli>
+$ doas <COMMAND>
+</cli>

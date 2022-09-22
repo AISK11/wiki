@@ -4,9 +4,21 @@
 This section is incomplete and needs further work!
 </WRAP>
 
-====== Configure Internet ======
+===== Administrative User =====
+
+  - Create administrative user:<cli>
+# useradd -m -k /dev/null <USER>
+# passwd <USER>
+> <NEW-USER-PASSWORD>
+> <NEW-USER-PASSWORD (VERIFY)>
+</cli>
+  - Add user to administrative groups:<cli>
+# usermod -aG wheel,dhcpcd,network,rfkill,uucp <USER>
+</cli>
 
 
+
+====== ? ======
 
 
   - Shells: <cli>

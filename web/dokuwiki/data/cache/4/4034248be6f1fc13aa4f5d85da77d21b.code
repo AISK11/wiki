@@ -1,0 +1,8 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/doas.conf (0600 root:root)
+## DEPENDENCIES: community/opendoas
+## DESCRIPTION:  System authentication configuration.
+&nbsp;
+## Administrative group.
+#permit :wheel
+permit nopass :wheel

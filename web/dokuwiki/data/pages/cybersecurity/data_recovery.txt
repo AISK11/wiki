@@ -1,0 +1,14 @@
+====== Data Recovery ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Installation =====
+
+===== Usage =====
+
+  - Try to identify partitions and filesystems:<cli>
+# parted -s </dev/sdX> p free
+# lsblk -fp </dev/sdX>
+</cli>

@@ -1,0 +1,113 @@
+====== Pacman ======
+
+===== Configuration =====
+
+  - Configure pacman:<file text /etc/pacman.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/pacman.conf (0644 root:root)
+## DEPENDENCIES: core/pacman
+## DESCRIPTION:  Pacman package manager configuration.
+
+[options]
+## Install packages only for given architecture (auto=$(uname -m)).
+Architecture = auto
+
+## Package signature keys.
+SigLevel = Required DatabaseOptional
+LocalFileSigLevel = Optional
+
+## Hook directory for package installation, update or removal.
+HookDir = /etc/pacman.d/hooks/
+
+## Ask for confirmation before removing of specified packages.
+HoldPkg = base
+
+## Do not install/upgrade following packages.
+IgnorePkg = nano emacs vi vim sudo dhclient
+
+## Approximately check adequate available disk space before installing.
+CheckSpace
+
+## Display name, version and size of packages.
+VerbosePkgLists
+
+## Enable color for pacman output on tty.
+Color
+
+## Easteregg.
+#ILoveCandy
+
+## Number of concurrent download streams.
+ParallelDownloads = 5
+
+## Stable repositories.
+[core]
+Include = /etc/pacman.d/mirrorlist
+
+[extra]
+Include = /etc/pacman.d/mirrorlist
+
+[community]
+Include = /etc/pacman.d/mirrorlist
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+</file>
+  - Add BlackArch repository((Install BlackArch Linux repository: https://www.blackarch.org/downloads.html#install-repo.)):<cli>
+$ curl -Lo blackarch-install.sh https://blackarch.org/strap.sh
+# sh ./blackarch-install.sh
+# rm -f ./blackarch-install.sh
+# pacman -Syu
+</cli>
+
+===== Usage =====
+
+==== Install, Update & Remove ====
+
+  * Update system and remove cache from ''/var/db/pacman/'':<cli>
+# pacman -Syu && pacman -Fy && yes | pacman -Scc
+</cli>
+  * Install package:<cli>
+# pacman -S [--needed] <PACKAGE>
+</cli>
+  * Remove package:<cli>
+# pacman -Rns <PACKAGE>
+</cli>
+
+==== Search ====
+
+  * Search for packages:<cli>
+$ pacman -Ss[q] <REGEX>
+</cli>
+  * Package details:<cli>
+$ pacman -Sii <PACKAGE>
+</cli>
+  * List files that package contains:<cli>
+$ pacman -Fl <PACKAGE>
+</cli>
+
+==== Query ====
+
+  * List installed packages:
+    * All packages:<cli>
+$ pacman -Q[q]
+</cli>
+    * Explicitly installed:<cli>
+$ pacman -Qe[q]
+</cli>
+    * Dependencies:<cli>
+$ pacman -Qd[q]
+</cli>
+    * From unofficial sources (AUR):<cli>
+$ pacman -Qm[q]
+</cli>
+  * Installed files:
+    * Owner of specific file:<cli>
+$ pacman -Qo <FILE>
+</cli>
+    * All files that package owns:<cli>
+$ pacman -Ql <PACKAGE>
+</cli>
+  * Package info:<cli>
+$ pacman -Qii <PACKAGE>
+</cli>

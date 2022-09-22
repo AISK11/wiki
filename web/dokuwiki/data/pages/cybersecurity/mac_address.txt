@@ -2,7 +2,7 @@
 
 ===== Installation =====
 
-  - Print macchanger version or install it:<cli>
+  - Install macchanger if not already installed::<cli>
 # macchanger -V || pacman -S --needed macchanger
 </cli>
 

@@ -312,3 +312,11 @@ urandom
 permits
 unbound
 locally
+replace
+execute
+command
+unmount
+wayland
+polybar
+compute
+runtime

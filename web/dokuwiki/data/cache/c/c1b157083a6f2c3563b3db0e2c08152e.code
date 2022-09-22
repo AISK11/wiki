@@ -1,0 +1,49 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/pacman.conf (0644 root:root)
+## DEPENDENCIES: core/pacman
+## DESCRIPTION:  Pacman package manager configuration.
+&nbsp;
+[options]
+## Install packages only for given architecture (auto=$(uname -m)).
+Architecture = auto
+&nbsp;
+## Package signature keys.
+SigLevel = Required DatabaseOptional
+LocalFileSigLevel = Optional
+&nbsp;
+## Hook directory for package installation, update or removal.
+HookDir = /etc/pacman.d/hooks/
+&nbsp;
+## Ask for confirmation before removing of specified packages.
+HoldPkg = base
+&nbsp;
+## Do not install/upgrade following packages.
+IgnorePkg = nano emacs vi vim sudo dhclient
+&nbsp;
+## Approximately check adequate available disk space before installing.
+CheckSpace
+&nbsp;
+## Display name, version and size of packages.
+VerbosePkgLists
+&nbsp;
+## Enable color for pacman output on tty.
+Color
+&nbsp;
+## Easteregg.
+#ILoveCandy
+&nbsp;
+## Number of concurrent download streams.
+ParallelDownloads = 5
+&nbsp;
+## Stable repositories.
+[core]
+Include = /etc/pacman.d/mirrorlist
+&nbsp;
+[extra]
+Include = /etc/pacman.d/mirrorlist
+&nbsp;
+[community]
+Include = /etc/pacman.d/mirrorlist
+&nbsp;
+[multilib]
+Include = /etc/pacman.d/mirrorlist

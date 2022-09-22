@@ -8,7 +8,21 @@ This section is incomplete and needs further work!
 </div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Post-Installation&quot;,&quot;hid&quot;:&quot;post-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-127&quot;} -->
-<h1 class="sectionedit4" id="configure_internet">Configure Internet</h1>
+<h2 class="sectionedit4" id="administrative_user">Administrative User</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create administrative user:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">useradd -m -k /dev/null &lt;USER&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">passwd &lt;USER&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-USER-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-USER-PASSWORD (VERIFY)&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Add user to administrative groups:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">usermod -aG wheel,dhcpcd,network,rfkill,uucp &lt;USER&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Administrative User&quot;,&quot;hid&quot;:&quot;administrative_user&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;128-414&quot;} -->
+<h1 class="sectionedit5" id="section">?</h1>
 <div class="level1">
 <ol>
 <li class="level1"><div class="li"> Shells: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed dash zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting</span></pre><p></div>
@@ -20,4 +34,4 @@ This section is incomplete and needs further work!
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configure Internet&quot;,&quot;hid&quot;:&quot;configure_internet&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;128-&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;?&quot;,&quot;hid&quot;:&quot;section&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;415-&quot;} -->

@@ -171,12 +171,6 @@ LC_TIME="en_GB.UTF-8"
 #LC_ALL=""
 </file>
 
-==== Hostname ====
-
-  - Set hostname:<cli>
-(chroot) # echo '<HOSTNAME>' > /etc/hostname
-</cli>
-
 ==== Time ====
 
   - Set timezone:<cli>
@@ -184,6 +178,12 @@ LC_TIME="en_GB.UTF-8"
 </cli>
   - Save current time to RTC:<cli>
 (chroot) # hwclock --systohc
+</cli>
+
+==== Hostname ====
+
+  - Set hostname:<cli>
+(chroot) # echo '<HOSTNAME>' > /etc/hostname
 </cli>
 
 ==== Login Messages ====
@@ -195,32 +195,7 @@ LC_TIME="en_GB.UTF-8"
 
 ==== Pacman ====
 
-  - Configure package manager: <file text /etc/pacman.conf>
-[options]
-Architecture = auto
-SigLevel = Required DatabaseOptional
-LocalFileSigLevel = Optional
-HookDir = /etc/pacman.d/hooks/
-HoldPkg = base
-IgnorePkg = nano emacs vi vim sudo dhclient
-CheckSpace
-VerbosePkgLists
-Color
-#ILoveCandy
-ParallelDownloads = 5
-
-[core]
-Include = /etc/pacman.d/mirrorlist
-
-[extra]
-Include = /etc/pacman.d/mirrorlist
-
-[community]
-Include = /etc/pacman.d/mirrorlist
-
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-</file>
+  - See [[:arch:pacman#configuration|Configure Package Manager]].
 
 ===== Minimal System Installation =====
 
@@ -238,7 +213,7 @@ Include = /etc/pacman.d/mirrorlist
 (chroot) # pacman -S --needed linux-firmware [amd-ucode|intel-ucode]
 </cli>
   - Network tools:<cli>
-(chroot) # pacman -S --needed ????????
+(chroot) # pacman -S --needed [ethtool] [wpa_supplicant] dhcpcd
 </cli>
 
 ===== Booting =====
@@ -246,11 +221,25 @@ Include = /etc/pacman.d/mirrorlist
 ==== Initramfs ====
 
   - Configure initramfs: <file text /etc/mkinitcpio.conf>
+## AUTHOR:       AISK11                                           
+## LOCATION:     /etc/mkinitcpio.conf (0644 root:root)
+## DEPENDENCIES: core/mkinitcpio core/btrfs-progs
+## DESCRIPTION:  Initramfs configuration.
+
+## Additional kernel modules loaded before boot hooks.
 MODULES=()
+
+## Additional binaries included in the initramfs.
 BINARIES=(btrfs)
+
+## Additional files included in the initramfs.
 FILES=()
+
+## Hooks (scripts) to be executed in the initramfs. Order is important!
 HOOKS=(base udev keyboard autodetect modconf block keymap consolefont encrypt \
   filesystems fsck)
+
+## Compression method (and options) to compress initramfs image (default: zstd).
 COMPRESSION='zstd'
 COMPRESSION_OPTIONS=()
 </file>
@@ -266,18 +255,44 @@ COMPRESSION_OPTIONS=()
 (chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
 (chroot) # mount -o remount,ro /sys/firmware/efi/efivars/
 </cli>
+  - Remove default GRUB2 theme:<cli>
+(chroot) # rm -rf /boot/grub/themes/starfield/
+</cli>
   - Configure GRUB2((GRUB2 config options: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html.)): <file text /etc/default/grub>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/default/grub (0644 root:root)
+## DEPENDENCIES: core/grub
+## DESCRIPTION:  Bootloader configuration.
+
+## OS name.
+GRUB_DISTRIBUTOR='Arch'
+
+## Default menu entry.
 GRUB_DEFAULT='0'
 GRUB_SAVEDEFAULT='false'
+
+## Time to boot default entry unless key is pressed.
 GRUB_TIMEOUT='-1'
 GRUB_TIMEOUT_STYLE='menu'
+
+## Do not generate recovery mode entries.
 GRUB_DISABLE_RECOVERY='true'
+
+## Terminal input devices.
 GRUB_TERMINAL_INPUT='console'
+
+## Terminal output.
 GRUB_GFXMODE='auto'
 GRUB_GFXPAYLOAD_LINUX='text'
+
+## Enable encrypted disks.
 GRUB_ENABLE_CRYPTODISK='y'
+
+## Kernel parameters.
 GRUB_CMDLINE_LINUX=''
 GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
+
+## Bootloader colors (fg/bg).
 GRUB_COLOR_NORMAL='white/black'
 GRUB_COLOR_HIGHLIGHT='white/black'
 </file>
@@ -287,11 +302,16 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 
 ===== Finishing =====
 
-  - Set root password:<cli>
+==== Root User ====
+
+  - Make root account accessible: <cli>
 (chroot) # passwd root
 > <NEW-ROOT-PASSWORD>
 > <NEW-ROOT-PASSWORD (VERIFY)>
 </cli>
+
+==== Reboot ====
+
   - Reboot system:<cli>
 (chroot) # exit
 # reboot

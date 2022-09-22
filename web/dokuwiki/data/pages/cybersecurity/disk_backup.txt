@@ -1,0 +1,17 @@
+====== Disk Backup ======
+
+===== Installation =====
+
+  * Install parted if not already installed:<cli>
+# parted -v || pacman -S --needed parted
+</cli>
+
+===== Usage =====
+
+  - Unmount source disk!
+  - Find disk size in bytes:<cli>
+# parted -s </dev/sdX> unit B p free
+</cli>
+  - Copy disk to file:<cli>
+# dd if=</dev/sdX> of=<OUTPUT.dd> status=progress ; sync
+</cli>

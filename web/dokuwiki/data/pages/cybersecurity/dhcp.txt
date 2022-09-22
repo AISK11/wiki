@@ -2,13 +2,13 @@
 
 ===== Installation =====
 
-  - Print DHCP version or install it: <cli>
+  - Install dhcpcd if not already installed:: <cli>
 # dhcpcd --version || pacman -S --needed dhcpcd
 </cli>
 
 ===== Configuration =====
 
-  - Configure DHCP ((DHCP options: https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options.)):<file text /etc/dhcpcd.conf>
+  - Configure dhcpcd ((DHCP options: https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options.)):<file text /etc/dhcpcd.conf>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
 ## DEPENDENCIES: core/dhcpcd
@@ -38,7 +38,7 @@ noalias
 ## Anonymous profile.
 anonymous
 </file>
-  - Stop dhcpcd and do not start from init: <cli>
+  - Stop dhcpcd immediately and do not start it from init: <cli>
 # systemctl stop dhcpcd && systemctl disable dhcpcd
 </cli>
 
