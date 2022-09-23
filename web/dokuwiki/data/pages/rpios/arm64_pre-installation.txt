@@ -4,13 +4,13 @@
 
   - Download [[https://www.raspberrypi.com/software/operating-systems#raspberry-pi-os-64-bit|Raspberry Pi OS iso for arm64]] architecture:
     * Raspberry Pi OS (64-bit) => Raspberry Pi OS Lite
-  - Decompress disk image file: <cli>
+  - Decompress disk image file:<cli>
 $ xz -vd <RASPBERRY-PI-OS.xz>
 </cli>
 
 ===== Flash Installation Media =====
 
   - Make sure the installation media filesystem is **not** mounted!
-  - Flash installation media with disk image: <cli>
+  - Flash installation media with disk image:<cli>
 # dd if=<RASPBERRY-PI-OS.iso> of=</dev/sdX> status=progress ; sync
 </cli>

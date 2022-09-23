@@ -9,17 +9,17 @@
 
 ===== Login & Reboot =====
 
-  - Login to the system: <cli>
+  - Login to the system:<cli>
 > <USER>
 > <USER-PASSWORD>
 </cli>
-  - Set keymap (applied on next reboot): <file text /etc/default/keyboard>
+  - Set keymap (applied on next reboot):<file text /etc/default/keyboard>
 XKBMODEL="pc105"
 XKBLAYOUT="us"
 XKBVARIANT=""
 XKBOPTIONS=""
 BACKSPACE="guess"
 </file>
-  - Reboot: <cli>
+  - Reboot:<cli>
 $ reboot
 </cli>

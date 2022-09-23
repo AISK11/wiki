@@ -11,4 +11,11 @@
   * [[rpios:arm64_installation|Installation]]
   * [[rpios:arm64_post-installation|Post-Installation]]
 
+**Configuration**
+  * [[rpios:network|Network]]
+
+**Services**
+  * [[rpios:ssh|SSH]]
+  * [[rpios:SQL|SQL]]
+
 ----

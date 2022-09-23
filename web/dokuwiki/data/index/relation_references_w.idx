@@ -166,3 +166,9 @@ arch:gui
 arch:virtualization
 arch:shell
 arch:bootloader
+arch:initramfs
+rpios:network
+rpios:firewall
+rpios:shell
+rpios:ssh
+rpios:sql

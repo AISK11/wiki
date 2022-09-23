@@ -142,3 +142,5 @@ arch:audio
 arch:virtualization
 arch:shell
 arch:bootloader
+rpios:network
+rpios:firewall

@@ -1,0 +1,12 @@
+#!/bin/sh -e
+&nbsp;
+## AUTHOR:       AISK11
+## LOCATION:     /etc/rc.local (0644 root:root)
+## DEPENDENCIES: -
+## DESCRIPTION:  Startup commands.
+&nbsp;
+## Unblock Wi-Fi.
+rfkill block all
+rfkill unblock wlan
+&nbsp;
+exit 0

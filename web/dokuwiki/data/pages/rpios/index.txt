@@ -3,13 +3,14 @@
 ===== Pros =====
 
   * Focused and optimized for Raspberry Pi single-board computers.
-  * Stability.
+  * Stable.
   * Binary based.
   * Friendly website.
 
 ===== Cons =====
 
   * SystemD.
-  * Point release + package manager.
+  * Point release
+  * Package manager.
   * Depends on Debian Linux.
   * Mostly pre-installed (harder to modify).

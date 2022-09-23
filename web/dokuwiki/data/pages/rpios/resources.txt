@@ -1,5 +1,9 @@
 ====== Resources ======
 
-===== Raspberry Pi OS =====
+===== Official =====
 
   * [[https://www.raspberrypi.com|Main Page]]
+
+===== Personal =====
+
+  * [[https://github.com/AISK11/rpios|Raspberry Pi OS Linux GitHub (AISK11)]]

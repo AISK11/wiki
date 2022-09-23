@@ -1,0 +1,115 @@
+====== Network ======
+
+===== Debloat =====
+
+  - Uninstall unwanted software:<cli>
+# apt purge avahi-daemon
+# apt purge bluez bluez-firmware
+# apt purge modemmanager
+</cli>
+  - Disable unneeded network sercices:<cli>
+# systemctl disable networking.service wpa_supplicant.service
+</cli>
+
+===== Configuration =====
+
+==== Interfaces ====
+
+  * Ethernet:
+    - No further configuration is needed.
+  * Wi-Fi:
+    - Unblock Wi-Fi on startup:<file text /etc/rc.local>
+#!/bin/sh -e
+
+## AUTHOR:       AISK11
+## LOCATION:     /etc/rc.local (0644 root:root)
+## DEPENDENCIES: -
+## DESCRIPTION:  Startup commands.
+
+## Unblock Wi-Fi.
+rfkill block all
+rfkill unblock wlan
+
+exit 0
+</file>
+    - Configure Wi-Fi connectivity to AP:<file text /etc/wpa_supplicant/wpa_supplicant.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/wpa_supplicant/wpa_supplicant.conf (0600 root:root)
+## DEPENDENCIES: wpasupplicant
+## DESCRIPTION:  Wi-Fi settings.
+
+## Basic settings (required by wpa_cli).
+ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=netdev
+update_config=1
+
+## Template - UNPROTECTED.
+#network={
+#  ssid="<ESSID>"
+#  scan_ssid=1
+#  key_mgmt=NONE
+#  priority=0
+#}
+#
+## Template - WPA-PSK.
+#network={
+#  ssid="<ESSID>"
+#  scan_ssid=1
+#  key_mgmt=WPA-PSK
+#  psk="<PASSWORD>"
+#  priority=2
+#}
+#
+## Template - WPA-EAP EAP-PEAP.
+#network={
+#  ssid="<ESSID>"
+#  scan_ssid=1
+#  key_mgmt=WPA-EAP
+#  identity="<EMAIL@ADDRESS>"
+#  password="<PASSWORD>"
+#  phase2="auth=MSCHAPV2"
+#  priority=1
+#}
+</file>
+    - Change Wi-Fi config file permissions:<cli>
+# chmod 0600 /etc/wpa_supplicant/wpa_supplicant.conf
+</cli>
+
+==== DHCP ====
+
+  - Configure DHCP client:<file text /etc/dhcpcd.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
+## DEPENDENCIES: dhcpcd5
+## DESCRIPTION:  DHCP client settings.
+
+## Comma separated list of blocked interface patterns.
+#denyinterfaces *
+
+## Static configuration template (interace cannot be denied).
+#interface eth0
+#  static ip_address=10.0.0.100/24
+#  static routers=10.0.0.1
+
+## Group to manage dhcpcd via control socket.
+controlgroup netdev
+
+## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
+#nohook resolv.conf
+
+## Don't check if obtained IPv4 address is taken by arp (increases speed) and
+## also disables IPv4LL (APIPA).
+noarp
+
+## Remove any pre-existing IPv4 addresses when adding new IPv4 address.
+noalias
+
+## Anonymous profile (not yet supported).
+#anonymous
+clientid
+vendorclassid
+slaac hwaddr
+</file>
+  - Enable DHCP client on startup:<cli>
+# systemctl enable dhcpcd.service
+</cli>

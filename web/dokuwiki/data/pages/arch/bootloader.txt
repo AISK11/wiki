@@ -28,7 +28,7 @@
 ## Required line.
 exec tail -n +3 "${0}"
 
-## Custom menuentries.
+## Custom menu entries.
 menuentry 'Reboot Computer' --class restart {
     reboot
 }

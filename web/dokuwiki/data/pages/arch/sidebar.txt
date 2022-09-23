@@ -12,6 +12,7 @@
   * [[arch:post-installation|Post-Installation (WIP)]]
 
 **Configuration**
+  * [[arch:initramfs|Initramfs (WIP)]]
   * [[arch:bootloader|Bootloader]]
   * [[arch:network|Network (WIP)]]
   * [[arch:firewall|Firewall]]
