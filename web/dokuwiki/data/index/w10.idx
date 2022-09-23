@@ -133,3 +133,5 @@ gfxpayload
 cryptodisk
 torbrowser
 explicitly
+signatures
+executable

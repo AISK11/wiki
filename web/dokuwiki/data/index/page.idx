@@ -138,3 +138,7 @@ cybersecurity:disk_backup
 cybersecurity:data_recovery
 arch:gui_wayland
 arch:gui
+arch:audio
+arch:virtualization
+arch:shell
+arch:bootloader

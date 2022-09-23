@@ -318,3 +318,10 @@ gaps
 rofi
 rxvt
 gpgu
+jack
+alsa
+chsh
+exec
+tail
+halt
+0755

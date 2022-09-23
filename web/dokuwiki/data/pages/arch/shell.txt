@@ -1,0 +1,20 @@
+====== Shell ======
+
+===== Installation =====
+
+  - Install dash if not already installed:<cli>
+# pacman -S --needed dash
+</cli>
+  - Install zsh if not already installed:<cli>
+# pacman -S --needed zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
+</cli>
+
+===== Configuration =====
+
+  - Configure dash as default system shell:<cli>
+# ln -sf $(command -vp dash) /bin/sh
+</cli>
+  - Configure zsh as login shell for user:<cli>
+$ chsh -s /bin/zsh
+> <USER-PASSWORD>
+</cli>

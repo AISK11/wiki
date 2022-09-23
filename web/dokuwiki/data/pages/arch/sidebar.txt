@@ -12,10 +12,13 @@
   * [[arch:post-installation|Post-Installation (WIP)]]
 
 **Configuration**
+  * [[arch:bootloader|Bootloader]]
   * [[arch:network|Network (WIP)]]
   * [[arch:firewall|Firewall]]
+  * [[arch:shell|Shell]]
   * [[arch:audio|Audio (WIP)]]
-  * [[arch:gui|GUI]]
+  * [[arch:gui|GUI (WIP)]]
+  * [[arch:virtualization|Virtualization (WIP)]]
 
 **Cheat Sheets**
   * [[arch:pacman|Pacman]]

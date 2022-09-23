@@ -163,3 +163,6 @@ cybersecurity:data_recovery
 cybersecurity:metadata
 arch:gui_wayland
 arch:gui
+arch:virtualization
+arch:shell
+arch:bootloader

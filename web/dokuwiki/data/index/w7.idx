@@ -320,3 +320,6 @@ wayland
 polybar
 compute
 runtime
+pamixer
+cpuinfo
+expired

@@ -1,0 +1,6 @@
+====== Virtualization ======
+
+===== Installation =====
+  - Check if virtualization is enabled:<cli>
+$ grep -E "vmx|svm" /proc/cpuinfo
+</cli>

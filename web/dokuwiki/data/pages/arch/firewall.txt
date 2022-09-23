@@ -3,7 +3,7 @@
 ===== Installation =====
 
   - Install nftables if not already installed:<cli>
-# nft -v || pacman -S --needed nftables
+# pacman -S --needed nftables
 </cli>
 
 ===== Configuration =====

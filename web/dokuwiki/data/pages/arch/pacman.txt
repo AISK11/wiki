@@ -111,3 +111,11 @@ $ pacman -Ql <PACKAGE>
   * Package info:<cli>
 $ pacman -Qii <PACKAGE>
 </cli>
+
+===== Troubleshooting =====
+
+==== Expired PGP Signatures ====
+
+  - Update PGP signatures:<cli>
+# pacman -S archlinux-keyring [blackarch-keyring]
+</cli>

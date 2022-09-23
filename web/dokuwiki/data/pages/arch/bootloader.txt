@@ -1,0 +1,86 @@
+====== Bootloader ======
+
+===== Installation =====
+
+  - Install bootloader if not already installed:<cli>
+# pacman -S --needed grub efibootmgr
+</cli>
+  - Install bootloader to ESP:<cli>
+# grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
+# mount -o remount,rw /sys/firmware/efi/efivars/
+# grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
+# mount -o remount,ro /sys/firmware/efi/efivars/
+</cli>
+  - Remove default bootloader theme:<cli>
+# rm -rf /boot/grub/themes/starfield/
+</cli>
+
+===== Configuration =====
+
+  - Configure custom bootloader hook:<file text /etc/grub.d/40_custom>
+#!/bin/sh
+
+## AUTHOR:       AISK11
+## LOCATION:     /etc/grub.d/40_custom (0755 root:root)
+## DEPENDENCIES: core/grub
+## DESCRIPTION:  Bootloader hook.
+
+## Required line.
+exec tail -n +3 "${0}"
+
+## Custom menuentries.
+menuentry 'Reboot Computer' --class restart {
+    reboot
+}
+
+menuentry 'Shutdown Computer' --class shutdown {
+    halt
+}
+</file>
+  - Make bootloader script executable:<cli>
+# chmod 0755 /etc/grub.d/40_custom
+</cli>
+  - Configure bootloader((GRUB2 config options: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html.)): <file text /etc/default/grub>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/default/grub (0644 root:root)
+## DEPENDENCIES: core/grub
+## DESCRIPTION:  Bootloader configuration.
+
+## OS name.
+GRUB_DISTRIBUTOR='Arch'
+
+## Default menu entry.
+GRUB_DEFAULT='0'
+GRUB_SAVEDEFAULT='false'
+
+## Time to boot default entry unless key is pressed.
+GRUB_TIMEOUT='-1'
+GRUB_TIMEOUT_STYLE='menu'
+
+## Do not generate recovery mode entries.
+GRUB_DISABLE_RECOVERY='true'
+
+## Terminal input devices.
+GRUB_TERMINAL_INPUT='console'
+
+## Terminal output.
+GRUB_GFXMODE='auto'
+GRUB_GFXPAYLOAD_LINUX='text'
+
+## Enable encrypted disks.
+GRUB_ENABLE_CRYPTODISK='y'
+
+## Kernel parameters.
+GRUB_CMDLINE_LINUX=''
+GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
+
+## Bootloader colors (fg/bg).
+GRUB_COLOR_NORMAL='white/black'
+GRUB_COLOR_HIGHLIGHT='white/black'
+
+## Bootloader theme.
+#GRUB_THEME=''
+</file>
+  - Apply bootloader configuration changes:<cli>
+# grub-mkconfig -o /boot/grub/grub.cfg
+</cli>

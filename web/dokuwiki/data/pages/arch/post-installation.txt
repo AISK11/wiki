@@ -21,9 +21,7 @@ This section is incomplete and needs further work!
 ====== ? ======
 
 
-  - Shells: <cli>
-(chroot) # pacman -S --needed dash zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
-</cli>
+
   - System management tools: <cli>
 (chroot) # pacman -S --needed man-db man-pages tree ncdu htop neofetch fcron
 </cli>

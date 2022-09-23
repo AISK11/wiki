@@ -1,0 +1,8 @@
+====== Audio ======
+
+===== Installation =====
+
+  - Install audio tools:<cli>
+# pacman -S --needed pamixer wireplumber pipewire lib32-pipewire pipewire-alsa pipewire-pulse pipewire-jack lib32-pipewire-jack
+# reboot
+</cli>
