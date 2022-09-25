@@ -196,14 +196,14 @@ LC_TIME="en_GB.UTF-8"
 ===== Minimal System Installation =====
 
   - Synchronize and update system:<cli>
-(chroot) # pacman -Syyu
+(chroot) # pacman -Syu && pacman -Fy && yes | pacman -Scc
 </cli>
   - Partitioning and filesystem tools:<cli>
 (chroot) # pacman -S --needed parted dosfstools btrfs-progs
 </cli>
   - Boot software: 
     - Kernel, initramfs and bootloader:<cli>
-(chroot) # pacman -S --needed mkinitcpio linux [linux-lts] efibootmgr grub
+(chroot) # pacman -S --needed mkinitcpio linux [linux-lts]
 </cli>
     - Additional firmware:<cli>
 (chroot) # pacman -S --needed linux-firmware [amd-ucode|intel-ucode]
@@ -245,56 +245,7 @@ COMPRESSION_OPTIONS=()
 
 ==== Bootloader ====
 
-  - Install GRUB2 to ESP:<cli>
-(chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
-(chroot) # mount -o remount,rw /sys/firmware/efi/efivars/
-(chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
-(chroot) # mount -o remount,ro /sys/firmware/efi/efivars/
-</cli>
-  - Remove default GRUB2 theme:<cli>
-(chroot) # rm -rf /boot/grub/themes/starfield/
-</cli>
-  - Configure GRUB2((GRUB2 config options: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html.)): <file text /etc/default/grub>
-## AUTHOR:       AISK11
-## LOCATION:     /etc/default/grub (0644 root:root)
-## DEPENDENCIES: core/grub
-## DESCRIPTION:  Bootloader configuration.
-
-## OS name.
-GRUB_DISTRIBUTOR='Arch'
-
-## Default menu entry.
-GRUB_DEFAULT='0'
-GRUB_SAVEDEFAULT='false'
-
-## Time to boot default entry unless key is pressed.
-GRUB_TIMEOUT='-1'
-GRUB_TIMEOUT_STYLE='menu'
-
-## Do not generate recovery mode entries.
-GRUB_DISABLE_RECOVERY='true'
-
-## Terminal input devices.
-GRUB_TERMINAL_INPUT='console'
-
-## Terminal output.
-GRUB_GFXMODE='auto'
-GRUB_GFXPAYLOAD_LINUX='text'
-
-## Enable encrypted disks.
-GRUB_ENABLE_CRYPTODISK='y'
-
-## Kernel parameters.
-GRUB_CMDLINE_LINUX=''
-GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
-
-## Bootloader colors (fg/bg).
-GRUB_COLOR_NORMAL='white/black'
-GRUB_COLOR_HIGHLIGHT='white/black'
-</file>
-  - Apply GRUB2 configuration changes:<cli>
-(chroot) # grub-mkconfig -o /boot/grub/grub.cfg
-</cli>
+  - See [[:arch:bootloader|Bootloader]].
 
 ===== Finishing =====
 
@@ -302,8 +253,8 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 
   - Make root account accessible: <cli>
 (chroot) # passwd root
-> <NEW-ROOT-PASSWORD>
-> <NEW-ROOT-PASSWORD (VERIFY)>
+> <NEW_ROOT_PASSWORD>
+> <NEW_ROOT_PASSWORD (VERIFY)>
 </cli>
 
 ==== Reboot ====

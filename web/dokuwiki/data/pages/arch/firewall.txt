@@ -2,7 +2,7 @@
 
 ===== Installation =====
 
-  - Install nftables if not already installed:<cli>
+  - Install nftables if required:<cli>
 # pacman -S --needed nftables
 </cli>
 

@@ -259,13 +259,13 @@ LC_TIME=&quot;en_GB.UTF-8&quot;
 <h2 class="sectionedit16" id="minimal_system_installation">Minimal System Installation</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Synchronize and update system:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -Syyu</span></pre><p></div>
+<li class="level1"><div class="li"> Synchronize and update system:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -Syu &amp;&amp; pacman -Fy &amp;&amp; yes | pacman -Scc</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Partitioning and filesystem tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed parted dosfstools btrfs-progs</span></pre><p></div>
 </li>
 <li class="level1 node"><div class="li"> Boot software: </div>
 <ol>
-<li class="level2"><div class="li"> Kernel, initramfs and bootloader:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed mkinitcpio linux [linux-lts] efibootmgr grub</span></pre><p></div>
+<li class="level2"><div class="li"> Kernel, initramfs and bootloader:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed mkinitcpio linux [linux-lts]</span></pre><p></div>
 </li>
 <li class="level2"><div class="li"> Additional firmware:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">pacman -S --needed linux-firmware [amd-ucode|intel-ucode]</span></pre><p></div>
 </li>
@@ -276,12 +276,12 @@ LC_TIME=&quot;en_GB.UTF-8&quot;
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Minimal System Installation&quot;,&quot;hid&quot;:&quot;minimal_system_installation&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:16,&quot;range&quot;:&quot;4782-5355&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Minimal System Installation&quot;,&quot;hid&quot;:&quot;minimal_system_installation&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:16,&quot;range&quot;:&quot;4782-5373&quot;} -->
 <h2 class="sectionedit17" id="booting">Booting</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:17,&quot;range&quot;:&quot;5356-5376&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:17,&quot;range&quot;:&quot;5374-5394&quot;} -->
 <h3 class="sectionedit18" id="initramfs">Initramfs</h3>
 <div class="level3">
 <ol>
@@ -316,80 +316,32 @@ COMPRESSION_OPTIONS=()</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:18,&quot;range&quot;:&quot;5377-6243&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:18,&quot;range&quot;:&quot;5395-6261&quot;} -->
 <h3 class="sectionedit19" id="bootloader">Bootloader</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Install GRUB2 to ESP:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --removable</span>
-<span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,rw /sys/firmware/efi/efivars/</span>
-<span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB</span>
-<span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,ro /sys/firmware/efi/efivars/</span></pre><p></div>
-</li>
-<li class="level1"><div class="li"> Remove default GRUB2 theme:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">rm -rf /boot/grub/themes/starfield/</span></pre><p></div>
-</li>
-<li class="level1"><div class="li"> Configure GRUB2<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>: <dl class="file">
-<dt><a href="http://localhost/_export/code/arch/installation?codeblock=7" title="Download Snippet" class="mediafile mf_">/etc/default/grub</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     /etc/default/grub (0644 root:root)
-## DEPENDENCIES: core/grub
-## DESCRIPTION:  Bootloader configuration.
-&nbsp;
-## OS name.
-GRUB_DISTRIBUTOR='Arch'
-&nbsp;
-## Default menu entry.
-GRUB_DEFAULT='0'
-GRUB_SAVEDEFAULT='false'
-&nbsp;
-## Time to boot default entry unless key is pressed.
-GRUB_TIMEOUT='-1'
-GRUB_TIMEOUT_STYLE='menu'
-&nbsp;
-## Do not generate recovery mode entries.
-GRUB_DISABLE_RECOVERY='true'
-&nbsp;
-## Terminal input devices.
-GRUB_TERMINAL_INPUT='console'
-&nbsp;
-## Terminal output.
-GRUB_GFXMODE='auto'
-GRUB_GFXPAYLOAD_LINUX='text'
-&nbsp;
-## Enable encrypted disks.
-GRUB_ENABLE_CRYPTODISK='y'
-&nbsp;
-## Kernel parameters.
-GRUB_CMDLINE_LINUX=''
-GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
-&nbsp;
-## Bootloader colors (fg/bg).
-GRUB_COLOR_NORMAL='white/black'
-GRUB_COLOR_HIGHLIGHT='white/black'</pre>
-</dd></dl>
-</div>
-</li>
-<li class="level1"><div class="li"> Apply GRUB2 configuration changes:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-mkconfig -o /boot/grub/grub.cfg</span></pre><p></div>
+<li class="level1"><div class="li"> See <a href="http://localhost/arch/bootloader" class="wikilink1" title="arch:bootloader" data-wiki-id="arch:bootloader">Bootloader</a>.</div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:19,&quot;range&quot;:&quot;6244-7771&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:19,&quot;range&quot;:&quot;6262-6325&quot;} -->
 <h2 class="sectionedit20" id="finishing">Finishing</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:20,&quot;range&quot;:&quot;7772-7794&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:20,&quot;range&quot;:&quot;6326-6348&quot;} -->
 <h3 class="sectionedit21" id="root_user">Root User</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Make root account accessible: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">passwd root</span>
-<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-ROOT-PASSWORD&gt;</span>
-<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-ROOT-PASSWORD (VERIFY)&gt;</span></pre><p></div>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW_ROOT_PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW_ROOT_PASSWORD (VERIFY)&gt;</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Root User&quot;,&quot;hid&quot;:&quot;root_user&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:21,&quot;range&quot;:&quot;7795-7939&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Root User&quot;,&quot;hid&quot;:&quot;root_user&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:21,&quot;range&quot;:&quot;6349-6493&quot;} -->
 <h3 class="sectionedit22" id="reboot">Reboot</h3>
 <div class="level3">
 <ol>
@@ -399,9 +351,7 @@ GRUB_COLOR_HIGHLIGHT='white/black'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Reboot&quot;,&quot;hid&quot;:&quot;reboot&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:22,&quot;range&quot;:&quot;7940-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Reboot&quot;,&quot;hid&quot;:&quot;reboot&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:22,&quot;range&quot;:&quot;6494-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Read-write efivarfs problem: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
-<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
-<div class="content">GRUB2 config options: <a href="https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html" class="urlextern" title="https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html">https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html</a>.</div></div>
 </div>

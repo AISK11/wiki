@@ -1,0 +1,10 @@
+====== Resources ======
+
+===== Official =====
+
+  * [[https://www.gentoo.org|Gentoo Linux]]
+  * [[https://pentoo.org|Pentoo Linux]]
+
+===== Personal =====
+
+  * [[https://github.com/aisk11/gentoo|Gentoo Linux GitHub (AISK11)]]

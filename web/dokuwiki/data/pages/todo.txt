@@ -8,3 +8,7 @@ xrandr --output HDMI-1-0 --mode 1920x1080
 
 https://cryptobook.nakov.com/cryptographic-hash-functions/secure-hash-algorithms
 https://www.windows-security.org/windows-service/ac
+
+===== Expectations =====
+
+musl vs libc((http://www.etalabs.net/compare_libcs.html))

@@ -315,3 +315,5 @@ picom
 scrot
 xclip
 pulse
+libcs
+seatd

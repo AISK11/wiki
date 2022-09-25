@@ -1,128 +1,3 @@
-1663272110	127.0.0.1	E	rpios:arm64_post-installation	admin			-32
-1663272425	127.0.0.1	E	rpios:arm64_post-installation	admin			1
-1663301347	127.0.0.1	E	cybersecurity:firewall	admin			20
-1663301696	127.0.0.1	E	cybersecurity:firewall	admin			-4
-1663338795	127.0.0.1	E	debian:index	admin			14
-1663338850	127.0.0.1	D	debian:arm64_pre-installation	admin	removed		-1773
-1663338861	127.0.0.1	E	debian:sidebar	admin			-81
-1663338884	127.0.0.1	E	debian:index	admin			1
-1663339236	127.0.0.1	C	debian:package_manager	admin	created		3146
-1663339285	127.0.0.1	E	debian:package_manager	admin	[Apt Configuration] 		1
-1663339690	127.0.0.1	D	os:debian:package_manager	admin	removed		-3146
-1663341086	127.0.0.1	E	debian:package_manager	admin			274
-1663341275	127.0.0.1	E	cybersecurity:dhcp	admin			-101
-1663341347	127.0.0.1	R	cybersecurity:dhcp	admin	old revision restored (2022-09-12 01:19)	1662945541	101
-1663341524	127.0.0.1	E	debian:amd64_post-installation	admin			2269
-1663341998	127.0.0.1	E	debian:sidebar	admin			-24
-1663342031	127.0.0.1	E	debian:sidebar	admin			0
-1663342065	127.0.0.1	E	debian:package_manager	admin			-1019
-1663342109	127.0.0.1	C	debian:apt	admin	created		1012
-1663342134	127.0.0.1	E	debian:package_manager	admin			-4
-1663342190	127.0.0.1	E	debian:package_manager	admin			23
-1663342496	127.0.0.1	E	debian:amd64_post-installation	admin			-2288
-1663342578	127.0.0.1	E	debian:amd64_post-installation	admin			59
-1663343046	127.0.0.1	E	debian:package_manager	admin	[Configuration] 		-17
-1663343656	127.0.0.1	E	debian:package_manager	admin			14
-1663343687	127.0.0.1	E	debian:package_manager	admin			0
-1663343707	127.0.0.1	E	debian:package_manager	admin	[Configuration] 		-4
-1663344616	127.0.0.1	E	debian:index	admin			7
-1663346712	127.0.0.1	C	debian:network	admin	created		452
-1663346785	127.0.0.1	E	debian:network	admin			97
-1663346833	127.0.0.1	E	debian:network	admin			0
-1663347182	127.0.0.1	E	debian:network	admin			347
-1663348380	127.0.0.1	E	debian:network	admin			133
-1663349163	127.0.0.1	E	debian:network	admin			1602
-1663350015	127.0.0.1	E	debian:network	admin			52
-1663350916	127.0.0.1	E	debian:network	admin			192
-1663351091	127.0.0.1	E	debian:network	admin			38
-1663360940	127.0.0.1	E	debian:sidebar	admin			-6
-1663360983	127.0.0.1	E	debian:network	admin			1
-1663361391	127.0.0.1	C	debian:booting	admin	created		156
-1663361851	127.0.0.1	E	debian:booting	admin			111
-1663362720	127.0.0.1	E	debian:booting	admin			544
-1663363074	127.0.0.1	E	debian:booting	admin			478
-1663363684	127.0.0.1	E	debian:booting	admin			200
-1663363718	127.0.0.1	E	debian:booting	admin			0
-1663364081	127.0.0.1	E	debian:booting	admin			313
-1663364253	127.0.0.1	E	debian:booting	admin			-190
-1663364260	127.0.0.1	E	debian:booting	admin			-313
-1663369912	127.0.0.1	E	debian:network	admin			77
-1663370138	127.0.0.1	E	debian:network	admin			12
-1663370363	127.0.0.1	E	debian:network	admin			-9
-1663370785	127.0.0.1	E	debian:network	admin			23
-1663371231	127.0.0.1	E	debian:network	admin			13
-1663371837	127.0.0.1	E	debian:amd64_post-installation	admin			94
-1663372065	127.0.0.1	E	debian:network	admin			216
-1663372106	127.0.0.1	E	debian:booting	admin			94
-1663372206	127.0.0.1	E	debian:apt	admin			93
-1663374408	127.0.0.1	E	debian:network	admin			66
-1663374465	127.0.0.1	E	debian:package_manager	admin			-74
-1663438216	127.0.0.1	E	sidebar	admin			41
-1663438362	127.0.0.1	C	arch:sidebar	admin	created		303
-1663439013	127.0.0.1	C	arch:index	admin	created		742
-1663439151	127.0.0.1	E	arch:index	admin			52
-1663439205	127.0.0.1	E	arch:index	admin			1
-1663439321	127.0.0.1	E	arch:index	admin			55
-1663439341	127.0.0.1	E	arch:index	admin			1
-1663439489	127.0.0.1	E	arch:index	admin			118
-1663439507	127.0.0.1	E	arch:index	admin			-2
-1663439676	127.0.0.1	E	arch:index	admin			-16
-1663439787	127.0.0.1	E	arch:index	admin			-279
-1663440100	127.0.0.1	E	sidebar	admin			4
-1663442582	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:host_discovery	admin			50
-1663442762	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:host_discovery	admin			81
-1663443323	127.0.0.1	C	arch:pre-installation	admin	created		146
-1663447155	127.0.0.1	E	arch:pre-installation	admin			86
-1663447271	127.0.0.1	E	arch:pre-installation	admin			67
-1663447364	127.0.0.1	E	arch:pre-installation	admin			9
-1663447534	127.0.0.1	E	arch:pre-installation	admin			-64
-1663447892	127.0.0.1	E	arch:pre-installation	admin			36
-1663448166	127.0.0.1	E	arch:pre-installation	admin			79
-1663448195	127.0.0.1	E	arch:pre-installation	admin			8
-1663448399	127.0.0.1	E	arch:pre-installation	admin			35
-1663448978	127.0.0.1	E	todo	admin			82
-1663449283	127.0.0.1	E	arch:pre-installation	admin			204
-1663449569	127.0.0.1	E	arch:pre-installation	admin			66
-1663449933	127.0.0.1	E	arch:pre-installation	admin			99
-1663450307	127.0.0.1	E	arch:pre-installation	admin			64
-1663451292	127.0.0.1	E	arch:pre-installation	admin			614
-1663451309	127.0.0.1	E	arch:pre-installation	admin			2
-1663451340	127.0.0.1	E	arch:pre-installation	admin			-2
-1663451394	127.0.0.1	E	arch:pre-installation	admin			-94
-1663451401	127.0.0.1	C	arch:installation	admin	created		120
-1663451445	127.0.0.1	E	arch:index	admin			22
-1663451461	127.0.0.1	E	arch:index	admin			-3
-1663462232	127.0.0.1	E	arch:installation	admin			214
-1663462450	127.0.0.1	E	arch:installation	admin			25
-1663463214	127.0.0.1	E	arch:installation	admin			244
-1663463653	127.0.0.1	E	arch:installation	admin			65
-1663463677	127.0.0.1	E	arch:installation	admin			4
-1663463689	127.0.0.1	E	arch:installation	admin			1
-1663463927	127.0.0.1	E	arch:installation	admin			252
-1663464102	127.0.0.1	E	arch:installation	admin			0
-1663464289	127.0.0.1	E	arch:installation	admin			821
-1663464311	127.0.0.1	E	arch:installation	admin			39
-1663464539	127.0.0.1	E	arch:installation	admin			40
-1663464592	127.0.0.1	E	arch:installation	admin			10
-1663466121	127.0.0.1	E	arch:installation	admin			189
-1663466284	127.0.0.1	E	arch:installation	admin			-2
-1663466349	127.0.0.1	E	arch:installation	admin			57
-1663466509	127.0.0.1	E	arch:installation	admin			356
-1663466580	127.0.0.1	E	arch:installation	admin			202
-1663466673	127.0.0.1	E	arch:installation	admin			0
-1663467149	127.0.0.1	E	arch:installation	admin			83
-1663467163	127.0.0.1	E	arch:installation	admin			-2
-1663467198	127.0.0.1	E	arch:installation	admin			8
-1663467302	127.0.0.1	E	arch:installation	admin			-4
-1663467321	127.0.0.1	E	arch:installation	admin			-3
-1663506577	127.0.0.1	E	arch:installation	admin			203
-1663506943	127.0.0.1	E	arch:installation	admin			73
-1663506969	127.0.0.1	E	arch:installation	admin			6
-1663507034	127.0.0.1	E	arch:installation	admin			27
-1663507147	127.0.0.1	E	arch:installation	admin			126
-1663507225	127.0.0.1	E	arch:installation	admin			16
-1663507383	127.0.0.1	E	arch:installation	admin			99
-1663507606	127.0.0.1	E	arch:installation	admin			6
 1663536561	127.0.0.1	E	arch:installation	admin			478
 1663537073	127.0.0.1	E	arch:installation	admin			898
 1663537092	127.0.0.1	E	arch:installation	admin			4
@@ -423,3 +298,32 @@
 1663955332	127.0.0.1	D	rpios:firewall	admin	removed		-1986
 1663955343	127.0.0.1	E	rpios:sidebar	admin			-58
 1663955493	127.0.0.1	E	rpios:sidebar	admin			58
+1664029698	127.0.0.1	E	arch:installation	admin			41
+1664029709	127.0.0.1	E	arch:installation	admin	[Bootloader] 		1
+1664029737	127.0.0.1	E	arch:bootloader	admin			-13
+1664029929	127.0.0.1	E	arch:installation	admin			-1506
+1664029947	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		-16
+1664035728	127.0.0.1	E	sidebar	admin			22
+1664035894	127.0.0.1	E	sidebar	admin			-22
+1664037448	127.0.0.1	E	todo	admin			86
+1664037794	127.0.0.1	E	arch:installation	admin	[Root User] 		0
+1664040044	127.0.0.1	E	arch:pacman	admin	[Configuration] 		35
+1664040101	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		34
+1664040420	127.0.0.1	E	arch:sidebar	admin			-45
+1664075112	127.0.0.1	E	arch:gui	admin			42
+1664076520	127.0.0.1	E	arch:shell	admin			-26
+1664076530	127.0.0.1	E	arch:firewall	admin			-13
+1664076618	127.0.0.1	E	arch:gui	admin			39
+1664077544	127.0.0.1	E	arch:gui	admin			29
+1664078321	127.0.0.1	E	arch:gui	admin			78
+1664141125	127.0.0.1	E	sidebar	admin			34
+1664141139	127.0.0.1	C	gentoo:index	admin	created		740
+1664141165	127.0.0.1	C	gentoo:sidebar	admin	created		111
+1664141739	127.0.0.1	E	gentoo:index	admin			-75
+1664141809	127.0.0.1	E	gentoo:index	admin			-7
+1664141927	127.0.0.1	C	gentoo:resources	admin	created		304
+1664141948	127.0.0.1	E	gentoo:resources	admin			-81
+1664143079	127.0.0.1	E	gentoo:index	admin			1
+1664143100	127.0.0.1	E	arch:index	admin			18
+1664143515	127.0.0.1	E	gentoo:sidebar	admin			75
+1664143532	127.0.0.1	E	gentoo:sidebar	admin			6

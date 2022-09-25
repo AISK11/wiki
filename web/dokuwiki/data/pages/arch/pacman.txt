@@ -57,7 +57,7 @@ Include = /etc/pacman.d/mirrorlist
 $ curl -Lo blackarch-install.sh https://blackarch.org/strap.sh
 # sh ./blackarch-install.sh
 # rm -f ./blackarch-install.sh
-# pacman -Syu
+# pacman -Syu && pacman -Fy && yes | pacman -Scc
 </cli>
 
 ===== Usage =====

@@ -2,10 +2,10 @@
 
 ===== Installation =====
 
-  - Install dash if not already installed:<cli>
+  - Install dash if required:<cli>
 # pacman -S --needed dash
 </cli>
-  - Install zsh if not already installed:<cli>
+  - Install zsh if required:<cli>
 # pacman -S --needed zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 </cli>
 

@@ -8,11 +8,10 @@
 
 **Installation (amd64)**
   * [[arch:pre-installation|Pre-Installation]]
-  * [[arch:installation|Installation (WIP)]]
+  * [[arch:installation|Installation]]
   * [[arch:post-installation|Post-Installation (WIP)]]
 
 **Configuration**
-  * [[arch:initramfs|Initramfs (WIP)]]
   * [[arch:bootloader|Bootloader]]
   * [[arch:network|Network (WIP)]]
   * [[arch:firewall|Firewall]]

@@ -6,7 +6,7 @@
   * Independent distribution.
   * Large community + amount of packages in repositories + pentesting tools((BlackArch tools: https://www.blackarch.org/tools.html.)).
   * Binary based.
-  * Pacman.
+  * Package manager (pacman).
   * CLI installation.
   * Only 1 kernel name for each kernel type (no version strings afterwards).
 

@@ -2,6 +2,18 @@
 
 ===== Installation =====
 
+<cli>
+# pacman -S --needed sway wayland [xorg-xwayland] wofi
+# useradd -aG seat <USER>
+# systemctl enable seatd && systemctl start seatd
+</cli>
+
+
+
+
+
+===== X Installation (fallback) =====
+
   - Install GPU drivers((Xorg drivers: https://wiki.archlinux.org/title/Xorg#Driver_installation.))((OpenGL: https://wiki.archlinux.org/title/OpenGL#Installation.))((Vulkan: https://wiki.archlinux.org/title/Vulkan#Installation.))((GPGU (OpenCL: https://wiki.archlinux.org/title/GPGPU#List_of_GPGPU_accelerated_software.)):
     * Intel:<cli>
 # pacman -S --needed xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-compute-runtime

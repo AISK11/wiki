@@ -2,7 +2,7 @@
 
 ===== Installation =====
 
-  - Install bootloader if not already installed:<cli>
+  - Install bootloader if required:<cli>
 # pacman -S --needed grub efibootmgr
 </cli>
   - Install bootloader to ESP:<cli>

@@ -325,3 +325,6 @@ exec
 tail
 halt
 0755
+wofi
+seat
+know

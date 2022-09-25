@@ -144,3 +144,6 @@ arch:shell
 arch:bootloader
 rpios:network
 rpios:firewall
+gentoo:index
+gentoo:sidebar
+gentoo:resources

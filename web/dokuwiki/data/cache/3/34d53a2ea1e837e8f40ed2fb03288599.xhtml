@@ -64,17 +64,17 @@ Include = /etc/pacman.d/mirrorlist</pre>
 <li class="level1"><div class="li"> Add BlackArch repository<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -Lo blackarch-install.sh https://blackarch.org/strap.sh</span>
 <span class="cli_prompt"># </span><span class="cli_command">sh ./blackarch-install.sh</span>
 <span class="cli_prompt"># </span><span class="cli_command">rm -f ./blackarch-install.sh</span>
-<span class="cli_prompt"># </span><span class="cli_command">pacman -Syu</span></pre><p></div>
+<span class="cli_prompt"># </span><span class="cli_command">pacman -Syu &amp;&amp; pacman -Fy &amp;&amp; yes | pacman -Scc</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;23-1492&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;23-1527&quot;} -->
 <h2 class="sectionedit3" id="usage">Usage</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:3,&quot;range&quot;:&quot;1493-1511&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:3,&quot;range&quot;:&quot;1528-1546&quot;} -->
 <h3 class="sectionedit4" id="install_update_remove">Install, Update &amp; Remove</h3>
 <div class="level3">
 <ul>
@@ -87,7 +87,7 @@ Include = /etc/pacman.d/mirrorlist</pre>
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Install, Update &amp; Remove&quot;,&quot;hid&quot;:&quot;install_update_remove&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;1512-1792&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Install, Update &amp; Remove&quot;,&quot;hid&quot;:&quot;install_update_remove&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;1547-1827&quot;} -->
 <h3 class="sectionedit5" id="search">Search</h3>
 <div class="level3">
 <ul>
@@ -100,7 +100,7 @@ Include = /etc/pacman.d/mirrorlist</pre>
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Search&quot;,&quot;hid&quot;:&quot;search&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;1793-2002&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Search&quot;,&quot;hid&quot;:&quot;search&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;1828-2037&quot;} -->
 <h3 class="sectionedit6" id="query">Query</h3>
 <div class="level3">
 <ul>
@@ -129,12 +129,12 @@ Include = /etc/pacman.d/mirrorlist</pre>
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Query&quot;,&quot;hid&quot;:&quot;query&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;2003-2472&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Query&quot;,&quot;hid&quot;:&quot;query&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;2038-2507&quot;} -->
 <h2 class="sectionedit7" id="troubleshooting">Troubleshooting</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Troubleshooting&quot;,&quot;hid&quot;:&quot;troubleshooting&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:7,&quot;range&quot;:&quot;2473-2501&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Troubleshooting&quot;,&quot;hid&quot;:&quot;troubleshooting&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:7,&quot;range&quot;:&quot;2508-2536&quot;} -->
 <h3 class="sectionedit8" id="expired_pgp_signatures">Expired PGP Signatures</h3>
 <div class="level3">
 <ol>
@@ -143,7 +143,7 @@ Include = /etc/pacman.d/mirrorlist</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Expired PGP Signatures&quot;,&quot;hid&quot;:&quot;expired_pgp_signatures&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:8,&quot;range&quot;:&quot;2502-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Expired PGP Signatures&quot;,&quot;hid&quot;:&quot;expired_pgp_signatures&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:8,&quot;range&quot;:&quot;2537-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Install BlackArch Linux repository: <a href="https://www.blackarch.org/downloads.html#install-repo" class="urlextern" title="https://www.blackarch.org/downloads.html#install-repo">https://www.blackarch.org/downloads.html#install-repo</a>.</div></div>
 </div>

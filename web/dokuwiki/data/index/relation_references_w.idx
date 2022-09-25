@@ -172,3 +172,7 @@ rpios:firewall
 rpios:shell
 rpios:ssh
 rpios:sql
+lfs:index
+gentoo:index
+gentoo:resources
+gentoo:pre-installation
