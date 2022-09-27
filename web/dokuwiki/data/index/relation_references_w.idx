@@ -176,3 +176,10 @@ lfs:index
 gentoo:index
 gentoo:resources
 gentoo:pre-installation
+cybersecuirty:crypto:encryption
+cybersecurity:crypto:encryption
+void:index
+void:resources
+void:pre-installation
+void:installation
+void:network

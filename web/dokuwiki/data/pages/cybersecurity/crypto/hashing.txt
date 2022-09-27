@@ -4,25 +4,24 @@
 This section is incomplete and needs further work!
 </WRAP>
 
-===== Hash Identifying =====
-
-  - Identify hash: <cli>
-$ haiti '<HASH>'
-</cli>
-  - Identifying with hashcat: <cli>
-$ hashcat --show '<HASH>'
-</cli>
-
 ===== Hashing =====
 
-  - Create hash: <cli>
-$ echo -n '<WORD>' | <md5sum|sha1sum|sha256sum|sha384sum|sha512sum> | cut -d ' ' -f 1
+  * Word:<cli>
+$ echo -n '<WORD>' | openssl <md5|sha1|sha512|sha3-512> [| cut -d ' ' -f 2]
+</cli>
+===== Hash Identifying =====
+
+  * Via haiti:<cli>
+$ haiti '<HASH>'
+</cli>
+  * Via hashcat((Hashcat's hash examples: https://hashcat.net/wiki/doku.php?id=example_hashes.)):<cli>
+$ hashcat --show '<HASH>'
 </cli>
 
 ===== Extracting Hash =====
 
   * From zip: <cli>
-$ zip2john <ZIP> > <HASH-FILE>
+$ zip2john <ZIP> 2> /dev/null
 </cli>
 
 ===== Cracking =====
@@ -34,8 +33,6 @@ $ hashcat -I
 </cli>
   - Crack passwords:
     * Dictionary cracking: <cli>
-$ hashcat -a 0 -D <DEVICE-NUMBER> -m <HASH-ID-NUMBER> '<HASH>' <DICTIONARY> -o <OUTPUT-FILE>
+$ hashcat -a 0 [-D <DEVICE-NUMBER>] -m <HASH-ID-NUMBER> '<HASH>' <DICTIONARY> [-o <OUTPUT-FILE>]
 </cli>
-  - Cracked passwords file: **~/.local/share/hashcat/hashcat.potfile**
-
-[[https://hashcat.net/wiki/doku.php?id=example_hashes|Hash examples]]
+  - Rainbow table from cracked passwords: ''~/.local/share/hashcat/hashcat.potfile''

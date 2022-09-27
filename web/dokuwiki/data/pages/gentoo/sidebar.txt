@@ -6,7 +6,4 @@
   * [[gentoo:index|Index]]
   * [[gentoo:resources|Resources]]
 
-**Installation (amd64)**
-  * [[gentoo:pre-installation|Pre-Installation (WiP)]]
-
 ----

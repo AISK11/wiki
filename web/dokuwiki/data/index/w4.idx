@@ -328,3 +328,7 @@ halt
 wofi
 seat
 know
+sha1
+sha3
+wide
+i686

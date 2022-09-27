@@ -3,6 +3,7 @@
 ===== Official =====
 
   * [[https://www.gentoo.org|Gentoo Linux]]
+  * [[https://wiki.installgentoo.com/wiki/Main_Page|Gentoo Unofficial Wiki]]
   * [[https://pentoo.org|Pentoo Linux]]
 
 ===== Personal =====

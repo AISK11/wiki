@@ -1,0 +1,79 @@
+====== Installation ======
+
+===== Environment Preparation =====
+
+  - Gain system access:<cli>
+> root
+> voidlinux
+# bash
+</cli>
+  - Set console keymap and font:<cli>
+# loadkeys us
+# setfont eurlatgr
+# unicode_start
+</cli>
+  -  Disable system beeping (pcspkr module):<cli>
+# modprobe -r pcspkr
+</cli>
+  - Verify UEFI boot and mount efivars as read-only to protect UEFI NVRAM:<cli>
+# ls -ld /sys/firmware/efi/
+# mount -t efivarfs -o ro efivarfs /sys/firmware/efi/efivars/
+</cli>
+  - Verify internet connectivity. See [[void:network|Network]].
+  - Update live environment system and install additional packages:<cli>
+# xbps-install -Su xbps && xbps-install -Su
+# xbps-install parted
+</cli>
+
+===== Disk Partitioning =====
+
+  - Create partitions:<cli>
+# cfdisk -z </dev/sdX>
+cfdisk> gpt
+cfdisk> n
+cfdisk> 2GiB
+cfdisk> t
+cfdisk> EFI System
+cfdisk> n
+cfdisk>  (Enter)
+cfdisk> W
+cfdisk> yes
+cfdisk> q
+# parted -s </dev/sdX> name 1 ESP
+# parted -s </dev/sdX> name 2 LUKS
+</cli>
+  - Create filesystems: 
+    - EFI filesystem:<cli>
+# wipefs -a </dev/sdX1>
+# mkfs.vfat -F 32 </dev/sdX1>
+# fatlabel </dev/sdX1> ESP
+# fatlabel -i </dev/sdX1> 00000001
+# fsck.vfat </dev/sdX1> ; echo $?
+</cli>
+    - LUKS encrypted filesystem:<cli>
+# dd if=/dev/urandom of=</dev/sdX2> status=progress ; sync
+# wipefs -a </dev/sdX2>
+# cryptsetup luksFormat -y --type luks2 </dev/sdX2>
+> YES
+> <NEW_LUKS_PASSWORD>
+> <NEW_LUKS_PASSWORD (VERIFY)>
+# cryptsetup config --label LUKS </dev/sdX2>
+# cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 </dev/sdX2>
+> YES
+# cryptsetup open --type luks2 </dev/sdX2> luks-root
+> <LUKS_PASSWORD>
+</cli>
+    - Root filesystem:<cli>
+# wipefs -a /dev/mapper/luks-root
+# mkfs.btrfs /dev/mapper/luks-root
+# btrfs filesystem label /dev/mapper/luks-root LUKS-ROOT
+# btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-root
+> y
+# btrfs check /dev/mapper/luks-root ; echo $?
+</cli>
+  - Verify partitions and filesystems:<cli>
+# parted -s </dev/sdX> [unit B] p free
+# lsblk -fp </dev/sdX>
+</cli>
+
+===== Base System Installation =====

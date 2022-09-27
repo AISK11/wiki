@@ -1,0 +1,13 @@
+====== Void Linux ======
+
+----
+
+**About**
+  * [[void:index|Index]]
+  * [[void:resources|Resources]]
+
+**Installation (amd64)**
+  * [[void:pre-installation|Pre-Installation]]
+  * [[void:installation|Installation (WIP)]]
+
+----

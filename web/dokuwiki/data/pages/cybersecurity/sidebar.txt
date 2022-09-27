@@ -24,6 +24,12 @@
   * [[:cybersecurity:data_recovery|Data Recovery]]
   * [[:cybersecurity:metadata|Metadata]]
 
+
+**Crypto**
+  * [[:cybersecurity:crypto:encoding|Encoding]]
+  * [[:cybersecurity:crypto:hashing|Hashing]]
+  * [[:cybersecurity:crypto:encryption|Encryption]]
+
 ----
 
 WIP
@@ -32,9 +38,5 @@ WIP
   * [[:cybersecurity:reconnaissance:packet_capture|Packet Capture]]
   * [[:cybersecurity:reconnaissance:host_discovery|Host Discovery]]
   * [[:cybersecurity:reconnaissance:service_scanning|Service Scanning]]
-
-**Crypto**
-  * [[:cybersecurity:crypto:encoding|Encoding]]
-  * [[:cybersecurity:crypto:hashing|Hashing]]
 
 ----

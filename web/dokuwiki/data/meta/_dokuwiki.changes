@@ -1,40 +1,3 @@
-1663536561	127.0.0.1	E	arch:installation	admin			478
-1663537073	127.0.0.1	E	arch:installation	admin			898
-1663537092	127.0.0.1	E	arch:installation	admin			4
-1663537225	127.0.0.1	E	arch:installation	admin			14
-1663537293	127.0.0.1	E	arch:installation	admin			0
-1663537450	127.0.0.1	E	arch:installation	admin			100
-1663537501	127.0.0.1	E	arch:installation	admin			-68
-1663538172	127.0.0.1	E	arch:installation	admin			565
-1663538200	127.0.0.1	E	arch:installation	admin			-29
-1663539012	127.0.0.1	E	arch:installation	admin	[Pacman] 		1111
-1663539074	127.0.0.1	E	arch:installation	admin			0
-1663539263	127.0.0.1	E	arch:installation	admin			298
-1663540589	127.0.0.1	E	arch:installation	admin			875
-1663540670	127.0.0.1	E	arch:installation	admin			0
-1663541313	127.0.0.1	E	arch:installation	admin			63
-1663541344	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		9
-1663541840	127.0.0.1	E	arch:installation	admin	[Timezone] 		68
-1663542087	127.0.0.1	E	arch:installation	admin			95
-1663544605	127.0.0.1	E	arch:installation	admin			5
-1663544635	127.0.0.1	E	arch:installation	admin			22
-1663545097	127.0.0.1	E	arch:installation	admin			768
-1663545383	127.0.0.1	E	arch:installation	admin			121
-1663545670	127.0.0.1	E	arch:installation	admin			-115
-1663545689	127.0.0.1	E	arch:installation	admin			108
-1663546050	127.0.0.1	E	arch:installation	admin			197
-1663546743	127.0.0.1	E	arch:installation	admin			76
-1663546791	127.0.0.1	E	arch:installation	admin			6
-1663546891	127.0.0.1	E	arch:installation	admin			11
-1663546943	127.0.0.1	E	arch:installation	admin			114
-1663546971	127.0.0.1	E	arch:installation	admin			2
-1663547096	127.0.0.1	E	arch:installation	admin	[Bootloader] 		0
-1663549420	127.0.0.1	E	arch:installation	admin			952
-1663571135	127.0.0.1	E	arch:pre-installation	admin			-26
-1663629491	127.0.0.1	E	arch:installation	admin	[Disk Partitioning] 		5
-1663630647	127.0.0.1	E	arch:installation	admin	[Bootloader] 		-65
-1663630666	127.0.0.1	E	arch:installation	admin	[Initramfs] 		0
-1663632038	127.0.0.1	E	arch:installation	admin	[Initramfs] 		17
 1663633219	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		-316
 1663633227	127.0.0.1	C	arch:post-installation	admin	created		315
 1663633277	127.0.0.1	E	arch:installation	admin	[Filesystems] 		-407
@@ -327,3 +290,65 @@
 1664143100	127.0.0.1	E	arch:index	admin			18
 1664143515	127.0.0.1	E	gentoo:sidebar	admin			75
 1664143532	127.0.0.1	E	gentoo:sidebar	admin			6
+1664175205	127.0.0.1	E	cybersecurity:sidebar	admin			1
+1664175362	127.0.0.1	D	it_areas:cybersecurity:crypto:encoding	admin	removed		-441
+1664175366	127.0.0.1	C	cybersecurity:crypto:encoding	admin	created		441
+1664175422	127.0.0.1	D	it_areas:cybersecurity:crypto:hashing	admin	removed		-976
+1664175432	127.0.0.1	C	cybersecurity:crypto:hashing	admin	created		976
+1664175802	127.0.0.1	E	cybersecurity:crypto:encoding	admin			-1
+1664175935	127.0.0.1	C	cybersecurity:crypto:sidebar	admin	created		72
+1664176016	127.0.0.1	D	cybersecurity:crypto:sidebar	admin	removed		-72
+1664176045	127.0.0.1	E	cybersecurity:sidebar	admin			52
+1664176192	127.0.0.1	C	cybersecuirty:crypto:encryption	admin	created		166
+1664177176	127.0.0.1	D	cybersecuirty:crypto:encryption	admin	removed		-166
+1664177202	127.0.0.1	E	cybersecurity:sidebar	admin			0
+1664177208	127.0.0.1	C	cybersecurity:crypto:encryption	admin	created		166
+1664179601	127.0.0.1	E	cybersecurity:crypto:hashing	admin			78
+1664179616	127.0.0.1	E	cybersecurity:crypto:encoding	admin			-4
+1664179843	127.0.0.1	E	cybersecurity:crypto:hashing	admin			137
+1664179863	127.0.0.1	E	cybersecurity:crypto:hashing	admin			-1
+1664179909	127.0.0.1	E	cybersecurity:crypto:hashing	admin	[Hashing] 		-112
+1664180196	127.0.0.1	E	cybersecurity:crypto:hashing	admin			1
+1664180293	127.0.0.1	E	cybersecurity:crypto:hashing	admin			4
+1664180305	127.0.0.1	E	cybersecurity:crypto:hashing	admin			0
+1664180332	127.0.0.1	E	cybersecurity:crypto:hashing	admin			0
+1664180366	127.0.0.1	E	cybersecurity:crypto:hashing	admin			-44
+1664181028	127.0.0.1	E	cybersecurity:crypto:hashing	admin	[Extracting Hash] 		13
+1664181043	127.0.0.1	E	cybersecurity:crypto:hashing	admin	[Extracting Hash] 		-14
+1664181143	127.0.0.1	E	cybersecurity:crypto:hashing	admin	[Hashing] 		-101
+1664181168	127.0.0.1	E	cybersecurity:crypto:hashing	admin	[Hashcat] 		2
+1664181274	127.0.0.1	E	cybersecurity:crypto:hashing	admin			14
+1664181291	127.0.0.1	E	cybersecurity:crypto:hashing	admin			0
+1664181342	127.0.0.1	E	cybersecurity:crypto:hashing	admin			81
+1664181349	127.0.0.1	E	cybersecurity:crypto:hashing	admin			-71
+1664181369	127.0.0.1	E	cybersecurity:crypto:hashing	admin	[Hashcat] 		2
+1664237490	127.0.0.1	E	sidebar	admin			0
+1664237792	127.0.0.1	E	gentoo:index	admin			-19
+1664238620	127.0.0.1	E	gentoo:resources	admin			77
+1664240808	127.0.0.1	E	gentoo:resources	admin			111
+1664242525	127.0.0.1	E	gentoo:resources	admin			-111
+1664242537	127.0.0.1	E	gentoo:sidebar	admin			-81
+1664242563	127.0.0.1	E	sidebar	admin			30
+1664242579	127.0.0.1	E	sidebar	admin			15
+1664312325	127.0.0.1	C	void:sidebar	admin	created		105
+1664313193	127.0.0.1	C	void:index	admin	created		659
+1664313302	127.0.0.1	E	void:index	admin			0
+1664313384	127.0.0.1	C	void:resources	admin	created		176
+1664313516	127.0.0.1	E	void:index	admin			-2
+1664313584	127.0.0.1	E	void:sidebar	admin			112
+1664313997	127.0.0.1	C	void:pre-installation	admin	created		392
+1664314054	127.0.0.1	E	void:pre-installation	admin			313
+1664314097	127.0.0.1	E	void:pre-installation	admin			231
+1664314172	127.0.0.1	E	void:pre-installation	admin			615
+1664314248	127.0.0.1	E	void:pre-installation	admin			16
+1664314514	127.0.0.1	E	void:pre-installation	admin			-21
+1664314670	127.0.0.1	E	void:resources	admin			56
+1664315115	127.0.0.1	C	void:installation	admin	created		101
+1664315130	127.0.0.1	E	void:pre-installation	admin			-1
+1664315280	127.0.0.1	E	void:installation	admin			190
+1664315292	127.0.0.1	E	void:installation	admin			7
+1664315457	127.0.0.1	E	void:installation	admin			387
+1664318230	127.0.0.1	E	void:installation	admin			1215
+1664318490	127.0.0.1	E	void:installation	admin			113
+1664318759	127.0.0.1	E	void:installation	admin			39
+1664319437	127.0.0.1	E	void:sidebar	admin			6

@@ -1,0 +1,10 @@
+====== Resources ======
+
+===== Official =====
+
+  * [[https://voidlinux.org|Void Linux]]
+  * [[https://github.com/void-linux|Void Linux GitHub]]
+
+===== Personal =====
+
+  * [[https://github.com/aisk11/void|Void Linux GitHub (AISK11)]]

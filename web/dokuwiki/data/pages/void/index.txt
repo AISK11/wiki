@@ -1,0 +1,19 @@
+====== Void Linux ======
+
+===== Pros =====
+
+  * Rolling release((Versions of various linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#General)).
+  * Independent distribution.
+  * Native non-SystemD init system (runit).
+  * CLI installation.
+  * Binary based.
+  * Package manager (xbps).
+  * Wide processor architecture support (amd64, i686, aarch64, armv7, armv6).
+  * Stable.
+  * Multiple C libraries support (glibc, musl).
+
+===== Cons =====
+
+  * Small community, amount of packages & missing pentesting tools.
+  * Kernel contains binary blobs.
+  * Multiple kernel versions - not only 1 kernel name for each kernel type.

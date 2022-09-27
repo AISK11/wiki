@@ -6,8 +6,8 @@
   * Independent distribution.
   * Native non SystemD init system (OpenRC).
   * Amount of packages in repositories + pentesting tools((Pentoo: https://pentoo.org.)).
-  * Processor architecture support (the most flexible OS I know).
   * CLI installation.
+  * The widest processor architecture support.
   * Stable.
   * Multiple C libraries support (glibc, musl).
 
