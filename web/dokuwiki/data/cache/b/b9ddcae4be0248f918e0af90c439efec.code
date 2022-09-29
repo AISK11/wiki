@@ -1,0 +1,3 @@
+## Support for encrypted partitions.
+install_items+=&quot;/etc/crypttab&quot;
+hostonly=&quot;yes&quot;

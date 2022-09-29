@@ -1,0 +1,94 @@
+
+<h1 class="sectionedit1" id="bootloader">Bootloader</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-26&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install bootloader if required:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install grub-x86_64-efi</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install bootloader to ESP:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --removable</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount -o remount,rw /sys/firmware/efi/efivars/</span>
+<span class="cli_prompt"># </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount -o remount,ro /sys/firmware/efi/efivars/</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;27-422&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Configure custom bootloader hook:<dl class="file">
+<dt><a href="http://localhost/_export/code/void/bootloader?codeblock=0" title="Download Snippet" class="mediafile mf_d_40_custom">/etc/grub.d/40_custom</a></dt>
+<dd><pre class="code file bash"><span class="co0">#!/bin/sh</span>
+&nbsp;
+<span class="co0">## Required line.</span>
+<span class="kw3">exec</span> <span class="kw2">tail</span> <span class="re5">-n</span> +<span class="nu0">3</span> <span class="st0">&quot;<span class="es3">${0}</span>&quot;</span>
+&nbsp;
+<span class="co0">## Custom menu entries.</span>
+menuentry <span class="st_h">'Reboot Computer'</span> <span class="re5">--class</span> restart <span class="br0">&#123;</span>
+    reboot
+<span class="br0">&#125;</span>
+&nbsp;
+menuentry <span class="st_h">'Shutdown Computer'</span> <span class="re5">--class</span> shutdown <span class="br0">&#123;</span>
+    halt
+<span class="br0">&#125;</span></pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Make bootloader script executable:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chmod 0755 /etc/grub.d/40_custom</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Configure bootloader<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>: <dl class="file">
+<dt><a href="http://localhost/_export/code/void/bootloader?codeblock=1" title="Download Snippet" class="mediafile mf_">/etc/default/grub</a></dt>
+<dd><pre class="code file text">## Apply changes made to this file with:
+## $(grub-mkconfig -o /boot/grub/grub.cfg)
+&nbsp;
+## OS name.
+GRUB_DISTRIBUTOR='Arch'
+&nbsp;
+## Default menu entry.
+GRUB_DEFAULT='0'
+GRUB_SAVEDEFAULT='false'
+&nbsp;
+## Time to boot default entry unless key is pressed.
+GRUB_TIMEOUT='-1'
+GRUB_TIMEOUT_STYLE='menu'
+&nbsp;
+## Do not generate recovery mode entries.
+GRUB_DISABLE_RECOVERY='true'
+&nbsp;
+## Terminal input devices.
+GRUB_TERMINAL_INPUT='console'
+&nbsp;
+## Terminal output.
+GRUB_GFXMODE='auto'
+GRUB_GFXPAYLOAD_LINUX='text'
+&nbsp;
+## Enable encrypted disks.
+GRUB_ENABLE_CRYPTODISK='y'
+&nbsp;
+## Kernel parameters.
+GRUB_CMDLINE_LINUX=''
+GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
+&nbsp;
+## Bootloader colors (fg/bg).
+GRUB_COLOR_NORMAL='white/black'
+GRUB_COLOR_HIGHLIGHT='white/black'
+&nbsp;
+## Bootloader theme.
+#GRUB_THEME=''</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Apply bootloader configuration changes:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">grub-mkconfig -o /boot/grub/grub.cfg</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;423-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">GRUB2 config options: <a href="https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html" class="urlextern" title="https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html">https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html</a>.</div></div>
+</div>

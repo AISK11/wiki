@@ -1,0 +1,13 @@
+<span class="co0">#!/bin/sh</span>
+&nbsp;
+<span class="co0">## Required line.</span>
+<span class="kw3">exec</span> <span class="kw2">tail</span> <span class="re5">-n</span> +<span class="nu0">3</span> <span class="st0">&quot;<span class="es3">${0}</span>&quot;</span>
+&nbsp;
+<span class="co0">## Custom menu entries.</span>
+menuentry <span class="st_h">'Reboot Computer'</span> <span class="re5">--class</span> restart <span class="br0">&#123;</span>
+    reboot
+<span class="br0">&#125;</span>
+&nbsp;
+menuentry <span class="st_h">'Shutdown Computer'</span> <span class="re5">--class</span> shutdown <span class="br0">&#123;</span>
+    halt
+<span class="br0">&#125;</span>

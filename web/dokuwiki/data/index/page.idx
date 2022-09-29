@@ -158,3 +158,4 @@ void:resources
 void:pre-installation
 void:installation
 cybersecurity:crypto:ciphers
+void:bootloader

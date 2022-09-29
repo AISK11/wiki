@@ -185,3 +185,4 @@ void:installation
 void:network
 cybersecurity:crypto:ciphers
 void:post-installation
+void:bootloader

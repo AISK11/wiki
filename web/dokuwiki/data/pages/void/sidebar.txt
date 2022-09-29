@@ -11,4 +11,8 @@
   * [[void:installation|Installation (WIP)]]
   * [[void:post-installation|Post-Installation (WIP)]]
 
+**Configuration**
+
+**Cheat Sheets**
+
 ----

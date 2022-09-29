@@ -1,0 +1,34 @@
+## OS name.
+GRUB_DISTRIBUTOR='Arch'
+&nbsp;
+## Default menu entry.
+GRUB_DEFAULT='0'
+GRUB_SAVEDEFAULT='false'
+&nbsp;
+## Time to boot default entry unless key is pressed.
+GRUB_TIMEOUT='-1'
+GRUB_TIMEOUT_STYLE='menu'
+&nbsp;
+## Do not generate recovery mode entries.
+GRUB_DISABLE_RECOVERY='true'
+&nbsp;
+## Terminal input devices.
+GRUB_TERMINAL_INPUT='console'
+&nbsp;
+## Terminal output.
+GRUB_GFXMODE='auto'
+GRUB_GFXPAYLOAD_LINUX='text'
+&nbsp;
+## Enable encrypted disks.
+GRUB_ENABLE_CRYPTODISK='y'
+&nbsp;
+## Kernel parameters.
+GRUB_CMDLINE_LINUX=''
+GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
+&nbsp;
+## Bootloader colors (fg/bg).
+GRUB_COLOR_NORMAL='white/black'
+GRUB_COLOR_HIGHLIGHT='white/black'
+&nbsp;
+## Bootloader theme.
+#GRUB_THEME=''

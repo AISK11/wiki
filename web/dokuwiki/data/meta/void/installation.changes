@@ -55,3 +55,17 @@
 1664463911	127.0.0.1	E	void:installation	admin			49
 1664463984	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-7
 1664464427	127.0.0.1	E	void:installation	admin			87
+1664486655	127.0.0.1	E	void:installation	admin			40
+1664486797	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		80
+1664487049	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-11
+1664487183	127.0.0.1	E	void:installation	admin			180
+1664487273	127.0.0.1	E	void:installation	admin			74
+1664487319	127.0.0.1	E	void:installation	admin	[Finishing] 		0
+1664489900	127.0.0.1	E	void:installation	admin	[Initramfs] 		52
+1664489919	127.0.0.1	E	void:installation	admin			-49
+1664490819	127.0.0.1	E	void:installation	admin			1680
+1664491719	127.0.0.1	E	void:installation	admin	[Full System Installation] 		33
+1664492004	127.0.0.1	E	void:installation	admin	[Filesystems] 		0
+1664492098	127.0.0.1	E	void:installation	admin			-6
+1664495657	127.0.0.1	E	void:installation	admin	[Initramfs] 		0
+1664495687	127.0.0.1	E	void:installation	admin	[Bootloader] 		57

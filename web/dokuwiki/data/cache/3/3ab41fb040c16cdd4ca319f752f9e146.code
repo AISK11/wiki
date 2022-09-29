@@ -1,0 +1,13 @@
+#!/bin/sh
+&nbsp;
+## Required line.
+exec tail -n +3 &quot;${0}&quot;
+&nbsp;
+## Custom menu entries.
+menuentry 'Reboot Computer' --class restart {
+    reboot
+}
+&nbsp;
+menuentry 'Shutdown Computer' --class shutdown {
+    halt
+}

@@ -15,7 +15,7 @@
   -  Disable system beeping (pcspkr module):<cli>
 # modprobe -r pcspkr
 </cli>
-  - Verify UEFI boot and mount efivars as read-only to protect UEFI NVRAM:<cli>
+  - Verify UEFI boot and mount efivars as read-only to protect UEFI NVRAM((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)):<cli>
 # ls -ld /sys/firmware/efi/
 # mount -t efivarfs -o ro efivarfs /sys/firmware/efi/efivars/
 </cli>
@@ -113,8 +113,6 @@ cfdisk> q
 # export PS1='(chroot) # '
 </cli>
 
-----
-
 ===== Full System Installation =====
 
   - Install additional void subrepositories((Void subrepositories: https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories.)) and synchronize them:<cli>
@@ -134,7 +132,7 @@ cfdisk> q
 (chroot) # xbps-install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 </cli>
   - Boot tools:<cli>
-(chroot) # xbps-install efibootmgr grub-x86_64-efi dracut-uefi linux linux-lts
+(chroot) # xbps-install grub-x86_64-efi dracut-uefi linux linux-lts [intel-ucode|linux-firmware-amd]
 </cli>
   - Network tools:
     - Basic:<cli>
@@ -182,10 +180,10 @@ luks-root UUID=00000000-0000-0000-0000-000000000002 none luks
 </file>
   - Configure fstab:<file text /etc/fstab>
 ## <FILE-SYSTEM> <MOUNT-DIR> <TYPE> <OPTIONS> <DUMP> <PASS>
-#efivarfs /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime 0 0
-LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
 LABEL=LUKS-ROOT     /     btrfs defaults,noatime            0 0
-/swap               none  swap  defaults                    0 0
+LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
+/swap               none  swap  defaults,nofail             0 0
+#efivarfs /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime 0 0
 </file>
 
 ==== Kernel Modules ====
@@ -303,14 +301,94 @@ SEEDRNG_SKIP_CREDIT='false'
 ==== Initramfs ====
 
   - Configure initramfs:<file text /etc/dracut.conf.d/10-crypt.conf>
-install_items+="/etc/crypttab"
+## Support for encrypted partitions.
+install_items+='/etc/crypttab'
+hostonly='yes'
 </file>
-  - Regenerate initramfs:<cli>
-(chroot)# 
-</cli>
 
 ==== Bootloader ====
 
+  - Install bootloader to ESP:<cli>
+# grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
+# mount -o remount,rw /sys/firmware/efi/efivars/
+# grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
+# mount -o remount,ro /sys/firmware/efi/efivars/
+</cli>
+  - Configure custom bootloader hook:<file bash /etc/grub.d/40_custom>
+#!/bin/sh
 
+## Required line.
+exec tail -n +3 "${0}"
+
+## Custom menu entries.
+menuentry 'Reboot Computer' --class restart {
+    reboot
+}
+
+menuentry 'Shutdown Computer' --class shutdown {
+    halt
+}
+</file>
+  - Make bootloader script executable:<cli>
+# chmod 0755 /etc/grub.d/40_custom
+</cli>
+  - Configure bootloader((GRUB2 config options: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html.)): <file text /etc/default/grub>
+## Apply changes made to this file with:
+## $(grub-mkconfig -o /boot/grub/grub.cfg)
+
+## OS name.
+GRUB_DISTRIBUTOR='Void'
+
+## Default menu entry.
+GRUB_DEFAULT='0'
+GRUB_SAVEDEFAULT='false'
+
+## Time to boot default entry unless key is pressed.
+GRUB_TIMEOUT='-1'
+GRUB_TIMEOUT_STYLE='menu'
+
+## Do not generate recovery mode entries.
+GRUB_DISABLE_RECOVERY='true'
+
+## Terminal input devices.
+GRUB_TERMINAL_INPUT='console'
+
+## Terminal output.
+GRUB_GFXMODE='auto'
+GRUB_GFXPAYLOAD_LINUX='text'
+
+## Enable encrypted disks.
+GRUB_ENABLE_CRYPTODISK='y'
+
+## Kernel parameters.
+GRUB_CMDLINE_LINUX=''
+GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
+
+## Bootloader colors (fg/bg).
+GRUB_COLOR_NORMAL='white/black'
+GRUB_COLOR_HIGHLIGHT='white/black'
+
+## Disable nested entries.
+#GRUB_DISABLE_SUBMENU='true'
+
+## Bootloader theme.
+#GRUB_THEME=''
+</file>
+  - Apply bootloader configuration changes:<cli>
+# grub-mkconfig -o /boot/grub/grub.cfg
+</cli>
 
 ===== Finishing =====
+
+  - Reconfigure all packages:<cli>
+(chroot) # xbps-reconfigure -fa
+</cli>
+  - Make root account accessible: <cli>
+(chroot) # passwd root
+> <NEW-ROOT-PASSWORD>
+> <NEW-ROOT-PASSWORD (VERIFY)>
+</cli>
+  - Reboot system:<cli>
+(chroot) # exit
+# reboot
+</cli>
