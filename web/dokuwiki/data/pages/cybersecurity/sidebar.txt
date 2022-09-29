@@ -28,6 +28,7 @@
 **Crypto**
   * [[:cybersecurity:crypto:encoding|Encoding]]
   * [[:cybersecurity:crypto:hashing|Hashing]]
+  * [[:cybersecurity:crypto:ciphers|Ciphers]]
   * [[:cybersecurity:crypto:encryption|Encryption]]
 
 ----

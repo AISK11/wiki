@@ -84,6 +84,99 @@
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Partitioning&quot;,&quot;hid&quot;:&quot;disk_partitioning&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;688-2015&quot;} -->
 <h2 class="sectionedit4" id="base_system_installation">Base System Installation</h2>
 <div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create mount points and mount filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount /dev/mapper/luks-root /mnt/void/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/boot/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sdX1&gt; /mnt/void/boot/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Copy xbps signing keys:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/var/db/xbps/keys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-query -f xbps | grep &#039;/var/db/xbps/keys/&#039; | xargs -I {} cp {} /mnt/void/var/db/xbps/keys/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Instal minimal base system packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -S -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal</span></pre><p></div>
+</li>
+</ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2016-&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2016-2559&quot;} -->
+<h2 class="sectionedit5" id="chroot">Chroot</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Mount filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount --rbind /dev/ /mnt/void/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /sys/ /mnt/void/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /proc/ /mnt/void/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /run/ /mnt/void/run/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/run/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Copy <abbr title="Domain Name System">DNS</abbr> configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Chroot into the new installation:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/void/ /bin/sh</span>
+<span class="cli_prompt"># </span><span class="cli_command">. ./etc/profile</span>
+<span class="cli_prompt"># </span><span class="cli_command">export PS1=&#039;(chroot) # &#039;</span></pre><p></div>
+</li>
+</ol>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2560-3120&quot;} -->
+<h2 class="sectionedit6" id="full_system_installation">Full System Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install additional void subrepositories<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> and synchronize them:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps &amp;&amp; xbps-install -Su</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Partitioning tools:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install parted cryptsetup dosfstools e2fsprogs btrfs-progs</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> System tools:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xpbs-install kbd kmod eudev acpid ncurses less</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Administration tools:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install mdocml man-pages neovim git file tree ncdu psmisc htop btop neofetch inxi opendoas</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Shell tools:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Boot tools:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install efibootmgr grub-x86_64-efi mkinitcpio-encrypt linux linux-lts</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li"> Network tools:</div>
+<ol>
+<li class="level2"><div class="li"> Basic:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install iproute2 iputils dhcpcd unbound nftables mtr nmap</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Ethernet:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install ethtool</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Wi-Fi:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install wpa_supplicant iw [wifi-firmware] aircrack-ng</span></pre><p></div>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3121-4233&quot;} -->
+<h2 class="sectionedit7" id="swap_file">Swap File</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Allocate space on COW filesystem (such as btrfs):</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">truncate -s 0 /swap</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">chattr +C /swap</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">fallocate -l 4G /swap</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">chmod 0600 /swap</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Set file as swap area:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">mkswap /swap</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">swapon /swap</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4234-4529&quot;} -->
+<h2 class="sectionedit8" id="system_configuration">System Configuration</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;4530-4563&quot;} -->
+<h2 class="sectionedit9" id="finishing">Finishing</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;4564-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Void subrepositories: <a href="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories" class="urlextern" title="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories">https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories</a>.</div></div>
+</div>

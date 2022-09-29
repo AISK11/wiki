@@ -319,3 +319,6 @@ libcs
 seatd
 armv7
 armv6
+dcode
+eudev
+acpid

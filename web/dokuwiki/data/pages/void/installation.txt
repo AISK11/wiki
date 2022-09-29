@@ -77,3 +77,88 @@ cfdisk> q
 </cli>
 
 ===== Base System Installation =====
+
+  - Create mount points and mount filesystems:<cli>
+# mkdir -p /mnt/void/
+# mount /dev/mapper/luks-root /mnt/void/
+# mkdir -p /mnt/void/boot/
+# mount </dev/sdX1> /mnt/void/boot/
+</cli>
+  - Copy xbps signing keys:<cli>
+# mkdir -p /mnt/void/var/db/xbps/keys/
+# xbps-query -f xbps | grep '/var/db/xbps/keys/' | xargs -I {} cp {} /mnt/void/var/db/xbps/keys/
+</cli>
+  - Instal minimal base system packages:<cli>
+# xbps-install -S -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal
+</cli>
+
+===== Chroot =====
+
+  - Mount filesystems:<cli>
+# mount --rbind /dev/ /mnt/void/dev/
+# mount --rbind /sys/ /mnt/void/sys/
+# mount --rbind /proc/ /mnt/void/proc/
+# mount --rbind /run/ /mnt/void/run/
+# mount --make-rslave /mnt/void/dev/
+# mount --make-rslave /mnt/void/sys/
+# mount --make-rslave /mnt/void/proc/
+# mount --make-rslave /mnt/void/run/
+</cli>
+  - Copy DNS configuration:<cli>
+# cp /etc/resolv.conf /mnt/void/etc/
+</cli>
+  - Chroot into the new installation:<cli>
+# chroot /mnt/void/ /bin/sh
+# . ./etc/profile
+# export PS1='(chroot) # '
+</cli>
+
+----
+
+===== Full System Installation =====
+
+  - Install additional void subrepositories((Void subrepositories: https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories.)) and synchronize them:<cli>
+# xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
+# xbps-install -Su xbps && xbps-install -Su
+</cli>
+  - Partitioning tools:<cli>
+# xbps-install parted cryptsetup dosfstools e2fsprogs btrfs-progs
+</cli>
+  - System tools:<cli>
+# xpbs-install kbd kmod eudev acpid ncurses less
+</cli>
+  - Administration tools:<cli>
+# xbps-install mdocml man-pages neovim git file tree ncdu psmisc htop btop neofetch inxi opendoas
+</cli>
+  - Shell tools:<cli>
+# xbps-install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
+</cli>
+  - Boot tools:<cli>
+# xbps-install efibootmgr grub-x86_64-efi mkinitcpio-encrypt linux linux-lts
+</cli>
+  - Network tools:
+    - Basic:<cli>
+# xbps-install iproute2 iputils dhcpcd unbound nftables mtr nmap
+</cli>
+    - Ethernet:<cli>
+# xbps-install ethtool
+</cli>
+    - Wi-Fi:<cli>
+# xbps-install wpa_supplicant iw [wifi-firmware] aircrack-ng
+</cli>
+===== Swap File =====
+
+  - Allocate space on COW filesystem (such as btrfs):<cli>
+(chroot) # truncate -s 0 /swap
+(chroot) # chattr +C /swap
+(chroot) # fallocate -l 4G /swap
+(chroot) # chmod 0600 /swap
+</cli>
+  - Set file as swap area:<cli>
+(chroot) # mkswap /swap
+(chroot) # swapon /swap
+</cli>
+
+===== System Configuration =====
+
+===== Finishing =====
