@@ -1,0 +1,6 @@
+## Following packages will not be installed as dependencies, but may be
+## explicitly specified to be installed. Also if they are already installed,
+## they can be uninstalled.
+ignorepkg=nvi
+ignorepkg=dracut
+ignorepkg=sudo

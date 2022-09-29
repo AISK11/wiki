@@ -1,0 +1,9 @@
+voidlinux
+&nbsp;
+## AUTHOR:       AISK11
+## LOCATION:     /etc/hostname (0644 root:root)
+## DEPENDENCIES: runit-void
+## DESCRIPTION:  Machine name.
+&nbsp;
+## Valid hostname characters are a-z, 0-9, and not on start '-'s.
+## Only first line is read and used as machine name.

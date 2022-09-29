@@ -177,3 +177,5 @@ getsize64
 menuentry
 consuming
 symmetric
+blakclist
+replicate

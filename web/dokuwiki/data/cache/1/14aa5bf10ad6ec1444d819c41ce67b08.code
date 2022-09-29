@@ -1,0 +1,10 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/fstab (0644 root:root)
+## DEPENDENCIES: base-files
+## DESCRIPTION:  Filesytem table.
+&nbsp;
+## &lt;FILE-SYSTEM&gt; &lt;MOUNT-DIR&gt; &lt;TYPE&gt; &lt;OPTIONS&gt; &lt;DUMP&gt; &lt;PASS&gt;
+#efivarfs /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime 0 0
+LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
+LABEL=LUKS-ROOT     /     btrfs defaults,noatime            0 0
+/swap               none  swap  defaults                    0 0

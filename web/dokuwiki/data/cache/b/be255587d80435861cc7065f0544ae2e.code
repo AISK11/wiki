@@ -1,0 +1,8 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/hosts (0644 root:root)
+## DEPENDENCIES: base-files
+## DESCRIPTION:  Static local DNS table.
+&nbsp;
+## &lt;IP-ADDRESS&gt; [FQDN] &lt;HOSTNAME&gt;
+127.0.0.1 localhost
+::1 localhost

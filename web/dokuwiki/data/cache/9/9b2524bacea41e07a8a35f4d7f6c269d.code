@@ -1,0 +1,2 @@
+## &lt;MAPPER-NAME&gt; &lt;DEVICE&gt; &lt;PASSWORD-FILE&gt; &lt;OPTIONS&gt;
+luks-root UUID=00000000-0000-0000-0000-000000000002 none luks

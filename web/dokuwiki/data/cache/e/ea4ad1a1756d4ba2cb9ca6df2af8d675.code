@@ -1,0 +1,51 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/rc.conf (0644 root:root)
+## DEPENDENCIES: runit-void tzdata kbd
+## DESCRIPTION:  Void system configuration run by runit on stages 1 and 3.
+&nbsp;
+## Set hostname (recommended to set in '/etc/hostname' instead).
+#HOSTNAME='voidlinux'
+&nbsp;
+## Set RTC to use UTC or localtime (localtime is inconsistent for DST).
+HARDWARECLOCK='UTC'
+&nbsp;
+## Set timezone (recommended to set symlink '/etc/localtime' &gt;
+## '/usr/share/zoneinfo/&lt;TIMEZONE&gt;').
+#TIMEZONE=&quot;UTC&quot;
+&nbsp;
+## Set console keymap (keymaps are in '/usr/share/kbd/keymaps/').
+KEYMAP='us'
+&nbsp;
+## Set console font (fonts are in '/usr/share/kbd/consolefonts/').
+FONT='eurlatgr'
+#FONT_MAP=''
+#FONT_UNIMAP=''
+&nbsp;
+## Set amount of ttys.
+#TTYS=''
+&nbsp;
+## Set mode for cgroup mounts.
+## - hybrid:  mount cgroup v1 in '/sys/fs/cgroup/' and cgroup v2 under
+##            '/sys/fs/cgroup/unified/'.
+## - legacy:  mount cgroup v1 in '/sys/fs/cgroup/'.
+## - unified: mount cgroup v2 in '/sys/fs/cgroup/'.
+CGROUP_MODE='hybrid'
+&nbsp;
+## Set this to true only if you do not want seed files to actually credit the
+## RNG, for example if you plan to replicate this file system image and do not
+## have the wherewithal to first delete the contents of '/var/lib/seedrng'.
+SEEDRNG_SKIP_CREDIT='false'
+&lt;/cli&gt;
+&nbsp;
+==== Hostname &amp; Hosts ====
+&nbsp;
+  - Set hostname:&lt;file /etc/hostname&gt;
+voidlinux
+&nbsp;
+## AUTHOR:       AISK11
+## LOCATION:     /etc/hostname (0644 root:root)
+## DEPENDENCIES: runit-void
+## DESCRIPTION:  Machine name.
+&nbsp;
+## Valid hostname characters are a-z, 0-9, and not on start '-'s.
+## Only first line is read and used as machine name.

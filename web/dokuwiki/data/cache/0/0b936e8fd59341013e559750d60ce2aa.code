@@ -1,0 +1,2 @@
+## Blacklist pcspkr (system beeping).
+blacklist pcspkr

@@ -1,0 +1,7 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/modprobe.d/blacklist.conf (0644 root:root)
+## DEPENDENCIES: kmod
+## DESCRIPTION:  List of blacklisted kernel modules on startup.
+&nbsp;
+## Blacklist pcspkr (system beeping).
+blacklist pcspkr
