@@ -128,7 +128,7 @@ cfdisk> q
 # xpbs-install kbd kmod eudev acpid ncurses less
 </cli>
   - Administration tools:<cli>
-# xbps-install mdocml man-pages neovim git file tree ncdu psmisc htop btop neofetch inxi opendoas
+# xbps-install mdocml man-pages neovim git file tree ncdu psmisc htop btop neofetch inxi
 </cli>
   - Shell tools:<cli>
 # xbps-install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
@@ -138,13 +138,13 @@ cfdisk> q
 </cli>
   - Network tools:
     - Basic:<cli>
-# xbps-install iproute2 iputils dhcpcd unbound nftables mtr nmap
+# xbps-install iproute2 iputils dhcpcd unbound nftables
 </cli>
     - Ethernet:<cli>
 # xbps-install ethtool
 </cli>
     - Wi-Fi:<cli>
-# xbps-install wpa_supplicant iw [wifi-firmware] aircrack-ng
+# xbps-install wpa_supplicant iw [wifi-firmware]
 </cli>
 ===== Swap File =====
 
