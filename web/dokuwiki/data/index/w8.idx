@@ -249,3 +249,7 @@ aircrack
 requried
 actually
 hostonly
+diskpart
+networks
+loglevel
+postgres

@@ -186,3 +186,6 @@ void:network
 cybersecurity:crypto:ciphers
 void:post-installation
 void:bootloader
+windows:index
+windows:resources
+windows:password_recovery

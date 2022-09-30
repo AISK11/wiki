@@ -1,0 +1,67 @@
+
+<h1 class="sectionedit1" id="ssh">SSH</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SSH&quot;,&quot;hid&quot;:&quot;ssh&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-19&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install SSH:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install openssh-server</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;20-104&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Configure ssh server:<dl class="file">
+<dt><a href="http://localhost/_export/code/rpios/ssh?codeblock=0" title="Download Snippet" class="mediafile mf_">/etc/ssh/sshd_config</a></dt>
+<dd><pre class="code file text">## Listening service (IPv4/IPv6, ip address, port).
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+Port          22
+&nbsp;
+## Prevent hanging dead connections.
+LoginGraceTime      60
+TCPKeepAlive        no
+ClientAliveInterval 60
+ClientAliveCountMax 2
+MaxStartups         10:30:100
+MaxAuthTries        1
+&nbsp;
+## Gzip compression can bottleneck fast networks.
+Compression no
+&nbsp;
+## Permitted users.
+PermitRootLogin no
+AllowUsers      *
+&nbsp;
+## Password authentication method.
+PubkeyAuthentication            no
+PasswordAuthentication          yes
+PermitEmptyPasswords            no
+ChallengeResponseAuthentication no
+UsePAM                          no
+&nbsp;
+## Login messages and SSH banner.
+DebianBanner    no
+VersionAddendum none
+Banner          none
+PrintMotd       no
+PrintLastLog    no
+&nbsp;
+## Logging.
+SyslogFacility AUTH
+LogLevel       INFO</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Enable ssh daemon now and on startup:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl restart ssh ; systemctl enable ssh</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;105-&quot;} -->

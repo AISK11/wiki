@@ -340,3 +340,9 @@ plan
 skip
 fqdn
 made
+misc
+sshd
+dead
+gzip
+fast
+psql

@@ -159,3 +159,7 @@ void:pre-installation
 void:installation
 cybersecurity:crypto:ciphers
 void:bootloader
+windows:sidebar
+windows:password_recovery
+rpios:ssh
+rpios:sql

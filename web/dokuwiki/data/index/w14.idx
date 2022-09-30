@@ -10,3 +10,5 @@ administrative
 microcomputers
 denyinterfaces
 minimalization
+logingracetime
+syslogfacility

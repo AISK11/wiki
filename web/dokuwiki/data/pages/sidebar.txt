@@ -8,6 +8,8 @@
   * [[arch:index|Arch Linux (DISCONTINUED)]]
   * [[debian:index|Debian Linux (DISCONTINUED)]]
   * [[rpios:index|Raspberry Pi OS Linux]]
+  * [[windows:index|Windows]]
+
 
 **IT Areas**
   * [[:cybersecurity:index|Cybersecurity]]

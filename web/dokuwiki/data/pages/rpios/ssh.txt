@@ -1,0 +1,53 @@
+====== SSH ======
+
+===== Installation =====
+
+  - Install SSH:<cli>
+# apt install openssh-server
+</cli>
+
+===== Configuration =====
+
+  - Configure ssh server:<file text /etc/ssh/sshd_config>
+## Listening service (IPv4/IPv6, ip address, port).
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+Port          22
+
+## Prevent hanging dead connections.
+LoginGraceTime      60
+TCPKeepAlive        no
+ClientAliveInterval 60
+ClientAliveCountMax 2
+MaxStartups         10:30:100
+MaxAuthTries        1
+
+## Gzip compression can bottleneck fast networks.
+Compression no
+
+## Permitted users.
+PermitRootLogin no
+AllowUsers      *
+
+## Password authentication method.
+PubkeyAuthentication            no
+PasswordAuthentication          yes
+PermitEmptyPasswords            no
+ChallengeResponseAuthentication no
+UsePAM                          no
+
+## Login messages and SSH banner.
+DebianBanner    no
+VersionAddendum none
+Banner          none
+PrintMotd       no
+PrintLastLog    no
+
+## Logging.
+SyslogFacility AUTH
+LogLevel       INFO
+</file>
+  - Enable ssh daemon now and on startup:<cli>
+# systemctl restart ssh ; systemctl enable ssh
+</cli>

@@ -38,3 +38,7 @@ consolefonts
 confirmation
 expectations
 inconsistent
+tcpkeepalive
+maxauthtries
+debianbanner
+printlastlog

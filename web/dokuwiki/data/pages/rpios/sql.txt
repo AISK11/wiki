@@ -1,0 +1,15 @@
+====== SQL ======
+
+This is so WIP!
+
+===== Installation =====
+
+  - Install PostgreSQL((Debian PostgreSQL installation: https://wiki.debian.org/PostgreSql#Installation.)):<cli>
+# apt install postgresql postgresql-client
+</cli>
+
+===== Configuration =====
+  - Access PostgreSQL CLI:<cli>
+# su -c psql postgres
+</cli>
+  

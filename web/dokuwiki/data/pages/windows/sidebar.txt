@@ -1,0 +1,12 @@
+====== Windows ======
+
+----
+
+**About**
+  * [[windows:index|Index]]
+  * [[windows:resources|Resources]]
+
+**Misc**
+  * [[windows:password_recovery|Password Recovery]]
+
+----
