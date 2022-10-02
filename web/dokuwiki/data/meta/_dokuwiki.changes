@@ -262,3 +262,23 @@
 1664748149	127.0.0.1	E	void:installation	admin	[Base System Installation] 		-176
 1664750176	127.0.0.1	E	void:installation	admin	[Kernel Modules] 		0
 1664750246	127.0.0.1	E	void:installation	admin	[Bootloader] 		36
+1664750758	127.0.0.1	D	os:void:index	admin	removed		-356
+1664750776	127.0.0.1	D	os:void:amd64:installation_pc	admin	removed		-4615
+1664750785	127.0.0.1	D	os:void:amd64:installation_server	admin	removed		-8011
+1664750795	127.0.0.1	D	os:void:amd64:pre-installation	admin	removed		-1669
+1664750805	127.0.0.1	D	os:void:resources	admin	removed		-284
+1664750811	127.0.0.1	D	os:void:installation	admin	removed		-3073
+1664750817	127.0.0.1	D	os:void:sidebar	admin	removed		-320
+1664750905	127.0.0.1	E	sidebar	admin			-83
+1664751430	127.0.0.1	E	void:sidebar	admin			151
+1664751597	127.0.0.1	E	void:sidebar	admin			31
+1664751680	127.0.0.1	E	void:sidebar	admin			-2
+1664751904	127.0.0.1	E	void:sidebar	admin			57
+1664752014	127.0.0.1	C	void:firewall	admin	created		98
+1664752054	127.0.0.1	E	void:firewall	admin			69
+1664752159	127.0.0.1	E	void:firewall	admin			1489
+1664752188	127.0.0.1	E	void:firewall	admin	[Configuration] 		0
+1664752397	127.0.0.1	E	void:firewall	admin	[Configuration] 		145
+1664752577	127.0.0.1	E	void:firewall	admin			176
+1664752857	127.0.0.1	E	void:firewall	admin	[Configuration] 		35
+1664752918	127.0.0.1	E	void:firewall	admin			-23

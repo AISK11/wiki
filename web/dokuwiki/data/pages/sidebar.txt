@@ -4,9 +4,7 @@
 
 **Operating Systems**
   * [[void:index|Void Linux]]
-  * [[gentoo:index|Gentoo Linux]]
   * [[arch:index|Arch Linux (DISCONTINUED)]]
-  * [[debian:index|Debian Linux (DISCONTINUED)]]
   * [[rpios:index|Raspberry Pi OS Linux]]
   * [[windows:index|Windows]]
 

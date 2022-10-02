@@ -193,3 +193,10 @@ rpios:otrs
 void:runit
 void:xbps
 void:vkpurge
+void:interfaces
+void:mac
+void:dhcp
+void:dns
+void:vpn-tor-proxy
+void:firewall
+void:opendoas

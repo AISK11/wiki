@@ -1,0 +1,89 @@
+
+<h1 class="sectionedit1" id="firewall">Firewall</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Firewall&quot;,&quot;hid&quot;:&quot;firewall&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-24&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install firewall:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">nft -v || xbps-install nftables</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;25-119&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Set <a href="https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes" class="urlextern" title="https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes">nftables rules</a>:<dl class="file">
+<dt><a href="http://localhost/_export/code/void/firewall?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/nftables.conf</a></dt>
+<dd><pre class="code file text">#!/usr/bin/env nft -f
+&nbsp;
+## AUTHOR:       AISK11
+## LOCATION:     /etc/nftables.conf (0644 root:root)
+## DEPENDENCIES: nftables
+## DESCRIPTION:  Network firewall rules.
+&nbsp;
+## Remove all previous firewall settings.
+flush ruleset;
+&nbsp;
+## Services on local machine.
+define tcp_services = {22};
+define udp_services = {68,546};
+&nbsp;
+table inet fw {
+  chain input {
+    type filter hook input priority 0;
+    policy drop;
+&nbsp;
+    ## Accept all loopback traffic.
+    ip saddr {127.0.0.0/8} accept;
+    ip6 saddr {::1} accept;
+&nbsp;
+    ## Accept ICMP traffic except for requests.
+    icmp type != {8,13,15,17,30,42} accept;
+    icmpv6 type != {128,144} accept;
+&nbsp;
+    ## Accept responses from servers.
+    ct state {established,related} accept;
+&nbsp;
+    ## Accept requests from clients to specified TCP and UDP services.
+    tcp dport $tcp_services accept;
+    udp dport $udp_services accept;
+  }
+  chain forward {
+    type filter hook forward priority 0;
+    policy drop;
+  }
+  chain output {
+    type filter hook output priority 0;
+    policy accept;
+&nbsp;
+    ## Accept all loopback traffic.
+    ip daddr {127.0.0.0/8} accept;
+    ip6 daddr {::1} accept;
+&nbsp;
+    ## Do not disclose closed UDP service exceptions.
+    ## This permits only ICMP requests.
+    icmp type != {8,13,15,17,30,42} drop;
+    icmpv6 type != {128,144} drop;
+&nbsp;
+    ## Do not disclose closed TCP service exceptions.
+    ## WARNING! In rare cases may cause issues (see GRKERNSEC_BLACKHOLE).
+    tcp sport $tcp_services tcp flags {rst} drop;
+  }
+}</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Start firewall now and on startup:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">rm /etc/sv/nftables/down</span>
+<span class="cli_prompt"># </span><span class="cli_command">ln -s /etc/sv/nftables/ /var/service/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Verify firewall service and rules:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (s)tatus nftables</span>
+<span class="cli_prompt"># </span><span class="cli_command">nft list ruleset</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;120-&quot;} -->

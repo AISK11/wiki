@@ -25,23 +25,23 @@ Wiki
 
 
 
-Void Linux
-Void Linux
-Resources
-
-
-
-
-Installation
 
 
 
 
 
-Pre-Installation
 
-Installation (PC)
-Installation (server)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -166,3 +166,4 @@ SQL
 OTRS
 Runit
 XBPS
+Firewall

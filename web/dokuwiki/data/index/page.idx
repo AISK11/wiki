@@ -166,3 +166,4 @@ rpios:sql
 rpios:otrs
 void:runit
 void:xbps
+void:firewall

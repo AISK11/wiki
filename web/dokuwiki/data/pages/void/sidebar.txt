@@ -11,7 +11,16 @@
   * [[void:installation|Installation]]
   * [[void:post-installation|Post-Installation (WIP)]]
 
-**Configuration**
+**Network Configuration**
+  * [[void:firewall|Firewall]]
+  * [[void:interfaces|Interfaces]]
+  * [[void:mac|MAC]]
+  * [[void:dhcp|DHCP]]
+  * [[void:dns|DNS]]
+  * [[void:vpn-tor-proxy|VPN-Tor-Proxy]]
+
+**System Configuration**
+  * [[void:opendoas|OpenDoas]]
 
 **Cheat Sheets**
   * [[void:xbps|XBPS]]
