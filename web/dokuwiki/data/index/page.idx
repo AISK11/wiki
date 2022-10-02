@@ -165,3 +165,4 @@ rpios:ssh
 rpios:sql
 rpios:otrs
 void:runit
+void:xbps

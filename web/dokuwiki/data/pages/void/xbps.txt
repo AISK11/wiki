@@ -1,0 +1,81 @@
+====== XBPS ======
+
+===== Configuration =====
+
+  - Set ignored packages:<file text /etc/xbps.d/ignore.conf>
+## If package depends on ignored package, the dependecy is always satisfied
+## without installing ignored package.
+ignorepkg=nvi
+ignorepkg=sudo
+</file>
+
+===== Package Management =====
+
+==== Repositories ====
+
+  * List installed repositories:<cli>
+$ xbps-query -L
+</cli>
+  * Install additional repositories((Void subrepositories: https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories)) and synchronize them:<cli>
+# xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
+# xbps-install -Su xbps ; xbps-install -Su
+</cli>
+
+==== Install & Remove ====
+
+  * Update:<cli>
+# xbps-install -Su xbps
+# xbps-install -Su 
+# xbps-remove -o 
+# rm -rf /var/cache/xbps/*
+</cli>
+  * Install:<cli>
+# xbps-install <PACKAGE>
+</cli>
+  * Remove:<cli>
+# xbps-remove -Ro <PACAKGE>
+</cli>
+
+==== Mark ====
+
+  * As automatic (dependency) or manual (explicitly installed):<cli>
+# xbps-pkgdb -m <auto|manual> <PACKAGE>
+</cli>
+  * To hold (don't update) or unhold (update normally):<cli>
+# xbps-pkgdb -m <hold|unhold> <PACKAGE>
+</cli>
+
+==== Query ====
+
+  * Installed packages:
+    * All packages:<cli>
+$ xbps-query -l
+</cli>
+    * Manually (explicitly) installed packages:<cli>
+$ xbps-query -m
+</cli>
+    * Orphaned dependencies:<cli>
+$ xbps-query -O
+</cli>
+    * On hold packages:<cli>
+$ xbps-query -H
+</cli>
+    * Matching [remote] packages:<cli>
+$ xbps-query [-R] -s <WILDCARD-STRING>
+</cli>
+  * Package details:
+    * Detailed [remote] package info:<cli>
+$ xbps-query [-R] -S <PACKAGE>
+</cli>
+    * Files owned by [remote] package:<cli>
+$ xbps-query [-R] -f <PACKAGE>
+</cli>
+    * Name of package that owns [remote] file(s):<cli>
+$ xbps-query [-R] -o <WILDCARD-STRING>
+</cli>
+    * Dependencies of [remote] package:<cli>
+$ xbps-query [-R] -x <PACKAGE>
+</cli>
+    * Packages that given [remote] package is dependency for:<cli>
+$ xbps-query [-R] -X <PACKAGE>
+</cli>

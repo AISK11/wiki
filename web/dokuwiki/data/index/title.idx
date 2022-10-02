@@ -42,8 +42,8 @@ Pre-Installation
 
 Installation (PC)
 Installation (server)
-XBPS Package Manager
-Runit
+
+
 
 
 
@@ -165,3 +165,4 @@ SSH
 SQL
 OTRS
 Runit
+XBPS

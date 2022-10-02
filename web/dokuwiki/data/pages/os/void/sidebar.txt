@@ -11,8 +11,4 @@
   * [[os:void:amd64:installation_pc|Installation (PC)]]
   * [[os:void:amd64:installation_server|Installation (server)]]
 
-**Cheat Sheets**
-  * [[os:void:cheat_sheets:runit|Runit]]
-  * [[os:void:cheat_sheets:xbps_package_manager|XBPS Package Manager]]
-
 ----

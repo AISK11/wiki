@@ -1,16 +1,3 @@
-1664035728	127.0.0.1	E	sidebar	admin			22
-1664035894	127.0.0.1	E	sidebar	admin			-22
-1664037448	127.0.0.1	E	todo	admin			86
-1664037794	127.0.0.1	E	arch:installation	admin	[Root User] 		0
-1664040044	127.0.0.1	E	arch:pacman	admin	[Configuration] 		35
-1664040101	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		34
-1664040420	127.0.0.1	E	arch:sidebar	admin			-45
-1664075112	127.0.0.1	E	arch:gui	admin			42
-1664076520	127.0.0.1	E	arch:shell	admin			-26
-1664076530	127.0.0.1	E	arch:firewall	admin			-13
-1664076618	127.0.0.1	E	arch:gui	admin			39
-1664077544	127.0.0.1	E	arch:gui	admin			29
-1664078321	127.0.0.1	E	arch:gui	admin			78
 1664141125	127.0.0.1	E	sidebar	admin			34
 1664141139	127.0.0.1	C	gentoo:index	admin	created		740
 1664141165	127.0.0.1	C	gentoo:sidebar	admin	created		111
@@ -238,3 +225,34 @@
 1664682499	127.0.0.1	E	void:sidebar	admin			0
 1664682583	127.0.0.1	E	void:runit	admin			6
 1664682601	127.0.0.1	E	void:runit	admin	[Enable/Disable] 		3
+1664683699	127.0.0.1	E	void:sidebar	admin			29
+1664727756	127.0.0.1	C	void:xbps	admin	created		681
+1664728584	127.0.0.1	E	void:xbps	admin			30
+1664728609	127.0.0.1	E	void:xbps	admin			-65
+1664728781	127.0.0.1	E	void:xbps	admin			218
+1664728855	127.0.0.1	E	void:xbps	admin			26
+1664737935	127.0.0.1	E	void:xbps	admin			259
+1664738301	127.0.0.1	E	void:xbps	admin			0
+1664738844	127.0.0.1	E	void:xbps	admin			325
+1664739244	127.0.0.1	E	void:xbps	admin			473
+1664739290	127.0.0.1	E	void:sidebar	admin			-6
+1664739450	127.0.0.1	D	os:void:cheat_sheets:xbps_package_manager	admin	removed		-1696
+1664739458	127.0.0.1	D	os:void:cheat_sheets:runit	admin	removed		-113
+1664739472	127.0.0.1	E	os:void:sidebar	admin			-130
+1664741145	127.0.0.1	E	void:sidebar	admin			36
+1664743561	127.0.0.1	E	void:xbps	admin	[Install & Remove] 		17
+1664743580	127.0.0.1	E	void:xbps	admin	[Repositories] 		-1
+1664743643	127.0.0.1	E	void:sidebar	admin			-36
+1664743658	127.0.0.1	E	void:sidebar	admin			0
+1664744561	127.0.0.1	E	void:installation	admin	[XBPS] 		-62
+1664744640	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-133
+1664744833	127.0.0.1	E	void:installation	admin			372
+1664744995	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-9
+1664745013	127.0.0.1	E	void:xbps	admin	[Repositories] 		21
+1664746782	127.0.0.1	E	void:installation	admin	[Locales] 		-39
+1664746903	127.0.0.1	E	void:resources	admin			-268
+1664746997	127.0.0.1	E	void:index	admin	[Pros] 		0
+1664747033	127.0.0.1	E	void:index	admin	[Cons] 		-26
+1664747113	127.0.0.1	E	void:resources	admin			36
+1664747135	127.0.0.1	E	void:resources	admin			-33
+1664747145	127.0.0.1	E	void:sidebar	admin			-6

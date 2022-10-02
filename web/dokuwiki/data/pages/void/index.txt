@@ -7,13 +7,13 @@
   * Native non-SystemD init system (runit).
   * Text mode installation.
   * Binary based.
-  * Package manager (xbps).
+  * Package manager (XBPS).
   * Wide processor architecture support (amd64, i686, aarch64, armv7, armv6).
   * Stable.
   * Multiple C libraries support (glibc, musl).
 
 ===== Cons =====
 
-  * Small community, amount of packages & missing pentesting tools.
+  * Small community & amount of packages.
   * Kernel contains binary blobs.
   * Multiple kernel versions - not only 1 kernel name for each kernel type.

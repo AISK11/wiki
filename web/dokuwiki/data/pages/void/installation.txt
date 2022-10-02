@@ -15,7 +15,7 @@
   -  Disable system beeping (pcspkr module):<cli>
 # modprobe -r pcspkr
 </cli>
-  - Verify UEFI boot and mount efivars as read-only to protect UEFI NVRAM((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)):<cli>
+  - Verify UEFI boot:<cli>
 # ls -ld /sys/firmware/efi/
 </cli>
   - Verify internet connectivity. See [[void:network|Network]].
@@ -114,9 +114,9 @@ cfdisk> q
 
 ===== Full System Installation =====
 
-  - Install additional void subrepositories((Void subrepositories: https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories.)) and synchronize them:<cli>
+  - Install additional repositories((Void subrepositories: https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories.)) and synchronize them:<cli>
 (chroot) # xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
-(chroot) # xbps-install -Su xbps && xbps-install -Su
+(chroot) # xbps-install -Su xbps ; xbps-install -Su
 </cli>
   - Partitioning tools:<cli>
 (chroot) # xbps-install parted cryptsetup dosfstools e2fsprogs btrfs-progs
@@ -161,9 +161,8 @@ cfdisk> q
 ==== XBPS ====
 
   - Set ignored packages by XBPS:<file text /etc/xbps.d/ignore.conf>
-## Following packages will not be installed as dependencies, but may be
-## explicitly specified to be installed. Also if they are already installed,
-## they can be uninstalled.
+## If package depends on ignored package, the dependecy is always satisfied
+## without installing ignored package.
 ignorepkg=nvi
 ignorepkg=sudo
 </file>
@@ -202,9 +201,6 @@ blacklist pcspkr
 ## $(xbps-reconfigure -f glibc-locales)
 
 C.UTF-8 UTF-8
-...
-en_GB.UTF-8 UTF-8
-en_GB ISO-8859-1
 ...
 en_US.UTF-8 UTF-8
 en_US ISO-8859-1
@@ -261,6 +257,13 @@ CGROUP_MODE='hybrid'
 ## RNG, for example if you plan to replicate this file system image and do not
 ## have the wherewithal to first delete the contents of '/var/lib/seedrng'.
 SEEDRNG_SKIP_CREDIT='false'
+</file>
+  - Mount efivars as read-only to protect UEFI NVRAM((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)):<file bash /etc/runit/core-services/00-pseudofs.sh>
+...
+if [ -d /sys/firmware/efi/efivars ]; then
+    mountpoint -q /sys/firmware/efi/efivars || mount -o ro,nosuid,noexec,nodev -t efivarfs efivarfs /sys/firmware/efi/efivars
+fi
+...
 </file>
 
 ==== Hostname & Hosts ====

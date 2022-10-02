@@ -1,0 +1,4 @@
+## If package depends on ignored package, the dependecy is always satisfied
+## without installing ignored package.
+ignorepkg=nvi
+ignorepkg=sudo

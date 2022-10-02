@@ -257,3 +257,5 @@ executes
 runsvdir
 prevents
 starting
+normally
+pseudofs
