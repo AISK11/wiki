@@ -17,7 +17,6 @@
 </cli>
   - Verify UEFI boot and mount efivars as read-only to protect UEFI NVRAM((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)):<cli>
 # ls -ld /sys/firmware/efi/
-# mount -t efivarfs -o ro efivarfs /sys/firmware/efi/efivars/
 </cli>
   - Verify internet connectivity. See [[void:network|Network]].
   - Update live environment system and install additional packages:<cli>
@@ -216,20 +215,6 @@ en_US ISO-8859-1
 </cli>
   - Set system locales:<file text /etc/locale.conf>
 LANG="en_US.UTF-8"
-LANGUAGE="en_GB:C"
-LC_ADDRESS="en_US.UTF8"
-LC_COLLATE="en_US.UTF-8"
-LC_CTYPE="en_US.UTF-8"
-LC_IDENTIFICATION="en_US.UTF8"
-LC_MONETARY="en_US.UTF-8"
-LC_MESSAGES="en_US.UTF-8"
-LC_MEASUREMENT="en_GB.UTF8"
-LC_NAME="en_US.UTF8"
-LC_NUMERIC="en_US.UTF-8"
-LC_PAPER="en_GB.UTF-8"
-LC_TELEPHONE="en_US.UTF8"
-LC_TIME="en_GB.UTF-8"
-#LC_ALL=""
 </file>
 
 ==== Timezone ====
@@ -286,7 +271,7 @@ SEEDRNG_SKIP_CREDIT='false'
   - Set local DNS table:<file text /etc/hosts>
 ## <IP-ADDRESS> [FQDN] <HOSTNAME>
 127.0.0.1 localhost
-::1 localhost
+::1       localhost
 </file>
 
 ==== Login Messages ====
@@ -310,9 +295,7 @@ hostonly='yes'
 
   - Install bootloader to ESP:<cli>
 # grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
-# mount -o remount,rw /sys/firmware/efi/efivars/
 # grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
-# mount -o remount,ro /sys/firmware/efi/efivars/
 </cli>
   - Configure custom bootloader hook:<file bash /etc/grub.d/40_custom>
 #!/bin/sh

@@ -1,0 +1,15 @@
+====== OTRS ======
+
+===== Installation =====
+
+  - Install OTRS:<cli>
+# sudo apt install otrs2
+</cli>
+
+===== Configuration =====
+
+<cli>
+yes
+localhost
+otrs
+</cli>

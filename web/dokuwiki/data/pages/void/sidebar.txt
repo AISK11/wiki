@@ -4,7 +4,7 @@
 
 **About**
   * [[void:index|Index]]
-  * [[void:resources|Resources]]
+  * [[void:resources|Resources (WIP)]]
 
 **Installation (amd64)**
   * [[void:pre-installation|Pre-Installation]]
@@ -14,5 +14,6 @@
 **Configuration**
 
 **Cheat Sheets**
+  * [[void:runit|Runit]]
 
 ----

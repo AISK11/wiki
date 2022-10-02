@@ -69,3 +69,10 @@
 1664492098	127.0.0.1	E	void:installation	admin			-6
 1664495657	127.0.0.1	E	void:installation	admin	[Initramfs] 		0
 1664495687	127.0.0.1	E	void:installation	admin	[Bootloader] 		57
+1664639163	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		2
+1664639189	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		0
+1664641955	127.0.0.1	E	void:installation	admin	[Bootloader] 		4
+1664642143	127.0.0.1	E	void:installation	admin	[Hostname & Hosts] 		6
+1664642158	127.0.0.1	E	void:installation	admin	[Locales] 		-330
+1664646414	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-64
+1664646426	127.0.0.1	E	void:installation	admin	[Bootloader] 		-102

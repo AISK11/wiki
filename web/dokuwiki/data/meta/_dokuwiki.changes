@@ -1,41 +1,3 @@
-1663948387	127.0.0.1	E	rpios:index	admin			-1
-1663948407	127.0.0.1	E	rpios:resources	admin			-7
-1663948602	127.0.0.1	E	rpios:sidebar	admin			19
-1663948637	127.0.0.1	E	rpios:sidebar	admin			30
-1663948821	127.0.0.1	E	rpios:resources	admin			103
-1663948826	127.0.0.1	e	rpios:resources	admin			-2
-1663949397	127.0.0.1	C	rpios:network	admin	created		90
-1663949408	127.0.0.1	E	rpios:arm64_pre-installation	admin			-2
-1663949424	127.0.0.1	E	rpios:arm64_installation	admin			-4
-1663949786	127.0.0.1	E	rpios:network	admin			195
-1663950792	127.0.0.1	E	rpios:network	admin			29
-1663951551	127.0.0.1	E	rpios:network	admin			979
-1663951603	127.0.0.1	E	rpios:network	admin			1
-1663951781	127.0.0.1	E	rpios:network	admin	[Interfaces] 		100
-1663951980	127.0.0.1	E	rpios:network	admin			157
-1663951989	127.0.0.1	E	rpios:network	admin	[DHCP] 		5
-1663952878	127.0.0.1	E	rpios:network	admin			40
-1663953570	127.0.0.1	E	rpios:network	admin	[DHCP] 		203
-1663953584	127.0.0.1	E	rpios:network	admin	[DHCP] 		-203
-1663953592	127.0.0.1	E	rpios:network	admin			203
-1663953606	127.0.0.1	E	rpios:network	admin			-7
-1663953640	127.0.0.1	E	rpios:network	admin			-3
-1663953813	127.0.0.1	E	rpios:network	admin			-38
-1663953827	127.0.0.1	E	rpios:network	admin			2
-1663954198	127.0.0.1	E	rpios:network	admin	[DHCP] 		805
-1663954294	127.0.0.1	E	rpios:arm64_post-installation	admin			-657
-1663954703	127.0.0.1	E	rpios:sidebar	admin			58
-1663954814	127.0.0.1	E	rpios:arm64_post-installation	admin			95
-1663954867	127.0.0.1	E	rpios:arm64_post-installation	admin			5
-1663955074	127.0.0.1	C	rpios:firewall	admin	created		1986
-1663955332	127.0.0.1	D	rpios:firewall	admin	removed		-1986
-1663955343	127.0.0.1	E	rpios:sidebar	admin			-58
-1663955493	127.0.0.1	E	rpios:sidebar	admin			58
-1664029698	127.0.0.1	E	arch:installation	admin			41
-1664029709	127.0.0.1	E	arch:installation	admin	[Bootloader] 		1
-1664029737	127.0.0.1	E	arch:bootloader	admin			-13
-1664029929	127.0.0.1	E	arch:installation	admin			-1506
-1664029947	127.0.0.1	E	arch:installation	admin	[Minimal System Installation] 		-16
 1664035728	127.0.0.1	E	sidebar	admin			22
 1664035894	127.0.0.1	E	sidebar	admin			-22
 1664037448	127.0.0.1	E	todo	admin			86
@@ -209,3 +171,70 @@
 1664538011	127.0.0.1	E	rpios:ssh	admin	[Configuration] 		930
 1664538573	127.0.0.1	C	rpios:sql	admin	created		207
 1664538980	127.0.0.1	E	rpios:sql	admin			108
+1664541823	127.0.0.1	E	rpios:sidebar	admin			24
+1664541864	127.0.0.1	C	rpios:otrs	admin	created		127
+1664542357	127.0.0.1	E	rpios:otrs	admin			33
+1664639163	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		2
+1664639189	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		0
+1664641955	127.0.0.1	E	void:installation	admin	[Bootloader] 		4
+1664642143	127.0.0.1	E	void:installation	admin	[Hostname & Hosts] 		6
+1664642158	127.0.0.1	E	void:installation	admin	[Locales] 		-330
+1664642246	127.0.0.1	E	void:sidebar	admin			31
+1664642254	127.0.0.1	C	void:runit	admin	created		20
+1664642897	127.0.0.1	E	void:resources	admin			265
+1664642904	127.0.0.1	E	void:resources	admin			1
+1664642912	127.0.0.1	E	void:resources	admin			2
+1664643995	127.0.0.1	E	void:runit	admin			444
+1664644002	127.0.0.1	E	void:resources	admin	[Runit] 		-72
+1664646032	127.0.0.1	E	void:runit	admin			-408
+1664646414	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-64
+1664646426	127.0.0.1	E	void:installation	admin	[Bootloader] 		-102
+1664668798	127.0.0.1	E	void:runit	admin			90
+1664669356	127.0.0.1	E	void:runit	admin			82
+1664669371	127.0.0.1	E	void:runit	admin			14
+1664669391	127.0.0.1	E	void:runit	admin			-4
+1664669399	127.0.0.1	E	void:runit	admin			2
+1664672188	127.0.0.1	E	void:runit	admin			96
+1664672204	127.0.0.1	E	void:resources	admin			72
+1664672300	127.0.0.1	E	void:runit	admin			40
+1664672465	127.0.0.1	E	void:runit	admin			-40
+1664672494	127.0.0.1	E	void:runit	admin			8
+1664672863	127.0.0.1	E	void:runit	admin			92
+1664673272	127.0.0.1	E	void:runit	admin			144
+1664673641	127.0.0.1	E	void:runit	admin			67
+1664673666	127.0.0.1	E	void:runit	admin			-1
+1664673680	127.0.0.1	E	void:runit	admin			1
+1664673762	127.0.0.1	E	void:runit	admin			46
+1664673773	127.0.0.1	E	void:runit	admin	[Create Service] 		4
+1664674093	127.0.0.1	E	void:runit	admin			10
+1664675119	127.0.0.1	E	void:runit	admin			330
+1664675143	127.0.0.1	E	void:runit	admin			4
+1664680431	127.0.0.1	E	void:runit	admin			-402
+1664680735	127.0.0.1	E	void:runit	admin			117
+1664680747	127.0.0.1	E	void:runit	admin			3
+1664680768	127.0.0.1	E	void:runit	admin			0
+1664680780	127.0.0.1	E	void:runit	admin			0
+1664680811	127.0.0.1	E	void:runit	admin			11
+1664681089	127.0.0.1	E	void:runit	admin			331
+1664681188	127.0.0.1	E	void:runit	admin			-161
+1664681209	127.0.0.1	E	void:runit	admin	[Service Management] 		-1
+1664681335	127.0.0.1	E	void:runit	admin			136
+1664681380	127.0.0.1	E	void:runit	admin			29
+1664681509	127.0.0.1	E	void:runit	admin			80
+1664681532	127.0.0.1	E	void:runit	admin			0
+1664681598	127.0.0.1	E	void:runit	admin			-3
+1664681664	127.0.0.1	E	void:runit	admin			-2
+1664681676	127.0.0.1	E	void:runit	admin			-1
+1664681689	127.0.0.1	E	void:runit	admin			2
+1664681809	127.0.0.1	E	void:runit	admin			-24
+1664681828	127.0.0.1	E	void:resources	admin			0
+1664681839	127.0.0.1	E	void:runit	admin			224
+1664681865	127.0.0.1	E	void:runit	admin			9
+1664681950	127.0.0.1	E	void:runit	admin			58
+1664682035	127.0.0.1	E	void:runit	admin			-9
+1664682101	127.0.0.1	E	void:runit	admin			13
+1664682137	127.0.0.1	E	void:runit	admin			-31
+1664682373	127.0.0.1	E	void:runit	admin	[Enable/Disable] 		0
+1664682499	127.0.0.1	E	void:sidebar	admin			0
+1664682583	127.0.0.1	E	void:runit	admin			6
+1664682601	127.0.0.1	E	void:runit	admin	[Enable/Disable] 		3

@@ -8,3 +8,12 @@
 ===== Personal =====
 
   * [[https://github.com/aisk11/void|Void Linux GitHub (AISK11)]]
+
+===== Init Systems =====
+
+==== Runit ===
+
+  * [[http://smarden.org/runit|Runit]]
+  * [[https://docs.voidlinux.org/config/services/index.html|Void Docs]]
+  * [[https://wiki.artixlinux.org/Main/Runit|Artix Wiki]]
+  * [[https://wiki.gentoo.org/wiki/Runit|Gentoo Wiki]]

@@ -1,0 +1,2 @@
+<span class="co0">#!/bin/sh</span>
+<span class="kw3">exec</span> <span class="sy0">&lt;</span>COMMAND<span class="sy0">&gt;</span>

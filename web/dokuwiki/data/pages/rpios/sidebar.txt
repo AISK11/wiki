@@ -17,5 +17,6 @@
 **Services**
   * [[rpios:ssh|SSH]]
   * [[rpios:SQL|SQL]]
+  * [[rpios:otrs|OTRS]]
 
 ----
