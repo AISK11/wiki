@@ -1,4 +1,4 @@
-a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1664312325;s:8:"modified";i:1664747145;}s:7:"creator";s:5:"admin";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1664747145;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:12:"void:sidebar";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:-6;}s:11:"contributor";a:1:{s:5:"admin";s:5:"admin";}s:5:"title";s:10:"Void Linux";s:11:"description";a:2:{s:15:"tableofcontents";a:1:{i:0;a:4:{s:3:"hid";s:10:"void_linux";s:5:"title";s:10:"Void Linux";s:4:"type";s:2:"ul";s:5:"level";i:1;}}s:8:"abstract";s:210:"Void Linux
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1664312325;s:8:"modified";i:1664747437;}s:7:"creator";s:5:"admin";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1664747437;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:12:"void:sidebar";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:-6;}s:11:"contributor";a:1:{s:5:"admin";s:5:"admin";}s:5:"title";s:10:"Void Linux";s:11:"description";a:2:{s:15:"tableofcontents";a:1:{i:0;a:4:{s:3:"hid";s:10:"void_linux";s:5:"title";s:10:"Void Linux";s:4:"type";s:2:"ul";s:5:"level";i:1;}}s:8:"abstract";s:204:"Void Linux
 
 ----------
 
@@ -10,7 +10,7 @@ About
 Installation (amd64)
 
 	*  Pre-Installation
-	*  Installation (WIP)
+	*  Installation
 	*  Post-Installation (WIP)
 
 Configuration
@@ -20,4 +20,4 @@ Cheat Sheets
 	*  XBPS
 	*  Runit
 
-----------";}s:8:"relation";a:2:{s:10:"references";a:7:{s:10:"void:index";b:1;s:14:"void:resources";b:1;s:21:"void:pre-installation";b:1;s:17:"void:installation";b:1;s:22:"void:post-installation";b:0;s:9:"void:xbps";b:1;s:10:"void:runit";b:1;}s:10:"firstimage";s:0:"";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1664312325;s:8:"modified";i:1664747145;}s:7:"creator";s:5:"admin";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1664747145;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:12:"void:sidebar";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:-6;}s:11:"contributor";a:1:{s:5:"admin";s:5:"admin";}}}
+----------";}s:8:"relation";a:2:{s:10:"references";a:7:{s:10:"void:index";b:1;s:14:"void:resources";b:1;s:21:"void:pre-installation";b:1;s:17:"void:installation";b:1;s:22:"void:post-installation";b:0;s:9:"void:xbps";b:1;s:10:"void:runit";b:1;}s:10:"firstimage";s:0:"";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1664312325;s:8:"modified";i:1664747437;}s:7:"creator";s:5:"admin";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1664747437;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:12:"void:sidebar";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:-6;}s:11:"contributor";a:1:{s:5:"admin";s:5:"admin";}}}

@@ -81,3 +81,8 @@
 1664744833	127.0.0.1	E	void:installation	admin			372
 1664744995	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-9
 1664746782	127.0.0.1	E	void:installation	admin	[Locales] 		-39
+1664747523	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-1
+1664748054	127.0.0.1	E	void:installation	admin	[Base System Installation] 		0
+1664748149	127.0.0.1	E	void:installation	admin	[Base System Installation] 		-176
+1664750176	127.0.0.1	E	void:installation	admin	[Kernel Modules] 		0
+1664750246	127.0.0.1	E	void:installation	admin	[Bootloader] 		36

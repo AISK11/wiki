@@ -20,7 +20,7 @@
 </cli>
   - Verify internet connectivity. See [[void:network|Network]].
   - Update live environment system and install additional packages:<cli>
-# xbps-install -Su xbps && xbps-install -Su
+# xbps-install -Su xbps ; xbps-install -Su
 # xbps-install parted
 </cli>
 
@@ -82,10 +82,6 @@ cfdisk> q
 # mount /dev/mapper/luks-root /mnt/void/
 # mkdir -p /mnt/void/boot/
 # mount </dev/sdX1> /mnt/void/boot/
-</cli>
-  - Copy xbps signing keys:<cli>
-# mkdir -p /mnt/void/var/db/xbps/keys/
-# xbps-query -f xbps | grep '/var/db/xbps/keys/' | xargs -I {} cp {} /mnt/void/var/db/xbps/keys/
 </cli>
   - Instal minimal base system packages:<cli>
 # xbps-install -S -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal
@@ -186,7 +182,7 @@ LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
 
 ==== Kernel Modules ====
 
-  - Set blacklisted kernel modules on startup:<file text /etc/modprobe.d/blakclist.conf>
+  - Set blacklisted kernel modules on startup:<file text /etc/modprobe.d/blacklist.conf>
 ## Blacklist pcspkr (system beeping).
 blacklist pcspkr
 </file>
@@ -297,8 +293,8 @@ hostonly='yes'
 ==== Bootloader ====
 
   - Install bootloader to ESP:<cli>
-# grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
-# grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
+(chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
+(chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
 </cli>
   - Configure custom bootloader hook:<file bash /etc/grub.d/40_custom>
 #!/bin/sh
@@ -316,7 +312,7 @@ menuentry 'Shutdown Computer' --class shutdown {
 }
 </file>
   - Make bootloader script executable:<cli>
-# chmod 0755 /etc/grub.d/40_custom
+(chroot) # chmod 0755 /etc/grub.d/40_custom
 </cli>
   - Configure bootloader((GRUB2 config options: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html.)): <file text /etc/default/grub>
 ## Apply changes made to this file with:
@@ -361,7 +357,7 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 #GRUB_THEME=''
 </file>
   - Apply bootloader configuration changes:<cli>
-# grub-mkconfig -o /boot/grub/grub.cfg
+(chroot) # grub-mkconfig -o /boot/grub/grub.cfg
 </cli>
 
 ===== Finishing =====

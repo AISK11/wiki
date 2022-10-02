@@ -256,3 +256,9 @@
 1664747113	127.0.0.1	E	void:resources	admin			36
 1664747135	127.0.0.1	E	void:resources	admin			-33
 1664747145	127.0.0.1	E	void:sidebar	admin			-6
+1664747437	127.0.0.1	E	void:sidebar	admin			-6
+1664747523	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-1
+1664748054	127.0.0.1	E	void:installation	admin	[Base System Installation] 		0
+1664748149	127.0.0.1	E	void:installation	admin	[Base System Installation] 		-176
+1664750176	127.0.0.1	E	void:installation	admin	[Kernel Modules] 		0
+1664750246	127.0.0.1	E	void:installation	admin	[Bootloader] 		36
