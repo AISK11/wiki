@@ -1,0 +1,18 @@
+====== Interfaces ======
+
+===== Installation =====
+
+  * Install software:
+    * General:<cli>
+# xbps-install iproute2
+</cli>
+    * Ethernet tools:<cli>
+# xbps-install ethtool
+</cli>
+    * Wi-Fi tools:<cli>
+# xbps-install wpa_supplicant
+</cli>
+
+===== Configuration =====
+
+wicd? iwd? wpa_supplicant?

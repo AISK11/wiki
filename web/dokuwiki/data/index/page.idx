@@ -167,3 +167,5 @@ rpios:otrs
 void:runit
 void:xbps
 void:firewall
+void:interfaces
+void:opendoas

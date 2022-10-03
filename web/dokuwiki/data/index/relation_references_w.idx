@@ -200,3 +200,4 @@ void:dns
 void:vpn-tor-proxy
 void:firewall
 void:opendoas
+void:authentication

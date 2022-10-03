@@ -131,13 +131,13 @@ cfdisk> q
 </cli>
   - Network tools:
     - Basic:<cli>
-(chroot) # xbps-install iproute2 iputils dhcpcd unbound nftables
+(chroot) # xbps-install iproute2 dhcpcd unbound nftables
 </cli>
     - Ethernet:<cli>
 (chroot) # xbps-install ethtool
 </cli>
     - Wi-Fi:<cli>
-(chroot) # xbps-install wpa_supplicant iw [wifi-firmware]
+(chroot) # xbps-install wpa_supplicant iw
 </cli>
 ===== Swap File =====
 

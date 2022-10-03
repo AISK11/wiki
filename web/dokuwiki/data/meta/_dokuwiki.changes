@@ -282,3 +282,12 @@
 1664752577	127.0.0.1	E	void:firewall	admin			176
 1664752857	127.0.0.1	E	void:firewall	admin	[Configuration] 		35
 1664752918	127.0.0.1	E	void:firewall	admin			-23
+1664755795	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-8
+1664756266	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-16
+1664756374	127.0.0.1	C	void:interfaces	admin	created		270
+1664758352	127.0.0.1	E	void:sidebar	admin			31
+1664758784	127.0.0.1	C	void:opendoas	admin	created		112
+1664758793	127.0.0.1	D	void:opendoas	admin	removed		-112
+1664758828	127.0.0.1	E	void:sidebar	admin			23
+1664759025	127.0.0.1	E	void:interfaces	admin			11
+1664759037	127.0.0.1	E	void:interfaces	admin			16

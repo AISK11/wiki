@@ -86,3 +86,5 @@
 1664748149	127.0.0.1	E	void:installation	admin	[Base System Installation] 		-176
 1664750176	127.0.0.1	E	void:installation	admin	[Kernel Modules] 		0
 1664750246	127.0.0.1	E	void:installation	admin	[Bootloader] 		36
+1664755795	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-8
+1664756266	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-16

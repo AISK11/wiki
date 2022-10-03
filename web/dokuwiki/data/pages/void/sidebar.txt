@@ -9,18 +9,18 @@
 **Installation (amd64)**
   * [[void:pre-installation|Pre-Installation]]
   * [[void:installation|Installation]]
-  * [[void:post-installation|Post-Installation (WIP)]]
+  * [[void:post-installation|Post-Installation (TODO)]]
 
 **Network Configuration**
   * [[void:firewall|Firewall]]
-  * [[void:interfaces|Interfaces]]
-  * [[void:mac|MAC]]
-  * [[void:dhcp|DHCP]]
-  * [[void:dns|DNS]]
-  * [[void:vpn-tor-proxy|VPN-Tor-Proxy]]
+  * [[void:interfaces|Interfaces (WIP)]]
+  * [[void:mac|MAC (TODO)]]
+  * [[void:dhcp|DHCP (TODO)]]
+  * [[void:dns|DNS (TODO)]]
+  * [[void:vpn-tor-proxy|VPN-Tor-Proxy (TODO)]]
 
 **System Configuration**
-  * [[void:opendoas|OpenDoas]]
+  * [[void:authentication|Authentication (TODO)]]
 
 **Cheat Sheets**
   * [[void:xbps|XBPS]]
