@@ -5,9 +5,9 @@
   - Download live image((Tier 1 mirror: https://repo-default.voidlinux.org/live/current.)), checksums and checksum signature:<cli>
 $ RELEASE='<YYYYMMDD>'
 $ URL='https://repo-default.voidlinux.org/live/current'
+$ curl -LO "${URL}/void-live-x86_64-${RELEASE}.iso"
 $ curl -LO "${URL}/sha256sum.txt"
 $ curl -LO "${URL}/sha256sum.sig"
-$ curl -LO "${URL}/void-live-x86_64-${RELEASE}.iso"
 </cli>
   - Download public signing key((Void release keys: https://github.com/void-linux/void-packages/tree/master/srcpkgs/void-release-keys/files.)):<cli>
 $ URL='https://raw.githubusercontent.com/void-linux/void-packages/master/srcpkgs/void-release-keys/files'
@@ -22,7 +22,7 @@ $ sha256sum -c --ignore-missing sha256sum.txt "void-live-x86_64-${RELEASE}.iso"
 
   - Make sure the USB filesystem is **not** mounted!
   - Flash USB with disk image:<cli>
-# dd "if=void-live-x86_64-${RELEASE}.iso" of=</dev/sdX> bs=4M ; sync
+# dd "if=void-live-x86_64-${RELEASE}.iso" of=</dev/sdX> status=progress ; sync
 </cli>
 
 ===== USB Boot =====

@@ -1,11 +1,3 @@
-1664237490	127.0.0.1	E	sidebar	admin			0
-1664237792	127.0.0.1	E	gentoo:index	admin			-19
-1664238620	127.0.0.1	E	gentoo:resources	admin			77
-1664240808	127.0.0.1	E	gentoo:resources	admin			111
-1664242525	127.0.0.1	E	gentoo:resources	admin			-111
-1664242537	127.0.0.1	E	gentoo:sidebar	admin			-81
-1664242563	127.0.0.1	E	sidebar	admin			30
-1664242579	127.0.0.1	E	sidebar	admin			15
 1664312325	127.0.0.1	C	void:sidebar	admin	created		105
 1664313193	127.0.0.1	C	void:index	admin	created		659
 1664313302	127.0.0.1	E	void:index	admin			0
@@ -255,3 +247,4 @@
 1664902859	127.0.0.1	E	void:firewall	admin			87
 1664902877	127.0.0.1	E	void:firewall	admin	[USAGE] 		-8
 1664902904	127.0.0.1	E	void:firewall	admin			0
+1664917493	127.0.0.1	E	void:pre-installation	admin			10

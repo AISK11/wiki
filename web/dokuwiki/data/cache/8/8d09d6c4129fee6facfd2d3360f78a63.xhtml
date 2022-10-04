@@ -9,9 +9,9 @@
 <ol>
 <li class="level1"><div class="li"> Download live image<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>, checksums and checksum signature:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">RELEASE=&#039;&lt;YYYYMMDD&gt;&#039;</span>
 <span class="cli_prompt">$ </span><span class="cli_command">URL=&#039;https://repo-default.voidlinux.org/live/current&#039;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">curl -LO &quot;${URL}/void-live-x86_64-${RELEASE}.iso&quot;</span>
 <span class="cli_prompt">$ </span><span class="cli_command">curl -LO &quot;${URL}/sha256sum.txt&quot;</span>
-<span class="cli_prompt">$ </span><span class="cli_command">curl -LO &quot;${URL}/sha256sum.sig&quot;</span>
-<span class="cli_prompt">$ </span><span class="cli_command">curl -LO &quot;${URL}/void-live-x86_64-${RELEASE}.iso&quot;</span></pre><p></div>
+<span class="cli_prompt">$ </span><span class="cli_command">curl -LO &quot;${URL}/sha256sum.sig&quot;</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Download public signing key<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">URL=&#039;https://raw.githubusercontent.com/void-linux/void-packages/master/srcpkgs/void-release-keys/files&#039;</span>
 <span class="cli_prompt">$ </span><span class="cli_command">curl -LO &quot;${URL}/void-release-${RELEASE}.pub&quot;</span></pre><p></div>
@@ -28,12 +28,12 @@
 <ol>
 <li class="level1"><div class="li"> Make sure the USB filesystem is <strong>not</strong> mounted!</div>
 </li>
-<li class="level1"><div class="li"> Flash USB with disk image:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd &quot;if=void-live-x86_64-${RELEASE}.iso&quot; of=&lt;/dev/sdX&gt; bs=4M ; sync</span></pre><p></div>
+<li class="level1"><div class="li"> Flash USB with disk image:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd &quot;if=void-live-x86_64-${RELEASE}.iso&quot; of=&lt;/dev/sdX&gt; status=progress ; sync</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Flash USB&quot;,&quot;hid&quot;:&quot;flash_usb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;934-1122&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Flash USB&quot;,&quot;hid&quot;:&quot;flash_usb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;934-1132&quot;} -->
 <h2 class="sectionedit4" id="usb_boot">USB Boot</h2>
 <div class="level2">
 <ol>
@@ -46,7 +46,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;USB Boot&quot;,&quot;hid&quot;:&quot;usb_boot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1123-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;USB Boot&quot;,&quot;hid&quot;:&quot;usb_boot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1133-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Tier 1 mirror: <a href="https://repo-default.voidlinux.org/live/current" class="urlextern" title="https://repo-default.voidlinux.org/live/current">https://repo-default.voidlinux.org/live/current</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
