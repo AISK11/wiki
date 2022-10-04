@@ -74,3 +74,9 @@ table inet fw {
 # sv (s)tatus nftables
 # nft list ruleset
 </cli>
+
+===== Usage =====
+
+  * Turn up/down firewall:<cli>
+# sv <u|d> nftables
+</cli>

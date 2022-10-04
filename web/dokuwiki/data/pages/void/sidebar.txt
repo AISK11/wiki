@@ -8,7 +8,7 @@
 
 **Installation (amd64)**
   * [[void:pre-installation|Pre-Installation]]
-  * [[void:installation|Installation]]
+  * [[void:installation|Installation (WIP)]]
   * [[void:post-installation|Post-Installation (TODO)]]
 
 **Network Configuration**
@@ -21,6 +21,7 @@
 
 **System Configuration**
   * [[void:authentication|Authentication (TODO)]]
+  * [[void:sway|Sway (WIP)]]
 
 **Cheat Sheets**
   * [[void:xbps|XBPS]]

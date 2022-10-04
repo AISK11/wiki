@@ -4,7 +4,7 @@
 
   * Rolling release((Versions of various linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#General)).
   * Independent distribution.
-  * Native non-SystemD init system (runit).
+  * Native non-systemd init system (runit).
   * Text mode installation.
   * Binary based.
   * Package manager (XBPS).

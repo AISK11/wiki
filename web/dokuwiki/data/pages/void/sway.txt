@@ -1,0 +1,8 @@
+Sway
+
+<cli>
+# xbps-install sway
+</cli>
+
+
+https://www.reddit.com/r/voidlinux/comments/mor7n5/getting_libseat_errors_when_starting_sway/

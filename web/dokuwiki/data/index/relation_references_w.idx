@@ -201,3 +201,4 @@ void:vpn-tor-proxy
 void:firewall
 void:opendoas
 void:authentication
+void:sway
