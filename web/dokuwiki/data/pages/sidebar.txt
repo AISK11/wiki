@@ -3,14 +3,20 @@
 ----
 
 **Operating Systems**
-  * [[void:index|Void Linux]]
-  * [[arch:index|Arch Linux (DISCONTINUED)]]
-  * [[rpios:index|Raspberry Pi OS Linux]]
-  * [[windows:index|Windows]]
-
+  * [[:tumbleweed:index|OpenSUSE Tumbleweed]]
+  * [[:void:index|Void Linux (DISCONTINUED)]]
+  * [[:arch:index|Arch Linux (DISCONTINUED)]]
+  * [[:rpios:index|Raspberry Pi OS Linux]]
+  * [[:windows:index|Windows]]
 
 **IT Areas**
   * [[:cybersecurity:index|Cybersecurity]]
-  * [[dev:index|Development]]
+  * [[:dev:index|Development]]
+
+**Hardware**
+  * [[:hardware:index|Hardware]]
+
+**Misc**
+  * [[:minimalism:index|Minimalism]]
 
 ----

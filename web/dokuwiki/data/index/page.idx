@@ -170,3 +170,14 @@ void:firewall
 void:interfaces
 void:opendoas
 void:sway
+void:audio
+void:terminal_emulator
+hardware:index
+hardware:sidebar
+hardware:cpu
+minimalism
+minimalism:index
+minimalism:sidebar
+minimalism:resources
+void:fosscord
+void:discord

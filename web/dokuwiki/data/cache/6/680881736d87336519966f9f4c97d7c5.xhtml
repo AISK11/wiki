@@ -1,0 +1,71 @@
+
+<h1 class="sectionedit1" id="dhcp">DHCP</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;DHCP&quot;,&quot;hid&quot;:&quot;dhcp&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-20&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install dhcpcd if not already installed:: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dhcpcd --version || pacman -S --needed dhcpcd</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;21-154&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Configure dhcpcd <sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:<dl class="file">
+<dt><a href="http://localhost/_export/code/cybersecurity/dhcp?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/dhcpcd.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
+## DEPENDENCIES: core/dhcpcd
+## DESCRIPTION:  DHCP client settings.
+&nbsp;
+## Comma separated list of blocked interface patterns.
+#denyinterfaces *
+&nbsp;
+## Static configuration template (interace cannot be denied).
+#interface eth0
+#  static ip_address=10.0.0.100/24
+#  static routers=10.0.0.1
+&nbsp;
+## Group to manage dhcpcd via control socket.
+controlgroup network
+&nbsp;
+## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
+nohook resolv.conf
+&nbsp;
+## Don't check if obtained IPv4 address is taken by arp (increases speed) and
+## also disables IPv4LL (APIPA).
+noarp
+&nbsp;
+## Remove any pre-existing IPv4 addresses when adding new IPv4 address.
+noalias
+&nbsp;
+## Anonymous profile.
+anonymous</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Stop dhcpcd immediately and do not start it from init: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl stop dhcpcd &amp;&amp; systemctl disable dhcpcd</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;155-1210&quot;} -->
+<h2 class="sectionedit4" id="usage">Usage</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Lease IP address for specified interface:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dhcpcd &lt;INTERFACE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Release IP address for specified interface:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dhcpcd -k &lt;INTERFACE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;1211-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">DHCP options: <a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options" class="urlextern" title="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options">https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options</a>.</div></div>
+</div>

@@ -1,0 +1,14 @@
+====== CPU ======
+
+
+architecture (amd64, arm...)
+brands (intel, amd...) and models
+cores (physical and logical)
+clock rate
+cache
+endianness (little, big)
+instruction set (CISC, RISC)
+flags (virtualization)
+registers
+hyperthreading
+chipset?

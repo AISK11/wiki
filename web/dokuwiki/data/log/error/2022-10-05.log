@@ -1,0 +1,36 @@
+2022-10-05 14:24:57	/usr/share/nginx/dokuwiki/inc/PassHash.php(104)	Exception: This PHP installation has no ARGON2ID support
+  #0 /usr/share/nginx/dokuwiki/inc/auth.php(1240): dokuwiki\PassHash->verify_hash()
+  #1 /usr/share/nginx/dokuwiki/lib/plugins/authplain/auth.php(72): auth_verifyPassword()
+  #2 /usr/share/nginx/dokuwiki/inc/auth.php(226): auth_plugin_authplain->checkPass()
+  #3 /usr/share/nginx/dokuwiki/inc/auth.php(178): auth_login()
+  #4 [internal function]: auth_login_wrapper()
+  #5 /usr/share/nginx/dokuwiki/inc/Extension/Event.php(133): call_user_func_array()
+  #6 /usr/share/nginx/dokuwiki/inc/Extension/Event.php(199): dokuwiki\Extension\Event->trigger()
+  #7 /usr/share/nginx/dokuwiki/inc/auth.php(108): dokuwiki\Extension\Event::createAndTrigger()
+  #8 /usr/share/nginx/dokuwiki/inc/init.php(232): auth_setup()
+  #9 /usr/share/nginx/dokuwiki/doku.php(36): require_once('/usr/share/ngin...')
+  #10 {main}
+2022-10-05 14:52:24	/usr/share/nginx/dokuwiki/inc/PassHash.php(104)	Exception: This PHP installation has no ARGON2ID support
+  #0 /usr/share/nginx/dokuwiki/inc/auth.php(1240): dokuwiki\PassHash->verify_hash()
+  #1 /usr/share/nginx/dokuwiki/lib/plugins/authplain/auth.php(72): auth_verifyPassword()
+  #2 /usr/share/nginx/dokuwiki/inc/auth.php(226): auth_plugin_authplain->checkPass()
+  #3 /usr/share/nginx/dokuwiki/inc/auth.php(178): auth_login()
+  #4 [internal function]: auth_login_wrapper()
+  #5 /usr/share/nginx/dokuwiki/inc/Extension/Event.php(133): call_user_func_array()
+  #6 /usr/share/nginx/dokuwiki/inc/Extension/Event.php(199): dokuwiki\Extension\Event->trigger()
+  #7 /usr/share/nginx/dokuwiki/inc/auth.php(108): dokuwiki\Extension\Event::createAndTrigger()
+  #8 /usr/share/nginx/dokuwiki/inc/init.php(232): auth_setup()
+  #9 /usr/share/nginx/dokuwiki/doku.php(36): require_once('...')
+  #10 {main}
+2022-10-05 14:58:56	/usr/share/nginx/dokuwiki/inc/PassHash.php(104)	Exception: This PHP installation has no ARGON2ID support
+  #0 /usr/share/nginx/dokuwiki/inc/auth.php(1240): dokuwiki\PassHash->verify_hash()
+  #1 /usr/share/nginx/dokuwiki/lib/plugins/authplain/auth.php(72): auth_verifyPassword()
+  #2 /usr/share/nginx/dokuwiki/inc/auth.php(226): auth_plugin_authplain->checkPass()
+  #3 /usr/share/nginx/dokuwiki/inc/auth.php(178): auth_login()
+  #4 [internal function]: auth_login_wrapper()
+  #5 /usr/share/nginx/dokuwiki/inc/Extension/Event.php(133): call_user_func_array()
+  #6 /usr/share/nginx/dokuwiki/inc/Extension/Event.php(199): dokuwiki\Extension\Event->trigger()
+  #7 /usr/share/nginx/dokuwiki/inc/auth.php(108): dokuwiki\Extension\Event::createAndTrigger()
+  #8 /usr/share/nginx/dokuwiki/inc/init.php(232): auth_setup()
+  #9 /usr/share/nginx/dokuwiki/doku.php(36): require_once('...')
+  #10 {main}

@@ -142,3 +142,7 @@ bottleneck
 allowusers
 manageable
 mountpoint
+components
+endianness
+tumbleweed
+oclhashcat

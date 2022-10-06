@@ -1,0 +1,151 @@
+
+<h1 class="sectionedit1" id="network">Network</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Network&quot;,&quot;hid&quot;:&quot;network&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-117&quot;} -->
+<h2 class="sectionedit4" id="ethernet">Ethernet</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Ethernet&quot;,&quot;hid&quot;:&quot;ethernet&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;118-139&quot;} -->
+<h3 class="sectionedit5" id="usage">Usage</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Check ethernet status:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ethtool &lt;INTERFACE&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;140-218&quot;} -->
+<h2 class="sectionedit6" id="wi-fi">Wi-Fi</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Wi-Fi&quot;,&quot;hid&quot;:&quot;wi-fi&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;219-237&quot;} -->
+<h3 class="sectionedit7" id="configuration">Configuration</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Enable wlan:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">rfkill block all</span>
+<span class="cli_prompt"># </span><span class="cli_command">rfkill unblock wlan</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Configure Wi-Fi settings:<dl class="file">
+<dt><a href="http://localhost/_export/code/arch/network?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/wpa_supplicant/wpa_supplicant.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/wpa_supplicant/wpa_supplicant.conf (0600 root:root)
+## DEPENDENCIES: core/wpa_supplicant
+## DESCRIPTION:  Wi-Fi settings.
+&nbsp;
+## Basic settings (required by wpa_cli).
+ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=network
+update_config=1
+&nbsp;
+## Template - UNPROTECTED.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=NONE
+#  priority=0
+#}
+#
+## Template - WPA-PSK.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=WPA-PSK
+#  psk=&quot;&lt;PASSWORD&gt;&quot;
+#  priority=2
+#}
+#
+## Template - WPA-EAP EAP-PEAP.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=WPA-EAP
+#  identity=&quot;&lt;EMAIL@ADDRESS&gt;&quot;
+#  password=&quot;&lt;PASSWORD&gt;&quot;
+#  phase2=&quot;auth=MSCHAPV2&quot;
+#  priority=1
+#}</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Set Wi-Fi config file permissions:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chmod 0600 /etc/wpa_supplicant/wpa_supplicant.conf</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Stop wpa_supplicant immediately and do not start it from init: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl stop wpa_supplicant &amp;&amp; systemctl disable wpa_supplicant</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;238-1392&quot;} -->
+<h2 class="sectionedit8" id="dhcp">DHCP</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;DHCP&quot;,&quot;hid&quot;:&quot;dhcp&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:8,&quot;range&quot;:&quot;1393-1410&quot;} -->
+<h3 class="sectionedit9" id="configuration1">Configuration</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Configure dhcpcd <sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:<dl class="file">
+<dt><a href="http://localhost/_export/code/arch/network?codeblock=1" title="Download Snippet" class="mediafile mf_conf">/etc/dhcpcd.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
+## DEPENDENCIES: core/dhcpcd
+## DESCRIPTION:  DHCP client settings.
+&nbsp;
+## Comma separated list of blocked interface patterns.
+#denyinterfaces *
+&nbsp;
+## Static configuration template (interace cannot be denied).
+#interface eth0
+#  static ip_address=10.0.0.100/24
+#  static routers=10.0.0.1
+&nbsp;
+## Group to manage dhcpcd via control socket.
+controlgroup network
+&nbsp;
+## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
+nohook resolv.conf
+&nbsp;
+## Don't check if obtained IPv4 address is taken by arp (increases speed) and
+## also disables IPv4LL (APIPA).
+noarp
+&nbsp;
+## Remove any pre-existing IPv4 addresses when adding new IPv4 address.
+noalias
+&nbsp;
+## Anonymous profile.
+anonymous</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Stop dhcpcd immediately and do not start it from init: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl stop dhcpcd &amp;&amp; systemctl disable dhcpcd</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration1&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:9,&quot;range&quot;:&quot;1411-2464&quot;} -->
+<h3 class="sectionedit10" id="usage1">Usage</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Lease IP address for specified interface:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dhcpcd &lt;INTERFACE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Release IP address for specified interface:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dhcpcd -k &lt;INTERFACE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage1&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:10,&quot;range&quot;:&quot;2465-2645&quot;} -->
+<h2 class="sectionedit11" id="dns">DNS</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;DNS&quot;,&quot;hid&quot;:&quot;dns&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:11,&quot;range&quot;:&quot;2646-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">DHCP options: <a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options" class="urlextern" title="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options">https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Options</a>.</div></div>
+</div>

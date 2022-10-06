@@ -1,0 +1,29 @@
+====== Audio ======
+
+===== Installation =====
+
+  - Install audio stream server:<cli>
+# pipewire --version || xbps-install pipewire elogind
+</cli>
+  - Enable elogind-daemon:<cli>
+# rm /etc/sv/dbus/down
+# ln -s /etc/sv/dbus/ /var/service/
+# reboot
+</cli>
+
+===== Configuration =====
+
+  - Start audio when X server starts:<file text ~/.xinitrc>
+...
+## Start audio.
+pipewire 2> /dev/null &
+...
+</file>
+
+===== Usage =====
+
+===== Resources =====
+
+  * [[https://pipewire.org|Pipewire Project]]
+  * [[https://docs.pipewire.org|Pipewire Documentation]]
+  * [[https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home|Pipewire Wiki]]

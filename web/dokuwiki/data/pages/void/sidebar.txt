@@ -3,28 +3,34 @@
 ----
 
 **About**
-  * [[void:index|Index]]
-  * [[void:resources|Resources]]
+  * [[:void:index|Index]]
+  * [[:void:resources|Resources]]
 
 **Installation (amd64)**
-  * [[void:pre-installation|Pre-Installation]]
-  * [[void:installation|Installation (WIP)]]
-  * [[void:post-installation|Post-Installation (TODO)]]
+  * [[:void:pre-installation|Pre-Installation]]
+  * [[:void:installation|Installation (WIP)]]
+  * [[:void:post-installation|Post-Installation (TODO)]]
 
 **Network Configuration**
-  * [[void:firewall|Firewall]]
-  * [[void:interfaces|Interfaces (WIP)]]
-  * [[void:mac|MAC (TODO)]]
-  * [[void:dhcp|DHCP (TODO)]]
-  * [[void:dns|DNS (TODO)]]
-  * [[void:vpn-tor-proxy|VPN-Tor-Proxy (TODO)]]
+  * [[:void:firewall|Firewall]]
+  * [[:void:interfaces|Interfaces (WIP)]]
+  * [[:void:mac|MAC (TODO)]]
+  * [[:void:dhcp|DHCP (TODO)]]
+  * [[:void:dns|DNS (TODO)]]
+  * [[:void:vpn-tor-proxy|VPN-Tor-Proxy (TODO)]]
 
 **System Configuration**
-  * [[void:authentication|Authentication (TODO)]]
-  * [[void:sway|Sway (WIP)]]
+  * [[:void:shell|Shell]]
+  * [[:void:authentication|Authentication (TODO)]]
+  * [[:void:audio|Audio (WIP)]]
+  * [[:void:xorg|Xorg (WIP)]]
+  * [[:void:terminal_emulator|Terminal Emulator (WIP)]]
+
+**Software**
+  * [[:void:discord|Discord]]
 
 **Cheat Sheets**
-  * [[void:xbps|XBPS]]
-  * [[void:runit|Runit]]
+  * [[:void:xbps|XBPS (WIP)]]
+  * [[:void:runit|Runit]]
 
 ----

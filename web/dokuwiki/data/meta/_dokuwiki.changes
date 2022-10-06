@@ -1,55 +1,3 @@
-1664312325	127.0.0.1	C	void:sidebar	admin	created		105
-1664313193	127.0.0.1	C	void:index	admin	created		659
-1664313302	127.0.0.1	E	void:index	admin			0
-1664313384	127.0.0.1	C	void:resources	admin	created		176
-1664313516	127.0.0.1	E	void:index	admin			-2
-1664313584	127.0.0.1	E	void:sidebar	admin			112
-1664313997	127.0.0.1	C	void:pre-installation	admin	created		392
-1664314054	127.0.0.1	E	void:pre-installation	admin			313
-1664314097	127.0.0.1	E	void:pre-installation	admin			231
-1664314172	127.0.0.1	E	void:pre-installation	admin			615
-1664314248	127.0.0.1	E	void:pre-installation	admin			16
-1664314514	127.0.0.1	E	void:pre-installation	admin			-21
-1664314670	127.0.0.1	E	void:resources	admin			56
-1664315115	127.0.0.1	C	void:installation	admin	created		101
-1664315130	127.0.0.1	E	void:pre-installation	admin			-1
-1664315280	127.0.0.1	E	void:installation	admin			190
-1664315292	127.0.0.1	E	void:installation	admin			7
-1664315457	127.0.0.1	E	void:installation	admin			387
-1664318230	127.0.0.1	E	void:installation	admin			1215
-1664318490	127.0.0.1	E	void:installation	admin			113
-1664318759	127.0.0.1	E	void:installation	admin			39
-1664319437	127.0.0.1	E	void:sidebar	admin			6
-1664351545	127.0.0.1	E	void:index	admin			6
-1664366030	127.0.0.1	E	cybersecurity:sidebar	admin			46
-1664366756	127.0.0.1	C	cybersecurity:crypto:ciphers	admin	created		63
-1664400622	127.0.0.1	E	void:installation	admin			498
-1664400645	127.0.0.1	E	void:installation	admin	[Base System Installation] 		10
-1664400925	127.0.0.1	E	void:installation	admin			564
-1664401890	127.0.0.1	E	void:installation	admin			306
-1664401897	127.0.0.1	E	void:installation	admin	[Full System Installation] 		1
-1664402568	127.0.0.1	E	void:installation	admin			132
-1664404433	127.0.0.1	E	void:installation	admin			184
-1664404458	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-6
-1664404868	127.0.0.1	E	void:installation	admin			6
-1664405194	127.0.0.1	E	void:installation	admin	[Full System Installation] 		6
-1664405376	127.0.0.1	E	void:installation	admin			184
-1664405416	127.0.0.1	E	void:installation	admin			11
-1664405479	127.0.0.1	E	void:installation	admin			9
-1664411174	127.0.0.1	E	void:installation	admin			68
-1664411840	127.0.0.1	E	void:installation	admin			80
-1664414110	127.0.0.1	E	void:installation	admin	[Swap File] 		272
-1664414119	127.0.0.1	E	void:installation	admin			1
-1664414433	127.0.0.1	E	void:installation	admin			4
-1664414813	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-11
-1664415388	127.0.0.1	E	void:installation	admin	[Full System Installation] 		181
-1664415647	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-2
-1664415710	127.0.0.1	E	void:sidebar	admin			55
-1664415999	127.0.0.1	E	void:installation	admin			25
-1664416135	127.0.0.1	E	void:installation	admin			9
-1664416567	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-12
-1664416584	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-9
-1664416629	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-9
 1664458615	127.0.0.1	E	void:installation	admin			0
 1664461348	127.0.0.1	E	void:installation	admin			1739
 1664461641	127.0.0.1	E	void:installation	admin			1229
@@ -248,3 +196,90 @@
 1664902877	127.0.0.1	E	void:firewall	admin	[USAGE] 		-8
 1664902904	127.0.0.1	E	void:firewall	admin			0
 1664917493	127.0.0.1	E	void:pre-installation	admin			10
+1664939483	127.0.0.1	E	cybersecurity:crypto:hashing		external edit		0
+1664939483	127.0.0.1	E	void:sway		external edit		0
+1664939483	127.0.0.1	E	void:sidebar		external edit		0
+1664939483	127.0.0.1	E	void:xbps		external edit		0
+1664939483	127.0.0.1	E	void:installation		external edit		0
+1664939483	127.0.0.1	E	sidebar		external edit		0
+1664939483	127.0.0.1	E	void:index		external edit		0
+1664983166	127.0.0.1	E	cybersecurity:crypto:hashing	admin			10
+1664983233	127.0.0.1	D	void:sway	admin	removed		-134
+1664983353	127.0.0.1	E	void:sidebar	admin			14
+1664983539	127.0.0.1	C	void:audio	admin	created		137
+1664984081	127.0.0.1	E	void:audio	admin			12
+1664986031	127.0.0.1	E	void:sidebar	admin			55
+1664988023	127.0.0.1	C	void:terminal_emulator	admin	created		157
+1664988271	127.0.0.1	E	void:terminal_emulator	admin			73
+1664988303	127.0.0.1	E	void:terminal_emulator	admin			31
+1664988428	127.0.0.1	E	void:terminal_emulator	admin			32
+1664990127	127.0.0.1	E	void:xbps	admin			1
+1664990193	127.0.0.1	E	void:xbps	admin			31
+1664990478	127.0.0.1	E	void:sidebar	admin			0
+1664990859	127.0.0.1	E	void:audio	admin			26
+1664991848	127.0.0.1	E	void:audio	admin			90
+1664992267	127.0.0.1	E	void:audio	admin			-43
+1664992431	127.0.0.1	E	void:audio	admin	[Installation] 		-1
+1664993058	127.0.0.1	E	void:audio	admin			17
+1664993201	127.0.0.1	E	void:audio	admin			66
+1664993233	127.0.0.1	E	void:installation	admin			-6
+1664993894	127.0.0.1	E	void:audio	admin			69
+1664993900	127.0.0.1	E	void:audio	admin			1
+1664994144	127.0.0.1	E	void:audio	admin	[Configuration] 		-7
+1664995194	127.0.0.1	E	void:audio	admin	[Configuration] 		16
+1664995263	127.0.0.1	E	void:audio	admin			27
+1664995287	127.0.0.1	E	void:audio	admin			-8
+1664995379	127.0.0.1	E	void:audio	admin	[Configuration] 		13
+1664995555	127.0.0.1	E	void:audio	admin			155
+1664995564	127.0.0.1	E	void:audio	admin			-1
+1664995599	127.0.0.1	E	void:audio	admin			57
+1665000842	127.0.0.1	E	sidebar	admin			14
+1665000879	127.0.0.1	E	sidebar	admin			16
+1665000918	127.0.0.1	E	sidebar	admin			35
+1665000992	127.0.0.1	C	hardware:index	admin	created		73
+1665001000	127.0.0.1	D	hardware:index	admin	removed		-73
+1665001010	127.0.0.1	C	hardware:sidebar	admin	created		74
+1665001076	127.0.0.1	E	hardware:sidebar	admin			82
+1665001143	127.0.0.1	C	hardware:index	admin	created		23
+1665001170	127.0.0.1	C	hardware:cpu	admin	created		18
+1665001326	127.0.0.1	E	hardware:cpu	admin			88
+1665001338	127.0.0.1	E	hardware:cpu	admin			11
+1665001352	127.0.0.1	E	hardware:cpu	admin			17
+1665001379	127.0.0.1	E	hardware:cpu	admin			43
+1665001404	127.0.0.1	E	hardware:cpu	admin			11
+1665001420	127.0.0.1	E	hardware:cpu	admin			17
+1665001775	127.0.0.1	E	hardware:cpu	admin			19
+1665001796	127.0.0.1	E	hardware:cpu	admin			15
+1665002227	127.0.0.1	E	hardware:sidebar	admin			231
+1665002538	127.0.0.1	E	sidebar	admin			27
+1665002624	127.0.0.1	C	minimalism	admin	created		140
+1665002648	127.0.0.1	E	minimalism	admin			26
+1665002704	127.0.0.1	D	minimalism	admin	removed		-166
+1665002710	127.0.0.1	E	sidebar	admin			6
+1665002721	127.0.0.1	C	minimalism:index	admin	created		166
+1665002774	127.0.0.1	C	minimalism:sidebar	admin	created		119
+1665002789	127.0.0.1	E	minimalism:index	admin			-140
+1665002825	127.0.0.1	C	minimalism:resources	admin	created		143
+1665003540	127.0.0.1	E	minimalism:resources	admin			71
+1665004814	127.0.0.1	E	minimalism:resources	admin			16
+1665005850	127.0.0.1	E	void:index	admin			7
+1665005859	127.0.0.1	E	void:index	admin	[Pros] 		1
+1665006240	127.0.0.1	E	sidebar	admin			0
+1665006275	127.0.0.1	E	void:sidebar	admin			16
+1665006713	127.0.0.1	E	void:sidebar	admin			30
+1665006951	127.0.0.1	E	void:sidebar	admin			-6
+1665007132	127.0.0.1	E	void:sidebar	admin			26
+1665008391	127.0.0.1	E	void:sidebar	admin			46
+1665009073	127.0.0.1	C	void:fosscord	admin	created		273
+1665009280	127.0.0.1	D	void:fosscord	admin	removed		-273
+1665009291	127.0.0.1	E	void:sidebar	admin			-46
+1665009673	127.0.0.1	E	void:sidebar	admin			44
+1665009773	127.0.0.1	C	void:discord	admin	created		163
+1665009812	127.0.0.1	E	void:discord	admin	[Installation] 		2
+1665009901	127.0.0.1	E	void:discord	admin			17
+1665010433	127.0.0.1	E	void:discord	admin			172
+1665010536	127.0.0.1	E	void:discord	admin			48
+1665010548	127.0.0.1	E	void:discord	admin			-2
+1665010590	127.0.0.1	E	void:discord	admin			38
+1665014992	127.0.0.1	E	sidebar	admin			61
+1665044064	127.0.0.1	E	cybersecurity:crypto:hashing	admin			63

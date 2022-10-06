@@ -26,7 +26,7 @@ $ xbps-query -L
   * Update:<cli>
 # xbps-install -Su xbps
 # xbps-install -Su 
-# xbps-remove -o 
+# xbps-remove -Ro 
 # rm -rf /var/cache/xbps/*
 </cli>
   * Install:<cli>
@@ -78,4 +78,8 @@ $ xbps-query [-R] -x <PACKAGE>
 </cli>
     * Packages that given [remote] package is dependency for:<cli>
 $ xbps-query [-R] -X <PACKAGE>
+</cli>
+
+<cli>
+# vkpurge rm all
 </cli>

@@ -1,0 +1,19 @@
+====== Hardware ======
+
+----
+
+
+**About**
+  * [[:hardware:index|Index]]
+  * [[:hardware:resources|Resources]]
+
+**Components**
+  * [[:hardware:cpu|CPU (TODO)]]
+  * [[:hardware:ram|RAM (TODO)]]
+  * [[:hardware:motherboard|Motherboard (TODO)]]
+  * [[:hardware:storage|Storage (TODO)]]
+  * [[:hardware:psu|PSU (TODO)]]
+  * [[:hardware:case|Case (TODO)]]
+  * [[:hardware:gpu|GPU (TODO)]]
+
+----

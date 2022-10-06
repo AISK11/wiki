@@ -1,0 +1,19 @@
+====== Discord ======
+
+===== Installation =====
+
+  - Create home directories:<cli>
+$ mkdir -p ~/bin/ ~/opt/
+</cli>
+  - Set up discord tarball:<cli>
+$ curl -L 'https://discord.com/api/download?platform=linux&format=tar.gz' > ~/opt/discord.tar.gz
+$ tar xvzf ~/opt/discord.tar.gz
+$ rm ~/opt/discord.tar.gz
+$ ln -sf ~/opt/Discord/Discord ~/bin/discord
+</cli>
+
+===== Usage =====
+
+  - Run from command line:<cli>
+$ ~/bin/discord & disown
+</cli>

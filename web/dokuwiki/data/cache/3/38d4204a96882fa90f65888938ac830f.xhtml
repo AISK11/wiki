@@ -1,0 +1,62 @@
+
+<h1 class="sectionedit1" id="mac_address">MAC Address</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;MAC Address&quot;,&quot;hid&quot;:&quot;mac_address&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-27&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install macchanger if not already installed::</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">macchanger -V || pacman -S --needed macchanger</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;28-165&quot;} -->
+<h2 class="sectionedit3" id="usage">Usage</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;166-184&quot;} -->
+<h3 class="sectionedit4" id="find">Find</h3>
+<div class="level3">
+<ol>
+<li class="level1 node"><div class="li"> Find hardware vendor of MAC address:</div>
+<ul>
+<li class="level2"><div class="li"> Locally:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">macchanger -l | grep -i &#039;&lt;XX:XX:XX&gt;&#039;</span></pre><p></div>
+</li>
+<li class="level2 node"><div class="li"> Via web:</div>
+<ul>
+<li class="level3"><div class="li"> <a href="https://macvendors.com" class="urlextern" title="https://macvendors.com">https://macvendors.com</a>.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Find&quot;,&quot;hid&quot;:&quot;find&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;185-382&quot;} -->
+<h3 class="sectionedit5" id="set">Set</h3>
+<div class="level3">
+<ol>
+<li class="level1 node"><div class="li"> Set MAC address:</div>
+<ol>
+<li class="level2"><div class="li"> Any random vendor:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; down</span>
+<span class="cli_prompt"># </span><span class="cli_command">macchanger -A &lt;INTERFACE&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; up</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Custom:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; down</span>
+<span class="cli_prompt"># </span><span class="cli_command">macchanger -m &lt;XX:XX:XX:XX:XX:XX&gt; &lt;INTERFACE&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; up</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Permanent (original):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; down</span>
+<span class="cli_prompt"># </span><span class="cli_command">macchanger -p &lt;INTERFACE&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">ip l set &lt;INTERFACE&gt; up</span></pre><p></div>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Set&quot;,&quot;hid&quot;:&quot;set&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;383-&quot;} -->

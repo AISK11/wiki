@@ -1,0 +1,20 @@
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1665001010;s:8:"modified";i:1665002227;}s:7:"creator";s:5:"admin";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1665002227;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:16:"hardware:sidebar";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:231;}s:11:"contributor";a:1:{s:5:"admin";s:5:"admin";}s:5:"title";s:8:"Hardware";s:11:"description";a:2:{s:15:"tableofcontents";a:1:{i:0;a:4:{s:3:"hid";s:8:"hardware";s:5:"title";s:8:"Hardware";s:4:"type";s:2:"ul";s:5:"level";i:1;}}s:8:"abstract";s:195:"Hardware
+
+----------
+
+About
+
+	*  Index
+	*  Resources
+
+Components
+
+	*  CPU (TODO)
+	*  RAM (TODO)
+	*  Motherboard (TODO)
+	*  Storage (TODO)
+	*  PSU (TODO)
+	*  Case (TODO)
+	*  GPU (TODO)
+
+----------";}s:8:"relation";a:2:{s:10:"references";a:9:{s:14:"hardware:index";b:1;s:18:"hardware:resources";b:0;s:12:"hardware:cpu";b:1;s:12:"hardware:ram";b:0;s:20:"hardware:motherboard";b:0;s:16:"hardware:storage";b:0;s:12:"hardware:psu";b:0;s:13:"hardware:case";b:0;s:12:"hardware:gpu";b:0;}s:10:"firstimage";s:0:"";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1665001010;s:8:"modified";i:1665002227;}s:7:"creator";s:5:"admin";s:4:"user";s:5:"admin";s:11:"last_change";a:8:{s:4:"date";i:1665002227;s:2:"ip";s:9:"127.0.0.1";s:4:"type";s:1:"E";s:2:"id";s:16:"hardware:sidebar";s:4:"user";s:5:"admin";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:231;}s:11:"contributor";a:1:{s:5:"admin";s:5:"admin";}}}

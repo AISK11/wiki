@@ -118,7 +118,7 @@ cfdisk> q
 (chroot) # xbps-install parted cryptsetup dosfstools e2fsprogs btrfs-progs
 </cli>
   - System tools:<cli>
-(chroot) # xpbs-install kbd kmod eudev acpid ncurses less
+(chroot) # xpbs-install kbd kmod eudev ncurses less
 </cli>
   - Administration tools:<cli>
 (chroot) # xbps-install mdocml man-pages neovim git file tree ncdu psmisc htop btop neofetch inxi

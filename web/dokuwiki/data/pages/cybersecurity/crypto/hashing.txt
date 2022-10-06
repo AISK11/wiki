@@ -36,3 +36,6 @@ $ hashcat -I
 $ hashcat -a 0 [-D <DEVICE-NUMBER>] -m <HASH-ID-NUMBER> '<HASH>' <DICTIONARY> [-o <OUTPUT-FILE>]
 </cli>
   - Rainbow table from cracked passwords: ''~/.local/share/hashcat/hashcat.potfile''
+
+mkpasswd
+https://hashcat.net/wiki/doku.php?id=oclhashcat#default_values

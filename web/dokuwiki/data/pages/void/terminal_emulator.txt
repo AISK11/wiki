@@ -1,0 +1,13 @@
+====== Terminal Emulator ======
+
+===== Installation =====
+
+  - Install terminal emulator:<cli>
+# xbps-install mlterm ?xrdb?
+</cli>
+
+
+https://lwn.net/Articles/749992/
+https://lwn.net/Articles/751763/
+https://wiki.archlinux.org/title/List_of_applications#Terminal_emulators
+https://terminal.sexy
