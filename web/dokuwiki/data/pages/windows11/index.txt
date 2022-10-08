@@ -1,0 +1,15 @@
+====== Windows 11 ======
+
+===== Pros =====
+
+  * Proprietary programs (Adobe products, Microsoft products...) and kernel level anti-cheat games (Valorant, Genshin Impact...) works.
+  * Wider driver support.
+
+===== Cons =====
+
+  * Proprietary.
+  * Spyware.
+  * Slow, resource-heavy.
+  * Installation procedure (forcing Microsoft account, opt-out of additional spyware).
+  * Powershell syntax.
+  * Point release.

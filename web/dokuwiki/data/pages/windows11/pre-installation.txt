@@ -1,0 +1,21 @@
+====== Pre-Installation ======
+
+===== Download =====
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+  - Navigate to Microsoft's [[https://www.microsoft.com/software-download/windows11|Windows 11 download]] site.
+
+===== Flash USB =====
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== USB Boot =====
+
+  - Reboot the system and during the POST phase press //BIOS key//((List of //POST keys// according to vendor: http://www.disk-image.com/faq-bootmenu.htm.)) to boot into UEFI.
+  - Make sure that Secure Boot is disabled and reboot.
+  - On next POST phase, press //Boot Menu key//((List of //POST keys// according to vendor: http://www.disk-image.com/faq-bootmenu.htm.)) and select //(UEFI) USB// entry.

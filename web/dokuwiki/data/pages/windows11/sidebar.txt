@@ -1,0 +1,13 @@
+====== Windows 11 ======
+
+----
+
+**About**
+  * [[:windows11:index|Index]]
+  * [[:windows11:resources|Resources]]
+
+**Installation**
+  * [[:windows11:pre-installation|Pre-Installation]]
+  * [[:windows11:installation|Installation]]
+
+----

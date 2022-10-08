@@ -3,11 +3,12 @@
 ----
 
 **Operating Systems**
-  * [[:tumbleweed:index|OpenSUSE Tumbleweed]]
+  * [[:gentoo:index|Gentoo Linux]]
+  * [[:windows11:index|Windows 11]]
+
   * [[:void:index|Void Linux (DISCONTINUED)]]
   * [[:arch:index|Arch Linux (DISCONTINUED)]]
   * [[:rpios:index|Raspberry Pi OS Linux]]
-  * [[:windows:index|Windows]]
 
 **IT Areas**
   * [[:cybersecurity:index|Cybersecurity]]

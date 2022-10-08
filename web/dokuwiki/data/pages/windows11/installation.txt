@@ -1,0 +1,27 @@
+====== Installation ======
+
+===== Minimum Requirements =====
+
+  - Make sure, that system fulfills minimum requirements((Windows 11 minimum requirements: https://www.microsoft.com/en-us/windows/windows-11-specifications.)):
+
+^ Component ^ Value          ^
+| CPU       | 2 cores (1GHz) |
+| RAM       | 4 GB           |
+| Storage   | 64 GB          |
+| Firmware  | UEFI           |
+
+===== Installation =====
+
+  - Windows Setup:
+    - Language to install: //English (United States)//.
+    - Time and currency format: //English (United States)//.
+    - Keyboard or input method: //US//.
+  - Fix incompatibility issues:
+    - Press <kbd>Shift</kbd> + <kbd>F10</kbd> to open //CMD//.
+    - Access //Registry Editor//:<cli>
+> regedit
+</cli>
+    - Set up registries:{{:windows11:win11_installation_registries.png?nolink|}}
+    - Close //Registry Editor// and //CMD// and click on //Install now//.
+  - Click on: //I don't have a product key// => //Windows 11 Pro for Workstations//((Windows 11 versions: https://liliputing.com/differences-between-windows-11-home-pro-enterprise-and-education.)).
+  - Continue with the installation wizard.

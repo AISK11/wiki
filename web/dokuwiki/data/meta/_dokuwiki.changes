@@ -283,3 +283,54 @@
 1665010590	127.0.0.1	E	void:discord	admin			38
 1665014992	127.0.0.1	E	sidebar	admin			61
 1665044064	127.0.0.1	E	cybersecurity:crypto:hashing	admin			63
+1665239339	127.0.0.1	E	sidebar		external edit		0
+1665240225	127.0.0.1	E	sidebar	admin			26
+1665239339	127.0.0.1	E	windows:password_recovery		external edit		0
+1665240232	127.0.0.1	D	windows:password_recovery	admin	removed		-99
+1665239339	127.0.0.1	E	windows:sidebar		external edit		0
+1665240239	127.0.0.1	D	windows:sidebar	admin	removed		-170
+1665240303	127.0.0.1	E	sidebar	admin			-31
+1665240352	127.0.0.1	C	windows11:index	admin	created		24
+1665240434	127.0.0.1	C	windows11:sidebar	admin	created		224
+1665240479	127.0.0.1	C	windows:pre-installation	admin	created		97
+1665240520	127.0.0.1	E	windows11:sidebar	admin			9
+1665240553	127.0.0.1	C	windows11:resources	admin	created		24
+1665240569	127.0.0.1	D	windows:pre-installation	admin	removed		-97
+1665240575	127.0.0.1	C	windows11:pre-installation	admin	created		97
+1665241148	127.0.0.1	E	windows11:pre-installation	admin			302
+1665241164	127.0.0.1	E	windows11:pre-installation	admin			2
+1665241173	127.0.0.1	E	windows11:pre-installation	admin			1
+1665241204	127.0.0.1	E	windows11:pre-installation	admin			0
+1665241245	127.0.0.1	E	windows11:pre-installation	admin			2
+1665241301	127.0.0.1	E	windows11:pre-installation	admin			-194
+1665241330	127.0.0.1	E	windows11:pre-installation	admin			94
+1665241359	127.0.0.1	E	windows11:pre-installation	admin			403
+1665241403	127.0.0.1	E	windows11:pre-installation	admin			94
+1665242121	127.0.0.1	E	windows11:index	admin			349
+1665242146	127.0.0.1	E	windows11:index	admin			6
+1665242167	127.0.0.1	E	windows11:index	admin			2
+1665242189	127.0.0.1	E	windows11:index	admin			-5
+1665242314	127.0.0.1	E	windows11:index	admin			26
+1665243535	127.0.0.1	C	windows11:installation	admin	created		222
+1665243570	127.0.0.1	E	windows11:pre-installation	admin			0
+1665243639	127.0.0.1	E	windows11:installation	admin			45
+1665243878	127.0.0.1	E	windows11:installation	admin			5
+1665243984	127.0.0.1	E	windows11:resources	admin			31
+1665246084	127.0.0.1	E	windows11:installation	admin			157
+1665246100	127.0.0.1	E	windows11:installation	admin			0
+1665246775	127.0.0.1	E	windows11:installation	admin			424
+1665246891	127.0.0.1	E	windows11:installation	admin	[Installation] 		13
+1665247012	127.0.0.1	E	windows11:installation	admin			40
+1665247124	127.0.0.1	E	windows11:installation	admin			92
+1665247137	127.0.0.1	E	windows11:installation	admin	[Installation] 		-1
+1665247486	127.0.0.1	E	windows11:installation	admin			273
+1665247649	127.0.0.1	E	windows11:installation	admin			-46
+1665239339	127.0.0.1	E	todo		external edit		0
+1665248237	127.0.0.1	E	todo	admin			27
+1665249200	127.0.0.1	E	windows11:installation	admin	[Installation] 		95
+1665249216	127.0.0.1	E	windows11:installation	admin			-1
+1665249457	127.0.0.1	E	windows11:installation	admin			-223
+1665249514	127.0.0.1	E	windows11:installation	admin			43
+1665249539	127.0.0.1	E	windows11:installation	admin	[Installation] 		-10
+1665249648	127.0.0.1	E	windows11:index	admin			0
+1665249691	127.0.0.1	E	windows11:index	admin			7
