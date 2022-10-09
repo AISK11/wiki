@@ -1,0 +1,12 @@
+====== Multimedia ======
+
+----
+
+**About**
+  * [[:multimedia:index|Index]]
+  * [[:multimedia:resources|Resources]]
+
+**Images**
+  * [[:multimedia:svg|SVG]]
+
+----

@@ -23,5 +23,7 @@
 </cli>
     - Set up registries:{{:windows11:win11_installation_registries.png?nolink|}}
     - Close //Registry Editor// and //CMD// and click on //Install now//.
-  - Click on: //I don't have a product key// => //Windows 11 Pro for Workstations//((Windows 11 versions: https://liliputing.com/differences-between-windows-11-home-pro-enterprise-and-education.)).
+  - Click on: //I don't have a product key// => //Windows 11 Pro//((Windows 11 versions: https://liliputing.com/differences-between-windows-11-home-pro-enterprise-and-education.)).
   - Continue with the installation wizard.
+  - How would you like to set up this device?: //Set up for work or school// => //Sign-in options// => //Domain join instead//.
+  - Finish installation wizard.

@@ -10,4 +10,8 @@
   * [[:windows11:pre-installation|Pre-Installation]]
   * [[:windows11:installation|Installation]]
 
+**?**
+  * [[:windows11:boot_process|Boot Process]]
+  * [[:windows11:ntfs_filesystem|NTFS Filesystem]]
+
 ----

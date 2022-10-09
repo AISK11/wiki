@@ -228,3 +228,13 @@ windows11:resources
 windows11:pre-installation
 windows11:installation
 windows_11_versions:https:liliputing.com:differences-between-windows-11-home-pro-enterprise-and-education
+windows11:boot_process
+windows11:ntfs_filesystem
+forensics:index
+multimedia:index
+multimedia:resources
+multimedia:svg
+forensics:resources
+forensics:metadata
+forensics:pdf
+forensics:documents

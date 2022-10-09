@@ -1,0 +1,12 @@
+====== Forensics ======
+
+----
+
+**About**
+  * [[:forensics:index|Index]]
+  * [[:forensics:resources|Resources]]
+
+**Metadata**
+  * [[:forensics:documents|Documents]]
+
+----

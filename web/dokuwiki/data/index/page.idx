@@ -187,3 +187,15 @@ windows:pre-installation
 windows11:resources
 windows11:pre-installation
 windows11:installation
+windows11:boot_process
+windows11:ntfs_filesystem
+multimedia:index
+multimedia:sidebar
+multimedia:resources
+multimedia:svg
+forensics:index
+forensics:sidebar
+forensics:resources
+forensics:metadata
+forensics:pdf
+forensics:documents

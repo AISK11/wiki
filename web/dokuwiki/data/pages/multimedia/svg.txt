@@ -1,0 +1,7 @@
+====== SVG ======
+
+===== Conversion =====
+
+  * To PNG:<cli>
+$ inkscape [-w <WIDTH>] <INPUT.svg> -o <OUTPUT.png>
+</cli>

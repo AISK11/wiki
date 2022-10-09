@@ -334,3 +334,38 @@
 1665249539	127.0.0.1	E	windows11:installation	admin	[Installation] 		-10
 1665249648	127.0.0.1	E	windows11:index	admin			0
 1665249691	127.0.0.1	E	windows11:index	admin			7
+1665257666	127.0.0.1	E	windows11:installation	admin			111
+1665258437	127.0.0.1	E	windows11:installation	admin			31
+1665260196	127.0.0.1	E	windows11:sidebar	admin			52
+1665260240	127.0.0.1	E	windows11:resources	admin			73
+1665261469	127.0.0.1	C	windows11:boot_process	admin	created		27
+1665262917	127.0.0.1	E	windows11:boot_process	admin			23
+1665263113	127.0.0.1	E	windows11:installation	admin	[Installation] 		1
+1665264792	127.0.0.1	E	windows11:sidebar	admin			51
+1665265444	127.0.0.1	C	windows11:ntfs_filesystem	admin	created		86
+1665265807	127.0.0.1	E	windows11:resources	admin			46
+1665265852	127.0.0.1	E	windows11:resources	admin			11
+1665266725	127.0.0.1	E	sidebar	admin			36
+1665270223	127.0.0.1	E	sidebar	admin			37
+1665270232	127.0.0.1	C	multimedia:index	admin	created		25
+1665270291	127.0.0.1	C	multimedia:sidebar	admin	created		159
+1665270306	127.0.0.1	C	multimedia:resources	admin	created		24
+1665270502	127.0.0.1	C	multimedia:svg	admin	created		118
+1665270616	127.0.0.1	E	multimedia:svg	admin			24
+1665270628	127.0.0.1	R	multimedia:svg	admin	old revision restored (2022-10-09 01:08)	1665270502	-24
+1665271430	127.0.0.1	C	forensics:index	admin	created		24
+1665271461	127.0.0.1	C	forensics:sidebar	admin	created		116
+1665271471	127.0.0.1	C	forensics:resources	admin	created		24
+1665271497	127.0.0.1	E	sidebar	admin			7
+1665271523	127.0.0.1	E	windows11:resources	admin			94
+1665271819	127.0.0.1	E	forensics:resources	admin			74
+1665274123	127.0.0.1	E	forensics:sidebar	admin			44
+1665274262	127.0.0.1	C	forensics:metadata	admin	created		138
+1665274568	127.0.0.1	D	forensics:metadata	admin	removed		-138
+1665274589	127.0.0.1	E	forensics:sidebar	admin			-3
+1665274594	127.0.0.1	E	forensics:sidebar	admin			0
+1665274614	127.0.0.1	C	forensics:pdf	admin	created		76
+1665274623	127.0.0.1	D	forensics:pdf	admin	removed		-76
+1665274640	127.0.0.1	E	forensics:sidebar	admin			12
+1665274656	127.0.0.1	C	forensics:documents	admin	created		99
+1665274741	127.0.0.1	E	forensics:documents	admin			12

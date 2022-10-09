@@ -1,3 +1,10 @@
 ====== Resources ======
 
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
 https://www.thewindowsclub.com
+https://www.file.net
+https://www.windows-security.org/windows-services-encyclopedia
+https://github.com/clingeric/forensic-toolkit
