@@ -6,7 +6,8 @@
   * [[:forensics:index|Index]]
   * [[:forensics:resources|Resources]]
 
-**Metadata**
-  * [[:forensics:documents|Documents]]
+**File Metadata**
+  * [[:forensics:any|Any]]
+  * [[:forensics:pdf|PDF]]
 
 ----

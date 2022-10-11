@@ -1,0 +1,5 @@
+====== Unix To Powershell ======
+
+^ Unix          ^ Powershell         ^
+| ''alias''     | ''get-alias''      |
+| ''man <CMD>'' | ''get-help <CMD>'' |

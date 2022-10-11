@@ -1,0 +1,10 @@
+====== Any ======
+
+===== Metadata =====
+
+  - Determine file type:<cli>
+$ file -p <INPUT-FILE>
+</cli>
+  - View file metadata:<cli>
+$ exiftool <INPUT-FILE>
+</cli>

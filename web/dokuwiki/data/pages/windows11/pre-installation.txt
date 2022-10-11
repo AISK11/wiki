@@ -2,11 +2,7 @@
 
 ===== Download =====
 
-<WRAP center round important 60%>
-This section is incomplete and needs further work!
-</WRAP>
-
-  - Navigate to Microsoft's [[https://www.microsoft.com/software-download/windows11|Windows 11 download]] site.
+  - Download Windows11 from [[https://www.microsoft.com/software-download/windows11|Windows 11 download]] site.
 
 ===== Flash USB =====
 

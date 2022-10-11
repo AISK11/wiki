@@ -17,7 +17,7 @@
     - Time and currency format: //English (United States)//.
     - Keyboard or input method: //US//.
   - Fix incompatibility issues:
-    - Press <kbd>Shift</kbd> + <kbd>F10</kbd> to open //CMD//.
+    - Press <kbd>Shift</kbd>+<kbd>F10</kbd> to open //CMD//.
     - Access //Registry Editor//:<cli>
 > regedit
 </cli>

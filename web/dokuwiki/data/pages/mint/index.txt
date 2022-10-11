@@ -1,0 +1,21 @@
+====== Linux Mint ======
+
+===== Pros =====
+
+  * Binary based.
+  * Huge community and amount of packages.
+  * Not Ubuntu (community-driven + no snap).
+  * User friendly (easy and fast to set up - just works).
+
+===== Cons =====
+
+  * Point release((Versions of various linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#General)).
+  * Systemd init system.
+  * Apt package manager.
+  * Dependent distribution (Debian => Ubuntu => Mint).
+  * Some data gathering((Linux Mint privacy policy: https://www.linuxmint.com/privacy.php.)).
+  * Graphical installation.
+  * Not minimalistic + comes with pre-installed DE.
+  * Does not separates free and non-free software.
+  * Poor processor architecture support (amd64).
+  * Only glibc library support.

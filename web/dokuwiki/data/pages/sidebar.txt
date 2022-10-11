@@ -3,11 +3,9 @@
 ----
 
 **Operating Systems**
+  * [[:mint:index|Linux Mint]]
   * [[:windows11:index|Windows 11]]
 
-  * [[:gentoo:index|Gentoo Linux (TODO)]]
-  * [[:void:index|Void Linux (DISCONTINUED)]]
-  * [[:arch:index|Arch Linux (DISCONTINUED)]]
   * [[:rpios:index|Raspberry Pi OS Linux]]
 
 **IT Areas**
@@ -22,5 +20,7 @@
 **Misc**
   * [[:multimedia:index|Multimedia]]
   * [[:minimalism:index|Minimalism]]
+
+  * [[:todo:firefox|TODO - Firefox]]
 
 ----

@@ -1,7 +1,0 @@
-====== Documents ======
-
-===== PDF =====
-
-  - View metadata:<cli>
-$ pdfinfo [-isodates] <INPUT-FILE.pdf>
-</cli>

@@ -1,0 +1,2 @@
+  * Full URL: https://support.mozilla.org/en-US/questions/880207
+  * Disable cahce: https://support.mozilla.org/en-US/questions/1124186

@@ -199,3 +199,13 @@ forensics:resources
 forensics:metadata
 forensics:pdf
 forensics:documents
+forensics:general
+forensics:any
+windows11:run_commands
+windows11:unix_to_powershell
+todo:firefox
+mint:sidebar
+mint:index
+mint:firewall
+mint:resources
+mint:terminal_emulator

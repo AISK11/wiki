@@ -1,0 +1,66 @@
+====== Run Commands ======
+
+To run command as administrator, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>.
+
+===== CLI =====
+
+  * CMD:<cli>
+> cmd
+</cli>
+  * Powershell:<cli>
+> powershell
+</cli>
+
+===== Network =====
+
+  * Firewall:<cli>
+> firewall.cpl 
+</cli>
+  * RDP:<cli>
+> mstsc
+</cli>
+
+===== Security =====
+
+  * Passwords:<cli>
+> netplwiz
+</cli>
+  * System logs:<cli>
+> eventvwr
+</cli>
+
+===== Storage =====
+
+  * Disk management:<cli>
+> diskmgmt.msc
+</cli>
+
+===== System Info =====
+
+  * System details:<cli>
+> msinfo32
+</cli>
+  * Windows version:<cli>
+> winver
+</cli>
+
+
+
+
+
+
+
+
+<cli>
+> control
+> regedit
+> services.msc
+> msconfig
+> taskmgr
+> taskschd.msc
+> devmgmt.msc
+> lusrmgr.msc
+> explorer
+> notepad
+</cli>
+

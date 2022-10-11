@@ -1,0 +1,21 @@
+====== PDF ======
+
+===== Metadata =====
+
+  - Determine file type:<cli>
+$ file -p <INPUT-FILE.pdf>
+</cli>
+  - View file metadata:<cli>
+$ pdfinfo [-isodates] <INPUT-FILE.pdf>
+</cli>
+
+===== Extract =====
+
+==== Images ====
+
+  - List images in PDF:<cli>
+$ pdfimages -list <INPUT-FILE.pdf>
+</cli>
+  - Extract images with image name prefix ''<NAME-PREFIX>-NNN.xxx'':<cli>
+$ pdfimages -all <INPUT-FILE.PDF> <NAME-PREFIX>
+</cli>

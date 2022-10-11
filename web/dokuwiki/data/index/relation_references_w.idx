@@ -238,3 +238,15 @@ forensics:resources
 forensics:metadata
 forensics:pdf
 forensics:documents
+forensics:images
+forensics:general
+forensics:any
+windows11:processes
+windows11:registries
+windows11:run_commands
+windows11:unix_to_powershell
+todo:firefox
+mint:index
+mint:resources
+mint:firewall
+mint:terminal_emulator

@@ -11,6 +11,8 @@ https://www.windows-security.org/windows-service/ac
 
 https://www.borderize.com
 
+  * Recommended software - https://wiki.gentoo.org/wiki/Recommended_applications
+
 ===== Expectations =====
 
 musl vs libc((http://www.etalabs.net/compare_libcs.html))

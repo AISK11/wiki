@@ -10,8 +10,15 @@
   * [[:windows11:pre-installation|Pre-Installation]]
   * [[:windows11:installation|Installation]]
 
+**Scripting**
+  * [[:windows11:unix_to_powershell|Unix To Powershell]]
+
 **?**
   * [[:windows11:boot_process|Boot Process]]
+  * [[:windows11:run_commands|Run Commands]]
+
+  * [[:windows11:registries|Registries]]
   * [[:windows11:ntfs_filesystem|NTFS Filesystem]]
+  * [[:windows11:processes|Processes]]
 
 ----

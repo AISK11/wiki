@@ -1,0 +1,15 @@
+====== Linux Mint ======
+
+----
+
+**About**
+  * [[:mint:index|Index]]
+  * [[:mint:resources|Resources]]
+
+**Network**
+  * [[:mint:firewall|Firewall]]
+
+**GUI**
+  * [[:mint:terminal_emulator|Terminal Emulator]]
+
+----

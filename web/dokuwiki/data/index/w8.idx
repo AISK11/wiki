@@ -278,3 +278,17 @@ continue
 forensic
 inkscape
 isodates
+exiftool
+bootmgfw
+system32
+ntoskrnl
+winlogon
+mountvol
+diskmgmt
+eventvwr
+msconfig
+taskschd
+msinfo32
+netplwiz
+activate
+aslatter

@@ -1,5 +1,22 @@
 ====== Boot Process ======
 
-===== UEFI =====
+===== Booting =====
 
-  - 
+{{:windows11:boot_process.png?nolink|}}
+
+  - UEFI:
+    - UEFI ROM.
+    - NVRAM.
+    - Disk + partition + EFI file for Windows boot manager (''\EFI\Microsoft\Boot\bootmgfw.efi'').
+  - Windows:
+    - Windows boot manager reads Boot Configuration Data (BCD) (''\EFI\Microsoft\Boot\BCD'').
+    - Windows loader (''C:\Windows\system32\winload.exe'').
+    - NT OS kernel (''C:\Windows\system32\ntoskrnl.exe'').
+    - Session manager subsystem (''C:\Windows\system32\smss.exe'').
+    - Windows login (''C:\Windows\system32\winlogon.exe'').
+
+===== Commands =====
+
+  * Mount EFI:<cli>
+# mountvol <DRIVE>: /s
+</cli>

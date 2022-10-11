@@ -4,12 +4,47 @@
 
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Boot Process&quot;,&quot;hid&quot;:&quot;boot_process&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-28&quot;} -->
-<h2 class="sectionedit2" id="uefi">UEFI</h2>
+<h2 class="sectionedit2" id="booting">Booting</h2>
 <div class="level2">
+
+<p>
+<img src="http://localhost/_media/windows11/boot_process.png" class="media" loading="lazy" alt="" />
+</p>
 <ol>
-<li class="level1"><div class="li"> </div>
+<li class="level1 node"><div class="li"> UEFI:</div>
+<ol>
+<li class="level2"><div class="li"> UEFI ROM.</div>
+</li>
+<li class="level2"><div class="li"> NVRAM.</div>
+</li>
+<li class="level2"><div class="li"> Disk + partition + EFI file for Windows boot manager (<code>\EFI\Microsoft\Boot\bootmgfw.efi</code>).</div>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> Windows:</div>
+<ol>
+<li class="level2"><div class="li"> Windows boot manager reads Boot Configuration Data (BCD) (<code>\EFI\Microsoft\Boot\BCD</code>).</div>
+</li>
+<li class="level2"><div class="li"> Windows loader (<code>C:\Windows\system32\winload.exe</code>).</div>
+</li>
+<li class="level2"><div class="li"> NT <abbr title="Operating System">OS</abbr> kernel (<code>C:\Windows\system32\ntoskrnl.exe</code>).</div>
+</li>
+<li class="level2"><div class="li"> Session manager subsystem (<code>C:\Windows\system32\smss.exe</code>).</div>
+</li>
+<li class="level2"><div class="li"> Windows login (<code>C:\Windows\system32\winlogon.exe</code>).</div>
+</li>
+</ol>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;UEFI&quot;,&quot;hid&quot;:&quot;uefi&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-583&quot;} -->
+<h2 class="sectionedit3" id="commands">Commands</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Mount EFI:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mountvol &lt;DRIVE&gt;: /s</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Commands&quot;,&quot;hid&quot;:&quot;commands&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;584-&quot;} -->

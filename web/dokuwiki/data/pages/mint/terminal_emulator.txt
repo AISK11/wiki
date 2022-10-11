@@ -1,0 +1,19 @@
+====== Terminal Emulator ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Installation =====
+
+  - Add 3rd party PPA to sources((https://launchpad.net/~aslatter/+archive/ubuntu/ppa)):<cli>
+# add-apt-repository ppa:aslatter/ppa
+# apt update
+# alacritty -V || apt install alacritty
+</cli>
+
+  - Install terminal emulator:<cli>
+#
+</cli>
+
+===== Configuration =====
