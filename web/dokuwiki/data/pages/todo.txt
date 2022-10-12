@@ -13,6 +13,15 @@ https://www.borderize.com
 
   * Recommended software - https://wiki.gentoo.org/wiki/Recommended_applications
 
-===== Expectations =====
+  * https://observatory.mozilla.org/
+  * https://cryptcheck.fr/
+
 
 musl vs libc((http://www.etalabs.net/compare_libcs.html))
+
+  * Alternatives
+    * teddit
+
+  * SearX
+    * https://searx.github.io/searx
+    * https://searx.space

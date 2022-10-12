@@ -17,7 +17,7 @@
 ## DESCRIPTION:  Network firewall rules.
 
 ## 1. Activate firewall rules.
-##     $(systemctl enable nftables.service && systemctl start nftables.service)
+##     $(systemctl start nftables.service && systemctl enable nftables.service)
 ##
 ## 2. Verify firewall rules.
 ##     $(nft list ruleset)
@@ -72,12 +72,10 @@ table inet fw {
   }
 }
 </file>
-  - Start firewall now and on startup:<cli>
-# systemctl start nftables.service
-# systemctl enable nftables.service
+  - Activate firewall rules:<cli>
+# systemctl start nftables.service && systemctl enable nftables.service
 </cli>
-  - Verify firewall service and rules:<cli>
-$ nftables status nftables.service
+  - Verify firewall rules:<cli>
 # nft list ruleset
 </cli>
 

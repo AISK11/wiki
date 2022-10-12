@@ -6,10 +6,18 @@
   * [[:mint:index|Index]]
   * [[:mint:resources|Resources]]
 
+**System**
+  * [[:mint:privilege_escalation|Privilege Escalation]]
+
 **Network**
   * [[:mint:firewall|Firewall]]
 
 **GUI**
-  * [[:mint:terminal_emulator|Terminal Emulator]]
+
+**Web**
+
+**To Do**
+  * [[:mint:todo|Things To Do]]
+  * [[:mint:terminal_emulator|Terminal Emulator WIP]]
 
 ----

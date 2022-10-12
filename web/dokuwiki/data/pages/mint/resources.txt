@@ -5,3 +5,4 @@ This section is incomplete and needs further work!
 </WRAP>
 
   * https://wiki.archlinux.org/title/Pacman/Rosetta
+  * https://crontab.guru

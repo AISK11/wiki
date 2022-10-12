@@ -250,3 +250,8 @@ mint:index
 mint:resources
 mint:firewall
 mint:terminal_emulator
+mint:searx
+mint:todo
+mint:opendoas
+mint:doas
+mint:privilege_escalation

@@ -4,7 +4,7 @@
 
   * Binary based.
   * Huge community and amount of packages.
-  * Not Ubuntu (community-driven + no snap).
+  * Not Ubuntu (community-driven + no snap) + LMDE edition.
   * User friendly (easy and fast to set up - just works).
 
 ===== Cons =====

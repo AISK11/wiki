@@ -1,0 +1,15 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/doas.conf (0600 root:root)
+## DEPENDENCIES: doas
+## DESCRIPTION:  Privilege escalation control rules.
+&nbsp;
+## 1. Replace sudo.
+##     $(ln -sf /usr/bin/doas /usr/bin/sudo)
+##
+## 2. Create admin group and add user to it (user relogin required afterwards).
+##     $(groupadd doas)
+##     $(usermod -aG doas &lt;USER&gt;)
+&nbsp;
+## Admin group.
+permit :doas
+#permit nopass :doas

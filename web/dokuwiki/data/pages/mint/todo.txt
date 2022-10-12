@@ -1,0 +1,24 @@
+====== Things To Do ======
+
+===== System =====
+
+  * systemd
+  * neovim
+  * shell (dash + zsh)
+  * cron (anacron)
+
+===== Network =====
+
+  * DHCP (dhcpcd)
+  * DNS (unbound)
+  * VPN + Tor + Proxy
+
+===== Web =====
+
+  * Firefox hardening
+  * Search Engine (SearX)
+
+===== GUI =====
+
+  * Terminal Emulator
+  * Window manager (bspwm) + window manager tools

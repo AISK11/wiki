@@ -6,5 +6,5 @@ This section is incomplete and needs further work!
 
   - Configure [[:rpios:network|Network]].
   - Full system update:<cli>
-# apt update && apt full-upgrade && apt autoremove && apt clean
+# apt update && apt full-upgrade -y && apt autoremove --purge && apt clean
 </cli>

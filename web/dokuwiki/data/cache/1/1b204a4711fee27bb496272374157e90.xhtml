@@ -1,0 +1,147 @@
+
+<h1 class="sectionedit1" id="network">Network</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Network&quot;,&quot;hid&quot;:&quot;network&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-23&quot;} -->
+<h2 class="sectionedit2" id="debloat">Debloat</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Uninstall unwanted software:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt purge avahi-daemon</span>
+<span class="cli_prompt"># </span><span class="cli_command">apt purge bluez bluez-firmware</span>
+<span class="cli_prompt"># </span><span class="cli_command">apt purge modemmanager</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Disable unneeded network sercices:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl disable networking.service wpa_supplicant.service</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Debloat&quot;,&quot;hid&quot;:&quot;debloat&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;24-286&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;287-313&quot;} -->
+<h3 class="sectionedit4" id="interfaces">Interfaces</h3>
+<div class="level3">
+<ul>
+<li class="level1 node"><div class="li"> Ethernet:</div>
+<ol>
+<li class="level2"><div class="li"> No further configuration is needed.</div>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> Wi-Fi:</div>
+<ol>
+<li class="level2"><div class="li"> Unblock Wi-Fi on startup:<dl class="file">
+<dt><a href="http://localhost/_export/code/rpios/network?codeblock=0" title="Download Snippet" class="mediafile mf_local">/etc/rc.local</a></dt>
+<dd><pre class="code file text">#!/bin/sh -e
+&nbsp;
+## AUTHOR:       AISK11
+## LOCATION:     /etc/rc.local (0644 root:root)
+## DEPENDENCIES: -
+## DESCRIPTION:  Startup commands.
+&nbsp;
+## Unblock Wi-Fi.
+rfkill block all
+rfkill unblock wlan
+&nbsp;
+exit 0</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level2"><div class="li"> Configure Wi-Fi connectivity to AP:<dl class="file">
+<dt><a href="http://localhost/_export/code/rpios/network?codeblock=1" title="Download Snippet" class="mediafile mf_conf">/etc/wpa_supplicant/wpa_supplicant.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/wpa_supplicant/wpa_supplicant.conf (0600 root:root)
+## DEPENDENCIES: wpasupplicant
+## DESCRIPTION:  Wi-Fi settings.
+&nbsp;
+## Basic settings (required by wpa_cli).
+ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=netdev
+update_config=1
+&nbsp;
+## Template - UNPROTECTED.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=NONE
+#  priority=0
+#}
+#
+## Template - WPA-PSK.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=WPA-PSK
+#  psk=&quot;&lt;PASSWORD&gt;&quot;
+#  priority=2
+#}
+#
+## Template - WPA-EAP EAP-PEAP.
+#network={
+#  ssid=&quot;&lt;ESSID&gt;&quot;
+#  scan_ssid=1
+#  key_mgmt=WPA-EAP
+#  identity=&quot;&lt;EMAIL@ADDRESS&gt;&quot;
+#  password=&quot;&lt;PASSWORD&gt;&quot;
+#  phase2=&quot;auth=MSCHAPV2&quot;
+#  priority=1
+#}</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level2"><div class="li"> Change Wi-Fi config file permissions:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chmod 0600 /etc/wpa_supplicant/wpa_supplicant.conf</span></pre><p></div>
+</li>
+</ol>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Interfaces&quot;,&quot;hid&quot;:&quot;interfaces&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;314-1593&quot;} -->
+<h3 class="sectionedit5" id="dhcp">DHCP</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Configure DHCP client:<dl class="file">
+<dt><a href="http://localhost/_export/code/rpios/network?codeblock=2" title="Download Snippet" class="mediafile mf_conf">/etc/dhcpcd.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/dhcpcd.conf (0644 root:root)
+## DEPENDENCIES: dhcpcd5
+## DESCRIPTION:  DHCP client settings.
+&nbsp;
+## Comma separated list of blocked interface patterns.
+#denyinterfaces *
+&nbsp;
+## Static configuration template (interace cannot be denied).
+#interface eth0
+#  static ip_address=10.0.0.100/24
+#  static routers=10.0.0.1
+&nbsp;
+## Group to manage dhcpcd via control socket.
+controlgroup netdev
+&nbsp;
+## Do not overwrite '/etc/resolv.conf' with DHCP server DNS configuration.
+#nohook resolv.conf
+&nbsp;
+## Don't check if obtained IPv4 address is taken by arp (increases speed) and
+## also disables IPv4LL (APIPA).
+noarp
+&nbsp;
+## Remove any pre-existing IPv4 addresses when adding new IPv4 address.
+noalias
+&nbsp;
+## Anonymous profile (not yet supported).
+#anonymous
+clientid
+vendorclassid
+slaac hwaddr</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Enable DHCP client on startup:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl enable dhcpcd.service</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;DHCP&quot;,&quot;hid&quot;:&quot;dhcp&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:5,&quot;range&quot;:&quot;1594-&quot;} -->

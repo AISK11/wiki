@@ -26,7 +26,7 @@
 ## DESCRIPTION:  Network firewall rules.
 &nbsp;
 ## 1. Activate firewall rules.
-##     $(systemctl enable nftables.service &amp;&amp; systemctl start nftables.service)
+##     $(systemctl start nftables.service &amp;&amp; systemctl enable nftables.service)
 ##
 ## 2. Verify firewall rules.
 ##     $(nft list ruleset)
@@ -83,16 +83,14 @@ table inet fw {
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Start firewall now and on startup:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl start nftables.service</span>
-<span class="cli_prompt"># </span><span class="cli_command">systemctl enable nftables.service</span></pre><p></div>
+<li class="level1"><div class="li"> Activate firewall rules:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl start nftables.service &amp;&amp; systemctl enable nftables.service</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Verify firewall service and rules:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">nftables status nftables.service</span>
-<span class="cli_prompt"># </span><span class="cli_command">nft list ruleset</span></pre><p></div>
+<li class="level1"><div class="li"> Verify firewall rules:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">nft list ruleset</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;119-2177&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;119-2121&quot;} -->
 <h2 class="sectionedit4" id="usage">Usage</h2>
 <div class="level2">
 <ul>
@@ -101,4 +99,4 @@ table inet fw {
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;2178-&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;2122-&quot;} -->

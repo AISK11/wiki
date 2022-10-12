@@ -1,0 +1,42 @@
+====== Privilege Escalation ======
+
+===== Installation =====
+
+  - Install doas:<cli>
+# apt install doas
+</cli>
+
+===== Configuration =====
+
+  - Set rules:<file text /etc/doas.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/doas.conf (0600 root:root)
+## DEPENDENCIES: doas
+## DESCRIPTION:  Privilege escalation control rules.
+
+## 1. Replace sudo.
+##     $(ln -sf /usr/bin/doas /usr/bin/sudo)
+##
+## 2. Create admin group and add user to it (user relogin required afterwards).
+##     $(groupadd doas)
+##     $(usermod -aG doas <USER>)
+
+## Admin group.
+permit :doas
+#permit nopass :doas
+</file><cli>
+# chmod 0600 /etc/doas.conf
+</cli>
+  - Replace sudo:<cli>
+# ln -sf /usr/bin/doas /usr/bin/sudo 
+</cli>
+  - Create admin group and add user to it (user relogin required afterwards):<cli>
+# groupadd doas
+# usermod -aG doas <USER>
+</cli>
+
+===== Usage =====
+
+  * Run command as root:<cli>
+$ doas <COMMAND>
+</cli>

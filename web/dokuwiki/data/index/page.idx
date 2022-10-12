@@ -209,3 +209,7 @@ mint:index
 mint:firewall
 mint:resources
 mint:terminal_emulator
+mint:searx
+mint:todo
+mint:doas
+mint:privilege_escalation

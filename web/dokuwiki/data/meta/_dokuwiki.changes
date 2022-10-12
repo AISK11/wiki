@@ -1,18 +1,3 @@
-1664899382	127.0.0.1	E	void:index	admin			0
-1664900327	127.0.0.1	E	void:sidebar	admin			29
-1664901305	127.0.0.1	C	void:sway	admin	created		134
-1664902772	127.0.0.1	E	void:sidebar	admin			6
-1664902859	127.0.0.1	E	void:firewall	admin			87
-1664902877	127.0.0.1	E	void:firewall	admin	[USAGE] 		-8
-1664902904	127.0.0.1	E	void:firewall	admin			0
-1664917493	127.0.0.1	E	void:pre-installation	admin			10
-1664939483	127.0.0.1	E	cybersecurity:crypto:hashing		external edit		0
-1664939483	127.0.0.1	E	void:sway		external edit		0
-1664939483	127.0.0.1	E	void:sidebar		external edit		0
-1664939483	127.0.0.1	E	void:xbps		external edit		0
-1664939483	127.0.0.1	E	void:installation		external edit		0
-1664939483	127.0.0.1	E	sidebar		external edit		0
-1664939483	127.0.0.1	E	void:index		external edit		0
 1664983166	127.0.0.1	E	cybersecurity:crypto:hashing	admin			10
 1664983233	127.0.0.1	D	void:sway	admin	removed		-134
 1664983353	127.0.0.1	E	void:sidebar	admin			14
@@ -93,6 +78,7 @@
 1665010590	127.0.0.1	E	void:discord	admin			38
 1665014992	127.0.0.1	E	sidebar	admin			61
 1665044064	127.0.0.1	E	cybersecurity:crypto:hashing	admin			63
+1665239339	127.0.0.1	E	rpios:arm64_post-installation		external edit		0
 1665239339	127.0.0.1	E	sidebar		external edit		0
 1665239339	127.0.0.1	E	windows:password_recovery		external edit		0
 1665239339	127.0.0.1	E	windows:sidebar		external edit		0
@@ -279,3 +265,45 @@
 1665471596	127.0.0.1	E	mint:index	admin	[Pros] 		0
 1665471612	127.0.0.1	E	mint:index	admin	[Pros] 		-3
 1665471691	127.0.0.1	E	mint:index	admin	[Cons] 		-5
+1665473392	127.0.0.1	E	mint:index	admin			15
+1665484261	127.0.0.1	E	mint:resources	admin			25
+1665508052	127.0.0.1	E	rpios:arm64_post-installation	admin			11
+1665612177	127.0.0.1	E	mint:sidebar	admin			35
+1665612186	127.0.0.1	C	mint:searx	admin	created		20
+1665612214	127.0.0.1	E	mint:searx	admin			31
+1665612284	127.0.0.1	E	mint:searx	admin			24
+1665612576	127.0.0.1	E	todo	admin			13
+1665612711	127.0.0.1	E	todo	admin			27
+1665613289	127.0.0.1	D	mint:searx	admin	removed		-75
+1665613312	127.0.0.1	E	todo	admin			72
+1665613325	127.0.0.1	E	mint:sidebar	admin			-35
+1665614425	127.0.0.1	E	todo	admin			31
+1665614798	127.0.0.1	E	mint:sidebar	admin			42
+1665614807	127.0.0.1	C	mint:todo	admin	created		27
+1665614819	127.0.0.1	E	mint:sidebar	admin			1
+1665614909	127.0.0.1	E	mint:todo	admin			162
+1665614975	127.0.0.1	E	mint:todo	admin			106
+1665615032	127.0.0.1	E	mint:todo	admin			23
+1665615112	127.0.0.1	E	mint:sidebar	admin			21
+1665615305	127.0.0.1	E	mint:todo	admin			19
+1665615372	127.0.0.1	E	mint:todo	admin			11
+1665615402	127.0.0.1	E	mint:sidebar	admin			32
+1665615588	127.0.0.1	E	mint:sidebar	admin			8
+1665616160	127.0.0.1	E	mint:sidebar	admin			-8
+1665616966	127.0.0.1	C	mint:doas	admin	created		742
+1665617093	127.0.0.1	E	mint:doas	admin	[Configuration] 		38
+1665617157	127.0.0.1	E	mint:doas	admin			16
+1665617180	127.0.0.1	E	mint:doas	admin	[Configuration] 		-10
+1665617577	127.0.0.1	E	mint:doas	admin			-40
+1665617621	127.0.0.1	D	mint:doas	admin	removed		-746
+1665617643	127.0.0.1	E	mint:sidebar	admin			57
+1665617650	127.0.0.1	C	mint:privilege_escalation	admin	created		746
+1665617736	127.0.0.1	E	mint:sidebar	admin			-29
+1665617933	127.0.0.1	E	mint:privilege_escalation	admin			0
+1665617981	127.0.0.1	E	mint:privilege_escalation	admin	[Configuration] 		6
+1665618413	127.0.0.1	E	mint:firewall	admin	[Configuration] 		0
+1665618441	127.0.0.1	E	mint:firewall	admin	[Configuration] 		-10
+1665618463	127.0.0.1	E	mint:firewall	admin	[Configuration] 		-47
+1665618654	127.0.0.1	E	mint:privilege_escalation	admin	[Configuration] 		149
+1665618664	127.0.0.1	E	mint:privilege_escalation	admin			6
+1665618729	127.0.0.1	E	mint:firewall	admin	[Configuration] 		1
