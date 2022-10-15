@@ -37,7 +37,7 @@ cfdisk> W
 cfdisk> yes
 cfdisk> q
 # parted -s </dev/sdX> name 1 ESP
-# parted -s </dev/sdX> name 2 LUKS
+# parted -s </dev/sdX> name 2 GENTOO
 </cli>
   - Create filesystems: 
     - EFI filesystem:<cli>
@@ -54,21 +54,37 @@ cfdisk> q
 > YES
 > <NEW-LUKS-PASSWORD>
 > <NEW-LUKS-PASSWORD (VERIFY)>
-# cryptsetup config --label LUKS </dev/sdX2>
+# cryptsetup config --label LUKS-GENTOO </dev/sdX2>
 # cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 </dev/sdX2>
 > YES
-# cryptsetup open --type luks2 </dev/sdX2> luks-root
+# cryptsetup open --type luks2 </dev/sdX2> luks-gentoo
 > <LUKS-PASSWORD>
 </cli>
     - Root filesystem((Status of btrfs in linux: https://btrfs.wiki.kernel.org/index.php/Status.)):<cli>
-# wipefs -a /dev/mapper/luks-root
-# mkfs.btrfs /dev/mapper/luks-root
-# btrfs filesystem label /dev/mapper/luks-root LUKS-ROOT
-# btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-root
+# wipefs -a /dev/mapper/luks-gentoo
+# mkfs.btrfs /dev/mapper/luks-gentoo
+# btrfs filesystem label /dev/mapper/luks-gentoo GENTOO
+# btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-gentoo
 > y
-# btrfs check /dev/mapper/luks-root ; echo $?
+# btrfs check /dev/mapper/luks-gentoo ; echo $?
 </cli>
   - Verify partitions and filesystems:<cli>
 # parted -s </dev/sdX> [unit B] p free
 # lsblk -fp </dev/sdX>
+</cli>
+  - Create btrfs subvolume(s):<cli>
+# mount /dev/mapper/luks-gentoo /mnt/gentoo/
+# btrfs subvolume create /mnt/gentoo/@
+# umount /mnt/gentoo/
+</cli>
+
+===== Stage 3 =====
+
+  - Mount filesystems:
+    - Btrfs((Btrfs mount options: https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options.)) subvolume:<cli>
+# mount -o noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-gentoo /mnt/gentoo/
+</cli>
+    - ESP:<cli>
+# mkdir -p /mnt/gentoo/boot/
+# mount </dev/sda1> /mnt/gentoo/boot/
 </cli>

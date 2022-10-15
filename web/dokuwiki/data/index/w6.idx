@@ -360,3 +360,5 @@ window
 0xrick
 vmstat
 cflags
+umount
+subvol
