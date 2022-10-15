@@ -107,7 +107,7 @@
 <span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/proc/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/run/</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Copy <abbr title="Domain Name System">DNS</abbr> configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
+<li class="level1"><div class="li"> Copy DNS configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Chroot into the new installation:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/void/ /bin/sh</span>
 <span class="cli_prompt"># </span><span class="cli_command">. ./etc/profile</span>
@@ -324,7 +324,7 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 <ol>
 <li class="level1"><div class="li"> Set hostname:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&lt;HOSTNAME&gt;&#039; &gt; /etc/hostname</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Set local <abbr title="Domain Name System">DNS</abbr> table:<dl class="file">
+<li class="level1"><div class="li"> Set local DNS table:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=8" title="Download Snippet" class="mediafile mf_">/etc/hosts</a></dt>
 <dd><pre class="code file text">## &lt;IP-ADDRESS&gt; [FQDN] &lt;HOSTNAME&gt;
 127.0.0.1 localhost

@@ -1,5 +1,11 @@
 ====== Resources ======
 
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+  * [[https://packages.gentoo.org|Packages]]
+
 ===== Official =====
 
   * [[https://www.gentoo.org|Gentoo Linux]]

@@ -3,6 +3,7 @@
 ----
 
 **Operating Systems**
+  * [[:gentoo:index|Gentoo Linux]]
   * [[:mint:index|Linux Mint]]
   * [[:windows11:index|Windows 11]]
 

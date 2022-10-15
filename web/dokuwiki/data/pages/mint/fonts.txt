@@ -1,0 +1,4 @@
+<cli>
+$ fc-list
+$ fc-cahce -f ???
+</cli>

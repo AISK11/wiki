@@ -19,5 +19,6 @@
 **To Do**
   * [[:mint:todo|Things To Do]]
   * [[:mint:terminal_emulator|Terminal Emulator WIP]]
+  * [[:mint:fonts|Fonts]]
 
 ----

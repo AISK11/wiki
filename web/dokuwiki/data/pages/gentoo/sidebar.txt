@@ -6,4 +6,12 @@
   * [[gentoo:index|Index]]
   * [[gentoo:resources|Resources]]
 
+**Installation**
+  * [[gentoo:pre-installation|Pre-Installation]]
+  * [[gentoo:installation|Installation]]
+
+
+**To Do**
+  * [[gentoo:todo|To Do]]
+
 ----

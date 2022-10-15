@@ -271,3 +271,6 @@ msc
 cpl
 rdp
 ppa
+ctf
+mem
+gcc

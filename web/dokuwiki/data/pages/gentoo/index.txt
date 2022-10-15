@@ -2,22 +2,17 @@
 
 ===== Pros =====
 
-  * Rolling release((Versions of various linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#General)).
+  * Rolling release((Versions of various linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#General.)).
+  * Native non SystemD init system (openrc).
   * Independent distribution.
-  * Native non SystemD init system (OpenRC).
-  * Amount of packages in repositories + pentesting tools((Pentoo: https://pentoo.org.)).
-  * CLI installation.
-  * The widest processor architecture support.
-  * Stable.
+  * Big community and amount of packages((Gentoo packages: https://packages.gentoo.org.)) + pentesting tools((Pentoo: https://pentoo.org.)).
+  * Text installation.
+  * Extremely minimalistic (CFLAGS).
+  * The widest processor architecture support((Download Gentoo: https://www.gentoo.org/downloads.)).
   * Multiple C libraries support (glibc, musl).
+  * FSF separation via licenses.
+  * Documentation((Gentoo Wiki: https://wiki.gentoo.org/wiki/Main_Page.)).
 
 ===== Cons =====
 
-  * Source based.
   * Time consuming.
-
-===== Unsure =====
-
-  * Package manager (emerge)?
-  * Kernel versions and management?
-  * Respecting FSF?

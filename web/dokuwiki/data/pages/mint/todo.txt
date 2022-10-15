@@ -4,7 +4,7 @@
 
   * systemd
   * neovim
-  * shell (dash + zsh)
+  * shell (dash + zsh) https://github.com/elenapan/dotfiles/blob/master/.zshrc
   * cron (anacron)
 
 ===== Network =====

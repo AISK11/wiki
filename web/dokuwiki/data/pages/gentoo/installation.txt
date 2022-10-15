@@ -1,0 +1,74 @@
+====== Installation ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Environment Preparation =====
+
+  - Set console keymap and font:<cli>
+# loadkeys us
+# setfont eurlatgr
+# unicode_start
+</cli>
+  - Verify UEFI and remount UEFI NVRAM as read only((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)):<cli>
+# ls -ld /sys/firmware/efi/
+# mount -o remount,ro efivarfs
+</cli>
+
+===== Configure Network =====
+
+==== Ethernet ====
+
+==== Wi-Fi ====
+
+===== Disk Partitioning =====
+
+  - Create partitions:<cli>
+# cfdisk -z </dev/sdX>
+cfdisk> gpt
+cfdisk> n
+cfdisk> 2GiB
+cfdisk> t
+cfdisk> EFI System
+cfdisk> n
+cfdisk>  (Enter)
+cfdisk> W
+cfdisk> yes
+cfdisk> q
+# parted -s </dev/sdX> name 1 ESP
+# parted -s </dev/sdX> name 2 LUKS
+</cli>
+  - Create filesystems: 
+    - EFI filesystem:<cli>
+# wipefs -a </dev/sdX1>
+# mkfs.vfat -F 32 </dev/sdX1>
+# fatlabel </dev/sdX1> ESP
+# fatlabel -i </dev/sdX1> 00000001
+# fsck.vfat </dev/sdX1> ; echo $?
+</cli>
+    - LUKS encrypted filesystem:<cli>
+# dd if=/dev/urandom of=</dev/sdX2> status=progress ; sync
+# wipefs -a </dev/sdX2>
+# cryptsetup luksFormat --force-password --type luks2 </dev/sdX2>
+> YES
+> <NEW-LUKS-PASSWORD>
+> <NEW-LUKS-PASSWORD (VERIFY)>
+# cryptsetup config --label LUKS </dev/sdX2>
+# cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 </dev/sdX2>
+> YES
+# cryptsetup open --type luks2 </dev/sdX2> luks-root
+> <LUKS-PASSWORD>
+</cli>
+    - Root filesystem((Status of btrfs in linux: https://btrfs.wiki.kernel.org/index.php/Status.)):<cli>
+# wipefs -a /dev/mapper/luks-root
+# mkfs.btrfs /dev/mapper/luks-root
+# btrfs filesystem label /dev/mapper/luks-root LUKS-ROOT
+# btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-root
+> y
+# btrfs check /dev/mapper/luks-root ; echo $?
+</cli>
+  - Verify partitions and filesystems:<cli>
+# parted -s </dev/sdX> [unit B] p free
+# lsblk -fp </dev/sdX>
+</cli>

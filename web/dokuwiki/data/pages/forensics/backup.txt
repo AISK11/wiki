@@ -1,0 +1,16 @@
+====== Backup ======
+
+===== RAM =====
+
+  - Find RAM size in bytes and backup RAM to a file:<cli>
+# vmstat -s -S b | head -n 1
+# ?
+</cli>
+
+===== Hard Drive =====
+
+  - Unmount source disk!
+  - Find disk size in bytes and backup disk to file:<cli>
+# parted -s </dev/sdX> unit B p free
+# dd if=</dev/sdX> of=<OUTPUT-FILE.dd> status=progress ; sync
+</cli>

@@ -1,0 +1,13 @@
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+  * Installation
+    * glibc + gcc
+    * openrc
+    * grub
+
+  * Links
+    * Core system: https://wiki.gentoo.org/wiki/Category:Core_system
+    * Recommended apps: https://wiki.gentoo.org/wiki/Recommended_applications
+    * Cheatsheet: https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet

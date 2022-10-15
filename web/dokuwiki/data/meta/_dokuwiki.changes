@@ -1,83 +1,3 @@
-1664983166	127.0.0.1	E	cybersecurity:crypto:hashing	admin			10
-1664983233	127.0.0.1	D	void:sway	admin	removed		-134
-1664983353	127.0.0.1	E	void:sidebar	admin			14
-1664983539	127.0.0.1	C	void:audio	admin	created		137
-1664984081	127.0.0.1	E	void:audio	admin			12
-1664986031	127.0.0.1	E	void:sidebar	admin			55
-1664988023	127.0.0.1	C	void:terminal_emulator	admin	created		157
-1664988271	127.0.0.1	E	void:terminal_emulator	admin			73
-1664988303	127.0.0.1	E	void:terminal_emulator	admin			31
-1664988428	127.0.0.1	E	void:terminal_emulator	admin			32
-1664990127	127.0.0.1	E	void:xbps	admin			1
-1664990193	127.0.0.1	E	void:xbps	admin			31
-1664990478	127.0.0.1	E	void:sidebar	admin			0
-1664990859	127.0.0.1	E	void:audio	admin			26
-1664991848	127.0.0.1	E	void:audio	admin			90
-1664992267	127.0.0.1	E	void:audio	admin			-43
-1664992431	127.0.0.1	E	void:audio	admin	[Installation] 		-1
-1664993058	127.0.0.1	E	void:audio	admin			17
-1664993201	127.0.0.1	E	void:audio	admin			66
-1664993233	127.0.0.1	E	void:installation	admin			-6
-1664993894	127.0.0.1	E	void:audio	admin			69
-1664993900	127.0.0.1	E	void:audio	admin			1
-1664994144	127.0.0.1	E	void:audio	admin	[Configuration] 		-7
-1664995194	127.0.0.1	E	void:audio	admin	[Configuration] 		16
-1664995263	127.0.0.1	E	void:audio	admin			27
-1664995287	127.0.0.1	E	void:audio	admin			-8
-1664995379	127.0.0.1	E	void:audio	admin	[Configuration] 		13
-1664995555	127.0.0.1	E	void:audio	admin			155
-1664995564	127.0.0.1	E	void:audio	admin			-1
-1664995599	127.0.0.1	E	void:audio	admin			57
-1665000842	127.0.0.1	E	sidebar	admin			14
-1665000879	127.0.0.1	E	sidebar	admin			16
-1665000918	127.0.0.1	E	sidebar	admin			35
-1665000992	127.0.0.1	C	hardware:index	admin	created		73
-1665001000	127.0.0.1	D	hardware:index	admin	removed		-73
-1665001010	127.0.0.1	C	hardware:sidebar	admin	created		74
-1665001076	127.0.0.1	E	hardware:sidebar	admin			82
-1665001143	127.0.0.1	C	hardware:index	admin	created		23
-1665001170	127.0.0.1	C	hardware:cpu	admin	created		18
-1665001326	127.0.0.1	E	hardware:cpu	admin			88
-1665001338	127.0.0.1	E	hardware:cpu	admin			11
-1665001352	127.0.0.1	E	hardware:cpu	admin			17
-1665001379	127.0.0.1	E	hardware:cpu	admin			43
-1665001404	127.0.0.1	E	hardware:cpu	admin			11
-1665001420	127.0.0.1	E	hardware:cpu	admin			17
-1665001775	127.0.0.1	E	hardware:cpu	admin			19
-1665001796	127.0.0.1	E	hardware:cpu	admin			15
-1665002227	127.0.0.1	E	hardware:sidebar	admin			231
-1665002538	127.0.0.1	E	sidebar	admin			27
-1665002624	127.0.0.1	C	minimalism	admin	created		140
-1665002648	127.0.0.1	E	minimalism	admin			26
-1665002704	127.0.0.1	D	minimalism	admin	removed		-166
-1665002710	127.0.0.1	E	sidebar	admin			6
-1665002721	127.0.0.1	C	minimalism:index	admin	created		166
-1665002774	127.0.0.1	C	minimalism:sidebar	admin	created		119
-1665002789	127.0.0.1	E	minimalism:index	admin			-140
-1665002825	127.0.0.1	C	minimalism:resources	admin	created		143
-1665003540	127.0.0.1	E	minimalism:resources	admin			71
-1665004814	127.0.0.1	E	minimalism:resources	admin			16
-1665005850	127.0.0.1	E	void:index	admin			7
-1665005859	127.0.0.1	E	void:index	admin	[Pros] 		1
-1665006240	127.0.0.1	E	sidebar	admin			0
-1665006275	127.0.0.1	E	void:sidebar	admin			16
-1665006713	127.0.0.1	E	void:sidebar	admin			30
-1665006951	127.0.0.1	E	void:sidebar	admin			-6
-1665007132	127.0.0.1	E	void:sidebar	admin			26
-1665008391	127.0.0.1	E	void:sidebar	admin			46
-1665009073	127.0.0.1	C	void:fosscord	admin	created		273
-1665009280	127.0.0.1	D	void:fosscord	admin	removed		-273
-1665009291	127.0.0.1	E	void:sidebar	admin			-46
-1665009673	127.0.0.1	E	void:sidebar	admin			44
-1665009773	127.0.0.1	C	void:discord	admin	created		163
-1665009812	127.0.0.1	E	void:discord	admin	[Installation] 		2
-1665009901	127.0.0.1	E	void:discord	admin			17
-1665010433	127.0.0.1	E	void:discord	admin			172
-1665010536	127.0.0.1	E	void:discord	admin			48
-1665010548	127.0.0.1	E	void:discord	admin			-2
-1665010590	127.0.0.1	E	void:discord	admin			38
-1665014992	127.0.0.1	E	sidebar	admin			61
-1665044064	127.0.0.1	E	cybersecurity:crypto:hashing	admin			63
 1665239339	127.0.0.1	E	rpios:arm64_post-installation		external edit		0
 1665239339	127.0.0.1	E	sidebar		external edit		0
 1665239339	127.0.0.1	E	windows:password_recovery		external edit		0
@@ -307,3 +227,61 @@
 1665618654	127.0.0.1	E	mint:privilege_escalation	admin	[Configuration] 		149
 1665618664	127.0.0.1	E	mint:privilege_escalation	admin			6
 1665618729	127.0.0.1	E	mint:firewall	admin	[Configuration] 		1
+1665645605	127.0.0.1	E	todo	admin			69
+1665651178	127.0.0.1	E	forensics:sidebar	admin			45
+1665651398	127.0.0.1	C	forensics:backup	admin	created		362
+1665651418	127.0.0.1	E	forensics:backup	admin	[Hard Drive] 		-20
+1665651425	127.0.0.1	E	forensics:backup	admin			6
+1665651802	127.0.0.1	E	forensics:backup	admin			58
+1665655241	127.0.0.1	E	forensics:backup	admin	[RAM] 		-56
+1665702476	127.0.0.1	E	mint:todo	admin			56
+1665703283	127.0.0.1	E	mint:sidebar	admin			26
+1665703333	127.0.0.1	C	mint:fonts	admin	created		40
+1665704566	127.0.0.1	E	sidebar	admin			35
+1665239339	127.0.0.1	E	gentoo:resources		external edit		0
+1665705237	127.0.0.1	E	gentoo:resources	admin			94
+1665239339	127.0.0.1	E	gentoo:index		external edit		0
+1665705292	127.0.0.1	E	gentoo:index	admin			805
+1665707363	127.0.0.1	E	gentoo:index	admin			-782
+1665707378	127.0.0.1	E	gentoo:index	admin			0
+1665707398	127.0.0.1	E	gentoo:index	admin			1
+1665707413	127.0.0.1	E	gentoo:index	admin			4
+1665707520	127.0.0.1	E	gentoo:index	admin			-37
+1665239339	127.0.0.1	E	gentoo:sidebar		external edit		0
+1665708777	127.0.0.1	E	gentoo:sidebar	admin			37
+1665708810	127.0.0.1	C	gentoo:todo	admin	created		58
+1665708874	127.0.0.1	E	gentoo:index	admin			75
+1665708974	127.0.0.1	E	gentoo:todo	admin			158
+1665709062	127.0.0.1	E	gentoo:resources	admin			47
+1665709068	127.0.0.1	E	gentoo:resources	admin			-1
+1665756384	127.0.0.1	E	gentoo:sidebar	admin			67
+1665756478	127.0.0.1	C	gentoo:pre-installation	admin	created		195
+1665779508	127.0.0.1	E	gentoo:pre-installation	admin			189
+1665780152	127.0.0.1	E	gentoo:pre-installation	admin			44
+1665780518	127.0.0.1	E	gentoo:pre-installation	admin			51
+1665781174	127.0.0.1	E	gentoo:todo	admin			66
+1665781894	127.0.0.1	E	gentoo:index	admin			42
+1665781932	127.0.0.1	R	gentoo:index	admin	old revision restored (2022-10-14 02:54)	1665708874	-42
+1665781947	127.0.0.1	E	gentoo:index	admin			49
+1665784502	127.0.0.1	E	gentoo:pre-installation	admin			202
+1665784767	127.0.0.1	E	gentoo:pre-installation	admin			142
+1665784882	127.0.0.1	E	gentoo:pre-installation	admin			109
+1665785295	127.0.0.1	E	gentoo:pre-installation	admin			-6
+1665785311	127.0.0.1	E	gentoo:pre-installation	admin			0
+1665785375	127.0.0.1	E	gentoo:pre-installation	admin			27
+1665785411	127.0.0.1	E	gentoo:pre-installation	admin	[Download] 		8
+1665785588	127.0.0.1	E	gentoo:pre-installation	admin			576
+1665785641	127.0.0.1	E	gentoo:pre-installation	admin			61
+1665785672	127.0.0.1	E	gentoo:pre-installation	admin			2
+1665786019	127.0.0.1	E	gentoo:pre-installation	admin			5
+1665786035	127.0.0.1	E	gentoo:pre-installation	admin			-2
+1665786048	127.0.0.1	E	gentoo:pre-installation	admin			2
+1665786085	127.0.0.1	E	gentoo:sidebar	admin			42
+1665787341	127.0.0.1	E	gentoo:pre-installation	admin			-94
+1665787354	127.0.0.1	C	gentoo:installation	admin	created		120
+1665788075	127.0.0.1	E	gentoo:todo	admin			94
+1665789629	127.0.0.1	E	gentoo:installation	admin			336
+1665789728	127.0.0.1	E	gentoo:installation	admin			99
+1665791163	127.0.0.1	E	gentoo:installation	admin			1297
+1665791315	127.0.0.1	E	gentoo:installation	admin	[Disk Partitioning] 		14
+1665795173	127.0.0.1	E	gentoo:installation	admin	[Disk Partitioning] 		77
