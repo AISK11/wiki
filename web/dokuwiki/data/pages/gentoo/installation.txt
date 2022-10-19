@@ -22,7 +22,7 @@ This section is incomplete and needs further work!
 
 ==== Wi-Fi ====
 
-===== Disk Partitioning =====
+===== Disk Preparation =====
 
   - Create partitions:<cli>
 # cfdisk -z </dev/sdX>
@@ -77,9 +77,6 @@ cfdisk> q
 # btrfs subvolume create /mnt/gentoo/@
 # umount /mnt/gentoo/
 </cli>
-
-===== Stage 3 =====
-
   - Mount filesystems:
     - Btrfs((Btrfs mount options: https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options.)) subvolume:<cli>
 # mount -o noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-gentoo /mnt/gentoo/
@@ -88,3 +85,110 @@ cfdisk> q
 # mkdir -p /mnt/gentoo/boot/
 # mount </dev/sda1> /mnt/gentoo/boot/
 </cli>
+
+===== Stage 3 =====
+
+  - Prepare download:
+    - Set date manually:<cli>
+# date [-u] <MMDDhhmmCCYY.ss>
+</cli>
+    - Go to mounted new root directory:<cli>
+# cd /mnt/gentoo/
+</cli>
+  - Download stage 3 files:
+    - Navigate to gentoo website:<cli>
+# links https://www.gentoo.org/downloads/mirrors
+</cli>
+    - Navigate to ''<MIRROR>/releases/amd64/autobuilds/current-stage3-amd64-openrc/''.
+    - Download (with <kbd>D</kbd> key): 
+      - ''stage3-amd64-openrc-<CCYYMMDDThhmmssZ>.tar.xz''
+      - ''stage3-amd64-openrc-<CCYYMMDDThhmmssZ>.tar.xz.DIGESTS''
+  - Verify stage 3 files:
+    - Import Gentoo PGP key((Gentoo signatures: https://www.gentoo.org/downloads/signatures.)):<cli>
+# gpg --keyserver hkps://keys.gentoo.org --recv-keys 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+</cli>
+    - Verify authenticity and integrity:<cli>
+# gpg --verify ./stage3-amd-64-openrc-<CCYYMMDDhhmmZ>.tar.xz.DIGESTS
+# sha512sum -c --ignore-missing ./stage3-amd-64-openrc-<CCYYMMDDhhmmZ>.tar.xz.DIGESTS ./stage3-amd-64-openrc-<CCYYMMDDhhmmZ>.tar.xz
+</cli>
+  - Unpack stage 3:<cli>
+# tar xpvf ./stage3-amd-64-openrc-<CCYYMMDDhhmmZ>.tar.xz --xattrs-include='*.*' --numeric-owner
+</cli>
+  - Clean:<cli>
+# rm -f ./stage3-amd-64-openrc-<CCYYMMDDhhmmZ>.tar.xz ./stage3-amd-64-openrc-<CCYYMMDDhhmmZ>.tar.xz.DIGESTS
+</cli>
+
+===== Compile Options =====
+
+  - Find system nubmer of threads and RAM size (in bytes):<cli>
+# nproc
+# vmstat -s -S b | head -n 1 | grep -o '[0-9]*'
+</cli>
+  - Configure compiling options((Handbook for make.conf: https://wiki.gentoo.org/wiki//etc/portage/make.conf.))((Manpage for make.conf: https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html.))((Configuration example for make.conf: https://github.com/gentoo/portage/blob/master/cnf/make.conf.example.))((Compilation flags: https://wiki.gentoo.org/wiki/Safe_CFLAGS.))((MAKEOPTS compilation options: https://wiki.gentoo.org/wiki/MAKEOPTS.))((Emerge options: https://wiki.gentoo.org/wiki/EMERGE_DEFAULT_OPTS.))((Emerge manpage: https://wiki.gentoo.org/wiki/Full_manpages/emerge.))((Portage niceness: https://wiki.gentoo.org/wiki/Portage_niceness.))((Per-packages licenes: https://wiki.gentoo.org/wiki//etc/portage/package.license.))((Global USE flags: https://packages.gentoo.org/useflags/global.))((All USE flags: https://www.gentoo.org/support/use-flags)):<file text /mnt/gentoo/etc/portage/make.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/portage/make.conf (0644 root:root)
+## DEPENDENCIES: sys-apps/portage
+## DESCRIPTION:  Global portage configuration file.
+
+## Per-package config: '/etc/portage/package.use/'.
+## See all variables: $(emerge --info -v).
+
+## Number of parallel compilations. Use smaller value between CPU and RAM.
+## - Amount of CPU threads (find with $(nproc)).
+## - RAM / 2 GiB (find with $(vmstat -s -S b | head -n 1 | grep -o '[0-9]*').
+PC='4'
+
+## Compilation flags for C, C++, FORTRAN 77 and FORTRAN languages.
+COMMON_FLAGS='-march=native -O2 -pipe'
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+
+## Amount of parallel make (compilation) jobs.
+MAKEOPTS="-j${PC} -l$((${PC}+1))"
+
+## Entries to append to emerge command.
+EMERGE_DEFAULT_OPTS='--keep-going=y --with-bdeps=y --ask-enter-invalid'
+
+## Actions that portage takes.
+FEATURES='sandbox strict test strict-keepdir collision-protect cgroup \
+ parallel-install distcc noinfo candy'
+
+## Allow portage to use only idle system resources.
+PORTAGE_SCHEDULING_POLICY='idle'
+
+## Accept only FSF licensed software. Specify exceptions in
+## '/etc/portage/package.license'.
+ACCEPT_LICENSE="-* @FREE"
+
+## Portage directories.
+PORTDIR='/var/db/repos/gentoo'
+DISTDIR='/var/cache/distfiles'
+PKGDIR='/var/cache/binpkgs'
+
+## English language for build output.
+LC_MESSAGES='C'
+
+## Global software USE flags ((https://packages.gentoo.org/useflags/global)).
+## - System.
+USE="${USE} -systemd -emacs -xemacs -themes -bash-completion multilib ncurses \
+ xattr lm-senosrs dbus udev elogind man git zsh-completion"
+
+## - Security.
+USE="${USE} -telemetry hardened apparmor argon2 crypt"
+
+## - Network.
+USE="${USE} -zeroconf bluetooth wifi ipv6 ssl vnc rdp samba"
+
+## - DE & WM.
+USE="${USE} -gnome -gnome-keyring -kde -plasma wayland X tray gtk libnotify \
+ inotify"
+
+## - Multimedia.
+USE="${USE} fontconfig truetype xft unicode cjk svg png jpeg exif tiff webp \
+ mp3 flac mp4"
+
+## - Nvidia.
+USE="${USE} nvenc"
+</file>

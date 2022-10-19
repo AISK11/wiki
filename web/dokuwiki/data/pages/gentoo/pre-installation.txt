@@ -4,22 +4,22 @@
 
   - [[https://www.gentoo.org/downloads|Download Gentoo]] => [[https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds|mirror bouncer]]((Gentoo mirrors: https://www.gentoo.org/downloads/mirrors.)).
   - Download ISO and verification file:
-    - ''current-admincd-amd64/admincd-amd64-<YYYYMMDDThhmmssZ>.iso''
-    - ''current-admincd-amd64/admincd-amd64-<YYYYMMDDThhmmssZ>.iso.DIGESTS''
+    - ''current-admincd-amd64/admincd-amd64-<CCYYMMDDThhmmssZ>.iso''
+    - ''current-admincd-amd64/admincd-amd64-<CCYYMMDDThhmmssZ>.iso.DIGESTS''
 
   - Import Gentoo PGP key((Gentoo signatures: https://www.gentoo.org/downloads/signatures.)):<cli>
 $ gpg --keyserver hkps://keys.gentoo.org --recv-keys 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 </cli>
   - Verify authenticity and integrity:<cli>
-$ gpg --verify ./admincd-amd64-<YYYYMMDDThhmmssZ>.iso.DIGESTS
-$ sha512sum -c --ignore-missing ./admincd-amd64-<YYYYMMDDThhmmssZ>.iso.DIGESTS ./admincd-amd64-<YYYYMMDDThhmmssZ>.iso
+$ gpg --verify ./admincd-amd64-<CCYYMMDDThhmmssZ>.iso.DIGESTS
+$ sha512sum -c --ignore-missing ./admincd-amd64-<CCYYMMDDThhmmssZ>.iso.DIGESTS ./admincd-amd64-<CCYYMMDDThhmmssZ>.iso
 </cli>
 
 ===== Flash USB =====
 
   - Make sure the USB filesystem is **not** mounted!
   - Flash USB with disk image:<cli>
-# dd if=./admincd-amd64-<YYYYMMDDThhmmssZ>.iso of=</dev/sdX> status=progress ; sync
+# dd if=./admincd-amd64-<CCYYMMDDThhmmssZ>.iso of=</dev/sdX> status=progress ; sync
 </cli>
 
 ===== USB Boot =====

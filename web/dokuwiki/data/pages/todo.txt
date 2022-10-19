@@ -33,3 +33,5 @@ Sway + nvidia 30FPS on fullscreen:
 <cli>
 DRI_PRIME=1 %command% +fps_max 240
 </cli>
+
+r8168 vs r8169

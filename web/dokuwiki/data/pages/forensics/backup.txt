@@ -3,7 +3,7 @@
 ===== RAM =====
 
   - Find RAM size in bytes and backup RAM to a file:<cli>
-# vmstat -s -S b | head -n 1
+# vmstat -s -S b | head -n 1 | grep -o '[0-9]*'
 # ?
 </cli>
 

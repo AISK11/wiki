@@ -362,3 +362,16 @@ vmstat
 cflags
 umount
 subvol
+stage3
+unpack
+xattrs
+nubmer
+fflags
+append
+strict
+distcc
+noinfo
+pkgdir
+xemacs
+argon2
+plasma

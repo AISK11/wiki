@@ -11,9 +11,9 @@
 </li>
 <li class="level1 node"><div class="li"> Download ISO and verification file:</div>
 <ol>
-<li class="level2"><div class="li"> <code>current-admincd-amd64/admincd-amd64-&lt;YYYYMMDDThhmmssZ&gt;.iso</code></div>
+<li class="level2"><div class="li"> <code>current-admincd-amd64/admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso</code></div>
 </li>
-<li class="level2"><div class="li"> <code>current-admincd-amd64/admincd-amd64-&lt;YYYYMMDDThhmmssZ&gt;.iso.DIGESTS</code></div>
+<li class="level2"><div class="li"> <code>current-admincd-amd64/admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso.DIGESTS</code></div>
 </li>
 </ol>
 </li>
@@ -21,8 +21,8 @@
 <ol>
 <li class="level1"><div class="li"> Import Gentoo PGP key<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">gpg --keyserver hkps://keys.gentoo.org --recv-keys 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Verify authenticity and integrity:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">gpg --verify ./admincd-amd64-&lt;YYYYMMDDThhmmssZ&gt;.iso.DIGESTS</span>
-<span class="cli_prompt">$ </span><span class="cli_command">sha512sum -c --ignore-missing ./admincd-amd64-&lt;YYYYMMDDThhmmssZ&gt;.iso.DIGESTS ./admincd-amd64-&lt;YYYYMMDDThhmmssZ&gt;.iso</span></pre><p></div>
+<li class="level1"><div class="li"> Verify authenticity and integrity:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">gpg --verify ./admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso.DIGESTS</span>
+<span class="cli_prompt">$ </span><span class="cli_command">sha512sum -c --ignore-missing ./admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso.DIGESTS ./admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso</span></pre><p></div>
 </li>
 </ol>
 
@@ -33,7 +33,7 @@
 <ol>
 <li class="level1"><div class="li"> Make sure the USB filesystem is <strong>not</strong> mounted!</div>
 </li>
-<li class="level1"><div class="li"> Flash USB with disk image:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=./admincd-amd64-&lt;YYYYMMDDThhmmssZ&gt;.iso of=&lt;/dev/sdX&gt; status=progress ; sync</span></pre><p></div>
+<li class="level1"><div class="li"> Flash USB with disk image:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=./admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso of=&lt;/dev/sdX&gt; status=progress ; sync</span></pre><p></div>
 </li>
 </ol>
 

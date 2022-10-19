@@ -295,3 +295,12 @@ aslatter
 elenapan
 dotfiles
 category
+makeopts
+niceness
+useflags
+parallel
+cxxflags
+hardened
+apparmor
+zeroconf
+truetype
