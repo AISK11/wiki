@@ -108,7 +108,8 @@ This section is incomplete and needs further work!
 <ol>
 <li class="level1 node"><div class="li"> Prepare download:</div>
 <ol>
-<li class="level2"><div class="li"> Set date manually:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">date [-u] &lt;MMDDhhmmCCYY.ss&gt;</span></pre><p></div>
+<li class="level2"><div class="li"> Set date manually:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">date [-u] &lt;MMDDhhmmCCYY.ss&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">hwclock --systohc</span></pre><p></div>
 </li>
 <li class="level2"><div class="li"> Go to mounted new root directory:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cd /mnt/gentoo/</span></pre><p></div>
 </li>
@@ -146,14 +147,14 @@ This section is incomplete and needs further work!
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Stage 3&quot;,&quot;hid&quot;:&quot;stage_3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;2450-3746&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Stage 3&quot;,&quot;hid&quot;:&quot;stage_3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;2450-3766&quot;} -->
 <h2 class="sectionedit10" id="compile_options">Compile Options</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Find system nubmer of threads and RAM size (in bytes):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">nproc</span>
 <span class="cli_prompt"># </span><span class="cli_command">vmstat -s -S b | head -n 1 | grep -o &#039;[0-9]*&#039;</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Configure compiling options<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup><sup><a href="#fn__6" id="fnt__6" class="fn_top">6)</a></sup><sup><a href="#fn__7" id="fnt__7" class="fn_top">7)</a></sup><sup><a href="#fn__8" id="fnt__8" class="fn_top">8)</a></sup><sup><a href="#fn__9" id="fnt__9" class="fn_top">9)</a></sup><sup><a href="#fn__10" id="fnt__10" class="fn_top">10)</a></sup><sup><a href="#fn__11" id="fnt__11" class="fn_top">11)</a></sup><sup><a href="#fn__12" id="fnt__12" class="fn_top">12)</a></sup><sup><a href="#fn__13" id="fnt__13" class="fn_top">13)</a></sup><sup><a href="#fn__14" id="fnt__14" class="fn_top">14)</a></sup><sup><a href="#fn__15" id="fnt__15" class="fn_top">15)</a></sup>:<dl class="file">
+<li class="level1"><div class="li"> Configure compiling options<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup><sup><a href="#fn__6" id="fnt__6" class="fn_top">6)</a></sup><sup><a href="#fn__7" id="fnt__7" class="fn_top">7)</a></sup><sup><a href="#fn__8" id="fnt__8" class="fn_top">8)</a></sup><sup><a href="#fn__9" id="fnt__9" class="fn_top">9)</a></sup><sup><a href="#fn__10" id="fnt__10" class="fn_top">10)</a></sup><sup><a href="#fn__11" id="fnt__11" class="fn_top">11)</a></sup><sup><a href="#fn__12" id="fnt__12" class="fn_top">12)</a></sup><sup><a href="#fn__13" id="fnt__13" class="fn_top">13)</a></sup><sup><a href="#fn__14" id="fnt__14" class="fn_top">14)</a></sup><sup><a href="#fn__15" id="fnt__15" class="fn_top">15)</a></sup><sup><a href="#fn__16" id="fnt__16" class="fn_top">16)</a></sup>:<dl class="file">
 <dt><a href="http://localhost/_export/code/gentoo/installation?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/mnt/gentoo/etc/portage/make.conf</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
 ## LOCATION:     /etc/portage/make.conf (0644 root:root)
@@ -168,6 +169,9 @@ This section is incomplete and needs further work!
 ## - RAM / 2 GiB (find with $(vmstat -s -S b | head -n 1 | grep -o '[0-9]*').
 PC='4'
 &nbsp;
+## Load average (should be ${PC}+1).
+LA='5'
+&nbsp;
 ## Compilation flags for C, C++, FORTRAN 77 and FORTRAN languages.
 COMMON_FLAGS='-march=native -O2 -pipe'
 CFLAGS=&quot;${COMMON_FLAGS}&quot;
@@ -176,13 +180,13 @@ FFLAGS=&quot;${COMMON_FLAGS}&quot;
 FCFLAGS=&quot;${COMMON_FLAGS}&quot;
 &nbsp;
 ## Amount of parallel make (compilation) jobs.
-MAKEOPTS=&quot;-j${PC} -l$((${PC}+1))&quot;
+MAKEOPTS=&quot;-j${PC} -l${LA}&quot;
 &nbsp;
 ## Entries to append to emerge command.
 EMERGE_DEFAULT_OPTS='--keep-going=y --with-bdeps=y --ask-enter-invalid'
 &nbsp;
 ## Actions that portage takes.
-FEATURES='sandbox strict test strict-keepdir collision-protect cgroup \
+FEATURES='sandbox strict strict-keepdir collision-protect cgroup \
  parallel-install distcc noinfo candy'
 &nbsp;
 ## Allow portage to use only idle system resources.
@@ -202,7 +206,7 @@ LC_MESSAGES='C'
 &nbsp;
 ## Global software USE flags ((https://packages.gentoo.org/useflags/global)).
 ## - System.
-USE=&quot;${USE} -systemd -emacs -xemacs -themes -bash-completion multilib ncurses \
+USE=&quot;${USE} -systemd -emacs -xemacs -themes -bash-completion python multilib ncurses \
  xattr lm-senosrs dbus udev elogind man git zsh-completion&quot;
 &nbsp;
 ## - Security.
@@ -216,8 +220,7 @@ USE=&quot;${USE} -gnome -gnome-keyring -kde -plasma wayland X tray gtk libnotify
  inotify&quot;
 &nbsp;
 ## - Multimedia.
-USE=&quot;${USE} fontconfig truetype xft unicode cjk svg png jpeg exif tiff webp \
- mp3 flac mp4&quot;
+USE=&quot;${USE} fontconfig truetype xft unicode cjk svg png jpeg exif mp3 flac mp4&quot;
 &nbsp;
 ## - Nvidia.
 USE=&quot;${USE} nvenc&quot;</pre>
@@ -227,7 +230,61 @@ USE=&quot;${USE} nvenc&quot;</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Compile Options&quot;,&quot;hid&quot;:&quot;compile_options&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;3747-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Compile Options&quot;,&quot;hid&quot;:&quot;compile_options&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;3767-6951&quot;} -->
+<h2 class="sectionedit11" id="mirrors_ebuild_repo">Mirrors &amp; Ebuild Repo</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Select mirror(s):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Set up gentoo ebuild repository:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/gentoo/etc/portage/repos.conf/</span>
+<span class="cli_prompt"># </span><span class="cli_command">cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Mirrors &amp; Ebuild Repo&quot;,&quot;hid&quot;:&quot;mirrors_ebuild_repo&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:11,&quot;range&quot;:&quot;6952-7275&quot;} -->
+<h2 class="sectionedit12" id="chroot">Chroot</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Copy DNS info:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp -L /etc/resolv.conf /mnt/gentoo/etc/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Mount pseudo filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount --rbind /dev/ /mnt/gentoo/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /sys/ /mnt/gentoo/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /proc/ /mnt/gentoo/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /run/ /mnt/gentoo/run/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/gentoo/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/gentoo/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/gentoo/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/gentoo/run/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Enter chroot:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/gentoo/ /bin/[ba]sh</span>
+<span class="cli_prompt"># </span><span class="cli_command">. ./etc/profile</span>
+<span class="cli_prompt"># </span><span class="cli_command">export PS1=&quot;(chroot) ${PS1}&quot;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:12,&quot;range&quot;:&quot;7276-7839&quot;} -->
+<h2 class="sectionedit13" id="system_recompilation">System Recompilation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Download daily ebuild repository snapshot:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">emerge-webrsync</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Update ebuild repository to the altest version:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">emerge --sync</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Read update news and delete them afterwards:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect news list</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect news read [N] | less</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect news purge [N]</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Select right profile (<code>default/linux/amd64/&lt;VERSION&gt; (stable)</code>):</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect profile list</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect profile set &lt;N&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Update @world set:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">emerge -avuDN @world</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Recompilation&quot;,&quot;hid&quot;:&quot;system_recompilation&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:13,&quot;range&quot;:&quot;7840-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Read-write efivarfs problem: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
@@ -253,9 +310,11 @@ USE=&quot;${USE} nvenc&quot;</pre>
 <div class="fn"><sup><a href="#fnt__12" id="fn__12" class="fn_bot">12)</a></sup> 
 <div class="content">Portage niceness: <a href="https://wiki.gentoo.org/wiki/Portage_niceness" class="urlextern" title="https://wiki.gentoo.org/wiki/Portage_niceness">https://wiki.gentoo.org/wiki/Portage_niceness</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__13" id="fn__13" class="fn_bot">13)</a></sup> 
-<div class="content">Per-packages licenes: <a href="https://wiki.gentoo.org/wiki//etc/portage/package.license" class="urlextern" title="https://wiki.gentoo.org/wiki//etc/portage/package.license">https://wiki.gentoo.org/wiki//etc/portage/package.license</a>.</div></div>
+<div class="content">Licenses: <a href="https://wiki.gentoo.org/wiki/License_groups" class="urlextern" title="https://wiki.gentoo.org/wiki/License_groups">https://wiki.gentoo.org/wiki/License_groups</a></div></div>
 <div class="fn"><sup><a href="#fnt__14" id="fn__14" class="fn_bot">14)</a></sup> 
-<div class="content">Global USE flags: <a href="https://packages.gentoo.org/useflags/global" class="urlextern" title="https://packages.gentoo.org/useflags/global">https://packages.gentoo.org/useflags/global</a>.</div></div>
+<div class="content">Per-packages licenes: <a href="https://wiki.gentoo.org/wiki//etc/portage/package.license" class="urlextern" title="https://wiki.gentoo.org/wiki//etc/portage/package.license">https://wiki.gentoo.org/wiki//etc/portage/package.license</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__15" id="fn__15" class="fn_bot">15)</a></sup> 
+<div class="content">Global USE flags: <a href="https://packages.gentoo.org/useflags/global" class="urlextern" title="https://packages.gentoo.org/useflags/global">https://packages.gentoo.org/useflags/global</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__16" id="fn__16" class="fn_bot">16)</a></sup> 
 <div class="content">All USE flags: <a href="https://www.gentoo.org/support/use-flags" class="urlextern" title="https://www.gentoo.org/support/use-flags">https://www.gentoo.org/support/use-flags</a></div></div>
 </div>

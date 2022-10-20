@@ -1,0 +1,80 @@
+====== Operating Systems Comparison ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Windows =====
+
+==== Windows 11 ====
+
+  * Proprietary.
+  * Spyware((Windows backdoors: https://www.whonix.org/wiki/Host_Operating_System_Selection#Windows_Hosts.)).
+  * Slow, resource-heavy.
+  * Installation procedure (forcing Microsoft account, opt-out of additional spyware).
+  * Powershell syntax.
+  * Point release.
+
+===== BSD =====
+
+==== OpenBSD ====
+
+  * Lack of software support.
+  * Point release
+
+===== Linux =====
+
+==== Kubuntu ====
+
+  * Systemd init system.
+  * Forcing apps to be installed by snap.
+  * Package manager (apt).
+  * Managed by company (Canonical), not community-driven.
+  * Dependent distribution (Debian => Ubuntu => Kubuntu).
+  * Data gathering((Ubuntu privacy policy: https://ubuntu.com/legal/data-privacy.))((KDE telemetry policy: https://community.kde.org/Policies/Telemetry_Policy.)).
+  * Point release.
+  * Graphical installation.
+  * Not minimalistic + comes with pre-installed DE.
+  * Does not separates free and non-free software.
+  * Poor processor architecture support (amd64).
+  * Only glibc library support.
+
+==== Mint ====
+
+  * Systemd init system.
+  * Package manager (apt).
+  * Dependent distribution (Debian => Ubuntu => Mint).
+  * Some data gathering((Linux Mint privacy policy: https://www.linuxmint.com/privacy.php.)).
+  * Point release.
+  * Graphical installation.
+  * Not minimalistic + comes with pre-installed DE.
+  * Does not separates free and non-free software.
+  * Poor processor architecture support (amd64).
+  * Only glibc library support.
+
+==== Debian ====
+
+  * Systemd init system.
+  * Package manager (apt).
+  * Point release.
+  * Old packages.
+  * Graphical installation.
+  * Only glibc library support.
+
+==== Arch ====
+
+  * Systemd init system.
+  * Issues with PGP keys and arch-based distributions are basically unusable.
+  * Half of the packages((Arch packages: https://archlinux.org/packages.)) in AUR((AUR packages: https://aur.archlinux.org/packages.)).
+  * AUR.
+  * Poor processor architecture support (amd64)((Arch on ARM: https://archlinuxarm.org.)).
+  * Only glibc library support.
+
+==== Gentoo ====
+
+  * Source based (requires compilation).
+  * Time consuming.
+
+==== Void ====
+
+  * Small community & amount of packages.

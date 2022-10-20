@@ -15,20 +15,21 @@
 <span class="cli_prompt"># </span><span class="cli_command">setfont eurlatgr</span>
 <span class="cli_prompt"># </span><span class="cli_command">unicode_start</span></pre><p></div>
 </li>
-<li class="level1"><div class="li">  Disable system beeping (pcspkr module):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">modprobe -r pcspkr</span></pre><p></div>
+<li class="level1"><div class="li">  Disable system beeping (pcspkr module):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">lsmod | grep pcspkr &amp;&amp; modprobe -r pcspkr</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Verify UEFI boot:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ls -ld /sys/firmware/efi/</span></pre><p></div>
+<li class="level1"><div class="li"> Verify UEFI and remount UEFI NVRAM as read only<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ls -ld /sys/firmware/efi/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount -o remount,ro efivarfs</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Verify internet connectivity. See <a href="http://localhost/void/network" class="wikilink2" title="void:network" rel="nofollow" data-wiki-id="void:network">Network</a>.</div>
+<li class="level1"><div class="li"> Verify network connectivity.</div>
 </li>
-<li class="level1"><div class="li"> Update live environment system and install additional packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps ; xbps-install -Su</span>
-<span class="cli_prompt"># </span><span class="cli_command">xbps-install parted</span></pre><p></div>
+<li class="level1"><div class="li"> Update live environment system and install additional packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su[y] xbps ; xbps-install -Su[y]</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install [-y] parted</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-571&quot;} -->
-<h2 class="sectionedit3" id="disk_partitioning">Disk Partitioning</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-716&quot;} -->
+<h2 class="sectionedit3" id="disk_preparation">Disk Preparation</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Create partitions:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;/dev/sdX&gt;</span>
@@ -43,7 +44,7 @@
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">yes</span>
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">q</span>
 <span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 1 ESP</span>
-<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 2 LUKS</span></pre><p></div>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 2 VOID</span></pre><p></div>
 </li>
 <li class="level1 node"><div class="li"> Create filesystems: </div>
 <ol>
@@ -55,49 +56,61 @@
 </li>
 <li class="level2"><div class="li"> LUKS encrypted filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=/dev/urandom of=&lt;/dev/sdX2&gt; status=progress ; sync</span>
 <span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX2&gt;</span>
-<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksFormat -y --type luks2 &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksFormat --force-password --type luks2 &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD (VERIFY)&gt;</span>
-<span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label LUKS &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label LUKS-VOID &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
-<span class="cli_prompt"># </span><span class="cli_command">cryptsetup open --type luks2 &lt;/dev/sdX2&gt; luks-root</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup open --type luks2 &lt;/dev/sdX2&gt; luks-void</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;LUKS-PASSWORD&gt;</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> Root filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a /dev/mapper/luks-root</span>
-<span class="cli_prompt"># </span><span class="cli_command">mkfs.btrfs /dev/mapper/luks-root</span>
-<span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label /dev/mapper/luks-root LUKS-ROOT</span>
-<span class="cli_prompt"># </span><span class="cli_command">btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-root</span>
+<li class="level2"><div class="li"> Root filesystem<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a /dev/mapper/luks-void</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkfs.btrfs /dev/mapper/luks-void</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label /dev/mapper/luks-void VOID-ROOT</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-void</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">y</span>
-<span class="cli_prompt"># </span><span class="cli_command">btrfs check /dev/mapper/luks-root ; echo $?</span></pre><p></div>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs check /dev/mapper/luks-void ; echo $?</span></pre><p></div>
 </li>
 </ol>
 </li>
 <li class="level1"><div class="li"> Verify partitions and filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; [unit B] p free</span>
 <span class="cli_prompt"># </span><span class="cli_command">lsblk -fp &lt;/dev/sdX&gt;</span></pre><p></div>
 </li>
+<li class="level1"><div class="li"> Create btrfs subvolume(s):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount /dev/mapper/luks-void /mnt/void/</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs subvolume create /mnt/void/@</span>
+<span class="cli_prompt"># </span><span class="cli_command">umount /mnt/void/</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li"> Mount filesystems:</div>
+<ol>
+<li class="level2"><div class="li"> Btrfs<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> subvolume:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount -o noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> ESP:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/boot/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sda1&gt; /mnt/void/boot/</span></pre><p></div>
+</li>
+</ol>
+</li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Partitioning&quot;,&quot;hid&quot;:&quot;disk_partitioning&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;572-1899&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;717-2632&quot;} -->
 <h2 class="sectionedit4" id="base_system_installation">Base System Installation</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Create mount points and mount filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/</span>
-<span class="cli_prompt"># </span><span class="cli_command">mount /dev/mapper/luks-root /mnt/void/</span>
-<span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/boot/</span>
-<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sdX1&gt; /mnt/void/boot/</span></pre><p></div>
-</li>
-<li class="level1"><div class="li"> Instal minimal base system packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -S -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal</span></pre><p></div>
+<li class="level1"><div class="li"> Instal minimal base system packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -S[y] -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">y</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1900-2267&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2633-2822&quot;} -->
 <h2 class="sectionedit5" id="chroot">Chroot</h2>
 <div class="level2">
 <ol>
+<li class="level1"><div class="li"> Copy DNS configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp -L /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
+</li>
 <li class="level1"><div class="li"> Mount filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount --rbind /dev/ /mnt/void/dev/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount --rbind /sys/ /mnt/void/sys/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount --rbind /proc/ /mnt/void/proc/</span>
@@ -107,20 +120,19 @@
 <span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/proc/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/run/</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Copy DNS configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
-</li>
 <li class="level1"><div class="li"> Chroot into the new installation:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/void/ /bin/sh</span>
 <span class="cli_prompt"># </span><span class="cli_command">. ./etc/profile</span>
 <span class="cli_prompt"># </span><span class="cli_command">export PS1=&#039;(chroot) # &#039;</span></pre><p></div>
 </li>
 </ol>
+<hr />
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2268-2822&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2823-3386&quot;} -->
 <h2 class="sectionedit6" id="full_system_installation">Full System Installation</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Install additional repositories<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> and synchronize them:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree</span>
+<li class="level1"><div class="li"> Install additional repositories<sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup> and synchronize them:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree</span>
 <span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install -Su xbps ; xbps-install -Su</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Partitioning tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install parted cryptsetup dosfstools e2fsprogs btrfs-progs</span></pre><p></div>
@@ -146,7 +158,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2823-3971&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3387-4536&quot;} -->
 <h2 class="sectionedit7" id="swap_file">Swap File</h2>
 <div class="level2">
 <ol>
@@ -161,12 +173,12 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;3972-4267&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4537-4832&quot;} -->
 <h2 class="sectionedit8" id="system_configuration">System Configuration</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;4268-4301&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;4833-4866&quot;} -->
 <h3 class="sectionedit9" id="xbps">XBPS</h3>
 <div class="level3">
 <ol>
@@ -184,7 +196,7 @@ ignorepkg=sudo</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;4302-4615&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;4867-5180&quot;} -->
 <h3 class="sectionedit10" id="filesystems">Filesystems</h3>
 <div class="level3">
 <ol>
@@ -208,7 +220,7 @@ LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;4616-5194&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;5181-5759&quot;} -->
 <h3 class="sectionedit11" id="kernel_modules">Kernel Modules</h3>
 <div class="level3">
 <ol>
@@ -222,7 +234,7 @@ blacklist pcspkr</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:11,&quot;range&quot;:&quot;5195-5373&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:11,&quot;range&quot;:&quot;5760-5938&quot;} -->
 <h3 class="sectionedit12" id="locales">Locales</h3>
 <div class="level3">
 <ol>
@@ -253,7 +265,7 @@ en_US ISO-8859-1
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:12,&quot;range&quot;:&quot;5374-5931&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:12,&quot;range&quot;:&quot;5939-6496&quot;} -->
 <h3 class="sectionedit13" id="timezone">Timezone</h3>
 <div class="level3">
 <ol>
@@ -264,7 +276,7 @@ en_US ISO-8859-1
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;5932-6128&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;6497-6693&quot;} -->
 <h3 class="sectionedit14" id="runit">Runit</h3>
 <div class="level3">
 <ol>
@@ -305,7 +317,7 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Mount efivars as read-only to protect UEFI NVRAM<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:<dl class="file">
+<li class="level1"><div class="li"> Mount efivars as read-only to protect UEFI NVRAM<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup>:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=7" title="Download Snippet" class="mediafile mf_sh">/etc/runit/core-services/00-pseudofs.sh</a></dt>
 <dd><pre class="code file bash">...
 <span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re5">-d</span> <span class="sy0">/</span>sys<span class="sy0">/</span>firmware<span class="sy0">/</span>efi<span class="sy0">/</span>efivars <span class="br0">&#93;</span>; <span class="kw1">then</span>
@@ -318,7 +330,7 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;6129-7645&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;6694-8210&quot;} -->
 <h3 class="sectionedit15" id="hostname_hosts">Hostname &amp; Hosts</h3>
 <div class="level3">
 <ol>
@@ -335,7 +347,7 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname &amp; Hosts&quot;,&quot;hid&quot;:&quot;hostname_hosts&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:15,&quot;range&quot;:&quot;7646-7878&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname &amp; Hosts&quot;,&quot;hid&quot;:&quot;hostname_hosts&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:15,&quot;range&quot;:&quot;8211-8443&quot;} -->
 <h3 class="sectionedit16" id="login_messages">Login Messages</h3>
 <div class="level3">
 <ol>
@@ -345,12 +357,12 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Login Messages&quot;,&quot;hid&quot;:&quot;login_messages&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:16,&quot;range&quot;:&quot;7879-8004&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Login Messages&quot;,&quot;hid&quot;:&quot;login_messages&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:16,&quot;range&quot;:&quot;8444-8569&quot;} -->
 <h2 class="sectionedit17" id="booting">Booting</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:17,&quot;range&quot;:&quot;8005-8025&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:17,&quot;range&quot;:&quot;8570-8590&quot;} -->
 <h3 class="sectionedit18" id="initramfs">Initramfs</h3>
 <div class="level3">
 <ol>
@@ -365,7 +377,7 @@ hostonly='yes'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:18,&quot;range&quot;:&quot;8026-8207&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:18,&quot;range&quot;:&quot;8591-8772&quot;} -->
 <h3 class="sectionedit19" id="bootloader">Bootloader</h3>
 <div class="level3">
 <ol>
@@ -392,7 +404,7 @@ menuentry <span class="st_h">'Shutdown Computer'</span> <span class="re5">--clas
 </li>
 <li class="level1"><div class="li"> Make bootloader script executable:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">chmod 0755 /etc/grub.d/40_custom</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Configure bootloader<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup>: <dl class="file">
+<li class="level1"><div class="li"> Configure bootloader<sup><a href="#fn__6" id="fnt__6" class="fn_top">6)</a></sup>: <dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=11" title="Download Snippet" class="mediafile mf_">/etc/default/grub</a></dt>
 <dd><pre class="code file text">## Apply changes made to this file with:
 ## $(grub-mkconfig -o /boot/grub/grub.cfg)
@@ -442,7 +454,7 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:10,&quot;secid&quot;:19,&quot;range&quot;:&quot;8208-9946&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:10,&quot;secid&quot;:19,&quot;range&quot;:&quot;8773-10511&quot;} -->
 <h2 class="sectionedit20" id="finishing">Finishing</h2>
 <div class="level2">
 <ol>
@@ -458,11 +470,16 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:20,&quot;range&quot;:&quot;9947-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:20,&quot;range&quot;:&quot;10512-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
-<div class="content">Void subrepositories: <a href="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories" class="urlextern" title="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories">https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories</a>.</div></div>
-<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+, <sup><a href="#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
 <div class="content">Read-write efivarfs problem: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Status of btrfs in linux: <a href="https://btrfs.wiki.kernel.org/index.php/Status" class="urlextern" title="https://btrfs.wiki.kernel.org/index.php/Status">https://btrfs.wiki.kernel.org/index.php/Status</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<div class="content">Btrfs mount options: <a href="https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options" class="urlextern" title="https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options">https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+<div class="content">Void subrepositories: <a href="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories" class="urlextern" title="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories">https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__6" id="fn__6" class="fn_bot">6)</a></sup> 
 <div class="content">GRUB2 config options: <a href="https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html" class="urlextern" title="https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html">https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html</a>.</div></div>
 </div>

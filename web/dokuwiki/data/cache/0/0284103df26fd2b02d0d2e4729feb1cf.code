@@ -1,0 +1,68 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/portage/make.conf (0644 root:root)
+## DEPENDENCIES: sys-apps/portage
+## DESCRIPTION:  Global portage configuration file.
+&nbsp;
+## Per-package config: '/etc/portage/package.use/'.
+## See all variables: $(emerge --info -v).
+&nbsp;
+## Number of parallel compilations. Use smaller value between CPU and RAM.
+## - Amount of CPU threads (find with $(nproc)).
+## - RAM / 2 GiB (find with $(vmstat -s -S b | head -n 1 | grep -o '[0-9]*').
+PC='4'
+&nbsp;
+## Load average (should be ${PC}+1).
+LA='5'
+&nbsp;
+## Compilation flags for C, C++, FORTRAN 77 and FORTRAN languages.
+COMMON_FLAGS='-march=native -O2 -pipe'
+CFLAGS=&quot;${COMMON_FLAGS}&quot;
+CXXFLAGS=&quot;${COMMON_FLAGS}&quot;
+FFLAGS=&quot;${COMMON_FLAGS}&quot;
+FCFLAGS=&quot;${COMMON_FLAGS}&quot;
+&nbsp;
+## Amount of parallel make (compilation) jobs.
+MAKEOPTS=&quot;-j${PC} -l${LA}&quot;
+&nbsp;
+## Entries to append to emerge command.
+EMERGE_DEFAULT_OPTS='--keep-going=y --with-bdeps=y --ask-enter-invalid'
+&nbsp;
+## Actions that portage takes.
+FEATURES='sandbox strict strict-keepdir collision-protect cgroup \
+ parallel-install distcc noinfo candy'
+&nbsp;
+## Allow portage to use only idle system resources.
+PORTAGE_SCHEDULING_POLICY='idle'
+&nbsp;
+## Accept only FSF licensed software. Specify exceptions in
+## '/etc/portage/package.license'.
+ACCEPT_LICENSE=&quot;-* @FREE&quot;
+&nbsp;
+## Portage directories.
+PORTDIR='/var/db/repos/gentoo'
+DISTDIR='/var/cache/distfiles'
+PKGDIR='/var/cache/binpkgs'
+&nbsp;
+## English language for build output.
+LC_MESSAGES='C'
+&nbsp;
+## Global software USE flags ((https://packages.gentoo.org/useflags/global)).
+## - System.
+USE=&quot;${USE} -systemd -emacs -xemacs -themes -bash-completion python multilib ncurses \
+ xattr lm-senosrs dbus udev elogind man git zsh-completion&quot;
+&nbsp;
+## - Security.
+USE=&quot;${USE} -telemetry hardened apparmor argon2 crypt&quot;
+&nbsp;
+## - Network.
+USE=&quot;${USE} -zeroconf bluetooth wifi ipv6 ssl vnc rdp samba&quot;
+&nbsp;
+## - DE &amp; WM.
+USE=&quot;${USE} -gnome -gnome-keyring -kde -plasma wayland X tray gtk libnotify \
+ inotify&quot;
+&nbsp;
+## - Multimedia.
+USE=&quot;${USE} fontconfig truetype xft unicode cjk svg png jpeg exif mp3 flac mp4&quot;
+&nbsp;
+## - Nvidia.
+USE=&quot;${USE} nvenc&quot;

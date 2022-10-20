@@ -390,3 +390,7 @@ distdir
 binpkgs
 senosrs
 inotify
+eselect
+average
+kubuntu
+managed

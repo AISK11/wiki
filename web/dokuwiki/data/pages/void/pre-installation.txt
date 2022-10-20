@@ -2,10 +2,10 @@
 
 ===== Download =====
 
-  - Download live image((Tier 1 mirror: https://repo-default.voidlinux.org/live/current.)), checksums and checksum signature:<cli>
-$ RELEASE='<YYYYMMDD>'
+  - Download [[https://repo-default.voidlinux.org/live/current|live image]]((Void mirrors: https://docs.voidlinux.org/xbps/repositories/mirrors.)), checksums and checksum signature:<cli>
+$ RELEASE='<CCYYMMDD>'
 $ URL='https://repo-default.voidlinux.org/live/current'
-$ curl -LO "${URL}/void-live-x86_64-${RELEASE}.iso"
+$ curl -LO "${URL}/void-live-x86_64-${RELEASE}-base.iso"
 $ curl -LO "${URL}/sha256sum.txt"
 $ curl -LO "${URL}/sha256sum.sig"
 </cli>
@@ -15,14 +15,14 @@ $ curl -LO "${URL}/void-release-${RELEASE}.pub"
 </cli>
   - Verify checksum authenticity and live image integrity:<cli>
 $ signify -V -p "void-release-${RELEASE}.pub" -x sha256sum.sig -m sha256sum.txt
-$ sha256sum -c --ignore-missing sha256sum.txt "void-live-x86_64-${RELEASE}.iso"
+$ sha256sum -c --ignore-missing sha256sum.txt "void-live-x86_64-${RELEASE}-base.iso"
 </cli>
 
 ===== Flash USB =====
 
   - Make sure the USB filesystem is **not** mounted!
   - Flash USB with disk image:<cli>
-# dd "if=void-live-x86_64-${RELEASE}.iso" of=</dev/sdX> status=progress ; sync
+# dd if="void-live-x86_64-${RELEASE}-base.iso" of=</dev/sdX> status=progress ; sync
 </cli>
 
 ===== USB Boot =====

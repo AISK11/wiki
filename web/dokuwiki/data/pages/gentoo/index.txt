@@ -3,7 +3,7 @@
 ===== Pros =====
 
   * Rolling release((Versions of various linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#General.)).
-  * Native non SystemD init system (openrc).
+  * Native non-systemd init system (openrc).
   * Independent distribution.
   * Big community and amount of packages((Gentoo packages: https://packages.gentoo.org.)) + pentesting tools((Pentoo: https://pentoo.org.)).
   * Text installation.

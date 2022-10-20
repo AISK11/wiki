@@ -6,7 +6,7 @@
   * [[:void:index|Index]]
   * [[:void:resources|Resources]]
 
-**Installation (amd64)**
+**Installation**
   * [[:void:pre-installation|Pre-Installation]]
   * [[:void:installation|Installation (WIP)]]
   * [[:void:post-installation|Post-Installation (TODO)]]

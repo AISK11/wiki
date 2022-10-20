@@ -13,18 +13,19 @@
 # unicode_start
 </cli>
   -  Disable system beeping (pcspkr module):<cli>
-# modprobe -r pcspkr
+# lsmod | grep pcspkr && modprobe -r pcspkr
 </cli>
-  - Verify UEFI boot:<cli>
+  - Verify UEFI and remount UEFI NVRAM as read only((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)):<cli>
 # ls -ld /sys/firmware/efi/
+# mount -o remount,ro efivarfs
 </cli>
-  - Verify internet connectivity. See [[void:network|Network]].
+  - Verify network connectivity.
   - Update live environment system and install additional packages:<cli>
-# xbps-install -Su xbps ; xbps-install -Su
-# xbps-install parted
+# xbps-install -Su[y] xbps ; xbps-install -Su[y]
+# xbps-install [-y] parted
 </cli>
 
-===== Disk Partitioning =====
+===== Disk Preparation =====
 
   - Create partitions:<cli>
 # cfdisk -z </dev/sdX>
@@ -39,7 +40,7 @@ cfdisk> W
 cfdisk> yes
 cfdisk> q
 # parted -s </dev/sdX> name 1 ESP
-# parted -s </dev/sdX> name 2 LUKS
+# parted -s </dev/sdX> name 2 VOID
 </cli>
   - Create filesystems: 
     - EFI filesystem:<cli>
@@ -52,43 +53,55 @@ cfdisk> q
     - LUKS encrypted filesystem:<cli>
 # dd if=/dev/urandom of=</dev/sdX2> status=progress ; sync
 # wipefs -a </dev/sdX2>
-# cryptsetup luksFormat -y --type luks2 </dev/sdX2>
+# cryptsetup luksFormat --force-password --type luks2 </dev/sdX2>
 > YES
 > <NEW-LUKS-PASSWORD>
 > <NEW-LUKS-PASSWORD (VERIFY)>
-# cryptsetup config --label LUKS </dev/sdX2>
+# cryptsetup config --label LUKS-VOID </dev/sdX2>
 # cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 </dev/sdX2>
 > YES
-# cryptsetup open --type luks2 </dev/sdX2> luks-root
+# cryptsetup open --type luks2 </dev/sdX2> luks-void
 > <LUKS-PASSWORD>
 </cli>
-    - Root filesystem:<cli>
-# wipefs -a /dev/mapper/luks-root
-# mkfs.btrfs /dev/mapper/luks-root
-# btrfs filesystem label /dev/mapper/luks-root LUKS-ROOT
-# btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-root
+    - Root filesystem((Status of btrfs in linux: https://btrfs.wiki.kernel.org/index.php/Status.)):<cli>
+# wipefs -a /dev/mapper/luks-void
+# mkfs.btrfs /dev/mapper/luks-void
+# btrfs filesystem label /dev/mapper/luks-void VOID-ROOT
+# btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-void
 > y
-# btrfs check /dev/mapper/luks-root ; echo $?
+# btrfs check /dev/mapper/luks-void ; echo $?
 </cli>
   - Verify partitions and filesystems:<cli>
 # parted -s </dev/sdX> [unit B] p free
 # lsblk -fp </dev/sdX>
 </cli>
+  - Create btrfs subvolume(s):<cli>
+# mkdir -p /mnt/void/
+# mount /dev/mapper/luks-void /mnt/void/
+# btrfs subvolume create /mnt/void/@
+# umount /mnt/void/
+</cli>
+  - Mount filesystems:
+    - Btrfs((Btrfs mount options: https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options.)) subvolume:<cli>
+# mount -o noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/
+</cli>
+    - ESP:<cli>
+# mkdir -p /mnt/void/boot/
+# mount </dev/sda1> /mnt/void/boot/
+</cli>
 
 ===== Base System Installation =====
 
-  - Create mount points and mount filesystems:<cli>
-# mkdir -p /mnt/void/
-# mount /dev/mapper/luks-root /mnt/void/
-# mkdir -p /mnt/void/boot/
-# mount </dev/sdX1> /mnt/void/boot/
-</cli>
   - Instal minimal base system packages:<cli>
-# xbps-install -S -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal
+# xbps-install -S[y] -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal
+> y
 </cli>
 
 ===== Chroot =====
 
+  - Copy DNS configuration:<cli>
+# cp -L /etc/resolv.conf /mnt/void/etc/
+</cli>
   - Mount filesystems:<cli>
 # mount --rbind /dev/ /mnt/void/dev/
 # mount --rbind /sys/ /mnt/void/sys/
@@ -99,14 +112,13 @@ cfdisk> q
 # mount --make-rslave /mnt/void/proc/
 # mount --make-rslave /mnt/void/run/
 </cli>
-  - Copy DNS configuration:<cli>
-# cp /etc/resolv.conf /mnt/void/etc/
-</cli>
   - Chroot into the new installation:<cli>
 # chroot /mnt/void/ /bin/sh
 # . ./etc/profile
 # export PS1='(chroot) # '
 </cli>
+
+----
 
 ===== Full System Installation =====
 
@@ -139,6 +151,7 @@ cfdisk> q
     - Wi-Fi:<cli>
 (chroot) # xbps-install wpa_supplicant iw
 </cli>
+
 ===== Swap File =====
 
   - Allocate space on COW filesystem (such as btrfs):<cli>

@@ -91,6 +91,7 @@ cfdisk> q
   - Prepare download:
     - Set date manually:<cli>
 # date [-u] <MMDDhhmmCCYY.ss>
+# hwclock --systohc
 </cli>
     - Go to mounted new root directory:<cli>
 # cd /mnt/gentoo/
@@ -124,7 +125,7 @@ cfdisk> q
 # nproc
 # vmstat -s -S b | head -n 1 | grep -o '[0-9]*'
 </cli>
-  - Configure compiling options((Handbook for make.conf: https://wiki.gentoo.org/wiki//etc/portage/make.conf.))((Manpage for make.conf: https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html.))((Configuration example for make.conf: https://github.com/gentoo/portage/blob/master/cnf/make.conf.example.))((Compilation flags: https://wiki.gentoo.org/wiki/Safe_CFLAGS.))((MAKEOPTS compilation options: https://wiki.gentoo.org/wiki/MAKEOPTS.))((Emerge options: https://wiki.gentoo.org/wiki/EMERGE_DEFAULT_OPTS.))((Emerge manpage: https://wiki.gentoo.org/wiki/Full_manpages/emerge.))((Portage niceness: https://wiki.gentoo.org/wiki/Portage_niceness.))((Per-packages licenes: https://wiki.gentoo.org/wiki//etc/portage/package.license.))((Global USE flags: https://packages.gentoo.org/useflags/global.))((All USE flags: https://www.gentoo.org/support/use-flags)):<file text /mnt/gentoo/etc/portage/make.conf>
+  - Configure compiling options((Handbook for make.conf: https://wiki.gentoo.org/wiki//etc/portage/make.conf.))((Manpage for make.conf: https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html.))((Configuration example for make.conf: https://github.com/gentoo/portage/blob/master/cnf/make.conf.example.))((Compilation flags: https://wiki.gentoo.org/wiki/Safe_CFLAGS.))((MAKEOPTS compilation options: https://wiki.gentoo.org/wiki/MAKEOPTS.))((Emerge options: https://wiki.gentoo.org/wiki/EMERGE_DEFAULT_OPTS.))((Emerge manpage: https://wiki.gentoo.org/wiki/Full_manpages/emerge.))((Portage niceness: https://wiki.gentoo.org/wiki/Portage_niceness.))((Licenses: https://wiki.gentoo.org/wiki/License_groups))((Per-packages licenes: https://wiki.gentoo.org/wiki//etc/portage/package.license.))((Global USE flags: https://packages.gentoo.org/useflags/global.))((All USE flags: https://www.gentoo.org/support/use-flags)):<file text /mnt/gentoo/etc/portage/make.conf>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/portage/make.conf (0644 root:root)
 ## DEPENDENCIES: sys-apps/portage
@@ -138,6 +139,9 @@ cfdisk> q
 ## - RAM / 2 GiB (find with $(vmstat -s -S b | head -n 1 | grep -o '[0-9]*').
 PC='4'
 
+## Load average (should be ${PC}+1).
+LA='5'
+
 ## Compilation flags for C, C++, FORTRAN 77 and FORTRAN languages.
 COMMON_FLAGS='-march=native -O2 -pipe'
 CFLAGS="${COMMON_FLAGS}"
@@ -146,13 +150,13 @@ FFLAGS="${COMMON_FLAGS}"
 FCFLAGS="${COMMON_FLAGS}"
 
 ## Amount of parallel make (compilation) jobs.
-MAKEOPTS="-j${PC} -l$((${PC}+1))"
+MAKEOPTS="-j${PC} -l${LA}"
 
 ## Entries to append to emerge command.
 EMERGE_DEFAULT_OPTS='--keep-going=y --with-bdeps=y --ask-enter-invalid'
 
 ## Actions that portage takes.
-FEATURES='sandbox strict test strict-keepdir collision-protect cgroup \
+FEATURES='sandbox strict strict-keepdir collision-protect cgroup \
  parallel-install distcc noinfo candy'
 
 ## Allow portage to use only idle system resources.
@@ -172,7 +176,7 @@ LC_MESSAGES='C'
 
 ## Global software USE flags ((https://packages.gentoo.org/useflags/global)).
 ## - System.
-USE="${USE} -systemd -emacs -xemacs -themes -bash-completion multilib ncurses \
+USE="${USE} -systemd -emacs -xemacs -themes -bash-completion python multilib ncurses \
  xattr lm-senosrs dbus udev elogind man git zsh-completion"
 
 ## - Security.
@@ -186,9 +190,60 @@ USE="${USE} -gnome -gnome-keyring -kde -plasma wayland X tray gtk libnotify \
  inotify"
 
 ## - Multimedia.
-USE="${USE} fontconfig truetype xft unicode cjk svg png jpeg exif tiff webp \
- mp3 flac mp4"
+USE="${USE} fontconfig truetype xft unicode cjk svg png jpeg exif mp3 flac mp4"
 
 ## - Nvidia.
 USE="${USE} nvenc"
 </file>
+
+===== Mirrors & Ebuild Repo =====
+
+  - Select mirror(s):<cli>
+# mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf
+</cli>
+  - Set up gentoo ebuild repository:<cli>
+# mkdir -p /mnt/gentoo/etc/portage/repos.conf/
+# cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+</cli>
+
+===== Chroot =====
+
+  - Copy DNS info:<cli>
+# cp -L /etc/resolv.conf /mnt/gentoo/etc/
+</cli>
+  - Mount pseudo filesystems:<cli>
+# mount --rbind /dev/ /mnt/gentoo/dev/
+# mount --rbind /sys/ /mnt/gentoo/sys/
+# mount --rbind /proc/ /mnt/gentoo/proc/
+# mount --rbind /run/ /mnt/gentoo/run/
+# mount --make-rslave /mnt/gentoo/dev/
+# mount --make-rslave /mnt/gentoo/sys/
+# mount --make-rslave /mnt/gentoo/proc/
+# mount --make-rslave /mnt/gentoo/run/
+</cli>
+  - Enter chroot:<cli>
+# chroot /mnt/gentoo/ /bin/[ba]sh
+# . ./etc/profile
+# export PS1="(chroot) ${PS1}"
+</cli>
+
+===== System Recompilation =====
+
+  - Download daily ebuild repository snapshot:<cli>
+(chroot) # emerge-webrsync
+</cli>
+  - Update ebuild repository to the altest version:<cli>
+(chroot) # emerge --sync
+</cli>
+  - Read update news and delete them afterwards:<cli>
+(chroot) # eselect news list
+(chroot) # eselect news read [N] | less
+(chroot) # eselect news purge [N]
+</cli>
+  - Select right profile (''default/linux/amd64/<VERSION> (stable)''):<cli>
+(chroot) # eselect profile list
+(chroot) # eselect profile set <N>
+</cli>
+  - Update @world set:<cli>
+(chroot) # emerge -avuDN @world
+</cli>

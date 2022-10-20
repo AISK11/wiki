@@ -304,3 +304,8 @@ hardened
 apparmor
 zeroconf
 truetype
+snapshot
+webrsync
+policies
+unusable
+ccyymmdd

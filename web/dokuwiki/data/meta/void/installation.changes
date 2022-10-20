@@ -90,3 +90,20 @@
 1664756266	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-16
 1664939483	127.0.0.1	E	void:installation		external edit		0
 1664993233	127.0.0.1	E	void:installation	admin			-6
+1665239339	127.0.0.1	E	void:installation		external edit		0
+1666214024	127.0.0.1	E	void:installation	admin			111
+1666214418	127.0.0.1	E	void:installation	admin			1922
+1666214503	127.0.0.1	E	void:installation	admin	[Disk Preparation] 		-4
+1666214519	127.0.0.1	E	void:installation	admin	[Disk Preparation] 		-4
+1666214537	127.0.0.1	E	void:installation	admin	[Disk Preparation] 		-2
+1666214572	127.0.0.1	E	void:installation	admin	[Disk Partitioning] 		-1327
+1666214583	127.0.0.1	E	void:installation	admin			-2
+1666215047	127.0.0.1	E	void:installation	admin	[Base System Installation] 		-185
+1666215189	127.0.0.1	E	void:installation	admin	[Disk Preparation] 		5
+1666215222	127.0.0.1	E	void:installation	admin			6
+1666216120	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		23
+1666216316	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		11
+1666217710	127.0.0.1	E	void:installation	admin	[Base System Installation] 		4
+1666217754	127.0.0.1	E	void:installation	admin	[Base System Installation] 		3
+1666217782	127.0.0.1	E	void:installation	admin	[Chroot] 		3
+1666217919	127.0.0.1	E	void:installation	admin			1

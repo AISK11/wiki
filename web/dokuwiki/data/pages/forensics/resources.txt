@@ -1,3 +1,4 @@
 ====== Resources ======
 
   * [[https://www.youtube.com/user/paffnutty1|YouTube - SystemForensics]]
+  * https://www.whonix.org/wiki/Documentation

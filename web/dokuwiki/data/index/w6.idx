@@ -375,3 +375,6 @@ pkgdir
 xemacs
 argon2
 plasma
+ebuild
+pseudo
+altest
