@@ -224,3 +224,41 @@
 1666315259	127.0.0.1	E	void:sidebar	admin			-6
 1666315297	127.0.0.1	E	void:sidebar	admin			30
 1666315307	127.0.0.1	E	void:sidebar	admin			6
+1666331631	127.0.0.1	C	void:post-installation	admin	created		31
+1666331966	127.0.0.1	E	void:post-installation	admin			360
+1666332151	127.0.0.1	E	void:post-installation	admin			34
+1666332206	127.0.0.1	E	void:post-installation	admin	[Shell] 		5
+1666332747	127.0.0.1	E	void:post-installation	admin			454
+1666332966	127.0.0.1	E	void:installation	admin			-126
+1666333033	127.0.0.1	E	void:post-installation	admin			136
+1666333237	127.0.0.1	E	void:post-installation	admin			219
+1666333246	127.0.0.1	E	void:post-installation	admin			1
+1666333431	127.0.0.1	E	void:post-installation	admin	[Local User] 		60
+1666333541	127.0.0.1	E	void:post-installation	admin	[Privilege Escalation] 		0
+1666333653	127.0.0.1	E	void:sidebar	admin			-84
+1666334079	127.0.0.1	E	void:post-installation	admin	[Local User] 		88
+1666352984	127.0.0.1	E	void:post-installation	admin	[Shell] 		9
+1666354526	127.0.0.1	E	void:post-installation	admin			131
+1666354641	127.0.0.1	E	void:post-installation	admin			-39
+1666354678	127.0.0.1	E	void:post-installation	admin	[GUI] 		59
+1666354731	127.0.0.1	E	void:post-installation	admin			72
+1666355298	127.0.0.1	E	void:post-installation	admin			17
+1666355316	127.0.0.1	E	void:post-installation	admin			22
+1666355669	127.0.0.1	E	void:post-installation	admin			9
+1666356334	127.0.0.1	E	void:post-installation	admin			73
+1666357437	127.0.0.1	E	void:post-installation	admin	[Shell] 		8
+1666357672	127.0.0.1	E	void:post-installation	admin			125
+1666357700	127.0.0.1	E	void:post-installation	admin			9
+1666359979	127.0.0.1	E	void:post-installation	admin			-463
+1665239339	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:packet_capture		external edit		0
+1666367034	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:packet_capture	admin			42
+1666369216	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		8
+1666369548	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-8
+1666374390	127.0.0.1	E	void:post-installation	admin	[GUI] 		-4
+1666374543	127.0.0.1	E	void:post-installation	admin			131
+1666374819	127.0.0.1	E	void:post-installation	admin			4
+1666377201	127.0.0.1	E	void:post-installation	admin			55
+1666377952	127.0.0.1	E	void:post-installation	admin			127
+1666378129	127.0.0.1	E	void:post-installation	admin			28
+1666378255	127.0.0.1	E	void:post-installation	admin			59
+1666382530	127.0.0.1	E	sidebar	admin			-66

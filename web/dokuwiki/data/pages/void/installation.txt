@@ -302,13 +302,6 @@ fi
 (chroot) # echo '<HOSTNAME>' > /etc/hostname
 </cli>
 
-==== Login Messages ====
-
-  - Set login messages:<cli>
-(chroot) # echo '' > /etc/issue
-(chroot) # echo '' > /etc/motd
-</cli>
-
 ===== Booting =====
 
 ==== Initramfs ====

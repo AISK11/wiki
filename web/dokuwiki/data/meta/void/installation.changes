@@ -145,3 +145,6 @@
 1666314462	127.0.0.1	E	void:installation	admin	[Runit] 		-78
 1666314475	127.0.0.1	E	void:installation	admin			-6
 1666315011	127.0.0.1	E	void:installation	admin	[Bootloader] 		5
+1666332966	127.0.0.1	E	void:installation	admin			-126
+1666369216	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		8
+1666369548	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-8

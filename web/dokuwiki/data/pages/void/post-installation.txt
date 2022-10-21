@@ -1,0 +1,89 @@
+====== Post-Installation ======
+
+===== System Update =====
+
+  - Update system:<cli>
+# xbps-install -Su xbps ; xbps-install -Su
+</cli>
+
+===== Login Messages =====
+
+  - Clear login messages:<cli>
+(chroot) # echo '' > /etc/issue
+(chroot) # echo '' > /etc/motd
+</cli>
+
+===== Shell =====
+
+  - Set dash as system shell:<cli>
+# ln -sf /usr/bin/dash /usr/bin/sh
+</cli>
+  - Set bash as login shell for root:<cli>
+# chsh -s /bin/bash root
+</cli>
+  - Install zsh:<cli>
+# xbps-install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
+</cli>
+
+===== Local User =====
+
+  - Create local user:<cli>
+# useradd -m -k /dev/null -s /bin/bash <USER>
+</cli>
+  - Make user accessible:<cli>
+# passwd <USER>
+> <NEW-USER-PASSWORD>
+> <NEW-USER-PASSWORD (VERIFY)>
+</cli>
+
+===== Privilege Escalation =====
+
+  - Install opendoas:<cli>
+# xbps-install opendoas
+</cli>
+  - Create administrative group:<cli>
+# groupadd doas
+</cli>
+  - Configure privilege escalation permissions:<file text /etc/doas.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/doas.conf (0600 root:root)
+## DEPENDENCIES: opendoas
+## DESCRIPTION:  Privilege escalation control rules.
+
+## Administrative group.
+permit :doas
+#permit nopass :doas
+</file><cli>
+# chmod 0600 /etc/doas.conf
+</cli>
+  - Assign user to administrative group:<cli>
+# usermod -aG doas <USER>
+</cli>
+
+===== Audio (ToDo) =====
+
+===== GUI =====
+
+==== Window Manager ====
+
+==== Taskbar ====
+
+==== Application Launcher ====
+
+==== Screnn Locker ====
+
+==== Compositor ====
+
+==== Wallpapper Setter ====
+
+==== Sclipboard Manager ====
+
+==== Screenshot Utility ====
+
+
+  - Install i3-gaps((I3-gaps features: https://github.com/Airblader/i3.))((I3 user guide: https://i3wm.org/docs/userguide.html.)):
+<cli>
+# xbps-install xorg-minimal bspwm sxhkd
+</cli>
+
+https://wiki.archlinux.org/title/List_of_applications

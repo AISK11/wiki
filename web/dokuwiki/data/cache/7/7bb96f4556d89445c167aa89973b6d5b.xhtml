@@ -1,0 +1,29 @@
+
+<h1 class="sectionedit1" id="shell">Shell</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Shell&quot;,&quot;hid&quot;:&quot;shell&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-21&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install dash if required:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">pacman -S --needed dash</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install zsh if required:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">pacman -S --needed zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;22-242&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Configure dash as default system shell:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ln -sf $(command -vp dash) /bin/sh</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Configure zsh as login shell for user:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">chsh -s /bin/zsh</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;USER-PASSWORD&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;243-&quot;} -->

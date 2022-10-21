@@ -5,8 +5,6 @@
 **[[:os|Operating Systems]]**
   * [[:void:index|Void Linux]]
 
-  * [[:gentoo:index|Gentoo Linux]]
-  * [[:mint:index|Linux Mint]]
   * [[:windows11:index|Windows 11]]
   * [[:rpios:index|Raspberry Pi OS Linux]]
 

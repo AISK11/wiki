@@ -1,0 +1,144 @@
+
+<h1 class="sectionedit1" id="post-installation">Post-Installation</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Post-Installation&quot;,&quot;hid&quot;:&quot;post-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-33&quot;} -->
+<h2 class="sectionedit2" id="system_update">System Update</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Update system:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps ; xbps-install -Su</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Update&quot;,&quot;hid&quot;:&quot;system_update&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;34-135&quot;} -->
+<h2 class="sectionedit3" id="login_messages">Login Messages</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Clear login messages:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&#039; &gt; /etc/issue</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&#039; &gt; /etc/motd</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Login Messages&quot;,&quot;hid&quot;:&quot;login_messages&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;136-265&quot;} -->
+<h2 class="sectionedit4" id="shell">Shell</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Set dash as system shell:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ln -sf /usr/bin/dash /usr/bin/sh</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Set bash as login shell for root:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chsh -s /bin/bash root</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install zsh:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Shell&quot;,&quot;hid&quot;:&quot;shell&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;266-545&quot;} -->
+<h2 class="sectionedit5" id="local_user">Local User</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create local user:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">useradd -m -k /dev/null -s /bin/bash &lt;USER&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Make user accessible:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">passwd &lt;USER&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-USER-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-USER-PASSWORD (VERIFY)&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Local User&quot;,&quot;hid&quot;:&quot;local_user&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;546-758&quot;} -->
+<h2 class="sectionedit6" id="privilege_escalation">Privilege Escalation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install opendoas:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install opendoas</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create administrative group:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">groupadd doas</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Configure privilege escalation permissions:<dl class="file">
+<dt><a href="http://localhost/_export/code/void/post-installation?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/doas.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/doas.conf (0600 root:root)
+## DEPENDENCIES: opendoas
+## DESCRIPTION:  Privilege escalation control rules.
+&nbsp;
+## Administrative group.
+permit :doas
+#permit nopass :doas</pre>
+</dd></dl>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chmod 0600 /etc/doas.conf</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Assign user to administrative group:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">usermod -aG doas &lt;USER&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Privilege Escalation&quot;,&quot;hid&quot;:&quot;privilege_escalation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;759-1325&quot;} -->
+<h2 class="sectionedit7" id="audio_todo">Audio (ToDo)</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Audio (ToDo)&quot;,&quot;hid&quot;:&quot;audio_todo&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:7,&quot;range&quot;:&quot;1326-1351&quot;} -->
+<h2 class="sectionedit8" id="gui">GUI</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;GUI&quot;,&quot;hid&quot;:&quot;gui&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:8,&quot;range&quot;:&quot;1352-1368&quot;} -->
+<h3 class="sectionedit9" id="window_manager">Window Manager</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Window Manager&quot;,&quot;hid&quot;:&quot;window_manager&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:9,&quot;range&quot;:&quot;1369-1394&quot;} -->
+<h3 class="sectionedit10" id="taskbar">Taskbar</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Taskbar&quot;,&quot;hid&quot;:&quot;taskbar&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;1395-1413&quot;} -->
+<h3 class="sectionedit11" id="application_launcher">Application Launcher</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Application Launcher&quot;,&quot;hid&quot;:&quot;application_launcher&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:11,&quot;range&quot;:&quot;1414-1445&quot;} -->
+<h3 class="sectionedit12" id="screnn_locker">Screnn Locker</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Screnn Locker&quot;,&quot;hid&quot;:&quot;screnn_locker&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:12,&quot;range&quot;:&quot;1446-1470&quot;} -->
+<h3 class="sectionedit13" id="compositor">Compositor</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Compositor&quot;,&quot;hid&quot;:&quot;compositor&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:13,&quot;range&quot;:&quot;1471-1492&quot;} -->
+<h3 class="sectionedit14" id="wallpapper_setter">Wallpapper Setter</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Wallpapper Setter&quot;,&quot;hid&quot;:&quot;wallpapper_setter&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:14,&quot;range&quot;:&quot;1493-1521&quot;} -->
+<h3 class="sectionedit15" id="sclipboard_manager">Sclipboard Manager</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Sclipboard Manager&quot;,&quot;hid&quot;:&quot;sclipboard_manager&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:15,&quot;range&quot;:&quot;1522-1551&quot;} -->
+<h3 class="sectionedit16" id="screenshot_utility">Screenshot Utility</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Install i3-gaps<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</div>
+</li>
+</ol>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install xorg-minimal bspwm sxhkd</span></pre>
+
+<p>
+<a href="https://wiki.archlinux.org/title/List_of_applications" class="urlextern" title="https://wiki.archlinux.org/title/List_of_applications">https://wiki.archlinux.org/title/List_of_applications</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Screenshot Utility&quot;,&quot;hid&quot;:&quot;screenshot_utility&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:16,&quot;range&quot;:&quot;1552-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">I3-gaps features: <a href="https://github.com/Airblader/i3" class="urlextern" title="https://github.com/Airblader/i3">https://github.com/Airblader/i3</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">I3 user guide: <a href="https://i3wm.org/docs/userguide.html" class="urlextern" title="https://i3wm.org/docs/userguide.html">https://i3wm.org/docs/userguide.html</a>.</div></div>
+</div>

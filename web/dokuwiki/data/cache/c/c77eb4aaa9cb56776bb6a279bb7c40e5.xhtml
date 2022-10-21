@@ -1,0 +1,35 @@
+
+<h1 class="sectionedit1" id="packet_capture">Packet Capture</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Packet Capture&quot;,&quot;hid&quot;:&quot;packet_capture&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-30&quot;} -->
+<h2 class="sectionedit2" id="wireshark_cheatsheet">Wireshark Cheatsheet</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Filter by IP address: <pre class="code">ip.addr==&lt;IPv4-ADDRESS&gt;[/CIDR]
+ip.src==&lt;IPv4-ADDRESS&gt;[/CIDR]
+ip.dst==&lt;IPv4-ADDRESS&gt;[/CIDR]
+ipv6.addr==&lt;IPv6-ADDRESS&gt;
+ipv6.src==&lt;IPv6-ADDRESS&gt;
+ipv6.dst==&lt;IPv6-ADDRESS&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Filter by port: <pre class="code">tcp.port==&lt;PORT&gt;
+tcp.srcport==&lt;PORT&gt;
+tcp.dstport==&lt;PORT&gt;
+udp.port==&lt;PORT&gt;
+udp.srcport==&lt;PORT&gt;
+udp.dstport==&lt;PORT&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Filter by string: <pre class="code">frame contains &quot;&lt;STRING&gt;&quot;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Marked:<pre class="code">frame.marked==1</pre>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Wireshark Cheatsheet&quot;,&quot;hid&quot;:&quot;wireshark_cheatsheet&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;31-&quot;} -->

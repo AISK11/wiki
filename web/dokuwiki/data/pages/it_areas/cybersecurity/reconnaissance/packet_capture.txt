@@ -21,3 +21,6 @@ udp.dstport==<PORT>
   - Filter by string: <code>
 frame contains "<STRING>"
 </code>
+  - Marked:<code>
+frame.marked==1
+</code>

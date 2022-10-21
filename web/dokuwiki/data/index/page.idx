@@ -221,3 +221,4 @@ gentoo:installation
 os:index
 os
 void:todo
+void:post-installation

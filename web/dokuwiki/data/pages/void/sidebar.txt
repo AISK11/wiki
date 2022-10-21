@@ -9,7 +9,7 @@
 **Installation**
   * [[:void:pre-installation|Pre-Installation]]
   * [[:void:installation|Installation]]
-  * [[:void:post-installation|Post-Installation (TODO)]]
+  * [[:void:post-installation|Post-Installation (WIP)]]
 
 **Network Configuration**
   * [[:void:firewall|Firewall (WIP)]]
@@ -20,8 +20,6 @@
   * [[:void:vpn-tor-proxy|VPN-Tor-Proxy (TODO)]]
 
 **System Configuration**
-  * [[:void:shell|Shell (WIP)]]
-  * [[:void:authentication|Authentication (TODO)]]
   * [[:void:audio|Audio (WIP)]]
   * [[:void:xorg|Xorg (WIP)]]
   * [[:void:terminal_emulator|Terminal Emulator (WIP)]]

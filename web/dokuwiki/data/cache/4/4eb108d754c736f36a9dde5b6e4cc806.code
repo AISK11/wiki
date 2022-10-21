@@ -1,0 +1,8 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/doas.conf (0600 root:root)
+## DEPENDENCIES: opendoas
+## DESCRIPTION:  Privilege escalation control rules.
+&nbsp;
+## Administrative group.
+permit :doas
+#permit nopass :doas

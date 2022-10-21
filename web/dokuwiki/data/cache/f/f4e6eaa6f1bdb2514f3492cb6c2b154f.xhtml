@@ -364,22 +364,12 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:15,&quot;range&quot;:&quot;9130-9225&quot;} -->
-<h3 class="sectionedit16" id="login_messages">Login Messages</h3>
-<div class="level3">
-<ol>
-<li class="level1"><div class="li"> Set login messages:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&#039; &gt; /etc/issue</span>
-<span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&#039; &gt; /etc/motd</span></pre><p></div>
-</li>
-</ol>
-
-</div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Login Messages&quot;,&quot;hid&quot;:&quot;login_messages&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:16,&quot;range&quot;:&quot;9226-9351&quot;} -->
-<h2 class="sectionedit17" id="booting">Booting</h2>
+<h2 class="sectionedit16" id="booting">Booting</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:17,&quot;range&quot;:&quot;9352-9372&quot;} -->
-<h3 class="sectionedit18" id="initramfs">Initramfs</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:16,&quot;range&quot;:&quot;9226-9246&quot;} -->
+<h3 class="sectionedit17" id="initramfs">Initramfs</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Configure initramfs:<dl class="file">
@@ -398,8 +388,8 @@ hostonly='yes'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:18,&quot;range&quot;:&quot;9373-9716&quot;} -->
-<h3 class="sectionedit19" id="bootloader">Bootloader</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:17,&quot;range&quot;:&quot;9247-9590&quot;} -->
+<h3 class="sectionedit18" id="bootloader">Bootloader</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Install bootloader to ESP:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --removable</span>
@@ -487,8 +477,8 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:19,&quot;range&quot;:&quot;9717-11802&quot;} -->
-<h2 class="sectionedit20" id="finishing">Finishing</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:18,&quot;range&quot;:&quot;9591-11676&quot;} -->
+<h2 class="sectionedit19" id="finishing">Finishing</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Reconfigure all packages:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-reconfigure -fa</span></pre><p></div>
@@ -503,7 +493,7 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:20,&quot;range&quot;:&quot;11803-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:19,&quot;range&quot;:&quot;11677-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Read-write efivarfs issue: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
