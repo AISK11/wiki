@@ -1,0 +1,8 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/dracut.conf.d/10-crypt.conf (0644 root:root)
+## DEPENDENCIES: dracut-uefi
+## DESCRIPTION:  Initramfs generation rules.
+&nbsp;
+## Support encrypted partitions.
+install_items+='/etc/crypttab'
+hostonly='yes'

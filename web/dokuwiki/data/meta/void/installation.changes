@@ -107,3 +107,41 @@
 1666217754	127.0.0.1	E	void:installation	admin	[Base System Installation] 		3
 1666217782	127.0.0.1	E	void:installation	admin	[Chroot] 		3
 1666217919	127.0.0.1	E	void:installation	admin			1
+1666300511	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-117
+1666301083	127.0.0.1	E	void:installation	admin	[Full System Installation] 		9
+1666301210	127.0.0.1	E	void:installation	admin	[Full System Installation] 		68
+1666301236	127.0.0.1	E	void:installation	admin	[Full System Installation] 		10
+1666301283	127.0.0.1	E	void:installation	admin	[Full System Installation] 		15
+1666301666	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-19
+1666301725	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-17
+1666302856	127.0.0.1	E	void:installation	admin	[Full System Installation] 		12
+1666302915	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-12
+1666303051	127.0.0.1	E	void:installation	admin	[Full System Installation] 		105
+1666303464	127.0.0.1	E	void:installation	admin	[Full System Installation] 		8
+1666304986	127.0.0.1	E	void:installation	admin			0
+1666306338	127.0.0.1	E	void:installation	admin	[XBPS] 		140
+1666306734	127.0.0.1	E	void:installation	admin	[Full System Installation] 		24
+1666307007	127.0.0.1	E	void:installation	admin	[Full System Installation] 		4
+1666307377	127.0.0.1	E	void:installation	admin	[Full System Installation] 		16
+1666307712	127.0.0.1	E	void:installation	admin	[XBPS] 		-24
+1666308131	127.0.0.1	E	void:installation	admin	[Disk Preparation] 		9
+1666308499	127.0.0.1	E	void:installation	admin	[Filesystems] 		461
+1666308976	127.0.0.1	E	void:installation	admin	[XBPS] 		19
+1666308991	127.0.0.1	E	void:installation	admin	[Kernel Modules] 		176
+1666310421	127.0.0.1	E	void:installation	admin	[Locales] 		145
+1666310563	127.0.0.1	E	void:installation	admin	[Locales] 		147
+1666310732	127.0.0.1	E	void:installation	admin	[Timezone] 		-71
+1666310866	127.0.0.1	E	void:installation	admin			186
+1666310925	127.0.0.1	E	void:installation	admin			-137
+1666311170	127.0.0.1	E	void:installation	admin	[Filesystems] 		89
+1666311202	127.0.0.1	E	void:installation	admin			0
+1666311246	127.0.0.1	E	void:installation	admin			-4
+1666313839	127.0.0.1	E	void:installation	admin	[Bootloader] 		80
+1666313936	127.0.0.1	E	void:installation	admin	[Initramfs] 		162
+1666314031	127.0.0.1	E	void:installation	admin	[Locales] 		-376
+1666314178	127.0.0.1	E	void:installation	admin	[Bootloader] 		148
+1666314235	127.0.0.1	E	void:installation	admin	[Bootloader] 		-39
+1666314318	127.0.0.1	E	void:installation	admin	[Bootloader] 		153
+1666314462	127.0.0.1	E	void:installation	admin	[Runit] 		-78
+1666314475	127.0.0.1	E	void:installation	admin			-6
+1666315011	127.0.0.1	E	void:installation	admin	[Bootloader] 		5

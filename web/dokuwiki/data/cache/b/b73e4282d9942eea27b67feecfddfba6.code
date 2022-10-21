@@ -1,0 +1,45 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/default/grub (0644 root:root)
+## DEPENDENCIES: grub-x86_64-efi
+## DESCRIPTION:  Bootloader configuration.
+&nbsp;
+## Apply changes made to this file with:
+## $(grub-mkconfig -o /boot/grub/grub.cfg)
+&nbsp;
+## OS name.
+GRUB_DISTRIBUTOR='Void'
+&nbsp;
+## Default menu entry.
+GRUB_DEFAULT='0'
+GRUB_SAVEDEFAULT='false'
+&nbsp;
+## Time to boot default entry unless key is pressed.
+GRUB_TIMEOUT='-1'
+GRUB_TIMEOUT_STYLE='menu'
+&nbsp;
+## Do not generate recovery mode entries.
+GRUB_DISABLE_RECOVERY='true'
+&nbsp;
+## Terminal input devices.
+GRUB_TERMINAL_INPUT='console'
+&nbsp;
+## Terminal output.
+GRUB_GFXMODE='auto'
+GRUB_GFXPAYLOAD_LINUX='text'
+&nbsp;
+## Enable encrypted disks.
+GRUB_ENABLE_CRYPTODISK='y'
+&nbsp;
+## Kernel parameters.
+GRUB_CMDLINE_LINUX=''
+GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS-VOID:luks-void net.ifnames=0 quiet'
+&nbsp;
+## Bootloader colors (fg/bg).
+GRUB_COLOR_NORMAL='white/black'
+GRUB_COLOR_HIGHLIGHT='white/black'
+&nbsp;
+## Disable nested entries.
+#GRUB_DISABLE_SUBMENU='true'
+&nbsp;
+## Bootloader theme.
+#GRUB_THEME=''

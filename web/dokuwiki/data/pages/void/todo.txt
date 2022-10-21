@@ -1,0 +1,13 @@
+Firewall
+DNS filtering
+Sandboxing (apparmor / cuckoo)
+Logging
+IDS/IPS
+Honeypot
+SSH
+HTTPS Nginx
+Private key (PGP)
+ClamAV?
+CHecksec
+CPU vulnerabilities
+https://wiki.archlinux.org/title/List_of_applications/Security

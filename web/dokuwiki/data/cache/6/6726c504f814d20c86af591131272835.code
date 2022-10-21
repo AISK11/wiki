@@ -1,0 +1,8 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/xbps.d/ignore.conf (0644 root:root)
+## DEPENDENCIES: xbps
+## DESCRIPTION:  Ignore XBPS packages when required as dependencies.
+&nbsp;
+## Packages that will not be installed or can be uninstalled if already requred.
+ignorepkg=nvi
+ignorepkg=sudo

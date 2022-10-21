@@ -15,7 +15,7 @@
   -  Disable system beeping (pcspkr module):<cli>
 # lsmod | grep pcspkr && modprobe -r pcspkr
 </cli>
-  - Verify UEFI and remount UEFI NVRAM as read only((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)):<cli>
+  - Verify UEFI and remount UEFI NVRAM as read only((Read-write efivarfs issue: https://github.com/systemd/systemd/issues/2402.)):<cli>
 # ls -ld /sys/firmware/efi/
 # mount -o remount,ro efivarfs
 </cli>
@@ -83,7 +83,7 @@ cfdisk> q
 </cli>
   - Mount filesystems:
     - Btrfs((Btrfs mount options: https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options.)) subvolume:<cli>
-# mount -o noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/
+# mount -o defaults,noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/
 </cli>
     - ESP:<cli>
 # mkdir -p /mnt/void/boot/
@@ -118,8 +118,6 @@ cfdisk> q
 # export PS1='(chroot) # '
 </cli>
 
-----
-
 ===== Full System Installation =====
 
   - Install additional repositories((Void subrepositories: https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories.)) and synchronize them:<cli>
@@ -133,23 +131,20 @@ cfdisk> q
 (chroot) # xpbs-install kbd kmod eudev ncurses less
 </cli>
   - Administration tools:<cli>
-(chroot) # xbps-install mdocml man-pages neovim git file tree ncdu psmisc htop btop neofetch inxi
+(chroot) # xbps-install mdocml man-pages tealdeer neovim git file tree ncdu psmisc htop btop neofetch inxi
 </cli>
-  - Shell tools:<cli>
-(chroot) # xbps-install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
-</cli>
-  - Boot tools:<cli>
-(chroot) # xbps-install grub-x86_64-efi dracut-uefi linux linux-lts [intel-ucode|linux-firmware-amd]
+  - Boot tools((Void microcode: https://docs.voidlinux.org/config/firmware.html#microcode.)):<cli>
+(chroot) # xbps-install grub-x86_64-efi dracut-uefi linux linux-lts linux-firmware [intel-ucode]
 </cli>
   - Network tools:
     - Basic:<cli>
-(chroot) # xbps-install iproute2 dhcpcd unbound nftables
+(chroot) # xbps-install iproute2 dhcpcd iputils bind-utils inetutils-whois mtr nmap
 </cli>
     - Ethernet:<cli>
 (chroot) # xbps-install ethtool
 </cli>
-    - Wi-Fi:<cli>
-(chroot) # xbps-install wpa_supplicant iw
+    - Wi-Fi((Iwconfig replaced by iw: https://wireless.wiki.kernel.org/en/users/Documentation/iw/replace-iwconfig.)):<cli>
+(chroot) # xbps-install wavemon iw wpa_supplicant
 </cli>
 
 ===== Swap File =====
@@ -170,9 +165,15 @@ cfdisk> q
 ==== XBPS ====
 
   - Set ignored packages by XBPS:<file text /etc/xbps.d/ignore.conf>
-## If package depends on ignored package, the dependecy is always satisfied
-## without installing ignored package.
+## AUTHOR:       AISK11
+## LOCATION:     /etc/xbps.d/ignore.conf (0644 root:root)
+## DEPENDENCIES: xbps
+## DESCRIPTION:  Ignore XBPS packages when required as dependencies.
+
+## Ignore nvi (replaced by neovim).
 ignorepkg=nvi
+
+## Ignore sudo (replaced by opendaos).
 ignorepkg=sudo
 </file>
   - Uninstall unneeded packages:<cli>
@@ -182,20 +183,38 @@ ignorepkg=sudo
 ==== Filesystems ====
 
   - Configure crypttab:<file text /etc/crypttab>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/crypttab (0644 root:root)
+## DEPENDENCIES: base-files
+## DESCRIPTION:  Encrypted partition mapping table.
+
 ## <MAPPER-NAME> <DEVICE> <PASSWORD-FILE> <OPTIONS>
-luks-root UUID=00000000-0000-0000-0000-000000000002 none luks
+luks-void UUID=00000000-0000-0000-0000-000000000002 none luks
 </file>
   - Configure fstab:<file text /etc/fstab>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/fstab (0644 root:root)
+## DEPENDENCIES: base-files
+## DESCRIPTION:  Filesytem table.
+
 ## <FILE-SYSTEM> <MOUNT-DIR> <TYPE> <OPTIONS> <DUMP> <PASS>
-LABEL=LUKS-ROOT     /     btrfs defaults,noatime            0 0
-LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
-/swap               none  swap  defaults,nofail             0 0
-#efivarfs /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime 0 0
+LABEL=VOID-ROOT     /                         btrfs    defaults,noatime,compress=zstd:3,commit=120,subvol=@ 0 0
+LABEL=ESP           /boot                     vfat     defaults,noatime,umask=0077                          0 1
+/swap               none                      swap     defaults,nofail                                      0 0
+#efivarfs            /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime                      0 0
+
+## To mount efivarfs as RO in runit, edit
+## '/etc/runit/core-services/00-pseudofs.sh'.
 </file>
 
 ==== Kernel Modules ====
 
   - Set blacklisted kernel modules on startup:<file text /etc/modprobe.d/blacklist.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/modprobe.d/blacklist.conf (0644 root:root)
+## DEPENDENCIES: kmod
+## DESCRIPTION:  List of blacklisted kernel modules on startup.
+
 ## Blacklist pcspkr (system beeping).
 blacklist pcspkr
 </file>
@@ -203,12 +222,7 @@ blacklist pcspkr
 ==== Locales ====
 
   - Set locales to be generated by system:<file text /etc/default/libc-locales>
-## List of GNU libc locales regenerated by the glibc-locales package.
-## All libc locales are available in '/usr/share/i18n/locales/'.
-##
-## If you add new locales you can regenerate them with:
-## $(xbps-reconfigure -f glibc-locales)
-
+...
 C.UTF-8 UTF-8
 ...
 en_US.UTF-8 UTF-8
@@ -219,7 +233,12 @@ en_US ISO-8859-1
 (chroot) # xbps-reconfigure -f glibc-locales
 </cli>
   - Set system locales:<file text /etc/locale.conf>
-LANG="en_US.UTF-8"
+## AUTHOR:       AISK11
+## LOCATION:     /etc/locale.conf (0644 root:root)
+## DEPENDENCIES: runit-void glibc-locales
+## DESCRIPTION:  System locales.
+
+LANG='C.UTF-8'
 </file>
 
 ==== Timezone ====
@@ -227,13 +246,15 @@ LANG="en_US.UTF-8"
   - Create symlink to UTC timezone:<cli>
 (chroot) # ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 </cli>
-  - Save current time to RTC:<cli>
-(chroot) # hwclock --systohc
-</cli>
 
 ==== Runit ====
 
   - Set void configuration run by runit:<file text /etc/rc.conf>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/rc.conf (0644 root:root)
+## DEPENDENCIES: runit-void tzdata kbd
+## DESCRIPTION:  Void system configuration run by runit on stages 1 and 3.
+
 ## Set hostname (recommended to set in '/etc/hostname' instead).
 #HOSTNAME='voidlinux'
 
@@ -267,7 +288,7 @@ CGROUP_MODE='hybrid'
 ## have the wherewithal to first delete the contents of '/var/lib/seedrng'.
 SEEDRNG_SKIP_CREDIT='false'
 </file>
-  - Mount efivars as read-only to protect UEFI NVRAM((Read-write efivarfs problem: https://github.com/systemd/systemd/issues/2402.)):<file bash /etc/runit/core-services/00-pseudofs.sh>
+  - Mount efivars as read-only to protect UEFI NVRAM:<file bash /etc/runit/core-services/00-pseudofs.sh>
 ...
 if [ -d /sys/firmware/efi/efivars ]; then
     mountpoint -q /sys/firmware/efi/efivars || mount -o ro,nosuid,noexec,nodev -t efivarfs efivarfs /sys/firmware/efi/efivars
@@ -275,16 +296,11 @@ fi
 ...
 </file>
 
-==== Hostname & Hosts ====
+==== Hostname ====
 
   - Set hostname:<cli>
 (chroot) # echo '<HOSTNAME>' > /etc/hostname
 </cli>
-  - Set local DNS table:<file text /etc/hosts>
-## <IP-ADDRESS> [FQDN] <HOSTNAME>
-127.0.0.1 localhost
-::1       localhost
-</file>
 
 ==== Login Messages ====
 
@@ -298,7 +314,12 @@ fi
 ==== Initramfs ====
 
   - Configure initramfs:<file text /etc/dracut.conf.d/10-crypt.conf>
-## Support for encrypted partitions.
+## AUTHOR:       AISK11
+## LOCATION:     /etc/dracut.conf.d/10-crypt.conf (0644 root:root)
+## DEPENDENCIES: dracut-uefi
+## DESCRIPTION:  Initramfs generation rules.
+
+## Support encrypted partitions.
 install_items+='/etc/crypttab'
 hostonly='yes'
 </file>
@@ -307,10 +328,17 @@ hostonly='yes'
 
   - Install bootloader to ESP:<cli>
 (chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
+(chroot) # mount -o remount,rw efivarfs
 (chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
+(chroot) # mount -o remount,ro efivarfs
 </cli>
   - Configure custom bootloader hook:<file bash /etc/grub.d/40_custom>
 #!/bin/sh
+
+## AUTHOR:       AISK11
+## LOCATION:     /etc/grub.d/40_custom (0755 root:root)
+## DEPENDENCIES: grub-x86_64-efi
+## DESCRIPTION:  Bootloader hook.
 
 ## Required line.
 exec tail -n +3 "${0}"
@@ -323,11 +351,15 @@ menuentry 'Reboot Computer' --class restart {
 menuentry 'Shutdown Computer' --class shutdown {
     halt
 }
-</file>
-  - Make bootloader script executable:<cli>
+</file><cli>
 (chroot) # chmod 0755 /etc/grub.d/40_custom
 </cli>
   - Configure bootloader((GRUB2 config options: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html.)): <file text /etc/default/grub>
+## AUTHOR:       AISK11
+## LOCATION:     /etc/default/grub (0644 root:root)
+## DEPENDENCIES: grub-x86_64-efi
+## DESCRIPTION:  Bootloader configuration.
+
 ## Apply changes made to this file with:
 ## $(grub-mkconfig -o /boot/grub/grub.cfg)
 
@@ -357,7 +389,7 @@ GRUB_ENABLE_CRYPTODISK='y'
 
 ## Kernel parameters.
 GRUB_CMDLINE_LINUX=''
-GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
+GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS-VOID:luks-void net.ifnames=0 quiet'
 
 ## Bootloader colors (fg/bg).
 GRUB_COLOR_NORMAL='white/black'

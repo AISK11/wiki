@@ -80,3 +80,5 @@ table inet fw {
   * Turn up/down firewall:<cli>
 # sv <u|d> nftables
 </cli>
+
+https://en.m.wikipedia.org/wiki/List_of_network_protocols_(OSI_model)

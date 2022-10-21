@@ -28,7 +28,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-716&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-714&quot;} -->
 <h2 class="sectionedit3" id="disk_preparation">Disk Preparation</h2>
 <div class="level2">
 <ol>
@@ -85,7 +85,7 @@
 </li>
 <li class="level1 node"><div class="li"> Mount filesystems:</div>
 <ol>
-<li class="level2"><div class="li"> Btrfs<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> subvolume:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount -o noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/</span></pre><p></div>
+<li class="level2"><div class="li"> Btrfs<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> subvolume:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount -o defaults,noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/</span></pre><p></div>
 </li>
 <li class="level2"><div class="li"> ESP:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/boot/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sda1&gt; /mnt/void/boot/</span></pre><p></div>
@@ -95,7 +95,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;717-2632&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;715-2639&quot;} -->
 <h2 class="sectionedit4" id="base_system_installation">Base System Installation</h2>
 <div class="level2">
 <ol>
@@ -105,7 +105,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2633-2822&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2640-2829&quot;} -->
 <h2 class="sectionedit5" id="chroot">Chroot</h2>
 <div class="level2">
 <ol>
@@ -125,10 +125,9 @@
 <span class="cli_prompt"># </span><span class="cli_command">export PS1=&#039;(chroot) # &#039;</span></pre><p></div>
 </li>
 </ol>
-<hr />
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2823-3386&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2830-3387&quot;} -->
 <h2 class="sectionedit6" id="full_system_installation">Full System Installation</h2>
 <div class="level2">
 <ol>
@@ -139,26 +138,24 @@
 </li>
 <li class="level1"><div class="li"> System tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xpbs-install kbd kmod eudev ncurses less</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Administration tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install mdocml man-pages neovim git file tree ncdu psmisc htop btop neofetch inxi</span></pre><p></div>
+<li class="level1"><div class="li"> Administration tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install mdocml man-pages tealdeer neovim git file tree ncdu psmisc htop btop neofetch inxi</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Shell tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting</span></pre><p></div>
-</li>
-<li class="level1"><div class="li"> Boot tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install grub-x86_64-efi dracut-uefi linux linux-lts [intel-ucode|linux-firmware-amd]</span></pre><p></div>
+<li class="level1"><div class="li"> Boot tools<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install grub-x86_64-efi dracut-uefi linux linux-lts linux-firmware [intel-ucode]</span></pre><p></div>
 </li>
 <li class="level1 node"><div class="li"> Network tools:</div>
 <ol>
-<li class="level2"><div class="li"> Basic:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install iproute2 dhcpcd unbound nftables</span></pre><p></div>
+<li class="level2"><div class="li"> Basic:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install iproute2 dhcpcd iputils bind-utils inetutils-whois mtr nmap</span></pre><p></div>
 </li>
 <li class="level2"><div class="li"> Ethernet:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install ethtool</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> Wi-Fi:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install wpa_supplicant iw</span></pre><p></div>
+<li class="level2"><div class="li"> Wi-Fi<sup><a href="#fn__6" id="fnt__6" class="fn_top">6)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install wavemon iw wpa_supplicant</span></pre><p></div>
 </li>
 </ol>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3387-4536&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3388-4643&quot;} -->
 <h2 class="sectionedit7" id="swap_file">Swap File</h2>
 <div class="level2">
 <ol>
@@ -173,20 +170,26 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4537-4832&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4644-4939&quot;} -->
 <h2 class="sectionedit8" id="system_configuration">System Configuration</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;4833-4866&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;4940-4973&quot;} -->
 <h3 class="sectionedit9" id="xbps">XBPS</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set ignored packages by XBPS:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/xbps.d/ignore.conf</a></dt>
-<dd><pre class="code file text">## If package depends on ignored package, the dependecy is always satisfied
-## without installing ignored package.
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/xbps.d/ignore.conf (0644 root:root)
+## DEPENDENCIES: xbps
+## DESCRIPTION:  Ignore XBPS packages when required as dependencies.
+&nbsp;
+## Ignore nvi (replaced by neovim).
 ignorepkg=nvi
+&nbsp;
+## Ignore sudo (replaced by opendaos).
 ignorepkg=sudo</pre>
 </dd></dl>
 </div>
@@ -196,37 +199,55 @@ ignorepkg=sudo</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;4867-5180&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;4974-5422&quot;} -->
 <h3 class="sectionedit10" id="filesystems">Filesystems</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Configure crypttab:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=1" title="Download Snippet" class="mediafile mf_">/etc/crypttab</a></dt>
-<dd><pre class="code file text">## &lt;MAPPER-NAME&gt; &lt;DEVICE&gt; &lt;PASSWORD-FILE&gt; &lt;OPTIONS&gt;
-luks-root UUID=00000000-0000-0000-0000-000000000002 none luks</pre>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/crypttab (0644 root:root)
+## DEPENDENCIES: base-files
+## DESCRIPTION:  Encrypted partition mapping table.
+&nbsp;
+## &lt;MAPPER-NAME&gt; &lt;DEVICE&gt; &lt;PASSWORD-FILE&gt; &lt;OPTIONS&gt;
+luks-void UUID=00000000-0000-0000-0000-000000000002 none luks</pre>
 </dd></dl>
 </div>
 </li>
 <li class="level1"><div class="li"> Configure fstab:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=2" title="Download Snippet" class="mediafile mf_">/etc/fstab</a></dt>
-<dd><pre class="code file text">## &lt;FILE-SYSTEM&gt; &lt;MOUNT-DIR&gt; &lt;TYPE&gt; &lt;OPTIONS&gt; &lt;DUMP&gt; &lt;PASS&gt;
-LABEL=LUKS-ROOT     /     btrfs defaults,noatime            0 0
-LABEL=ESP           /boot vfat  defaults,noatime,umask=0077 0 1
-/swap               none  swap  defaults,nofail             0 0
-#efivarfs /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime 0 0</pre>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/fstab (0644 root:root)
+## DEPENDENCIES: base-files
+## DESCRIPTION:  Filesytem table.
+&nbsp;
+## &lt;FILE-SYSTEM&gt; &lt;MOUNT-DIR&gt; &lt;TYPE&gt; &lt;OPTIONS&gt; &lt;DUMP&gt; &lt;PASS&gt;
+LABEL=VOID-ROOT     /                         btrfs    defaults,noatime,compress=zstd:3,commit=120,subvol=@ 0 0
+LABEL=ESP           /boot                     vfat     defaults,noatime,umask=0077                          0 1
+/swap               none                      swap     defaults,nofail                                      0 0
+#efivarfs            /sys/firmware/efi/efivars efivarfs ro,nosuid,nodev,noexec,relatime                      0 0
+&nbsp;
+## To mount efivarfs as RO in runit, edit
+## '/etc/runit/core-services/00-pseudofs.sh'.</pre>
 </dd></dl>
 </div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;5181-5759&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;5423-6551&quot;} -->
 <h3 class="sectionedit11" id="kernel_modules">Kernel Modules</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set blacklisted kernel modules on startup:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=3" title="Download Snippet" class="mediafile mf_conf">/etc/modprobe.d/blacklist.conf</a></dt>
-<dd><pre class="code file text">## Blacklist pcspkr (system beeping).
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/modprobe.d/blacklist.conf (0644 root:root)
+## DEPENDENCIES: kmod
+## DESCRIPTION:  List of blacklisted kernel modules on startup.
+&nbsp;
+## Blacklist pcspkr (system beeping).
 blacklist pcspkr</pre>
 </dd></dl>
 </div>
@@ -234,18 +255,13 @@ blacklist pcspkr</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:11,&quot;range&quot;:&quot;5760-5938&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:11,&quot;range&quot;:&quot;6552-6906&quot;} -->
 <h3 class="sectionedit12" id="locales">Locales</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set locales to be generated by system:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=4" title="Download Snippet" class="mediafile mf_">/etc/default/libc-locales</a></dt>
-<dd><pre class="code file text">## List of GNU libc locales regenerated by the glibc-locales package.
-## All libc locales are available in '/usr/share/i18n/locales/'.
-##
-## If you add new locales you can regenerate them with:
-## $(xbps-reconfigure -f glibc-locales)
-&nbsp;
+<dd><pre class="code file text">...
 C.UTF-8 UTF-8
 ...
 en_US.UTF-8 UTF-8
@@ -258,31 +274,39 @@ en_US ISO-8859-1
 </li>
 <li class="level1"><div class="li"> Set system locales:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=5" title="Download Snippet" class="mediafile mf_conf">/etc/locale.conf</a></dt>
-<dd><pre class="code file text">LANG=&quot;en_US.UTF-8&quot;</pre>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/locale.conf (0644 root:root)
+## DEPENDENCIES: runit-void glibc-locales
+## DESCRIPTION:  System locales.
+&nbsp;
+LANG='C.UTF-8'</pre>
 </dd></dl>
 </div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:12,&quot;range&quot;:&quot;5939-6496&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:12,&quot;range&quot;:&quot;6907-7380&quot;} -->
 <h3 class="sectionedit13" id="timezone">Timezone</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Create symlink to UTC timezone:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">ln -sf /usr/share/zoneinfo/UTC /etc/localtime</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Save current time to RTC:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">hwclock --systohc</span></pre><p></div>
-</li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;6497-6693&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;7381-7506&quot;} -->
 <h3 class="sectionedit14" id="runit">Runit</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set void configuration run by runit:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=6" title="Download Snippet" class="mediafile mf_conf">/etc/rc.conf</a></dt>
-<dd><pre class="code file text">## Set hostname (recommended to set in '/etc/hostname' instead).
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/rc.conf (0644 root:root)
+## DEPENDENCIES: runit-void tzdata kbd
+## DESCRIPTION:  Void system configuration run by runit on stages 1 and 3.
+&nbsp;
+## Set hostname (recommended to set in '/etc/hostname' instead).
 #HOSTNAME='voidlinux'
 &nbsp;
 ## Set RTC to use UTC or localtime (localtime is inconsistent for DST).
@@ -317,7 +341,7 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Mount efivars as read-only to protect UEFI NVRAM<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup>:<dl class="file">
+<li class="level1"><div class="li"> Mount efivars as read-only to protect UEFI NVRAM:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=7" title="Download Snippet" class="mediafile mf_sh">/etc/runit/core-services/00-pseudofs.sh</a></dt>
 <dd><pre class="code file bash">...
 <span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re5">-d</span> <span class="sy0">/</span>sys<span class="sy0">/</span>firmware<span class="sy0">/</span>efi<span class="sy0">/</span>efivars <span class="br0">&#93;</span>; <span class="kw1">then</span>
@@ -330,24 +354,16 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;6694-8210&quot;} -->
-<h3 class="sectionedit15" id="hostname_hosts">Hostname &amp; Hosts</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;7507-9129&quot;} -->
+<h3 class="sectionedit15" id="hostname">Hostname</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set hostname:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&lt;HOSTNAME&gt;&#039; &gt; /etc/hostname</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Set local DNS table:<dl class="file">
-<dt><a href="http://localhost/_export/code/void/installation?codeblock=8" title="Download Snippet" class="mediafile mf_">/etc/hosts</a></dt>
-<dd><pre class="code file text">## &lt;IP-ADDRESS&gt; [FQDN] &lt;HOSTNAME&gt;
-127.0.0.1 localhost
-::1       localhost</pre>
-</dd></dl>
-</div>
-</li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname &amp; Hosts&quot;,&quot;hid&quot;:&quot;hostname_hosts&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:15,&quot;range&quot;:&quot;8211-8443&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:15,&quot;range&quot;:&quot;9130-9225&quot;} -->
 <h3 class="sectionedit16" id="login_messages">Login Messages</h3>
 <div class="level3">
 <ol>
@@ -357,18 +373,23 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Login Messages&quot;,&quot;hid&quot;:&quot;login_messages&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:16,&quot;range&quot;:&quot;8444-8569&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Login Messages&quot;,&quot;hid&quot;:&quot;login_messages&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:16,&quot;range&quot;:&quot;9226-9351&quot;} -->
 <h2 class="sectionedit17" id="booting">Booting</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:17,&quot;range&quot;:&quot;8570-8590&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:17,&quot;range&quot;:&quot;9352-9372&quot;} -->
 <h3 class="sectionedit18" id="initramfs">Initramfs</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Configure initramfs:<dl class="file">
-<dt><a href="http://localhost/_export/code/void/installation?codeblock=9" title="Download Snippet" class="mediafile mf_conf">/etc/dracut.conf.d/10-crypt.conf</a></dt>
-<dd><pre class="code file text">## Support for encrypted partitions.
+<dt><a href="http://localhost/_export/code/void/installation?codeblock=8" title="Download Snippet" class="mediafile mf_conf">/etc/dracut.conf.d/10-crypt.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/dracut.conf.d/10-crypt.conf (0644 root:root)
+## DEPENDENCIES: dracut-uefi
+## DESCRIPTION:  Initramfs generation rules.
+&nbsp;
+## Support encrypted partitions.
 install_items+='/etc/crypttab'
 hostonly='yes'</pre>
 </dd></dl>
@@ -377,16 +398,23 @@ hostonly='yes'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:18,&quot;range&quot;:&quot;8591-8772&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:18,&quot;range&quot;:&quot;9373-9716&quot;} -->
 <h3 class="sectionedit19" id="bootloader">Bootloader</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Install bootloader to ESP:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --removable</span>
-<span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB</span></pre><p></div>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,rw efivarfs</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,ro efivarfs</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Configure custom bootloader hook:<dl class="file">
-<dt><a href="http://localhost/_export/code/void/installation?codeblock=10" title="Download Snippet" class="mediafile mf_d_40_custom">/etc/grub.d/40_custom</a></dt>
+<dt><a href="http://localhost/_export/code/void/installation?codeblock=9" title="Download Snippet" class="mediafile mf_d_40_custom">/etc/grub.d/40_custom</a></dt>
 <dd><pre class="code file bash"><span class="co0">#!/bin/sh</span>
+&nbsp;
+<span class="co0">## AUTHOR:       AISK11</span>
+<span class="co0">## LOCATION:     /etc/grub.d/40_custom (0755 root:root)</span>
+<span class="co0">## DEPENDENCIES: grub-x86_64-efi</span>
+<span class="co0">## DESCRIPTION:  Bootloader hook.</span>
 &nbsp;
 <span class="co0">## Required line.</span>
 <span class="kw3">exec</span> <span class="kw2">tail</span> <span class="re5">-n</span> +<span class="nu0">3</span> <span class="st0">&quot;<span class="es3">${0}</span>&quot;</span>
@@ -400,13 +428,18 @@ menuentry <span class="st_h">'Shutdown Computer'</span> <span class="re5">--clas
     halt
 <span class="br0">&#125;</span></pre>
 </dd></dl>
+
+<pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">chmod 0755 /etc/grub.d/40_custom</span></pre>
 </div>
 </li>
-<li class="level1"><div class="li"> Make bootloader script executable:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">chmod 0755 /etc/grub.d/40_custom</span></pre><p></div>
-</li>
-<li class="level1"><div class="li"> Configure bootloader<sup><a href="#fn__6" id="fnt__6" class="fn_top">6)</a></sup>: <dl class="file">
-<dt><a href="http://localhost/_export/code/void/installation?codeblock=11" title="Download Snippet" class="mediafile mf_">/etc/default/grub</a></dt>
-<dd><pre class="code file text">## Apply changes made to this file with:
+<li class="level1"><div class="li"> Configure bootloader<sup><a href="#fn__7" id="fnt__7" class="fn_top">7)</a></sup>: <dl class="file">
+<dt><a href="http://localhost/_export/code/void/installation?codeblock=10" title="Download Snippet" class="mediafile mf_">/etc/default/grub</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/default/grub (0644 root:root)
+## DEPENDENCIES: grub-x86_64-efi
+## DESCRIPTION:  Bootloader configuration.
+&nbsp;
+## Apply changes made to this file with:
 ## $(grub-mkconfig -o /boot/grub/grub.cfg)
 &nbsp;
 ## OS name.
@@ -435,7 +468,7 @@ GRUB_ENABLE_CRYPTODISK='y'
 &nbsp;
 ## Kernel parameters.
 GRUB_CMDLINE_LINUX=''
-GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS:luks-root net.ifnames=0 quiet'
+GRUB_CMDLINE_LINUX_DEFAULT='cryptdevice=LABEL=LUKS-VOID:luks-void net.ifnames=0 quiet'
 &nbsp;
 ## Bootloader colors (fg/bg).
 GRUB_COLOR_NORMAL='white/black'
@@ -454,7 +487,7 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:10,&quot;secid&quot;:19,&quot;range&quot;:&quot;8773-10511&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:19,&quot;range&quot;:&quot;9717-11802&quot;} -->
 <h2 class="sectionedit20" id="finishing">Finishing</h2>
 <div class="level2">
 <ol>
@@ -470,16 +503,19 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:20,&quot;range&quot;:&quot;10512-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:20,&quot;range&quot;:&quot;11803-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
-, <sup><a href="#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
-<div class="content">Read-write efivarfs problem: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
+<div class="content">Read-write efivarfs issue: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
 <div class="content">Status of btrfs in linux: <a href="https://btrfs.wiki.kernel.org/index.php/Status" class="urlextern" title="https://btrfs.wiki.kernel.org/index.php/Status">https://btrfs.wiki.kernel.org/index.php/Status</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
 <div class="content">Btrfs mount options: <a href="https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options" class="urlextern" title="https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options">https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
 <div class="content">Void subrepositories: <a href="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories" class="urlextern" title="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories">https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
+<div class="content">Void microcode: <a href="https://docs.voidlinux.org/config/firmware.html#microcode" class="urlextern" title="https://docs.voidlinux.org/config/firmware.html#microcode">https://docs.voidlinux.org/config/firmware.html#microcode</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__6" id="fn__6" class="fn_bot">6)</a></sup> 
+<div class="content">Iwconfig replaced by iw: <a href="https://wireless.wiki.kernel.org/en/users/Documentation/iw/replace-iwconfig" class="urlextern" title="https://wireless.wiki.kernel.org/en/users/Documentation/iw/replace-iwconfig">https://wireless.wiki.kernel.org/en/users/Documentation/iw/replace-iwconfig</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__7" id="fn__7" class="fn_bot">7)</a></sup> 
 <div class="content">GRUB2 config options: <a href="https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html" class="urlextern" title="https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html">https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html</a>.</div></div>
 </div>

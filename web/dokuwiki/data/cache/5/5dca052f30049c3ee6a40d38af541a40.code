@@ -1,0 +1,6 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/locale.conf (0644 root:root)
+## DEPENDENCIES: runit-void glibc-locales
+## DESCRIPTION:  System locales.
+&nbsp;
+LANG='C.UTF-8'

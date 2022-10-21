@@ -1,0 +1,10 @@
+## AUTHOR:       AISK11
+## LOCATION:     /etc/xbps.d/ignore.conf (0644 root:root)
+## DEPENDENCIES: xbps
+## DESCRIPTION:  Ignore XBPS packages when required as dependencies.
+&nbsp;
+## Ignore nvi (replaced by neovim).
+ignorepkg=nvi
+&nbsp;
+## Ignore sudo (replaced by opendaos).
+ignorepkg=sudo
