@@ -1,0 +1,14 @@
+====== Cybersecurity ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Install BlackArch Repository =====
+
+  - Install BlackArch repository((Install BlackArch Linux repository: https://www.blackarch.org/downloads.html#install-repo.)):<cli>
+$ curl -Lo blackarch-install.sh https://blackarch.org/strap.sh
+# sh ./blackarch-install.sh
+# rm -f ./blackarch-install.sh
+# pacman -Syyu
+</cli>

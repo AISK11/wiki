@@ -14,3 +14,6 @@
 1666213328	127.0.0.1	E	void:pre-installation	admin			10
 1666213434	127.0.0.1	E	void:pre-installation	admin			56
 1666213451	127.0.0.1	E	void:pre-installation	admin			0
+1666538016	127.0.0.1	D	void:pre-installation		removed - external edit (Unknown date)		-1626
+1666538017	127.0.0.1	C	void:pre-installation	admin	created		1626
+1666538038	127.0.0.1	E	void:pre-installation	admin			-1

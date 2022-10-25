@@ -148,3 +148,9 @@
 1666332966	127.0.0.1	E	void:installation	admin			-126
 1666369216	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		8
 1666369548	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-8
+1666538060	127.0.0.1	D	void:installation		removed - external edit (Unknown date)		-11951
+1666538061	127.0.0.1	C	void:installation	admin	created		11951
+1666538256	127.0.0.1	E	void:installation	admin	[Bootloader] 		7
+1666538375	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		83
+1666540161	127.0.0.1	E	void:installation	admin	[Full System Installation] 		5
+1666677104	127.0.0.1	E	void:installation	admin	[Disk Preparation] 		3

@@ -1,0 +1,39 @@
+
+<h1 class="sectionedit1" id="audio">Audio</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Audio&quot;,&quot;hid&quot;:&quot;audio&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-115&quot;} -->
+<h2 class="sectionedit4" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install pipewire:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install pipewire elogind</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Configure services:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">rm /etc/sv/dbus/down</span>
+<span class="cli_prompt"># </span><span class="cli_command">ln -s /etc/sv/dbus/ /var/service/</span>
+<span class="cli_prompt"># </span><span class="cli_command">rm /etc/sv/elogind/down</span>
+<span class="cli_prompt"># </span><span class="cli_command">ln -s /etc/sv/elogind/ /var/service/</span>
+<span class="cli_prompt"># </span><span class="cli_command">reboot</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;116-377&quot;} -->
+<h2 class="sectionedit5" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Start pipewire (as user):</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pipewire 2&gt; /dev/null &amp;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;378-473&quot;} -->
+<h2 class="sectionedit6" id="usage">Usage</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;474-&quot;} -->

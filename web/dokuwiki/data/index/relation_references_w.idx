@@ -264,3 +264,7 @@ os:index
 os
 void:live_image
 void:todo
+cybersecurity:ethernet
+void:bspwm
+cybersecurity:arp_poisoning
+void:luks

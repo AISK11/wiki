@@ -20,6 +20,9 @@
 <li class="level1"><div class="li"> Verify UEFI and remount UEFI NVRAM as read only<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ls -ld /sys/firmware/efi/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount -o remount,ro efivarfs</span></pre><p></div>
 </li>
+<li class="level1"><div class="li"> Set system time:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">date [-u] &lt;MMDDhhmmCCYY.ss&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">hwclock --systohc</span></pre><p></div>
+</li>
 <li class="level1"><div class="li"> Verify network connectivity.</div>
 </li>
 <li class="level1"><div class="li"> Update live environment system and install additional packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su[y] xbps ; xbps-install -Su[y]</span>
@@ -28,7 +31,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-714&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-797&quot;} -->
 <h2 class="sectionedit3" id="disk_preparation">Disk Preparation</h2>
 <div class="level2">
 <ol>
@@ -56,7 +59,7 @@
 </li>
 <li class="level2"><div class="li"> LUKS encrypted filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=/dev/urandom of=&lt;/dev/sdX2&gt; status=progress ; sync</span>
 <span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX2&gt;</span>
-<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksFormat --force-password --type luks2 &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksFormat --type luks2 --force-password -y &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD (VERIFY)&gt;</span>
@@ -95,7 +98,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;715-2639&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;798-2725&quot;} -->
 <h2 class="sectionedit4" id="base_system_installation">Base System Installation</h2>
 <div class="level2">
 <ol>
@@ -105,7 +108,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2640-2829&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2726-2915&quot;} -->
 <h2 class="sectionedit5" id="chroot">Chroot</h2>
 <div class="level2">
 <ol>
@@ -127,7 +130,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2830-3387&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2916-3473&quot;} -->
 <h2 class="sectionedit6" id="full_system_installation">Full System Installation</h2>
 <div class="level2">
 <ol>
@@ -138,7 +141,7 @@
 </li>
 <li class="level1"><div class="li"> System tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xpbs-install kbd kmod eudev ncurses less</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Administration tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install mdocml man-pages tealdeer neovim git file tree ncdu psmisc htop btop neofetch inxi</span></pre><p></div>
+<li class="level1"><div class="li"> Administration tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install mdocml man-pages tealdeer neovim git curl file tree ncdu psmisc htop btop neofetch inxi</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Boot tools<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install grub-x86_64-efi dracut-uefi linux linux-lts linux-firmware [intel-ucode]</span></pre><p></div>
 </li>
@@ -155,7 +158,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3388-4643&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3474-4734&quot;} -->
 <h2 class="sectionedit7" id="swap_file">Swap File</h2>
 <div class="level2">
 <ol>
@@ -170,12 +173,12 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4644-4939&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4735-5030&quot;} -->
 <h2 class="sectionedit8" id="system_configuration">System Configuration</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;4940-4973&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;5031-5064&quot;} -->
 <h3 class="sectionedit9" id="xbps">XBPS</h3>
 <div class="level3">
 <ol>
@@ -199,7 +202,7 @@ ignorepkg=sudo</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;4974-5422&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;5065-5513&quot;} -->
 <h3 class="sectionedit10" id="filesystems">Filesystems</h3>
 <div class="level3">
 <ol>
@@ -236,7 +239,7 @@ LABEL=ESP           /boot                     vfat     defaults,noatime,umask=00
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;5423-6551&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;5514-6642&quot;} -->
 <h3 class="sectionedit11" id="kernel_modules">Kernel Modules</h3>
 <div class="level3">
 <ol>
@@ -255,7 +258,7 @@ blacklist pcspkr</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:11,&quot;range&quot;:&quot;6552-6906&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:11,&quot;range&quot;:&quot;6643-6997&quot;} -->
 <h3 class="sectionedit12" id="locales">Locales</h3>
 <div class="level3">
 <ol>
@@ -286,7 +289,7 @@ LANG='C.UTF-8'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:12,&quot;range&quot;:&quot;6907-7380&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:12,&quot;range&quot;:&quot;6998-7471&quot;} -->
 <h3 class="sectionedit13" id="timezone">Timezone</h3>
 <div class="level3">
 <ol>
@@ -295,7 +298,7 @@ LANG='C.UTF-8'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;7381-7506&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;7472-7597&quot;} -->
 <h3 class="sectionedit14" id="runit">Runit</h3>
 <div class="level3">
 <ol>
@@ -354,7 +357,7 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;7507-9129&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;7598-9220&quot;} -->
 <h3 class="sectionedit15" id="hostname">Hostname</h3>
 <div class="level3">
 <ol>
@@ -363,12 +366,12 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:15,&quot;range&quot;:&quot;9130-9225&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:15,&quot;range&quot;:&quot;9221-9316&quot;} -->
 <h2 class="sectionedit16" id="booting">Booting</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:16,&quot;range&quot;:&quot;9226-9246&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:16,&quot;range&quot;:&quot;9317-9337&quot;} -->
 <h3 class="sectionedit17" id="initramfs">Initramfs</h3>
 <div class="level3">
 <ol>
@@ -388,7 +391,7 @@ hostonly='yes'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:17,&quot;range&quot;:&quot;9247-9590&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:17,&quot;range&quot;:&quot;9338-9681&quot;} -->
 <h3 class="sectionedit18" id="bootloader">Bootloader</h3>
 <div class="level3">
 <ol>
@@ -399,7 +402,7 @@ hostonly='yes'</pre>
 </li>
 <li class="level1"><div class="li"> Configure custom bootloader hook:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=9" title="Download Snippet" class="mediafile mf_d_40_custom">/etc/grub.d/40_custom</a></dt>
-<dd><pre class="code file bash"><span class="co0">#!/bin/sh</span>
+<dd><pre class="code file bash"><span class="co0">#!/usr/bin/env sh</span>
 &nbsp;
 <span class="co0">## AUTHOR:       AISK11</span>
 <span class="co0">## LOCATION:     /etc/grub.d/40_custom (0755 root:root)</span>
@@ -465,7 +468,7 @@ GRUB_COLOR_NORMAL='white/black'
 GRUB_COLOR_HIGHLIGHT='white/black'
 &nbsp;
 ## Disable nested entries.
-#GRUB_DISABLE_SUBMENU='true'
+GRUB_DISABLE_SUBMENU='true'
 &nbsp;
 ## Bootloader theme.
 #GRUB_THEME=''</pre>
@@ -477,7 +480,7 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:18,&quot;range&quot;:&quot;9591-11676&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:18,&quot;range&quot;:&quot;9682-11774&quot;} -->
 <h2 class="sectionedit19" id="finishing">Finishing</h2>
 <div class="level2">
 <ol>
@@ -493,7 +496,7 @@ GRUB_COLOR_HIGHLIGHT='white/black'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:19,&quot;range&quot;:&quot;11677-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:19,&quot;range&quot;:&quot;11775-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Read-write efivarfs issue: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 

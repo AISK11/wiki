@@ -2,26 +2,10 @@
 
 ----
 
-**[[:os|Operating Systems]]**
+**Operating Systems**
   * [[:void:index|Void Linux]]
 
-  * [[:windows11:index|Windows 11]]
-  * [[:rpios:index|Raspberry Pi OS Linux]]
-
 **IT Areas**
-
-  * [[:forensics:index|Forensics]]
   * [[:cybersecurity:index|Cybersecurity]]
-  * [[:dev:index|Development]]
-
-**Hardware**
-
-  * [[:hardware:index|Hardware]]
-
-**Misc**
-
-  * [[:multimedia:index|Multimedia]]
-  * [[:minimalism:index|Minimalism]]
-  * [[:todo:firefox|TODO - Firefox]]
 
 ----

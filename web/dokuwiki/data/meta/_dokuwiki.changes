@@ -1,65 +1,3 @@
-1665702476	127.0.0.1	E	mint:todo	admin			56
-1665703283	127.0.0.1	E	mint:sidebar	admin			26
-1665703333	127.0.0.1	C	mint:fonts	admin	created		40
-1665704566	127.0.0.1	E	sidebar	admin			35
-1665705237	127.0.0.1	E	gentoo:resources	admin			94
-1665705292	127.0.0.1	E	gentoo:index	admin			805
-1665707363	127.0.0.1	E	gentoo:index	admin			-782
-1665707378	127.0.0.1	E	gentoo:index	admin			0
-1665707398	127.0.0.1	E	gentoo:index	admin			1
-1665707413	127.0.0.1	E	gentoo:index	admin			4
-1665707520	127.0.0.1	E	gentoo:index	admin			-37
-1665708777	127.0.0.1	E	gentoo:sidebar	admin			37
-1665708810	127.0.0.1	C	gentoo:todo	admin	created		58
-1665708874	127.0.0.1	E	gentoo:index	admin			75
-1665708974	127.0.0.1	E	gentoo:todo	admin			158
-1665709062	127.0.0.1	E	gentoo:resources	admin			47
-1665709068	127.0.0.1	E	gentoo:resources	admin			-1
-1665756384	127.0.0.1	E	gentoo:sidebar	admin			67
-1665756478	127.0.0.1	C	gentoo:pre-installation	admin	created		195
-1665779508	127.0.0.1	E	gentoo:pre-installation	admin			189
-1665780152	127.0.0.1	E	gentoo:pre-installation	admin			44
-1665780518	127.0.0.1	E	gentoo:pre-installation	admin			51
-1665781174	127.0.0.1	E	gentoo:todo	admin			66
-1665781894	127.0.0.1	E	gentoo:index	admin			42
-1665781932	127.0.0.1	R	gentoo:index	admin	old revision restored (2022-10-14 02:54)	1665708874	-42
-1665781947	127.0.0.1	E	gentoo:index	admin			49
-1665784502	127.0.0.1	E	gentoo:pre-installation	admin			202
-1665784767	127.0.0.1	E	gentoo:pre-installation	admin			142
-1665784882	127.0.0.1	E	gentoo:pre-installation	admin			109
-1665785295	127.0.0.1	E	gentoo:pre-installation	admin			-6
-1665785311	127.0.0.1	E	gentoo:pre-installation	admin			0
-1665785375	127.0.0.1	E	gentoo:pre-installation	admin			27
-1665785411	127.0.0.1	E	gentoo:pre-installation	admin	[Download] 		8
-1665785588	127.0.0.1	E	gentoo:pre-installation	admin			576
-1665785641	127.0.0.1	E	gentoo:pre-installation	admin			61
-1665785672	127.0.0.1	E	gentoo:pre-installation	admin			2
-1665786019	127.0.0.1	E	gentoo:pre-installation	admin			5
-1665786035	127.0.0.1	E	gentoo:pre-installation	admin			-2
-1665786048	127.0.0.1	E	gentoo:pre-installation	admin			2
-1665786085	127.0.0.1	E	gentoo:sidebar	admin			42
-1665787341	127.0.0.1	E	gentoo:pre-installation	admin			-94
-1665787354	127.0.0.1	C	gentoo:installation	admin	created		120
-1665788075	127.0.0.1	E	gentoo:todo	admin			94
-1665789629	127.0.0.1	E	gentoo:installation	admin			336
-1665789728	127.0.0.1	E	gentoo:installation	admin			99
-1665791163	127.0.0.1	E	gentoo:installation	admin			1297
-1665791315	127.0.0.1	E	gentoo:installation	admin	[Disk Partitioning] 		14
-1665795173	127.0.0.1	E	gentoo:installation	admin	[Disk Partitioning] 		77
-1665839605	127.0.0.1	E	todo	admin			85
-1665852218	127.0.0.1	E	gentoo:installation	admin			6
-1665852588	127.0.0.1	E	gentoo:installation	admin	[Disk Partitioning] 		0
-1665852674	127.0.0.1	E	gentoo:installation	admin			21
-1665852908	127.0.0.1	E	gentoo:installation	admin			94
-1665853663	127.0.0.1	E	gentoo:installation	admin			221
-1665853839	127.0.0.1	E	gentoo:installation	admin	[Stage 3] 		1
-1665854144	127.0.0.1	E	gentoo:installation	admin			150
-1665854199	127.0.0.1	E	gentoo:installation	admin	[Stage 3] 		26
-1665854452	127.0.0.1	E	gentoo:installation	admin	[Stage 3] 		2
-1665855635	127.0.0.1	E	gentoo:installation	admin			-9
-1665855712	127.0.0.1	E	gentoo:installation	admin			13
-1665855718	127.0.0.1	E	gentoo:installation	admin			2
-1665961295	127.0.0.1	E	todo	admin			16
 1666114468	127.0.0.1	E	gentoo:installation	admin			68
 1666115563	127.0.0.1	E	gentoo:installation	admin			223
 1666115589	127.0.0.1	E	gentoo:pre-installation	admin			0
@@ -157,6 +95,7 @@
 1666212952	127.0.0.1	E	void:pre-installation	admin			5
 1666213328	127.0.0.1	E	void:pre-installation	admin			10
 1666213434	127.0.0.1	E	void:pre-installation	admin			56
+1666213451	127.0.0.1	C	old:void:pre-installation		created - external edit		1626
 1666213451	127.0.0.1	E	void:pre-installation	admin			0
 1666214024	127.0.0.1	E	void:installation	admin			111
 1666214418	127.0.0.1	E	void:installation	admin			1922
@@ -179,7 +118,6 @@
 1666282271	127.0.0.1	E	void:todo	admin			9
 1666284805	127.0.0.1	E	void:todo	admin			8
 1666284885	127.0.0.1	E	void:todo	admin			29
-1665239339	127.0.0.1	E	void:firewall		external edit		0
 1666296788	127.0.0.1	E	void:firewall	admin			71
 1666300036	127.0.0.1	E	void:index	admin			30
 1666300511	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-117
@@ -250,10 +188,10 @@
 1666357672	127.0.0.1	E	void:post-installation	admin			125
 1666357700	127.0.0.1	E	void:post-installation	admin			9
 1666359979	127.0.0.1	E	void:post-installation	admin			-463
-1665239339	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:packet_capture		external edit		0
 1666367034	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:packet_capture	admin			42
 1666369216	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		8
 1666369548	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-8
+1666369548	127.0.0.1	C	old:void:installation		created - external edit		11951
 1666374390	127.0.0.1	E	void:post-installation	admin	[GUI] 		-4
 1666374543	127.0.0.1	E	void:post-installation	admin			131
 1666374819	127.0.0.1	E	void:post-installation	admin			4
@@ -261,4 +199,117 @@
 1666377952	127.0.0.1	E	void:post-installation	admin			127
 1666378129	127.0.0.1	E	void:post-installation	admin			28
 1666378255	127.0.0.1	E	void:post-installation	admin			59
+1666378255	127.0.0.1	C	old:void:post-installation		created - external edit		1820
 1666382530	127.0.0.1	E	sidebar	admin			-66
+1666383127	127.0.0.1	D	old:index	admin	removed		-18
+1666383132	127.0.0.1	D	index		removed - external edit (Unknown date)		-18
+1666383133	127.0.0.1	C	index	admin	created		18
+1666383542	127.0.0.1	D	sidebar		removed - external edit (Unknown date)		-466
+1666383543	127.0.0.1	C	sidebar	admin	created		141
+1666383651	127.0.0.1	D	cybersecurity:index		removed - external edit (Unknown date)		-441
+1666383652	127.0.0.1	C	cybersecurity:index	admin	created		27
+1666383826	127.0.0.1	D	cybersecurity:sidebar		removed - external edit (Unknown date)		-1157
+1666383827	127.0.0.1	C	cybersecurity:sidebar	admin	created		85
+1666383837	127.0.0.1	E	sidebar	admin			-31
+1666384137	127.0.0.1	E	cybersecurity:sidebar	admin			59
+1666384250	127.0.0.1	D	cybersecurity:resources		removed - external edit (Unknown date)		-261
+1666384251	127.0.0.1	C	cybersecurity:resources	admin	created		23
+1666384394	127.0.0.1	E	cybersecurity:sidebar	admin			0
+1666384733	127.0.0.1	E	cybersecurity:resources	admin			86
+1666384789	127.0.0.1	E	cybersecurity:resources	admin			24
+1666384997	127.0.0.1	E	cybersecurity:resources	admin			11
+1666385162	127.0.0.1	E	cybersecurity:sidebar	admin			43
+1666385181	127.0.0.1	E	sidebar	admin			1
+1666385319	127.0.0.1	C	cybersecurity:ethernet	admin	created		118
+1666388285	127.0.0.1	E	cybersecurity:ethernet	admin			104
+1666388332	127.0.0.1	E	cybersecurity:ethernet	admin			41
+1666394212	127.0.0.1	E	cybersecurity:ethernet	admin			47
+1666466916	127.0.0.1	E	cybersecurity:ethernet	admin			15
+1666467499	127.0.0.1	E	cybersecurity:ethernet	admin			117
+1666468140	127.0.0.1	E	cybersecurity:ethernet	admin			102
+1666468150	127.0.0.1	E	cybersecurity:ethernet	admin			0
+1666468219	127.0.0.1	E	cybersecurity:ethernet	admin			15
+1666468293	127.0.0.1	E	cybersecurity:ethernet	admin			13
+1666468315	127.0.0.1	E	cybersecurity:ethernet	admin			0
+1666468620	127.0.0.1	E	cybersecurity:ethernet	admin			50
+1666468849	127.0.0.1	E	cybersecurity:ethernet	admin			167
+1666468854	127.0.0.1	E	cybersecurity:ethernet	admin			-76
+1666470010	127.0.0.1	E	cybersecurity:ethernet	admin			178
+1666470635	127.0.0.1	E	cybersecurity:ethernet	admin			208
+1666470699	127.0.0.1	E	cybersecurity:ethernet	admin			139
+1666470818	127.0.0.1	E	cybersecurity:ethernet	admin			70
+1666470944	127.0.0.1	E	cybersecurity:ethernet	admin			139
+1666471272	127.0.0.1	E	cybersecurity:ethernet	admin			3
+1666471908	127.0.0.1	E	cybersecurity:ethernet	admin			-94
+1666472769	127.0.0.1	E	cybersecurity:ethernet	admin	[Tools] 		237
+1666473026	127.0.0.1	E	cybersecurity:ethernet	admin			2
+1666473696	127.0.0.1	E	cybersecurity:ethernet	admin			52
+1666473730	127.0.0.1	E	cybersecurity:ethernet	admin			47
+1666473762	127.0.0.1	E	cybersecurity:ethernet	admin			-52
+1666473786	127.0.0.1	E	cybersecurity:ethernet	admin			-306
+1666473887	127.0.0.1	E	cybersecurity:ethernet	admin			47
+1666473907	127.0.0.1	E	cybersecurity:ethernet	admin			-45
+1666473943	127.0.0.1	E	cybersecurity:ethernet	admin			-673
+1666475589	127.0.0.1	E	cybersecurity:ethernet	admin			277
+1666475609	127.0.0.1	E	cybersecurity:ethernet	admin			-1
+1666480896	127.0.0.1	E	cybersecurity:sidebar	admin			89
+1666487983	127.0.0.1	E	cybersecurity:ethernet	admin			2
+1666492661	127.0.0.1	E	sidebar	admin			32
+1666537413	127.0.0.1	D	void:index		removed - external edit (Unknown date)		-793
+1666537414	127.0.0.1	C	void:index	admin	created		793
+1666537444	127.0.0.1	D	void:sidebar		removed - external edit (Unknown date)		-825
+1666537445	127.0.0.1	C	void:sidebar	admin	created		275
+1666537969	127.0.0.1	E	void:sidebar	admin			-6
+1666537982	127.0.0.1	D	void:resources		removed - external edit (Unknown date)		-378
+1666537983	127.0.0.1	C	void:resources	admin	created		117
+1666538012	127.0.0.1	D	old:void:pre-installation	admin	removed		-1626
+1666538016	127.0.0.1	D	void:pre-installation		removed - external edit (Unknown date)		-1626
+1666538017	127.0.0.1	C	void:pre-installation	admin	created		1626
+1666538038	127.0.0.1	E	void:pre-installation	admin			-1
+1666538056	127.0.0.1	D	old:void:installation	admin	removed		-11951
+1666538060	127.0.0.1	D	void:installation		removed - external edit (Unknown date)		-11951
+1666538061	127.0.0.1	C	void:installation	admin	created		11951
+1666538256	127.0.0.1	E	void:installation	admin	[Bootloader] 		7
+1666538375	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		83
+1666538458	127.0.0.1	E	void:sidebar	admin			-6
+1666538474	127.0.0.1	D	old:void:post-installation	admin	removed		-1820
+1666538494	127.0.0.1	D	void:post-installation		removed - external edit (Unknown date)		-1820
+1666538495	127.0.0.1	C	void:post-installation	admin	created		1914
+1666538698	127.0.0.1	E	void:post-installation	admin			6
+1666540161	127.0.0.1	E	void:installation	admin	[Full System Installation] 		5
+1666540480	127.0.0.1	E	void:post-installation	admin			302
+1666540794	127.0.0.1	E	void:sidebar	admin			53
+1666540804	127.0.0.1	E	sidebar	admin			-2
+1666540815	127.0.0.1	E	cybersecurity:sidebar	admin			-2
+1666540991	127.0.0.1	D	void:audio		removed - external edit (Unknown date)		-626
+1666540992	127.0.0.1	C	void:audio	admin	created		488
+1666541125	127.0.0.1	E	void:sidebar	admin			24
+1666541186	127.0.0.1	E	void:sidebar	admin			-1
+1666541195	127.0.0.1	E	void:audio	admin			2
+1666541246	127.0.0.1	C	void:sway	admin	created		95
+1666541633	127.0.0.1	E	void:sway	admin	[Installation] 		9
+1666541999	127.0.0.1	E	void:sway	admin			108
+1666542165	127.0.0.1	E	void:sway	admin			70
+1666542173	127.0.0.1	E	void:sway	admin			0
+1666542215	127.0.0.1	E	void:sway	admin			26
+1666542224	127.0.0.1	E	void:sway	admin			0
+1666542231	127.0.0.1	E	void:sway	admin			0
+1666542238	127.0.0.1	E	void:sway	admin			-3
+1666542324	127.0.0.1	E	void:sidebar	admin			26
+1666542338	127.0.0.1	E	void:sidebar	admin			0
+1666542355	127.0.0.1	C	void:bspwm	admin	created		113
+1666542383	127.0.0.1	E	void:post-installation	admin			-805
+1666542390	127.0.0.1	E	void:bspwm	admin			454
+1666542411	127.0.0.1	E	void:post-installation	admin	[Local User] 		-1
+1666543491	127.0.0.1	E	cybersecurity:sidebar	admin			65
+1666673737	127.0.0.1	E	void:sidebar	admin			42
+1666674852	127.0.0.1	C	void:luks	admin	created		749
+1666677054	127.0.0.1	E	void:luks	admin	[Encrypt] 		2
+1666677104	127.0.0.1	E	void:installation	admin	[Disk Preparation] 		3
+1666679977	127.0.0.1	E	void:luks	admin			147
+1666680183	127.0.0.1	E	void:luks	admin			470
+1666680197	127.0.0.1	E	void:luks	admin			0
+1666680247	127.0.0.1	E	void:luks	admin	[Encrypt] 		11
+1666680261	127.0.0.1	E	void:luks	admin	[Encrypt] 		5
+1666680308	127.0.0.1	E	void:luks	admin	[Decrypt] 		34
+1666682350	127.0.0.1	E	void:luks	admin	[Decrypt] 		38

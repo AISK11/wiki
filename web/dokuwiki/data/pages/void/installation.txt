@@ -19,6 +19,10 @@
 # ls -ld /sys/firmware/efi/
 # mount -o remount,ro efivarfs
 </cli>
+  - Set system time:<cli>
+# date [-u] <MMDDhhmmCCYY.ss>
+# hwclock --systohc
+</cli>
   - Verify network connectivity.
   - Update live environment system and install additional packages:<cli>
 # xbps-install -Su[y] xbps ; xbps-install -Su[y]
@@ -53,7 +57,7 @@ cfdisk> q
     - LUKS encrypted filesystem:<cli>
 # dd if=/dev/urandom of=</dev/sdX2> status=progress ; sync
 # wipefs -a </dev/sdX2>
-# cryptsetup luksFormat --force-password --type luks2 </dev/sdX2>
+# cryptsetup luksFormat --type luks2 --force-password -y </dev/sdX2>
 > YES
 > <NEW-LUKS-PASSWORD>
 > <NEW-LUKS-PASSWORD (VERIFY)>
@@ -131,7 +135,7 @@ cfdisk> q
 (chroot) # xpbs-install kbd kmod eudev ncurses less
 </cli>
   - Administration tools:<cli>
-(chroot) # xbps-install mdocml man-pages tealdeer neovim git file tree ncdu psmisc htop btop neofetch inxi
+(chroot) # xbps-install mdocml man-pages tealdeer neovim git curl file tree ncdu psmisc htop btop neofetch inxi
 </cli>
   - Boot tools((Void microcode: https://docs.voidlinux.org/config/firmware.html#microcode.)):<cli>
 (chroot) # xbps-install grub-x86_64-efi dracut-uefi linux linux-lts linux-firmware [intel-ucode]
@@ -326,7 +330,7 @@ hostonly='yes'
 (chroot) # mount -o remount,ro efivarfs
 </cli>
   - Configure custom bootloader hook:<file bash /etc/grub.d/40_custom>
-#!/bin/sh
+#!/usr/bin/env sh
 
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/grub.d/40_custom (0755 root:root)
@@ -389,7 +393,7 @@ GRUB_COLOR_NORMAL='white/black'
 GRUB_COLOR_HIGHLIGHT='white/black'
 
 ## Disable nested entries.
-#GRUB_DISABLE_SUBMENU='true'
+GRUB_DISABLE_SUBMENU='true'
 
 ## Bootloader theme.
 #GRUB_THEME=''

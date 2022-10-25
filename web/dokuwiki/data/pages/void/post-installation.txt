@@ -1,5 +1,9 @@
 ====== Post-Installation ======
 
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
 ===== System Update =====
 
   - Update system:<cli>
@@ -28,7 +32,7 @@
 ===== Local User =====
 
   - Create local user:<cli>
-# useradd -m -k /dev/null -s /bin/bash <USER>
+# useradd -m -k /dev/null -s /bin/zsh <USER>
 </cli>
   - Make user accessible:<cli>
 # passwd <USER>
@@ -59,31 +63,3 @@ permit :doas
   - Assign user to administrative group:<cli>
 # usermod -aG doas <USER>
 </cli>
-
-===== Audio (ToDo) =====
-
-===== GUI =====
-
-==== Window Manager ====
-
-==== Taskbar ====
-
-==== Application Launcher ====
-
-==== Screnn Locker ====
-
-==== Compositor ====
-
-==== Wallpapper Setter ====
-
-==== Sclipboard Manager ====
-
-==== Screenshot Utility ====
-
-
-  - Install i3-gaps((I3-gaps features: https://github.com/Airblader/i3.))((I3 user guide: https://i3wm.org/docs/userguide.html.)):
-<cli>
-# xbps-install xorg-minimal bspwm sxhkd
-</cli>
-
-https://wiki.archlinux.org/title/List_of_applications

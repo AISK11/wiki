@@ -1,0 +1,9 @@
+1666674852	127.0.0.1	C	void:luks	admin	created		749
+1666677054	127.0.0.1	E	void:luks	admin	[Encrypt] 		2
+1666679977	127.0.0.1	E	void:luks	admin			147
+1666680183	127.0.0.1	E	void:luks	admin			470
+1666680197	127.0.0.1	E	void:luks	admin			0
+1666680247	127.0.0.1	E	void:luks	admin	[Encrypt] 		11
+1666680261	127.0.0.1	E	void:luks	admin	[Encrypt] 		5
+1666680308	127.0.0.1	E	void:luks	admin	[Decrypt] 		34
+1666682350	127.0.0.1	E	void:luks	admin	[Decrypt] 		38

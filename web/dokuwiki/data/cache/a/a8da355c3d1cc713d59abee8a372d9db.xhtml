@@ -1,0 +1,74 @@
+
+<h1 class="sectionedit1" id="luks">LUKS</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;LUKS&quot;,&quot;hid&quot;:&quot;luks&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-20&quot;} -->
+<h2 class="sectionedit2" id="usage">Usage</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;21-39&quot;} -->
+<h3 class="sectionedit3" id="encrypt">Encrypt</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Overwrite previous block device data with garbage:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=/dev/urandom of=&lt;/dev/sdX[Y]&gt; status=progress ; sync</span>
+<span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX[Y]&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Format block device:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksFormat--type luks2 --force-password -y &lt;/dev/sdX[Y]&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD (VERIFY)&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Set up LUKS filesystem LABEL and UUID:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label &lt;LABEL&gt; &lt;/dev/sdX[Y]&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksUUID --uuid &lt;XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&gt; &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">YES</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Encrypt&quot;,&quot;hid&quot;:&quot;encrypt&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;40-570&quot;} -->
+<h3 class="sectionedit4" id="decrypt">Decrypt</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Get LUKS info:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">blkid -t TYPE=crypto_LUKS -o device</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksDump &lt;/dev/sdX[Y]&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Decrypt block device:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cryptsetup open --type luks2 &lt;/dev/sdX[Y]&gt; &lt;MAPPER-NAME&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;LUKS-PASSWORD&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sdX[Y]&gt; &lt;DIRECTORY&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> When block device is no longer required, close it:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">umount &lt;/dev/sdX[Y]&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup close &lt;MAPPER-NAME&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Decrypt&quot;,&quot;hid&quot;:&quot;decrypt&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;571-967&quot;} -->
+<h3 class="sectionedit5" id="backup">Backup</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Backup LUKS header:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksHeaderBackup &lt;/dev/sdX[Y]&gt; --header-backup-file &lt;FILE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Remove LUKS header:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksErase &lt;/dev/sdX[Y]&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">YES</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Restore LUKS backup:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksHeaderRestore &lt;/dev/sdX[Y]&gt; --header-backup-file &lt;FILE&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">YES</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Backup&quot;,&quot;hid&quot;:&quot;backup&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;968-1289&quot;} -->
+<h3 class="sectionedit6" id="passwords">Passwords</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Change password:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksChangeKey &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;OLD-LUKS-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD (VERIFY)&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Passwords&quot;,&quot;hid&quot;:&quot;passwords&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1290-&quot;} -->

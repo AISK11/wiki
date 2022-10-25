@@ -1,0 +1,60 @@
+
+<h1 class="sectionedit1" id="ethernet_ieee_8023">Ethernet (IEEE 802.3)</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+<p>
+<a href="http://localhost/_media/cybersecurity/ethernet_frame.png" class="media" title="cybersecurity:ethernet_frame.png"><img src="http://localhost/_media/cybersecurity/ethernet_frame.png" class="media" loading="lazy" alt="" /></a>
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Parameter       </th><th class="col1 leftalign"> Value                                          </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> Protocol data   </td><td class="col1 leftalign"> bits                                           </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> Physical medium </td><td class="col1"> cable (coaxial, twisted pair or optical fiber) </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:4,&quot;range&quot;:&quot;179-385&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Ethernet (IEEE 802.3)&quot;,&quot;hid&quot;:&quot;ethernet_ieee_8023&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-386&quot;} -->
+<h2 class="sectionedit5" id="tools">Tools</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Iproute2:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install iproute2</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Ethtool:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install ethtool</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Tcpdump:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install tcpdump</span></pre><p></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> List network interfaces:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">ip a</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li"> See detail info about interface:</div>
+<ul>
+<li class="level2"><div class="li"> Transmission medium:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ethtool &lt;INTERFACE&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Packet statistics:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ethtool -S &lt;INTERFACE&gt; [| head -n 5]</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Driver:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ethtool -i &lt;INTERFACE&gt;</span></pre><p></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="https://wiki.wireshark.org/SampleCaptures#sample-captures" class="urlextern" title="https://wiki.wireshark.org/SampleCaptures#sample-captures">https://wiki.wireshark.org/SampleCaptures#sample-captures</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://en.m.wikipedia.org/wiki/Ethernet_frame" class="urlextern" title="https://en.m.wikipedia.org/wiki/Ethernet_frame">https://en.m.wikipedia.org/wiki/Ethernet_frame</a> </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Tools&quot;,&quot;hid&quot;:&quot;tools&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;387-&quot;} -->

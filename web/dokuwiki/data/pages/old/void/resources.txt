@@ -1,0 +1,13 @@
+====== Resources ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+  * [[https://voidlinux.org/packages|Packages]]
+
+===== Void Linux =====
+
+  * [[https://voidlinux.org|Official Website]]
+  * [[https://github.com/void-linux|Official GitHub]]
+  * [[https://github.com/aisk11/void|Personal Configuration Files (GitHub - AISK11)]]

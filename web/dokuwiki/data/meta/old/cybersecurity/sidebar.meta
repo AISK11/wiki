@@ -1,0 +1,48 @@
+a:2:{s:7:"current";a:7:{s:4:"date";a:2:{s:7:"created";i:1666383095;s:8:"modified";i:1665239339;}s:4:"user";s:0:"";s:7:"creator";s:0:"";s:5:"title";s:13:"Cybersecurity";s:11:"description";a:2:{s:15:"tableofcontents";a:1:{i:0;a:4:{s:3:"hid";s:13:"cybersecurity";s:5:"title";s:13:"Cybersecurity";s:4:"type";s:2:"ul";s:5:"level";i:1;}}s:8:"abstract";s:439:"Cybersecurity
+
+----------
+
+About
+
+	*  Index
+	*  Resources
+
+Anonymity
+
+	*  System
+	*  Firewall
+	*  Network Interfaces
+	*  MAC Address
+	*  DHCP
+	*  DNS
+	*  VPN-Tor-Proxy
+	*  Web Browser
+
+Hardening
+
+	*  Authentication
+
+Forensics
+
+	*  Disk Backup
+	*  Data Recovery
+	*  Metadata
+
+Crypto
+
+	*  Encoding
+	*  Hashing
+	*  Ciphers
+	*  Encryption
+
+----------
+
+WIP
+
+Reconnaissance
+
+	*  Packet Capture
+	*  Host Discovery
+	*  Service Scanning
+
+----------";}s:8:"relation";a:2:{s:10:"references";a:21:{s:19:"cybersecurity:index";b:1;s:23:"cybersecurity:resources";b:1;s:20:"cybersecurity:system";b:0;s:22:"cybersecurity:firewall";b:0;s:32:"cybersecurity:network_interfaces";b:0;s:25:"cybersecurity:mac_address";b:0;s:18:"cybersecurity:dhcp";b:0;s:17:"cybersecurity:dns";b:0;s:27:"cybersecurity:vpn-tor-proxy";b:0;s:25:"cybersecurity:web_browser";b:0;s:28:"cybersecurity:authentication";b:0;s:25:"cybersecurity:disk_backup";b:0;s:27:"cybersecurity:data_recovery";b:0;s:22:"cybersecurity:metadata";b:0;s:29:"cybersecurity:crypto:encoding";b:0;s:28:"cybersecurity:crypto:hashing";b:0;s:28:"cybersecurity:crypto:ciphers";b:0;s:31:"cybersecurity:crypto:encryption";b:0;s:43:"cybersecurity:reconnaissance:packet_capture";b:0;s:43:"cybersecurity:reconnaissance:host_discovery";b:0;s:45:"cybersecurity:reconnaissance:service_scanning";b:0;}s:10:"firstimage";s:0:"";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:3:{s:4:"date";a:1:{s:7:"created";i:1666383095;}s:4:"user";s:0:"";s:7:"creator";s:0:"";}}

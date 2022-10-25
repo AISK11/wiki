@@ -1,0 +1,15 @@
+====== Sway ======
+
+<WRAP center round alert 60%>
+This section does not work! Any usage is discouraged!
+</WRAP>
+
+===== Installation =====
+
+  - Install sway:<cli>
+# xbps-install sway mesa-dri polkit
+</cli>
+  - Configure services:<cli>
+# rm /etc/sv/polkitd/down
+# ln -s /etc/sv/polkitd/ /var/service/
+</cli>

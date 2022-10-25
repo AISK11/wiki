@@ -1,0 +1,62 @@
+
+<h1 class="sectionedit1" id="pre-installation">Pre-Installation</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Pre-Installation&quot;,&quot;hid&quot;:&quot;pre-installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-32&quot;} -->
+<h2 class="sectionedit2" id="download">Download</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> <a href="https://www.gentoo.org/downloads" class="urlextern" title="https://www.gentoo.org/downloads">Download Gentoo</a> ⇒ <a href="https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds" class="urlextern" title="https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds">mirror bouncer</a><sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.</div>
+</li>
+<li class="level1 node"><div class="li"> Download ISO and verification file:</div>
+<ol>
+<li class="level2"><div class="li"> <code>current-admincd-amd64/admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso</code></div>
+</li>
+<li class="level2"><div class="li"> <code>current-admincd-amd64/admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso.DIGESTS</code></div>
+</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li"> Import Gentoo PGP key<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">gpg --keyserver hkps://keys.gentoo.org --recv-keys 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Verify authenticity and integrity:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">gpg --verify ./admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso.DIGESTS</span>
+<span class="cli_prompt">$ </span><span class="cli_command">sha512sum -c --ignore-missing ./admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso.DIGESTS ./admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Download&quot;,&quot;hid&quot;:&quot;download&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;33-882&quot;} -->
+<h2 class="sectionedit3" id="flash_usb">Flash USB</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Make sure the USB filesystem is <strong>not</strong> mounted!</div>
+</li>
+<li class="level1"><div class="li"> Flash USB with disk image:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=./admincd-amd64-&lt;CCYYMMDDThhmmssZ&gt;.iso of=&lt;/dev/sdX&gt; status=progress ; sync</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Flash USB&quot;,&quot;hid&quot;:&quot;flash_usb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;883-1086&quot;} -->
+<h2 class="sectionedit4" id="usb_boot">USB Boot</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Reboot the system and during the POST phase press <em>BIOS key</em><sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> to boot into UEFI.</div>
+</li>
+<li class="level1"><div class="li"> Make sure that Secure Boot is disabled and reboot.</div>
+</li>
+<li class="level1"><div class="li"> On next POST phase, press <em>Boot Menu key</em><sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup> and select <em>(UEFI) USB</em> entry.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;USB Boot&quot;,&quot;hid&quot;:&quot;usb_boot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1087-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Gentoo mirrors: <a href="https://www.gentoo.org/downloads/mirrors" class="urlextern" title="https://www.gentoo.org/downloads/mirrors">https://www.gentoo.org/downloads/mirrors</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Gentoo signatures: <a href="https://www.gentoo.org/downloads/signatures" class="urlextern" title="https://www.gentoo.org/downloads/signatures">https://www.gentoo.org/downloads/signatures</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+, <sup><a href="#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+<div class="content">List of <em>POST keys</em> according to vendor: <a href="https://www.disk-image.com/faq-bootmenu.htm" class="urlextern" title="https://www.disk-image.com/faq-bootmenu.htm">https://www.disk-image.com/faq-bootmenu.htm</a>.</div></div>
+</div>

@@ -6,38 +6,21 @@
   * [[:cybersecurity:index|Index]]
   * [[:cybersecurity:resources|Resources]]
 
-**Anonymity**
-  * [[:cybersecurity:system|System]]
-  * [[:cybersecurity:firewall|Firewall]]
-  * [[:cybersecurity:network_interfaces|Network Interfaces]]
-  * [[:cybersecurity:mac_address|MAC Address]]
-  * [[:cybersecurity:dhcp|DHCP]]
-  * [[:cybersecurity:dns|DNS]]
-  * [[:cybersecurity:vpn-tor-proxy|VPN-Tor-Proxy]]
-  * [[:cybersecurity:web_browser|Web Browser]]
+**Networking**
+  * [[:cybersecurity:ethernet|Ethernet]]
+  * Bluetooth
+  * Wi-Fi
+  * MAC
+  * IP
+  * ICMP
+  * TCP
+  * UDP
+  * DHCP
+  * DNS
+  * Tor
 
-**Hardening**
-  * [[:cybersecurity:authentication|Authentication]]
+**Attacks**
+  * [[:cybersecurity:arp_poisoning|ARP Poisoning]]
 
-**Forensics**
-  * [[:cybersecurity:disk_backup|Disk Backup]]
-  * [[:cybersecurity:data_recovery|Data Recovery]]
-  * [[:cybersecurity:metadata|Metadata]]
-
-
-**Crypto**
-  * [[:cybersecurity:crypto:encoding|Encoding]]
-  * [[:cybersecurity:crypto:hashing|Hashing]]
-  * [[:cybersecurity:crypto:ciphers|Ciphers]]
-  * [[:cybersecurity:crypto:encryption|Encryption]]
-
-----
-
-WIP
-
-**Reconnaissance**
-  * [[:cybersecurity:reconnaissance:packet_capture|Packet Capture]]
-  * [[:cybersecurity:reconnaissance:host_discovery|Host Discovery]]
-  * [[:cybersecurity:reconnaissance:service_scanning|Service Scanning]]
 
 ----

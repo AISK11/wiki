@@ -1,13 +1,5 @@
 ====== Resources ======
 
-<WRAP center round important 60%>
-This section is incomplete and needs further work!
-</WRAP>
+===== Networking =====
 
-===== Anonymity =====
-
-  * Whonix Wiki: https://www.whonix.org/wiki/Documentation.
-
-===== Crypto =====
-
-  * Cyber chef: https://cyberchef.org.
+  * [[https://en.m.wikipedia.org/wiki/List_of_network_protocols_(OSI_model)|Network Protocols]]

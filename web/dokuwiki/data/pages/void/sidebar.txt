@@ -4,33 +4,19 @@
 
 **About**
   * [[:void:index|Index]]
-  * [[:void:resources|Resources (WIP)]]
+  * [[:void:resources|Resources]]
 
 **Installation**
   * [[:void:pre-installation|Pre-Installation]]
   * [[:void:installation|Installation]]
-  * [[:void:post-installation|Post-Installation (WIP)]]
-
-**Network Configuration**
-  * [[:void:firewall|Firewall (WIP)]]
-  * [[:void:interfaces|Interfaces (WIP)]]
-  * [[:void:mac|MAC (TODO)]]
-  * [[:void:dhcp|DHCP (TODO)]]
-  * [[:void:dns|DNS (TODO)]]
-  * [[:void:vpn-tor-proxy|VPN-Tor-Proxy (TODO)]]
+  * [[:void:post-installation|Post-Installation]]
 
 **System Configuration**
-  * [[:void:audio|Audio (WIP)]]
-  * [[:void:xorg|Xorg (WIP)]]
-  * [[:void:terminal_emulator|Terminal Emulator (WIP)]]
-
-**Software**
-  * [[:void:discord|Discord (WIP)]]
+  * [[:void:audio|Audio]]
+  * [[:void:bspwm|Bspwm]]
+  * [[:void:sway|Sway]]
 
 **Cheat Sheets**
-  * [[:void:xbps|XBPS (WIP)]]
-  * [[:void:runit|Runit (WIP)]]
-
-  * [[:void:todo|ToDo (WIP)]]
+  * [[:void:luks|LUKS]]
 
 ----

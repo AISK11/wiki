@@ -400,3 +400,10 @@ tiem
 half
 bind
 i3wm
+pair
+bits
+ieee
+vlan
+1500
+clli
+xxxx

@@ -1,0 +1,106 @@
+
+<h1 class="sectionedit1" id="xbps">XBPS</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-20&quot;} -->
+<h2 class="sectionedit2" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Set ignored packages:<dl class="file">
+<dt><a href="http://localhost/_export/code/old/void/xbps?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/xbps.d/ignore.conf</a></dt>
+<dd><pre class="code file text">## If package depends on ignored package, the dependecy is always satisfied
+## without installing ignored package.
+ignorepkg=nvi
+ignorepkg=sudo</pre>
+</dd></dl>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;21-261&quot;} -->
+<h2 class="sectionedit3" id="package_management">Package Management</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Management&quot;,&quot;hid&quot;:&quot;package_management&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:3,&quot;range&quot;:&quot;262-293&quot;} -->
+<h3 class="sectionedit4" id="repositories">Repositories</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> List installed repositories:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -L</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install additional repositories<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> and synchronize them:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps ; xbps-install -Su</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Repositories&quot;,&quot;hid&quot;:&quot;repositories&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;294-668&quot;} -->
+<h3 class="sectionedit5" id="install_remove">Install &amp; Remove</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Update:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su xbps</span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su </span>
+<span class="cli_prompt"># </span><span class="cli_command">xbps-remove -Ro </span>
+<span class="cli_prompt"># </span><span class="cli_command">rm -rf /var/cache/xbps/*</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Install:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Remove:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-remove -Ro &lt;PACAKGE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Install &amp; Remove&quot;,&quot;hid&quot;:&quot;install_remove&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;669-913&quot;} -->
+<h3 class="sectionedit6" id="mark">Mark</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> As automatic (dependency) or manual (explicitly installed):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-pkgdb -m &lt;auto|manual&gt; &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> To hold (don&#039;t update) or unhold (update normally):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-pkgdb -m &lt;hold|unhold&gt; &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Mark&quot;,&quot;hid&quot;:&quot;mark&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;914-1154&quot;} -->
+<h3 class="sectionedit7" id="query">Query</h3>
+<div class="level3">
+<ul>
+<li class="level1 node"><div class="li"> Installed packages:</div>
+<ul>
+<li class="level2"><div class="li"> All packages:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -l</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Manually (explicitly) installed packages:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -m</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Orphaned dependencies:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -O</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> On hold packages:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query -H</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Matching [remote] packages:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -s &lt;WILDCARD-STRING&gt;</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Package details:</div>
+<ul>
+<li class="level2"><div class="li"> Detailed [remote] package info:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -S &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Files owned by [remote] package:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -f &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Name of package that owns [remote] file(s):</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -o &lt;WILDCARD-STRING&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Dependencies of [remote] package:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -x &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Packages that given [remote] package is dependency for:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">xbps-query [-R] -X &lt;PACKAGE&gt;</span></pre><p></div>
+</li>
+</ul>
+</li>
+</ul>
+
+<pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">vkpurge rm all</span></pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Query&quot;,&quot;hid&quot;:&quot;query&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:7,&quot;range&quot;:&quot;1155-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Void subrepositories: <a href="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories" class="urlextern" title="https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories">https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories</a></div></div>
+</div>

@@ -1,0 +1,19 @@
+a:2:{s:7:"current";a:7:{s:4:"date";a:2:{s:7:"created";i:1666383095;s:8:"modified";i:1665786085;}s:4:"user";s:0:"";s:7:"creator";s:0:"";s:5:"title";s:12:"Gentoo Linux";s:11:"description";a:2:{s:15:"tableofcontents";a:1:{i:0;a:4:{s:3:"hid";s:12:"gentoo_linux";s:5:"title";s:12:"Gentoo Linux";s:4:"type";s:2:"ul";s:5:"level";i:1;}}s:8:"abstract";s:139:"Gentoo Linux
+
+----------
+
+About
+
+	*  Index
+	*  Resources
+
+Installation
+
+	*  Pre-Installation
+	*  Installation
+
+To Do
+
+	*  To Do
+
+----------";}s:8:"relation";a:2:{s:10:"references";a:5:{s:12:"gentoo:index";b:0;s:16:"gentoo:resources";b:0;s:23:"gentoo:pre-installation";b:0;s:19:"gentoo:installation";b:0;s:11:"gentoo:todo";b:0;}s:10:"firstimage";s:0:"";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:3:{s:4:"date";a:1:{s:7:"created";i:1666383095;}s:4:"user";s:0:"";s:7:"creator";s:0:"";}}

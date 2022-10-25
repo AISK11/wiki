@@ -1,0 +1,320 @@
+
+<h1 class="sectionedit1" id="installation">Installation</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-122&quot;} -->
+<h2 class="sectionedit4" id="environment_preparation">Environment Preparation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Set console keymap and font:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">loadkeys us</span>
+<span class="cli_prompt"># </span><span class="cli_command">setfont eurlatgr</span>
+<span class="cli_prompt"># </span><span class="cli_command">unicode_start</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Verify UEFI and remount UEFI NVRAM as read only<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ls -ld /sys/firmware/efi/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount -o remount,ro efivarfs</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;123-458&quot;} -->
+<h2 class="sectionedit5" id="configure_network">Configure Network</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configure Network&quot;,&quot;hid&quot;:&quot;configure_network&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;459-489&quot;} -->
+<h3 class="sectionedit6" id="ethernet">Ethernet</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Ethernet&quot;,&quot;hid&quot;:&quot;ethernet&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;490-509&quot;} -->
+<h3 class="sectionedit7" id="wi-fi">Wi-Fi</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Wi-Fi&quot;,&quot;hid&quot;:&quot;wi-fi&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;510-526&quot;} -->
+<h2 class="sectionedit8" id="disk_preparation">Disk Preparation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create partitions:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;/dev/sdX&gt;</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">gpt</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">n</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">2GiB</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">t</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">EFI System</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">n</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command"> (Enter)</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">W</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">yes</span>
+<span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">q</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 1 ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 2 GENTOO</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li"> Create filesystems: </div>
+<ol>
+<li class="level2"><div class="li"> EFI filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX1&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkfs.vfat -F 32 &lt;/dev/sdX1&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">fatlabel &lt;/dev/sdX1&gt; ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">fatlabel -i &lt;/dev/sdX1&gt; 00000001</span>
+<span class="cli_prompt"># </span><span class="cli_command">fsck.vfat &lt;/dev/sdX1&gt; ; echo $?</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> LUKS encrypted filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=/dev/urandom of=&lt;/dev/sdX2&gt; status=progress ; sync</span>
+<span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksFormat --force-password --type luks2 &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD (VERIFY)&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label LUKS-GENTOO &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup open --type luks2 &lt;/dev/sdX2&gt; luks-gentoo</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;LUKS-PASSWORD&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Root filesystem<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a /dev/mapper/luks-gentoo</span>
+<span class="cli_prompt"># </span><span class="cli_command">mkfs.btrfs /dev/mapper/luks-gentoo</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label /dev/mapper/luks-gentoo GENTOO</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-gentoo</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">y</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs check /dev/mapper/luks-gentoo ; echo $?</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Verify partitions and filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; [unit B] p free</span>
+<span class="cli_prompt"># </span><span class="cli_command">lsblk -fp &lt;/dev/sdX&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Create btrfs subvolume(s):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount /dev/mapper/luks-gentoo /mnt/gentoo/</span>
+<span class="cli_prompt"># </span><span class="cli_command">btrfs subvolume create /mnt/gentoo/@</span>
+<span class="cli_prompt"># </span><span class="cli_command">umount /mnt/gentoo/</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li"> Mount filesystems:</div>
+<ol>
+<li class="level2"><div class="li"> Btrfs<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> subvolume:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount -o noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-gentoo /mnt/gentoo/</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> ESP:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/gentoo/boot/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sda1&gt; /mnt/gentoo/boot/</span></pre><p></div>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;527-2449&quot;} -->
+<h2 class="sectionedit9" id="stage_3">Stage 3</h2>
+<div class="level2">
+<ol>
+<li class="level1 node"><div class="li"> Prepare download:</div>
+<ol>
+<li class="level2"><div class="li"> Set date manually:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">date [-u] &lt;MMDDhhmmCCYY.ss&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">hwclock --systohc</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Go to mounted new root directory:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cd /mnt/gentoo/</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> Download stage 3 files:</div>
+<ol>
+<li class="level2"><div class="li"> Navigate to gentoo website:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">links https://www.gentoo.org/downloads/mirrors</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Navigate to <code>&lt;MIRROR&gt;/releases/amd64/autobuilds/current-stage3-amd64-openrc/</code>.</div>
+</li>
+<li class="level2 node"><div class="li"> Download (with <kbd class="__keyboard">D</kbd> key): </div>
+<ol>
+<li class="level3"><div class="li"> <code>stage3-amd64-openrc-&lt;CCYYMMDDThhmmssZ&gt;.tar.xz</code></div>
+</li>
+<li class="level3"><div class="li"> <code>stage3-amd64-openrc-&lt;CCYYMMDDThhmmssZ&gt;.tar.xz.DIGESTS</code></div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> Verify stage 3 files:</div>
+<ol>
+<li class="level2"><div class="li"> Import Gentoo PGP key<sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">gpg --keyserver hkps://keys.gentoo.org --recv-keys 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910</span></pre><p></div>
+</li>
+<li class="level2"><div class="li"> Verify authenticity and integrity:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">gpg --verify ./stage3-amd-64-openrc-&lt;CCYYMMDDhhmmZ&gt;.tar.xz.DIGESTS</span>
+<span class="cli_prompt"># </span><span class="cli_command">sha512sum -c --ignore-missing ./stage3-amd-64-openrc-&lt;CCYYMMDDhhmmZ&gt;.tar.xz.DIGESTS ./stage3-amd-64-openrc-&lt;CCYYMMDDhhmmZ&gt;.tar.xz</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Unpack stage 3:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">tar xpvf ./stage3-amd-64-openrc-&lt;CCYYMMDDhhmmZ&gt;.tar.xz --xattrs-include=&#039;*.*&#039; --numeric-owner</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Clean:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">rm -f ./stage3-amd-64-openrc-&lt;CCYYMMDDhhmmZ&gt;.tar.xz ./stage3-amd-64-openrc-&lt;CCYYMMDDhhmmZ&gt;.tar.xz.DIGESTS</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Stage 3&quot;,&quot;hid&quot;:&quot;stage_3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;2450-3766&quot;} -->
+<h2 class="sectionedit10" id="compile_options">Compile Options</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Find system nubmer of threads and RAM size (in bytes):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">nproc</span>
+<span class="cli_prompt"># </span><span class="cli_command">vmstat -s -S b | head -n 1 | grep -o &#039;[0-9]*&#039;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Configure compiling options<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup><sup><a href="#fn__6" id="fnt__6" class="fn_top">6)</a></sup><sup><a href="#fn__7" id="fnt__7" class="fn_top">7)</a></sup><sup><a href="#fn__8" id="fnt__8" class="fn_top">8)</a></sup><sup><a href="#fn__9" id="fnt__9" class="fn_top">9)</a></sup><sup><a href="#fn__10" id="fnt__10" class="fn_top">10)</a></sup><sup><a href="#fn__11" id="fnt__11" class="fn_top">11)</a></sup><sup><a href="#fn__12" id="fnt__12" class="fn_top">12)</a></sup><sup><a href="#fn__13" id="fnt__13" class="fn_top">13)</a></sup><sup><a href="#fn__14" id="fnt__14" class="fn_top">14)</a></sup><sup><a href="#fn__15" id="fnt__15" class="fn_top">15)</a></sup><sup><a href="#fn__16" id="fnt__16" class="fn_top">16)</a></sup>:<dl class="file">
+<dt><a href="http://localhost/_export/code/old/gentoo/installation?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/mnt/gentoo/etc/portage/make.conf</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/portage/make.conf (0644 root:root)
+## DEPENDENCIES: sys-apps/portage
+## DESCRIPTION:  Global portage configuration file.
+&nbsp;
+## Per-package config: '/etc/portage/package.use/'.
+## See all variables: $(emerge --info -v).
+&nbsp;
+## Number of parallel compilations. Use smaller value between CPU and RAM.
+## - Amount of CPU threads (find with $(nproc)).
+## - RAM / 2 GiB (find with $(vmstat -s -S b | head -n 1 | grep -o '[0-9]*').
+PC='4'
+&nbsp;
+## Load average (should be ${PC}+1).
+LA='5'
+&nbsp;
+## Compilation flags for C, C++, FORTRAN 77 and FORTRAN languages.
+COMMON_FLAGS='-march=native -O2 -pipe'
+CFLAGS=&quot;${COMMON_FLAGS}&quot;
+CXXFLAGS=&quot;${COMMON_FLAGS}&quot;
+FFLAGS=&quot;${COMMON_FLAGS}&quot;
+FCFLAGS=&quot;${COMMON_FLAGS}&quot;
+&nbsp;
+## Amount of parallel make (compilation) jobs.
+MAKEOPTS=&quot;-j${PC} -l${LA}&quot;
+&nbsp;
+## Entries to append to emerge command.
+EMERGE_DEFAULT_OPTS='--keep-going=y --with-bdeps=y --ask-enter-invalid'
+&nbsp;
+## Actions that portage takes.
+FEATURES='sandbox strict strict-keepdir collision-protect cgroup \
+ parallel-install distcc noinfo candy'
+&nbsp;
+## Allow portage to use only idle system resources.
+PORTAGE_SCHEDULING_POLICY='idle'
+&nbsp;
+## Accept only FSF licensed software. Specify exceptions in
+## '/etc/portage/package.license'.
+ACCEPT_LICENSE=&quot;-* @FREE&quot;
+&nbsp;
+## Portage directories.
+PORTDIR='/var/db/repos/gentoo'
+DISTDIR='/var/cache/distfiles'
+PKGDIR='/var/cache/binpkgs'
+&nbsp;
+## English language for build output.
+LC_MESSAGES='C'
+&nbsp;
+## Global software USE flags ((https://packages.gentoo.org/useflags/global)).
+## - System.
+USE=&quot;${USE} -systemd -emacs -xemacs -themes -bash-completion python multilib ncurses \
+ xattr lm-senosrs dbus udev elogind man git zsh-completion&quot;
+&nbsp;
+## - Security.
+USE=&quot;${USE} -telemetry hardened apparmor argon2 crypt&quot;
+&nbsp;
+## - Network.
+USE=&quot;${USE} -zeroconf bluetooth wifi ipv6 ssl vnc rdp samba&quot;
+&nbsp;
+## - DE &amp; WM.
+USE=&quot;${USE} -gnome -gnome-keyring -kde -plasma wayland X tray gtk libnotify \
+ inotify&quot;
+&nbsp;
+## - Multimedia.
+USE=&quot;${USE} fontconfig truetype xft unicode cjk svg png jpeg exif mp3 flac mp4&quot;
+&nbsp;
+## - Nvidia.
+USE=&quot;${USE} nvenc&quot;</pre>
+</dd></dl>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Compile Options&quot;,&quot;hid&quot;:&quot;compile_options&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;3767-6951&quot;} -->
+<h2 class="sectionedit11" id="mirrors_ebuild_repo">Mirrors &amp; Ebuild Repo</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Select mirror(s):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Set up gentoo ebuild repository:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/gentoo/etc/portage/repos.conf/</span>
+<span class="cli_prompt"># </span><span class="cli_command">cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Mirrors &amp; Ebuild Repo&quot;,&quot;hid&quot;:&quot;mirrors_ebuild_repo&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:11,&quot;range&quot;:&quot;6952-7275&quot;} -->
+<h2 class="sectionedit12" id="chroot">Chroot</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Copy DNS info:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp -L /etc/resolv.conf /mnt/gentoo/etc/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Mount pseudo filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount --rbind /dev/ /mnt/gentoo/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /sys/ /mnt/gentoo/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /proc/ /mnt/gentoo/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --rbind /run/ /mnt/gentoo/run/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/gentoo/dev/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/gentoo/sys/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/gentoo/proc/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/gentoo/run/</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Enter chroot:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/gentoo/ /bin/[ba]sh</span>
+<span class="cli_prompt"># </span><span class="cli_command">. ./etc/profile</span>
+<span class="cli_prompt"># </span><span class="cli_command">export PS1=&quot;(chroot) ${PS1}&quot;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:12,&quot;range&quot;:&quot;7276-7839&quot;} -->
+<h2 class="sectionedit13" id="system_recompilation">System Recompilation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Download daily ebuild repository snapshot:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">emerge-webrsync</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Update ebuild repository to the altest version:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">emerge --sync</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Read update news and delete them afterwards:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect news list</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect news read [N] | less</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect news purge [N]</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Select right profile (<code>default/linux/amd64/&lt;VERSION&gt; (stable)</code>):</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect profile list</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">eselect profile set &lt;N&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Update @world set:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">emerge -avuDN @world</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Recompilation&quot;,&quot;hid&quot;:&quot;system_recompilation&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:13,&quot;range&quot;:&quot;7840-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Read-write efivarfs problem: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Status of btrfs in linux: <a href="https://btrfs.wiki.kernel.org/index.php/Status" class="urlextern" title="https://btrfs.wiki.kernel.org/index.php/Status">https://btrfs.wiki.kernel.org/index.php/Status</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<div class="content">Btrfs mount options: <a href="https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options" class="urlextern" title="https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options">https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+<div class="content">Gentoo signatures: <a href="https://www.gentoo.org/downloads/signatures" class="urlextern" title="https://www.gentoo.org/downloads/signatures">https://www.gentoo.org/downloads/signatures</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
+<div class="content">Handbook for make.conf: <a href="https://wiki.gentoo.org/wiki//etc/portage/make.conf" class="urlextern" title="https://wiki.gentoo.org/wiki//etc/portage/make.conf">https://wiki.gentoo.org/wiki//etc/portage/make.conf</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__6" id="fn__6" class="fn_bot">6)</a></sup> 
+<div class="content">Manpage for make.conf: <a href="https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html" class="urlextern" title="https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html">https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__7" id="fn__7" class="fn_bot">7)</a></sup> 
+<div class="content">Configuration example for make.conf: <a href="https://github.com/gentoo/portage/blob/master/cnf/make.conf.example" class="urlextern" title="https://github.com/gentoo/portage/blob/master/cnf/make.conf.example">https://github.com/gentoo/portage/blob/master/cnf/make.conf.example</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__8" id="fn__8" class="fn_bot">8)</a></sup> 
+<div class="content">Compilation flags: <a href="https://wiki.gentoo.org/wiki/Safe_CFLAGS" class="urlextern" title="https://wiki.gentoo.org/wiki/Safe_CFLAGS">https://wiki.gentoo.org/wiki/Safe_CFLAGS</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__9" id="fn__9" class="fn_bot">9)</a></sup> 
+<div class="content">MAKEOPTS compilation options: <a href="https://wiki.gentoo.org/wiki/MAKEOPTS" class="urlextern" title="https://wiki.gentoo.org/wiki/MAKEOPTS">https://wiki.gentoo.org/wiki/MAKEOPTS</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__10" id="fn__10" class="fn_bot">10)</a></sup> 
+<div class="content">Emerge options: <a href="https://wiki.gentoo.org/wiki/EMERGE_DEFAULT_OPTS" class="urlextern" title="https://wiki.gentoo.org/wiki/EMERGE_DEFAULT_OPTS">https://wiki.gentoo.org/wiki/EMERGE_DEFAULT_OPTS</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__11" id="fn__11" class="fn_bot">11)</a></sup> 
+<div class="content">Emerge manpage: <a href="https://wiki.gentoo.org/wiki/Full_manpages/emerge" class="urlextern" title="https://wiki.gentoo.org/wiki/Full_manpages/emerge">https://wiki.gentoo.org/wiki/Full_manpages/emerge</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__12" id="fn__12" class="fn_bot">12)</a></sup> 
+<div class="content">Portage niceness: <a href="https://wiki.gentoo.org/wiki/Portage_niceness" class="urlextern" title="https://wiki.gentoo.org/wiki/Portage_niceness">https://wiki.gentoo.org/wiki/Portage_niceness</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__13" id="fn__13" class="fn_bot">13)</a></sup> 
+<div class="content">Licenses: <a href="https://wiki.gentoo.org/wiki/License_groups" class="urlextern" title="https://wiki.gentoo.org/wiki/License_groups">https://wiki.gentoo.org/wiki/License_groups</a></div></div>
+<div class="fn"><sup><a href="#fnt__14" id="fn__14" class="fn_bot">14)</a></sup> 
+<div class="content">Per-packages licenes: <a href="https://wiki.gentoo.org/wiki//etc/portage/package.license" class="urlextern" title="https://wiki.gentoo.org/wiki//etc/portage/package.license">https://wiki.gentoo.org/wiki//etc/portage/package.license</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__15" id="fn__15" class="fn_bot">15)</a></sup> 
+<div class="content">Global USE flags: <a href="https://packages.gentoo.org/useflags/global" class="urlextern" title="https://packages.gentoo.org/useflags/global">https://packages.gentoo.org/useflags/global</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__16" id="fn__16" class="fn_bot">16)</a></sup> 
+<div class="content">All USE flags: <a href="https://www.gentoo.org/support/use-flags" class="urlextern" title="https://www.gentoo.org/support/use-flags">https://www.gentoo.org/support/use-flags</a></div></div>
+</div>

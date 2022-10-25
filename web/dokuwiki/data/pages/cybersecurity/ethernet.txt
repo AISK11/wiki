@@ -1,0 +1,44 @@
+====== Ethernet (IEEE 802.3) ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+{{:cybersecurity:ethernet_frame.png?direct|}}
+
+^ Parameter       ^ Value                                          ^
+| Protocol data   | bits                                           |
+| Physical medium | cable (coaxial, twisted pair or optical fiber) |
+
+===== Tools =====
+
+  * Iproute2:<cli>
+# xbps-install iproute2
+</cli>
+  * Ethtool:<cli>
+# xbps-install ethtool
+</cli>
+  * Tcpdump:<cli>
+# xbps-install tcpdump
+</cli>
+
+  * List network interfaces:<cli>
+$ ip a
+</cli>
+  * See detail info about interface:
+    * Transmission medium:<cli>
+# ethtool <INTERFACE>
+</cli>
+    * Packet statistics:<cli>
+# ethtool -S <INTERFACE> [| head -n 5]
+</cli>
+    * Driver:<cli>
+# ethtool -i <INTERFACE>
+</cli>
+
+
+
+
+
+  * https://wiki.wireshark.org/SampleCaptures#sample-captures
+  * https://en.m.wikipedia.org/wiki/Ethernet_frame 

@@ -2,7 +2,7 @@
 
 ===== Download =====
 
-  - Download [[https://repo-default.voidlinux.org/live/current|live image]]((Void mirrors: https://docs.voidlinux.org/xbps/repositories/mirrors.)), checksums and checksum signature:<cli>
+  - Download [[https://repo-default.voidlinux.org/live/current|live image]]((Void mirrors: https://docs.voidlinux.org/xbps/repositories/mirrors.)), checksum and checksum signature:<cli>
 $ RELEASE='<CCYYMMDD>'
 $ URL='https://repo-default.voidlinux.org/live/current'
 $ curl -LO "${URL}/void-live-x86_64-${RELEASE}-base.iso"

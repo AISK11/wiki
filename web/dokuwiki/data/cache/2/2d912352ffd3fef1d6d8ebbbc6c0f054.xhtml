@@ -1,0 +1,33 @@
+
+<h1 class="sectionedit1" id="pdf">PDF</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;PDF&quot;,&quot;hid&quot;:&quot;pdf&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-19&quot;} -->
+<h2 class="sectionedit2" id="metadata">Metadata</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Determine file type:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">file -p &lt;INPUT-FILE.pdf&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> View file metadata:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pdfinfo [-isodates] &lt;INPUT-FILE.pdf&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Metadata&quot;,&quot;hid&quot;:&quot;metadata&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;20-181&quot;} -->
+<h2 class="sectionedit3" id="extract">Extract</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Extract&quot;,&quot;hid&quot;:&quot;extract&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;182-202&quot;} -->
+<h3 class="sectionedit4" id="images">Images</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> List images in PDF:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pdfimages -list &lt;INPUT-FILE.pdf&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Extract images with image name prefix <code>&lt;NAME-PREFIX&gt;-NNN.xxx</code>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pdfimages -all &lt;INPUT-FILE.PDF&gt; &lt;NAME-PREFIX&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Images&quot;,&quot;hid&quot;:&quot;images&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;203-&quot;} -->

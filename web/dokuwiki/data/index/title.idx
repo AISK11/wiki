@@ -165,11 +165,11 @@ SSH
 SQL
 OTRS
 Runit
-XBPS
-Firewall
+
+
 Interfaces
 
-
+Sway
 Audio
 Terminal Emulator
 Hardware
@@ -181,7 +181,7 @@ Minimalism
 Resources
 
 Discord
-Windows 11
+
 Windows 11
 
 Resources
@@ -201,8 +201,8 @@ PDF
 
 
 Any
-Run Commands
-Unix To Powershell
+
+
 
 Linux Mint
 Linux Mint
@@ -222,3 +222,29 @@ Installation
 Operating Systems Comparison
 
 Post-Installation
+Wiki
+
+Cybersecurity
+Void Linux
+
+Resources
+
+Firewall
+XBPS
+Runit
+Interfaces
+
+Pre-Installation
+PDF
+Debian Linux
+Network
+Ethernet (IEEE 802.3)
+Windows 11
+Unix To Powershell
+Run Commands
+Void Linux
+
+Installation
+Audio
+Bspwm
+LUKS
