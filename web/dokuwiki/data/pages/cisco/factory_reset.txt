@@ -40,7 +40,14 @@ switch% reset
 > enable
 </cli>
   -If privileged mode is password protected:
-    -?
+    -Physically restart device.
+    -During boot phase, hold MODE button until ''switch:'' prompt appears.
+    -Delete configuration file and continue booting device::<cli>
+switch% flash_init
+switch% delete flash:config.text
+Are you sure you want to delete "flash:config.text" (y/n)?> y
+switch% boot
+</cli>
   -Delete device configuration:<cli>
 # erase nvram:
 # delete vlan.dat

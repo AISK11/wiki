@@ -40,3 +40,5 @@
 1666900356	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		15
 1666900479	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		25
 1666900555	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		7
+1666901757	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration (WIP)] 		308
+1666901781	127.0.0.1	E	cisco:factory_reset	admin			-8

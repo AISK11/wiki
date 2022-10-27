@@ -64,7 +64,14 @@
 </li>
 <li class="level1 node"><div class="li">If privileged mode is password protected:</div>
 <ol>
-<li class="level2"><div class="li">?</div>
+<li class="level2"><div class="li">Physically restart device.</div>
+</li>
+<li class="level2"><div class="li">During boot phase, hold MODE button until <code>switch:</code> prompt appears.</div>
+</li>
+<li class="level2"><div class="li">Delete configuration file and continue booting device::</p><pre class='cli  '><span class="cli_prompt">switch% </span><span class="cli_command">flash_init</span>
+<span class="cli_prompt">switch% </span><span class="cli_command">delete flash:config.text</span>
+<span class="cli_prompt">Are you sure you want to delete &quot;flash:config.text&quot; (y/n)?&gt; </span><span class="cli_command">y</span>
+<span class="cli_prompt">switch% </span><span class="cli_command">boot</span></pre><p></div>
 </li>
 </ol>
 </li>
@@ -95,12 +102,12 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration (WIP)&quot;,&quot;hid&quot;:&quot;erase_configuration_wip&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1601-2454&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration (WIP)&quot;,&quot;hid&quot;:&quot;erase_configuration_wip&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1601-2754&quot;} -->
 <h2 class="sectionedit5" id="router">Router</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Router&quot;,&quot;hid&quot;:&quot;router&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2455-2474&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Router&quot;,&quot;hid&quot;:&quot;router&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2755-2774&quot;} -->
 <h3 class="sectionedit6" id="connect1">Connect</h3>
 <div class="level3">
 <ol>
@@ -177,7 +184,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Connect&quot;,&quot;hid&quot;:&quot;connect1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2475-4863&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Connect&quot;,&quot;hid&quot;:&quot;connect1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2775-5163&quot;} -->
 <h3 class="sectionedit7" id="erase_configuration">Erase Configuration</h3>
 <div class="level3">
 <ol>
@@ -239,7 +246,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration&quot;,&quot;hid&quot;:&quot;erase_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4864-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration&quot;,&quot;hid&quot;:&quot;erase_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;5164-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Linux serial devices: <a href="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux" class="urlextern" title="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux">https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux</a></div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
