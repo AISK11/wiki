@@ -15,7 +15,7 @@ Switch#)�R���]�A��������P"��cP�������
 !���"������HA��������HH�                             ߔ^<
 �"@M�"$�"�"І"I��@ �"X������SA��(�Li�c�Ԅ� �NS@�jc*�,@]��0�hP�Я"�@�"�
 </cli>
-    -Change baud rate when connecting, use one of these values:
+    -Reconnect to the device via serial console with these baud rates, until output is readable:
       *''9600''
       *''4800''
       *''1200''
@@ -26,10 +26,10 @@ Switch#)�R���]�A��������P"��cP�������
       *''115200''
     -Physically restart device.
     -During boot phase, hold MODE button until ''switch:'' prompt appears.
-    -Change baud rate:<cli>
+    -Change device baud rate:<cli>
 switch% set BAUD 9600
 </cli>
-    -Reconnect serial port with baud rate ''9600''.
+    -Reconnect to the device via serial console with baud rate ''9600''.
     -Restart device to leave ROMMON mode:<cli>
 switch% reset
 </cli>
@@ -38,6 +38,34 @@ switch% reset
 
   -Access privileged mode:<cli>
 > enable
+</cli>
+  -If privileged mode is password protected:
+    -?
+  -Delete device configuration:<cli>
+# erase nvram:
+# delete vlan.dat
+</cli>
+  -Verify, that there is no configuration present anymore:
+    -Show all file systems:<cli>
+# show file systems
+File Systems:
+     Size(b)     Free(b)      Type  Flags  Prefixes
+*   15998976     3329536     flash     rw   flash: flash1:
+...
+      524288      523212     nvram     rw   nvram:
+...
+</cli>
+    -Show NVRAM memory (3rd row should contain ''0''):<cli>
+# dir nvram:
+Directory of nvram:/
+  510  -rw-  0  no date  startup-config
+  511  ----  0  no date  private-config
+</cli>
+    -Show FLASH memory (''vlan.dat'' should not be present):<cli>
+# dir flash:
+</cli>
+  -Restart device to apply any unsaved changes:<cli>
+# reload
 </cli>
 
 ===== Router =====
@@ -57,7 +85,7 @@ q▒▒▒ZT+▒▒U▒n▒▒▒▒▒7▒▒=▒▒63▒G▒/▒!▒▒w▒▒
                   R▒▒w9▒▒▒?▒JV▒▒Z▒▒U▒̔▒▒r▒z▒;s▒▒!▒e47▒
                                                      ▒)▒v▒7=Q▒u7▒▒
 </cli>
-    -Change baud rate when connecting, use one of these values:
+    -Reconnect to the device via serial console with these baud rates, until output is readable:
       *''9600''
       *''4800''
       *''1200''
@@ -68,7 +96,7 @@ q▒▒▒ZT+▒▒U▒n▒▒▒▒▒7▒▒=▒▒63▒G▒/▒!▒▒w▒▒
       *''115200''
     -Physically restart device.
     -During boot phase, press <kbd>break</kbd>((Pause/Break key alternatives: https://en.wikipedia.org/wiki/Break_key#Keyboards_without_Break_key.)) (type ''~#'' if using cu command) or try <kbd>ctrl</kbd>+<kbd>c</kbd>.
-    -Change baud rate:<cli>
+    -Change device baud rate:<cli>
 rommon> confreg
            Configuration Summary
    (Virtual Configuration Register: 0x21)
@@ -156,6 +184,6 @@ Configuration register is 0x2102
 rommon> confreg 0x2102
 rommon> reset
 </cli>
-  -Reload device to apply any unsaved changes:<cli>
+  -Restart device to apply any unsaved changes:<cli>
 # reload
 </cli>

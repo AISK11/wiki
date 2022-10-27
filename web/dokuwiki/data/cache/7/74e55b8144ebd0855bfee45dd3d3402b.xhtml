@@ -21,7 +21,7 @@
 <span class="cli_output">!���&quot;������HA��������HH�                             ߔ^&lt;</span>
 <span class="cli_output">�&quot;@M�&quot;$�&quot;�&quot;І&quot;I��@ �&quot;X������SA��(�Li�c�Ԅ� �NS@�jc*�,@]��0�hP�Я&quot;�@�&quot;�</span></pre><p></div>
 <ol>
-<li class="level2 node"><div class="li">Change baud rate when connecting, use one of these values:</div>
+<li class="level2 node"><div class="li">Reconnect to the device via serial console with these baud rates, until output is readable:</div>
 <ul>
 <li class="level3"><div class="li"><code>9600</code></div>
 </li>
@@ -45,9 +45,9 @@
 </li>
 <li class="level2"><div class="li">During boot phase, hold MODE button until <code>switch:</code> prompt appears.</div>
 </li>
-<li class="level2"><div class="li">Change baud rate:</p><pre class='cli  '><span class="cli_prompt">switch% </span><span class="cli_command">set BAUD 9600</span></pre><p></div>
+<li class="level2"><div class="li">Change device baud rate:</p><pre class='cli  '><span class="cli_prompt">switch% </span><span class="cli_command">set BAUD 9600</span></pre><p></div>
 </li>
-<li class="level2"><div class="li">Reconnect serial port with baud rate <code>9600</code>.</div>
+<li class="level2"><div class="li">Reconnect to the device via serial console with baud rate <code>9600</code>.</div>
 </li>
 <li class="level2"><div class="li">Restart device to leave ROMMON mode:</p><pre class='cli  '><span class="cli_prompt">switch% </span><span class="cli_command">reset</span></pre><p></div>
 </li>
@@ -56,21 +56,51 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Connect&quot;,&quot;hid&quot;:&quot;connect&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;50-1539&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Connect&quot;,&quot;hid&quot;:&quot;connect&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;50-1600&quot;} -->
 <h3 class="sectionedit4" id="erase_configuration_wip">Erase Configuration (WIP)</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li">Access privileged mode:</p><pre class='cli  '><span class="cli_prompt">&gt; </span><span class="cli_command">enable</span></pre><p></div>
 </li>
+<li class="level1 node"><div class="li">If privileged mode is password protected:</div>
+<ol>
+<li class="level2"><div class="li">?</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li">Delete device configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">erase nvram:</span>
+<span class="cli_prompt"># </span><span class="cli_command">delete vlan.dat</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li">Verify, that there is no configuration present anymore:</div>
+<ol>
+<li class="level2"><div class="li">Show all file systems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">show file systems</span>
+<span class="cli_output">File Systems:</span>
+<span class="cli_output">     Size(b)     Free(b)      Type  Flags  Prefixes</span>
+<span class="cli_output">*   15998976     3329536     flash     rw   flash: flash1:</span>
+<span class="cli_output">...</span>
+<span class="cli_output">      524288      523212     nvram     rw   nvram:</span>
+<span class="cli_output">...</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Show NVRAM memory (3rd row should contain <code>0</code>):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir nvram:</span>
+<span class="cli_output">Directory of nvram:/</span>
+<span class="cli_output">  510  -rw-  0  no date  startup-config</span>
+<span class="cli_output">  511  ----  0  no date  private-config</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Show FLASH memory (<code>vlan.dat</code> should not be present):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir flash:</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li">Restart device to apply any unsaved changes:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reload</span></pre><p></div>
+</li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration (WIP)&quot;,&quot;hid&quot;:&quot;erase_configuration_wip&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1540-1625&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration (WIP)&quot;,&quot;hid&quot;:&quot;erase_configuration_wip&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1601-2454&quot;} -->
 <h2 class="sectionedit5" id="router">Router</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Router&quot;,&quot;hid&quot;:&quot;router&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;1626-1645&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Router&quot;,&quot;hid&quot;:&quot;router&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2455-2474&quot;} -->
 <h3 class="sectionedit6" id="connect1">Connect</h3>
 <div class="level3">
 <ol>
@@ -85,7 +115,7 @@
 <span class="cli_output">                  R▒▒w9▒▒▒?▒JV▒▒Z▒▒U▒̔▒▒r▒z▒;s▒▒!▒e47▒</span>
 <span class="cli_output">                                                     ▒)▒v▒7=Q▒u7▒▒</span></pre><p></div>
 <ol>
-<li class="level2 node"><div class="li">Change baud rate when connecting, use one of these values:</div>
+<li class="level2 node"><div class="li">Reconnect to the device via serial console with these baud rates, until output is readable:</div>
 <ul>
 <li class="level3"><div class="li"><code>9600</code></div>
 </li>
@@ -109,7 +139,7 @@
 </li>
 <li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup> (type <code>~#</code> if using cu command) or try <kbd class="__keyboard">Ctrl</kbd>+<kbd class="__keyboard">C</kbd>.</div>
 </li>
-<li class="level2"><div class="li">Change baud rate:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg</span>
+<li class="level2"><div class="li">Change device baud rate:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg</span>
 <span class="cli_output">           Configuration Summary</span>
 <span class="cli_output">   (Virtual Configuration Register: 0x21)</span>
 <span class="cli_output">enabled are:</span>
@@ -147,7 +177,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Connect&quot;,&quot;hid&quot;:&quot;connect1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1646-3994&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Connect&quot;,&quot;hid&quot;:&quot;connect1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2475-4863&quot;} -->
 <h3 class="sectionedit7" id="erase_configuration">Erase Configuration</h3>
 <div class="level3">
 <ol>
@@ -204,12 +234,12 @@
 </li>
 </ol>
 </li>
-<li class="level1"><div class="li">Reload device to apply any unsaved changes:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reload</span></pre><p></div>
+<li class="level1"><div class="li">Restart device to apply any unsaved changes:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reload</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration&quot;,&quot;hid&quot;:&quot;erase_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;3995-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration&quot;,&quot;hid&quot;:&quot;erase_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4864-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Linux serial devices: <a href="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux" class="urlextern" title="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux">https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux</a></div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
