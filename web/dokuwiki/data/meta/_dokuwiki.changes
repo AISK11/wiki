@@ -330,3 +330,6 @@
 1666879172	127.0.0.1	D	todo	admin	removed		-4050
 1666879407	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		10
 1666879517	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		29
+1666879708	127.0.0.1	E	cisco:factory_reset	admin			93
+1666879757	127.0.0.1	E	cisco:factory_reset	admin			18
+1666879784	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		0

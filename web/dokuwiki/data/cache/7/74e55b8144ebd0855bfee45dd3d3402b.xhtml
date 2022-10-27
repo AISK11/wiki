@@ -45,7 +45,7 @@
 </li>
 <li class="level2"><div class="li">Physically restart device.</div>
 </li>
-<li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>.</div>
+<li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup> (or type <code>~#</code> if using cu command).</div>
 </li>
 <li class="level2"><div class="li">Change baud rate:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg</span>
 <span class="cli_output">           Configuration Summary</span>
@@ -85,7 +85,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Connect&quot;,&quot;hid&quot;:&quot;connect&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;50-2460&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Connect&quot;,&quot;hid&quot;:&quot;connect&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;50-2497&quot;} -->
 <h3 class="sectionedit4" id="erase_configuration">Erase Configuration</h3>
 <div class="level3">
 <ol>
@@ -95,7 +95,7 @@
 <ol>
 <li class="level2"><div class="li">Physically restart device.</div>
 </li>
-<li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd>.</div>
+<li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd> (or type <code>~#</code> if using cu command).</div>
 </li>
 <li class="level2"><div class="li">Set register<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> to use NVRAM configuration (<code>0x2142</code>) and restart to apply changes:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg 0x2142</span>
 <span class="cli_prompt">rommon&gt; </span><span class="cli_command">reset</span></pre><p></div>
@@ -135,7 +135,7 @@
 <ol>
 <li class="level2"><div class="li">Restart device:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reload</span></pre><p></div>
 </li>
-<li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd>.</div>
+<li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd> (or type <code>~#</code> if using cu command).</div>
 </li>
 <li class="level2"><div class="li">Set register to use NVRAM (configuration) and restart to apply changes:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg 0x2102</span>
 <span class="cli_prompt">rommon&gt; </span><span class="cli_command">reset</span></pre><p></div>
@@ -147,7 +147,7 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration&quot;,&quot;hid&quot;:&quot;erase_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2461-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Erase Configuration&quot;,&quot;hid&quot;:&quot;erase_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2498-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Linux serial devices: <a href="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux" class="urlextern" title="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux">https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux</a></div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 

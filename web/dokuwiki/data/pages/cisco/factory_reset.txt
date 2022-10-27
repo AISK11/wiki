@@ -27,7 +27,7 @@ q▒▒▒ZT+▒▒U▒n▒▒▒▒▒7▒▒=▒▒63▒G▒/▒!▒▒w▒▒
       *''57600''
       *''115200''
     -Physically restart device.
-    -During boot phase, press <kbd>Break</kbd>((Pause/Break key alternatives: https://en.wikipedia.org/wiki/Break_key#Keyboards_without_Break_key.)).
+    -During boot phase, press <kbd>Break</kbd>((Pause/Break key alternatives: https://en.wikipedia.org/wiki/Break_key#Keyboards_without_Break_key.)) (or type ''~#'' if using cu command).
     -Change baud rate:<cli>
 rommon> confreg
            Configuration Summary
@@ -71,7 +71,7 @@ rommon> reset
 </cli>
   -If privileged mode is password protected:
     -Physically restart device.
-    -During boot phase, press <kbd>Break</kbd>.
+    -During boot phase, press <kbd>Break</kbd> (or type ''~#'' if using cu command).
     -Set register((Cisco register values: https://www.cisco.com/c/en/us/support/docs/routers/10000-series-routers/50421-config-register-use.html#anc6.)) to use NVRAM configuration (''0x2142'') and restart to apply changes:<cli>
 rommon> confreg 0x2142
 rommon> reset
@@ -111,7 +111,7 @@ Configuration register is 0x2102
     -Restart device:<cli>
 # reload
 </cli>
-    -During boot phase, press <kbd>Break</kbd>.
+    -During boot phase, press <kbd>Break</kbd> (or type ''~#'' if using cu command).
     -Set register to use NVRAM (configuration) and restart to apply changes:<cli>
 rommon> confreg 0x2102
 rommon> reset
