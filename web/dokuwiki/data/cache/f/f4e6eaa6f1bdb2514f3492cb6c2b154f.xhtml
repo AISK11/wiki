@@ -1,10 +1,14 @@
 
 <h1 class="sectionedit1" id="installation">Installation</h1>
 <div class="level1">
-
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-28&quot;} -->
-<h2 class="sectionedit2" id="environment_preparation">Environment Preparation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-122&quot;} -->
+<h2 class="sectionedit4" id="environment_preparation">Environment Preparation</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Gain system access:</p><pre class='cli  '><span class="cli_prompt">&gt; </span><span class="cli_command">root</span>
@@ -31,8 +35,8 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-797&quot;} -->
-<h2 class="sectionedit3" id="disk_preparation">Disk Preparation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;123-891&quot;} -->
+<h2 class="sectionedit5" id="disk_preparation">Disk Preparation</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Create partitions:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;/dev/sdX&gt;</span>
@@ -98,8 +102,8 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;798-2725&quot;} -->
-<h2 class="sectionedit4" id="base_system_installation">Base System Installation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;892-2819&quot;} -->
+<h2 class="sectionedit6" id="base_system_installation">Base System Installation</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Instal minimal base system packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -S[y] -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal</span>
@@ -108,8 +112,8 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2726-2915&quot;} -->
-<h2 class="sectionedit5" id="chroot">Chroot</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2820-3009&quot;} -->
+<h2 class="sectionedit7" id="chroot">Chroot</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Copy DNS configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp -L /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
@@ -130,8 +134,8 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2916-3473&quot;} -->
-<h2 class="sectionedit6" id="full_system_installation">Full System Installation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;3010-3567&quot;} -->
+<h2 class="sectionedit8" id="full_system_installation">Full System Installation</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Install additional repositories<sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup> and synchronize them:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree</span>
@@ -158,8 +162,8 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3474-4734&quot;} -->
-<h2 class="sectionedit7" id="swap_file">Swap File</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;3568-4828&quot;} -->
+<h2 class="sectionedit9" id="swap_file">Swap File</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Allocate space on COW filesystem (such as btrfs):</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">truncate -s 0 /swap</span>
@@ -173,13 +177,13 @@
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4735-5030&quot;} -->
-<h2 class="sectionedit8" id="system_configuration">System Configuration</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;4829-5124&quot;} -->
+<h2 class="sectionedit10" id="system_configuration">System Configuration</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;5031-5064&quot;} -->
-<h3 class="sectionedit9" id="xbps">XBPS</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;5125-5158&quot;} -->
+<h3 class="sectionedit11" id="xbps">XBPS</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set ignored packages by XBPS:<dl class="file">
@@ -202,8 +206,8 @@ ignorepkg=sudo</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;5065-5513&quot;} -->
-<h3 class="sectionedit10" id="filesystems">Filesystems</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;5159-5607&quot;} -->
+<h3 class="sectionedit12" id="filesystems">Filesystems</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Configure crypttab:<dl class="file">
@@ -239,8 +243,8 @@ LABEL=ESP           /boot                     vfat     defaults,noatime,umask=00
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;5514-6642&quot;} -->
-<h3 class="sectionedit11" id="kernel_modules">Kernel Modules</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:12,&quot;range&quot;:&quot;5608-6736&quot;} -->
+<h3 class="sectionedit13" id="kernel_modules">Kernel Modules</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set blacklisted kernel modules on startup:<dl class="file">
@@ -258,8 +262,8 @@ blacklist pcspkr</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:11,&quot;range&quot;:&quot;6643-6997&quot;} -->
-<h3 class="sectionedit12" id="locales">Locales</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:13,&quot;range&quot;:&quot;6737-7091&quot;} -->
+<h3 class="sectionedit14" id="locales">Locales</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set locales to be generated by system:<dl class="file">
@@ -289,8 +293,8 @@ LANG='C.UTF-8'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:12,&quot;range&quot;:&quot;6998-7471&quot;} -->
-<h3 class="sectionedit13" id="timezone">Timezone</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:14,&quot;range&quot;:&quot;7092-7565&quot;} -->
+<h3 class="sectionedit15" id="timezone">Timezone</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Create symlink to UTC timezone:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">ln -sf /usr/share/zoneinfo/UTC /etc/localtime</span></pre><p></div>
@@ -298,8 +302,8 @@ LANG='C.UTF-8'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;7472-7597&quot;} -->
-<h3 class="sectionedit14" id="runit">Runit</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:15,&quot;range&quot;:&quot;7566-7691&quot;} -->
+<h3 class="sectionedit16" id="runit">Runit</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set void configuration run by runit:<dl class="file">
@@ -357,8 +361,8 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;7598-9220&quot;} -->
-<h3 class="sectionedit15" id="hostname">Hostname</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:16,&quot;range&quot;:&quot;7692-9314&quot;} -->
+<h3 class="sectionedit17" id="hostname">Hostname</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Set hostname:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&lt;HOSTNAME&gt;&#039; &gt; /etc/hostname</span></pre><p></div>
@@ -366,13 +370,13 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:15,&quot;range&quot;:&quot;9221-9316&quot;} -->
-<h2 class="sectionedit16" id="booting">Booting</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:17,&quot;range&quot;:&quot;9315-9410&quot;} -->
+<h2 class="sectionedit18" id="booting">Booting</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:16,&quot;range&quot;:&quot;9317-9337&quot;} -->
-<h3 class="sectionedit17" id="initramfs">Initramfs</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:18,&quot;range&quot;:&quot;9411-9431&quot;} -->
+<h3 class="sectionedit19" id="initramfs">Initramfs</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Configure initramfs:<dl class="file">
@@ -391,8 +395,8 @@ hostonly='yes'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:17,&quot;range&quot;:&quot;9338-9681&quot;} -->
-<h3 class="sectionedit18" id="bootloader">Bootloader</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:19,&quot;range&quot;:&quot;9432-9775&quot;} -->
+<h3 class="sectionedit20" id="bootloader">Bootloader</h3>
 <div class="level3">
 <ol>
 <li class="level1"><div class="li"> Install bootloader to ESP:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --removable</span>
@@ -480,8 +484,8 @@ GRUB_DISABLE_SUBMENU='true'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:18,&quot;range&quot;:&quot;9682-11774&quot;} -->
-<h2 class="sectionedit19" id="finishing">Finishing</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:20,&quot;range&quot;:&quot;9776-11868&quot;} -->
+<h2 class="sectionedit21" id="finishing">Finishing</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li"> Reconfigure all packages:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-reconfigure -fa</span></pre><p></div>
@@ -496,7 +500,7 @@ GRUB_DISABLE_SUBMENU='true'
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:19,&quot;range&quot;:&quot;11775-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:21,&quot;range&quot;:&quot;11869-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Read-write efivarfs issue: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 

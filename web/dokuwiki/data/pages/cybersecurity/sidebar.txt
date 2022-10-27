@@ -3,24 +3,23 @@
 ----
 
 **About**
-  * [[:cybersecurity:index|Index]]
-  * [[:cybersecurity:resources|Resources]]
+  *[[:cybersecurity:index|Index]]
+  *[[:cybersecurity:resources|Resources]]
 
 **Networking**
-  * [[:cybersecurity:ethernet|Ethernet]]
-  * Bluetooth
-  * Wi-Fi
-  * MAC
-  * IP
-  * ICMP
-  * TCP
-  * UDP
-  * DHCP
-  * DNS
-  * Tor
+  *[[:cybersecurity:ethernet|Ethernet]]
+  *Bluetooth
+  *Wi-Fi
+  *MAC
+  *IP
+  *ICMP
+  *TCP
+  *UDP
+  *DHCP
+  *DNS
+  *Tor
 
 **Attacks**
-  * [[:cybersecurity:arp_poisoning|ARP Poisoning]]
-
+  *[[:cybersecurity:sql_injection|SQL Injection]]
 
 ----

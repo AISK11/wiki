@@ -4,95 +4,95 @@
 
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-21&quot;} -->
-<h2 class="sectionedit2" id="services">Services</h2>
+<h2 class="sectionedit2" id="theory">Theory</h2>
 <div class="level2">
 <ul>
-<li class="level1 node"><div class="li"> All system services:</div>
+<li class="level1 node"><div class="li">All system services:</div>
 <ul>
-<li class="level2"><div class="li"> <code>/etc/sv/*</code></div>
+<li class="level2"><div class="li"><code>/etc/sv/*</code></div>
 </li>
 </ul>
 </li>
-<li class="level1 node"><div class="li"> Manageable services:</div>
+<li class="level1 node"><div class="li">Manageable services:</div>
 <ul>
-<li class="level2"><div class="li"> <code>/var/service/*</code></div>
+<li class="level2"><div class="li"><code>/var/service/*</code></div>
 </li>
 </ul>
 </li>
-<li class="level1 node"><div class="li"> Service structure of <code>/etc/sv/&lt;SERVICE&gt;/</code>:</div>
+<li class="level1 node"><div class="li">Service structure of <code>/etc/sv/&lt;SERVICE&gt;/</code>:</div>
 <ul>
-<li class="level2"><div class="li"> <code>./run</code> - executable shell script run when service starts (required)</div>
+<li class="level2"><div class="li"><code>./run</code> - executable shell script run when service starts (required)</div>
 </li>
-<li class="level2"><div class="li"> <code>./finish</code> - executable shell script run when service exits (optional)</div>
+<li class="level2"><div class="li"><code>./finish</code> - executable shell script run when service exits (optional)</div>
 </li>
-<li class="level2"><div class="li"> <code>./down</code> - empty text file, prevents starting script automatically (optional)</div>
+<li class="level2"><div class="li"><code>./down</code> - empty text file, prevents starting script automatically (optional)</div>
 </li>
 </ul>
 </li>
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Services&quot;,&quot;hid&quot;:&quot;services&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;22-430&quot;} -->
-<h2 class="sectionedit3" id="service_management">Service Management</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Theory&quot;,&quot;hid&quot;:&quot;theory&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;22-420&quot;} -->
+<h2 class="sectionedit3" id="usage">Usage</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Service Management&quot;,&quot;hid&quot;:&quot;service_management&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;431-462&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;421-439&quot;} -->
 <h3 class="sectionedit4" id="enabledisable">Enable/Disable</h3>
 <div class="level3">
 <ul>
-<li class="level1"><div class="li"> Enable and &lt;start/don&#039;t start&gt; service automatically:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">&lt;touch|rm&gt; /etc/sv/&lt;SERVICE&gt;/down</span>
+<li class="level1"><div class="li">Enable and &lt;start/don&#039;t start&gt; service automatically:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">&lt;touch|rm&gt; /etc/sv/&lt;SERVICE&gt;/down</span>
 <span class="cli_prompt"># </span><span class="cli_command">ln -s /etc/sv/&lt;SERVICE&gt;/ /var/service/</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Disable service:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">rm /var/service/&lt;SERVICE&gt;</span></pre><p></div>
+<li class="level1"><div class="li">Disable service:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">rm /var/service/&lt;SERVICE&gt;</span></pre><p></div>
 </li>
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Enable\/Disable&quot;,&quot;hid&quot;:&quot;enabledisable&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;463-697&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Enable\/Disable&quot;,&quot;hid&quot;:&quot;enabledisable&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;440-672&quot;} -->
 <h3 class="sectionedit5" id="manual_management">Manual Management</h3>
 <div class="level3">
 <ul>
-<li class="level1 node"><div class="li"> Start:</div>
+<li class="level1 node"><div class="li">Start:</div>
 <ul>
-<li class="level2"><div class="li"> With restart on stop:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (u)p &lt;SERVICE&gt;</span></pre><p></div>
+<li class="level2"><div class="li">With restart on stop:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (u)p &lt;SERVICE&gt;</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> Without restart on stop:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (o)nce &lt;SERVICE&gt;</span></pre><p></div>
+<li class="level2"><div class="li">Without restart on stop:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (o)nce &lt;SERVICE&gt;</span></pre><p></div>
 </li>
 </ul>
 </li>
-<li class="level1 node"><div class="li"> Check:</div>
+<li class="level1 node"><div class="li">Check:</div>
 <ul>
-<li class="level2"><div class="li"> Specific service:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (s)tatus &lt;SERVICE&gt;</span></pre><p></div>
+<li class="level2"><div class="li">Specific service:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (s)tatus &lt;SERVICE&gt;</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> All manageable services:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (s)tatus /var/service/*</span></pre><p></div>
+<li class="level2"><div class="li">All manageable services:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (s)tatus /var/service/*</span></pre><p></div>
 </li>
 </ul>
 </li>
-<li class="level1 node"><div class="li"> Stop:</div>
+<li class="level1 node"><div class="li">Stop:</div>
 <ul>
-<li class="level2"><div class="li"> Nicely:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (d)own &lt;SERVICE&gt;</span></pre><p></div>
+<li class="level2"><div class="li">Nicely:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (d)own &lt;SERVICE&gt;</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> Forcefully:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (k)ill &lt;SERVICE&gt;</span></pre><p></div>
+<li class="level2"><div class="li">Forcefully:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sv (k)ill &lt;SERVICE&gt;</span></pre><p></div>
 </li>
 </ul>
 </li>
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Manual Management&quot;,&quot;hid&quot;:&quot;manual_management&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;698-1116&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Manual Management&quot;,&quot;hid&quot;:&quot;manual_management&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;673-1082&quot;} -->
 <h2 class="sectionedit6" id="resources">Resources</h2>
 <div class="level2">
 <ul>
-<li class="level1"><div class="li"> <a href="http://smarden.org/runit" class="urlextern" title="http://smarden.org/runit">Official Runit Documentation</a></div>
+<li class="level1"><div class="li"><a href="http://smarden.org/runit" class="urlextern" title="http://smarden.org/runit">Official Runit Documentation</a></div>
 </li>
-<li class="level1"><div class="li"> <a href="https://docs.voidlinux.org/config/services/index.html" class="urlextern" title="https://docs.voidlinux.org/config/services/index.html">Void Linux Runit Handbook</a></div>
+<li class="level1"><div class="li"><a href="https://docs.voidlinux.org/config/services/index.html" class="urlextern" title="https://docs.voidlinux.org/config/services/index.html">Void Linux Runit Handbook</a></div>
 </li>
-<li class="level1"><div class="li"> <a href="https://wiki.artixlinux.org/Main/Runit" class="urlextern" title="https://wiki.artixlinux.org/Main/Runit">Artix Wiki Runit Article</a></div>
+<li class="level1"><div class="li"><a href="https://wiki.artixlinux.org/Main/Runit" class="urlextern" title="https://wiki.artixlinux.org/Main/Runit">Artix Wiki Runit Article</a></div>
 </li>
-<li class="level1"><div class="li"> <a href="https://wiki.gentoo.org/wiki/Runit" class="urlextern" title="https://wiki.gentoo.org/wiki/Runit">Gentoo Wiki Runit Article</a></div>
+<li class="level1"><div class="li"><a href="https://wiki.gentoo.org/wiki/Runit" class="urlextern" title="https://wiki.gentoo.org/wiki/Runit">Gentoo Wiki Runit Article</a></div>
 </li>
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Resources&quot;,&quot;hid&quot;:&quot;resources&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1117-&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Resources&quot;,&quot;hid&quot;:&quot;resources&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1083-&quot;} -->

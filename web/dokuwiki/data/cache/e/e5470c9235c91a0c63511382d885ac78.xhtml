@@ -1,0 +1,71 @@
+
+<h1 class="sectionedit1" id="hashing">Hashing</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hashing&quot;,&quot;hid&quot;:&quot;hashing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-117&quot;} -->
+<h2 class="sectionedit4" id="hashing1">Hashing</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Word:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">echo -n &#039;&lt;WORD&gt;&#039; | openssl &lt;md5|sha1|sha512|sha3-512&gt; [| cut -d &#039; &#039; -f 2]</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hashing&quot;,&quot;hid&quot;:&quot;hashing1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;118-236&quot;} -->
+<h2 class="sectionedit5" id="hash_identifying">Hash Identifying</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Via haiti:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">haiti &#039;&lt;HASH&gt;&#039;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Via hashcat<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat --show &#039;&lt;HASH&gt;&#039;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hash Identifying&quot;,&quot;hid&quot;:&quot;hash_identifying&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;237-447&quot;} -->
+<h2 class="sectionedit6" id="extracting_hash">Extracting Hash</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> From zip: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">zip2john &lt;ZIP&gt; 2&gt; /dev/null</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Extracting Hash&quot;,&quot;hid&quot;:&quot;extracting_hash&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;448-534&quot;} -->
+<h2 class="sectionedit7" id="cracking">Cracking</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cracking&quot;,&quot;hid&quot;:&quot;cracking&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;535-556&quot;} -->
+<h3 class="sectionedit8" id="hashcat">Hashcat</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> List available OpenCL<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup> devices for cracking: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat -I</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li"> Crack passwords:</div>
+<ul>
+<li class="level2"><div class="li"> Dictionary cracking: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat -a 0 [-D &lt;DEVICE-NUMBER&gt;] -m &lt;HASH-ID-NUMBER&gt; &#039;&lt;HASH&gt;&#039; &lt;DICTIONARY&gt; [-o &lt;OUTPUT-FILE&gt;]</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Rainbow table from cracked passwords: <code>~/.local/share/hashcat/hashcat.potfile</code></div>
+</li>
+</ol>
+
+<p>
+mkpasswd
+<a href="https://hashcat.net/wiki/doku.php?id=oclhashcat#default_values" class="urlextern" title="https://hashcat.net/wiki/doku.php?id=oclhashcat#default_values">https://hashcat.net/wiki/doku.php?id=oclhashcat#default_values</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hashcat&quot;,&quot;hid&quot;:&quot;hashcat&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;557-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Hashcat&#039;s hash examples: <a href="https://hashcat.net/wiki/doku.php?id=example_hashes" class="urlextern" title="https://hashcat.net/wiki/doku.php?id=example_hashes">https://hashcat.net/wiki/doku.php?id=example_hashes</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Debian OpenCL packages: <a href="https://packages.debian.org/buster/opencl-icd" class="urlextern" title="https://packages.debian.org/buster/opencl-icd">https://packages.debian.org/buster/opencl-icd</a>.</div></div>
+</div>

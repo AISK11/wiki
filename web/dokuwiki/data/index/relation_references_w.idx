@@ -268,3 +268,11 @@ cybersecurity:ethernet
 void:bspwm
 cybersecurity:arp_poisoning
 void:luks
+cybersecurity:reconaissance
+cybersecurity:sql_injection
+sql:index
+sql:resources
+todo
+cisco:index
+cisco:resources
+cisco:factory_reset

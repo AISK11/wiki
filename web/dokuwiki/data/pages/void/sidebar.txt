@@ -3,20 +3,21 @@
 ----
 
 **About**
-  * [[:void:index|Index]]
-  * [[:void:resources|Resources]]
+  *[[:void:index|Index]]
+  *[[:void:resources|Resources]]
 
 **Installation**
-  * [[:void:pre-installation|Pre-Installation]]
-  * [[:void:installation|Installation]]
-  * [[:void:post-installation|Post-Installation]]
+  *[[:void:pre-installation|Pre-Installation]]
+  *[[:void:installation|Installation]]
+  *[[:void:post-installation|Post-Installation]]
 
 **System Configuration**
-  * [[:void:audio|Audio]]
-  * [[:void:bspwm|Bspwm]]
-  * [[:void:sway|Sway]]
+  *[[:void:audio|Audio]]
+  *[[:void:bspwm|Bspwm]]
+  *[[:void:sway|Sway]]
 
 **Cheat Sheets**
-  * [[:void:luks|LUKS]]
+  *[[:void:luks|LUKS]]
+  *[[:void:runit|Runit]]
 
 ----

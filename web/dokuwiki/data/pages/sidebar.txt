@@ -3,9 +3,15 @@
 ----
 
 **Operating Systems**
-  * [[:void:index|Void Linux]]
+  *[[:void:index|Void Linux]]
 
 **IT Areas**
-  * [[:cybersecurity:index|Cybersecurity]]
+  *[[:cybersecurity:index|Cybersecurity]]
+
+**Develompent**
+  *[[:sql:index|SQL]]
+
+**Network**
+  *[[:cisco:index|Cisco]]
 
 ----

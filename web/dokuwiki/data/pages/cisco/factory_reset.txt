@@ -1,0 +1,121 @@
+====== Factory Reset ======
+
+===== Router =====
+
+==== Connect ====
+
+  -Connect to the device via serial console((Linux serial devices: https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux)):<cli>
+$ cu -l </dev/ttyUSB0> -s <9600>
+</cli>
+  -If there is garbage output:<cli>
+▒▒6=▒▒v1;▒▒T5▒  ▒7▒▒T▒▒▒W%▒G4▒▒▒ʇ▒▒1▒܏U7▒
+                                        ▒▒▒▒w3!7▒ڔ▒▒▒▒!▒▒ԡ▒G▒▒G▒▒▒▒▒v!▒
+19▒▒▒]▒▒Z45▒G▒▒▒▒▒v!▒
+ ▒f▒vu%▒▒V▒5▒Z▒+ٽ▒▒▒$3▒▒▒▒▒▒▒7▒F▒)▒▒▒7▒F▒)▒▒▒.P3ٳ
+q▒▒▒ZT+▒▒U▒n▒▒▒▒▒7▒▒=▒▒63▒G▒/▒!▒▒w▒▒▒▒WW▒▒▒▒▒?▒▒:37▒▒▒
+  6#▒Ku)х▒4▒▒▒g▒7▒
+                  R▒▒w9▒▒▒?▒JV▒▒Z▒▒U▒̔▒▒r▒z▒;s▒▒!▒e47▒
+                                                     ▒)▒v▒7=Q▒u7▒▒
+</cli>
+    -Change baud rate when connecting, use one of these values:
+      *''9600''
+      *''4800''
+      *''1200''
+      *''2400''
+      *''19200''
+      *''38400''
+      *''57600''
+      *''115200''
+    -Physically restart device.
+    -During boot phase, press <kbd>Break</kbd>((Pause/Break key alternatives: https://en.wikipedia.org/wiki/Break_key#Keyboards_without_Break_key.)).
+    -Change baud rate:<cli>
+rommon> confreg
+           Configuration Summary
+   (Virtual Configuration Register: 0x21)
+enabled are:
+break/abort has effect
+console baud: 19200
+boot: the boot helper image
+
+do you wish to change the configuration? y/n  [n]>  y
+enable  "diagnostic mode"? y/n  [n]>  n
+enable  "use net in IP bcast address"? y/n  [n]>  n
+enable  "load rom after netboot fails"? y/n  [n]>  n
+enable  "use all zero broadcast"? y/n  [n]>  n
+disable "break/abort has effect"? y/n  [n]>  n
+enable  "ignore system config info"? y/n  [n]>  n
+change console baud rate? y/n  [n]>  y
+0=9600, 1=4800, 2=1200, 3=2400, 4=19200, 5=38400, 6=57600, 7=115200
+enter rate  [4]>  0
+change the boot characteristics? y/n  [n]>  n
+
+           Configuration Summary
+   (Virtual Configuration Register: 0x1)
+enabled are:
+break/abort has effect
+console baud: 9600
+boot: the boot helper image
+
+do you wish to change the configuration? y/n  [n]>  n
+
+You must reset or power cycle for new config to take effect
+</cli>
+    -Restart to apply changes:<cli>
+rommon> reset
+</cli>
+
+==== Erase Configuration ====
+
+  -Access privileged mode:<cli>
+> enable
+</cli>
+  -If privileged mode is password protected:
+    -Physically restart device.
+    -During boot phase, press <kbd>Break</kbd>.
+    -Set register((Cisco register values: https://www.cisco.com/c/en/us/support/docs/routers/10000-series-routers/50421-config-register-use.html#anc6.)) to use NVRAM configuration (''0x2142'') and restart to apply changes:<cli>
+rommon> confreg 0x2142
+rommon> reset
+</cli>
+  -Delete device configuration:<cli>
+# erase nvram:
+# delete vlan.dat
+</cli>
+  -Verify, that there is no configuration present anymore:
+    -Show all file systems:<cli>
+# show file systems
+File Systems:
+
+       Size(b)       Free(b)      Type  Flags  Prefixes
+...
+        262136        254916     nvram     rw   nvram:
+...
+*    255537152     111308800  usbflash     rw   usbflash0: flash:
+</cli>
+    -Show NVRAM memory (3rd row should contain ''0''):<cli>
+# dir nvram:
+Directory of nvram:/
+
+  254  -rw-  0  no date  startup-config
+  255  ----  0  no date  private-config
+  256  -rw-  0  no date  underlying-config
+...
+</cli>
+    -Show FLASH memory (''vlan.dat'' should not be present):<cli>
+# dir flash:
+</cli>
+  -Check if correct register (''0x2102'') is used:<cli>
+# show version | i register
+Configuration register is 0x2102
+</cli>
+  -If there is different register:
+    -Restart device:<cli>
+# reload
+</cli>
+    -During boot phase, press <kbd>Break</kbd>.
+    -Set register to use NVRAM (configuration) and restart to apply changes:<cli>
+rommon> confreg 0x2102
+rommon> reset
+</cli>
+  -Reload device to apply any unsaved changes:<cli>
+# reload
+</cli>

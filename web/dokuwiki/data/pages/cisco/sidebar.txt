@@ -1,0 +1,12 @@
+====== Cisco ======
+
+----
+
+**About**
+  *[[:cisco:index|Index]]
+  *[[:cisco:resources|Resources]]
+
+**Configuration**
+  *[[:cisco:factory_reset|Factory Reset]]
+
+----

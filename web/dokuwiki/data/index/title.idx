@@ -231,7 +231,7 @@ Resources
 
 Firewall
 XBPS
-Runit
+
 Interfaces
 
 Pre-Installation
@@ -248,3 +248,12 @@ Installation
 Audio
 Bspwm
 LUKS
+
+SQL Injection
+
+Hashing
+SQL
+SQL
+Cisco
+Cisco
+Factory Reset

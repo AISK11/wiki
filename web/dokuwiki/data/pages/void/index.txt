@@ -2,18 +2,18 @@
 
 ===== Pros =====
 
-  * Rolling release((Versions of various linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#General)).
-  * Native non-systemd init system ([[:void:runit|runit]]).
-  * Independent distribution.
-  * Text mode installation.
-  * Binary based.
-  * Package manager ([[void:xbps|XBPS]]).
-  * Wide processor architecture support (amd64, i686, aarch64, armv7, armv6).
-  * Stable.
-  * Separates free and non-free software((Void repositories: https://docs.voidlinux.org/xbps/repositories.)).
-  * Multiple C libraries support (glibc, musl).
+  *Rolling release((Versions of various linux distributions: https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions#General)).
+  *Native non-systemd init system ([[:void:runit|runit]]).
+  *Independent distribution.
+  *Text mode installation.
+  *Binary based.
+  *Package manager ([[void:xbps|XBPS]]).
+  *Wide processor architecture support (amd64, i686, aarch64, armv7, armv6).
+  *Stable.
+  *Separates free and non-free software((Void repositories: https://docs.voidlinux.org/xbps/repositories.)).
+  *Multiple C libraries support (glibc, musl).
 
 ===== Cons =====
 
-  * Small community & amount of packages((Void packages: https://voidlinux.org/packages.)).
-  * Multiple kernel versions (not only 1 kernel name for each kernel type).
+  *Small community & amount of packages((Void packages: https://voidlinux.org/packages.)).
+  *Multiple kernel versions (not only 1 kernel name for each kernel type).

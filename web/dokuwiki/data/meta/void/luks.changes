@@ -7,3 +7,4 @@
 1666680261	127.0.0.1	E	void:luks	admin	[Encrypt] 		5
 1666680308	127.0.0.1	E	void:luks	admin	[Decrypt] 		34
 1666682350	127.0.0.1	E	void:luks	admin	[Decrypt] 		38
+1666682652	127.0.0.1	E	void:luks	admin			-10

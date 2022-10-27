@@ -1,0 +1,55 @@
+====== Runit ======
+
+===== Theory =====
+
+  *All system services:
+    *''/etc/sv/*''
+  *Manageable services:
+    *''/var/service/*''
+  *Service structure of ''/etc/sv/<SERVICE>/'':
+    *''./run'' - executable shell script run when service starts (required)
+    *''./finish'' - executable shell script run when service exits (optional)
+    *''./down'' - empty text file, prevents starting script automatically (optional)
+
+===== Usage =====
+
+==== Enable/Disable ====
+
+  *Enable and <start/don't start> service automatically:<cli>
+# <touch|rm> /etc/sv/<SERVICE>/down
+# ln -s /etc/sv/<SERVICE>/ /var/service/
+</cli>
+  *Disable service:<cli>
+# rm /var/service/<SERVICE>
+</cli>
+
+==== Manual Management ====
+
+  *Start:
+    *With restart on stop:<cli>
+# sv (u)p <SERVICE>
+</cli>
+    *Without restart on stop:<cli>
+# sv (o)nce <SERVICE>
+</cli>
+  *Check:
+    *Specific service:<cli>
+# sv (s)tatus <SERVICE>
+</cli>
+    *All manageable services:<cli>
+# sv (s)tatus /var/service/*
+</cli>
+  *Stop:
+    *Nicely:<cli>
+# sv (d)own <SERVICE>
+</cli>
+    *Forcefully:<cli>
+# sv (k)ill <SERVICE>
+</cli>
+
+===== Resources =====
+
+  *[[http://smarden.org/runit|Official Runit Documentation]]
+  *[[https://docs.voidlinux.org/config/services/index.html|Void Linux Runit Handbook]]
+  *[[https://wiki.artixlinux.org/Main/Runit|Artix Wiki Runit Article]]
+  *[[https://wiki.gentoo.org/wiki/Runit|Gentoo Wiki Runit Article]]

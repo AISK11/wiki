@@ -248,3 +248,12 @@ old:gentoo:installation
 old:void:audio
 void:bspwm
 void:luks
+cybersecurity:reconaissance
+cybersecurity:sql_injection
+old:cybersecurity:crypto:ciphers
+old:cybersecurity:crypto:hashing
+sql:index
+sql:sidebar
+cisco:sidebar
+cisco:index
+cisco:factory_reset
