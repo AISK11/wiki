@@ -1,10 +1,50 @@
 ====== Factory Reset ======
 
-===== Router =====
+===== Switch =====
 
 ==== Connect ====
 
   -Connect to the device via serial console((Linux serial devices: https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux)):<cli>
+$ cu -l </dev/ttyUSB0> -s <9600>
+</cli>
+  -If there is garbage output:<cli>
+Switch#)�R���]�A��������P"��cP����������������������������
+������������������������������������������������������������
+��������������������������Pa�\��1�:
+                                                   2�*�tXw���
+!���"������HA��������HH�                             ߔ^<
+�"@M�"$�"�"І"I��@ �"X������SA��(�Li�c�Ԅ� �NS@�jc*�,@]��0�hP�Я"�@�"�
+</cli>
+    -Change baud rate when connecting, use one of these values:
+      *''9600''
+      *''4800''
+      *''1200''
+      *''2400''
+      *''19200''
+      *''38400''
+      *''57600''
+      *''115200''
+    -Physically restart device.
+    -During boot phase, hold MODE button until ''switch:'' prompt appears.
+    -Change baud rate:<cli>
+switch% set BAUD 9600
+</cli>
+    -Reconnect serial port with baud rate ''9600''.
+    -Restart device to leave ROMMON mode:<cli>
+switch% reset
+</cli>
+
+==== Erase Configuration (WIP) ====
+
+  -Access privileged mode:<cli>
+> enable
+</cli>
+
+===== Router =====
+
+==== Connect ====
+
+  -Connect to the device via serial console:<cli>
 $ cu -l </dev/ttyUSB0> -s <9600>
 </cli>
   -If there is garbage output:<cli>
@@ -27,7 +67,7 @@ q▒▒▒ZT+▒▒U▒n▒▒▒▒▒7▒▒=▒▒63▒G▒/▒!▒▒w▒▒
       *''57600''
       *''115200''
     -Physically restart device.
-    -During boot phase, press <kbd>Break</kbd>((Pause/Break key alternatives: https://en.wikipedia.org/wiki/Break_key#Keyboards_without_Break_key.)) (or type ''~#'' if using cu command).
+    -During boot phase, press <kbd>break</kbd>((Pause/Break key alternatives: https://en.wikipedia.org/wiki/Break_key#Keyboards_without_Break_key.)) (type ''~#'' if using cu command) or try <kbd>ctrl</kbd>+<kbd>c</kbd>.
     -Change baud rate:<cli>
 rommon> confreg
            Configuration Summary
@@ -60,7 +100,7 @@ do you wish to change the configuration? y/n  [n]>  n
 
 You must reset or power cycle for new config to take effect
 </cli>
-    -Restart to apply changes:<cli>
+    -Restart device to apply changes:<cli>
 rommon> reset
 </cli>
 
@@ -71,8 +111,8 @@ rommon> reset
 </cli>
   -If privileged mode is password protected:
     -Physically restart device.
-    -During boot phase, press <kbd>Break</kbd> (or type ''~#'' if using cu command).
-    -Set register((Cisco register values: https://www.cisco.com/c/en/us/support/docs/routers/10000-series-routers/50421-config-register-use.html#anc6.)) to use NVRAM configuration (''0x2142'') and restart to apply changes:<cli>
+    -During boot phase, press <kbd>break</kbd> (type ''~#'' if using cu command) or try <kbd>ctrl</kbd>+<kbd>c</kbd>.
+    -Set configuration register((Cisco router configuration register values: https://www.cisco.com/c/en/us/support/docs/routers/10000-series-routers/50421-config-register-use.html#anc6.)) to use NVRAM configuration (''0x2142'') and restart device to apply changes:<cli>
 rommon> confreg 0x2142
 rommon> reset
 </cli>
@@ -85,11 +125,11 @@ rommon> reset
 # show file systems
 File Systems:
 
-       Size(b)       Free(b)      Type  Flags  Prefixes
+       Size(b)     Free(b)      Type  Flags  Prefixes
 ...
-        262136        254916     nvram     rw   nvram:
+        262136      254916     nvram     rw   nvram:
 ...
-*    255537152     111308800  usbflash     rw   usbflash0: flash:
+*    255537152   111308800  usbflash     rw   usbflash0: flash:
 </cli>
     -Show NVRAM memory (3rd row should contain ''0''):<cli>
 # dir nvram:
@@ -103,16 +143,16 @@ Directory of nvram:/
     -Show FLASH memory (''vlan.dat'' should not be present):<cli>
 # dir flash:
 </cli>
-  -Check if correct register (''0x2102'') is used:<cli>
+  -Check if correct configuration register (''0x2102'') is used:<cli>
 # show version | i register
 Configuration register is 0x2102
 </cli>
-  -If there is different register:
+  -If there is different configuration register:
     -Restart device:<cli>
 # reload
 </cli>
-    -During boot phase, press <kbd>Break</kbd> (or type ''~#'' if using cu command).
-    -Set register to use NVRAM (configuration) and restart to apply changes:<cli>
+    -During boot phase, press <kbd>break</kbd> (type ''~#'' if using cu command) or try <kbd>ctrl</kbd>+<kbd>c</kbd>.
+    -Set configuration register to use NVRAM (configuration) and restart device to apply changes:<cli>
 rommon> confreg 0x2102
 rommon> reset
 </cli>

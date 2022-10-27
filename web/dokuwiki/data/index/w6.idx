@@ -412,3 +412,6 @@ memory
 115200
 serial
 307390
+switch
+button
+prompt
