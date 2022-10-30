@@ -50,16 +50,16 @@ This section is incomplete and needs further work!
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">W</span>
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">yes</span>
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">q</span>
-<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 1 ESP</span>
-<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 2 VOID</span></pre><p></div>
+<span class="cli_prompt"># parted -s &lt;/dev/sdX&gt; </span><span class="cli_command">name 1 ESP</span>
+<span class="cli_prompt"># parted -s &lt;/dev/sdX&gt; </span><span class="cli_command">name 2 VOID</span></pre><p></div>
 </li>
 <li class="level1 node"><div class="li"> Create filesystems: </div>
 <ol>
 <li class="level2"><div class="li"> EFI filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX1&gt;</span>
 <span class="cli_prompt"># </span><span class="cli_command">mkfs.vfat -F 32 &lt;/dev/sdX1&gt;</span>
-<span class="cli_prompt"># </span><span class="cli_command">fatlabel &lt;/dev/sdX1&gt; ESP</span>
-<span class="cli_prompt"># </span><span class="cli_command">fatlabel -i &lt;/dev/sdX1&gt; 00000001</span>
-<span class="cli_prompt"># </span><span class="cli_command">fsck.vfat &lt;/dev/sdX1&gt; ; echo $?</span></pre><p></div>
+<span class="cli_prompt"># fatlabel &lt;/dev/sdX1&gt; </span><span class="cli_command">ESP</span>
+<span class="cli_prompt"># fatlabel -i &lt;/dev/sdX1&gt; </span><span class="cli_command">00000001</span>
+<span class="cli_prompt"># fsck.vfat &lt;/dev/sdX1&gt; </span><span class="cli_command">; echo $?</span></pre><p></div>
 </li>
 <li class="level2"><div class="li"> LUKS encrypted filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=/dev/urandom of=&lt;/dev/sdX2&gt; status=progress ; sync</span>
 <span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX2&gt;</span>
@@ -70,7 +70,7 @@ This section is incomplete and needs further work!
 <span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label LUKS-VOID &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
-<span class="cli_prompt"># </span><span class="cli_command">cryptsetup open --type luks2 &lt;/dev/sdX2&gt; luks-void</span>
+<span class="cli_prompt"># cryptsetup open --type luks2 &lt;/dev/sdX2&gt; </span><span class="cli_command">luks-void</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;LUKS-PASSWORD&gt;</span></pre><p></div>
 </li>
 <li class="level2"><div class="li"> Root filesystem<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a /dev/mapper/luks-void</span>
@@ -95,7 +95,7 @@ This section is incomplete and needs further work!
 <li class="level2"><div class="li"> Btrfs<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> subvolume:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount -o defaults,noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/</span></pre><p></div>
 </li>
 <li class="level2"><div class="li"> ESP:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/boot/</span>
-<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sda1&gt; /mnt/void/boot/</span></pre><p></div>
+<span class="cli_prompt"># mount &lt;/dev/sda1&gt; </span><span class="cli_command">/mnt/void/boot/</span></pre><p></div>
 </li>
 </ol>
 </li>
@@ -129,7 +129,7 @@ This section is incomplete and needs further work!
 </li>
 <li class="level1"><div class="li"> Chroot into the new installation:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/void/ /bin/sh</span>
 <span class="cli_prompt"># </span><span class="cli_command">. ./etc/profile</span>
-<span class="cli_prompt"># </span><span class="cli_command">export PS1=&#039;(chroot) # &#039;</span></pre><p></div>
+<span class="cli_prompt"># </span><span class="cli_command">export PS1=&#039;(chroot)</span><span class="cli_comment"> # &#039;</span></pre><p></div>
 </li>
 </ol>
 

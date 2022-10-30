@@ -1,0 +1,256 @@
+<a name="ciscofactory_reset__"></a>
+<h1><bookmark content=" Factory Reset" level="0" /><a name="ciscofactory_reset__factory_reset">Factory Reset</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><bookmark content=" Switch" level="1" /><a name="ciscofactory_reset__switch">Switch</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><bookmark content=" Connect" level="2" /><a name="ciscofactory_reset__connect">Connect</a></h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li">Connect to the device via serial console<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">cu -l &lt;/dev/ttyUSB0&gt; -s &lt;9600&gt;</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li">If there is garbage output:</p><pre class='cli  '><span class="cli_output">Switch#)�R���]�A��������P&quot;��cP����������������������������</span>
+<span class="cli_output">������������������������������������������������������������</span>
+<span class="cli_output">��������������������������Pa�\��1�:</span>
+<span class="cli_output">                                                   2�*�tXw���</span>
+<span class="cli_output">!���&quot;������HA��������HH�                             ߔ^&lt;</span>
+<span class="cli_output">�&quot;@M�&quot;$�&quot;�&quot;І&quot;I��@ �&quot;X������SA��(�Li�c�Ԅ� �NS@�jc*�,@]��0�hP�Я&quot;�@�&quot;�</span></pre><p></div>
+<ol>
+<li class="level2 node"><div class="li">Reconnect to the device via serial console with these baud rates, until output is readable:</div>
+<ul>
+<li class="level3"><div class="li"><code>9600</code></div>
+</li>
+<li class="level3"><div class="li"><code>4800</code></div>
+</li>
+<li class="level3"><div class="li"><code>1200</code></div>
+</li>
+<li class="level3"><div class="li"><code>2400</code></div>
+</li>
+<li class="level3"><div class="li"><code>19200</code></div>
+</li>
+<li class="level3"><div class="li"><code>38400</code></div>
+</li>
+<li class="level3"><div class="li"><code>57600</code></div>
+</li>
+<li class="level3"><div class="li"><code>115200</code></div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li">Physically restart device.</div>
+</li>
+<li class="level2"><div class="li">During boot phase, hold MODE button until <code>switch:</code> prompt appears.</div>
+</li>
+<li class="level2"><div class="li">Change device baud rate:</p><pre class='cli  '><span class="cli_prompt">switch% </span><span class="cli_command">set BAUD 9600</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Reconnect to the device via serial console with baud rate <code>9600</code>.</div>
+</li>
+<li class="level2"><div class="li">Restart device to leave ROMMON mode:</p><pre class='cli  '><span class="cli_prompt">switch% </span><span class="cli_command">reset</span></pre><p></div>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+
+<h3><bookmark content=" Erase Configuration" level="2" /><a name="ciscofactory_reset__erase_configuration">Erase Configuration</a></h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li">Access privileged mode:</p><pre class='cli  '><span class="cli_prompt">&gt; </span><span class="cli_command">enable</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li">If privileged mode is password protected:</div>
+<ol>
+<li class="level2"><div class="li">Physically restart device.</div>
+</li>
+<li class="level2"><div class="li">During boot phase, hold MODE button until <code>switch:</code> prompt appears.</div>
+</li>
+<li class="level2"><div class="li">Delete configuration file and continue booting device::</p><pre class='cli  '><span class="cli_prompt">switch% </span><span class="cli_command">flash_init</span>
+<span class="cli_prompt">switch% </span><span class="cli_command">delete flash:config.text</span>
+<span class="cli_prompt">Are you sure you want to delete &quot;flash:config.text&quot; (y/n)?&gt; </span><span class="cli_command">y</span>
+<span class="cli_prompt">switch% </span><span class="cli_command">boot</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li">Delete device configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">erase nvram:</span>
+<span class="cli_prompt"># </span><span class="cli_command">delete vlan.dat</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li">Verify, that there is no configuration present anymore:</div>
+<ol>
+<li class="level2"><div class="li">Show all file systems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">show file systems</span>
+<span class="cli_output">File Systems:</span>
+<span class="cli_output">     Size(b)     Free(b)      Type  Flags  Prefixes</span>
+<span class="cli_output">*   15998976     3329536     flash     rw   flash: flash1:</span>
+<span class="cli_output">...</span>
+<span class="cli_output">      524288      523212     nvram     rw   nvram:</span>
+<span class="cli_output">...</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Show NVRAM memory (3rd row should contain <code>0</code>):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir nvram:</span>
+<span class="cli_output">Directory of nvram:/</span>
+<span class="cli_output">  510  -rw-  0  no date  startup-config</span>
+<span class="cli_output">  511  ----  0  no date  private-config</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Show FLASH memory (<code>vlan.dat</code> should not be present):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir flash:</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li">Restart device to apply any unsaved changes:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reload</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+
+<h2><bookmark content=" Router" level="1" /><a name="ciscofactory_reset__router">Router</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><bookmark content=" Connect" level="2" /><a name="ciscofactory_reset__connect1">Connect</a></h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li">Connect to the device via serial console:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">cu -l &lt;/dev/ttyUSB0&gt; -s &lt;9600&gt;</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li">If there is garbage output:</p><pre class='cli  '><span class="cli_output">▒▒6=▒▒v1;▒▒T5▒  ▒7▒▒T▒▒▒W%▒G4▒▒▒ʇ▒▒1▒܏U7▒</span>
+<span class="cli_output">                                        ▒▒▒▒w3!7▒ڔ▒▒▒▒!▒▒ԡ▒G▒▒G▒▒▒▒▒v!▒</span>
+<span class="cli_output">19▒▒▒]▒▒Z45▒G▒▒▒▒▒v!▒</span>
+<span class="cli_output"> ▒f▒vu%▒▒V▒5▒Z▒+ٽ▒▒▒$3▒▒▒▒▒▒▒7▒F▒)▒▒▒7▒F▒)▒▒▒.P3ٳ</span>
+<span class="cli_output">q▒▒▒ZT+▒▒U▒n▒▒▒▒▒7▒▒=▒▒63▒G▒/▒!▒▒w▒▒▒▒WW▒▒▒▒▒?▒▒:37▒▒▒</span>
+<span class="cli_output">  6#▒Ku)х▒4▒▒▒g▒7▒</span>
+<span class="cli_output">                  R▒▒w9▒▒▒?▒JV▒▒Z▒▒U▒̔▒▒r▒z▒;s▒▒!▒e47▒</span>
+<span class="cli_output">                                                     ▒)▒v▒7=Q▒u7▒▒</span></pre><p></div>
+<ol>
+<li class="level2 node"><div class="li">Reconnect to the device via serial console with these baud rates, until output is readable:</div>
+<ul>
+<li class="level3"><div class="li"><code>9600</code></div>
+</li>
+<li class="level3"><div class="li"><code>4800</code></div>
+</li>
+<li class="level3"><div class="li"><code>1200</code></div>
+</li>
+<li class="level3"><div class="li"><code>2400</code></div>
+</li>
+<li class="level3"><div class="li"><code>19200</code></div>
+</li>
+<li class="level3"><div class="li"><code>38400</code></div>
+</li>
+<li class="level3"><div class="li"><code>57600</code></div>
+</li>
+<li class="level3"><div class="li"><code>115200</code></div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li">Physically restart device.</div>
+</li>
+<li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup> (type <code>~#</code> if using cu command) or try <kbd class="__keyboard">Ctrl</kbd>+<kbd class="__keyboard">C</kbd>.</div>
+</li>
+<li class="level2"><div class="li">Change device baud rate:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg</span>
+<span class="cli_output">           Configuration Summary</span>
+<span class="cli_output">   (Virtual Configuration Register: 0x21)</span>
+<span class="cli_output">enabled are:</span>
+<span class="cli_output">break/abort has effect</span>
+<span class="cli_output">console baud: 19200</span>
+<span class="cli_output">boot: the boot helper image</span>
+<span class="cli_output"></span>
+<span class="cli_prompt">do you wish to change the configuration? y/n  [n]&gt; </span><span class="cli_command"> y</span>
+<span class="cli_prompt">enable  &quot;diagnostic mode&quot;? y/n  [n]&gt; </span><span class="cli_command"> n</span>
+<span class="cli_prompt">enable  &quot;use net in IP bcast address&quot;? y/n  [n]&gt; </span><span class="cli_command"> n</span>
+<span class="cli_prompt">enable  &quot;load rom after netboot fails&quot;? y/n  [n]&gt; </span><span class="cli_command"> n</span>
+<span class="cli_prompt">enable  &quot;use all zero broadcast&quot;? y/n  [n]&gt; </span><span class="cli_command"> n</span>
+<span class="cli_prompt">disable &quot;break/abort has effect&quot;? y/n  [n]&gt; </span><span class="cli_command"> n</span>
+<span class="cli_prompt">enable  &quot;ignore system config info&quot;? y/n  [n]&gt; </span><span class="cli_command"> n</span>
+<span class="cli_prompt">change console baud rate? y/n  [n]&gt; </span><span class="cli_command"> y</span>
+<span class="cli_output">0=9600, 1=4800, 2=1200, 3=2400, 4=19200, 5=38400, 6=57600, 7=115200</span>
+<span class="cli_prompt">enter rate  [4]&gt; </span><span class="cli_command"> 0</span>
+<span class="cli_prompt">change the boot characteristics? y/n  [n]&gt; </span><span class="cli_command"> n</span>
+<span class="cli_output"></span>
+<span class="cli_output">           Configuration Summary</span>
+<span class="cli_output">   (Virtual Configuration Register: 0x1)</span>
+<span class="cli_output">enabled are:</span>
+<span class="cli_output">break/abort has effect</span>
+<span class="cli_output">console baud: 9600</span>
+<span class="cli_output">boot: the boot helper image</span>
+<span class="cli_output"></span>
+<span class="cli_prompt">do you wish to change the configuration? y/n  [n]&gt; </span><span class="cli_command"> n</span>
+<span class="cli_output"></span>
+<span class="cli_output">You must reset or power cycle for new config to take effect</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Restart device to apply changes:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">reset</span></pre><p></div>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+
+<h3><bookmark content=" Erase Configuration" level="2" /><a name="ciscofactory_reset__erase_configuration1">Erase Configuration</a></h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li">Access privileged mode:</p><pre class='cli  '><span class="cli_prompt">&gt; </span><span class="cli_command">enable</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li">If privileged mode is password protected:</div>
+<ol>
+<li class="level2"><div class="li">Physically restart device.</div>
+</li>
+<li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd> (type <code>~#</code> if using cu command) or try <kbd class="__keyboard">Ctrl</kbd>+<kbd class="__keyboard">C</kbd>.</div>
+</li>
+<li class="level2"><div class="li">Set configuration register<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> to use NVRAM configuration (<code>0x2142</code>) and restart device to apply changes:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg 0x2142</span>
+<span class="cli_prompt">rommon&gt; </span><span class="cli_command">reset</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li">Delete device configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">erase nvram:</span>
+<span class="cli_prompt"># </span><span class="cli_command">delete vlan.dat</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li">Verify, that there is no configuration present anymore:</div>
+<ol>
+<li class="level2"><div class="li">Show all file systems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">show file systems</span>
+<span class="cli_output">File Systems:</span>
+<span class="cli_output"></span>
+<span class="cli_output">       Size(b)     Free(b)      Type  Flags  Prefixes</span>
+<span class="cli_output">...</span>
+<span class="cli_output">        262136      254916     nvram     rw   nvram:</span>
+<span class="cli_output">...</span>
+<span class="cli_output">*    255537152   111308800  usbflash     rw   usbflash0: flash:</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Show NVRAM memory (3rd row should contain <code>0</code>):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir nvram:</span>
+<span class="cli_output">Directory of nvram:/</span>
+<span class="cli_output"></span>
+<span class="cli_output">  254  -rw-  0  no date  startup-config</span>
+<span class="cli_output">  255  ----  0  no date  private-config</span>
+<span class="cli_output">  256  -rw-  0  no date  underlying-config</span>
+<span class="cli_output">...</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Show FLASH memory (<code>vlan.dat</code> should not be present):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir flash:</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li">Check if correct configuration register (<code>0x2102</code>) is used:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">show version | i register</span>
+<span class="cli_output">Configuration register is 0x2102</span></pre><p></div>
+</li>
+<li class="level1 node"><div class="li">If there is different configuration register:</div>
+<ol>
+<li class="level2"><div class="li">Restart device:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reload</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd> (type <code>~#</code> if using cu command) or try <kbd class="__keyboard">Ctrl</kbd>+<kbd class="__keyboard">C</kbd>.</div>
+</li>
+<li class="level2"><div class="li">Set configuration register to use NVRAM (configuration) and restart device to apply changes:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg 0x2102</span>
+<span class="cli_prompt">rommon&gt; </span><span class="cli_command">reset</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li">Restart device to apply any unsaved changes:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reload</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Linux serial devices: <a href="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux" class="urlextern" title="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux">https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux</a></div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Pause/Break key alternatives: <a href="https://en.wikipedia.org/wiki/Break_key#Keyboards_without_Break_key" class="urlextern" title="https://en.wikipedia.org/wiki/Break_key#Keyboards_without_Break_key">https://en.wikipedia.org/wiki/Break_key#Keyboards_without_Break_key</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<div class="content">Cisco router configuration register values: <a href="https://www.cisco.com/c/en/us/support/docs/routers/10000-series-routers/50421-config-register-use.html#anc6" class="urlextern" title="https://www.cisco.com/c/en/us/support/docs/routers/10000-series-routers/50421-config-register-use.html#anc6">https://www.cisco.com/c/en/us/support/docs/routers/10000-series-routers/50421-config-register-use.html#anc6</a>.</div></div>
+</div>

@@ -1,116 +1,3 @@
-1666282057	127.0.0.1	E	void:sidebar	admin			25
-1666282133	127.0.0.1	C	void:todo	admin	created		103
-1666282271	127.0.0.1	E	void:todo	admin			9
-1666284805	127.0.0.1	E	void:todo	admin			8
-1666284885	127.0.0.1	E	void:todo	admin			29
-1666296788	127.0.0.1	E	void:firewall	admin			71
-1666300036	127.0.0.1	E	void:index	admin			30
-1666300511	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-117
-1666301083	127.0.0.1	E	void:installation	admin	[Full System Installation] 		9
-1666301210	127.0.0.1	E	void:installation	admin	[Full System Installation] 		68
-1666301236	127.0.0.1	E	void:installation	admin	[Full System Installation] 		10
-1666301283	127.0.0.1	E	void:installation	admin	[Full System Installation] 		15
-1666301666	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-19
-1666301725	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-17
-1666302365	127.0.0.1	E	void:todo	admin			63
-1666302856	127.0.0.1	E	void:installation	admin	[Full System Installation] 		12
-1666302915	127.0.0.1	E	void:installation	admin	[Full System Installation] 		-12
-1666303051	127.0.0.1	E	void:installation	admin	[Full System Installation] 		105
-1666303464	127.0.0.1	E	void:installation	admin	[Full System Installation] 		8
-1666304986	127.0.0.1	E	void:installation	admin			0
-1666306338	127.0.0.1	E	void:installation	admin	[XBPS] 		140
-1666306734	127.0.0.1	E	void:installation	admin	[Full System Installation] 		24
-1666307007	127.0.0.1	E	void:installation	admin	[Full System Installation] 		4
-1666307377	127.0.0.1	E	void:installation	admin	[Full System Installation] 		16
-1666307712	127.0.0.1	E	void:installation	admin	[XBPS] 		-24
-1666308131	127.0.0.1	E	void:installation	admin	[Disk Preparation] 		9
-1666308499	127.0.0.1	E	void:installation	admin	[Filesystems] 		461
-1666308976	127.0.0.1	E	void:installation	admin	[XBPS] 		19
-1666308991	127.0.0.1	E	void:installation	admin	[Kernel Modules] 		176
-1666310421	127.0.0.1	E	void:installation	admin	[Locales] 		145
-1666310563	127.0.0.1	E	void:installation	admin	[Locales] 		147
-1666310732	127.0.0.1	E	void:installation	admin	[Timezone] 		-71
-1666310866	127.0.0.1	E	void:installation	admin			186
-1666310925	127.0.0.1	E	void:installation	admin			-137
-1666311170	127.0.0.1	E	void:installation	admin	[Filesystems] 		89
-1666311202	127.0.0.1	E	void:installation	admin			0
-1666311246	127.0.0.1	E	void:installation	admin			-4
-1666313839	127.0.0.1	E	void:installation	admin	[Bootloader] 		80
-1666313936	127.0.0.1	E	void:installation	admin	[Initramfs] 		162
-1666314031	127.0.0.1	E	void:installation	admin	[Locales] 		-376
-1666314178	127.0.0.1	E	void:installation	admin	[Bootloader] 		148
-1666314235	127.0.0.1	E	void:installation	admin	[Bootloader] 		-39
-1666314318	127.0.0.1	E	void:installation	admin	[Bootloader] 		153
-1666314462	127.0.0.1	E	void:installation	admin	[Runit] 		-78
-1666314475	127.0.0.1	E	void:installation	admin			-6
-1666315011	127.0.0.1	E	void:installation	admin	[Bootloader] 		5
-1666315259	127.0.0.1	E	void:sidebar	admin			-6
-1666315297	127.0.0.1	E	void:sidebar	admin			30
-1666315307	127.0.0.1	E	void:sidebar	admin			6
-1666331631	127.0.0.1	C	void:post-installation	admin	created		31
-1666331966	127.0.0.1	E	void:post-installation	admin			360
-1666332151	127.0.0.1	E	void:post-installation	admin			34
-1666332206	127.0.0.1	E	void:post-installation	admin	[Shell] 		5
-1666332747	127.0.0.1	E	void:post-installation	admin			454
-1666332966	127.0.0.1	E	void:installation	admin			-126
-1666333033	127.0.0.1	E	void:post-installation	admin			136
-1666333237	127.0.0.1	E	void:post-installation	admin			219
-1666333246	127.0.0.1	E	void:post-installation	admin			1
-1666333431	127.0.0.1	E	void:post-installation	admin	[Local User] 		60
-1666333541	127.0.0.1	E	void:post-installation	admin	[Privilege Escalation] 		0
-1666333653	127.0.0.1	E	void:sidebar	admin			-84
-1666334079	127.0.0.1	E	void:post-installation	admin	[Local User] 		88
-1666352984	127.0.0.1	E	void:post-installation	admin	[Shell] 		9
-1666354526	127.0.0.1	E	void:post-installation	admin			131
-1666354641	127.0.0.1	E	void:post-installation	admin			-39
-1666354678	127.0.0.1	E	void:post-installation	admin	[GUI] 		59
-1666354731	127.0.0.1	E	void:post-installation	admin			72
-1666355298	127.0.0.1	E	void:post-installation	admin			17
-1666355316	127.0.0.1	E	void:post-installation	admin			22
-1666355669	127.0.0.1	E	void:post-installation	admin			9
-1666356334	127.0.0.1	E	void:post-installation	admin			73
-1666357437	127.0.0.1	E	void:post-installation	admin	[Shell] 		8
-1666357672	127.0.0.1	E	void:post-installation	admin			125
-1666357700	127.0.0.1	E	void:post-installation	admin			9
-1666359979	127.0.0.1	E	void:post-installation	admin			-463
-1666367034	127.0.0.1	E	it_areas:cybersecurity:reconnaissance:packet_capture	admin			42
-1666369216	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		8
-1666369548	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		-8
-1666369548	127.0.0.1	C	old:void:installation		created - external edit		11951
-1666374390	127.0.0.1	E	void:post-installation	admin	[GUI] 		-4
-1666374543	127.0.0.1	E	void:post-installation	admin			131
-1666374819	127.0.0.1	E	void:post-installation	admin			4
-1666377201	127.0.0.1	E	void:post-installation	admin			55
-1666377952	127.0.0.1	E	void:post-installation	admin			127
-1666378129	127.0.0.1	E	void:post-installation	admin			28
-1666378255	127.0.0.1	E	void:post-installation	admin			59
-1666378255	127.0.0.1	C	old:void:post-installation		created - external edit		1820
-1666382530	127.0.0.1	E	sidebar	admin			-66
-1666383127	127.0.0.1	D	old:index	admin	removed		-18
-1666383132	127.0.0.1	D	index		removed - external edit (Unknown date)		-18
-1666383133	127.0.0.1	C	index	admin	created		18
-1666383542	127.0.0.1	D	sidebar		removed - external edit (Unknown date)		-466
-1666383543	127.0.0.1	C	sidebar	admin	created		141
-1666383651	127.0.0.1	D	cybersecurity:index		removed - external edit (Unknown date)		-441
-1666383652	127.0.0.1	C	cybersecurity:index	admin	created		27
-1666383826	127.0.0.1	D	cybersecurity:sidebar		removed - external edit (Unknown date)		-1157
-1666383827	127.0.0.1	C	cybersecurity:sidebar	admin	created		85
-1666383837	127.0.0.1	E	sidebar	admin			-31
-1666384137	127.0.0.1	E	cybersecurity:sidebar	admin			59
-1666384250	127.0.0.1	D	cybersecurity:resources		removed - external edit (Unknown date)		-261
-1666384251	127.0.0.1	C	cybersecurity:resources	admin	created		23
-1666384394	127.0.0.1	E	cybersecurity:sidebar	admin			0
-1666384733	127.0.0.1	E	cybersecurity:resources	admin			86
-1666384789	127.0.0.1	E	cybersecurity:resources	admin			24
-1666384997	127.0.0.1	E	cybersecurity:resources	admin			11
-1666385162	127.0.0.1	E	cybersecurity:sidebar	admin			43
-1666385181	127.0.0.1	E	sidebar	admin			1
-1666385319	127.0.0.1	C	cybersecurity:ethernet	admin	created		118
-1666388285	127.0.0.1	E	cybersecurity:ethernet	admin			104
-1666388332	127.0.0.1	E	cybersecurity:ethernet	admin			41
-1666394212	127.0.0.1	E	cybersecurity:ethernet	admin			47
-1666466916	127.0.0.1	E	cybersecurity:ethernet	admin			15
-1666467499	127.0.0.1	E	cybersecurity:ethernet	admin			117
 1666468140	127.0.0.1	E	cybersecurity:ethernet	admin			102
 1666468150	127.0.0.1	E	cybersecurity:ethernet	admin			0
 1666468219	127.0.0.1	E	cybersecurity:ethernet	admin			15
@@ -371,3 +258,10 @@
 1666900555	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		7
 1666901757	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration (WIP)] 		308
 1666901781	127.0.0.1	E	cisco:factory_reset	admin			-8
+1667039218	127.0.0.1	E	cisco:factory_reset	admin			-6
+1667072631	127.0.0.1	E	sidebar	admin			31
+1667072690	127.0.0.1	C	openbsd:sidebar	admin	created		129
+1667072700	127.0.0.1	E	openbsd:sidebar	admin			-3
+1667072753	127.0.0.1	C	openbsd:index	admin	created		57
+1667072769	127.0.0.1	E	openbsd:index	admin			94
+1667073342	127.0.0.1	E	openbsd:index	admin			66

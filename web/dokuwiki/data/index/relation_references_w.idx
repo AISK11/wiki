@@ -276,3 +276,5 @@ todo
 cisco:index
 cisco:resources
 cisco:factory_reset
+openbsd:index
+openbsd:resources

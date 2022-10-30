@@ -257,3 +257,6 @@ sql:sidebar
 cisco:sidebar
 cisco:index
 cisco:factory_reset
+old:os
+openbsd:sidebar
+openbsd:index

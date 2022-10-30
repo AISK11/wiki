@@ -34,7 +34,7 @@ switch% set BAUD 9600
 switch% reset
 </cli>
 
-==== Erase Configuration (WIP) ====
+==== Erase Configuration ====
 
   -Access privileged mode:<cli>
 > enable
