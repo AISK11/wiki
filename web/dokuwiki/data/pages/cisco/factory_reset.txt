@@ -42,17 +42,13 @@ switch% reset
   -If privileged mode is password protected:
     -Physically restart device.
     -During boot phase, hold MODE button until ''switch:'' prompt appears.
-    -Delete configuration file and continue booting device::<cli>
+    -Delete configuration file and continue booting device:<cli>
 switch% flash_init
 switch% delete flash:config.text
 Are you sure you want to delete "flash:config.text" (y/n)?> y
 switch% boot
 </cli>
-  -Delete device configuration:<cli>
-# erase nvram:
-# delete vlan.dat
-</cli>
-  -Verify, that there is no configuration present anymore:
+  -Check, if there is any configuration present:
     -Show all file systems:<cli>
 # show file systems
 File Systems:
@@ -62,7 +58,7 @@ File Systems:
       524288      523212     nvram     rw   nvram:
 ...
 </cli>
-    -Show NVRAM memory (3rd row should contain ''0''):<cli>
+    -Show NVRAM memory (3rd column should contain ''0''):<cli>
 # dir nvram:
 Directory of nvram:/
   510  -rw-  0  no date  startup-config
@@ -71,8 +67,9 @@ Directory of nvram:/
     -Show FLASH memory (''vlan.dat'' should not be present):<cli>
 # dir flash:
 </cli>
-  -Restart device to apply any unsaved changes:<cli>
-# reload
+  -If configuration is present, delete device configuration:<cli>
+# write erase
+# delete vlan.dat
 </cli>
 
 ===== Router =====
@@ -138,6 +135,7 @@ You must reset or power cycle for new config to take effect
     -Restart device to apply changes:<cli>
 rommon> reset
 </cli>
+    -Reconnect to the device via serial console with baud rate ''9600''.
 
 ==== Erase Configuration ====
 
@@ -147,15 +145,11 @@ rommon> reset
   -If privileged mode is password protected:
     -Physically restart device.
     -During boot phase, press <kbd>break</kbd> (type ''~#'' if using cu command) or try <kbd>ctrl</kbd>+<kbd>c</kbd>.
-    -Set configuration register((Cisco router configuration register values: https://www.cisco.com/c/en/us/support/docs/routers/10000-series-routers/50421-config-register-use.html#anc6.)) to use NVRAM configuration (''0x2142'') and restart device to apply changes:<cli>
+    -Set configuration register((Cisco router configuration register values: https://www.cisco.com/c/en/us/support/docs/routers/10000-series-routers/50421-config-register-use.html#anc6.)) to use NVRAM configuration (''0x2142'') and restart leave ROMMON mode:<cli>
 rommon> confreg 0x2142
 rommon> reset
 </cli>
-  -Delete device configuration:<cli>
-# erase nvram:
-# delete vlan.dat
-</cli>
-  -Verify, that there is no configuration present anymore:
+  -Check, if there is any configuration present:
     -Show all file systems:<cli>
 # show file systems
 File Systems:
@@ -166,7 +160,7 @@ File Systems:
 ...
 *    255537152   111308800  usbflash     rw   usbflash0: flash:
 </cli>
-    -Show NVRAM memory (3rd row should contain ''0''):<cli>
+    -Show NVRAM memory (3rd column should contain ''0''):<cli>
 # dir nvram:
 Directory of nvram:/
 
@@ -178,6 +172,10 @@ Directory of nvram:/
     -Show FLASH memory (''vlan.dat'' should not be present):<cli>
 # dir flash:
 </cli>
+  -If configuration is present, delete device configuration:<cli>
+# write erase
+# delete vlan.dat
+</cli>
   -Check if correct configuration register (''0x2102'') is used:<cli>
 # show version | i register
 Configuration register is 0x2102
@@ -187,10 +185,7 @@ Configuration register is 0x2102
 # reload
 </cli>
     -During boot phase, press <kbd>break</kbd> (type ''~#'' if using cu command) or try <kbd>ctrl</kbd>+<kbd>c</kbd>.
-    -Set configuration register to use NVRAM (configuration) and restart device to apply changes:<cli>
+    -Set configuration register to use NVRAM (configuration) and restart device to leave ROMMON mode:<cli>
 rommon> confreg 0x2102
 rommon> reset
-</cli>
-  -Restart device to apply any unsaved changes:<cli>
-# reload
 </cli>

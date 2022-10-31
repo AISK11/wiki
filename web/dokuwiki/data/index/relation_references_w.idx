@@ -278,3 +278,8 @@ cisco:resources
 cisco:factory_reset
 openbsd:index
 openbsd:resources
+dokuwiki:index
+dokuwiki:resources
+dokuwiki:installation
+dokuwiki:front-end
+dokuwiki:back-end

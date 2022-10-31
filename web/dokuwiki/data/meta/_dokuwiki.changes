@@ -1,79 +1,3 @@
-1666468140	127.0.0.1	E	cybersecurity:ethernet	admin			102
-1666468150	127.0.0.1	E	cybersecurity:ethernet	admin			0
-1666468219	127.0.0.1	E	cybersecurity:ethernet	admin			15
-1666468293	127.0.0.1	E	cybersecurity:ethernet	admin			13
-1666468315	127.0.0.1	E	cybersecurity:ethernet	admin			0
-1666468620	127.0.0.1	E	cybersecurity:ethernet	admin			50
-1666468849	127.0.0.1	E	cybersecurity:ethernet	admin			167
-1666468854	127.0.0.1	E	cybersecurity:ethernet	admin			-76
-1666470010	127.0.0.1	E	cybersecurity:ethernet	admin			178
-1666470635	127.0.0.1	E	cybersecurity:ethernet	admin			208
-1666470699	127.0.0.1	E	cybersecurity:ethernet	admin			139
-1666470818	127.0.0.1	E	cybersecurity:ethernet	admin			70
-1666470944	127.0.0.1	E	cybersecurity:ethernet	admin			139
-1666471272	127.0.0.1	E	cybersecurity:ethernet	admin			3
-1666471908	127.0.0.1	E	cybersecurity:ethernet	admin			-94
-1666472769	127.0.0.1	E	cybersecurity:ethernet	admin	[Tools] 		237
-1666473026	127.0.0.1	E	cybersecurity:ethernet	admin			2
-1666473696	127.0.0.1	E	cybersecurity:ethernet	admin			52
-1666473730	127.0.0.1	E	cybersecurity:ethernet	admin			47
-1666473762	127.0.0.1	E	cybersecurity:ethernet	admin			-52
-1666473786	127.0.0.1	E	cybersecurity:ethernet	admin			-306
-1666473887	127.0.0.1	E	cybersecurity:ethernet	admin			47
-1666473907	127.0.0.1	E	cybersecurity:ethernet	admin			-45
-1666473943	127.0.0.1	E	cybersecurity:ethernet	admin			-673
-1666475589	127.0.0.1	E	cybersecurity:ethernet	admin			277
-1666475609	127.0.0.1	E	cybersecurity:ethernet	admin			-1
-1666480896	127.0.0.1	E	cybersecurity:sidebar	admin			89
-1666487983	127.0.0.1	E	cybersecurity:ethernet	admin			2
-1666492661	127.0.0.1	E	sidebar	admin			32
-1666537413	127.0.0.1	D	void:index		removed - external edit (Unknown date)		-793
-1666537414	127.0.0.1	C	void:index	admin	created		793
-1666537444	127.0.0.1	D	void:sidebar		removed - external edit (Unknown date)		-825
-1666537445	127.0.0.1	C	void:sidebar	admin	created		275
-1666537969	127.0.0.1	E	void:sidebar	admin			-6
-1666537982	127.0.0.1	D	void:resources		removed - external edit (Unknown date)		-378
-1666537983	127.0.0.1	C	void:resources	admin	created		117
-1666538012	127.0.0.1	D	old:void:pre-installation	admin	removed		-1626
-1666538016	127.0.0.1	D	void:pre-installation		removed - external edit (Unknown date)		-1626
-1666538017	127.0.0.1	C	void:pre-installation	admin	created		1626
-1666538038	127.0.0.1	E	void:pre-installation	admin			-1
-1666538056	127.0.0.1	D	old:void:installation	admin	removed		-11951
-1666538060	127.0.0.1	D	void:installation		removed - external edit (Unknown date)		-11951
-1666538061	127.0.0.1	C	void:installation	admin	created		11951
-1666538256	127.0.0.1	E	void:installation	admin	[Bootloader] 		7
-1666538375	127.0.0.1	E	void:installation	admin	[Environment Preparation] 		83
-1666538458	127.0.0.1	E	void:sidebar	admin			-6
-1666538474	127.0.0.1	D	old:void:post-installation	admin	removed		-1820
-1666538494	127.0.0.1	D	void:post-installation		removed - external edit (Unknown date)		-1820
-1666538495	127.0.0.1	C	void:post-installation	admin	created		1914
-1666538698	127.0.0.1	E	void:post-installation	admin			6
-1666540161	127.0.0.1	E	void:installation	admin	[Full System Installation] 		5
-1666540480	127.0.0.1	E	void:post-installation	admin			302
-1666540794	127.0.0.1	E	void:sidebar	admin			53
-1666540804	127.0.0.1	E	sidebar	admin			-2
-1666540815	127.0.0.1	E	cybersecurity:sidebar	admin			-2
-1666540991	127.0.0.1	D	void:audio		removed - external edit (Unknown date)		-626
-1666540992	127.0.0.1	C	void:audio	admin	created		488
-1666541125	127.0.0.1	E	void:sidebar	admin			24
-1666541186	127.0.0.1	E	void:sidebar	admin			-1
-1666541195	127.0.0.1	E	void:audio	admin			2
-1666541246	127.0.0.1	C	void:sway	admin	created		95
-1666541633	127.0.0.1	E	void:sway	admin	[Installation] 		9
-1666541999	127.0.0.1	E	void:sway	admin			108
-1666542165	127.0.0.1	E	void:sway	admin			70
-1666542173	127.0.0.1	E	void:sway	admin			0
-1666542215	127.0.0.1	E	void:sway	admin			26
-1666542224	127.0.0.1	E	void:sway	admin			0
-1666542231	127.0.0.1	E	void:sway	admin			0
-1666542238	127.0.0.1	E	void:sway	admin			-3
-1666542324	127.0.0.1	E	void:sidebar	admin			26
-1666542338	127.0.0.1	E	void:sidebar	admin			0
-1666542355	127.0.0.1	C	void:bspwm	admin	created		113
-1666542383	127.0.0.1	E	void:post-installation	admin			-805
-1666542390	127.0.0.1	E	void:bspwm	admin			454
-1666542411	127.0.0.1	E	void:post-installation	admin	[Local User] 		-1
-1666543491	127.0.0.1	E	cybersecurity:sidebar	admin			65
 1666673737	127.0.0.1	E	void:sidebar	admin			42
 1666674852	127.0.0.1	C	void:luks	admin	created		749
 1666677054	127.0.0.1	E	void:luks	admin	[Encrypt] 		2
@@ -265,3 +189,31 @@
 1667072753	127.0.0.1	C	openbsd:index	admin	created		57
 1667072769	127.0.0.1	E	openbsd:index	admin			94
 1667073342	127.0.0.1	E	openbsd:index	admin			66
+1667173695	127.0.0.1	C	openbsd:resources	admin	created		117
+1667173769	127.0.0.1	E	sidebar	admin			46
+1667173849	127.0.0.1	C	dokuwiki:sidebar	admin	created		172
+1667173857	127.0.0.1	C	dokuwiki:index	admin	created		23
+1667173868	127.0.0.1	C	dokuwiki:resources	admin	created		117
+1667173882	127.0.0.1	C	dokuwiki:installation	admin	created		27
+1667173912	127.0.0.1	D	dokuwiki:installation	admin	removed		-27
+1667174057	127.0.0.1	E	dokuwiki:sidebar	admin			29
+1667174089	127.0.0.1	E	dokuwiki:sidebar	admin			0
+1667174176	127.0.0.1	C	dokuwiki:front-end	admin	created		123
+1667174318	127.0.0.1	E	dokuwiki:front-end	admin			112
+1667174418	127.0.0.1	E	dokuwiki:front-end	admin			62
+1667174447	127.0.0.1	E	dokuwiki:front-end	admin			94
+1667222259	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		29
+1667222292	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-1
+1667222337	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		29
+1667222361	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-10
+1667222372	127.0.0.1	E	cisco:factory_reset	admin			-10
+1667222644	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		36
+1667222692	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		38
+1667222699	127.0.0.1	E	cisco:factory_reset	admin			-1
+1667222786	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-69
+1667222806	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-69
+1667223294	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-1
+1667223306	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-1
+1667224907	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-6
+1667224963	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		4
+1667230321	127.0.0.1	E	cisco:factory_reset	admin			6

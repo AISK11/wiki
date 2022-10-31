@@ -1,0 +1,13 @@
+====== DokuWiki ======
+
+----
+
+**About**
+  *[[:dokuwiki:index|Index]]
+  *[[:dokuwiki:resources|Resources]]
+
+**Installation**
+  *[[:dokuwiki:front-end|Front-end]]
+  *[[:dokuwiki:back-end|Back-end]]
+
+----

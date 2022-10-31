@@ -2,6 +2,9 @@
 
 ----
 
+**DokuWiki**
+  *[[:dokuwiki:index|DokuWiki]]
+
 **Operating Systems**
   *[[:openbsd:index|Open BSD]]
   *[[:void:index|Void Linux]]

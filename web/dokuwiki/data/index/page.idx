@@ -260,3 +260,9 @@ cisco:factory_reset
 old:os
 openbsd:sidebar
 openbsd:index
+openbsd:resources
+dokuwiki:sidebar
+dokuwiki:index
+dokuwiki:resources
+dokuwiki:installation
+dokuwiki:front-end

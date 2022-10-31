@@ -1,0 +1,13 @@
+====== Front-end ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Download =====
+
+  -Navigate to [[https://download.dokuwiki.org|DokuWiki Download]] webpage.
+  -Configure download:
+    -Version: **Stable (Recommended)**
+    -Languages: **en - English (always enabled)**
+  -Download dokuwiki by clicking on **Start Download** button.
