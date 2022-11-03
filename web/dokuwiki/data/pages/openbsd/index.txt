@@ -6,8 +6,12 @@ This section is incomplete and needs further work!
 
 ===== Pros =====
 
-  *Security.
+  *Security((Security policy: https://www.openbsd.org/security.html.)).
+  *Wide processor architecture support((Supported platforms: https://www.openbsd.org/plat.html.)).
+  *UNIX-like OS((Unix-like operatins systems: https://en.m.wikipedia.org/wiki/Unix-like.)).
 
 ===== Cons =====
 
+  *Point release model.
   *Small community & amount of software supported.
+  *Supported software.

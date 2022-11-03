@@ -1,48 +1,3 @@
-1666673737	127.0.0.1	E	void:sidebar	admin			42
-1666674852	127.0.0.1	C	void:luks	admin	created		749
-1666677054	127.0.0.1	E	void:luks	admin	[Encrypt] 		2
-1666677104	127.0.0.1	E	void:installation	admin	[Disk Preparation] 		3
-1666679977	127.0.0.1	E	void:luks	admin			147
-1666680183	127.0.0.1	E	void:luks	admin			470
-1666680197	127.0.0.1	E	void:luks	admin			0
-1666680247	127.0.0.1	E	void:luks	admin	[Encrypt] 		11
-1666680261	127.0.0.1	E	void:luks	admin	[Encrypt] 		5
-1666680308	127.0.0.1	E	void:luks	admin	[Decrypt] 		34
-1666682350	127.0.0.1	E	void:luks	admin	[Decrypt] 		38
-1666682652	127.0.0.1	E	void:luks	admin			-10
-1666682803	127.0.0.1	E	void:sidebar	admin			-9
-1666688032	127.0.0.1	E	void:index	admin			-12
-1666721743	127.0.0.1	E	cybersecurity:sidebar	admin			-15
-1666721782	127.0.0.1	E	void:index	admin			94
-1666721788	127.0.0.1	E	void:pre-installation	admin			94
-1666721793	127.0.0.1	E	void:installation	admin			94
-1666721860	127.0.0.1	E	cybersecurity:sidebar	admin			0
-1666721897	127.0.0.1	C	cybersecurity:reconaissance	admin	created		57
-1666724637	127.0.0.1	E	cybersecurity:reconaissance	admin			57
-1666724804	127.0.0.1	E	cybersecurity:reconaissance	admin			45
-1666725428	127.0.0.1	E	cybersecurity:sidebar	admin			50
-1666725444	127.0.0.1	C	cybersecurity:sql_injection	admin	created		29
-1666732278	127.0.0.1	E	void:index	admin			-94
-1666732369	127.0.0.1	E	void:sidebar	admin			25
-1666732392	127.0.0.1	D	old:void:runit	admin	removed		-1429
-1666732437	127.0.0.1	D	void:runit		removed - external edit (Unknown date)		-1429
-1666732438	127.0.0.1	C	void:runit	admin	created		1406
-1666732469	127.0.0.1	E	void:runit	admin			-15
-1666733095	127.0.0.1	E	void:pre-installation	admin			-8
-1666733105	127.0.0.1	E	void:pre-installation	admin			-94
-1666733767	127.0.0.1	D	cybersecurity:reconaissance	admin	removed		-159
-1666733774	127.0.0.1	E	cybersecurity:sidebar	admin			-50
-1666733889	127.0.0.1	E	cybersecurity:sql_injection	admin			55
-1666735187	127.0.0.1	E	cybersecurity:sql_injection	admin			2
-1666736148	127.0.0.1	E	cybersecurity:sql_injection	admin			31
-1666736222	127.0.0.1	E	cybersecurity:sql_injection	admin			-5
-1666736715	127.0.0.1	E	cybersecurity:sql_injection	admin			123
-1666736730	127.0.0.1	E	cybersecurity:sql_injection	admin			-83
-1666736993	127.0.0.1	E	cybersecurity:sql_injection	admin			113
-1666737271	127.0.0.1	E	cybersecurity:sql_injection	admin			40
-1666740971	127.0.0.1	E	cybersecurity:sql_injection	admin			-32
-1666741359	127.0.0.1	E	cybersecurity:sql_injection	admin			94
-1666741496	127.0.0.1	E	cybersecurity:sql_injection	admin			30
 1666825705	127.0.0.1	E	sidebar	admin			37
 1666825719	127.0.0.1	C	sql:index	admin	created		19
 1666825753	127.0.0.1	C	sql:sidebar	admin	created		96
@@ -217,3 +172,63 @@
 1667224907	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-6
 1667224963	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		4
 1667230321	127.0.0.1	E	cisco:factory_reset	admin			6
+1667425806	127.0.0.1	E	sidebar	admin			0
+1667426290	127.0.0.1	E	openbsd:index	admin			59
+1667426483	127.0.0.1	E	openbsd:index	admin			98
+1667426492	127.0.0.1	E	openbsd:index	admin	[Pros] 		1
+1667426991	127.0.0.1	E	openbsd:resources	admin			64
+1667427285	127.0.0.1	E	openbsd:sidebar	admin			50
+1667427342	127.0.0.1	C	openbsd:pre-installation	admin	created		591
+1667427396	127.0.0.1	E	openbsd:sidebar	admin			8
+1667427538	127.0.0.1	E	openbsd:index	admin			17
+1667427597	127.0.0.1	E	openbsd:index	admin			75
+1667428732	127.0.0.1	E	openbsd:resources	admin			-14
+1667428738	127.0.0.1	E	openbsd:resources	admin			8
+1667428793	127.0.0.1	E	openbsd:resources	admin			102
+1667428807	127.0.0.1	E	openbsd:resources	admin			0
+1667428871	127.0.0.1	E	openbsd:index	admin			22
+1667429901	127.0.0.1	E	openbsd:index	admin			1
+1667430176	127.0.0.1	E	openbsd:pre-installation	admin			175
+1667430194	127.0.0.1	E	openbsd:pre-installation	admin			6
+1667430217	127.0.0.1	E	openbsd:pre-installation	admin			2
+1667430409	127.0.0.1	E	openbsd:pre-installation	admin			-9
+1667430423	127.0.0.1	E	openbsd:pre-installation	admin			7
+1667431040	127.0.0.1	E	openbsd:resources	admin			48
+1667431205	127.0.0.1	E	openbsd:index	admin			0
+1667431931	127.0.0.1	E	openbsd:pre-installation	admin			52
+1667432101	127.0.0.1	E	openbsd:pre-installation	admin			180
+1667432108	127.0.0.1	E	openbsd:pre-installation	admin			-42
+1667432175	127.0.0.1	E	openbsd:pre-installation	admin			-25
+1667432891	127.0.0.1	E	openbsd:pre-installation	admin			76
+1667432904	127.0.0.1	E	openbsd:pre-installation	admin			2
+1667432908	127.0.0.1	E	openbsd:pre-installation	admin			-1
+1667432998	127.0.0.1	E	openbsd:pre-installation	admin			237
+1667433038	127.0.0.1	E	openbsd:pre-installation	admin			-16
+1667433060	127.0.0.1	E	openbsd:sidebar	admin			42
+1667433071	127.0.0.1	C	openbsd:installation	admin	created		27
+1667433156	127.0.0.1	E	openbsd:installation	admin			254
+1667433178	127.0.0.1	E	openbsd:installation	admin			1
+1667433253	127.0.0.1	E	openbsd:pre-installation	admin	[Download] 		6
+1667435045	127.0.0.1	E	openbsd:sidebar	admin			64
+1667435070	127.0.0.1	C	openbsd:system_update	admin	created		123
+1667435351	127.0.0.1	E	openbsd:system_update	admin			33
+1667437481	127.0.0.1	E	openbsd:system_update	admin			53
+1667437919	127.0.0.1	E	openbsd:index	admin			24
+1667438237	127.0.0.1	E	openbsd:system_update	admin			105
+1667438422	127.0.0.1	E	openbsd:system_update	admin			55
+1667438621	127.0.0.1	E	openbsd:system_update	admin			-31
+1667438654	127.0.0.1	E	openbsd:system_update	admin			-94
+1667438797	127.0.0.1	E	openbsd:system_update	admin			21
+1667438969	127.0.0.1	E	openbsd:sidebar	admin			54
+1667439170	127.0.0.1	E	openbsd:system_update	admin			7
+1667439952	127.0.0.1	E	openbsd:installation	admin			-60
+1667439969	127.0.0.1	C	openbsd:package_management	admin	created		178
+1667440182	127.0.0.1	E	openbsd:index	admin			0
+1667441242	127.0.0.1	E	openbsd:package_management	admin			70
+1667441515	127.0.0.1	E	openbsd:package_management	admin			61
+1667441646	127.0.0.1	E	openbsd:package_management	admin			71
+1667441720	127.0.0.1	E	openbsd:package_management	admin			67
+1667441823	127.0.0.1	E	openbsd:package_management	admin			72
+1667441893	127.0.0.1	E	openbsd:package_management	admin	[Info] 		3
+1667442572	127.0.0.1	E	openbsd:package_management	admin			71
+1667442777	127.0.0.1	E	openbsd:sidebar	admin			85

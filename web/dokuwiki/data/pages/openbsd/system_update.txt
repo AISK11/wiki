@@ -1,0 +1,14 @@
+====== System Update ======
+
+  -Upgrade to newer release version if available:<cli>
+# sysupgrade
+</cli>
+  - Apply all missing system patches:<cli>
+# syspatch
+</cli>
+  -Update all packages:<cli>
+# pkg_add -Uu
+</cli>
+  - Update configuration files:<cli>
+# sysmerge -d
+</cli>

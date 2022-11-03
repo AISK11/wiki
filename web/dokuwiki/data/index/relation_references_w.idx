@@ -283,3 +283,9 @@ dokuwiki:resources
 dokuwiki:installation
 dokuwiki:front-end
 dokuwiki:back-end
+openbsd:pre-installation
+openbsd:installation
+openbsd:system_update
+openbsd:package_management
+openbsd:network
+openbsd:firewall

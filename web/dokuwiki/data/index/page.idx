@@ -266,3 +266,7 @@ dokuwiki:index
 dokuwiki:resources
 dokuwiki:installation
 dokuwiki:front-end
+openbsd:pre-installation
+openbsd:installation
+openbsd:system_update
+openbsd:package_management

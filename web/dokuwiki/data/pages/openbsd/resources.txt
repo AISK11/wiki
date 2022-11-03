@@ -3,3 +3,9 @@
 <WRAP center round important 60%>
 This section is incomplete and needs further work!
 </WRAP>
+
+===== Download =====
+
+  *[[https://www.openbsd.org/ftp.html|Download Mirrors]]
+  *[[https://www.openbsd.org/faq/faq4.html#Download|Installation Instructions]]
+  *[[https://www.openbsdhandbook.com|Handbook]]

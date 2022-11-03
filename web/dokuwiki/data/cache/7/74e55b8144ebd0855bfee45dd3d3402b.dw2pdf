@@ -68,17 +68,14 @@
 </li>
 <li class="level2"><div class="li">During boot phase, hold MODE button until <code>switch:</code> prompt appears.</div>
 </li>
-<li class="level2"><div class="li">Delete configuration file and continue booting device::</p><pre class='cli  '><span class="cli_prompt">switch% </span><span class="cli_command">flash_init</span>
+<li class="level2"><div class="li">Delete configuration file and continue booting device:</p><pre class='cli  '><span class="cli_prompt">switch% </span><span class="cli_command">flash_init</span>
 <span class="cli_prompt">switch% </span><span class="cli_command">delete flash:config.text</span>
 <span class="cli_prompt">Are you sure you want to delete &quot;flash:config.text&quot; (y/n)?&gt; </span><span class="cli_command">y</span>
 <span class="cli_prompt">switch% </span><span class="cli_command">boot</span></pre><p></div>
 </li>
 </ol>
 </li>
-<li class="level1"><div class="li">Delete device configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">erase nvram:</span>
-<span class="cli_prompt"># </span><span class="cli_command">delete vlan.dat</span></pre><p></div>
-</li>
-<li class="level1 node"><div class="li">Verify, that there is no configuration present anymore:</div>
+<li class="level1 node"><div class="li">Check, if there is any configuration present:</div>
 <ol>
 <li class="level2"><div class="li">Show all file systems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">show file systems</span>
 <span class="cli_output">File Systems:</span>
@@ -88,7 +85,7 @@
 <span class="cli_output">      524288      523212     nvram     rw   nvram:</span>
 <span class="cli_output">...</span></pre><p></div>
 </li>
-<li class="level2"><div class="li">Show NVRAM memory (3rd row should contain <code>0</code>):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir nvram:</span>
+<li class="level2"><div class="li">Show NVRAM memory (3rd column should contain <code>0</code>):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir nvram:</span>
 <span class="cli_output">Directory of nvram:/</span>
 <span class="cli_output">  510  -rw-  0  no date  startup-config</span>
 <span class="cli_output">  511  ----  0  no date  private-config</span></pre><p></div>
@@ -97,7 +94,8 @@
 </li>
 </ol>
 </li>
-<li class="level1"><div class="li">Restart device to apply any unsaved changes:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reload</span></pre><p></div>
+<li class="level1"><div class="li">If configuration is present, delete device configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">write erase</span>
+<span class="cli_prompt"># </span><span class="cli_command">delete vlan.dat</span></pre><p></div>
 </li>
 </ol>
 
@@ -179,6 +177,8 @@
 </li>
 <li class="level2"><div class="li">Restart device to apply changes:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">reset</span></pre><p></div>
 </li>
+<li class="level2"><div class="li">Reconnect to the device via serial console with baud rate <code>9600</code>.</div>
+</li>
 </ol>
 </li>
 </ol>
@@ -196,15 +196,12 @@
 </li>
 <li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd> (type <code>~#</code> if using cu command) or try <kbd class="__keyboard">Ctrl</kbd>+<kbd class="__keyboard">C</kbd>.</div>
 </li>
-<li class="level2"><div class="li">Set configuration register<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> to use NVRAM configuration (<code>0x2142</code>) and restart device to apply changes:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg 0x2142</span>
+<li class="level2"><div class="li">Set configuration register<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> to use NVRAM configuration (<code>0x2142</code>) and restart leave ROMMON mode:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg 0x2142</span>
 <span class="cli_prompt">rommon&gt; </span><span class="cli_command">reset</span></pre><p></div>
 </li>
 </ol>
 </li>
-<li class="level1"><div class="li">Delete device configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">erase nvram:</span>
-<span class="cli_prompt"># </span><span class="cli_command">delete vlan.dat</span></pre><p></div>
-</li>
-<li class="level1 node"><div class="li">Verify, that there is no configuration present anymore:</div>
+<li class="level1 node"><div class="li">Check, if there is any configuration present:</div>
 <ol>
 <li class="level2"><div class="li">Show all file systems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">show file systems</span>
 <span class="cli_output">File Systems:</span>
@@ -215,7 +212,7 @@
 <span class="cli_output">...</span>
 <span class="cli_output">*    255537152   111308800  usbflash     rw   usbflash0: flash:</span></pre><p></div>
 </li>
-<li class="level2"><div class="li">Show NVRAM memory (3rd row should contain <code>0</code>):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir nvram:</span>
+<li class="level2"><div class="li">Show NVRAM memory (3rd column should contain <code>0</code>):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dir nvram:</span>
 <span class="cli_output">Directory of nvram:/</span>
 <span class="cli_output"></span>
 <span class="cli_output">  254  -rw-  0  no date  startup-config</span>
@@ -227,6 +224,9 @@
 </li>
 </ol>
 </li>
+<li class="level1"><div class="li">If configuration is present, delete device configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">write erase</span>
+<span class="cli_prompt"># </span><span class="cli_command">delete vlan.dat</span></pre><p></div>
+</li>
 <li class="level1"><div class="li">Check if correct configuration register (<code>0x2102</code>) is used:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">show version | i register</span>
 <span class="cli_output">Configuration register is 0x2102</span></pre><p></div>
 </li>
@@ -236,12 +236,10 @@
 </li>
 <li class="level2"><div class="li">During boot phase, press <kbd class="__keyboard">Break</kbd> (type <code>~#</code> if using cu command) or try <kbd class="__keyboard">Ctrl</kbd>+<kbd class="__keyboard">C</kbd>.</div>
 </li>
-<li class="level2"><div class="li">Set configuration register to use NVRAM (configuration) and restart device to apply changes:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg 0x2102</span>
+<li class="level2"><div class="li">Set configuration register to use NVRAM (configuration) and restart device to leave ROMMON mode:</p><pre class='cli  '><span class="cli_prompt">rommon&gt; </span><span class="cli_command">confreg 0x2102</span>
 <span class="cli_prompt">rommon&gt; </span><span class="cli_command">reset</span></pre><p></div>
 </li>
 </ol>
-</li>
-<li class="level1"><div class="li">Restart device to apply any unsaved changes:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">reload</span></pre><p></div>
 </li>
 </ol>
 

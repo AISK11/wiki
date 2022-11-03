@@ -1,0 +1,9 @@
+====== Installation ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+  -Select shell installation program:<cli>
+(I)nstall, (U)pgrade, (A)utoinstall or (S)hell?> s
+</cli>

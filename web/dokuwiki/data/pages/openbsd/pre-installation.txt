@@ -1,0 +1,31 @@
+====== Pre-Installation ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+OpenBSD usage needs to be specified instead of Linux usage!
+</WRAP>
+
+===== Download =====
+
+  -Navigate to [[https://www.openbsd.org/ftp.html|OpenBSD Mirrors]] and select HTTP(s) mirror.
+  -Download files:
+    -Public key: ''<VERSION>/openbsd-<VERSION>-base.pub''
+    -Disk image: ''<VERSION>/amd64/install<VERSION>.iso''.
+    -Sigend signature list: ''<VERSION>/amd64/SHA256.sig''.
+    -Installation notes: ''<VERSION>/amd64/INSTALL.amd64''.
+  -Verify if disk image and signature list files are genuine:<cli>
+$ 
+</cli>
+
+===== Flash USB =====
+
+  -Make sure the USB filesystem is **not** mounted!
+  -Flash USB with disk image:<cli>
+# dd if=install<VERSION>.iso of=</dev/sdX> status=progress ; sync
+</cli>
+
+===== USB Boot =====
+
+  -Reboot the system and during the POST phase press //BIOS key//((List of //POST keys// according to vendor: http://www.disk-image.com/faq-bootmenu.htm.)) to boot into UEFI.
+  -Make sure that Secure Boot is disabled and reboot.
+  -On next POST phase, press //Boot Menu key//((List of //POST keys// according to vendor: http://www.disk-image.com/faq-bootmenu.htm.)) and select //(UEFI) USB// entry.

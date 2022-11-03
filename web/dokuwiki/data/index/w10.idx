@@ -175,3 +175,5 @@ persistent
 diagnostic
 connecting
 difference
+utoinstall
+sysupgrade

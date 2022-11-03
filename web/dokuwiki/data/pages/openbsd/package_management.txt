@@ -1,0 +1,31 @@
+====== Package Management ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+https://www.openbsdhandbook.com/package_management
+
+===== Info =====
+
+  *List all installed packages:<cli>
+$ pkg_info -A
+</cli>
+  *List manually installed packages:<cli>
+$ pkg_info -m
+</cli>
+  *List which packages require package:<cli>
+$ pkg_info -R <PKG>
+</cli>
+  *List all files provided by package:<cli>
+$ pkg_info -L <PKG>
+</cli>
+  *Find file package owner:<cli>
+$ pkg_info -E <FILE>
+</cli>
+
+===== Delete =====
+
+  -Delete package:<cli>
+# pkg_delete <PKG>
+</cli>
