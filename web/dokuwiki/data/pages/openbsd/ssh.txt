@@ -1,0 +1,35 @@
+====== SSH ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Configuration =====
+
+==== Remote User ====
+
+  -Create user for remote access:<cli>
+# useradd -m remote
+# passwd remote
+> <NEW-USER-PASSWORD>
+> <NEW-USER-PASSWORD (VERIFY)>
+# ls -A /home/remote/ | xargs rm -rf
+</cli>
+  -Add user to admin group:<cli>
+# usermod -G wheel remote
+</cli>
+
+==== SSHD ====
+
+<code>
+man sshd
+man sshd_config
+man sftp-server
+inted?
+moduli?
+ssh-keyscan
+ssh-keygen
+</code>
+
+
+===== Usage =====

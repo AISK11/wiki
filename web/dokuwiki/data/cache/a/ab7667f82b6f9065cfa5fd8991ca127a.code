@@ -1,0 +1,16 @@
+## DYNAMIC IP ADDRESS CONFIGURATION.
+&nbsp;
+## IPv4.
+#inet autoconf
+&nbsp;
+## IPv6.
+#inet6 autoconf
+&nbsp;
+####################################
+## STATIC IP ADDRESS CONFIGURATION #
+####################################
+## IPv4
+&nbsp;
+## INTERFACE LOGICAL STATE.
+#down
+up

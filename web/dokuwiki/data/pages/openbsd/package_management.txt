@@ -23,6 +23,9 @@ $ pkg_info -L <PKG>
   *Find file package owner:<cli>
 $ pkg_info -E <FILE>
 </cli>
+  *Search packages in repo:<cli>
+# pkg_info -Q <STRING?>
+</cli>
 
 ===== Delete =====
 

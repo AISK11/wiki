@@ -1,0 +1,6 @@
+1667670029	127.0.0.1	C	openbsd:hostname	admin	created		240
+1667750988	127.0.0.1	E	openbsd:hostname	admin	[Configuration] 		1
+1667751988	127.0.0.1	E	openbsd:hostname	admin			0
+1667752208	127.0.0.1	E	openbsd:hostname	admin			-28
+1667867992	127.0.0.1	E	openbsd:hostname	admin			0
+1667868004	127.0.0.1	R	openbsd:hostname	admin	old revision restored (2022-11-06 17:30)	1667752208	0

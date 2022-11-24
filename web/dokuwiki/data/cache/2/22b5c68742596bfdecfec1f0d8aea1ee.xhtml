@@ -1,0 +1,47 @@
+
+<h1 class="sectionedit1" id="ssh">SSH</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SSH&quot;,&quot;hid&quot;:&quot;ssh&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-113&quot;} -->
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;114-140&quot;} -->
+<h3 class="sectionedit5" id="remote_user">Remote User</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li">Create user for remote access:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">useradd -m remote</span>
+<span class="cli_prompt"># </span><span class="cli_command">passwd remote</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-USER-PASSWORD&gt;</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-USER-PASSWORD (VERIFY)&gt;</span>
+<span class="cli_prompt"># </span><span class="cli_command">ls -A /home/remote/ | xargs rm -rf</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Add user to admin group:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">usermod -G wheel remote</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Remote User&quot;,&quot;hid&quot;:&quot;remote_user&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;141-402&quot;} -->
+<h3 class="sectionedit6" id="sshd">SSHD</h3>
+<div class="level3">
+<pre class="code">man sshd
+man sshd_config
+man sftp-server
+inted?
+moduli?
+ssh-keyscan
+ssh-keygen</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SSHD&quot;,&quot;hid&quot;:&quot;sshd&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;403-514&quot;} -->
+<h2 class="sectionedit7" id="usage">Usage</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:7,&quot;range&quot;:&quot;515-&quot;} -->

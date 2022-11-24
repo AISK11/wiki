@@ -1,0 +1,73 @@
+====== Wi-Fi AP Authentication ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Theory =====
+
+==== Electromagnetic Waves ====
+
+[{{:cybersecurity:waves.png?nolink&600 |Electromagnetic waves do not need a medium to propagate and in vacuum travel at the speed of light (//299,792,458 m/s// or //1,079,252,848.8 km/h//).}}]
+
+[{{ :cybersecurity:wlan-formula-frequency.png?nolink&300 |Frequency formula. The smaller the wavelength (distance) - the higher the frequency (speed).}}]
+
+[{{ :cybersecurity:wlan-singal-strength.png?nolink&300 |The greater the wave amplitude - the stronger the signal. 3 dBm change - power doubling (2x). 10 dBm change - power decupling (10x).}}]
+
+==== Wi-Fi Channels ====
+
+[{{:cybersecurity:wlan-2ghz-channels.png?nolink&600 |Wi-Fi channel allocation across 2.4 GHz frequency spectrum used in 802.11b/g/n/ax standards.}}]
+
+[{{:cybersecurity:wlan-5ghz-channels.png?nolink&600 |Wi-Fi channel allocation across 5 GHz frequency spectrum used in 802.11a/n/ac/ax standards.}}]
+
+==== Wi-Fi WNIC Operation Modes ====
+
+[{{ :cybersecurity:wlan-service-sets.png?nolink&600 |Wi-Fi service sets.}}]
+
+  *Master - AP.
+  *Managed - client/station/supplicant.
+  *Monitor - RFMON.
+
+----
+
+<code>
+TODO
+rf behavior - reflection, absorbtion,... + material
+None WEP, WPA, WPA2, WPA3, WPS
+reconnaissance + wardriving
+standards + speeds
+</code>
+
+==== Wi-Fi Frame types ====
+
+   -**Management frames:** managing BSS (probing, associating, roaming, disconnecting).
+    *Beacon - passive scanning.
+    *Probe request/response - active scanning.
+    *Association request/response - request to join BSS.
+    *Reassociation request/response - used in roaming.
+    *Disassociation.
+    *Authentication.
+    *Deauthentication.
+    *Action.
+  -**Control frames:**
+    *RTS - request to send.
+    *CTS - clear to send.
+    *ACK - acknowledgement.
+    *Block ACK
+    *Block ACK Request.
+    *PS Poll.
+  -**Data frames:**
+    *Data.
+    *QoS Data.
+
+https://howiwifi.com/2020/07/13/802-11-frame-types-and-formats/
+
+
+
+===== Resources =====
+
+  *[[https://jfearn.fedorapeople.org/fdocs/en-US/Fedora/17/html/Wireless_Guide|Wireless guide - fedora community]]
+  *[[https://howiwifi.com|Wi-Fi blog - howiwifi]]
+  *[[https://mrncciew.com|Wi-Fi blog - mrncciew]]
+  *[[https://wireless.wiki.kernel.org|Linux wireless]]
+  *[[https://aircrack-ng.com|Aircrack-ng]]

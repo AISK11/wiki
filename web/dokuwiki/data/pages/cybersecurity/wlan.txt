@@ -1,0 +1,136 @@
+====== WLAN ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Theory =====
+
+==== Electromagnetic Waves ====
+
+[{{:cybersecurity:waves.png?nolink&600 |Electromagnetic waves do not need a medium to propagate and in vacuum travel at the speed of light (//299,792,458 m/s// or //1,079,252,848.8 km/h//). }}]
+
+[{{ :cybersecurity:wlan-formula-frequency.png?nolink&300 |Frequency formula. The smaller the wavelength (distance) - the higher the frequency (speed).}}]
+
+[{{ :cybersecurity:wlan-singal-strength.png?nolink&300 |Wave amplitude is equal to signal strength. The greater the amplitude - the stronger the signal. }}]
+
+==== Wi-Fi Channels ====
+
+[{{:cybersecurity:wlan-2ghz-channels.png?nolink&600 |Wi-Fi channel allocation across 2.4 GHz frequency spectrum used in 802.11b/g/n/ax standards.}}]
+
+[{{:cybersecurity:wlan-5ghz-channels.png?nolink&600 |Wi-Fi channel allocation across 5 GHz frequency spectrum used in 802.11a/n/ac/ax standards.}}]
+
+----
+
+<code>
+TODO:
+NIC modes (infrastructure, master, monitor, promiscious...)
+802.11 header
+Encryption: none, wep, wpa, wpa2, wpa3, wps
+reconnaissance + wardriving
+attack: dos (deauth, radiowave), password cracking
+</code>
+
+==== WNIC Operation Modes ====
+
+
+
+==== WLAN Modes ====
+
+[{{:cybersecurity:wlan-service-sets.png?nolink&666|}}]
+
+  -Ad Hoc (IBSS) - P2P.
+  -Infrastructure (BSS) - WAP <=> wireless clients.
+
+https://wifisharks.com/2020/10/18/wlan-scanning/
+
+
+===== Resources =====
+
+  *https://en.m.wikipedia.org/wiki/Wireless
+
+
+  *https://en.m.wikipedia.org/wiki/List_of_interface_bit_rates
+
+===== Theory =====
+
+  *Wireless stations:
+    -Wireless Access Points (WAPs).
+    -Wireless clients. 
+
+
+
+
+===== Radiowaves =====
+
+  *https://www.youtube.com/playlist?list=PLSNNzog5eydvJG48PYnWnNY7-tQIfxTRb
+  *https://en.m.wikipedia.org/wiki/Electromagnetic_spectrum
+  *https://en.m.wikipedia.org/wiki/List_of_WLAN_channels
+  *https://en.wikipedia.org/wiki/2.4_GHz_radio_use
+  *https://en.m.wikipedia.org/wiki/Radio_jamming
+  *https://www.securedgenetworks.com/blog/wifi-signal-strength
+
+===== ToDo =====
+
+<code>
+Wireless driver modes (hostap, infrastructure, monitor)
+802.11 header
+Encryption: none, wep, wpa, wpa2, wpa3, wps
+reconnaissance + wardriving
+types of frequencies
+attack: dos (deauth, radiowave), password cracking
+</code>
+
+
+Encryption WEP, WPA, TKIP, EOP...
+monitor mode master, adhoc...
+
+
+===== Attack =====
+
+==== System ====
+
+
+
+==== Anonymity ====
+
+==== Reconnaissance ====
+
+===== Wardriving =====
+
+  -Wardriving websites:
+    *https://www.wigle.net (account required)
+
+===== Theory =====
+
+==== Access Point ====
+
+  *Wireless switch.
+  *Can only use one band at the time (2GHz or 5GHz) = Dual band are 2 APs covering both ranges.
+
+==== Encryption ====
+
+  *None
+  *WEP
+  *WPA
+  *WPA2
+  *WPA3
+
+==== Wi-Fi Generations ====
+
+^ Generation ^ IEEE Standard ^ Link rate (Mbit/s) ^ Frequency (GHz) ^
+| Wi-Fi 0    | 802.11        | 1-2                | 2.4             |
+| Wi-Fi 1    | 802.11b       | 1-11               | 2.4             |
+
+  *Based on IEEE 802.11 (WLAN) standard.
+
+  *https://en.m.wikipedia.org/wiki/Wireless_security
+  *https://en.m.wikipedia.org/wiki/Wardriving
+  *https://en.m.wikipedia.org/wiki/Monitor_mode
+
+  *https://en.m.wikipedia.org/wiki/Service_set_(802.11_network)#SSID
+  *https://en.m.wikipedia.org/wiki/Wireless_access_point
+  *https://en.m.wikipedia.org/wiki/IEEE_802.11
+  *https://en.m.wikipedia.org/wiki/Wi-Fi
+  *https://en.m.wikipedia.org/wiki/802.11_Frame_Types
+  *https://wiki.gentoo.org/wiki/Hostapd

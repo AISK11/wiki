@@ -10,12 +10,17 @@
   *[[:openbsd:pre-installation|Pre-Installation]]
   *[[:openbsd:installation|Installation]]
 
-**Configuration**
-  *[[:openbsd:network|Network]]
-  *[[:openbsd:firewall|Firewall]]
+**Network Configuration**
+  *[[:openbsd:hostname|Hostname]]
+  *[[:openbsd:interfaces|Interfaces]]
+  *[[:openbsd:ssh|SSH]]
+  *[[:openbsd:wap|WAP]]
 
 **Administration**
   *[[:openbsd:system_update|System Update]]
   *[[:openbsd:package_management|Package Management]]
+
+**Misc**
+  *[[:openbsd:zsh|Zsh]]
 
 ----

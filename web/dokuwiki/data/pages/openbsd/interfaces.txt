@@ -1,0 +1,47 @@
+====== Interfaces ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Configuration =====
+
+  -Configure interface:<file text /etc/hostname.INTERFACE>
+## DYNAMIC IP ADDRESS CONFIGURATION.
+
+## IPv4.
+#inet autoconf
+
+## IPv6.
+#inet6 autoconf
+
+####################################
+## STATIC IP ADDRESS CONFIGURATION #
+####################################
+## IPv4
+
+## INTERFACE LOGICAL STATE.
+#down
+up
+</file>
+
+
+<cli>
+man fxp
+man ifconfig
+man hostname.if
+man route
+man netstat
+man netstart
+man lo
+man enc
+man pflog
+
+man fw_update
+</cli>
+
+===== Usage =====
+
+  -Show network interfaces:<cli>
+$ ifconfig -A
+</cli>

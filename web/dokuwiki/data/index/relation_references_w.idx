@@ -289,3 +289,16 @@ openbsd:system_update
 openbsd:package_management
 openbsd:network
 openbsd:firewall
+openbsd:boot
+openbsd:hostname
+openbsd:interfaces
+openbsd:man
+openbsd:ssh
+cybersecurity:diffie-hellman
+cybersecurity:wi-fi
+openbsd:wap
+openbsd:zsh
+cybersecurity:wlan
+cybersecurity:wifi_ap_authentication
+cybersecurity:linux_wireless
+cybersecurity:aircrack-ng

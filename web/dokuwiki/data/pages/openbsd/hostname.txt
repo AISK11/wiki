@@ -1,0 +1,15 @@
+====== Hostname ======
+
+===== Configuration =====
+
+  -Configure system FQDN:<file text /etc/myname>
+<HOSTNAME>.<DOMAIN>
+</file><cli>
+# reboot
+</cli>
+
+===== Usage =====
+
+  -Print system FQDN:<cli>
+$ hostname
+</cli>

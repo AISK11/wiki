@@ -1,0 +1,60 @@
+====== WAP ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Configuration =====
+
+  -Identify 802.11 (Wi-Fi) network devices and their capabilities:<cli>
+$ ifconfig wlan [media] chan
+</cli>
+  -Configure interface as WAP:<file text /etc/hostname.INTERFACE>
+## AUTHOR:       AISK11
+## PATH:         /etc/hostname.<INTERFACE> (0640 root:wheel)
+## DEPENDENCIES: -
+## DESCRIPTION:  Network interface configuration.
+
+## Set interface media options (interface specific).
+## View all supported options: $(ifconfig <INTERFACE> media chan).
+media autoselect mediaopt hostap
+nwid "OpenBSD-AP" 
+inet 10.0.2.1 255.255.255.0 NONE
+
+## Set interface MAC address (XY:XX:XX:XX:XX:XX), where X=[0-9,a-f] and Y=[0,4,8,c].
+lladdr 00:00:00:00:00:00
+
+## Set startup logical state.
+down
+up
+
+## Optional interface description.
+description "Wireless access point"
+</file>
+
+
+  -Find wireless NICs
+  -Find what wireless NIC supports - MAC randomization, bandwodth, wireless modes (AP, supplicant...).
+
+
+<code>
+hostapd
+hostapd.conf
+
+
+
+ifconfig
+
+man cardbus pci = network nevice naming!!!
+man fxp = ethernet driver
+man 4 ifmedia = channel band
+
+
+
+inet
+intro?
+netintro?
+</code>
+
+https://en.m.wikipedia.org/wiki/List_of_WLAN_channels
+http://linuxwireless.sipsolutions.net/en/users/Documentation/modes/

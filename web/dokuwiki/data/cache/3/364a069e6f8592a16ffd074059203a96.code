@@ -1,0 +1,23 @@
+## AUTHOR:       AISK11
+## PATH:         /etc/hostname.&lt;INTERFACE&gt; (0640 root:wheel)
+## DEPENDENCIES: -
+## DESCRIPTION:  Network interface configuration.
+&nbsp;
+## Set interface media options (interface specific).
+## View all supported options: $(ifconfig &lt;INTERFACE&gt; media chan).
+media autoselect mediaopt hostap
+nwid &quot;OpenBSD-AP&quot; 
+#wpakey &quot;secretpass&quot;
+-nwkey
+-wpakey
+inet 10.0.2.1 255.255.255.0 NONE
+&nbsp;
+## Set interface MAC address (XY:XX:XX:XX:XX:XX), where X=[0-9,a-f] and Y=[0,4,8,c].
+lladdr 00:00:00:00:00:00
+&nbsp;
+## Set startup logical state.
+down
+up
+&nbsp;
+## Optional interface description.
+description &quot;Wireless access point&quot;

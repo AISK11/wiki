@@ -1,15 +1,29 @@
 
 <h1 class="sectionedit1" id="system_update">System Update</h1>
 <div class="level1">
-<ol>
-<li class="level1"><div class="li">Upgrade to newer release version if available:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sysupgrade</span></pre><p></div>
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} --><ol>
+<li class="level1"><div class="li">Upgrade to newer release version if available<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sysupgrade</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Apply all missing system patches:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">syspatch</span></pre><p></div>
+<li class="level1"><div class="li">Apply all missing system patches<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">syspatch</span></pre><p></div>
 </li>
-<li class="level1"><div class="li">Update all packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">pkg_add -Uu</span></pre><p></div>
+<li class="level1"><div class="li">Update proprietary firmware:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">fw_update -v</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Update all packages<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">pkg_add -Uu</span></pre><p></div>
 </li>
 <li class="level1"><div class="li"> Update configuration files:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">sysmerge -d</span></pre><p></div>
 </li>
 </ol>
 
+</div>
+<div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Releases: <a href="https://www.openbsd.org/plus.html" class="urlextern" title="https://www.openbsd.org/plus.html">https://www.openbsd.org/plus.html</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Errata: <a href="https://www.openbsd.org/errata.html" class="urlextern" title="https://www.openbsd.org/errata.html">https://www.openbsd.org/errata.html</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<div class="content">Packages: <a href="https://openports.se/statistics.php" class="urlextern" title="https://openports.se/statistics.php">https://openports.se/statistics.php</a>.</div></div>
 </div>

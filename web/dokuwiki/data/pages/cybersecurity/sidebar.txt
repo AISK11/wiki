@@ -7,9 +7,10 @@
   *[[:cybersecurity:resources|Resources]]
 
 **Networking**
+  *[[:cybersecurity:wlan|WLAN]]
   *[[:cybersecurity:ethernet|Ethernet]]
   *Bluetooth
-  *Wi-Fi
+  *[[:cybersecurity:wi-fi|Wi-Fi]]
   *MAC
   *IP
   *ICMP
@@ -19,7 +20,12 @@
   *DNS
   *Tor
 
+**Cryptography**
+  *[[:cybersecurity:diffie-hellman|Diffie-Hellman]]
+
 **Attacks**
+  *[[:cybersecurity:wifi_ap_authentication|Wi-Fi AP Authentication]]
+
   *[[:cybersecurity:sql_injection|SQL Injection]]
 
 ----

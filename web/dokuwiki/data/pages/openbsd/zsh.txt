@@ -1,0 +1,11 @@
+====== Zsh ======
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Installation =====
+
+  -Install zsh:<cli>
+# pkg_add zsh zsh-syntax-highlighting
+</cli>

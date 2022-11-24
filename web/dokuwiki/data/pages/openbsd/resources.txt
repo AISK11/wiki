@@ -7,5 +7,9 @@ This section is incomplete and needs further work!
 ===== Download =====
 
   *[[https://www.openbsd.org/ftp.html|Download Mirrors]]
-  *[[https://www.openbsd.org/faq/faq4.html#Download|Installation Instructions]]
+
+===== Documentation =====
+
+  *[[https://www.openbsd.org/faq/faq4.html#Download|General Installation Instructions]]
+  *[[https://www.openbsd.org/faq/index.html|FAQ]]
   *[[https://www.openbsdhandbook.com|Handbook]]

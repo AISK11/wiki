@@ -1,12 +1,19 @@
 ====== System Update ======
 
-  -Upgrade to newer release version if available:<cli>
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+  -Upgrade to newer release version if available((Releases: https://www.openbsd.org/plus.html.)):<cli>
 # sysupgrade
 </cli>
-  - Apply all missing system patches:<cli>
+  -Apply all missing system patches((Errata: https://www.openbsd.org/errata.html.)):<cli>
 # syspatch
 </cli>
-  -Update all packages:<cli>
+  -Update proprietary firmware:<cli>
+# fw_update -v
+</cli>
+  -Update all packages((Packages: https://openports.se/statistics.php.)):<cli>
 # pkg_add -Uu
 </cli>
   - Update configuration files:<cli>

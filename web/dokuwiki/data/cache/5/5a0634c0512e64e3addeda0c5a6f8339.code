@@ -1,0 +1,4 @@
+## AUTHOR:       AISK11
+## PATH:         /etc/hostname.&lt;INTERFACE&gt; (0640 root:wheel)
+## DEPENDENCIES: -
+## DESCRIPTION:  Network interface configuration.

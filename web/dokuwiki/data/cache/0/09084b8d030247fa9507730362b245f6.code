@@ -1,0 +1,5 @@
+## DYNAMIC ADDRESS CONFIGURATION.
+## IPv4.
+inet autoconf
+## IPv6.
+inet6 autoconf

@@ -1,0 +1,92 @@
+
+<h1 class="sectionedit1" id="package_manager">Package Manager</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Package Manager&quot;,&quot;hid&quot;:&quot;package_manager&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-31&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Install dependencies: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install curl</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;32-116&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Configure apt repositories<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>: <dl class="file">
+<dt><a href="http://localhost/_export/code/old/debian/package_manager?codeblock=0" title="Download Snippet" class="mediafile mf_list">/etc/apt/sources.list</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/apt/sources.list (0644 root:root)
+## DEPENDENCIES: apt
+## DESCRIPTION:  Debian package manager repositories.
+&nbsp;
+## Official Debian current stable release repositories.
+deb http://deb.debian.org/debian stable main contrib non-free
+deb-src http://deb.debian.org/debian stable main contrib non-free
+&nbsp;
+deb http://deb.debian.org/debian-security stable-security main contrib non-free
+deb-src http://deb.debian.org/debian-security stable-security main contrib non-free
+&nbsp;
+deb http://deb.debian.org/debian stable-updates main contrib non-free
+deb-src http://deb.debian.org/debian stable-updates main contrib non-free
+&nbsp;
+deb http://deb.debian.org/debian stable-backports main contrib non-free
+deb-src http://deb.debian.org/debian stable-backports main contrib non-free
+&nbsp;
+## Official Kali repositories.
+deb http://http.kali.org/kali kali-rolling main contrib non-free
+deb-src http://http.kali.org/kali kali-rolling main contrib non-free</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1"><div class="li"> Configure apt package priorities<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup>: <dl class="file">
+<dt><a href="http://localhost/_export/code/old/debian/package_manager?codeblock=1" title="Download Snippet" class="mediafile mf_">/etc/apt/preferences</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     /etc/apt/preferences (0644 root:root)
+## DEPENDENCIES: apt
+## DESCRIPTION:  Debian package manager prioritites.
+&nbsp;
+## Official Debian current stable release repositories.
+Package: *
+Pin: release o=Debian
+Pin-Priority: 1001
+&nbsp;
+Package: *
+Pin: release o=Debian Backports
+Pin-Priority: 1001
+&nbsp;
+## Official Kali repositories.
+Package: *
+Pin: release o=Kali
+Pin-Priority: 1
+&nbsp;
+Package: dhcpcd5
+Pin: release o=Kali
+Pin-Priority: 1001</pre>
+</dd></dl>
+</div>
+</li>
+<li class="level1 node"><div class="li"> Add 3rd party repository keys:</div>
+<ol>
+<li class="level2"><div class="li"> Kali repository: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">curl -Lo /etc/apt/trusted.gpg.d/kali-archive-rolling.asc &#039;https://archive.kali.org/archive-key.asc&#039;</span></pre><p></div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Verify package priorities: </p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">apt update &amp;&amp; apt policy</span></pre><p></div>
+</li>
+<li class="level1"><div class="li"> Update system: </p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt update &amp;&amp; apt full-upgrade &amp;&amp; apt autoremove &amp;&amp; apt clean</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;117-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Debian repositories: <a href="https://wiki.debian.org/SourcesList" class="urlextern" title="https://wiki.debian.org/SourcesList">https://wiki.debian.org/SourcesList</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Kali repositories: <a href="https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories" class="urlextern" title="https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories">https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<div class="content">Apt package priorities: <a href="https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html#sect.apt.priorities" class="urlextern" title="https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html#sect.apt.priorities">https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html#sect.apt.priorities</a>.</div></div>
+</div>

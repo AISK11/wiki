@@ -1,1 +1,4 @@
 ====== Cybersecurity ======
+
+https://en.m.wikipedia.org/wiki/Promiscuous_mode
+https://en.m.wikipedia.org/wiki/Monitor_mode

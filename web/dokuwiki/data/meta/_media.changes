@@ -1,6 +1,3 @@
-1661014572	127.0.0.1	C	logo_openbsd.png	admin	created		195308
-1661089921	127.0.0.1	C	logo_voidlinux.svg	admin	created		9679
-1661123773	127.0.0.1	D	logo_openbsd.png	admin	removed		-195308
 1662294189	127.0.0.1	C	logo_debianlinux.svg	admin	created		6777
 1662455747	127.0.0.1	C	systemd.png	admin	created		55782
 1662847441	127.0.0.1	C	logo_git.svg	admin	created		842
@@ -11,3 +8,13 @@
 1667074375	127.0.0.1	D	logo_git.svg	admin	removed		-842
 1667074378	127.0.0.1	D	logo_voidlinux.svg	admin	removed		-9679
 1667074384	127.0.0.1	D	systemd.png	admin	removed		-55782
+1668471325	127.0.0.1	C	cybersecurity:wlan-2ghz-channels.svg	admin	created		38177
+1668471606	127.0.0.1	D	cybersecurity:wlan-2ghz-channels.svg	admin	removed		-38177
+1668471616	127.0.0.1	C	cybersecurity:wlan-2ghz-channels.png	admin	created		31541
+1668538501	127.0.0.1	C	cybersecurity:waves.png	admin	created		533144
+1668565340	127.0.0.1	C	cybersecurity:wlan-service-sets.png	admin	created		558925
+1669129159	127.0.0.1	C	cybersecurity:wlan-singal-strength.png	admin	created		390861
+1669133504	127.0.0.1	C	cybersecurity:wlan-formula-frequency.png	admin	created		44193
+1669138740	127.0.0.1	C	cybersecurity:wlan-5ghz-chanels.png	admin	created		406258
+1669138798	127.0.0.1	D	cybersecurity:wlan-5ghz-chanels.png	admin	removed		-406258
+1669138805	127.0.0.1	C	cybersecurity:wlan-5ghz-channels.png	admin	created		406258

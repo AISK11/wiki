@@ -1,0 +1,71 @@
+
+<h1 class="sectionedit1" id="wap">WAP</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;WAP&quot;,&quot;hid&quot;:&quot;wap&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-113&quot;} -->
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li">Identify 802.11 (Wi-Fi) network devices and their capabilities:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">ifconfig wlan [media] chan</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Configure interface as WAP:<dl class="file">
+<dt><a href="http://localhost/_export/code/openbsd/wap?codeblock=0" title="Download Snippet" class="mediafile mf_interface">/etc/hostname.INTERFACE</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## PATH:         /etc/hostname.&lt;INTERFACE&gt; (0640 root:wheel)
+## DEPENDENCIES: -
+## DESCRIPTION:  Network interface configuration.
+&nbsp;
+## Set interface media options (interface specific).
+## View all supported options: $(ifconfig &lt;INTERFACE&gt; media chan).
+media autoselect mediaopt hostap
+nwid &quot;OpenBSD-AP&quot; 
+inet 10.0.2.1 255.255.255.0 NONE
+&nbsp;
+## Set interface MAC address (XY:XX:XX:XX:XX:XX), where X=[0-9,a-f] and Y=[0,4,8,c].
+lladdr 00:00:00:00:00:00
+&nbsp;
+## Set startup logical state.
+down
+up
+&nbsp;
+## Optional interface description.
+description &quot;Wireless access point&quot;</pre>
+</dd></dl>
+</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li">Find wireless NICs</div>
+</li>
+<li class="level1"><div class="li">Find what wireless NIC supports - MAC randomization, bandwodth, wireless modes (AP, supplicant…).</div>
+</li>
+</ol>
+<pre class="code">hostapd
+hostapd.conf
+
+
+
+ifconfig
+
+man cardbus pci = network nevice naming!!!
+man fxp = ethernet driver
+man 4 ifmedia = channel band
+
+
+
+inet
+intro?
+netintro?</pre>
+
+<p>
+<a href="https://en.m.wikipedia.org/wiki/List_of_WLAN_channels" class="urlextern" title="https://en.m.wikipedia.org/wiki/List_of_WLAN_channels">https://en.m.wikipedia.org/wiki/List_of_WLAN_channels</a>
+<a href="http://linuxwireless.sipsolutions.net/en/users/Documentation/modes/" class="urlextern" title="http://linuxwireless.sipsolutions.net/en/users/Documentation/modes/">http://linuxwireless.sipsolutions.net/en/users/Documentation/modes/</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;114-&quot;} -->

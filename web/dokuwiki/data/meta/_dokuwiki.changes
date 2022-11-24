@@ -1,234 +1,60 @@
-1666825705	127.0.0.1	E	sidebar	admin			37
-1666825719	127.0.0.1	C	sql:index	admin	created		19
-1666825753	127.0.0.1	C	sql:sidebar	admin	created		96
-1666863546	127.0.0.1	D	todo		removed - external edit (Unknown date)		-747
-1666863547	127.0.0.1	C	todo	admin	created		61
-1666863848	127.0.0.1	E	todo	admin			93
-1666863857	127.0.0.1	E	todo	admin			-6
-1666864502	127.0.0.1	E	todo	admin			54
-1666864705	127.0.0.1	E	todo	admin			12
-1666864735	127.0.0.1	E	todo	admin			72
-1666864855	127.0.0.1	E	todo	admin			36
-1666865769	127.0.0.1	E	todo	admin			93
-1666866156	127.0.0.1	E	todo	admin			10
-1666866310	127.0.0.1	E	todo	admin			127
-1666866517	127.0.0.1	E	todo	admin			143
-1666866599	127.0.0.1	E	todo	admin			106
-1666866673	127.0.0.1	E	todo	admin			141
-1666866741	127.0.0.1	E	todo	admin			30
-1666866764	127.0.0.1	E	todo	admin			28
-1666866789	127.0.0.1	E	todo	admin			25
-1666866801	127.0.0.1	E	todo	admin	[Factory Reset] 		-106
-1666866834	127.0.0.1	E	todo	admin			30
-1666866941	127.0.0.1	E	todo	admin			123
-1666867482	127.0.0.1	E	todo	admin			36
-1666867787	127.0.0.1	E	todo	admin	[Factory Reset] 		27
-1666867831	127.0.0.1	E	todo	admin	[Factory Reset] 		-29
-1666867866	127.0.0.1	E	todo	admin	[Factory Reset] 		-56
-1666868185	127.0.0.1	E	todo	admin	[Password Recovery] 		-4
-1666868236	127.0.0.1	E	todo	admin	[Password Recovery] 		19
-1666868907	127.0.0.1	E	todo	admin			53
-1666868972	127.0.0.1	E	todo	admin			297
-1666869048	127.0.0.1	E	todo	admin	[Password Recovery] 		-102
-1666869192	127.0.0.1	E	todo	admin			86
-1666869235	127.0.0.1	E	todo	admin	[Password Recovery] 		24
-1666869243	127.0.0.1	E	todo	admin	[Password Recovery] 		-37
-1666869286	127.0.0.1	E	todo	admin	[Password Recovery] 		-12
-1666869422	127.0.0.1	E	todo	admin	[Password Recovery] 		-111
-1666869461	127.0.0.1	E	todo	admin	[Password Recovery] 		0
-1666869480	127.0.0.1	E	todo	admin	[Password Recovery] 		2
-1666869521	127.0.0.1	E	todo	admin	[Password Recovery] 		25
-1666869935	127.0.0.1	E	todo	admin	[Factory Reset] 		102
-1666869956	127.0.0.1	E	todo	admin			-1
-1666870035	127.0.0.1	E	todo	admin	[Factory Reset] 		1585
-1666870165	127.0.0.1	E	todo	admin	[Factory Reset] 		-783
-1666870610	127.0.0.1	E	todo	admin			7
-1666871203	127.0.0.1	E	todo	admin			35
-1666871321	127.0.0.1	E	todo	admin			-229
-1666871364	127.0.0.1	E	todo	admin	[Factory Reset] 		-81
-1666871414	127.0.0.1	E	todo	admin	[Factory Reset] 		-6
-1666871510	127.0.0.1	E	todo	admin			1777
-1666873027	127.0.0.1	E	todo	admin	[Password Recovery] 		14
-1666873050	127.0.0.1	E	todo	admin	[Password Recovery] 		0
-1666873132	127.0.0.1	E	todo	admin	[Factory Reset] 		14
-1666873494	127.0.0.1	E	todo	admin	[Password Recovery] 		-74
-1666873873	127.0.0.1	E	todo	admin	[Fix Baud Rate] 		988
-1666873906	127.0.0.1	E	todo	admin			-933
-1666873943	127.0.0.1	E	todo	admin	[Fix Baud Rate] 		-105
-1666874163	127.0.0.1	E	todo	admin	[Fix Baud Rate] 		242
-1666874187	127.0.0.1	E	todo	admin	[Fix Baud Rate] 		-1
-1666874650	127.0.0.1	E	todo	admin			32
-1666874781	127.0.0.1	E	todo	admin	[Password Recovery] 		-32
-1666874966	127.0.0.1	E	todo	admin			41
-1666875038	127.0.0.1	E	todo	admin	[Fix Baud Rate] 		38
-1666875069	127.0.0.1	E	todo	admin	[Fix Baud Rate] 		12
-1666875080	127.0.0.1	E	todo	admin	[Fix Baud Rate] 		-1
-1666875232	127.0.0.1	E	todo	admin	[Factory Reset] 		6
-1666876598	127.0.0.1	E	todo	admin			210
-1666876837	127.0.0.1	E	todo	admin			60
-1666877183	127.0.0.1	E	todo	admin			2083
-1666877237	127.0.0.1	E	todo	admin	[Connect] 		-20
-1666877284	127.0.0.1	E	todo	admin			102
-1666877327	127.0.0.1	E	todo	admin	[Connect] 		-4
-1666877528	127.0.0.1	E	todo	admin			224
-1666877654	127.0.0.1	E	todo	admin			269
-1666877678	127.0.0.1	E	todo	admin	[Erase Configuration] 		4
-1666877864	127.0.0.1	E	todo	admin			441
-1666877971	127.0.0.1	E	todo	admin			49
-1666878059	127.0.0.1	E	todo	admin	[Erase Configuration] 		-6
-1666878111	127.0.0.1	E	todo	admin	[Erase Configuration] 		88
-1666878205	127.0.0.1	E	todo	admin			590
-1666878227	127.0.0.1	E	todo	admin			-20
-1666878258	127.0.0.1	E	todo	admin			-14
-1666878277	127.0.0.1	E	todo	admin			20
-1666878338	127.0.0.1	E	todo	admin			-134
-1666878418	127.0.0.1	E	todo	admin	[Erase Configuration] 		11
-1666878449	127.0.0.1	E	todo	admin	[Erase Configuration] 		4
-1666878504	127.0.0.1	E	todo	admin	[Erase Configuration] 		33
-1666878549	127.0.0.1	E	todo	admin			39
-1666878577	127.0.0.1	E	todo	admin			-3653
-1666878685	127.0.0.1	E	todo	admin			-6
-1666878739	127.0.0.1	E	todo	admin			-257
-1666879054	127.0.0.1	E	sidebar	admin			39
-1666879142	127.0.0.1	C	cisco:sidebar	admin	created		163
-1666879154	127.0.0.1	C	cisco:index	admin	created		20
-1666879170	127.0.0.1	C	cisco:factory_reset	admin	created		4050
-1666879172	127.0.0.1	D	todo	admin	removed		-4050
-1666879407	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		10
-1666879517	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		29
-1666879708	127.0.0.1	E	cisco:factory_reset	admin			93
-1666879757	127.0.0.1	E	cisco:factory_reset	admin			18
-1666879784	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		0
-1666885902	127.0.0.1	E	cisco:factory_reset	admin			28
-1666885988	127.0.0.1	E	cisco:factory_reset	admin			56
-1666891798	127.0.0.1	E	cisco:factory_reset	admin			7
-1666891903	127.0.0.1	E	cisco:factory_reset	admin			20
-1666891927	127.0.0.1	E	cisco:factory_reset	admin			50
-1666893470	127.0.0.1	E	cisco:factory_reset	admin			1238
-1666893545	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		-48
-1666893670	127.0.0.1	E	cisco:factory_reset	admin			3
-1666894532	127.0.0.1	E	cisco:factory_reset	admin			86
-1666894965	127.0.0.1	E	cisco:factory_reset	admin			47
-1666895078	127.0.0.1	E	cisco:factory_reset	admin			58
-1666895137	127.0.0.1	E	cisco:factory_reset	admin			47
-1666895668	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		21
-1666895739	127.0.0.1	E	cisco:factory_reset	admin			23
-1666895753	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		-2
-1666895782	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		4
-1666895817	127.0.0.1	E	cisco:factory_reset	admin			49
-1666896323	127.0.0.1	E	cisco:factory_reset	admin			-139
-1666896611	127.0.0.1	E	cisco:factory_reset	admin			70
-1666896864	127.0.0.1	E	cisco:factory_reset	admin			0
-1666896941	127.0.0.1	E	cisco:factory_reset	admin			15
-1666897014	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		7
-1666897044	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		14
-1666897157	127.0.0.1	E	cisco:factory_reset	admin			-6
-1666899374	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration (WIP)] 		52
-1666899575	127.0.0.1	E	cisco:factory_reset	admin			705
-1666899723	127.0.0.1	E	cisco:factory_reset	admin			-58
-1666899761	127.0.0.1	E	cisco:factory_reset	admin			70
-1666900032	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		18
-1666900048	127.0.0.1	E	cisco:factory_reset	admin			18
-1666900210	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		14
-1666900246	127.0.0.1	E	cisco:factory_reset	admin			6
-1666900325	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		-2
-1666900356	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		15
-1666900479	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		25
-1666900555	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		7
-1666901757	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration (WIP)] 		308
-1666901781	127.0.0.1	E	cisco:factory_reset	admin			-8
-1667039218	127.0.0.1	E	cisco:factory_reset	admin			-6
-1667072631	127.0.0.1	E	sidebar	admin			31
-1667072690	127.0.0.1	C	openbsd:sidebar	admin	created		129
-1667072700	127.0.0.1	E	openbsd:sidebar	admin			-3
-1667072753	127.0.0.1	C	openbsd:index	admin	created		57
-1667072769	127.0.0.1	E	openbsd:index	admin			94
-1667073342	127.0.0.1	E	openbsd:index	admin			66
-1667173695	127.0.0.1	C	openbsd:resources	admin	created		117
-1667173769	127.0.0.1	E	sidebar	admin			46
-1667173849	127.0.0.1	C	dokuwiki:sidebar	admin	created		172
-1667173857	127.0.0.1	C	dokuwiki:index	admin	created		23
-1667173868	127.0.0.1	C	dokuwiki:resources	admin	created		117
-1667173882	127.0.0.1	C	dokuwiki:installation	admin	created		27
-1667173912	127.0.0.1	D	dokuwiki:installation	admin	removed		-27
-1667174057	127.0.0.1	E	dokuwiki:sidebar	admin			29
-1667174089	127.0.0.1	E	dokuwiki:sidebar	admin			0
-1667174176	127.0.0.1	C	dokuwiki:front-end	admin	created		123
-1667174318	127.0.0.1	E	dokuwiki:front-end	admin			112
-1667174418	127.0.0.1	E	dokuwiki:front-end	admin			62
-1667174447	127.0.0.1	E	dokuwiki:front-end	admin			94
-1667222259	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		29
-1667222292	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-1
-1667222337	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		29
-1667222361	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-10
-1667222372	127.0.0.1	E	cisco:factory_reset	admin			-10
-1667222644	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		36
-1667222692	127.0.0.1	E	cisco:factory_reset	admin	[Connect] 		38
-1667222699	127.0.0.1	E	cisco:factory_reset	admin			-1
-1667222786	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-69
-1667222806	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-69
-1667223294	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-1
-1667223306	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-1
-1667224907	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		-6
-1667224963	127.0.0.1	E	cisco:factory_reset	admin	[Erase Configuration] 		4
-1667230321	127.0.0.1	E	cisco:factory_reset	admin			6
-1667425806	127.0.0.1	E	sidebar	admin			0
-1667426290	127.0.0.1	E	openbsd:index	admin			59
-1667426483	127.0.0.1	E	openbsd:index	admin			98
-1667426492	127.0.0.1	E	openbsd:index	admin	[Pros] 		1
-1667426991	127.0.0.1	E	openbsd:resources	admin			64
-1667427285	127.0.0.1	E	openbsd:sidebar	admin			50
-1667427342	127.0.0.1	C	openbsd:pre-installation	admin	created		591
-1667427396	127.0.0.1	E	openbsd:sidebar	admin			8
-1667427538	127.0.0.1	E	openbsd:index	admin			17
-1667427597	127.0.0.1	E	openbsd:index	admin			75
-1667428732	127.0.0.1	E	openbsd:resources	admin			-14
-1667428738	127.0.0.1	E	openbsd:resources	admin			8
-1667428793	127.0.0.1	E	openbsd:resources	admin			102
-1667428807	127.0.0.1	E	openbsd:resources	admin			0
-1667428871	127.0.0.1	E	openbsd:index	admin			22
-1667429901	127.0.0.1	E	openbsd:index	admin			1
-1667430176	127.0.0.1	E	openbsd:pre-installation	admin			175
-1667430194	127.0.0.1	E	openbsd:pre-installation	admin			6
-1667430217	127.0.0.1	E	openbsd:pre-installation	admin			2
-1667430409	127.0.0.1	E	openbsd:pre-installation	admin			-9
-1667430423	127.0.0.1	E	openbsd:pre-installation	admin			7
-1667431040	127.0.0.1	E	openbsd:resources	admin			48
-1667431205	127.0.0.1	E	openbsd:index	admin			0
-1667431931	127.0.0.1	E	openbsd:pre-installation	admin			52
-1667432101	127.0.0.1	E	openbsd:pre-installation	admin			180
-1667432108	127.0.0.1	E	openbsd:pre-installation	admin			-42
-1667432175	127.0.0.1	E	openbsd:pre-installation	admin			-25
-1667432891	127.0.0.1	E	openbsd:pre-installation	admin			76
-1667432904	127.0.0.1	E	openbsd:pre-installation	admin			2
-1667432908	127.0.0.1	E	openbsd:pre-installation	admin			-1
-1667432998	127.0.0.1	E	openbsd:pre-installation	admin			237
-1667433038	127.0.0.1	E	openbsd:pre-installation	admin			-16
-1667433060	127.0.0.1	E	openbsd:sidebar	admin			42
-1667433071	127.0.0.1	C	openbsd:installation	admin	created		27
-1667433156	127.0.0.1	E	openbsd:installation	admin			254
-1667433178	127.0.0.1	E	openbsd:installation	admin			1
-1667433253	127.0.0.1	E	openbsd:pre-installation	admin	[Download] 		6
-1667435045	127.0.0.1	E	openbsd:sidebar	admin			64
-1667435070	127.0.0.1	C	openbsd:system_update	admin	created		123
-1667435351	127.0.0.1	E	openbsd:system_update	admin			33
-1667437481	127.0.0.1	E	openbsd:system_update	admin			53
-1667437919	127.0.0.1	E	openbsd:index	admin			24
-1667438237	127.0.0.1	E	openbsd:system_update	admin			105
-1667438422	127.0.0.1	E	openbsd:system_update	admin			55
-1667438621	127.0.0.1	E	openbsd:system_update	admin			-31
-1667438654	127.0.0.1	E	openbsd:system_update	admin			-94
-1667438797	127.0.0.1	E	openbsd:system_update	admin			21
-1667438969	127.0.0.1	E	openbsd:sidebar	admin			54
-1667439170	127.0.0.1	E	openbsd:system_update	admin			7
-1667439952	127.0.0.1	E	openbsd:installation	admin			-60
-1667439969	127.0.0.1	C	openbsd:package_management	admin	created		178
-1667440182	127.0.0.1	E	openbsd:index	admin			0
-1667441242	127.0.0.1	E	openbsd:package_management	admin			70
-1667441515	127.0.0.1	E	openbsd:package_management	admin			61
-1667441646	127.0.0.1	E	openbsd:package_management	admin			71
-1667441720	127.0.0.1	E	openbsd:package_management	admin			67
-1667441823	127.0.0.1	E	openbsd:package_management	admin			72
-1667441893	127.0.0.1	E	openbsd:package_management	admin	[Info] 		3
-1667442572	127.0.0.1	E	openbsd:package_management	admin			71
-1667442777	127.0.0.1	E	openbsd:sidebar	admin			85
+1668731212	127.0.0.1	E	cybersecurity:wlan	admin			6
+1669129808	127.0.0.1	E	cybersecurity:wlan	admin			-263
+1669133715	127.0.0.1	E	cybersecurity:wlan	admin			135
+1669133734	127.0.0.1	E	cybersecurity:wlan	admin			2
+1669133764	127.0.0.1	E	cybersecurity:wlan	admin			-153
+1669133773	127.0.0.1	E	cybersecurity:wlan	admin			0
+1669133993	127.0.0.1	E	cybersecurity:wlan	admin			-1
+1669134036	127.0.0.1	E	cybersecurity:wlan	admin			19
+1669134180	127.0.0.1	E	cybersecurity:wlan	admin			2
+1669138228	127.0.0.1	E	cybersecurity:wlan	admin	[WLAN Channels] 		59
+1669138272	127.0.0.1	E	cybersecurity:wlan	admin			30
+1669138627	127.0.0.1	E	cybersecurity:wlan	admin			-2
+1669138787	127.0.0.1	E	cybersecurity:wlan	admin			144
+1669138919	127.0.0.1	E	cybersecurity:wlan	admin			3
+1669138950	127.0.0.1	E	cybersecurity:wlan	admin			0
+1669139073	127.0.0.1	E	cybersecurity:wlan	admin			-59
+1669139120	127.0.0.1	E	cybersecurity:wlan	admin	[ToDo] 		21
+1669140806	127.0.0.1	E	cybersecurity:wlan	admin	[WLAN Channels] 		-4
+1669140990	127.0.0.1	E	cybersecurity:wlan	admin	[ToDo] 		-64
+1669141343	127.0.0.1	E	cybersecurity:wlan	admin			40
+1669141417	127.0.0.1	E	cybersecurity:wlan	admin	[Wi-Fi Channels] 		136
+1669238377	127.0.0.1	E	cybersecurity:wlan	admin			24
+1669238399	127.0.0.1	E	cybersecurity:wlan	admin	[WNIC Modes] 		10
+1669240925	127.0.0.1	E	cybersecurity:sidebar	admin			70
+1669240973	127.0.0.1	C	cybersecurity:wifi_ap_authentication	admin	created		1017
+1669241144	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			34
+1669241568	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			66
+1669241609	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			27
+1669241638	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			8
+1669242499	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			-20
+1669254188	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Electromagnetic Waves] 		47
+1669254204	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Electromagnetic Waves] 		1
+1669255177	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi WNIC Operation Modes] 		56
+1669255272	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			13
+1669255335	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			1
+1669255805	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			144
+1669255815	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			-24
+1669255833	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			0
+1669255854	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			2
+1669256198	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			58
+1669256530	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			111
+1669256809	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Resources] 		4
+1669256943	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			100
+1669257174	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			22
+1669257257	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Electromagnetic Waves] 		-36
+1669257390	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			7
+1669257681	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		82
+1669258362	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		458
+1669258396	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			0
+1669258445	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			2
+1669258473	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			0
+1669258838	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			56
+1669258911	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			115
+1669258923	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		0
+1669258932	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		2
+1669258951	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		44
+1669258962	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		-45
+1669259018	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		30
+1669259453	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			5
+1669259477	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		8

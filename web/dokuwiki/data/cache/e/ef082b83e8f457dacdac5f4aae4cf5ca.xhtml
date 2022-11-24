@@ -1,0 +1,116 @@
+
+<h1 class="sectionedit1" id="wi-fi_ap_authentication">Wi-Fi AP Authentication</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Wi-Fi AP Authentication&quot;,&quot;hid&quot;:&quot;wi-fi_ap_authentication&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-133&quot;} -->
+<h2 class="sectionedit4" id="theory">Theory</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Theory&quot;,&quot;hid&quot;:&quot;theory&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;134-153&quot;} -->
+<h3 class="sectionedit5" id="electromagnetic_waves">Electromagnetic Waves</h3>
+<div class="level3">
+<div class="thumb2 tleft"><div class="thumbinner"><img src="http://localhost/_media/cybersecurity/waves.png?w=600&amp;h=292&amp;tok=28f7e0" class="mediabox2" loading="lazy" alt="" width="600" height="292" /><div class="thumbcaption" style="max-width: 594px"><div class="magnify"><a class="internal" title="Enlarge" href="http://localhost/_detail/cybersecurity/waves.png?id=cybersecurity%3Awifi_ap_authentication" target="_blank"><img width="15" height="11" alt="" src="http://localhost/lib/plugins/imagebox/magnify-clip.png"/></a></div>Electromagnetic waves do not need a medium to propagate and in vacuum travel at the speed of light (<em>299,792,458 m/s</em> or <em>1,079,252,848.8 km/h</em>).</div></div></div><div class="thumb2 tcenter"><div class="thumbinner"><img src="http://localhost/_media/cybersecurity/wlan-formula-frequency.png?w=300&amp;h=260&amp;tok=747450" class="mediabox2" loading="lazy" alt="" width="300" height="260" /><div class="thumbcaption" style="max-width: 294px"><div class="magnify"><a class="internal" title="Enlarge" href="http://localhost/_detail/cybersecurity/wlan-formula-frequency.png?id=cybersecurity%3Awifi_ap_authentication" target="_blank"><img width="15" height="11" alt="" src="http://localhost/lib/plugins/imagebox/magnify-clip.png"/></a></div>Frequency formula. The smaller the wavelength (distance) - the higher the frequency (speed).</div></div></div><div class="thumb2 tcenter"><div class="thumbinner"><img src="http://localhost/_media/cybersecurity/wlan-singal-strength.png?w=300&amp;h=146&amp;tok=6ffcd8" class="mediabox2" loading="lazy" alt="" width="300" height="146" /><div class="thumbcaption" style="max-width: 294px"><div class="magnify"><a class="internal" title="Enlarge" href="http://localhost/_detail/cybersecurity/wlan-singal-strength.png?id=cybersecurity%3Awifi_ap_authentication" target="_blank"><img width="15" height="11" alt="" src="http://localhost/lib/plugins/imagebox/magnify-clip.png"/></a></div>The greater the wave amplitude - the stronger the signal. 3 dBm change - power doubling (2x). 10 dBm change - power decupling (10x).</div></div></div>
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Electromagnetic Waves&quot;,&quot;hid&quot;:&quot;electromagnetic_waves&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;154-728&quot;} -->
+<h3 class="sectionedit6" id="wi-fi_channels">Wi-Fi Channels</h3>
+<div class="level3">
+<div class="thumb2 tleft"><div class="thumbinner"><img src="http://localhost/_media/cybersecurity/wlan-2ghz-channels.png?w=600&amp;h=140&amp;tok=25d13c" class="mediabox2" loading="lazy" alt="" width="600" height="140" /><div class="thumbcaption" style="max-width: 594px"><div class="magnify"><a class="internal" title="Enlarge" href="http://localhost/_detail/cybersecurity/wlan-2ghz-channels.png?id=cybersecurity%3Awifi_ap_authentication" target="_blank"><img width="15" height="11" alt="" src="http://localhost/lib/plugins/imagebox/magnify-clip.png"/></a></div>Wi-Fi channel allocation across 2.4 GHz frequency spectrum used in 802.11b/g/n/ax standards.</div></div></div><div class="thumb2 tleft"><div class="thumbinner"><img src="http://localhost/_media/cybersecurity/wlan-5ghz-channels.png?w=600&amp;h=250&amp;tok=a9f9a5" class="mediabox2" loading="lazy" alt="" width="600" height="250" /><div class="thumbcaption" style="max-width: 594px"><div class="magnify"><a class="internal" title="Enlarge" href="http://localhost/_detail/cybersecurity/wlan-5ghz-channels.png?id=cybersecurity%3Awifi_ap_authentication" target="_blank"><img width="15" height="11" alt="" src="http://localhost/lib/plugins/imagebox/magnify-clip.png"/></a></div>Wi-Fi channel allocation across 5 GHz frequency spectrum used in 802.11a/n/ac/ax standards.</div></div></div>
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Wi-Fi Channels&quot;,&quot;hid&quot;:&quot;wi-fi_channels&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;729-1053&quot;} -->
+<h3 class="sectionedit7" id="wi-fi_wnic_operation_modes">Wi-Fi WNIC Operation Modes</h3>
+<div class="level3">
+<div class="thumb2 tcenter"><div class="thumbinner"><img src="http://localhost/_media/cybersecurity/wlan-service-sets.png?w=600&amp;h=383&amp;tok=d97caf" class="mediabox2" loading="lazy" alt="" width="600" height="383" /><div class="thumbcaption" style="max-width: 594px"><div class="magnify"><a class="internal" title="Enlarge" href="http://localhost/_detail/cybersecurity/wlan-service-sets.png?id=cybersecurity%3Awifi_ap_authentication" target="_blank"><img width="15" height="11" alt="" src="http://localhost/lib/plugins/imagebox/magnify-clip.png"/></a></div>Wi-Fi service sets.</div></div></div><ul>
+<li class="level1"><div class="li">Master - AP.</div>
+</li>
+<li class="level1"><div class="li">Managed - client/station/supplicant.</div>
+</li>
+<li class="level1"><div class="li">Monitor - RFMON.</div>
+</li>
+</ul>
+<hr />
+<pre class="code">TODO
+rf behavior - reflection, absorbtion,... + material
+None WEP, WPA, WPA2, WPA3, WPS
+reconnaissance + wardriving
+standards + speeds</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Wi-Fi WNIC Operation Modes&quot;,&quot;hid&quot;:&quot;wi-fi_wnic_operation_modes&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1054-1402&quot;} -->
+<h3 class="sectionedit8" id="wi-fi_frame_types">Wi-Fi Frame types</h3>
+<div class="level3">
+<ol>
+<li class="level1 node"><div class="li"><strong>Management frames:</strong> managing BSS (probing, associating, roaming, disconnecting).</div>
+<ul>
+<li class="level2"><div class="li">Beacon - passive scanning.</div>
+</li>
+<li class="level2"><div class="li">Probe request/response - active scanning.</div>
+</li>
+<li class="level2"><div class="li">Association request/response - request to join BSS.</div>
+</li>
+<li class="level2"><div class="li">Reassociation request/response - used in roaming.</div>
+</li>
+<li class="level2"><div class="li">Disassociation.</div>
+</li>
+<li class="level2"><div class="li">Authentication.</div>
+</li>
+<li class="level2"><div class="li">Deauthentication.</div>
+</li>
+<li class="level2"><div class="li">Action.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"><strong>Control frames:</strong></div>
+<ul>
+<li class="level2"><div class="li">RTS - request to send.</div>
+</li>
+<li class="level2"><div class="li">CTS - clear to send.</div>
+</li>
+<li class="level2"><div class="li">ACK - acknowledgement.</div>
+</li>
+<li class="level2"><div class="li">Block ACK</div>
+</li>
+<li class="level2"><div class="li">Block ACK Request.</div>
+</li>
+<li class="level2"><div class="li">PS Poll.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"><strong>Data frames:</strong></div>
+<ul>
+<li class="level2"><div class="li">Data.</div>
+</li>
+<li class="level2"><div class="li">QoS Data.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<a href="https://howiwifi.com/2020/07/13/802-11-frame-types-and-formats/" class="urlextern" title="https://howiwifi.com/2020/07/13/802-11-frame-types-and-formats/">https://howiwifi.com/2020/07/13/802-11-frame-types-and-formats/</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Wi-Fi Frame types&quot;,&quot;hid&quot;:&quot;wi-fi_frame_types&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:8,&quot;range&quot;:&quot;1403-2060&quot;} -->
+<h2 class="sectionedit9" id="resources">Resources</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"><a href="https://jfearn.fedorapeople.org/fdocs/en-US/Fedora/17/html/Wireless_Guide" class="urlextern" title="https://jfearn.fedorapeople.org/fdocs/en-US/Fedora/17/html/Wireless_Guide">Wireless guide - fedora community</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://howiwifi.com" class="urlextern" title="https://howiwifi.com">Wi-Fi blog - howiwifi</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://mrncciew.com" class="urlextern" title="https://mrncciew.com">Wi-Fi blog - mrncciew</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://wireless.wiki.kernel.org" class="urlextern" title="https://wireless.wiki.kernel.org">Linux wireless</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://aircrack-ng.com" class="urlextern" title="https://aircrack-ng.com">Aircrack-ng</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Resources&quot;,&quot;hid&quot;:&quot;resources&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:9,&quot;range&quot;:&quot;2061-&quot;} -->

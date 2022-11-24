@@ -1,0 +1,19 @@
+## AUTHOR:       AISK11
+## PATH:         /etc/hostname.&lt;INTERFACE&gt; (0640 root:wheel)
+## DEPENDENCIES: -
+## DESCRIPTION:  Network interface configuration.
+&nbsp;
+## Set interface media options (interface specific).
+## View all supported options: $(ifconfig &lt;INTERFACE&gt; media).
+media autoselect
+mediaopt hostap
+&nbsp;
+## Set interface MAC address (XY:XX:XX:XX:XX:XX), where X=[0-9,a-f] and Y=[0,4,8,c].
+lladdr 00:00:00:00:00:00
+&nbsp;
+## Optional interface description.
+description &quot;&quot;
+&nbsp;
+## Set startup logical state.
+down
+up

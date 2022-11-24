@@ -1,0 +1,32 @@
+====== Diffie-Hellman ======
+
+===== Theory =====
+
+  *Symmetric key exchange algorithm.
+
+===== Algorithm =====
+
+<code>
++-------+       |                          |       +-------+
+| Alice |       |                          |       |  Bob  |
++-------+       |                          |       +-------+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PRIVATE NUMBER  | LARGE PRIME NUMBER       | PRIVATE NUMBER
+a=4             | x=23                     | b=3
+                | PRIMITIVE ROOT MODULO x  |
+                | y=5                      |
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PRIVATE FORMULA |                          | PRIVATE FORMULA
+A=y^a%x         |                          | B=y^b%x
+A=5^4%23        |                          | B=5^3%23
+A=625%23        |                          | B=125%23
+A=4             |                          | B=10
+                | --------- A=4  --------> |
+                | <-------- B=10 --------- |
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+KEY FORMULA     |                          | KEY FORMULA
+K=B^a%x         |                          | K=A^b%x
+K=10^4%23       |                          | K=4^3%23
+K=10000%23      |                          | K=64%23
+K=18            |                          | K=18
+</code>

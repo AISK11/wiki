@@ -184,7 +184,7 @@ Discord
 
 Windows 11
 
-Resources
+
 Pre-Installation
 Installation
 Boot Process
@@ -270,3 +270,19 @@ Pre-Installation
 Installation
 System Update
 Package Management
+Resources
+
+
+Hostname
+Interfaces
+
+SSH
+Diffie-Hellman
+
+WAP
+Zsh
+Encoding
+WLAN
+Package Manager
+Post-Installation
+Wi-Fi AP Authentication
