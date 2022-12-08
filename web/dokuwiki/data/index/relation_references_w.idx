@@ -302,3 +302,7 @@ cybersecurity:wlan
 cybersecurity:wifi_ap_authentication
 cybersecurity:linux_wireless
 cybersecurity:aircrack-ng
+dokuwiki:dania
+linux:resources
+linux:dash
+linux:zsh

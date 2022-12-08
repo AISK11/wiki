@@ -12,6 +12,7 @@
   *[[:void:post-installation|Post-Installation]]
 
 **System Configuration**
+  *[[:void:shell|Shell]]
   *[[:void:audio|Audio]]
   *[[:void:bspwm|Bspwm]]
   *[[:void:sway|Sway]]

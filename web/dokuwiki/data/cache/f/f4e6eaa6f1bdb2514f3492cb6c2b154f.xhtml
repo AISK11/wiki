@@ -1,45 +1,41 @@
 
 <h1 class="sectionedit1" id="installation">Installation</h1>
 <div class="level1">
-<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
-<p>
-This section is incomplete and needs further work!
-</p>
-</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-122&quot;} -->
-<h2 class="sectionedit4" id="environment_preparation">Environment Preparation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-28&quot;} -->
+<h2 class="sectionedit2" id="environment_preparation">Environment Preparation</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Gain system access:</p><pre class='cli  '><span class="cli_prompt">&gt; </span><span class="cli_command">root</span>
+<li class="level1"><div class="li">Gain system access:</p><pre class='cli  '><span class="cli_prompt">&gt; </span><span class="cli_command">root</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">voidlinux</span>
 <span class="cli_prompt"># </span><span class="cli_command">bash</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Set console keymap and font:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">loadkeys us</span>
+<li class="level1"><div class="li">Set console keymap and font:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">loadkeys us</span>
 <span class="cli_prompt"># </span><span class="cli_command">setfont eurlatgr</span>
 <span class="cli_prompt"># </span><span class="cli_command">unicode_start</span></pre><p></div>
 </li>
-<li class="level1"><div class="li">  Disable system beeping (pcspkr module):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">lsmod | grep pcspkr &amp;&amp; modprobe -r pcspkr</span></pre><p></div>
+<li class="level1"><div class="li">Disable system beeping (pcspkr module):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">lsmod | grep pcspkr &amp;&amp; modprobe -r pcspkr</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Verify UEFI and remount UEFI NVRAM as read only<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ls -ld /sys/firmware/efi/</span>
+<li class="level1"><div class="li">Verify UEFI and remount UEFI NVRAM as read only<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">ls -ld /sys/firmware/efi/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount -o remount,ro efivarfs</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Set system time:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">date [-u] &lt;MMDDhhmmCCYY.ss&gt;</span>
+<li class="level1"><div class="li">Set system time:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">date [-u] &lt;MMDDhhmmCCYY.ss&gt;</span>
 <span class="cli_prompt"># </span><span class="cli_command">hwclock --systohc</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Verify network connectivity.</div>
+<li class="level1"><div class="li">Verify network connectivity.</div>
 </li>
-<li class="level1"><div class="li"> Update live environment system and install additional packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su[y] xbps ; xbps-install -Su[y]</span>
+<li class="level1"><div class="li">Update live environment system and install additional packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -Su[y] xbps ; xbps-install -Su[y]</span>
 <span class="cli_prompt"># </span><span class="cli_command">xbps-install [-y] parted</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;123-891&quot;} -->
-<h2 class="sectionedit5" id="disk_preparation">Disk Preparation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Environment Preparation&quot;,&quot;hid&quot;:&quot;environment_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;29-789&quot;} -->
+<h2 class="sectionedit3" id="disk_preparation">Disk Preparation</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Create partitions:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;/dev/sdX&gt;</span>
+<li class="level1"><div class="li">Create partitions:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cfdisk -z &lt;/dev/sdX&gt;</span>
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">gpt</span>
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">n</span>
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">2GiB</span>
@@ -50,18 +46,18 @@ This section is incomplete and needs further work!
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">W</span>
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">yes</span>
 <span class="cli_prompt">cfdisk&gt; </span><span class="cli_command">q</span>
-<span class="cli_prompt"># parted -s &lt;/dev/sdX&gt; </span><span class="cli_command">name 1 ESP</span>
-<span class="cli_prompt"># parted -s &lt;/dev/sdX&gt; </span><span class="cli_command">name 2 VOID</span></pre><p></div>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 1 ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; name 2 VOID</span></pre><p></div>
 </li>
-<li class="level1 node"><div class="li"> Create filesystems: </div>
+<li class="level1 node"><div class="li">Create filesystems: </div>
 <ol>
-<li class="level2"><div class="li"> EFI filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX1&gt;</span>
+<li class="level2"><div class="li">EFI filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX1&gt;</span>
 <span class="cli_prompt"># </span><span class="cli_command">mkfs.vfat -F 32 &lt;/dev/sdX1&gt;</span>
-<span class="cli_prompt"># fatlabel &lt;/dev/sdX1&gt; </span><span class="cli_command">ESP</span>
-<span class="cli_prompt"># fatlabel -i &lt;/dev/sdX1&gt; </span><span class="cli_command">00000001</span>
-<span class="cli_prompt"># fsck.vfat &lt;/dev/sdX1&gt; </span><span class="cli_command">; echo $?</span></pre><p></div>
+<span class="cli_prompt"># </span><span class="cli_command">fatlabel &lt;/dev/sdX1&gt; ESP</span>
+<span class="cli_prompt"># </span><span class="cli_command">fatlabel -i &lt;/dev/sdX1&gt; 00000001</span>
+<span class="cli_prompt"># </span><span class="cli_command">fsck.vfat &lt;/dev/sdX1&gt; ; echo $?</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> LUKS encrypted filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=/dev/urandom of=&lt;/dev/sdX2&gt; status=progress ; sync</span>
+<li class="level2"><div class="li">LUKS encrypted filesystem:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">dd if=/dev/urandom of=&lt;/dev/sdX2&gt; status=progress ; sync</span>
 <span class="cli_prompt"># </span><span class="cli_command">wipefs -a &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksFormat --type luks2 --force-password -y &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
@@ -70,10 +66,10 @@ This section is incomplete and needs further work!
 <span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label LUKS-VOID &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksUUID --uuid 00000000-0000-0000-0000-000000000002 &lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">YES</span>
-<span class="cli_prompt"># cryptsetup open --type luks2 &lt;/dev/sdX2&gt; </span><span class="cli_command">luks-void</span>
+<span class="cli_prompt"># </span><span class="cli_command">cryptsetup open --type luks2 &lt;/dev/sdX2&gt; luks-void</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;LUKS-PASSWORD&gt;</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> Root filesystem<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a /dev/mapper/luks-void</span>
+<li class="level2"><div class="li">Root filesystem<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">wipefs -a /dev/mapper/luks-void</span>
 <span class="cli_prompt"># </span><span class="cli_command">mkfs.btrfs /dev/mapper/luks-void</span>
 <span class="cli_prompt"># </span><span class="cli_command">btrfs filesystem label /dev/mapper/luks-void VOID-ROOT</span>
 <span class="cli_prompt"># </span><span class="cli_command">btrfstune -U 00000000-0000-0000-0000-000000000003 /dev/mapper/luks-void</span>
@@ -82,43 +78,43 @@ This section is incomplete and needs further work!
 </li>
 </ol>
 </li>
-<li class="level1"><div class="li"> Verify partitions and filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; [unit B] p free</span>
+<li class="level1"><div class="li">Verify partitions and filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">parted -s &lt;/dev/sdX&gt; [unit B] p free</span>
 <span class="cli_prompt"># </span><span class="cli_command">lsblk -fp &lt;/dev/sdX&gt;</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Create btrfs subvolume(s):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/</span>
+<li class="level1"><div class="li">Create btrfs subvolume(s):</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount /dev/mapper/luks-void /mnt/void/</span>
 <span class="cli_prompt"># </span><span class="cli_command">btrfs subvolume create /mnt/void/@</span>
 <span class="cli_prompt"># </span><span class="cli_command">umount /mnt/void/</span></pre><p></div>
 </li>
-<li class="level1 node"><div class="li"> Mount filesystems:</div>
+<li class="level1 node"><div class="li">Mount filesystems:</div>
 <ol>
-<li class="level2"><div class="li"> Btrfs<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> subvolume:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount -o defaults,noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/</span></pre><p></div>
+<li class="level2"><div class="li">Btrfs<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> subvolume:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount -o defaults,noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> ESP:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/boot/</span>
-<span class="cli_prompt"># mount &lt;/dev/sda1&gt; </span><span class="cli_command">/mnt/void/boot/</span></pre><p></div>
+<li class="level2"><div class="li">ESP:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mkdir -p /mnt/void/boot/</span>
+<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sda1&gt; /mnt/void/boot/</span></pre><p></div>
 </li>
 </ol>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;892-2819&quot;} -->
-<h2 class="sectionedit6" id="base_system_installation">Base System Installation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disk Preparation&quot;,&quot;hid&quot;:&quot;disk_preparation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;790-2707&quot;} -->
+<h2 class="sectionedit4" id="base_system_installation">Base System Installation</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Instal minimal base system packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -S[y] -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal</span>
+<li class="level1"><div class="li">Instal minimal base system packages:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -S[y] -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">y</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2820-3009&quot;} -->
-<h2 class="sectionedit7" id="chroot">Chroot</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Base System Installation&quot;,&quot;hid&quot;:&quot;base_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2708-2896&quot;} -->
+<h2 class="sectionedit5" id="chroot">Chroot</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Copy DNS configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp -L /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
+<li class="level1"><div class="li">Copy DNS configuration:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cp -L /etc/resolv.conf /mnt/void/etc/</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Mount filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount --rbind /dev/ /mnt/void/dev/</span>
+<li class="level1"><div class="li">Mount filesystems:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">mount --rbind /dev/ /mnt/void/dev/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount --rbind /sys/ /mnt/void/sys/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount --rbind /proc/ /mnt/void/proc/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount --rbind /run/ /mnt/void/run/</span>
@@ -127,66 +123,66 @@ This section is incomplete and needs further work!
 <span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/proc/</span>
 <span class="cli_prompt"># </span><span class="cli_command">mount --make-rslave /mnt/void/run/</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Chroot into the new installation:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/void/ /bin/sh</span>
+<li class="level1"><div class="li">Chroot into the new installation:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">chroot /mnt/void/ /bin/sh</span>
 <span class="cli_prompt"># </span><span class="cli_command">. ./etc/profile</span>
 <span class="cli_prompt"># </span><span class="cli_command">export PS1=&#039;(chroot)</span><span class="cli_comment"> # &#039;</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;3010-3567&quot;} -->
-<h2 class="sectionedit8" id="full_system_installation">Full System Installation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Chroot&quot;,&quot;hid&quot;:&quot;chroot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2897-3451&quot;} -->
+<h2 class="sectionedit6" id="full_system_installation">Full System Installation</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Install additional repositories<sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup> and synchronize them:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree</span>
-<span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install -Su xbps ; xbps-install -Su</span></pre><p></div>
+<li class="level1"><div class="li">Install additional repositories<sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup> and synchronize them:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree</span>
+<span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install -Su[y] xbps ; xbps-install -Su[y]</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Partitioning tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install parted cryptsetup dosfstools e2fsprogs btrfs-progs</span></pre><p></div>
+<li class="level1"><div class="li">Partitioning tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install [-y] parted cryptsetup dosfstools e2fsprogs btrfs-progs</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> System tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xpbs-install kbd kmod eudev ncurses less</span></pre><p></div>
+<li class="level1"><div class="li">System tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xpbs-install [-y] kbd kmod eudev ncurses less</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Administration tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install mdocml man-pages tealdeer neovim git curl file tree ncdu psmisc htop btop neofetch inxi</span></pre><p></div>
+<li class="level1"><div class="li">Administration tools:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install [-y] mdocml man-pages tealdeer neovim git curl file tree ncdu psmisc htop btop ufetch inxi bash</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Boot tools<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install grub-x86_64-efi dracut-uefi linux linux-lts linux-firmware [intel-ucode]</span></pre><p></div>
+<li class="level1"><div class="li">Boot tools<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install [-y] grub-x86_64-efi dracut-uefi linux linux-lts linux-firmware [intel-ucode]</span></pre><p></div>
 </li>
-<li class="level1 node"><div class="li"> Network tools:</div>
+<li class="level1 node"><div class="li">Network tools:</div>
 <ol>
-<li class="level2"><div class="li"> Basic:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install iproute2 dhcpcd iputils bind-utils inetutils-whois mtr nmap</span></pre><p></div>
+<li class="level2"><div class="li">Basic:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install [-y] iproute2 dhcpcd iputils bind-utils inetutils-whois mtr nmap</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> Ethernet:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install ethtool</span></pre><p></div>
+<li class="level2"><div class="li">Ethernet:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install [-y] ethtool</span></pre><p></div>
 </li>
-<li class="level2"><div class="li"> Wi-Fi<sup><a href="#fn__6" id="fnt__6" class="fn_top">6)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install wavemon iw wpa_supplicant</span></pre><p></div>
+<li class="level2"><div class="li">Wi-Fi<sup><a href="#fn__6" id="fnt__6" class="fn_top">6)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-install [-y] wavemon iw wpa_supplicant</span></pre><p></div>
 </li>
 </ol>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;3568-4828&quot;} -->
-<h2 class="sectionedit9" id="swap_file">Swap File</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Full System Installation&quot;,&quot;hid&quot;:&quot;full_system_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3452-4747&quot;} -->
+<h2 class="sectionedit7" id="swap_file">Swap File</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Allocate space on COW filesystem (such as btrfs):</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">truncate -s 0 /swap</span>
+<li class="level1"><div class="li">Allocate space on COW filesystem (such as btrfs):</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">truncate -s 0 /swap</span>
 <span class="cli_prompt">(chroot) # </span><span class="cli_command">chattr +C /swap</span>
 <span class="cli_prompt">(chroot) # </span><span class="cli_command">fallocate -l 4G /swap</span>
 <span class="cli_prompt">(chroot) # </span><span class="cli_command">chmod 0600 /swap</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Set file as swap area:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">mkswap /swap</span>
+<li class="level1"><div class="li">Set file as swap area:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">mkswap /swap</span>
 <span class="cli_prompt">(chroot) # </span><span class="cli_command">swapon /swap</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;4829-5124&quot;} -->
-<h2 class="sectionedit10" id="system_configuration">System Configuration</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Swap File&quot;,&quot;hid&quot;:&quot;swap_file&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;4748-5041&quot;} -->
+<h2 class="sectionedit8" id="system_configuration">System Configuration</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;5125-5158&quot;} -->
-<h3 class="sectionedit11" id="xbps">XBPS</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;System Configuration&quot;,&quot;hid&quot;:&quot;system_configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;5042-5075&quot;} -->
+<h3 class="sectionedit9" id="xbps">XBPS</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Set ignored packages by XBPS:<dl class="file">
+<li class="level1"><div class="li">Set ignored packages by XBPS:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=0" title="Download Snippet" class="mediafile mf_conf">/etc/xbps.d/ignore.conf</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
 ## LOCATION:     /etc/xbps.d/ignore.conf (0644 root:root)
@@ -201,16 +197,16 @@ ignorepkg=sudo</pre>
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Uninstall unneeded packages:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-remove -Ro nvi</span></pre><p></div>
+<li class="level1"><div class="li">Uninstall unneeded packages:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-remove -Ro nvi</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;5159-5607&quot;} -->
-<h3 class="sectionedit12" id="filesystems">Filesystems</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;XBPS&quot;,&quot;hid&quot;:&quot;xbps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;5076-5522&quot;} -->
+<h3 class="sectionedit10" id="filesystems">Filesystems</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Configure crypttab:<dl class="file">
+<li class="level1"><div class="li">Configure crypttab:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=1" title="Download Snippet" class="mediafile mf_">/etc/crypttab</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
 ## LOCATION:     /etc/crypttab (0644 root:root)
@@ -222,7 +218,7 @@ luks-void UUID=00000000-0000-0000-0000-000000000002 none luks</pre>
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Configure fstab:<dl class="file">
+<li class="level1"><div class="li">Configure fstab:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=2" title="Download Snippet" class="mediafile mf_">/etc/fstab</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
 ## LOCATION:     /etc/fstab (0644 root:root)
@@ -243,11 +239,11 @@ LABEL=ESP           /boot                     vfat     defaults,noatime,umask=00
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:12,&quot;range&quot;:&quot;5608-6736&quot;} -->
-<h3 class="sectionedit13" id="kernel_modules">Kernel Modules</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Filesystems&quot;,&quot;hid&quot;:&quot;filesystems&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;5523-6649&quot;} -->
+<h3 class="sectionedit11" id="kernel_modules">Kernel Modules</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Set blacklisted kernel modules on startup:<dl class="file">
+<li class="level1"><div class="li">Set blacklisted kernel modules on startup:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=3" title="Download Snippet" class="mediafile mf_conf">/etc/modprobe.d/blacklist.conf</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
 ## LOCATION:     /etc/modprobe.d/blacklist.conf (0644 root:root)
@@ -262,11 +258,11 @@ blacklist pcspkr</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:13,&quot;range&quot;:&quot;6737-7091&quot;} -->
-<h3 class="sectionedit14" id="locales">Locales</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Kernel Modules&quot;,&quot;hid&quot;:&quot;kernel_modules&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:11,&quot;range&quot;:&quot;6650-7003&quot;} -->
+<h3 class="sectionedit12" id="locales">Locales</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Set locales to be generated by system:<dl class="file">
+<li class="level1"><div class="li">Set locales to be generated by system:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=4" title="Download Snippet" class="mediafile mf_">/etc/default/libc-locales</a></dt>
 <dd><pre class="code file text">...
 C.UTF-8 UTF-8
@@ -277,9 +273,9 @@ en_US ISO-8859-1
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Generate locales:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-reconfigure -f glibc-locales</span></pre><p></div>
+<li class="level1"><div class="li">Generate locales:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-reconfigure -f glibc-locales</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Set system locales:<dl class="file">
+<li class="level1"><div class="li">Set system locales:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=5" title="Download Snippet" class="mediafile mf_conf">/etc/locale.conf</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
 ## LOCATION:     /etc/locale.conf (0644 root:root)
@@ -293,20 +289,20 @@ LANG='C.UTF-8'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:14,&quot;range&quot;:&quot;7092-7565&quot;} -->
-<h3 class="sectionedit15" id="timezone">Timezone</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Locales&quot;,&quot;hid&quot;:&quot;locales&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:12,&quot;range&quot;:&quot;7004-7474&quot;} -->
+<h3 class="sectionedit13" id="timezone">Timezone</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Create symlink to UTC timezone:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">ln -sf /usr/share/zoneinfo/UTC /etc/localtime</span></pre><p></div>
+<li class="level1"><div class="li">Create symlink to UTC timezone:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">ln -sf /usr/share/zoneinfo/UTC /etc/localtime</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:15,&quot;range&quot;:&quot;7566-7691&quot;} -->
-<h3 class="sectionedit16" id="runit">Runit</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Timezone&quot;,&quot;hid&quot;:&quot;timezone&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;7475-7599&quot;} -->
+<h3 class="sectionedit14" id="runit">Runit</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Set void configuration run by runit:<dl class="file">
+<li class="level1"><div class="li">Set void configuration run by runit:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=6" title="Download Snippet" class="mediafile mf_conf">/etc/rc.conf</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
 ## LOCATION:     /etc/rc.conf (0644 root:root)
@@ -348,7 +344,7 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Mount efivars as read-only to protect UEFI NVRAM:<dl class="file">
+<li class="level1"><div class="li">Mount efivars as read-only to protect UEFI NVRAM:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=7" title="Download Snippet" class="mediafile mf_sh">/etc/runit/core-services/00-pseudofs.sh</a></dt>
 <dd><pre class="code file bash">...
 <span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re5">-d</span> <span class="sy0">/</span>sys<span class="sy0">/</span>firmware<span class="sy0">/</span>efi<span class="sy0">/</span>efivars <span class="br0">&#93;</span>; <span class="kw1">then</span>
@@ -361,25 +357,25 @@ SEEDRNG_SKIP_CREDIT='false'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:16,&quot;range&quot;:&quot;7692-9314&quot;} -->
-<h3 class="sectionedit17" id="hostname">Hostname</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runit&quot;,&quot;hid&quot;:&quot;runit&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:14,&quot;range&quot;:&quot;7600-9220&quot;} -->
+<h3 class="sectionedit15" id="hostname">Hostname</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Set hostname:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&lt;HOSTNAME&gt;&#039; &gt; /etc/hostname</span></pre><p></div>
+<li class="level1"><div class="li">Set hostname:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">echo &#039;&lt;HOSTNAME&gt;&#039; &gt; /etc/hostname</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:17,&quot;range&quot;:&quot;9315-9410&quot;} -->
-<h2 class="sectionedit18" id="booting">Booting</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hostname&quot;,&quot;hid&quot;:&quot;hostname&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:15,&quot;range&quot;:&quot;9221-9315&quot;} -->
+<h2 class="sectionedit16" id="booting">Booting</h2>
 <div class="level2">
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:18,&quot;range&quot;:&quot;9411-9431&quot;} -->
-<h3 class="sectionedit19" id="initramfs">Initramfs</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Booting&quot;,&quot;hid&quot;:&quot;booting&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:16,&quot;range&quot;:&quot;9316-9336&quot;} -->
+<h3 class="sectionedit17" id="initramfs">Initramfs</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Configure initramfs:<dl class="file">
+<li class="level1"><div class="li">Configure initramfs:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=8" title="Download Snippet" class="mediafile mf_conf">/etc/dracut.conf.d/10-crypt.conf</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
 ## LOCATION:     /etc/dracut.conf.d/10-crypt.conf (0644 root:root)
@@ -395,16 +391,16 @@ hostonly='yes'</pre>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:19,&quot;range&quot;:&quot;9432-9775&quot;} -->
-<h3 class="sectionedit20" id="bootloader">Bootloader</h3>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Initramfs&quot;,&quot;hid&quot;:&quot;initramfs&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:17,&quot;range&quot;:&quot;9337-9679&quot;} -->
+<h3 class="sectionedit18" id="bootloader">Bootloader</h3>
 <div class="level3">
 <ol>
-<li class="level1"><div class="li"> Install bootloader to ESP:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --removable</span>
+<li class="level1"><div class="li">Install bootloader to ESP:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --removable</span>
 <span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,rw efivarfs</span>
 <span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB</span>
 <span class="cli_prompt">(chroot) # </span><span class="cli_command">mount -o remount,ro efivarfs</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Configure custom bootloader hook:<dl class="file">
+<li class="level1"><div class="li">Configure custom bootloader hook:<dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=9" title="Download Snippet" class="mediafile mf_d_40_custom">/etc/grub.d/40_custom</a></dt>
 <dd><pre class="code file bash"><span class="co0">#!/usr/bin/env sh</span>
 &nbsp;
@@ -429,7 +425,7 @@ menuentry <span class="st_h">'Shutdown Computer'</span> <span class="re5">--clas
 <pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">chmod 0755 /etc/grub.d/40_custom</span></pre>
 </div>
 </li>
-<li class="level1"><div class="li"> Configure bootloader<sup><a href="#fn__7" id="fnt__7" class="fn_top">7)</a></sup>: <dl class="file">
+<li class="level1"><div class="li">Configure bootloader<sup><a href="#fn__7" id="fnt__7" class="fn_top">7)</a></sup>: <dl class="file">
 <dt><a href="http://localhost/_export/code/void/installation?codeblock=10" title="Download Snippet" class="mediafile mf_">/etc/default/grub</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
 ## LOCATION:     /etc/default/grub (0644 root:root)
@@ -479,28 +475,28 @@ GRUB_DISABLE_SUBMENU='true'
 </dd></dl>
 </div>
 </li>
-<li class="level1"><div class="li"> Apply bootloader configuration changes:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-mkconfig -o /boot/grub/grub.cfg</span></pre><p></div>
+<li class="level1"><div class="li">Apply bootloader configuration changes:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">grub-mkconfig -o /boot/grub/grub.cfg</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:20,&quot;range&quot;:&quot;9776-11868&quot;} -->
-<h2 class="sectionedit21" id="finishing">Finishing</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bootloader&quot;,&quot;hid&quot;:&quot;bootloader&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:18,&quot;range&quot;:&quot;9680-11768&quot;} -->
+<h2 class="sectionedit19" id="finishing">Finishing</h2>
 <div class="level2">
 <ol>
-<li class="level1"><div class="li"> Reconfigure all packages:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-reconfigure -fa</span></pre><p></div>
+<li class="level1"><div class="li">Reconfigure all packages:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">xbps-reconfigure -fa</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Make root account accessible: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">passwd root</span>
+<li class="level1"><div class="li">Make root account accessible: </p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">passwd root</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-ROOT-PASSWORD&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-ROOT-PASSWORD (VERIFY)&gt;</span></pre><p></div>
 </li>
-<li class="level1"><div class="li"> Reboot system:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">exit</span>
+<li class="level1"><div class="li">Reboot system:</p><pre class='cli  '><span class="cli_prompt">(chroot) # </span><span class="cli_command">exit</span>
 <span class="cli_prompt"># </span><span class="cli_command">reboot</span></pre><p></div>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:21,&quot;range&quot;:&quot;11869-&quot;} --><div class="footnotes">
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Finishing&quot;,&quot;hid&quot;:&quot;finishing&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:19,&quot;range&quot;:&quot;11769-&quot;} --><div class="footnotes">
 <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
 <div class="content">Read-write efivarfs issue: <a href="https://github.com/systemd/systemd/issues/2402" class="urlextern" title="https://github.com/systemd/systemd/issues/2402">https://github.com/systemd/systemd/issues/2402</a>.</div></div>
 <div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 

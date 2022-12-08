@@ -21,7 +21,7 @@
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;NEW-LUKS-PASSWORD (VERIFY)&gt;</span></pre><p></div>
 </li>
 <li class="level1"><div class="li">Set up LUKS filesystem LABEL and UUID:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cryptsetup config --label &lt;LABEL&gt; &lt;/dev/sdX[Y]&gt;</span>
-<span class="cli_prompt"># </span><span class="cli_command">cryptsetup luksUUID --uuid &lt;XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&gt; &lt;/dev/sdX2&gt;</span>
+<span class="cli_prompt"># cryptsetup luksUUID --uuid &lt;XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&gt; </span><span class="cli_command">&lt;/dev/sdX2&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">YES</span></pre><p></div>
 </li>
 </ol>
@@ -36,7 +36,7 @@
 </li>
 <li class="level1"><div class="li">Decrypt block device:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">cryptsetup open --type luks2 &lt;/dev/sdX[Y]&gt; &lt;MAPPER-NAME&gt;</span>
 <span class="cli_prompt">&gt; </span><span class="cli_command">&lt;LUKS-PASSWORD&gt;</span>
-<span class="cli_prompt"># </span><span class="cli_command">mount &lt;/dev/sdX[Y]&gt; &lt;DIRECTORY&gt;</span></pre><p></div>
+<span class="cli_prompt"># mount &lt;/dev/sdX[Y]&gt; </span><span class="cli_command">&lt;DIRECTORY&gt;</span></pre><p></div>
 </li>
 <li class="level1"><div class="li">When block device is no longer required, close it:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">umount &lt;/dev/sdX[Y]&gt;</span>
 <span class="cli_prompt"># </span><span class="cli_command">cryptsetup close &lt;MAPPER-NAME&gt;</span></pre><p></div>

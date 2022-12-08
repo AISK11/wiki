@@ -286,3 +286,9 @@ cybersecurity:wlan
 old:debian:package_manager
 old:debian:amd64_post-installation
 cybersecurity:wifi_ap_authentication
+void:shell
+linux:index
+linux:sidebar
+linux:resources
+linux:dash
+linux:zsh

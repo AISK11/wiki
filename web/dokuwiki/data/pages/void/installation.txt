@@ -1,41 +1,37 @@
 ====== Installation ======
 
-<WRAP center round important 60%>
-This section is incomplete and needs further work!
-</WRAP>
-
 ===== Environment Preparation =====
 
-  - Gain system access:<cli>
+  -Gain system access:<cli>
 > root
 > voidlinux
 # bash
 </cli>
-  - Set console keymap and font:<cli>
+  -Set console keymap and font:<cli>
 # loadkeys us
 # setfont eurlatgr
 # unicode_start
 </cli>
-  -  Disable system beeping (pcspkr module):<cli>
+  -Disable system beeping (pcspkr module):<cli>
 # lsmod | grep pcspkr && modprobe -r pcspkr
 </cli>
-  - Verify UEFI and remount UEFI NVRAM as read only((Read-write efivarfs issue: https://github.com/systemd/systemd/issues/2402.)):<cli>
+  -Verify UEFI and remount UEFI NVRAM as read only((Read-write efivarfs issue: https://github.com/systemd/systemd/issues/2402.)):<cli>
 # ls -ld /sys/firmware/efi/
 # mount -o remount,ro efivarfs
 </cli>
-  - Set system time:<cli>
+  -Set system time:<cli>
 # date [-u] <MMDDhhmmCCYY.ss>
 # hwclock --systohc
 </cli>
-  - Verify network connectivity.
-  - Update live environment system and install additional packages:<cli>
+  -Verify network connectivity.
+  -Update live environment system and install additional packages:<cli>
 # xbps-install -Su[y] xbps ; xbps-install -Su[y]
 # xbps-install [-y] parted
 </cli>
 
 ===== Disk Preparation =====
 
-  - Create partitions:<cli>
+  -Create partitions:<cli>
 # cfdisk -z </dev/sdX>
 cfdisk> gpt
 cfdisk> n
@@ -50,15 +46,15 @@ cfdisk> q
 # parted -s </dev/sdX> name 1 ESP
 # parted -s </dev/sdX> name 2 VOID
 </cli>
-  - Create filesystems: 
-    - EFI filesystem:<cli>
+  -Create filesystems: 
+    -EFI filesystem:<cli>
 # wipefs -a </dev/sdX1>
 # mkfs.vfat -F 32 </dev/sdX1>
 # fatlabel </dev/sdX1> ESP
 # fatlabel -i </dev/sdX1> 00000001
 # fsck.vfat </dev/sdX1> ; echo $?
 </cli>
-    - LUKS encrypted filesystem:<cli>
+    -LUKS encrypted filesystem:<cli>
 # dd if=/dev/urandom of=</dev/sdX2> status=progress ; sync
 # wipefs -a </dev/sdX2>
 # cryptsetup luksFormat --type luks2 --force-password -y </dev/sdX2>
@@ -71,7 +67,7 @@ cfdisk> q
 # cryptsetup open --type luks2 </dev/sdX2> luks-void
 > <LUKS-PASSWORD>
 </cli>
-    - Root filesystem((Status of btrfs in linux: https://btrfs.wiki.kernel.org/index.php/Status.)):<cli>
+    -Root filesystem((Status of btrfs in linux: https://btrfs.wiki.kernel.org/index.php/Status.)):<cli>
 # wipefs -a /dev/mapper/luks-void
 # mkfs.btrfs /dev/mapper/luks-void
 # btrfs filesystem label /dev/mapper/luks-void VOID-ROOT
@@ -79,38 +75,38 @@ cfdisk> q
 > y
 # btrfs check /dev/mapper/luks-void ; echo $?
 </cli>
-  - Verify partitions and filesystems:<cli>
+  -Verify partitions and filesystems:<cli>
 # parted -s </dev/sdX> [unit B] p free
 # lsblk -fp </dev/sdX>
 </cli>
-  - Create btrfs subvolume(s):<cli>
+  -Create btrfs subvolume(s):<cli>
 # mkdir -p /mnt/void/
 # mount /dev/mapper/luks-void /mnt/void/
 # btrfs subvolume create /mnt/void/@
 # umount /mnt/void/
 </cli>
-  - Mount filesystems:
-    - Btrfs((Btrfs mount options: https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options.)) subvolume:<cli>
+  -Mount filesystems:
+    -Btrfs((Btrfs mount options: https://btrfs.readthedocs.io/en/latest/Administration.html#mount-options.)) subvolume:<cli>
 # mount -o defaults,noatime,compress=zstd:3,commit=120,subvol=@ /dev/mapper/luks-void /mnt/void/
 </cli>
-    - ESP:<cli>
+    -ESP:<cli>
 # mkdir -p /mnt/void/boot/
 # mount </dev/sda1> /mnt/void/boot/
 </cli>
 
 ===== Base System Installation =====
 
-  - Instal minimal base system packages:<cli>
+  -Instal minimal base system packages:<cli>
 # xbps-install -S[y] -R https://repo-default.voidlinux.org/current -r /mnt/void/ base-minimal
 > y
 </cli>
 
 ===== Chroot =====
 
-  - Copy DNS configuration:<cli>
+  -Copy DNS configuration:<cli>
 # cp -L /etc/resolv.conf /mnt/void/etc/
 </cli>
-  - Mount filesystems:<cli>
+  -Mount filesystems:<cli>
 # mount --rbind /dev/ /mnt/void/dev/
 # mount --rbind /sys/ /mnt/void/sys/
 # mount --rbind /proc/ /mnt/void/proc/
@@ -120,7 +116,7 @@ cfdisk> q
 # mount --make-rslave /mnt/void/proc/
 # mount --make-rslave /mnt/void/run/
 </cli>
-  - Chroot into the new installation:<cli>
+  -Chroot into the new installation:<cli>
 # chroot /mnt/void/ /bin/sh
 # . ./etc/profile
 # export PS1='(chroot) # '
@@ -128,42 +124,42 @@ cfdisk> q
 
 ===== Full System Installation =====
 
-  - Install additional repositories((Void subrepositories: https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories.)) and synchronize them:<cli>
+  -Install additional repositories((Void subrepositories: https://docs.voidlinux.org/xbps/repositories/index.html#subrepositories.)) and synchronize them:<cli>
 (chroot) # xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
-(chroot) # xbps-install -Su xbps ; xbps-install -Su
+(chroot) # xbps-install -Su[y] xbps ; xbps-install -Su[y]
 </cli>
-  - Partitioning tools:<cli>
-(chroot) # xbps-install parted cryptsetup dosfstools e2fsprogs btrfs-progs
+  -Partitioning tools:<cli>
+(chroot) # xbps-install [-y] parted cryptsetup dosfstools e2fsprogs btrfs-progs
 </cli>
-  - System tools:<cli>
-(chroot) # xpbs-install kbd kmod eudev ncurses less
+  -System tools:<cli>
+(chroot) # xpbs-install [-y] kbd kmod eudev ncurses less
 </cli>
-  - Administration tools:<cli>
-(chroot) # xbps-install mdocml man-pages tealdeer neovim git curl file tree ncdu psmisc htop btop neofetch inxi
+  -Administration tools:<cli>
+(chroot) # xbps-install [-y] mdocml man-pages tealdeer neovim git curl file tree ncdu psmisc htop btop ufetch inxi bash
 </cli>
-  - Boot tools((Void microcode: https://docs.voidlinux.org/config/firmware.html#microcode.)):<cli>
-(chroot) # xbps-install grub-x86_64-efi dracut-uefi linux linux-lts linux-firmware [intel-ucode]
+  -Boot tools((Void microcode: https://docs.voidlinux.org/config/firmware.html#microcode.)):<cli>
+(chroot) # xbps-install [-y] grub-x86_64-efi dracut-uefi linux linux-lts linux-firmware [intel-ucode]
 </cli>
-  - Network tools:
-    - Basic:<cli>
-(chroot) # xbps-install iproute2 dhcpcd iputils bind-utils inetutils-whois mtr nmap
+  -Network tools:
+    -Basic:<cli>
+(chroot) # xbps-install [-y] iproute2 dhcpcd iputils bind-utils inetutils-whois mtr nmap
 </cli>
-    - Ethernet:<cli>
-(chroot) # xbps-install ethtool
+    -Ethernet:<cli>
+(chroot) # xbps-install [-y] ethtool
 </cli>
-    - Wi-Fi((Iwconfig replaced by iw: https://wireless.wiki.kernel.org/en/users/Documentation/iw/replace-iwconfig.)):<cli>
-(chroot) # xbps-install wavemon iw wpa_supplicant
+    -Wi-Fi((Iwconfig replaced by iw: https://wireless.wiki.kernel.org/en/users/Documentation/iw/replace-iwconfig.)):<cli>
+(chroot) # xbps-install [-y] wavemon iw wpa_supplicant
 </cli>
 
 ===== Swap File =====
 
-  - Allocate space on COW filesystem (such as btrfs):<cli>
+  -Allocate space on COW filesystem (such as btrfs):<cli>
 (chroot) # truncate -s 0 /swap
 (chroot) # chattr +C /swap
 (chroot) # fallocate -l 4G /swap
 (chroot) # chmod 0600 /swap
 </cli>
-  - Set file as swap area:<cli>
+  -Set file as swap area:<cli>
 (chroot) # mkswap /swap
 (chroot) # swapon /swap
 </cli>
@@ -172,7 +168,7 @@ cfdisk> q
 
 ==== XBPS ====
 
-  - Set ignored packages by XBPS:<file text /etc/xbps.d/ignore.conf>
+  -Set ignored packages by XBPS:<file text /etc/xbps.d/ignore.conf>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/xbps.d/ignore.conf (0644 root:root)
 ## DEPENDENCIES: xbps
@@ -184,13 +180,13 @@ ignorepkg=nvi
 ## Ignore sudo (replaced by opendaos).
 ignorepkg=sudo
 </file>
-  - Uninstall unneeded packages:<cli>
+  -Uninstall unneeded packages:<cli>
 (chroot) # xbps-remove -Ro nvi
 </cli>
 
 ==== Filesystems ====
 
-  - Configure crypttab:<file text /etc/crypttab>
+  -Configure crypttab:<file text /etc/crypttab>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/crypttab (0644 root:root)
 ## DEPENDENCIES: base-files
@@ -199,7 +195,7 @@ ignorepkg=sudo
 ## <MAPPER-NAME> <DEVICE> <PASSWORD-FILE> <OPTIONS>
 luks-void UUID=00000000-0000-0000-0000-000000000002 none luks
 </file>
-  - Configure fstab:<file text /etc/fstab>
+  -Configure fstab:<file text /etc/fstab>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/fstab (0644 root:root)
 ## DEPENDENCIES: base-files
@@ -217,7 +213,7 @@ LABEL=ESP           /boot                     vfat     defaults,noatime,umask=00
 
 ==== Kernel Modules ====
 
-  - Set blacklisted kernel modules on startup:<file text /etc/modprobe.d/blacklist.conf>
+  -Set blacklisted kernel modules on startup:<file text /etc/modprobe.d/blacklist.conf>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/modprobe.d/blacklist.conf (0644 root:root)
 ## DEPENDENCIES: kmod
@@ -229,7 +225,7 @@ blacklist pcspkr
 
 ==== Locales ====
 
-  - Set locales to be generated by system:<file text /etc/default/libc-locales>
+  -Set locales to be generated by system:<file text /etc/default/libc-locales>
 ...
 C.UTF-8 UTF-8
 ...
@@ -237,10 +233,10 @@ en_US.UTF-8 UTF-8
 en_US ISO-8859-1
 ...
 </file>
-  - Generate locales:<cli>
+  -Generate locales:<cli>
 (chroot) # xbps-reconfigure -f glibc-locales
 </cli>
-  - Set system locales:<file text /etc/locale.conf>
+  -Set system locales:<file text /etc/locale.conf>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/locale.conf (0644 root:root)
 ## DEPENDENCIES: runit-void glibc-locales
@@ -251,13 +247,13 @@ LANG='C.UTF-8'
 
 ==== Timezone ====
 
-  - Create symlink to UTC timezone:<cli>
+  -Create symlink to UTC timezone:<cli>
 (chroot) # ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 </cli>
 
 ==== Runit ====
 
-  - Set void configuration run by runit:<file text /etc/rc.conf>
+  -Set void configuration run by runit:<file text /etc/rc.conf>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/rc.conf (0644 root:root)
 ## DEPENDENCIES: runit-void tzdata kbd
@@ -296,7 +292,7 @@ CGROUP_MODE='hybrid'
 ## have the wherewithal to first delete the contents of '/var/lib/seedrng'.
 SEEDRNG_SKIP_CREDIT='false'
 </file>
-  - Mount efivars as read-only to protect UEFI NVRAM:<file bash /etc/runit/core-services/00-pseudofs.sh>
+  -Mount efivars as read-only to protect UEFI NVRAM:<file bash /etc/runit/core-services/00-pseudofs.sh>
 ...
 if [ -d /sys/firmware/efi/efivars ]; then
     mountpoint -q /sys/firmware/efi/efivars || mount -o ro,nosuid,noexec,nodev -t efivarfs efivarfs /sys/firmware/efi/efivars
@@ -306,7 +302,7 @@ fi
 
 ==== Hostname ====
 
-  - Set hostname:<cli>
+  -Set hostname:<cli>
 (chroot) # echo '<HOSTNAME>' > /etc/hostname
 </cli>
 
@@ -314,7 +310,7 @@ fi
 
 ==== Initramfs ====
 
-  - Configure initramfs:<file text /etc/dracut.conf.d/10-crypt.conf>
+  -Configure initramfs:<file text /etc/dracut.conf.d/10-crypt.conf>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/dracut.conf.d/10-crypt.conf (0644 root:root)
 ## DEPENDENCIES: dracut-uefi
@@ -327,13 +323,13 @@ hostonly='yes'
 
 ==== Bootloader ====
 
-  - Install bootloader to ESP:<cli>
+  -Install bootloader to ESP:<cli>
 (chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --removable
 (chroot) # mount -o remount,rw efivarfs
 (chroot) # grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
 (chroot) # mount -o remount,ro efivarfs
 </cli>
-  - Configure custom bootloader hook:<file bash /etc/grub.d/40_custom>
+  -Configure custom bootloader hook:<file bash /etc/grub.d/40_custom>
 #!/usr/bin/env sh
 
 ## AUTHOR:       AISK11
@@ -355,7 +351,7 @@ menuentry 'Shutdown Computer' --class shutdown {
 </file><cli>
 (chroot) # chmod 0755 /etc/grub.d/40_custom
 </cli>
-  - Configure bootloader((GRUB2 config options: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html.)): <file text /etc/default/grub>
+  -Configure bootloader((GRUB2 config options: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html.)): <file text /etc/default/grub>
 ## AUTHOR:       AISK11
 ## LOCATION:     /etc/default/grub (0644 root:root)
 ## DEPENDENCIES: grub-x86_64-efi
@@ -402,21 +398,21 @@ GRUB_DISABLE_SUBMENU='true'
 ## Bootloader theme.
 #GRUB_THEME=''
 </file>
-  - Apply bootloader configuration changes:<cli>
+  -Apply bootloader configuration changes:<cli>
 (chroot) # grub-mkconfig -o /boot/grub/grub.cfg
 </cli>
 
 ===== Finishing =====
 
-  - Reconfigure all packages:<cli>
+  -Reconfigure all packages:<cli>
 (chroot) # xbps-reconfigure -fa
 </cli>
-  - Make root account accessible: <cli>
+  -Make root account accessible: <cli>
 (chroot) # passwd root
 > <NEW-ROOT-PASSWORD>
 > <NEW-ROOT-PASSWORD (VERIFY)>
 </cli>
-  - Reboot system:<cli>
+  -Reboot system:<cli>
 (chroot) # exit
 # reboot
 </cli>

@@ -3,7 +3,9 @@
 ----
 
 **Operating Systems**
-  *[[:openbsd:index|Open BSD]]
+  *[[:linux:index|Linux]]
+
+
   *[[:void:index|Void Linux]]
 
 **IT Areas**

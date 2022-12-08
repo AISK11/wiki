@@ -1,0 +1,13 @@
+====== Linux ======
+
+----
+
+**About**
+  *[[:linux:index|Index]]
+  *[[:linux:resources|Resources]]
+
+**Shell**
+  *[[:linux:dash|Dash]]
+  *[[:linux:zsh|Zsh]]
+
+----

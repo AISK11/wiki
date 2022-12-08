@@ -1,54 +1,3 @@
-1668731212	127.0.0.1	E	cybersecurity:wlan	admin			6
-1669129808	127.0.0.1	E	cybersecurity:wlan	admin			-263
-1669133715	127.0.0.1	E	cybersecurity:wlan	admin			135
-1669133734	127.0.0.1	E	cybersecurity:wlan	admin			2
-1669133764	127.0.0.1	E	cybersecurity:wlan	admin			-153
-1669133773	127.0.0.1	E	cybersecurity:wlan	admin			0
-1669133993	127.0.0.1	E	cybersecurity:wlan	admin			-1
-1669134036	127.0.0.1	E	cybersecurity:wlan	admin			19
-1669134180	127.0.0.1	E	cybersecurity:wlan	admin			2
-1669138228	127.0.0.1	E	cybersecurity:wlan	admin	[WLAN Channels] 		59
-1669138272	127.0.0.1	E	cybersecurity:wlan	admin			30
-1669138627	127.0.0.1	E	cybersecurity:wlan	admin			-2
-1669138787	127.0.0.1	E	cybersecurity:wlan	admin			144
-1669138919	127.0.0.1	E	cybersecurity:wlan	admin			3
-1669138950	127.0.0.1	E	cybersecurity:wlan	admin			0
-1669139073	127.0.0.1	E	cybersecurity:wlan	admin			-59
-1669139120	127.0.0.1	E	cybersecurity:wlan	admin	[ToDo] 		21
-1669140806	127.0.0.1	E	cybersecurity:wlan	admin	[WLAN Channels] 		-4
-1669140990	127.0.0.1	E	cybersecurity:wlan	admin	[ToDo] 		-64
-1669141343	127.0.0.1	E	cybersecurity:wlan	admin			40
-1669141417	127.0.0.1	E	cybersecurity:wlan	admin	[Wi-Fi Channels] 		136
-1669238377	127.0.0.1	E	cybersecurity:wlan	admin			24
-1669238399	127.0.0.1	E	cybersecurity:wlan	admin	[WNIC Modes] 		10
-1669240925	127.0.0.1	E	cybersecurity:sidebar	admin			70
-1669240973	127.0.0.1	C	cybersecurity:wifi_ap_authentication	admin	created		1017
-1669241144	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			34
-1669241568	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			66
-1669241609	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			27
-1669241638	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			8
-1669242499	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			-20
-1669254188	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Electromagnetic Waves] 		47
-1669254204	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Electromagnetic Waves] 		1
-1669255177	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi WNIC Operation Modes] 		56
-1669255272	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			13
-1669255335	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			1
-1669255805	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			144
-1669255815	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			-24
-1669255833	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			0
-1669255854	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			2
-1669256198	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			58
-1669256530	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			111
-1669256809	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Resources] 		4
-1669256943	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			100
-1669257174	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			22
-1669257257	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Electromagnetic Waves] 		-36
-1669257390	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			7
-1669257681	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		82
-1669258362	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		458
-1669258396	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			0
-1669258445	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			2
-1669258473	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			0
 1669258838	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			56
 1669258911	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			115
 1669258923	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		0
@@ -58,3 +7,29 @@
 1669259018	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		30
 1669259453	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin			5
 1669259477	127.0.0.1	E	cybersecurity:wifi_ap_authentication	admin	[Wi-Fi Frame types] 		8
+1669825701	127.0.0.1	E	sidebar	admin			43
+1669825721	127.0.0.1	E	sidebar	admin			-43
+1669826135	127.0.0.1	E	sidebar	admin			-31
+1670423799	127.0.0.1	C	todo	admin	created		68
+1670470692	127.0.0.1	E	void:index	admin			1
+1670471803	127.0.0.1	E	void:index	admin			11
+1670471840	127.0.0.1	E	void:index	admin			-116
+1670471896	127.0.0.1	E	void:index	admin			-68
+1670471901	127.0.0.1	E	void:resources	admin			71
+1670471912	127.0.0.1	E	void:index	admin			-50
+1670471917	127.0.0.1	E	void:resources	admin			53
+1670519572	127.0.0.1	E	void:installation	admin	[Full System Installation] 		41
+1670520515	127.0.0.1	E	void:installation	admin	[Full System Installation] 		3
+1670522468	127.0.0.1	E	void:installation	admin	[Installation] 		-94
+1670522642	127.0.0.1	E	void:sidebar	admin			25
+1670522654	127.0.0.1	E	void:sidebar	admin			0
+1670522683	127.0.0.1	C	void:shell	admin	created		51
+1670522701	127.0.0.1	E	void:installation	admin			-4
+1670522923	127.0.0.1	E	void:installation	admin			-49
+1670522965	127.0.0.1	E	sidebar	admin			26
+1670523018	127.0.0.1	C	linux:index	admin	created		19
+1670523116	127.0.0.1	C	linux:sidebar	admin	created		159
+1670523125	127.0.0.1	E	sidebar	admin			2
+1670523145	127.0.0.1	C	linux:resources	admin	created		117
+1670523176	127.0.0.1	C	linux:dash	admin	created		112
+1670523182	127.0.0.1	C	linux:zsh	admin	created		111
