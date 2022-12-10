@@ -1,0 +1,50 @@
+====== ShellCheck ======
+
+//- static shell script analysis tool.//
+
+===== Installation =====
+
+  *Debian:<cli>
+# shellcheck -V || apt install [-y] shellcheck
+</cli>
+  *Void:<cli>
+# shellcheck -V || xbps-install [-y] shellcheck
+</cli>
+
+===== Configuration =====
+
+  -ShellCheck config file:<file text ~/.config/shellcheckrc>
+## AUTHOR:       AISK11
+## LOCATION:     ~/.config/shellcheckrc (0644 <USER>:<USER>)
+## DEPENDENCIES: shellcheck
+## DESCRIPTION:  ShellCheck config file.
+
+## First found config file is used from the following:
+##   1. 'shellcheckrc' or '.shellcheckrc' in script's directory.
+##   2. 'shellcheckrc' or '.shellcheckrc' in script's parent directories.
+##   3. '~/.shellcheckrc'.
+##   4. XDG directory: '~/.config/shellcheckrc'.
+
+## Enable optional checks by name as listed with '--list-optional'.
+enable=add-default-case
+enable=avoid-nullary-conditions
+enable=check-unassigned-uppercase
+enable=deprecate-which
+enable=quote-safe-variables
+enable=require-variable-braces
+
+## Override shell detected from the shebang.
+shell=sh
+</file>
+
+===== Usage =====
+
+  -Check script for errors:<cli>
+$ shellcheck <SCRIPT>
+</cli>
+
+===== Resources =====
+
+  *[[https://www.shellcheck.net|ShellCheck Online Tool]]
+  *[[https://www.shellcheck.net/wiki|ShellCheck Wiki]]
+  *[[https://github.com/koalaman/shellcheck|ShellCheck GitHub Source Code]]

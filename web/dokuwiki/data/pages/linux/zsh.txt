@@ -1,5 +1,25 @@
 ====== Zsh ======
 
+//- user-friendly POSIX-compliant interactive command interpreter (shell).//
+
 <WRAP center round important 60%>
 This section is incomplete and needs further work!
 </WRAP>
+
+===== Installation =====
+
+  *Debian:<cli>
+# apt install [-y] ?
+</cli>
+  *Void:<cli>
+# xbps-install [-y] ?
+</cli>
+
+===== Configuration =====
+
+===== Resources =====
+
+  *[[https://www.zsh.org|Zsh Official Site]]
+  *[[https://wiki.archlinux.org/title/zsh|ArchWiki - Zsh]]
+  *[[https://wiki.gentoo.org/wiki/Zsh|GentooWiki - Zsh]]
+  *[[https://wiki.debian.org/Zsh|DebianWiki - Zsh]]

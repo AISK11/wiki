@@ -1,5 +1,24 @@
 ====== Dash ======
 
-<WRAP center round important 60%>
-This section is incomplete and needs further work!
-</WRAP>
+//- minimalistic POSIX-compliant command interpreter (shell).//
+
+===== Installation =====
+
+  *Debian:<cli>
+# apt install [-y] dash
+</cli>
+  *Void:<cli>
+# xbps-install [-y] dash
+</cli>
+
+===== Configuration =====
+
+  -Set Dash as default system shell:<cli>
+# ln -sf /bin/dash /bin/sh
+</cli>
+
+===== Resources =====
+
+  *[[https://git.kernel.org/pub/scm/utils/dash/dash.git|Dash Git Source Code]]
+  *[[https://wiki.archlinux.org/title/Dash|ArchWiki - Dash]]
+  *[[https://wiki.gentoo.org/wiki/Dash|GentooWiki - Dash]]

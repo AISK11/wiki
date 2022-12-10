@@ -306,3 +306,4 @@ dokuwiki:dania
 linux:resources
 linux:dash
 linux:zsh
+linux:shellcheck

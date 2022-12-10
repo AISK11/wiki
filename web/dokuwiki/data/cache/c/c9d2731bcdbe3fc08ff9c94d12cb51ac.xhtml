@@ -1,0 +1,76 @@
+
+<h1 class="sectionedit1" id="shellcheck">ShellCheck</h1>
+<div class="level1">
+
+<p>
+<em>- static shell script analysis tool.</em>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;ShellCheck&quot;,&quot;hid&quot;:&quot;shellcheck&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-68&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">Debian:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">shellcheck -V || apt install [-y] shellcheck</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Void:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">shellcheck -V || xbps-install [-y] shellcheck</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;69-234&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li">ShellCheck config file:<dl class="file">
+<dt><a href="http://localhost/_export/code/linux/shellcheck?codeblock=0" title="Download Snippet" class="mediafile mf_config_shellcheckrc">~/.config/shellcheckrc</a></dt>
+<dd><pre class="code file text">## AUTHOR:       AISK11
+## LOCATION:     ~/.config/shellcheckrc (0644 &lt;USER&gt;:&lt;USER&gt;)
+## DEPENDENCIES: shellcheck
+## DESCRIPTION:  ShellCheck config file.
+&nbsp;
+## First found config file is used from the following:
+##   1. 'shellcheckrc' or '.shellcheckrc' in script's directory.
+##   2. 'shellcheckrc' or '.shellcheckrc' in script's parent directories.
+##   3. '~/.shellcheckrc'.
+##   4. XDG directory: '~/.config/shellcheckrc'.
+&nbsp;
+## Enable optional checks by name as listed with '--list-optional'.
+enable=add-default-case
+enable=avoid-nullary-conditions
+enable=check-unassigned-uppercase
+enable=deprecate-which
+enable=quote-safe-variables
+enable=require-variable-braces
+&nbsp;
+## Override shell detected from the shebang.
+shell=sh</pre>
+</dd></dl>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;235-1052&quot;} -->
+<h2 class="sectionedit4" id="usage">Usage</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li">Check script for errors:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">shellcheck &lt;SCRIPT&gt;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;1053-1134&quot;} -->
+<h2 class="sectionedit5" id="resources">Resources</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"><a href="https://www.shellcheck.net" class="urlextern" title="https://www.shellcheck.net">ShellCheck Online Tool</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://www.shellcheck.net/wiki" class="urlextern" title="https://www.shellcheck.net/wiki">ShellCheck Wiki</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://github.com/koalaman/shellcheck" class="urlextern" title="https://github.com/koalaman/shellcheck">ShellCheck GitHub Source Code</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Resources&quot;,&quot;hid&quot;:&quot;resources&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;1135-&quot;} -->
