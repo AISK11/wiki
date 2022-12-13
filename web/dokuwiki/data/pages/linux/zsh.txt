@@ -9,13 +9,20 @@ This section is incomplete and needs further work!
 ===== Installation =====
 
   *Debian:<cli>
-# apt install [-y] ?
+# apt install -y ?
 </cli>
   *Void:<cli>
-# xbps-install [-y] ?
+# xbps-install -y ?
 </cli>
 
 ===== Configuration =====
+
+  -Zsh config file:<file text ~/.zshrc>
+## AUTHOR:       AISK11
+## LOCATION:     ~/.zshrc (0644 <USER>:<USER>)
+## DEPENDENCIES: ?
+## DESCRIPTION:  Zsh config file.
+</file>
 
 ===== Resources =====
 

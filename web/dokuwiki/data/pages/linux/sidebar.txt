@@ -7,8 +7,8 @@
   *[[:linux:resources|Resources]]
 
 **Shell**
-  *[[:linux:shellcheck|ShellCheck]]
   *[[:linux:dash|Dash]]
   *[[:linux:zsh|Zsh]]
+  *[[:linux:shellcheck|ShellCheck]]
 
 ----

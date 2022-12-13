@@ -5,29 +5,30 @@
 ===== Installation =====
 
   *Debian:<cli>
-# shellcheck -V || apt install [-y] shellcheck
+# shellcheck -V || apt install -y shellcheck
 </cli>
   *Void:<cli>
-# shellcheck -V || xbps-install [-y] shellcheck
+# shellcheck -V || xbps-install -y shellcheck
 </cli>
 
 ===== Configuration =====
 
   -ShellCheck config file:<file text ~/.config/shellcheckrc>
 ## AUTHOR:       AISK11
-## LOCATION:     ~/.config/shellcheckrc (0644 <USER>:<USER>)
+## LOCATION:     ~/.config/shellcheckrc (0644)
 ## DEPENDENCIES: shellcheck
-## DESCRIPTION:  ShellCheck config file.
-
-## First found config file is used from the following:
-##   1. 'shellcheckrc' or '.shellcheckrc' in script's directory.
-##   2. 'shellcheckrc' or '.shellcheckrc' in script's parent directories.
-##   3. '~/.shellcheckrc'.
-##   4. XDG directory: '~/.config/shellcheckrc'.
+## DESCRIPTION:  ShellCheck reads first found config file from:
+##                 1. 'shellcheckrc' or '.shellcheckrc' in script's directory.
+##                 2. 'shellcheckrc' or '.shellcheckrc' in script's parent
+##                     directories.
+##                 3. '~/.shellcheckrc'.
+##                 4. XDG directory: '~/.config/shellcheckrc'.
 
 ## Enable optional checks by name as listed with '--list-optional'.
 enable=add-default-case
 enable=avoid-nullary-conditions
+enable=check-extra-masked-returns
+enable=check-set-e-suppressed
 enable=check-unassigned-uppercase
 enable=deprecate-which
 enable=quote-safe-variables

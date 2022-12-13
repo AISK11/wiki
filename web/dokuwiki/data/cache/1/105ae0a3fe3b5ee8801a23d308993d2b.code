@@ -1,0 +1,32 @@
+<span class="co0">## AUTHOR:       AISK11</span>
+<span class="co0">## LOCATION:     ~/.profile (0644)</span>
+<span class="co0">## DEPENDENCIES: dash</span>
+<span class="co0">## DESCRIPTION:  Dash login shell (&quot;-dash&quot;) reads commands from '/etc/profile'</span>
+<span class="co0">##               and '~/.profile' if they exists.</span>
+&nbsp;
+<span class="co0">## Read commands from file specified by &quot;${ENV}&quot; for each interactive shell.</span>
+<span class="kw3">export</span> <span class="re2">ENV</span>=<span class="st_h">''</span>
+&nbsp;
+<span class="co0">## Default search path for executables.</span>
+<span class="kw3">export</span> <span class="re2">PATH</span>=<span class="st_h">''</span>
+<span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-L</span> <span class="st0">&quot;/sbin&quot;</span> <span class="br0">&#93;</span>            <span class="sy0">&amp;&amp;</span> <span class="re2">PATH</span>=<span class="st0">&quot;<span class="es3">${PATH}</span>:/sbin&quot;</span>
+<span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-L</span> <span class="st0">&quot;/bin&quot;</span> <span class="br0">&#93;</span>             <span class="sy0">&amp;&amp;</span> <span class="re2">PATH</span>=<span class="st0">&quot;<span class="es3">${PATH}</span>:/bin&quot;</span>
+<span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-L</span> <span class="st0">&quot;/usr/sbin&quot;</span> <span class="br0">&#93;</span>        <span class="sy0">&amp;&amp;</span> <span class="re2">PATH</span>=<span class="st0">&quot;<span class="es3">${PATH}</span>:/usr/sbin&quot;</span>
+<span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-L</span> <span class="st0">&quot;/usr/bin&quot;</span> <span class="br0">&#93;</span>         <span class="sy0">&amp;&amp;</span> <span class="re2">PATH</span>=<span class="st0">&quot;<span class="es3">${PATH}</span>:/usr/bin&quot;</span>
+<span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-L</span> <span class="st0">&quot;/usr/local/sbin&quot;</span> <span class="br0">&#93;</span>  <span class="sy0">&amp;&amp;</span> <span class="re2">PATH</span>=<span class="st0">&quot;<span class="es3">${PATH}</span>:/usr/local/sbin&quot;</span>
+<span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-L</span> <span class="st0">&quot;/usr/local/bin&quot;</span> <span class="br0">&#93;</span>   <span class="sy0">&amp;&amp;</span> <span class="re2">PATH</span>=<span class="st0">&quot;<span class="es3">${PATH}</span>:/usr/local/bin&quot;</span>
+<span class="br0">&#91;</span> <span class="re5">-d</span> <span class="st0">&quot;<span class="es3">${HOME}</span>/.local/bin&quot;</span> <span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> <span class="re2">PATH</span>=<span class="st0">&quot;<span class="es3">${PATH}</span>:<span class="es3">${HOME}</span>/.local/bin&quot;</span>
+<span class="br0">&#91;</span> <span class="re5">-d</span> <span class="st0">&quot;<span class="es3">${HOME}</span>/bin&quot;</span> <span class="br0">&#93;</span>        <span class="sy0">&amp;&amp;</span> <span class="re2">PATH</span>=<span class="st0">&quot;<span class="es3">${PATH}</span>:<span class="es3">${HOME}</span>/bin&quot;</span>
+<span class="re2">PATH</span>=<span class="st0">&quot;<span class="es3">${PATH#:}</span>&quot;</span>
+&nbsp;
+<span class="co0">## Command prompts.</span>
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es4">$(whoami)</span>&quot;</span> = <span class="st_h">'root'</span> <span class="br0">&#93;</span>
+<span class="kw1">then</span>
+    <span class="kw3">export</span> <span class="re2">PS1</span>=<span class="st_h">'# '</span>
+<span class="kw1">else</span>
+    <span class="kw3">export</span> <span class="re2">PS1</span>=<span class="st_h">'$ '</span>
+<span class="kw1">fi</span>
+<span class="kw3">export</span> <span class="re2">PS2</span>=<span class="st_h">'&gt; '</span>
+&nbsp;
+<span class="co0">## XDG environment.</span>
+<span class="kw3">export</span> <span class="re2">XDG_CONFIG_HOME</span>=<span class="st0">&quot;<span class="es3">${HOME}</span>/.config&quot;</span>

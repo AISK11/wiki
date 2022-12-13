@@ -293,3 +293,4 @@ linux:resources
 linux:dash
 linux:zsh
 linux:shellcheck
+old:cybersecurity:crypto:encryption

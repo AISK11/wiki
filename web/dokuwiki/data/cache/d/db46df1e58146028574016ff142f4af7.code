@@ -1,0 +1,6 @@
+## AUTHOR:       AISK11
+## LOCATION:     ~/.config/shellcheckrc (0644 &lt;USER&gt;:&lt;USER&gt;)
+## DEPENDENCIES: dash
+## DESCRIPTION:  Dash config file.
+&nbsp;
+## Login shell (&quot;-dash&quot;) reads commands from '/etc/profile' and '~/.profile' if they exists.

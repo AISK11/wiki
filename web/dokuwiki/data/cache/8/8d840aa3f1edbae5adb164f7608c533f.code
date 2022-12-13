@@ -1,0 +1,32 @@
+## AUTHOR:       AISK11
+## LOCATION:     ~/.profile (0644)
+## DEPENDENCIES: dash
+## DESCRIPTION:  Dash login shell (&quot;-dash&quot;) reads commands from '/etc/profile'
+##               and '~/.profile' if they exists.
+&nbsp;
+## Read commands from file specified by &quot;${ENV}&quot; for each interactive shell.
+export ENV=''
+&nbsp;
+## Default search path for executables.
+export PATH=''
+[ ! -L &quot;/sbin&quot; ]            &amp;&amp; PATH=&quot;${PATH}:/sbin&quot;
+[ ! -L &quot;/bin&quot; ]             &amp;&amp; PATH=&quot;${PATH}:/bin&quot;
+[ ! -L &quot;/usr/sbin&quot; ]        &amp;&amp; PATH=&quot;${PATH}:/usr/sbin&quot;
+[ ! -L &quot;/usr/bin&quot; ]         &amp;&amp; PATH=&quot;${PATH}:/usr/bin&quot;
+[ ! -L &quot;/usr/local/sbin&quot; ]  &amp;&amp; PATH=&quot;${PATH}:/usr/local/sbin&quot;
+[ ! -L &quot;/usr/local/bin&quot; ]   &amp;&amp; PATH=&quot;${PATH}:/usr/local/bin&quot;
+[ -d &quot;${HOME}/.local/bin&quot; ] &amp;&amp; PATH=&quot;${PATH}:${HOME}/.local/bin&quot;
+[ -d &quot;${HOME}/bin&quot; ]        &amp;&amp; PATH=&quot;${PATH}:${HOME}/bin&quot;
+PATH=&quot;${PATH#:}&quot;
+&nbsp;
+## Command prompts.
+if [ &quot;$(whoami)&quot; = 'root' ]
+then
+    export PS1='# '
+else
+    export PS1='$ '
+fi
+export PS2='&gt; '
+&nbsp;
+## XDG environment.
+export XDG_CONFIG_HOME=&quot;${HOME}/.config&quot;
