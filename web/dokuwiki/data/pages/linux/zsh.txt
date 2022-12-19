@@ -5,7 +5,7 @@
 ===== Installation =====
 
   *Debian:<cli>
-# [ -n "${ZSH_VERSION}" ] || apt install -y ?
+# echo ${ZSH_VERSION} || apt install -y zsh zsh-syntax-highlighting zsh-autosuggestions
 </cli>
 
 ===== Configuration =====
@@ -552,7 +552,7 @@ tabs 4
 ## Security clear.
 clear
 </file>
-  -Set zsh as login shell:
+  -Set Zsh as login shell:
     *By root:<cli>
 # usermod -s $(command -v zsh) <USER>
 </cli>
