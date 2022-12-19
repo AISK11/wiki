@@ -7,9 +7,6 @@
   *Debian:<cli>
 # shellcheck -V || apt install -y shellcheck
 </cli>
-  *Void:<cli>
-# shellcheck -V || xbps-install -y shellcheck
-</cli>
 
 ===== Configuration =====
 

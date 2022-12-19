@@ -1,61 +1,3 @@
-1670423799	127.0.0.1	C	todo	admin	created		68
-1670470692	127.0.0.1	E	void:index	admin			1
-1670471803	127.0.0.1	E	void:index	admin			11
-1670471840	127.0.0.1	E	void:index	admin			-116
-1670471896	127.0.0.1	E	void:index	admin			-68
-1670471901	127.0.0.1	E	void:resources	admin			71
-1670471912	127.0.0.1	E	void:index	admin			-50
-1670471917	127.0.0.1	E	void:resources	admin			53
-1670519572	127.0.0.1	E	void:installation	admin	[Full System Installation] 		41
-1670520515	127.0.0.1	E	void:installation	admin	[Full System Installation] 		3
-1670522468	127.0.0.1	E	void:installation	admin	[Installation] 		-94
-1670522642	127.0.0.1	E	void:sidebar	admin			25
-1670522654	127.0.0.1	E	void:sidebar	admin			0
-1670522683	127.0.0.1	C	void:shell	admin	created		51
-1670522701	127.0.0.1	E	void:installation	admin			-4
-1670522923	127.0.0.1	E	void:installation	admin			-49
-1670522965	127.0.0.1	E	sidebar	admin			26
-1670523018	127.0.0.1	C	linux:index	admin	created		19
-1670523116	127.0.0.1	C	linux:sidebar	admin	created		159
-1670523125	127.0.0.1	E	sidebar	admin			2
-1670523145	127.0.0.1	C	linux:resources	admin	created		117
-1670523176	127.0.0.1	C	linux:dash	admin	created		112
-1670523182	127.0.0.1	C	linux:zsh	admin	created		111
-1670523657	127.0.0.1	E	linux:dash	admin			41
-1670523693	127.0.0.1	E	linux:dash	admin			16
-1670523753	127.0.0.1	E	linux:dash	admin			13
-1670526126	127.0.0.1	E	linux:dash	admin			0
-1670526566	127.0.0.1	E	linux:sidebar	admin			36
-1670526622	127.0.0.1	C	linux:shellcheck	admin	created		171
-1670526858	127.0.0.1	E	linux:shellcheck	admin			151
-1670526874	127.0.0.1	E	linux:shellcheck	admin			0
-1670526895	127.0.0.1	E	linux:shellcheck	admin			-11
-1670527036	127.0.0.1	E	linux:shellcheck	admin			106
-1670527149	127.0.0.1	E	linux:shellcheck	admin			57
-1670549310	127.0.0.1	E	linux:shellcheck	admin			790
-1670549663	127.0.0.1	E	linux:shellcheck	admin	[Configuration] 		1
-1670550022	127.0.0.1	E	linux:shellcheck	admin			63
-1670550100	127.0.0.1	E	linux:shellcheck	admin			-94
-1670550169	127.0.0.1	E	linux:dash	admin			-5
-1670550248	127.0.0.1	E	linux:shellcheck	admin			76
-1670550262	127.0.0.1	E	linux:shellcheck	admin	[Resources] 		0
-1670633747	127.0.0.1	E	linux:dash	admin			189
-1670634287	127.0.0.1	E	linux:dash	admin			35
-1670634317	127.0.0.1	E	linux:dash	admin			-94
-1670634569	127.0.0.1	E	linux:zsh	admin			78
-1670634609	127.0.0.1	E	linux:zsh	admin			184
-1670634762	127.0.0.1	E	linux:zsh	admin	[Installation] 		48
-1670634822	127.0.0.1	E	linux:zsh	admin	[Installation] 		-14
-1670634839	127.0.0.1	E	linux:shellcheck	admin			34
-1670634913	127.0.0.1	E	linux:zsh	admin	[Installation] 		-34
-1670635084	127.0.0.1	E	linux:zsh	admin			46
-1670635096	127.0.0.1	E	linux:zsh	admin	[Resources] 		-1
-1670635152	127.0.0.1	E	linux:zsh	admin			-19
-1670635436	127.0.0.1	E	linux:dash	admin			91
-1670635743	127.0.0.1	E	linux:shellcheck	admin	[Resources] 		0
-1670635762	127.0.0.1	E	linux:dash	admin			12
-1670636062	127.0.0.1	E	linux:dash	admin			120
-1670636490	127.0.0.1	E	linux:zsh	admin			168
 1670899718	127.0.0.1	E	linux:zsh	admin			173
 1670900587	127.0.0.1	E	linux:dash	admin			288
 1670901119	127.0.0.1	E	linux:sidebar	admin			0
@@ -72,3 +14,12 @@
 1670907562	127.0.0.1	E	linux:dash	admin	[Installation] 		-4
 1670907571	127.0.0.1	E	linux:shellcheck	admin			-4
 1670907778	127.0.0.1	E	linux:zsh	admin			-4
+1671053633	127.0.0.1	E	linux:dash	admin			-886
+1671319304	127.0.0.1	E	linux:dash	admin			-44
+1671319311	127.0.0.1	E	linux:zsh	admin			-41
+1671319317	127.0.0.1	E	linux:shellcheck	admin			-67
+1671319515	127.0.0.1	E	linux:zsh	admin			63
+1671320324	127.0.0.1	E	linux:zsh	admin			27
+1671407578	127.0.0.1	E	linux:zsh	admin			21168
+1671407861	127.0.0.1	E	linux:zsh	admin			163
+1671408096	127.0.0.1	E	linux:zsh	admin			-94

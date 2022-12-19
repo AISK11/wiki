@@ -5,44 +5,585 @@
 <p>
 <em>- user-friendly POSIX-compliant interactive command interpreter (shell).</em>
 </p>
-<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
-<p>
-This section is incomplete and needs further work!
-</p>
-</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Zsh&quot;,&quot;hid&quot;:&quot;zsh&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-191&quot;} -->
-<h2 class="sectionedit4" id="installation">Installation</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Zsh&quot;,&quot;hid&quot;:&quot;zsh&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-97&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
 <div class="level2">
 <ul>
-<li class="level1"><div class="li">Debian:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">apt install -y ?</span></pre><p></div>
-</li>
-<li class="level1"><div class="li">Void:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">xbps-install -y ?</span></pre><p></div>
+<li class="level1"><div class="li">Debian:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">[ -n &quot;${ZSH_VERSION}&quot; ] || apt install -y ?</span></pre><p></div>
 </li>
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;192-301&quot;} -->
-<h2 class="sectionedit5" id="configuration">Configuration</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;98-193&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
 <div class="level2">
 <ol>
 <li class="level1"><div class="li">Zsh config file:<dl class="file">
 <dt><a href="http://localhost/_export/code/linux/zsh?codeblock=0" title="Download Snippet" class="mediafile mf_zshrc">~/.zshrc</a></dt>
 <dd><pre class="code file text">## AUTHOR:       AISK11
-## LOCATION:     ~/.zshrc (0644 &lt;USER&gt;:&lt;USER&gt;)
-## DEPENDENCIES: ?
-## DESCRIPTION:  Zsh config file.</pre>
+## LOCATION:     ~/.zshrc (0644)
+## DEPENDENCIES: zsh [zsh-syntax-highlighting] [zsh-autosuggestions]
+## DESCRIPTION:  Interactive zsh config file.
+&nbsp;
+################################################################################
+##                                 INVOCATION                                 ##
+################################################################################
+##        +-----------------+  +--------------------+
+## START-&gt;| /etc/zsh/zshenv |-&gt;| ${ZDOTDIR}/.zshenv |
+##        +-----------------+  +--------------------+
+##                                                  |
+## +------------------------------------------------+
+## |
+## |                +-------------------+  +----------------------+
+## LOGIN SHELL? Y -&gt;| /etc/zsh/zprofile |-&gt;| ${ZDOTDIR}/.zprofile |
+## N                +-------------------+  +----------------------+
+## |                                                              |
+## +--------------------------------------------------------------+
+## |
+## |                      +----------------+  +-------------------+
+## INTERACTIVE SHELL? Y -&gt;| /etc/zsh/zshrc |-&gt;| ${ZDOTDIR}/.zshrc |
+## N                      +----------------+  +-------------------+
+## |                                                              |
+## +--------------------------------------------------------------+
+## |
+## |                +-----------------+  +--------------------+
+## LOGIN SHELL? Y -&gt;| /etc/zsh/zlogin |-&gt;| ${ZDOTDIR}/.zlogin |
+## N                +-----------------+  +--------------------+
+## |                                                          |
+## +----------------------------------------------------------+
+## |
+## EXIT CALL
+## |
+## |                +---------------------+  +------------------+
+## LOGIN SHELL? Y -&gt;| ${ZDOTDIR}/.zlogout |-&gt;| /etc/zsh/zlogout |
+## N                +---------------------+  +------------------+
+## |                                                            |
+## +------------------------------------------------------------+
+## |
+## END
+&nbsp;
+################################################################################
+##                               SHELL OPTIONS                                ##
+################################################################################
+## Changing directories.
+setopt   AUTO_CD
+unsetopt CDABLE_VARS
+&nbsp;
+## Completion.
+unsetopt AUTO_LIST
+unsetopt AUTO_PARAM_KEYS
+unsetopt MENU_COMPLETE
+&nbsp;
+## History.
+setopt   HIST_EXPIRE_DUPS_FIRST
+setopt   HIST_FCNTL_LOCK
+setopt   HIST_FIND_NO_DUPS
+setopt   HIST_IGNORE_ALL_DUPS
+setopt   HIST_IGNORE_SPACE
+setopt   HIST_REDUCE_BLANKS
+setopt   HIST_SAVE_NO_DUPS
+setopt   HIST_VERIFY
+setopt   SHARE_HISTORY
+&nbsp;
+## Input/Output.
+unsetopt HASH_CMDS
+setopt   INTERACTIVE_COMMENTS
+&nbsp;
+## Shell emulation.
+setopt   BSD_ECHO
+setopt   SH_WORD_SPLIT
+&nbsp;
+## Zle.
+unsetopt BEEP
+setopt   VI
+setopt   NO_NOMATCH
+&nbsp;
+################################################################################
+##                                    KEYS                                    ##
+################################################################################
+## Create a zkbd compatible hash.
+#typeset -g -A key
+#key[Backspace]=&quot;${terminfo[kbs]}&quot;
+#key[Insert]=&quot;${terminfo[kich1]}&quot;
+#key[Up]=&quot;${terminfo[kcuu1]}&quot;
+#key[Down]=&quot;${terminfo[kcud1]}&quot;
+#key[Left]=&quot;${terminfo[kcub1]}&quot;
+#key[Right]=&quot;${terminfo[kcuf1]}&quot;
+#key[Home]=&quot;${terminfo[khome]}&quot;
+#key[End]=&quot;${terminfo[kend]}&quot;
+#key[Delete]=&quot;${terminfo[kdch1]}&quot;
+#key[Shift-Tab]=&quot;${terminfo[kcbt]}&quot;
+#key[PageUp]=&quot;${terminfo[kpp]}&quot;
+#key[PageDown]=&quot;${terminfo[knp]}&quot;
+&nbsp;
+## Setup keys.
+#[ -n &quot;${key[Backspace]}&quot; ] &amp;&amp; bindkey -- &quot;${key[Backspace]}&quot; backward-delete-char
+#[ -n &quot;${key[Insert]}&quot;    ] &amp;&amp; bindkey -- &quot;${key[Insert]}&quot;    overwrite-mode
+#[ -n &quot;${key[Up]}&quot;        ] &amp;&amp; bindkey -- &quot;${key[Up]}&quot;        up-line-or-history
+#[ -n &quot;${key[Down]}&quot;      ] &amp;&amp; bindkey -- &quot;${key[Down]}&quot;      down-line-or-history
+#[ -n &quot;${key[Left]}&quot;      ] &amp;&amp; bindkey -- &quot;${key[Left]}&quot;      backward-char
+#[ -n &quot;${key[Right]}&quot;     ] &amp;&amp; bindkey -- &quot;${key[Right]}&quot;     forward-char
+#[ -n &quot;${key[Home]}&quot;      ] &amp;&amp; bindkey -- &quot;${key[Home]}&quot;      beginning-of-line
+#[ -n &quot;${key[End]}&quot;       ] &amp;&amp; bindkey -- &quot;${key[End]}&quot;       end-of-line
+#[ -n &quot;${key[Delete]}&quot;    ] &amp;&amp; bindkey -- &quot;${key[Delete]}&quot;    delete-char
+#[ -n &quot;${key[Shift-Tab]}&quot; ] &amp;&amp; bindkey -- &quot;${key[Shift-Tab]}&quot; reverse-menu-complete
+#[ -n &quot;${key[PageUp]}&quot;    ] &amp;&amp; bindkey -- &quot;${key[PageUp]}&quot;    beginning-of-buffer-or-history
+#[ -n &quot;${key[PageDown]}&quot;  ] &amp;&amp; bindkey -- &quot;${key[PageDown]}&quot;  end-of-buffer-or-history
+&nbsp;
+## Setup keys (vi mode).
+#[ -n &quot;${key[Backspace]}&quot; ] &amp;&amp; bindkey -M vicmd &quot;${key[Backspace]}&quot; backward-delete-char
+#[ -n &quot;${key[Insert]}&quot;    ] &amp;&amp; bindkey -M vicmd &quot;${key[Insert]}&quot;    overwrite-mode
+#[ -n &quot;${key[Up]}&quot;        ] &amp;&amp; bindkey -M vicmd &quot;${key[Up]}&quot;        up-line-or-history
+#[ -n &quot;${key[Down]}&quot;      ] &amp;&amp; bindkey -M vicmd &quot;${key[Down]}&quot;      down-line-or-history
+#[ -n &quot;${key[Left]}&quot;      ] &amp;&amp; bindkey -M vicmd &quot;${key[Left]}&quot;      backward-char
+#[ -n &quot;${key[Right]}&quot;     ] &amp;&amp; bindkey -M vicmd &quot;${key[Right]}&quot;     forward-char
+#[ -n &quot;${key[Home]}&quot;      ] &amp;&amp; bindkey -M vicmd &quot;${key[Home]}&quot;      beginning-of-line
+#[ -n &quot;${key[End]}&quot;       ] &amp;&amp; bindkey -M vicmd &quot;${key[End]}&quot;       end-of-line
+#[ -n &quot;${key[Delete]}&quot;    ] &amp;&amp; bindkey -M vicmd &quot;${key[Delete]}&quot;    delete-char
+#[ -n &quot;${key[Shift-Tab]}&quot; ] &amp;&amp; bindkey -M vicmd &quot;${key[Shift-Tab]}&quot; reverse-menu-complete
+#[ -n &quot;${key[PageUp]}&quot;    ] &amp;&amp; bindkey -M vicmd &quot;${key[PageUp]}&quot;    beginning-of-buffer-or-history
+#[ -n &quot;${key[PageDown]}&quot;  ] &amp;&amp; bindkey -M vicmd &quot;${key[PageDown]}&quot;  end-of-buffer-or-history
+&nbsp;
+## Make sure that terminal is in application mode, when zle is active,
+## otherwise $terminfo values are invalid.
+#if (( ${+terminfo[smkx]} &amp;&amp; ${+terminfo[rmkx]} )); then
+#    autoload -Uz add-zle-hook-widget
+#    function zle_application_mode_start { echoti smkx; }
+#    function zle_application_mode_stop  { echoti rmkx; }
+#    add-zle-hook-widget -Uz zle-line-init   zle_application_mode_start
+#    add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+#fi
+&nbsp;
+################################################################################
+##                                 VARIABLES                                  ##
+################################################################################
+########################################
+##          SHELL VARIABLES           ##
+########################################
+## Default search path for executables.
+export PATH=''
+[ ! -L &quot;/sbin&quot; ]            &amp;&amp; PATH=&quot;${PATH}:/sbin&quot;
+[ ! -L &quot;/bin&quot; ]             &amp;&amp; PATH=&quot;${PATH}:/bin&quot;
+[ ! -L &quot;/usr/sbin&quot; ]        &amp;&amp; PATH=&quot;${PATH}:/usr/sbin&quot;
+[ ! -L &quot;/usr/bin&quot; ]         &amp;&amp; PATH=&quot;${PATH}:/usr/bin&quot;
+[ ! -L &quot;/usr/local/sbin&quot; ]  &amp;&amp; PATH=&quot;${PATH}:/usr/local/sbin&quot;
+[ ! -L &quot;/usr/local/bin&quot; ]   &amp;&amp; PATH=&quot;${PATH}:/usr/local/bin&quot;
+[ -d &quot;${HOME}/.local/bin&quot; ] &amp;&amp; PATH=&quot;${PATH}:${HOME}/.local/bin&quot;
+[ -d &quot;${HOME}/bin&quot; ]        &amp;&amp; PATH=&quot;${PATH}:${HOME}/bin&quot;
+PATH=&quot;${PATH#:}&quot;
+&nbsp;
+## History.
+export HISTSIZE='5000'
+export SAVEHIST=&quot;${HISTSIZE}&quot;
+export HISTFILE=&quot;${HOME}/.zsh_history&quot;
+&nbsp;
+## Command prompts.
+export PROMPT_EOL_MARK='%B%S%#%s%b'
+export PS1='%B%(!.%F{red}.%F{green})%n%F{yellow}@%(!.%F{red}.%F{green})%m %F{blue}%~ %(?.%F{green}.%F{red})%(!.#.$) %f%b'
+export PS2='&gt; '
+export PS4='+ '
+&nbsp;
+## Keyboard.
+export KEYTIMEOUT='40'
+&nbsp;
+## Locale.
+export LANG='C.UTF-8'
+&nbsp;
+########################################
+##          DEFAULT PROGRAMS          ##
+########################################
+## Color mode.
+#export COLOR_MODE='always'
+export COLOR_MODE='auto'
+&nbsp;
+## Text editor.
+if [ -n &quot;$(command -vp nvim)&quot; ]; then
+    export VISUAL='nvim'
+elif [ -n &quot;$(command -vp vim)&quot; ]; then
+    export VISUAL='vim'
+elif [ -n &quot;$(command -vp vi)&quot; ]; then
+    export VISUAL='vi'
+else
+    export VISUAL=''
+fi
+export EDITOR=&quot;${VISUAL}&quot;
+&nbsp;
+########################################
+##         PROGRAM VARIABLES          ##
+########################################
+## &quot;$(less)&quot;.
+export LESS='-R --use-color -Ddr$Dub$DSky$DPkb$ -i --follow-name --file-size -Ps[File\: &quot;?f%f:STDIN.&quot; | Lines\: %lt-%lb/%L (?e100:%Pb.\%)]$'
+export LESSHISTFILE='/dev/null'
+export LESSHISTSIZE='0'
+&nbsp;
+## &quot;$(man)&quot;.
+if [ -n &quot;$(command -vp less)&quot; ]; then
+    export PAGER='less'
+else
+    export PAGER=''
+fi
+export MANPAGER=&quot;${PAGER}&quot;
+export MANLESS='[Manual\: \$MAN_PN\] | Lines\: %lt-%lb/%L (?e100:%Pb.\%)]$'
+&nbsp;
+################################################################################
+##                                  ALIASES                                   ##
+################################################################################
+########################################
+##               SET UP               ##
+########################################
+## Unalias all previous aliases.
+unalias -a
+&nbsp;
+########################################
+##              COMMANDS              ##
+########################################
+## Kernel.
+alias dmesg='\dmesg --color=${COLOR_MODE}'
+&nbsp;
+## System.
+alias history='\history 0'
+alias date='\date &quot;+%Y-%m-%d %H:%M:%S %Z&quot;'
+alias pstree='\pstree -C age -h'
+alias kill='\kill -9'
+alias killall='\killall -9'
+&nbsp;
+## Filesystem.
+alias mkdir='\mkdir -p'
+alias ls='\ls --color=${COLOR_MODE} -F --group-directories-first'
+alias tree='\tree -C'
+alias file='\file -p'
+&nbsp;
+## Text reading.
+alias grep='\grep --color=${COLOR_MODE}'
+alias egrep='\grep -E --color=${COLOR_MODE}'
+alias diff='\diff --color=${COLOR_MODE} -s'
+alias nl='\nl -s &quot; &quot;'
+&nbsp;
+## Multimedia.
+alias mpv='\mpv --audio-display=no'
+alias yt-dlp='\yt-dlp -ix --progress -f bestaudio --audio-quality 0 --audio-format mp3 -o &quot;%(title)s.%(ext)s&quot;'
+alias mp3gain='\mp3gain -r -k'
+&nbsp;
+## Network.
+alias ip='\ip --color=${COLOR_MODE}'
+alias mtr='\mtr -t'
+alias nmap='\nmap -T4'
+&nbsp;
+########################################
+##            ALTERNATIVES            ##
+########################################
+## Filesystem.
+if [ -n &quot;$(command -vp lsd)&quot; ]; then
+    alias ls='\lsd --color=${COLOR_MODE} -F --group-dirs first --icon never'
+fi
+&nbsp;
+## Text reading.
+if [ -z &quot;$(command -vp xxd)&quot; ]; then
+    alias xxd='\hexdump -C'
+fi
+&nbsp;
+## Text editing.
+if [ -n &quot;$(command -vp nvim)&quot; ]; then
+    alias vim='\nvim'
+    alias vi='\nvim'
+elif [ -n &quot;$(command -vp vim)&quot; ]; then
+    alias nvim='\vim'
+    alias vi='\vim'
+elif [ -n &quot;$(command -vp vi)&quot; ]; then
+    alias nvim='\vi'
+    alias vim='\vi'
+fi
+&nbsp;
+## Security.
+if [ -n &quot;$(command -vp doas)&quot; ]; then
+    alias sudo='\doas'
+elif [ -n &quot;$(command -vp sudo)&quot; ]; then
+    alias doas='\sudo'
+fi
+&nbsp;
+########################################
+##               CUSTOM               ##
+########################################
+## System.
+alias idate='\date &quot;+%Y-%m-%dT%H:%M:%S%z&quot;'
+alias pname='\ps -o cmd -h -p'
+&nbsp;
+## Filesystem.
+alias cpf='\cp -rTd --'
+alias path='\realpath -s'
+alias linkpath='\readlink -f'
+&nbsp;
+## Gaming.
+alias nvrun='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
+&nbsp;
+################################################################################
+##                                 FUNCTIONS                                  ##
+################################################################################
+## Filesystem.
+getshell() {
+    SHELLFILE=&quot;$(\ps -o cmd -h -p ${$} | \cut -d &quot; &quot; -f 1)&quot;
+    [ &quot;${SHELLFILE#-}&quot; != &quot;${SHELLFILE}&quot; ] &amp;&amp; ISLOGIN='-' || ISLOGIN=''
+    \echo &quot;${ISLOGIN}$(\basename $(\readlink -f &quot;${SHELLFILE#-}&quot;))&quot;
+}
+&nbsp;
+################################################################################
+##                                 EXTENSIONS                                 ##
+################################################################################
+########################################
+##               CURSOR               ##
+########################################
+## Source: 'https://orelfichman.com/blog/terminal-escape-codes-are-awesome'.
+#echo -e '\e[0 q' ## Reset to default.
+#echo -e '\e[1 q' ## Blinking block.
+#echo -e '\e[2 q' ## Steady block (Default).
+#echo -e '\e[3 q' ## Blinking underscore.
+#echo -e '\e[4 q' ## Steady underscore.
+echo -e '\e[5 q' ## Blinking bar.
+#echo -e '\e[6 q' ## Steady bar.
+&nbsp;
+########################################
+##        SYNTAX HIGHLIGHTING         ##
+########################################
+## Docs: 'https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md'.
+## Enable syntax highlighting.
+if [ -f '/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' ]; then
+    . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+&nbsp;
+    ## Color highligters.
+    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+&nbsp;
+    ## Colors (main).
+    ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+    ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[alias]='fg=green,underline'
+    ZSH_HIGHLIGHT_STYLES[suffix-alias]='none'
+    ZSH_HIGHLIGHT_STYLES[global-alias]='none'
+    ZSH_HIGHLIGHT_STYLES[builtin]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[function]='fg=green,underline'
+    ZSH_HIGHLIGHT_STYLES[command]='fg=green'
+    ZSH_HIGHLIGHT_STYLES[precommand]='fg=yellow,underline'
+    ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[hashed-command]='none'
+    ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=blue'
+    ZSH_HIGHLIGHT_STYLES[path]='fg=white,underline'
+    ZSH_HIGHLIGHT_STYLES[path-separator]='none'
+    ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='none'
+    ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[command-substitution]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[command-substitution-quoted]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[arithmetic-expansion]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=red'
+    ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='none'
+    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=red'
+    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=red'
+    ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='none'
+    ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument-unclosed]='none'
+    ZSH_HIGHLIGHT_STYLES[rc-quote]='none'
+    ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='none'
+    ZSH_HIGHLIGHT_STYLES[assign]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[comment]='fg=black,bold'
+    ZSH_HIGHLIGHT_STYLES[named-fd]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[arg0]='none'
+    ZSH_HIGHLIGHT_STYLES[default]='fg=white'
+&nbsp;
+    ## Colors (brackets).
+    ZSH_HIGHLIGHT_STYLES[bracket-error]='fg=red'
+    ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='standout'
+    ZSH_HIGHLIGHT_STYLES[bracket-level-1]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[bracket-level-2]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[bracket-level-3]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[bracket-level-5]='fg=magenta'
+&nbsp;
+    ## Colors (cursor).
+    ZSH_HIGHLIGHT_STYLES[cursor]='bold'
+fi
+&nbsp;
+########################################
+##         HISTORY COMPLETION         ##
+########################################
+## Docs: 'https://github.com/zsh-users/zsh-autosuggestions'.
+## Show history commands to match completion in ZLE.
+if [ -f '/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh' ]; then
+    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+&nbsp;
+    ## Set autosuggestion color.
+    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=black,bold,underline'
+fi
+&nbsp;
+########################################
+##          AUTO COMPLETION           ##
+########################################
+## Load autocompletion.
+autoload -Uz compinit
+&nbsp;
+## Menu selection.
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+&nbsp;
+########################################
+##     COMMAND NOT FOUND HANDLER      ##
+########################################
+## ANSI escape code colors (https://en.wikipedia.org/wiki/ANSI_escape_code).
+export ANSI_BLACK=&quot;\e[30m&quot;
+export ANSI_RED=&quot;\e[31m&quot;
+export ANSI_GREEN=&quot;\e[32m&quot;
+export ANSI_YELLOW=&quot;\e[33m&quot;
+export ANSI_BLUE=&quot;\e[34m&quot;
+export ANSI_MAGENTA=&quot;\e[35m&quot;
+export ANSI_CYAN=&quot;\e[36m&quot;
+export ANSI_WHITE=&quot;\e[37m&quot;
+export ANSI_RESET=&quot;\e[0m&quot;
+&nbsp;
+## How to handle, when command does not exists.
+if [ -r '/etc/zsh_command_not_found' ]; then
+    . /etc/zsh_command_not_found
+else
+    command_not_found_handler () {
+        echo -e &quot;${ANSI_RED}Command '${0}' not found!${ANSI_RESET}&quot;
+        return 127
+    }
+fi
+&nbsp;
+########################################
+##          ALIAS EXPANSION           ##
+########################################
+## Source: 'https://dev.to/frost/fish-style-abbreviations-in-zsh-40aa'.
+&nbsp;
+################################################################################
+##                                  EXECUTE                                   ##
+################################################################################
+########################################
+##            TTY SPECIFIC            ##
+########################################
+if [ &quot;${TERM}&quot; = &quot;linux&quot; ]; then
+    ## Load unicode font support.
+    unicode_start
+&nbsp;
+    ## Set PSFU font manually.
+    [ -f '/usr/share/consolefonts/Uni1-Fixed16.psf.gz' ] &amp;&amp; \
+        setfont Uni1-Fixed16
+&nbsp;
+    ## Set up numlock, capslock and scrolllock.
+    setleds -D +num
+    setleds -D -caps
+    setleds -D -scroll
+&nbsp;
+    ## Terminal colors.
+    #THEME='1337'
+    THEME='github-dark'
+&nbsp;
+    if [ &quot;${THEME}&quot; = '1337' ]; then
+        COLOR='00ff00'
+        THEME_COLOR_CLI_0='000000' ## Black
+        THEME_COLOR_CLI_1=&quot;${COLOR}&quot; ## Red
+        THEME_COLOR_CLI_2=&quot;${COLOR}&quot; ## Green
+        THEME_COLOR_CLI_3=&quot;${COLOR}&quot; ## Yellow
+        THEME_COLOR_CLI_4=&quot;${COLOR}&quot; ## Blue
+        THEME_COLOR_CLI_5=&quot;${COLOR}&quot; ## Magenta
+        THEME_COLOR_CLI_6=&quot;${COLOR}&quot; ## Cyan
+        THEME_COLOR_CLI_7=&quot;${COLOR}&quot; ## White
+        THEME_COLOR_CLI_8=&quot;${COLOR}&quot; ## Bright Black
+        THEME_COLOR_CLI_9=&quot;${COLOR}&quot; ## Bright Red
+        THEME_COLOR_CLI_A=&quot;${COLOR}&quot; ## Bright Green
+        THEME_COLOR_CLI_B=&quot;${COLOR}&quot; ## Bright Yellow
+        THEME_COLOR_CLI_C=&quot;${COLOR}&quot; ## Bright Blue
+        THEME_COLOR_CLI_D=&quot;${COLOR}&quot; ## Bright Magenta
+        THEME_COLOR_CLI_E=&quot;${COLOR}&quot; ## Bright Cyan
+        THEME_COLOR_CLI_F=&quot;${COLOR}&quot; ## Bright White
+    elif [ &quot;${THEME}&quot; = 'github-dark' ]; then
+        THEME_COLOR_CLI_0='0d1117' ## Black
+        THEME_COLOR_CLI_1='fa7970' ## Red
+        THEME_COLOR_CLI_2='7ce38b' ## Green
+        THEME_COLOR_CLI_3='faa356' ## Yellow
+        THEME_COLOR_CLI_4='77bdfb' ## Blue
+        THEME_COLOR_CLI_5='cea5fb' ## Magenta
+        THEME_COLOR_CLI_6='a2d2fb' ## Cyan
+        THEME_COLOR_CLI_7='ecf2f8' ## White
+        THEME_COLOR_CLI_8='89929b' ## Bright Black
+        THEME_COLOR_CLI_9='fa7970' ## Bright Red
+        THEME_COLOR_CLI_A='7ce38b' ## Bright Green
+        THEME_COLOR_CLI_B='faa356' ## Bright Yellow
+        THEME_COLOR_CLI_C='77bdfb' ## Bright Blue
+        THEME_COLOR_CLI_D='cea5fb' ## Bright Magenta
+        THEME_COLOR_CLI_E='a2d2fb' ## Bright Cyan
+        THEME_COLOR_CLI_F='ffffff' ## Bright White
+    fi
+&nbsp;
+    echo -en &quot;\033]P0${THEME_COLOR_CLI_0}&quot; ## Black
+    echo -en &quot;\033]P1${THEME_COLOR_CLI_1}&quot; ## Red
+    echo -en &quot;\033]P2${THEME_COLOR_CLI_2}&quot; ## Green
+    echo -en &quot;\033]P3${THEME_COLOR_CLI_3}&quot; ## Yellow
+    echo -en &quot;\033]P4${THEME_COLOR_CLI_4}&quot; ## Blue
+    echo -en &quot;\033]P5${THEME_COLOR_CLI_5}&quot; ## Magenta
+    echo -en &quot;\033]P6${THEME_COLOR_CLI_6}&quot; ## Cyan
+    echo -en &quot;\033]P7${THEME_COLOR_CLI_7}&quot; ## White
+    echo -en &quot;\033]P8${THEME_COLOR_CLI_8}&quot; ## Bright Black
+    echo -en &quot;\033]P9${THEME_COLOR_CLI_9}&quot; ## Bright Red
+    echo -en &quot;\033]PA${THEME_COLOR_CLI_A}&quot; ## Bright Green
+    echo -en &quot;\033]PB${THEME_COLOR_CLI_B}&quot; ## Bright Yellow
+    echo -en &quot;\033]PC${THEME_COLOR_CLI_C}&quot; ## Bright Blue
+    echo -en &quot;\033]PD${THEME_COLOR_CLI_D}&quot; ## Bright Magenta
+    echo -en &quot;\033]PE${THEME_COLOR_CLI_E}&quot; ## Bright Cyan
+    echo -en &quot;\033]PF${THEME_COLOR_CLI_F}&quot; ## Bright White
+&nbsp;
+    ## Unset temporary (non-exported) variables.
+    unset THEME THEME_COLOR_CLI_0 THEME_COLOR_CLI_1 THEME_COLOR_CLI_2 \
+    THEME_COLOR_CLI_3 THEME_COLOR_CLI_4 THEME_COLOR_CLI_5 THEME_COLOR_CLI_6 \
+    THEME_COLOR_CLI_7 THEME_COLOR_CLI_8 THEME_COLOR_CLI_9 THEME_COLOR_CLI_A \
+    THEME_COLOR_CLI_B THEME_COLOR_CLI_C THEME_COLOR_CLI_D THEME_COLOR_CLI_E \
+    THEME_COLOR_CLI_F
+fi
+&nbsp;
+########################################
+##              GENERAL               ##
+########################################
+## Set tab width to 4 (default: 8).
+tabs 4
+&nbsp;
+## Security clear.
+clear</pre>
 </dd></dl>
 </div>
+</li>
+<li class="level1 node"><div class="li">Set zsh as login shell:</div>
+<ul>
+<li class="level2"><div class="li">By root:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">usermod -s $(command -v zsh) &lt;USER&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">By user:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">chsh -s $(command -v zsh)</span>
+<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;USER-PASSWORD&gt;</span></pre><p></div>
+</li>
+</ul>
 </li>
 </ol>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;302-501&quot;} -->
-<h2 class="sectionedit6" id="resources">Resources</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;194-21724&quot;} -->
+<h2 class="sectionedit4" id="resources">Resources</h2>
 <div class="level2">
 <ul>
 <li class="level1"><div class="li"><a href="https://www.zsh.org" class="urlextern" title="https://www.zsh.org">Zsh Official Site</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://github.com/zsh-users/zsh" class="urlextern" title="https://github.com/zsh-users/zsh">Zsh GitHub Source Code</a></div>
 </li>
 <li class="level1"><div class="li"><a href="https://wiki.archlinux.org/title/zsh" class="urlextern" title="https://wiki.archlinux.org/title/zsh">ArchWiki - Zsh</a></div>
 </li>
@@ -53,4 +594,4 @@ This section is incomplete and needs further work!
 </ul>
 
 </div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Resources&quot;,&quot;hid&quot;:&quot;resources&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;502-&quot;} -->
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Resources&quot;,&quot;hid&quot;:&quot;resources&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;21725-&quot;} -->
