@@ -1,28 +1,4 @@
-
-<h1 class="sectionedit1" id="zsh">Zsh</h1>
-<div class="level1">
-
-<p>
-<em>- user-friendly POSIX-compliant interactive command interpreter (shell).</em>
-</p>
-
-</div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Zsh&quot;,&quot;hid&quot;:&quot;zsh&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-97&quot;} -->
-<h2 class="sectionedit2" id="installation">Installation</h2>
-<div class="level2">
-<ul>
-<li class="level1"><div class="li">Debian:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">echo ${ZSH_VERSION} || apt install -y zsh zsh-syntax-highlighting zsh-autosuggestions</span></pre><p></div>
-</li>
-</ul>
-
-</div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;98-235&quot;} -->
-<h2 class="sectionedit3" id="configuration">Configuration</h2>
-<div class="level2">
-<ol>
-<li class="level1"><div class="li">Zsh config file:<dl class="file">
-<dt><a href="http://localhost/_export/code/linux/zsh?codeblock=0" title="Download Snippet" class="mediafile mf_zshrc">~/.zshrc</a></dt>
-<dd><pre class="code file text">## AUTHOR:       AISK11
+## AUTHOR:       AISK11
 ## LOCATION:     ~/.zshrc (0644)
 ## DEPENDENCIES: zsh [zsh-syntax-highlighting] [zsh-autosuggestions]
 ## DESCRIPTION:  Interactive zsh config file.
@@ -550,37 +526,4 @@ fi
 \tabs 4
 &nbsp;
 ## Security clear.
-\clear</pre>
-</dd></dl>
-</div>
-</li>
-<li class="level1 node"><div class="li">Set Zsh as login shell:</div>
-<ul>
-<li class="level2"><div class="li">By root:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">usermod -s $(command -v zsh) &lt;USER&gt;</span></pre><p></div>
-</li>
-<li class="level2"><div class="li">By user:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">chsh -s $(command -v zsh)</span>
-<span class="cli_prompt">&gt; </span><span class="cli_command">&lt;USER-PASSWORD&gt;</span></pre><p></div>
-</li>
-</ul>
-</li>
-</ol>
-
-</div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;236-20538&quot;} -->
-<h2 class="sectionedit4" id="resources">Resources</h2>
-<div class="level2">
-<ul>
-<li class="level1"><div class="li"><a href="https://www.zsh.org" class="urlextern" title="https://www.zsh.org">Zsh Official Site</a></div>
-</li>
-<li class="level1"><div class="li"><a href="https://github.com/zsh-users/zsh" class="urlextern" title="https://github.com/zsh-users/zsh">Zsh GitHub Source Code</a></div>
-</li>
-<li class="level1"><div class="li"><a href="https://wiki.archlinux.org/title/zsh" class="urlextern" title="https://wiki.archlinux.org/title/zsh">ArchWiki - Zsh</a></div>
-</li>
-<li class="level1"><div class="li"><a href="https://wiki.gentoo.org/wiki/Zsh" class="urlextern" title="https://wiki.gentoo.org/wiki/Zsh">GentooWiki - Zsh</a></div>
-</li>
-<li class="level1"><div class="li"><a href="https://wiki.debian.org/Zsh" class="urlextern" title="https://wiki.debian.org/Zsh">DebianWiki - Zsh</a></div>
-</li>
-</ul>
-
-</div>
-<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Resources&quot;,&quot;hid&quot;:&quot;resources&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;20539-&quot;} -->
+\clear

@@ -1,6 +1,6 @@
 a:87:{i:0;a:3:{i:0;s:14:"document_start";i:1;a:0:{}i:2;i:0;}i:1;a:3:{i:0;s:6:"header";i:1;a:3:{i:0;s:3:"Zsh";i:1;i:1;i:2;i:1;}i:2;i:1;}i:2;a:3:{i:0;s:12:"section_open";i:1;a:1:{i:0;i:1;}i:2;i:1;}i:3;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:1;}i:4;a:3:{i:0;s:13:"emphasis_open";i:1;a:0:{}i:2;i:20;}i:5;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:72:"- user-friendly POSIX-compliant interactive command interpreter (shell).";}i:2;i:22;}i:6;a:3:{i:0;s:14:"emphasis_close";i:1;a:0:{}i:2;i:94;}i:7;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:96;}i:8;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:98;}i:9;a:3:{i:0;s:6:"header";i:1;a:3:{i:0;s:12:"Installation";i:1;i:2;i:2;i:98;}i:2;i:98;}i:10;a:3:{i:0;s:12:"section_open";i:1;a:1:{i:0;i:2;}i:2;i:98;}i:11;a:3:{i:0;s:10:"listu_open";i:1;a:0:{}i:2;i:123;}i:12;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:123;}i:13;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:123;}i:14;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:7:"Debian:";}i:2;i:127;}i:15;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:1;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:1;i:3;s:6:"<cli>
 ";}i:2;i:134;}i:16;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:3;i:1;a:1:{i:0;a:3:{i:0;s:2:"# ";i:1;s:85:"echo ${ZSH_VERSION} || apt install -y zsh zsh-syntax-highlighting zsh-autosuggestions";i:2;s:0:"";}}i:2;b:0;i:3;s:0:"";}i:2;i:3;i:3;s:87:"# echo ${ZSH_VERSION} || apt install -y zsh zsh-syntax-highlighting zsh-autosuggestions";}i:2;i:140;}i:17;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:4;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:4;i:3;s:7:"
-</cli>";}i:2;i:227;}i:18;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:234;}i:19;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:234;}i:20;a:3:{i:0;s:11:"listu_close";i:1;a:0:{}i:2;i:234;}i:21;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:236;}i:22;a:3:{i:0;s:6:"header";i:1;a:3:{i:0;s:13:"Configuration";i:1;i:2;i:2;i:236;}i:2;i:236;}i:23;a:3:{i:0;s:12:"section_open";i:1;a:1:{i:0;i:2;}i:2;i:236;}i:24;a:3:{i:0;s:10:"listo_open";i:1;a:0:{}i:2;i:262;}i:25;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:262;}i:26;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:262;}i:27;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:16:"Zsh config file:";}i:2;i:266;}i:28;a:3:{i:0;s:4:"file";i:1;a:3:{i:0;s:21293:"
+</cli>";}i:2;i:227;}i:18;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:234;}i:19;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:234;}i:20;a:3:{i:0;s:11:"listu_close";i:1;a:0:{}i:2;i:234;}i:21;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:236;}i:22;a:3:{i:0;s:6:"header";i:1;a:3:{i:0;s:13:"Configuration";i:1;i:2;i:2;i:236;}i:2;i:236;}i:23;a:3:{i:0;s:12:"section_open";i:1;a:1:{i:0;i:2;}i:2;i:236;}i:24;a:3:{i:0;s:10:"listo_open";i:1;a:0:{}i:2;i:262;}i:25;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:262;}i:26;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:262;}i:27;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:16:"Zsh config file:";}i:2;i:266;}i:28;a:3:{i:0;s:4:"file";i:1;a:3:{i:0;s:20065:"
 ## AUTHOR:       AISK11
 ## LOCATION:     ~/.zshrc (0644)
 ## DEPENDENCIES: zsh [zsh-syntax-highlighting] [zsh-autosuggestions]
@@ -82,58 +82,30 @@ setopt   NO_NOMATCH
 ################################################################################
 ##                                    KEYS                                    ##
 ################################################################################
-## Create a zkbd compatible hash.
-#typeset -g -A key
-#key[Backspace]="${terminfo[kbs]}"
-#key[Insert]="${terminfo[kich1]}"
-#key[Up]="${terminfo[kcuu1]}"
-#key[Down]="${terminfo[kcud1]}"
-#key[Left]="${terminfo[kcub1]}"
-#key[Right]="${terminfo[kcuf1]}"
-#key[Home]="${terminfo[khome]}"
-#key[End]="${terminfo[kend]}"
-#key[Delete]="${terminfo[kdch1]}"
-#key[Shift-Tab]="${terminfo[kcbt]}"
-#key[PageUp]="${terminfo[kpp]}"
-#key[PageDown]="${terminfo[knp]}"
+## Create a zkbd compatible hash ('https://wiki.archlinux.org/title/zsh#Key_bindings').
+typeset -g -A key
+key[Backspace]="${terminfo[kbs]}"
+key[Insert]="${terminfo[kich1]}"
+key[Up]="${terminfo[kcuu1]}"
+key[Down]="${terminfo[kcud1]}"
+key[Left]="${terminfo[kcub1]}"
+key[Right]="${terminfo[kcuf1]}"
+key[Home]="${terminfo[khome]}"
+key[End]="${terminfo[kend]}"
+key[Delete]="${terminfo[kdch1]}"
+key[Shift-Tab]="${terminfo[kcbt]}"
 
 ## Setup keys.
-#[ -n "${key[Backspace]}" ] && bindkey -- "${key[Backspace]}" backward-delete-char
-#[ -n "${key[Insert]}"    ] && bindkey -- "${key[Insert]}"    overwrite-mode
-#[ -n "${key[Up]}"        ] && bindkey -- "${key[Up]}"        up-line-or-history
-#[ -n "${key[Down]}"      ] && bindkey -- "${key[Down]}"      down-line-or-history
-#[ -n "${key[Left]}"      ] && bindkey -- "${key[Left]}"      backward-char
-#[ -n "${key[Right]}"     ] && bindkey -- "${key[Right]}"     forward-char
-#[ -n "${key[Home]}"      ] && bindkey -- "${key[Home]}"      beginning-of-line
-#[ -n "${key[End]}"       ] && bindkey -- "${key[End]}"       end-of-line
-#[ -n "${key[Delete]}"    ] && bindkey -- "${key[Delete]}"    delete-char
-#[ -n "${key[Shift-Tab]}" ] && bindkey -- "${key[Shift-Tab]}" reverse-menu-complete
-#[ -n "${key[PageUp]}"    ] && bindkey -- "${key[PageUp]}"    beginning-of-buffer-or-history
-#[ -n "${key[PageDown]}"  ] && bindkey -- "${key[PageDown]}"  end-of-buffer-or-history
-
-## Setup keys (vi mode).
-#[ -n "${key[Backspace]}" ] && bindkey -M vicmd "${key[Backspace]}" backward-delete-char
-#[ -n "${key[Insert]}"    ] && bindkey -M vicmd "${key[Insert]}"    overwrite-mode
-#[ -n "${key[Up]}"        ] && bindkey -M vicmd "${key[Up]}"        up-line-or-history
-#[ -n "${key[Down]}"      ] && bindkey -M vicmd "${key[Down]}"      down-line-or-history
-#[ -n "${key[Left]}"      ] && bindkey -M vicmd "${key[Left]}"      backward-char
-#[ -n "${key[Right]}"     ] && bindkey -M vicmd "${key[Right]}"     forward-char
-#[ -n "${key[Home]}"      ] && bindkey -M vicmd "${key[Home]}"      beginning-of-line
-#[ -n "${key[End]}"       ] && bindkey -M vicmd "${key[End]}"       end-of-line
-#[ -n "${key[Delete]}"    ] && bindkey -M vicmd "${key[Delete]}"    delete-char
-#[ -n "${key[Shift-Tab]}" ] && bindkey -M vicmd "${key[Shift-Tab]}" reverse-menu-complete
-#[ -n "${key[PageUp]}"    ] && bindkey -M vicmd "${key[PageUp]}"    beginning-of-buffer-or-history
-#[ -n "${key[PageDown]}"  ] && bindkey -M vicmd "${key[PageDown]}"  end-of-buffer-or-history
-
-## Make sure that terminal is in application mode, when zle is active,
-## otherwise $terminfo values are invalid.
-#if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
-#    autoload -Uz add-zle-hook-widget
-#    function zle_application_mode_start { echoti smkx; }
-#    function zle_application_mode_stop  { echoti rmkx; }
-#    add-zle-hook-widget -Uz zle-line-init   zle_application_mode_start
-#    add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
-#fi
+[ -n "${key[Backspace]}" ] && bindkey -- "${key[Backspace]}" backward-delete-char
+[ -n "${key[Insert]}"    ] && bindkey -- "${key[Insert]}"    overwrite-mode
+[ -n "${key[Up]}"        ] && bindkey -- "${key[Up]}"        up-line-or-history
+[ -n "${key[Down]}"      ] && bindkey -- "${key[Down]}"      down-line-or-history
+[ -n "${key[Left]}"      ] && bindkey -- "${key[Left]}"      backward-char
+[ -n "${key[Right]}"     ] && bindkey -- "${key[Right]}"     forward-char
+[ -n "${key[Home]}"      ] && bindkey -- "${key[Home]}"      beginning-of-line
+[ -n "${key[End]}"       ] && bindkey -- "${key[End]}"       end-of-line
+[ -n "${key[Delete]}"    ] && bindkey -- "${key[Delete]}"    delete-char
+[ -n "${key[Shift-Tab]}" ] && bindkey -- "${key[Shift-Tab]}" reverse-menu-complete
 
 ################################################################################
 ##                                 VARIABLES                                  ##
@@ -304,7 +276,7 @@ alias nvrun='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
 getshell() {
     SHELLFILE="$(\ps -o cmd -h -p ${$} | \cut -d " " -f 1)"
     [ "${SHELLFILE#-}" != "${SHELLFILE}" ] && ISLOGIN='-' || ISLOGIN=''
-    \echo "${ISLOGIN}$(\basename $(\readlink -f "${SHELLFILE#-}"))"
+    echo "${ISLOGIN}$(\basename $(\readlink -f "${SHELLFILE#-}"))"
 }
 
 ################################################################################
@@ -313,14 +285,28 @@ getshell() {
 ########################################
 ##               CURSOR               ##
 ########################################
-## Source: 'https://orelfichman.com/blog/terminal-escape-codes-are-awesome'.
-#echo -e '\e[0 q' ## Reset to default.
-#echo -e '\e[1 q' ## Blinking block.
-#echo -e '\e[2 q' ## Steady block (Default).
-#echo -e '\e[3 q' ## Blinking underscore.
-#echo -e '\e[4 q' ## Steady underscore.
-echo -e '\e[5 q' ## Blinking bar.
-#echo -e '\e[6 q' ## Steady bar.
+## Source: 'https://orelfichman.com/blog/terminal-escape-codes-are-awesome' and
+## 'https://www.reddit.com/r/vim/comments/mxhcl4/setting_cursor_indicator_for_zshvi_mode_in'.
+#echo -ne '\e[0 q' ## Reset to default.
+#echo -ne '\e[1 q' ## Blinking block.
+#echo -ne '\e[2 q' ## Steady block (default).
+#echo -ne '\e[3 q' ## Blinking underscore.
+#echo -ne '\e[4 q' ## Steady underscore.
+echo -ne '\e[5 q' ## Blinking bar.
+#echo -ne '\e[6 q' ## Steady bar.
+
+## Executed every time "${KEYMAP}" changes (vicmd,viins...).
+zle-keymap-select () {
+    case "${KEYMAP}" in
+        vicmd)
+            echo -ne '\e[1 q' ## Blinking block.
+            ;;
+        *)
+            echo -ne '\e[5 q' ## Blinking bar.
+            ;;
+    esac
+}
+zle -N zle-keymap-select
 
 ########################################
 ##        SYNTAX HIGHLIGHTING         ##
@@ -456,20 +442,21 @@ fi
 ########################################
 if [ "${TERM}" = "linux" ]; then
     ## Load unicode font support.
-    unicode_start
+    \unicode_start
 
     ## Set PSFU font manually.
     [ -f '/usr/share/consolefonts/Uni1-Fixed16.psf.gz' ] && \
-        setfont Uni1-Fixed16
+        \setfont Uni1-Fixed16
 
     ## Set up numlock, capslock and scrolllock.
-    setleds -D +num
-    setleds -D -caps
-    setleds -D -scroll
+    \setleds -D +num
+    \setleds -D -caps
+    \setleds -D -scroll
 
     ## Terminal colors.
+    THEME=''
     #THEME='1337'
-    THEME='github-dark'
+    #THEME='github-dark'
 
     if [ "${THEME}" = '1337' ]; then
         COLOR='00ff00'
@@ -508,22 +495,24 @@ if [ "${TERM}" = "linux" ]; then
         THEME_COLOR_CLI_F='ffffff' ## Bright White
     fi
 
-    echo -en "\033]P0${THEME_COLOR_CLI_0}" ## Black
-    echo -en "\033]P1${THEME_COLOR_CLI_1}" ## Red
-    echo -en "\033]P2${THEME_COLOR_CLI_2}" ## Green
-    echo -en "\033]P3${THEME_COLOR_CLI_3}" ## Yellow
-    echo -en "\033]P4${THEME_COLOR_CLI_4}" ## Blue
-    echo -en "\033]P5${THEME_COLOR_CLI_5}" ## Magenta
-    echo -en "\033]P6${THEME_COLOR_CLI_6}" ## Cyan
-    echo -en "\033]P7${THEME_COLOR_CLI_7}" ## White
-    echo -en "\033]P8${THEME_COLOR_CLI_8}" ## Bright Black
-    echo -en "\033]P9${THEME_COLOR_CLI_9}" ## Bright Red
-    echo -en "\033]PA${THEME_COLOR_CLI_A}" ## Bright Green
-    echo -en "\033]PB${THEME_COLOR_CLI_B}" ## Bright Yellow
-    echo -en "\033]PC${THEME_COLOR_CLI_C}" ## Bright Blue
-    echo -en "\033]PD${THEME_COLOR_CLI_D}" ## Bright Magenta
-    echo -en "\033]PE${THEME_COLOR_CLI_E}" ## Bright Cyan
-    echo -en "\033]PF${THEME_COLOR_CLI_F}" ## Bright White
+    if [ -n "${THEME}" ]; then
+        echo -en "\033]P0${THEME_COLOR_CLI_0}" ## Black
+        echo -en "\033]P1${THEME_COLOR_CLI_1}" ## Red
+        echo -en "\033]P2${THEME_COLOR_CLI_2}" ## Green
+        echo -en "\033]P3${THEME_COLOR_CLI_3}" ## Yellow
+        echo -en "\033]P4${THEME_COLOR_CLI_4}" ## Blue
+        echo -en "\033]P5${THEME_COLOR_CLI_5}" ## Magenta
+        echo -en "\033]P6${THEME_COLOR_CLI_6}" ## Cyan
+        echo -en "\033]P7${THEME_COLOR_CLI_7}" ## White
+        echo -en "\033]P8${THEME_COLOR_CLI_8}" ## Bright Black
+        echo -en "\033]P9${THEME_COLOR_CLI_9}" ## Bright Red
+        echo -en "\033]PA${THEME_COLOR_CLI_A}" ## Bright Green
+        echo -en "\033]PB${THEME_COLOR_CLI_B}" ## Bright Yellow
+        echo -en "\033]PC${THEME_COLOR_CLI_C}" ## Bright Blue
+        echo -en "\033]PD${THEME_COLOR_CLI_D}" ## Bright Magenta
+        echo -en "\033]PE${THEME_COLOR_CLI_E}" ## Bright Cyan
+        echo -en "\033]PF${THEME_COLOR_CLI_F}" ## Bright White
+    fi
 
     ## Unset temporary (non-exported) variables.
     unset THEME THEME_COLOR_CLI_0 THEME_COLOR_CLI_1 THEME_COLOR_CLI_2 \
@@ -537,13 +526,13 @@ fi
 ##              GENERAL               ##
 ########################################
 ## Set tab width to 4 (default: 8).
-tabs 4
+\tabs 4
 
 ## Security clear.
-clear
-";i:1;s:4:"text";i:2;s:8:"~/.zshrc";}i:2;i:287;}i:29;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:21602;}i:30;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:21602;}i:31;a:3:{i:0;s:13:"listitem_open";i:1;a:2:{i:0;i:1;i:1;i:1;}i:2;i:21602;}i:32;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:21602;}i:33;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:23:"Set Zsh as login shell:";}i:2;i:21606;}i:34;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:21629;}i:35;a:3:{i:0;s:10:"listu_open";i:1;a:0:{}i:2;i:21629;}i:36;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:2;}i:2;i:21629;}i:37;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:21629;}i:38;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:8:"By root:";}i:2;i:21635;}i:39;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:1;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:1;i:3;s:6:"<cli>
-";}i:2;i:21643;}i:40;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:3;i:1;a:1:{i:0;a:3:{i:0;s:2:"# ";i:1;s:35:"usermod -s $(command -v zsh) <USER>";i:2;s:0:"";}}i:2;b:0;i:3;s:0:"";}i:2;i:3;i:3;s:37:"# usermod -s $(command -v zsh) <USER>";}i:2;i:21649;}i:41;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:4;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:4;i:3;s:7:"
-</cli>";}i:2;i:21686;}i:42;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:21693;}i:43;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:21693;}i:44;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:2;}i:2;i:21693;}i:45;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:21693;}i:46;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:8:"By user:";}i:2;i:21699;}i:47;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:1;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:1;i:3;s:6:"<cli>
-";}i:2;i:21707;}i:48;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:3;i:1;a:2:{i:0;a:3:{i:0;s:2:"$ ";i:1;s:25:"chsh -s $(command -v zsh)";i:2;s:0:"";}i:1;a:3:{i:0;s:2:"> ";i:1;s:15:"<USER-PASSWORD>";i:2;s:0:"";}}i:2;b:0;i:3;s:0:"";}i:2;i:3;i:3;s:45:"$ chsh -s $(command -v zsh)
-> <USER-PASSWORD>";}i:2;i:21713;}i:49;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:4;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:4;i:3;s:7:"
-</cli>";}i:2;i:21758;}i:50;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:21765;}i:51;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:21765;}i:52;a:3:{i:0;s:11:"listu_close";i:1;a:0:{}i:2;i:21765;}i:53;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:21765;}i:54;a:3:{i:0;s:11:"listo_close";i:1;a:0:{}i:2;i:21765;}i:55;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:21767;}i:56;a:3:{i:0;s:6:"header";i:1;a:3:{i:0;s:9:"Resources";i:1;i:2;i:2;i:21767;}i:2;i:21767;}i:57;a:3:{i:0;s:12:"section_open";i:1;a:1:{i:0;i:2;}i:2;i:21767;}i:58;a:3:{i:0;s:10:"listu_open";i:1;a:0:{}i:2;i:21789;}i:59;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:21789;}i:60;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:21789;}i:61;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:19:"https://www.zsh.org";i:1;s:17:"Zsh Official Site";}i:2;i:21793;}i:62;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:21834;}i:63;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:21834;}i:64;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:21834;}i:65;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:21834;}i:66;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:32:"https://github.com/zsh-users/zsh";i:1;s:22:"Zsh GitHub Source Code";}i:2;i:21838;}i:67;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:21897;}i:68;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:21897;}i:69;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:21897;}i:70;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:21897;}i:71;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:36:"https://wiki.archlinux.org/title/zsh";i:1;s:14:"ArchWiki - Zsh";}i:2;i:21901;}i:72;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:21956;}i:73;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:21956;}i:74;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:21956;}i:75;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:21956;}i:76;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:32:"https://wiki.gentoo.org/wiki/Zsh";i:1;s:16:"GentooWiki - Zsh";}i:2;i:21960;}i:77;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:22013;}i:78;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:22013;}i:79;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:22013;}i:80;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:22013;}i:81;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:27:"https://wiki.debian.org/Zsh";i:1;s:16:"DebianWiki - Zsh";}i:2;i:22017;}i:82;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:22065;}i:83;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:22065;}i:84;a:3:{i:0;s:11:"listu_close";i:1;a:0:{}i:2;i:22065;}i:85;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:22065;}i:86;a:3:{i:0;s:12:"document_end";i:1;a:0:{}i:2;i:22065;}}
+\clear
+";i:1;s:4:"text";i:2;s:8:"~/.zshrc";}i:2;i:287;}i:29;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:20374;}i:30;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:20374;}i:31;a:3:{i:0;s:13:"listitem_open";i:1;a:2:{i:0;i:1;i:1;i:1;}i:2;i:20374;}i:32;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:20374;}i:33;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:23:"Set Zsh as login shell:";}i:2;i:20378;}i:34;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:20401;}i:35;a:3:{i:0;s:10:"listu_open";i:1;a:0:{}i:2;i:20401;}i:36;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:2;}i:2;i:20401;}i:37;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:20401;}i:38;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:8:"By root:";}i:2;i:20407;}i:39;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:1;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:1;i:3;s:6:"<cli>
+";}i:2;i:20415;}i:40;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:3;i:1;a:1:{i:0;a:3:{i:0;s:2:"# ";i:1;s:35:"usermod -s $(command -v zsh) <USER>";i:2;s:0:"";}}i:2;b:0;i:3;s:0:"";}i:2;i:3;i:3;s:37:"# usermod -s $(command -v zsh) <USER>";}i:2;i:20421;}i:41;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:4;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:4;i:3;s:7:"
+</cli>";}i:2;i:20458;}i:42;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:20465;}i:43;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:20465;}i:44;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:2;}i:2;i:20465;}i:45;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:20465;}i:46;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:8:"By user:";}i:2;i:20471;}i:47;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:1;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:1;i:3;s:6:"<cli>
+";}i:2;i:20479;}i:48;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:3;i:1;a:2:{i:0;a:3:{i:0;s:2:"$ ";i:1;s:25:"chsh -s $(command -v zsh)";i:2;s:0:"";}i:1;a:3:{i:0;s:2:"> ";i:1;s:15:"<USER-PASSWORD>";i:2;s:0:"";}}i:2;b:0;i:3;s:0:"";}i:2;i:3;i:3;s:45:"$ chsh -s $(command -v zsh)
+> <USER-PASSWORD>";}i:2;i:20485;}i:49;a:3:{i:0;s:6:"plugin";i:1;a:4:{i:0;s:3:"cli";i:1;a:4:{i:0;i:4;i:1;i:0;i:2;b:0;i:3;s:0:"";}i:2;i:4;i:3;s:7:"
+</cli>";}i:2;i:20530;}i:50;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:20537;}i:51;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:20537;}i:52;a:3:{i:0;s:11:"listu_close";i:1;a:0:{}i:2;i:20537;}i:53;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:20537;}i:54;a:3:{i:0;s:11:"listo_close";i:1;a:0:{}i:2;i:20537;}i:55;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:20539;}i:56;a:3:{i:0;s:6:"header";i:1;a:3:{i:0;s:9:"Resources";i:1;i:2;i:2;i:20539;}i:2;i:20539;}i:57;a:3:{i:0;s:12:"section_open";i:1;a:1:{i:0;i:2;}i:2;i:20539;}i:58;a:3:{i:0;s:10:"listu_open";i:1;a:0:{}i:2;i:20561;}i:59;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:20561;}i:60;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:20561;}i:61;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:19:"https://www.zsh.org";i:1;s:17:"Zsh Official Site";}i:2;i:20565;}i:62;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:20606;}i:63;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:20606;}i:64;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:20606;}i:65;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:20606;}i:66;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:32:"https://github.com/zsh-users/zsh";i:1;s:22:"Zsh GitHub Source Code";}i:2;i:20610;}i:67;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:20669;}i:68;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:20669;}i:69;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:20669;}i:70;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:20669;}i:71;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:36:"https://wiki.archlinux.org/title/zsh";i:1;s:14:"ArchWiki - Zsh";}i:2;i:20673;}i:72;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:20728;}i:73;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:20728;}i:74;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:20728;}i:75;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:20728;}i:76;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:32:"https://wiki.gentoo.org/wiki/Zsh";i:1;s:16:"GentooWiki - Zsh";}i:2;i:20732;}i:77;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:20785;}i:78;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:20785;}i:79;a:3:{i:0;s:13:"listitem_open";i:1;a:1:{i:0;i:1;}i:2;i:20785;}i:80;a:3:{i:0;s:16:"listcontent_open";i:1;a:0:{}i:2;i:20785;}i:81;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:27:"https://wiki.debian.org/Zsh";i:1;s:16:"DebianWiki - Zsh";}i:2;i:20789;}i:82;a:3:{i:0;s:17:"listcontent_close";i:1;a:0:{}i:2;i:20837;}i:83;a:3:{i:0;s:14:"listitem_close";i:1;a:0:{}i:2;i:20837;}i:84;a:3:{i:0;s:11:"listu_close";i:1;a:0:{}i:2;i:20837;}i:85;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:20837;}i:86;a:3:{i:0;s:12:"document_end";i:1;a:0:{}i:2;i:20837;}}
