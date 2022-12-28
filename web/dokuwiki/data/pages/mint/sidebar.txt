@@ -1,0 +1,16 @@
+====== Linux Mint ======
+
+----
+
+**About**
+  *[[:mint:index|Index]]
+
+**Shell**
+  *[[:mint:dash|Dash]]
+  *[[:mint:zsh|Zsh]]
+  *[[:mint:shellcheck|ShellCheck]]
+
+**Network**
+  *[[:mint:nftables|Nftables]]
+
+----

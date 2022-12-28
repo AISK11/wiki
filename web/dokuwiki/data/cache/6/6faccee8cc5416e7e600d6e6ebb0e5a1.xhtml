@@ -1,0 +1,119 @@
+
+<h1 class="sectionedit1" id="hash_functions">Hash Functions</h1>
+<div class="level1">
+
+<p>
+<em>- one-way functions creating fixed-size output from arbitrarily long input.</em>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Hash Functions&quot;,&quot;hid&quot;:&quot;hash_functions&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-111&quot;} -->
+<h2 class="sectionedit2" id="attacks">Attacks</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"><strong>Preimage attack:</strong> tries to find message, that has specific hash value.</div>
+</li>
+<li class="level1"><div class="li"><strong>Collision attack:</strong> tries to find 2 inputs producing the same hash.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Attacks&quot;,&quot;hid&quot;:&quot;attacks&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;112-283&quot;} -->
+<h2 class="sectionedit3" id="cracking">Cracking</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cracking&quot;,&quot;hid&quot;:&quot;cracking&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;284-305&quot;} -->
+<h3 class="sectionedit4" id="extract">Extract</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">7z:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">7z2john &lt;FILE&gt; 2&gt; /dev/null | cut -d &#039;:&#039; -f 2-</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">PDF:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">pdf2john &lt;FILE&gt; 2&gt; /dev/null | cut -d &#039;:&#039; -f 2-</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">RAR:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">rar2john &lt;FILE&gt; 2&gt; /dev/null | cut -d &#039;:&#039; -f 2-</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">ZIP:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">zip2john &lt;FILE&gt; 2&gt; /dev/null | cut -d &#039;:&#039; -f 2-</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Extract&quot;,&quot;hid&quot;:&quot;extract&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;306-603&quot;} -->
+<h3 class="sectionedit5" id="identify">Identify</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li">Identify hash<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat --show &#039;&lt;HASH|HASH-FILE&gt;&#039;</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Identify&quot;,&quot;hid&quot;:&quot;identify&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;604-769&quot;} -->
+<h3 class="sectionedit6" id="crack">Crack</h3>
+<div class="level3">
+<ol>
+<li class="level1 node"><div class="li">Crack the hash:</div>
+<ul>
+<li class="level2"><div class="li">Dictionary attack<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup><sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat [-O] -a 0 -m &lt;HASH-TYPE&gt; &#039;&lt;HASH|HASH-FILE&gt;&#039; [-j &#039;u&#039;|-r &lt;RULE-FILE&gt;] &lt;WORDLIST&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Combination attack<sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat [-O] -a 1 -m &lt;HASH-TYPE&gt; &#039;&lt;HASH|HASH-FILE&gt;&#039; [-j &#039;u&#039;] &lt;WORDLIST&gt; [-k &#039;u&#039;] &lt;WORDLIST2&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Mask (brute-force) attack<sup><a href="#fn__5" id="fnt__5" class="fn_top">5)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat [-O] -a 3 -m &lt;HASH-TYPE&gt; &#039;&lt;HASH|HASH-FILE&gt;&#039; &lt;-1 &#039;?l?u?d&#039; &#039;?1?1?1&#039;&gt;</span></pre><p></div>
+</li>
+<li class="level2"><div class="li">Hybrid attack<sup><a href="#fn__6" id="fnt__6" class="fn_top">6)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat [-O] -a 6 -m &lt;HASH-TYPE&gt; &#039;&lt;HASH|HASH-FILE&gt;&#039; [-j &#039;u&#039;] &lt;WORDLIST&gt; &lt;-1 &#039;?l?u?d&#039; &#039;?1?1?1&#039;&gt;</span>
+<span class="cli_prompt">$ </span><span class="cli_command">hashcat [-O] -a 7 -m &lt;HASH-TYPE&gt; &#039;&lt;HASH|HASH-FILE&gt;&#039; &lt;-1 &#039;?l?u?d&#039; &#039;?1?1?1&#039;&gt; [-k &#039;u&#039;] &lt;WORDLIST&gt;</span></pre><p></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">Cracked hashes are stored in <code>~/.local/share/hashcat/hashcat.potfile</code>.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Crack&quot;,&quot;hid&quot;:&quot;crack&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;770-1885&quot;} -->
+<h3 class="sectionedit7" id="misc">Misc</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">Benchmark specific hash crack speed:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">hashcat [-O] -b -m &lt;HASH-TYPE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Misc&quot;,&quot;hid&quot;:&quot;misc&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1886-1987&quot;} -->
+<h2 class="sectionedit8" id="references">References</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"><a href="https://github.com/hashcat/hashcat" class="urlextern" title="https://github.com/hashcat/hashcat">GitHub Repository - Hashcat (tool)</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://github.com/openwall/john" class="urlextern" title="https://github.com/openwall/john">GitHub Repository - John The Ripper (tool)</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://github.com/danielmiessler/SecLists" class="urlextern" title="https://github.com/danielmiessler/SecLists">GitHub Repository - SecLists (wordlists)</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://github.com/NotSoSecure/password_cracking_rules" class="urlextern" title="https://github.com/NotSoSecure/password_cracking_rules">GitHub Repository - OneRuleToRuleThemAll (rules)</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://wiki.skullsecurity.org/index.php/Passwords" class="urlextern" title="https://wiki.skullsecurity.org/index.php/Passwords">Wordlists - ScullSecurity</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://packetstormsecurity.com/Crackers/wordlists" class="urlextern" title="https://packetstormsecurity.com/Crackers/wordlists">Wordlists - PacketStormSecurity</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://passwordvillage.org/index.html" class="urlextern" title="https://passwordvillage.org/index.html">Tips And Tricks - PasswordVillage Cracking</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://www.elcomsoft.com/help/en/ewsa/dictionary_mutations.html" class="urlextern" title="https://www.elcomsoft.com/help/en/ewsa/dictionary_mutations.html">Tips And Tricks - Dictionary Mutation Terminology</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://blog.korelogic.com/blog/2014/04/04/pathwell_topologies" class="urlextern" title="https://blog.korelogic.com/blog/2014/04/04/pathwell_topologies">Tips And Tricks - Common Password Masks</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;References&quot;,&quot;hid&quot;:&quot;references&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;1988-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Hashcat hash examples: <a href="https://hashcat.net/wiki/doku.php?id=example_hashes" class="urlextern" title="https://hashcat.net/wiki/doku.php?id=example_hashes">https://hashcat.net/wiki/doku.php?id=example_hashes</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">Hashcat dictionary attack: <a href="https://hashcat.net/wiki/doku.php?id=dictionary_attack" class="urlextern" title="https://hashcat.net/wiki/doku.php?id=dictionary_attack">https://hashcat.net/wiki/doku.php?id=dictionary_attack</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<div class="content">Hashcat rules: <a href="https://hashcat.net/wiki/doku.php?id=rule_based_attack" class="urlextern" title="https://hashcat.net/wiki/doku.php?id=rule_based_attack">https://hashcat.net/wiki/doku.php?id=rule_based_attack</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+<div class="content">Hashcat combination attack: <a href="https://hashcat.net/wiki/doku.php?id=combinator_attack" class="urlextern" title="https://hashcat.net/wiki/doku.php?id=combinator_attack">https://hashcat.net/wiki/doku.php?id=combinator_attack</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
+<div class="content">Hashcat mask attack: <a href="https://hashcat.net/wiki/doku.php?id=mask_attack" class="urlextern" title="https://hashcat.net/wiki/doku.php?id=mask_attack">https://hashcat.net/wiki/doku.php?id=mask_attack</a>.</div></div>
+<div class="fn"><sup><a href="#fnt__6" id="fn__6" class="fn_bot">6)</a></sup> 
+<div class="content">Hashcat hybrid attack: <a href="https://hashcat.net/wiki/doku.php?id=hybrid_attack" class="urlextern" title="https://hashcat.net/wiki/doku.php?id=hybrid_attack">https://hashcat.net/wiki/doku.php?id=hybrid_attack</a>.</div></div>
+</div>

@@ -1,0 +1,131 @@
+
+<h1 class="sectionedit1" id="sqlite3">SQLite3</h1>
+<div class="level1">
+
+<p>
+<a href="https://www.sqlite.org/lang.html" class="urlextern" title="https://www.sqlite.org/lang.html">https://www.sqlite.org/lang.html</a>
+<a href="https://www.sqlite.org/omitted.html" class="urlextern" title="https://www.sqlite.org/omitted.html">https://www.sqlite.org/omitted.html</a>
+<a href="https://www.sqlite.org/lang_keywords.html" class="urlextern" title="https://www.sqlite.org/lang_keywords.html">https://www.sqlite.org/lang_keywords.html</a>
+<a href="https://www.sqlite.org/syntaxdiagrams.html" class="urlextern" title="https://www.sqlite.org/syntaxdiagrams.html">https://www.sqlite.org/syntaxdiagrams.html</a>
+</p>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SQLite3&quot;,&quot;hid&quot;:&quot;sqlite3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-187&quot;} -->
+<h2 class="sectionedit2" id="help">Help</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">List all meta-commands:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">sqlite3 &lt;FILE&gt; &#039;.help&#039;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Help&quot;,&quot;hid&quot;:&quot;help&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;188-270&quot;} -->
+<h2 class="sectionedit3" id="data_modification">Data Modification</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Data Modification&quot;,&quot;hid&quot;:&quot;data_modification&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;271-301&quot;} -->
+<h3 class="sectionedit4" id="data_types">Data Types</h3>
+<div class="level3">
+<div class="table sectionedit5"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Data Type </th><th class="col1"> Description </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> NULL      </td><td class="col1"> Empty value </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> INTEGER   </td><td class="col1"> 8 byte (-9223372036854775808 - 9223372036854775807) </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:5,&quot;range&quot;:&quot;324-447&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Data Types&quot;,&quot;hid&quot;:&quot;data_types&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;302-448&quot;} -->
+<h3 class="sectionedit6" id="tables">Tables</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">List all tables:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">sqlite3 &lt;FILE&gt; &#039;.tables&#039;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">List table schema:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">sqlite3 &lt;FILE&gt; &#039;.schema [TABLE]&#039;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Create table:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">sqlite3 &lt;FILE&gt; &#039;CREATE TABLE &lt;table&gt; (&lt;column&gt; &lt;DATA-TYPE&gt;, ...);&#039;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Drop table:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">sqlite3 &lt;FILE&gt; &#039;DROP TABLE &lt;table&gt;;&#039;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Tables&quot;,&quot;hid&quot;:&quot;tables&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;449-759&quot;} -->
+<h3 class="sectionedit7" id="data">Data</h3>
+<div class="level3">
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Data&quot;,&quot;hid&quot;:&quot;data&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;760-781&quot;} -->
+<h2 class="sectionedit8" id="syntax">Syntax</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">Sqlite syntax:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">sqlite3 [OPTIONS] [FILE] [SQL-QUERY]</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Syntax&quot;,&quot;hid&quot;:&quot;syntax&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;782-871&quot;} -->
+<h2 class="sectionedit9" id="start_quit">Start &amp; Quit</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">Start sqlite3:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">sqlite3 [FILE]</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Quit sqlite3:</p><pre class='cli  '><span class="cli_prompt">sqlite&gt; </span><span class="cli_command">.quit</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Start &amp; Quit&quot;,&quot;hid&quot;:&quot;start_quit&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;872-988&quot;} -->
+<h2 class="sectionedit10" id="help1">Help</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">List all meta-commands:</p><pre class='cli  '><span class="cli_prompt">sqlite&gt; </span><span class="cli_command">.help</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Help&quot;,&quot;hid&quot;:&quot;help1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;989-1060&quot;} -->
+<h2 class="sectionedit11" id="cli_syntax">CLI Syntax</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">Meta-command:</p><pre class='cli  '><span class="cli_prompt">sqlite&gt; </span><span class="cli_command">.&lt;COMMAND&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Comment:</p><pre class='cli  '><span class="cli_prompt">sqlite&gt; </span><span class="cli_comment">#&lt;COMMENT&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">SQL query:</p><pre class='cli  '><span class="cli_prompt">sqlite&gt; </span><span class="cli_command">&lt;SQL-QUERY&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;CLI Syntax&quot;,&quot;hid&quot;:&quot;cli_syntax&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;1061-1222&quot;} -->
+<h2 class="sectionedit12" id="databases">Databases</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">Show current database:</p><pre class='cli  '><span class="cli_prompt">sqlite&gt; </span><span class="cli_command">.show</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Open database (new database is created if file does not exist):</p><pre class='cli  '><span class="cli_prompt">sqlite&gt; </span><span class="cli_command">.open &lt;FILE&gt;</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Save current database to file:</p><pre class='cli  '><span class="cli_prompt">sqlite&gt; </span><span class="cli_command">.save &lt;FILE&gt;</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Databases&quot;,&quot;hid&quot;:&quot;databases&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;1223-1465&quot;} -->
+<h2 class="sectionedit13" id="tables1">Tables</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">List all tables:</p><pre class='cli  '><span class="cli_prompt">sqlite&gt; </span><span class="cli_command">.tables</span></pre><p></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Tables&quot;,&quot;hid&quot;:&quot;tables1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;1466-&quot;} -->

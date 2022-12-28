@@ -63,3 +63,6 @@ lesshistfile
 lesshistsize
 highlighters
 substitution
+modification
+transactions
+irreversible

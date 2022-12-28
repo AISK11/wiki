@@ -3,21 +3,14 @@
 ----
 
 **Operating Systems**
-  *[[:linux:index|Linux]]
+  *[[:mint:index|Arch Linux]]
+  *[[:mint:index|Linux Mint]]
+  *[[:windows11:index|Windows 11]]
 
-
-  *[[:void:index|Void Linux]]
-
-**IT Areas**
-  *[[:cybersecurity:index|Cybersecurity]]
-
-**Develompent**
-  *[[:sql:index|SQL]]
-
-**Network**
-  *[[:cisco:index|Cisco]]
-
-**DokuWiki**
-  *[[:dokuwiki:index|DokuWiki]]
+**Cybersecurity**
+  *[[:cryptography:index|Cryptography]]
+  *[[:forensics:index|Forensics]]
+  *[[:reverse-engineering:index|Reverse Engineering]]
+  *[[:social-engineering:index|Social Engineering]]
 
 ----

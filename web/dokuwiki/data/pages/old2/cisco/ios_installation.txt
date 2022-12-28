@@ -1,0 +1,25 @@
+====== IOS Installation ======
+
+===== Switch =====
+
+==== Connect ====
+
+  -Connect to the device via serial console((Linux serial devices: https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux)):<cli>
+$ cu -l </dev/ttyUSB0> -s <9600>
+switch:> 
+</cli>
+  -Try to boot (it should fail):<cli>
+switch:> boot
+Loading "flash:/c3560-ipbase-mz.122-50.SE5/c3560-ipbase-mz.122-50.SE5.bin"...flash:/c3560-ipbase-mz.122-50.SE5/c3560-ipbase-mz.122-50.SE5.bin: invalid argument
+
+Error loading "flash:/c3560-ipbase-mz.122-50.SE5/c3560-ipbase-mz.122-50.SE5.bin"
+
+Interrupt within 5 seconds to abort boot process.
+Boot process failed...
+</cli>
+  -Find switch version:<cli>
+switch:> version
+C3560 Boot Loader (C3560-HBOOT-M) Version 12.2(44)SE5, RELEASE SOFTWARE (fc1)
+Compiled Wed 07-Jan-09 15:55 by gereddy
+</cli>
+  -Find software for right device: https://software.cisco.com/download/find.

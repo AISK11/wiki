@@ -1,0 +1,56 @@
+#!/usr/bin/env nft -f
+ 
+## AUTHOR:       AISK11
+## LOCATION:     /etc/nftables.conf (0644 root:root)
+## DEPENDENCIES: nftables
+## DESCRIPTION:  Nftables firewall rules.
+ 
+## Remove all previous firewall settings.
+flush ruleset;
+ 
+## Services on local machine.
+define tcp_services = {22};
+define udp_services = {68,546};
+ 
+table inet fw {
+  chain input {
+    type filter hook input priority 0;
+    policy drop;
+ 
+    ## Accept all loopback traffic.
+    ip saddr {127.0.0.0/8} accept;
+    ip6 saddr {::1} accept;
+ 
+    ## Accept ICMP traffic except for requests.
+    icmp type != {8,13,15,17,30,42} accept;
+    icmpv6 type != {128,144} accept;
+ 
+    ## Accept responses from servers.
+    ct state {established,related} accept;
+ 
+    ## Accept requests from clients to specified TCP and UDP services.
+    tcp dport $tcp_services accept;
+    udp dport $udp_services accept;
+  }
+  chain forward {
+    type filter hook forward priority 0;
+    policy drop;
+  }
+  chain output {
+    type filter hook output priority 0;
+    policy accept;
+ 
+    ## Accept all loopback traffic.
+    ip daddr {127.0.0.0/8} accept;
+    ip6 daddr {::1} accept;
+ 
+    ## Do not disclose closed UDP service exceptions.
+    ## This permits only ICMP requests.
+    icmp type != {8,13,15,17,30,42} drop;
+    icmpv6 type != {128,144} drop;
+ 
+    ## Do not disclose closed TCP service exceptions.
+    ## WARNING! In rare cases may cause issues (see GRKERNSEC_BLACKHOLE).
+    tcp sport $tcp_services tcp flags {rst} drop;
+  }
+}

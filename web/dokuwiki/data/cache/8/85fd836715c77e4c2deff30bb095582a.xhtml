@@ -1,0 +1,109 @@
+
+<h1 class="sectionedit1" id="nftables">Nftables</h1>
+<div class="level1">
+
+<p>
+<em>- modern Linux kernel firewall.</em>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Nftables&quot;,&quot;hid&quot;:&quot;nftables&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-61&quot;} -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li">Install nftables:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">nft -v || apt install nftables</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Installation&quot;,&quot;hid&quot;:&quot;installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;62-154&quot;} -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li">Configure firewall rules:<pre class="code file etcnftablesconf">#!/usr/bin/env nft -f
+ 
+## AUTHOR:       AISK11
+## LOCATION:     /etc/nftables.conf (0644 root:root)
+## DEPENDENCIES: nftables
+## DESCRIPTION:  Nftables firewall rules.
+ 
+## Remove all previous firewall settings.
+flush ruleset;
+ 
+## Services on local machine.
+define tcp_services = {22};
+define udp_services = {68,546};
+ 
+table inet fw {
+  chain input {
+    type filter hook input priority 0;
+    policy drop;
+ 
+    ## Accept all loopback traffic.
+    ip saddr {127.0.0.0/8} accept;
+    ip6 saddr {::1} accept;
+ 
+    ## Accept ICMP traffic except for requests.
+    icmp type != {8,13,15,17,30,42} accept;
+    icmpv6 type != {128,144} accept;
+ 
+    ## Accept responses from servers.
+    ct state {established,related} accept;
+ 
+    ## Accept requests from clients to specified TCP and UDP services.
+    tcp dport $tcp_services accept;
+    udp dport $udp_services accept;
+  }
+  chain forward {
+    type filter hook forward priority 0;
+    policy drop;
+  }
+  chain output {
+    type filter hook output priority 0;
+    policy accept;
+ 
+    ## Accept all loopback traffic.
+    ip daddr {127.0.0.0/8} accept;
+    ip6 daddr {::1} accept;
+ 
+    ## Do not disclose closed UDP service exceptions.
+    ## This permits only ICMP requests.
+    icmp type != {8,13,15,17,30,42} drop;
+    icmpv6 type != {128,144} drop;
+ 
+    ## Do not disclose closed TCP service exceptions.
+    ## WARNING! In rare cases may cause issues (see GRKERNSEC_BLACKHOLE).
+    tcp sport $tcp_services tcp flags {rst} drop;
+  }
+}</pre>
+</div>
+</li>
+<li class="level1"><div class="li">Start firewall now and on startup:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl start nftables ; systemctl enable nftables</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Verify firewall service and rules:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">systemctl status nftables</span>
+<span class="cli_prompt"># </span><span class="cli_command">nft list ruleset</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configuration&quot;,&quot;hid&quot;:&quot;configuration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;155-1947&quot;} -->
+<h2 class="sectionedit4" id="usage">Usage</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li">Turn up/down firewall:</p><pre class='cli  '><span class="cli_prompt"># </span><span class="cli_command">systemctl &lt;start|stop&gt; nftables</span></pre><p></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Usage&quot;,&quot;hid&quot;:&quot;usage&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;1948-2039&quot;} -->
+<h2 class="sectionedit5" id="references">References</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"><a href="https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes" class="urlextern" title="https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes">Nftables - Quick Reference</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol" class="urlextern" title="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol">Wikipedia - ICMP</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;References&quot;,&quot;hid&quot;:&quot;references&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;2040-&quot;} -->

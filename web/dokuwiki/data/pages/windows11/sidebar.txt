@@ -1,0 +1,11 @@
+====== Windows  11 ======
+
+----
+
+**About**
+  *[[:windows11:index|Index]]
+
+**Installation**
+  *[[:windows11:installation|Installation]]
+
+----

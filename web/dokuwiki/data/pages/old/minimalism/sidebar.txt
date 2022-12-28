@@ -1,9 +1,0 @@
-====== Minimalism ======
-
-----
-
-**About**
-  * [[:minimalism:index|Index]]
-  * [[:minimalism:resources|Resources]]
-
-----

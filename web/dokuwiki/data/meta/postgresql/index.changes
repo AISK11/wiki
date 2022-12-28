@@ -1,0 +1,5 @@
+1671750573	127.0.0.1	C	postgresql:index	admin	created		200
+1671751587	127.0.0.1	E	postgresql:index	admin			51
+1671751597	127.0.0.1	E	postgresql:index	admin			0
+1671751668	127.0.0.1	E	postgresql:index	admin			32
+1671755735	127.0.0.1	D	postgresql:index	admin	removed		-283

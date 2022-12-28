@@ -1,0 +1,63 @@
+====== SQL Syntax ======
+
+===== Comments =====
+
+  *Comments((SQLite comments: https://www.sqlite.org/lang_comment.html)):
+    *Single-line (starts with ''--''):<code sql>
+--[single-line comment]
+</code>
+    *Multi-line (starts with ''/*'' and ends with ''*/''):<code sql>
+/*[multi-line
+comment]*/
+</code>
+
+===== Data Definition Language (DDL) =====
+
+==== Tables ====
+
+^ Column Data Type ^ Description                                                         ^
+| NULL             | Does not hold a value.                                              |
+| INTEGER          | −9,223,372,036,854,775,808 to +9,223,372,036,854,775,807 (8 bytes). |
+| REAL             | Float (8 bytes).                                                    |
+| TEXT             | String using database encoding (UTF-8, UTF-16BE or UTF-16LE).       |
+| BLOB             | Raw bytes.                                                          |
+
+^ Column Affinity ^ Data Type String       ^ Appropriate Datatypes ^
+| INTEGER         | *INT*                  | ALL, preferred INTEGER |
+| TEXT            | *CHAR*, *CLOB*, *TEXT* | NULL, TEXT, BLOB       |
+| BLOB            | *BLOB* or unspecified  | no cast is performed   |
+| REAL            | *REAL*, *FLOA*, *DOUB* | ALL, preferred REAL    |
+| NUMBERIC        | unmatched string       | ALL, preferred INTEGER |
+
+^ Column Constraint ^ Description                                                          ^
+| DEFAULT           | Inserts default value when no value is provided (NULL when unused).  |
+| COLLATE           | Specifies collate sequence when comparing data (BINARY when unused). |
+| NOT NULL          | Column cannot contain NULL values.                                   |
+| UNIQUE            | All data within a column must be unique.                             |
+| PRIMARY KEY       | All data within a column must be unique and identifies each row.     |
+| FOREIGN KEY       | Points to PRIMARY KEY in another table.                              |
+| CHECK             | Checks against condition when inserting data.                        |
+
+  *Create table((SQLite CREATE TABLE: https://www.sqlite.org/lang_createtable.html)):<code sql>
+CREATE TABLE <devices>
+(
+  -- <column-name> <COLUMN-DATA-TYPE> [COLUMN-CONSTRAINTS][,]
+  <id> [INTEGER] [PRIMARY KEY] [AUTOINCREMENT] [NOT NULL] [DEFAULT 1] [CHECK(id>0)],
+  <serial> [TEXT]
+);
+</code>
+  *Alter table (limited options compared to creating table)((SQLite ALTER TABLE: https://www.sqlite.org/lang_altertable.html)):<code sql>
+ALTER TABLE <devices> RENAME TO <equipment>;
+ALTER TABLE <equipment> ADD COLUMN <mac_address> [TEXT];
+ALTER TABLE <equipment> RENAME COLUMN <mac_address> TO <mac>;
+ALTER TABLE <equipment> DROP COLUMN <mac>;
+</code>
+  *Drop table (unrecoverable)((SQLite DROP TABLE: https://www.sqlite.org/lang_droptable.html)):<code sql>
+DROP TABLE <equipment>;
+</code>
+
+
+
+
+
+

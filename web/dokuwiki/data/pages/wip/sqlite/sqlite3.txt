@@ -1,0 +1,95 @@
+====== SQLite3 ======
+
+
+
+
+https://www.sqlite.org/lang.html
+https://www.sqlite.org/omitted.html
+https://www.sqlite.org/lang_keywords.html
+https://www.sqlite.org/syntaxdiagrams.html
+
+----
+
+===== Help =====
+
+  *List all meta-commands:<cli>
+$ sqlite3 <FILE> '.help'
+</cli>
+
+===== Data Modification =====
+
+==== Data Types ====
+
+^ Data Type ^ Description ^
+| NULL      | Empty value |
+| INTEGER   | 8 byte (-9223372036854775808 - 9223372036854775807) |
+
+==== Tables ====
+
+  *List all tables:<cli>
+$ sqlite3 <FILE> '.tables'
+</cli>
+  *List table schema:<cli>
+$ sqlite3 <FILE> '.schema [TABLE]'
+</cli>
+  *Create table:<cli>
+$ sqlite3 <FILE> 'CREATE TABLE <table> (<column> <DATA-TYPE>, ...);'
+</cli>
+  *Drop table:<cli>
+$ sqlite3 <FILE> 'DROP TABLE <table>;'
+</cli>
+
+==== Data ====
+
+----
+
+===== Syntax =====
+
+  *Sqlite syntax:<cli>
+$ sqlite3 [OPTIONS] [FILE] [SQL-QUERY]
+</cli>
+
+===== Start & Quit =====
+
+  *Start sqlite3:<cli>
+$ sqlite3 [FILE]
+</cli>
+  *Quit sqlite3:<cli>
+sqlite> .quit
+</cli>
+
+===== Help =====
+
+  *List all meta-commands:<cli>
+sqlite> .help
+</cli>
+
+===== CLI Syntax =====
+
+  *Meta-command:<cli>
+sqlite> .<COMMAND>
+</cli>
+  *Comment:<cli>
+sqlite> #<COMMENT>
+</cli>
+  *SQL query:<cli>
+sqlite> <SQL-QUERY>
+</cli>
+
+===== Databases =====
+
+  *Show current database:<cli>
+sqlite> .show
+</cli>
+  *Open database (new database is created if file does not exist):<cli>
+sqlite> .open <FILE>
+</cli>
+  *Save current database to file:<cli>
+sqlite> .save <FILE>
+</cli>
+
+===== Tables =====
+
+  *List all tables:<cli>
+sqlite> .tables
+</cli>

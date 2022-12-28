@@ -1,0 +1,39 @@
+====== SQLite ======
+
+===== About =====
+
+  *Lightweight open-source software library written in C (ANSI C).
+  *Provides serverless RDBMS for SQL databases.
+
+[{{ :sqlite:sqlite-serverless-communication.png?nolink&300 |SQLite serverless communication. }}]
+[{{ :sqlite:sql-server-client-communication.png?nolink&300 |Traditional RDBMS client/server communication.}}]
+
+===== Features & Limitations =====
+
+==== Features ====
+
+  ***Serverless:** does not require a separate server process or system to operate.
+  ***Zero configuration:** no server to install and configure.
+  ***Cross-platform:** entire database is a single cross-platform file requring no administration.
+  ***Self-contained:** single library contains the entire database system.
+  ***Small runtime footprint:** lightweight.
+  ***Transactional:** ACID-compliant, allowing safe access from multiple processes or threads.
+  ***Full-featured:** supports most of the query language((Unsupported SQL features: https://www.sqlite.org/omitted.html)).
+  ***Dynamic-type system:** any value can be put into nearly any column, regardless of type.
+
+==== Limitations ====
+
+  ***High Transaction Rates:** able to support moderate transaction rate (few hundred transactions per minute from different proccesses or threads).
+  ***Extremely Large Datasets:** filesystem and OS limitations per single file.
+  ***Access Control:** no authentication or authorization for data. Depends on filesystem permissions.
+  ***Client/server:** no native support for over the network database access.
+
+===== Client Libraries =====
+
+  ***CLI:** sqlite3((Sqlite3 download: https://www.sqlite.org/download.html)).
+  ***GUI:** sqlitebrowser((Sqlitebrowser download: https://github.com/sqlitebrowser/sqlitebrowser)).
+
+===== References =====
+
+  *[[https://www.sqlite.org|SQLite Website]]
+  *Kreibich, J.A. (2010) //Using SQLite//. Sebastopol, CA: O'Reilly.

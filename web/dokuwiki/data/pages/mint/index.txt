@@ -1,0 +1,13 @@
+====== Linux Mint ======
+
+//- user-friendly GNU/Linux distribution.//
+
+<WRAP center round important 60%>
+This section is incomplete and needs further work!
+</WRAP>
+
+===== Pros & Cons =====
+
+===== References =====
+
+  *[[https://linuxmint.com|Official Website]]

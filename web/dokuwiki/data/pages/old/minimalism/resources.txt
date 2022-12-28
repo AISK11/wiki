@@ -1,6 +1,0 @@
-====== Resources ======
-
-  * [[https://wiki.installgentoo.com/wiki/Software_minimalism]]
-  * [[https://suckless.org]]
-  * [[http://harmful.cat-v.org/software]]
-  * [[https://github.com/mayfrost/guides/blob/master/ALTERNATIVES.md]]

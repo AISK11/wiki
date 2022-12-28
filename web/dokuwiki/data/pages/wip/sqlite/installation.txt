@@ -1,0 +1,15 @@
+====== Installation ======
+
+===== Linux =====
+
+==== Debian-based ====
+
+  *Linux Mint:<cli>
+# sqlite3 -version || apt install sqlite3
+</cli>
+
+==== Other ====
+
+  *Void Linux:<cli>
+# sqlite3 -version || xbps-install sqlite
+</cli>

@@ -1,0 +1,65 @@
+<a name="sqliteindex__"></a>
+<h1><bookmark content=" SQLite" level="0" /><a name="sqliteindex__sqlite">SQLite</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><bookmark content=" About" level="1" /><a name="sqliteindex__about">About</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">Lightweight open-source software library written in C (ANSI C).</div>
+</li>
+<li class="level1"><div class="li">Provides serverless RDBMS for SQL databases.</div>
+</li>
+<li class="level1 node"><div class="li">Features:</div>
+<ul>
+<li class="level2"><div class="li"><em>Serverless:</em> does not require a separate server process or system to operate.</div>
+</li>
+<li class="level2"><div class="li"><em>Zero configuration:</em> no server to install and configure.</div>
+</li>
+<li class="level2"><div class="li"><em>Cross-platform:</em> entire database is a single cross-platform file requring no administration.</div>
+</li>
+<li class="level2"><div class="li"><em>Self-contained:</em> single library contains the entire database system.</div>
+</li>
+<li class="level2"><div class="li"><em>Small runtime footprint:</em> lightweight.</div>
+</li>
+<li class="level2"><div class="li"><em>Transactional:</em> ACID-compliant, allowing safe access from multiple processes or threads.</div>
+</li>
+<li class="level2"><div class="li"><em>Full-featured:</em> supports most of the query language.</div>
+</li>
+<li class="level2"><div class="li"><em>Dynamic-type system:</em> any value can be put into nearly any column, regardless of type.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li">Front-ends for SQLite:</div>
+<ul>
+<li class="level2"><div class="li"><em>CLI:</em> sqlite3.</div>
+</li>
+<li class="level2"><div class="li"><em>GUI:</em> sqlitebrowser</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="thumb2 tcenter"><div class="thumbinner"><img src="http://localhost/_media/sqlite/sqlite-serverless-communication.png?w=300&amp;h=185&amp;tok=283a96" class="mediabox2" loading="lazy" alt="" width="300" height="185" /><div class="thumbcaption" style="max-width: 294px"><div class="magnify"><a class="internal" title="Enlarge" href="http://localhost/_detail/sqlite/sqlite-serverless-communication.png?id=sqlite%3Aindex" target="_blank"><img width="15" height="11" alt="" src="http://localhost/lib/plugins/imagebox/magnify-clip.png"/></a></div>SQLite serverless communication. </div></div></div><div class="thumb2 tcenter"><div class="thumbinner"><img src="http://localhost/_media/sqlite/sql-server-client-communication.png?w=300&amp;h=191&amp;tok=a00154" class="mediabox2" loading="lazy" alt="" width="300" height="191" /><div class="thumbcaption" style="max-width: 294px"><div class="magnify"><a class="internal" title="Enlarge" href="http://localhost/_detail/sqlite/sql-server-client-communication.png?id=sqlite%3Aindex" target="_blank"><img width="15" height="11" alt="" src="http://localhost/lib/plugins/imagebox/magnify-clip.png"/></a></div>Traditional RDBMS client/server communication.</div></div></div>
+</div>
+
+<h2><bookmark content=" References" level="1" /><a name="sqliteindex__references">References</a></h2>
+<div class="level2">
+
+<p>
+@WIP
+</p>
+<ul>
+<li class="level1"><div class="li"><a href="https://www.sqlite.org/cli.html" class="urlextern" title="https://www.sqlite.org/cli.html">Official Website</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://github.com/sqlite/sqlite" class="urlextern" title="https://github.com/sqlite/sqlite">GitHub Source Code Mirror</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://wiki.archlinux.org/title/SQLite" class="urlextern" title="https://wiki.archlinux.org/title/SQLite">ArchWiki - SQLite</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://github.com/sqlitebrowser/sqlitebrowser" class="urlextern" title="https://github.com/sqlitebrowser/sqlitebrowser">GitHub - Sqlitebrowser</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://www.sqlitetutorial.net/what-is-sqlite" class="urlextern" title="https://www.sqlitetutorial.net/what-is-sqlite">?</a></div>
+</li>
+</ul>
+
+</div>

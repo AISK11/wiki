@@ -1,0 +1,67 @@
+====== Hash Functions ======
+
+//- one-way functions creating fixed-size output from arbitrarily long input.//
+
+===== Attacks =====
+
+  ***Preimage attack:** tries to find message, that has specific hash value.
+  ***Collision attack:** tries to find 2 inputs producing the same hash.
+
+===== Cracking =====
+
+==== Extract ====
+
+  *7z:<cli>
+$ 7z2john <FILE> 2> /dev/null | cut -d ':' -f 2-
+</cli>
+  *PDF:<cli>
+$ pdf2john <FILE> 2> /dev/null | cut -d ':' -f 2-
+</cli>
+  *RAR:<cli>
+$ rar2john <FILE> 2> /dev/null | cut -d ':' -f 2-
+</cli>
+  *ZIP:<cli>
+$ zip2john <FILE> 2> /dev/null | cut -d ':' -f 2-
+</cli>
+
+==== Identify ====
+
+  -Identify hash((Hashcat hash examples: https://hashcat.net/wiki/doku.php?id=example_hashes.)):<cli>
+$ hashcat --show '<HASH|HASH-FILE>'
+</cli>
+
+==== Crack ====
+
+  -Crack the hash:
+    *Dictionary attack((Hashcat dictionary attack: https://hashcat.net/wiki/doku.php?id=dictionary_attack.))((Hashcat rules: https://hashcat.net/wiki/doku.php?id=rule_based_attack.)):<cli>
+$ hashcat [-O] -a 0 -m <HASH-TYPE> '<HASH|HASH-FILE>' [-j 'u'|-r <RULE-FILE>] <WORDLIST>
+</cli>
+    *Combination attack((Hashcat combination attack: https://hashcat.net/wiki/doku.php?id=combinator_attack.)):<cli>
+$ hashcat [-O] -a 1 -m <HASH-TYPE> '<HASH|HASH-FILE>' [-j 'u'] <WORDLIST> [-k 'u'] <WORDLIST2>
+</cli>
+    *Mask (brute-force) attack((Hashcat mask attack: https://hashcat.net/wiki/doku.php?id=mask_attack.)):<cli>
+$ hashcat [-O] -a 3 -m <HASH-TYPE> '<HASH|HASH-FILE>' <-1 '?l?u?d' '?1?1?1'>
+</cli>
+    *Hybrid attack((Hashcat hybrid attack: https://hashcat.net/wiki/doku.php?id=hybrid_attack.)):<cli>
+$ hashcat [-O] -a 6 -m <HASH-TYPE> '<HASH|HASH-FILE>' [-j 'u'] <WORDLIST> <-1 '?l?u?d' '?1?1?1'>
+$ hashcat [-O] -a 7 -m <HASH-TYPE> '<HASH|HASH-FILE>' <-1 '?l?u?d' '?1?1?1'> [-k 'u'] <WORDLIST>
+</cli>
+  -Cracked hashes are stored in ''~/.local/share/hashcat/hashcat.potfile''.
+
+==== Misc ====
+
+  *Benchmark specific hash crack speed:<cli>
+$ hashcat [-O] -b -m <HASH-TYPE>
+</cli>
+
+===== References =====
+
+  *[[https://github.com/hashcat/hashcat|GitHub Repository - Hashcat (tool)]]
+  *[[https://github.com/openwall/john|GitHub Repository - John The Ripper (tool)]]
+  *[[https://github.com/danielmiessler/SecLists|GitHub Repository - SecLists (wordlists)]]
+  *[[https://github.com/NotSoSecure/password_cracking_rules|GitHub Repository - OneRuleToRuleThemAll (rules)]]
+  *[[https://wiki.skullsecurity.org/index.php/Passwords|Wordlists - ScullSecurity]]
+  *[[https://packetstormsecurity.com/Crackers/wordlists|Wordlists - PacketStormSecurity]]
+  *[[https://passwordvillage.org/index.html|Tips And Tricks - PasswordVillage Cracking]]
+  *[[https://www.elcomsoft.com/help/en/ewsa/dictionary_mutations.html|Tips And Tricks - Dictionary Mutation Terminology]]
+  *[[https://blog.korelogic.com/blog/2014/04/04/pathwell_topologies|Tips And Tricks - Common Password Masks]]

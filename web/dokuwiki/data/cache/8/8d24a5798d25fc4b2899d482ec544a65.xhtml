@@ -1,0 +1,134 @@
+
+<h1 class="sectionedit1" id="sql_syntax">SQL Syntax</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SQL Syntax&quot;,&quot;hid&quot;:&quot;sql_syntax&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-26&quot;} -->
+<h2 class="sectionedit2" id="comments">Comments</h2>
+<div class="level2">
+<ul>
+<li class="level1 node"><div class="li">Comments<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</div>
+<ul>
+<li class="level2"><div class="li">Single-line (starts with <code>–</code>):<pre class="code sql"><span class="co1">--[single-line comment]</span></pre>
+</div>
+</li>
+<li class="level2"><div class="li">Multi-line (starts with <code>/*</code> and ends with <code>*/</code>):<pre class="code sql"><span class="coMULTI">/*[multi-line
+comment]*/</span></pre>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Comments&quot;,&quot;hid&quot;:&quot;comments&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;27-306&quot;} -->
+<h2 class="sectionedit3" id="data_definition_language_ddl">Data Definition Language (DDL)</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Data Definition Language (DDL)&quot;,&quot;hid&quot;:&quot;data_definition_language_ddl&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:3,&quot;range&quot;:&quot;307-350&quot;} -->
+<h3 class="sectionedit4" id="tables">Tables</h3>
+<div class="level3">
+<div class="table sectionedit5"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Column Data Type </th><th class="col1 leftalign"> Description                                                         </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> NULL             </td><td class="col1 leftalign"> Does not hold a value.                                              </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> INTEGER          </td><td class="col1"> −9,223,372,036,854,775,808 to +9,223,372,036,854,775,807 (8 bytes). </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> REAL             </td><td class="col1 leftalign"> Float (8 bytes).                                                    </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> TEXT             </td><td class="col1 leftalign"> String using database encoding (UTF-8, UTF-16BE or UTF-16LE).       </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> BLOB             </td><td class="col1 leftalign"> Raw bytes.                                                          </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:5,&quot;range&quot;:&quot;369-916&quot;} --><div class="table sectionedit6"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Column Affinity </th><th class="col1 leftalign"> Data Type String       </th><th class="col2"> Appropriate Datatypes </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> INTEGER         </td><td class="col1 leftalign"> *INT*                  </td><td class="col2"> ALL, preferred INTEGER </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> TEXT            </td><td class="col1"> *CHAR*, *CLOB*, *TEXT* </td><td class="col2 leftalign"> NULL, TEXT, BLOB       </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> BLOB            </td><td class="col1 leftalign"> *BLOB* or unspecified  </td><td class="col2 leftalign"> no cast is performed   </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> REAL            </td><td class="col1"> *REAL*, *FLOA*, *DOUB* </td><td class="col2 leftalign"> ALL, preferred REAL    </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> NUMBERIC        </td><td class="col1 leftalign"> unmatched string       </td><td class="col2"> ALL, preferred INTEGER </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:6,&quot;range&quot;:&quot;918-1336&quot;} --><div class="table sectionedit7"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Column Constraint </th><th class="col1 leftalign"> Description                                                          </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> DEFAULT           </td><td class="col1 leftalign"> Inserts default value when no value is provided (NULL when unused).  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> COLLATE           </td><td class="col1"> Specifies collate sequence when comparing data (BINARY when unused). </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> NOT NULL          </td><td class="col1 leftalign"> Column cannot contain NULL values.                                   </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> UNIQUE            </td><td class="col1 leftalign"> All data within a column must be unique.                             </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> PRIMARY KEY       </td><td class="col1 leftalign"> All data within a column must be unique and identifies each row.     </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> FOREIGN KEY       </td><td class="col1 leftalign"> Points to PRIMARY KEY in another table.                              </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> CHECK             </td><td class="col1 leftalign"> Checks against condition when inserting data.                        </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table2&quot;,&quot;secid&quot;:7,&quot;range&quot;:&quot;1338-2081&quot;} --><ul>
+<li class="level1"><div class="li">Create table<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>:<pre class="code sql"><span class="kw1">CREATE</span> <span class="kw1">TABLE</span> <span class="sy0">&lt;</span>devices<span class="sy0">&gt;</span>
+<span class="br0">&#40;</span>
+  <span class="co1">-- &lt;column-name&gt; &lt;COLUMN-DATA-TYPE&gt; [COLUMN-CONSTRAINTS][,]</span>
+  <span class="sy0">&lt;</span>id<span class="sy0">&gt;</span> <span class="br0">&#91;</span><span class="kw1">INTEGER</span><span class="br0">&#93;</span> <span class="br0">&#91;</span><span class="kw1">PRIMARY</span> <span class="kw1">KEY</span><span class="br0">&#93;</span> <span class="br0">&#91;</span>AUTOINCREMENT<span class="br0">&#93;</span> <span class="br0">&#91;</span><span class="kw1">NOT</span> <span class="kw1">NULL</span><span class="br0">&#93;</span> <span class="br0">&#91;</span><span class="kw1">DEFAULT</span> <span class="nu0">1</span><span class="br0">&#93;</span> <span class="br0">&#91;</span><span class="kw1">CHECK</span><span class="br0">&#40;</span>id<span class="sy0">&gt;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+  <span class="sy0">&lt;</span>serial<span class="sy0">&gt;</span> <span class="br0">&#91;</span>TEXT<span class="br0">&#93;</span>
+<span class="br0">&#41;</span>;</pre>
+</div>
+</li>
+<li class="level1"><div class="li">Alter table (limited options compared to creating table)<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup>:<pre class="code sql"><span class="kw1">ALTER</span> <span class="kw1">TABLE</span> <span class="sy0">&lt;</span>devices<span class="sy0">&gt;</span> <span class="kw1">RENAME</span> <span class="kw1">TO</span> <span class="sy0">&lt;</span>equipment<span class="sy0">&gt;</span>;
+<span class="kw1">ALTER</span> <span class="kw1">TABLE</span> <span class="sy0">&lt;</span>equipment<span class="sy0">&gt;</span> <span class="kw1">ADD</span> <span class="kw1">COLUMN</span> <span class="sy0">&lt;</span>mac_address<span class="sy0">&gt;</span> <span class="br0">&#91;</span>TEXT<span class="br0">&#93;</span>;
+<span class="kw1">ALTER</span> <span class="kw1">TABLE</span> <span class="sy0">&lt;</span>equipment<span class="sy0">&gt;</span> <span class="kw1">RENAME</span> <span class="kw1">COLUMN</span> <span class="sy0">&lt;</span>mac_address<span class="sy0">&gt;</span> <span class="kw1">TO</span> <span class="sy0">&lt;</span>mac<span class="sy0">&gt;</span>;
+<span class="kw1">ALTER</span> <span class="kw1">TABLE</span> <span class="sy0">&lt;</span>equipment<span class="sy0">&gt;</span> <span class="kw1">DROP</span> <span class="kw1">COLUMN</span> <span class="sy0">&lt;</span>mac<span class="sy0">&gt;</span>;</pre>
+</div>
+</li>
+<li class="level1"><div class="li">Drop table (unrecoverable)<sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup>:<pre class="code sql"><span class="kw1">DROP</span> <span class="kw1">TABLE</span> <span class="sy0">&lt;</span>equipment<span class="sy0">&gt;</span>;</pre>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Tables&quot;,&quot;hid&quot;:&quot;tables&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:4,&quot;range&quot;:&quot;351-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">SQLite comments: <a href="https://www.sqlite.org/lang_comment.html" class="urlextern" title="https://www.sqlite.org/lang_comment.html">https://www.sqlite.org/lang_comment.html</a></div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content">SQLite CREATE TABLE: <a href="https://www.sqlite.org/lang_createtable.html" class="urlextern" title="https://www.sqlite.org/lang_createtable.html">https://www.sqlite.org/lang_createtable.html</a></div></div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<div class="content">SQLite ALTER TABLE: <a href="https://www.sqlite.org/lang_altertable.html" class="urlextern" title="https://www.sqlite.org/lang_altertable.html">https://www.sqlite.org/lang_altertable.html</a></div></div>
+<div class="fn"><sup><a href="#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+<div class="content">SQLite DROP TABLE: <a href="https://www.sqlite.org/lang_droptable.html" class="urlextern" title="https://www.sqlite.org/lang_droptable.html">https://www.sqlite.org/lang_droptable.html</a></div></div>
+</div>

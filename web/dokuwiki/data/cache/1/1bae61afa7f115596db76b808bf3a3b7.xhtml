@@ -1,0 +1,38 @@
+
+<h1 class="sectionedit1" id="ios_installation">IOS Installation</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;IOS Installation&quot;,&quot;hid&quot;:&quot;ios_installation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-32&quot;} -->
+<h2 class="sectionedit2" id="switch">Switch</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Switch&quot;,&quot;hid&quot;:&quot;switch&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;33-52&quot;} -->
+<h3 class="sectionedit3" id="connect">Connect</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li">Connect to the device via serial console<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:</p><pre class='cli  '><span class="cli_prompt">$ </span><span class="cli_command">cu -l &lt;/dev/ttyUSB0&gt; -s &lt;9600&gt;</span>
+<span class="cli_prompt">switch:&gt; </span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Try to boot (it should fail):</p><pre class='cli  '><span class="cli_prompt">switch:&gt; </span><span class="cli_command">boot</span>
+<span class="cli_output">Loading &quot;flash:/c3560-ipbase-mz.122-50.SE5/c3560-ipbase-mz.122-50.SE5.bin&quot;...flash:/c3560-ipbase-mz.122-50.SE5/c3560-ipbase-mz.122-50.SE5.bin: invalid argument</span>
+<span class="cli_output"></span>
+<span class="cli_output">Error loading &quot;flash:/c3560-ipbase-mz.122-50.SE5/c3560-ipbase-mz.122-50.SE5.bin&quot;</span>
+<span class="cli_output"></span>
+<span class="cli_output">Interrupt within 5 seconds to abort boot process.</span>
+<span class="cli_output">Boot process failed...</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Find switch version:</p><pre class='cli  '><span class="cli_prompt">switch:&gt; </span><span class="cli_command">version</span>
+<span class="cli_output">C3560 Boot Loader (C3560-HBOOT-M) Version 12.2(44)SE5, RELEASE SOFTWARE (fc1)</span>
+<span class="cli_output">Compiled Wed 07-Jan-09 15:55 by gereddy</span></pre><p></div>
+</li>
+<li class="level1"><div class="li">Find software for right device: <a href="https://software.cisco.com/download/find" class="urlextern" title="https://software.cisco.com/download/find">https://software.cisco.com/download/find</a>.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Connect&quot;,&quot;hid&quot;:&quot;connect&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;53-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Linux serial devices: <a href="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux" class="urlextern" title="https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux">https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux</a></div></div>
+</div>

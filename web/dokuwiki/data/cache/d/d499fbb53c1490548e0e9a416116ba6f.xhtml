@@ -1,0 +1,42 @@
+
+<h1 class="sectionedit1" id="diffie-hellman">Diffie-Hellman</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Diffie-Hellman&quot;,&quot;hid&quot;:&quot;diffie-hellman&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-30&quot;} -->
+<h2 class="sectionedit2" id="theory">Theory</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">Symmetric key exchange algorithm.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Theory&quot;,&quot;hid&quot;:&quot;theory&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;31-88&quot;} -->
+<h2 class="sectionedit3" id="algorithm">Algorithm</h2>
+<div class="level2">
+<pre class="code">+-------+       |                          |       +-------+
+| Alice |       |                          |       |  Bob  |
++-------+       |                          |       +-------+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PRIVATE NUMBER  | LARGE PRIME NUMBER       | PRIVATE NUMBER
+a=4             | x=23                     | b=3
+                | PRIMITIVE ROOT MODULO x  |
+                | y=5                      |
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PRIVATE FORMULA |                          | PRIVATE FORMULA
+A=y^a%x         |                          | B=y^b%x
+A=5^4%23        |                          | B=5^3%23
+A=625%23        |                          | B=125%23
+A=4             |                          | B=10
+                | --------- A=4  --------&gt; |
+                | &lt;-------- B=10 --------- |
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+KEY FORMULA     |                          | KEY FORMULA
+K=B^a%x         |                          | K=A^b%x
+K=10^4%23       |                          | K=4^3%23
+K=10000%23      |                          | K=64%23
+K=18            |                          | K=18</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Algorithm&quot;,&quot;hid&quot;:&quot;algorithm&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;89-&quot;} -->
